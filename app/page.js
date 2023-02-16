@@ -5,14 +5,9 @@ const page = () => {
   return (
     <div className={classes["container"]}>
       <div className={classes["top-screen"]}>
-        <div className={classes["top-screen-live-icon"]}>
-          <Image
-            src="/svg/live.svg"
-            alt="live"
-            width="29"
-            height="32"
-          />
-        </div>
+        {/* <div className={classes["top-screen-live-icon"]}>
+          <Image src="/svg/live.svg" alt="live" width="29" height="32" />
+        </div> */}
         <section className={classes["sports"]}>
           <div className={classes["sport-element"]}>
             <Image
@@ -71,7 +66,9 @@ const page = () => {
         <span className={classes["time-zone"]}>Timezone: UTC +7</span>
         <div className={classes["matches"]}>
           {[1, 2, 3, 4].map((i) => (
-            <Match />
+            <>
+              <Match />
+            </>
           ))}
         </div>
       </section>
@@ -80,7 +77,9 @@ const page = () => {
         <span className={classes["time-zone"]}>Timezone: UTC +7</span>
         <div className={classes["matches"]}>
           {[1, 2, 3, 4].map((i) => (
-            <Match />
+            <>
+              <Match />
+            </>
           ))}
         </div>
       </section>
