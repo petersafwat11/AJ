@@ -2,13 +2,13 @@
   /* margin-top: 2rem; */
 }
 .container {
-  margin-top: 2rem;
   width: 25.3125rem;
   margin: auto;
   font-size: 0.75rem;
   line-height: 0.875rem;
 }
 .donate-heading {
+  margin-top: 2rem;
   color: #00c4fb;
   line-height: 1rem;
   font-size: 1rem;
