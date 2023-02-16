@@ -1,0 +1,132 @@
+.menu {
+  display: flex;
+  /* width: 100%; */
+  background-color: var(--background);
+  margin-top: 1.125rem;
+}
+.menu-desktop {
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.75rem;
+  line-height: 2rem;
+  padding: 0.875rem 0 1.25rem;
+  margin: auto;
+}
+.menu-desktop-logo {
+  width: 8.3rem;
+  height: 6.6rem;
+}
+.menu-desktop-list {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+.menu-desktop-list-item {
+  padding: 0.4rem 1.1rem;
+  border-radius: 0.5rem;
+  transition: 0.3s all ease-out;
+  cursor: pointer;
+  color: white;
+}
+.menu-desktop-list-item:hover {
+  background-color: var(--blue);
+  opacity: 0.8;
+}
+.menu-desktop-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.menu-desktop-actions-button {
+  width: 9.9rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--btn-background);
+  border-radius: 0.5rem;
+  font-size: inherit;
+  color: white;
+  line-height: inherit;
+  cursor: pointer;
+  transition: 0.3s all ease-out;
+}
+.menu-desktop-actions-button:hover {
+  background-color: #d32727;
+}
+/* @media (max-width: 1700px) {
+.menu-desktop {
+    width: 80%;
+   } 
+} */
+@media (max-width: 1700px) {
+  .menu-desktop {
+    width: 85%;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+  }
+  .menu-desktop-logo {
+    width: 6.875rem;
+    height: 5.3rem;
+  }
+  .menu-desktop-list {
+    gap: 1rem;
+  }
+  .menu-desktop-list-item {
+    padding: 0.35rem 1rem;
+  }
+  .menu-desktop-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .menu-desktop-actions-button {
+    width: 9rem;
+    height: 2.7rem;
+  }
+}
+@media (max-width: 1350px) {
+  .menu-desktop {
+    width: 87%;
+    font-size: 1.3rem;
+  }
+  .menu-desktop-logo {
+    width: 110px !important;
+    height: 90px !important;
+  }
+  .menu-desktop-list {
+    gap: 0;
+  }
+  .menu-desktop-list-item {
+    padding: 0.35rem 0.8rem;
+  }
+  .menu-desktop-actions {
+    gap: 0.8rem;
+  }
+  .menu-desktop-actions-button {
+    width: 8rem;
+    height: 2.3rem;
+  }
+}
+@media (max-width: 1050px){
+  .menu-desktop{
+    width: 92%;
+  }
+  .menu-desktop-logo {
+    width: 100px ;
+    height: 86px ;
+  }
+  .menu-desktop-list-item {
+    padding: 0.25rem 0.55rem;
+  }
+  .menu-desktop-actions {
+    gap: 0.6rem;
+  }
+  .menu-desktop-actions-button {
+    width: 6.5rem;
+    height: 1.85rem;
+  }
+
+}

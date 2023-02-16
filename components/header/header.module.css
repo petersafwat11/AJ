@@ -1,0 +1,47 @@
+.header-top {
+  max-width: 28rem;
+  display: flex;
+  justify-content: center;
+  padding: 0.82rem 5.625rem .7rem;
+  margin: 0 auto;
+  text-align: center;
+  background: url("/topimage.png");
+  background-position: bottom;
+  /* background-size: 85%; */
+}
+.header-top > p {
+  font-size: 0.934rem;
+  line-height: 1.125rem;
+  padding-bottom: 0.7rem ;
+}
+.header-social{
+  display: flex ;
+  align-items: center;
+  justify-content: center;
+  gap: 2.625rem;
+  margin: .75rem auto 0;
+}
+.header-social > *{
+  cursor: pointer;
+}
+.header-lang{
+  display: flex ;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: .75rem auto 0; 
+  line-height: 1.87rem;
+}
+.header-lang > p{
+transition: all .4s ease-out;
+cursor: pointer;
+}
+.header-lang > p:hover {
+  color: var(--blue);
+}
+
+@media (max-width: 900px){
+    .header{
+        display: none;
+    }
+}

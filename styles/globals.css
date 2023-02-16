@@ -1,26 +1,56 @@
-html,
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Libre+Franklin:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+:root{
+--score-board: #203639;
+--gray-dark: #666769;
+--green: #41f331;
+--blue:#00C4FB;
+--btn-background: #ff4747;
+
+--background: #0d1318;
+}
 body {
+
+
+  overflow-x: hidden;
+  font-family: 'Roboto Condensed','Lato' ,'Libre Franklin', sans-serif;
+  background: linear-gradient(
+      to right bottom,
+      rgba(13, 19, 23, 0.953),
+      rgba(13, 19, 23, 0.938)
+    );
+    color: white;
+    /* url(/backimage.png); */
+  /* background-position: top;
+  overscroll-behavior: none;  */
+}
+html {
+  font-family: 'Roboto Condensed','Lato' ,'Libre Franklin', sans-serif;
+}
+*,
+*::after,
+*::before {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-weight: 500;
+  box-sizing: border-box;
+  font-family: 'Roboto Condensed','Lato' ,'Libre Franklin', sans-serif;
 }
-
+li {
+  list-style: none;
+}
+ul {
+  list-style: none;
+}
 a {
-  color: inherit;
+  display: inline;
   text-decoration: none;
 }
-
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.3s;
 }

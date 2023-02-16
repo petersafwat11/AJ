@@ -1,0 +1,282 @@
+.give-away {
+  margin-top: 1.625rem;
+}
+.container {
+  width: min(25rem,95%);
+  margin: auto;
+}
+.give-away-heading {
+  color: #00c4fb;
+  line-height: 1.125rem;
+  font-size: 1rem;
+  padding-left: 0.25rem;
+  padding-right: 0.75rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.125rem;
+  margin-bottom: 0.5rem;
+}
+.give-away-heading > span {
+  flex-grow: 1;
+  height: 2px;
+  background-color: #00c4fb;
+}
+.give-away-wrapper {
+  height: 51rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 9% 1fr 40%;
+  /* grid-row-gap: 2rem; */
+  padding: 1rem 0.687rem 0.9375rem 0.875rem;
+  background-color: #0d1317;
+  border-radius: 1.125rem;
+}
+.give-away-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-column-gap: 2.5rem; */
+  padding: 0 0.3rem 1.1rem 0.6875rem;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.1875rem;
+  text-align: center;
+}
+.give-away-details-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.give-away-compition {
+  position: relative;
+  padding-top: 2.125rem;
+}
+.give-away-heading-2 {
+  font-size: 1.625rem;
+  line-height: 1.875rem;
+  max-width: 72%;
+  text-align: center;
+  margin: auto;
+}
+.give-away-heading-2 > span{
+  color: #00C4FB;
+  display: inline-block;
+}
+.give-away-image{
+  height: 77%;
+  margin-top: -2rem;
+  background: url('/svg/give-away/wrapper.svg');
+  max-width: 80%;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.give-away-center-image{
+  margin-top: 2.6rem;
+  margin-left: 20%;
+}
+.give-away-para{
+  font-size: .9375rem;
+  line-height: 1.125rem;
+  max-width: 85%;
+  text-align: center;
+  margin: auto;
+  margin-top: 1rem;
+}
+.give-away-para > span{
+  color: #02C6F9;
+  margin-left: .25rem;
+}
+.devider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+}
+.follow-us {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-row-gap: 0.4375rem;
+}
+.follow-us-method {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.75rem;
+  background-color: #282c2d;
+  border-radius: 0.625rem;
+  font-size: 0.875rem;
+  line-height: 0.9375rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+.follow-us-method:hover{
+  background-color: #191a1a;
+}
+.follow-us-method-para {
+  margin-left: 10.6%;
+  margin-right: auto;
+}
+@media (min-width: 40rem) {
+  .container {
+  width: 60%;
+  margin: auto;
+}
+.give-away-image{
+  max-width: 75%;
+}
+.give-away-center-image{
+  margin-top: 2.6rem;
+  margin-left: 22%;
+}
+}
+@media (min-width: 56.25rem) {
+  .give-away {
+  margin-top: 2.7rem;
+}
+.container {
+  width: min(40rem,53%);
+  margin: auto;
+}
+.give-away-heading {
+  line-height: 1.8rem;
+  font-size: 1.5rem;
+  padding-left: 0.4rem;
+  margin-bottom: 1rem;
+}
+.give-away-wrapper {
+  height: 63rem;
+  grid-template-rows: 9% 1fr 40%;
+  padding: 1.375rem 1.325rem 1.5625rem 1.4375;
+}
+.give-away-details {
+  padding: 0 ;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+.give-away-details-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: .5rem;
+}
+.give-away-compition {
+  position: relative;
+  padding-top: 2.125rem;
+}
+.give-away-heading-2 {
+  font-size: 2.8rem;
+  line-height: 3rem;
+  max-width: 72%;
+}
+.give-away-image{
+  height: 77%;
+  background: url('/svg/give-away/wrapper.svg');
+  max-width: 80%;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.give-away-center-image{
+  margin-top: 2.6rem;
+  margin-left: 30%;
+}
+.give-away-para{
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  max-width: 85%;
+  margin-top: 1rem;
+}
+.follow-us {
+  grid-row-gap: .5625rem;
+}
+.follow-us-method {
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+}
+.follow-us-method-image{
+  width: 2.25rem;
+  height: 2.25rem;
+}
+}
+@media (min-width: 100rem) {
+ .give-away {
+  margin-top: 4.375rem;
+}
+.container {
+  width: min(46rem,50%);
+  margin: auto;
+}
+.give-away-heading {
+  line-height: 2.365rem;
+  font-size: 2rem;
+  padding-left: 0.5rem;
+  margin-bottom: 1.35rem;
+}
+.give-away-wrapper {
+  height: 80rem;
+  grid-template-rows: 9% 1fr 40%;
+  padding: 1.375rem 1.325rem 1.5625rem 1.4375;
+}
+.give-away-details {
+  padding: 0 0.3rem 1.1rem 0.6875rem;
+  font-weight: 500;
+  font-size: 1.75rem;
+  line-height: 2.1rem;
+  text-align: center;
+}
+.give-away-details-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: .6rem;
+}
+.give-away-compition {
+  position: relative;
+  padding-top: 2.125rem;
+}
+.give-away-heading-2 {
+  font-size: 3.625rem;
+  line-height: 4.25rem;
+  max-width: 72%;
+}
+.give-away-image{
+  height: 77%;
+  margin-top: -2rem;
+  background: url('/svg/give-away/wrapper.svg');
+  max-width: 80%;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+/* .give-away-center-image{
+  margin-top: 2.6rem;
+  margin-left: 20%;
+} */
+.give-away-para{
+  font-size: 2.125rem;
+  line-height: 2.5rem;
+  max-width: 85%;
+  margin-top: 1rem;
+}
+.follow-us {
+  grid-row-gap: .75rem;
+}
+.follow-us-method {
+  font-size: 1.375rem;
+  line-height: 1.5rem;
+}
+.follow-us-method-image{
+  width: 3.125rem;
+  height: 3.125rem;
+}
+.follow-us-method-para {
+  margin-left: 10.6%;
+  margin-right: auto;
+} 
+}
