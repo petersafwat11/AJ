@@ -1,5 +1,5 @@
 .header-top {
-  max-width: 28rem;
+  max-width: auto;
   display: flex;
   justify-content: center;
   padding: 0.82rem 5.625rem .7rem;
@@ -8,6 +8,8 @@
   background: url("/topimage.png");
   background-position: bottom;
   /* background-size: 85%; */
+  background-repeat: no-repeat;
+  height: 5rem;
 }
 .header-top > p {
   font-size: 0.934rem;
