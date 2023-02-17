@@ -1,17 +1,23 @@
-import React from 'react'
-import classes from './menu.module.css'
-import Image from 'next/image';
-import Link from 'next/link';
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
+import classes from "./menu.module.css";
 export const Menu = () => {
+  const router = useRouter();
   return (
     <div className={classes.menu}>
       <nav className={classes["menu-desktop"]}>
         <Image
+          onClick={() => {
+            router.push("/");
+          }}
           className={classes["menu-desktop-logo"]}
           src="/svg/LOGO.svg"
           alt="logo"
-          width="133"
-          height="107"
+          width="110"
+          height="87"
         />
         <ul className={classes["menu-desktop-list"]}>
           <li>
@@ -36,29 +42,142 @@ export const Menu = () => {
             </Link>
           </li>
           <li>
-            <Link
-              className={classes["menu-desktop-list-item"]}
-              href="/statistics"
-            >
+            <Link className={classes["menu-desktop-list-item"]} href="/news">
               NEWS
             </Link>
           </li>
           <li>
-            <Link className={classes["menu-desktop-list-item"]} href="/news">
+            <Link className={classes["menu-desktop-list-item"]} href="/contact">
               CONTACT
             </Link>
           </li>
         </ul>
         <div className={classes["menu-desktop-actions"]}>
-          <button className={classes["menu-desktop-actions-button"]}>
+          <button
+            onClick={() => {
+              router.push("/donate");
+            }}
+            className={classes["menu-desktop-actions-button"]}
+          >
             DONATIE
           </button>
-          <button className={classes["menu-desktop-actions-button"]}>
+          <button
+            onClick={() => {
+              router.push("/give-away");
+            }}
+            className={classes["menu-desktop-actions-button"]}
+          >
             GIVEAWAY
           </button>
         </div>
       </nav>
-      <nav className={classes["menu-mobie"]}></nav>
     </div>
   );
-}
+};
+
+export const MenuMobile = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
+  return (
+    <div>
+      <div className={classes["menu-mobile"]}>
+        <Image
+          onClick={() => {
+            setShowMenu(!showMenu);
+          }}
+          className={classes["menu-mobile-icon"]}
+          src="/svg/menu-icon.svg"
+          alt="menu"
+          width="28"
+          height="16"
+        />
+        <Image
+          className={classes["menu-mobile-logo"]}
+          src="/svg/LOGO.svg"
+          alt="logo"
+          width="69"
+          height="63"
+        />
+      </div>
+      <div
+        style={{ left: showMenu ? "0" : "-100%" }}
+        className={classes["side-menu"]}
+      >
+        <div className={classes["menu-top"]}>
+          <div className={classes["menu-top-links"]}>
+            <p className={classes["menu-top-links-1"]}>Tab Direct link 1</p>
+            <p className={classes["menu-top-links-2"]}>Tab Direct link 2</p>
+          </div>
+          <Image
+            onClick={() => {
+              setShowMenu(!showMenu);
+            }}
+            className={classes["menu-top-icon"]}
+            src="/svg/menu-icon-2.svg"
+            alt="menu"
+            width="28"
+            height="16"
+          />
+        </div>
+        <div className={classes["menu-mobile-lang"]}>
+          <p>العربية</p>
+          <p className={classes["menu-mobile-lang-english"]}>English </p>
+          <p>Español</p>
+        </div>
+        <div className={classes["menu-mobile-pages-links"]}>
+          <p className={classes["menu-mobile-page-link"]}>SPORTS </p>
+          <p className={classes["menu-mobile-page-link"]}> CHANNELS </p>
+          <p className={classes["menu-mobile-page-link"]}> STATISTICS </p>
+          <p className={classes["menu-mobile-page-link"]}> NEWS </p>
+          <p className={classes["menu-mobile-page-link"]}> DONATE </p>
+          <p className={classes["menu-mobile-page-link"]}> GIVEAWAY</p>
+        </div>
+        <div className={classes["menu-mobile-social"]}>
+          <Image
+            className={classes["menu-mobile-social-item"]}
+            src="/svg/menu/twitter.svg"
+            alt="twitter"
+            width="40"
+            height="40"
+          />
+          <Image
+            className={classes["menu-mobile-social-item"]}
+            src="/svg/menu/facebook.svg"
+            alt="facebook"
+            width="40"
+            height="40"
+          />
+          <Image
+            className={classes["menu-mobile-social-item"]}
+            src="/svg/menu/social.svg"
+            alt="social"
+            width="40"
+            height="40"
+          />
+          <Image
+            className={classes["menu-mobile-social-item"]}
+            src="/svg/menu/insta.svg"
+            alt="insta"
+            width="40"
+            height="40"
+          />
+          <Image
+            className={classes["menu-mobile-social-item"]}
+            src="/svg/menu/tiktok.svg"
+            alt="tiktok"
+            width="40"
+            height="40"
+          />
+          <Image
+            className={classes["menu-mobile-social-item"]}
+            src="/svg/menu/telegram.svg"
+            alt="telegram"
+            width="40"
+            height="40"
+          />
+        </div>
+      </div>
+      {showMenu&&<div onClick={()=>{setShowMenu(false)}} className={classes["overlay"]}></div>}
+    </div>
+  );
+};

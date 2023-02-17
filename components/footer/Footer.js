@@ -1,41 +1,92 @@
-import React from 'react'
 import Image from "next/image";
-import classes from './footer.module.css'
+import React from "react";
+import classes from "./footer.module.css";
 const Footer = () => {
   return (
     <footer className={classes["footer"]}>
       <div className={classes["footer-container"]}>
-        <div className={classes["footer-container-first"]}>
-          <div className={classes["footer-container-image"]}>
-            <Image
-              src="/svg/LOGO-FOOTER.svg"
-              alt="logo"
-              width="186"
-              height="163"
-            />
+        <div className={classes["footer-container-image"]}>
+          <Image
+            src="/svg/LOGO-FOOTER.svg"
+            alt="logo"
+            width="177"
+            height="154"
+          />
+          <div className={classes["footer-actions"]}>
+            <button className={classes["protected-button"]}>PROTECTED</button>
+            <button className={classes["dmca-button"]}>DMCA</button>
           </div>
-          <div className={classes["footer-container-disclaimer"]}>
-            <h3>Disclaimer</h3>
-            <p>
-              AJ Sports merely links/embeds content uploaded to popular media
-              hosting websites such Vimeo.com, Dailymotion.com, Youtube.com,
-              twitch.tv, reddit.com, etc. AJ Sports does not host any
-              audio-visual content itself and has no ability to modify such
-              content. We thus cannot accept any liability for the content
-              transmitted by others as we are not affiliated nor endorsed by the
-              external content. All content is copyright of their respective
-              owners. AJ Sports operates as a search engine for streams and
-              videos already hosted publicly on the world wide web. For any
-              legal issues please contact appropriate media file owners.
-            </p>
-            <p className={classes['contact-email']}>Email: info@ajsports.ch</p>
-            <div className={classes["footer-actions"]}>
-              <button className={classes["protected-button"]}>PROTECTED</button>
-              <button className={classes["dmca-button"]}>DMCA</button>
+          <div className={classes["footer-social"]}>
+            <div className={classes["footer-social-element"]}>
+              <Image
+                src="/svg/social-icons/twitter.svg"
+                alt="twitter-icon"
+                width="24"
+                height="20"
+              />
+            </div>
+            <div className={classes["footer-social-element"]}>
+              <Image
+                src="/svg/social-icons/facebook.svg"
+                alt="facebook-icon"
+                width="24"
+                height="24"
+              />
+            </div>
+            <div className={classes["footer-social-element"]}>
+              <Image
+                src="/svg/social-icons/social.svg"
+                alt="social-icon"
+                width="24"
+                height="20"
+              />
+            </div>
+            <div className={classes["footer-social-element"]}>
+              <Image
+                src="/svg/social-icons/insta.svg"
+                alt="insta-icon"
+                width="24"
+                height="24"
+              />
+            </div>
+            <div className={classes["footer-social-element"]}>
+              <Image
+                src="/svg/social-icons/ticktok.svg"
+                alt="tiktok-icon"
+                width="24"
+                height="24"
+              />
+            </div>
+            <div className={classes["footer-social-element"]}>
+              <Image
+                src="/svg/social-icons/telegram.svg"
+                alt="telegram-icon"
+                width="24"
+                height="24"
+              />
             </div>
           </div>
         </div>
-
+        <div className={classes["footer-container-disclaimer"]}>
+          <h3>Disclaimer</h3>
+          <p>
+            AJ Sports merely links/embeds content uploaded to popular media
+            hosting websites such Vimeo.com, Dailymotion.com, Youtube.com,
+            twitch.tv, reddit.com, etc. AJ Sports does not host any audio-visual
+            content itself and has no ability to modify such content. We thus
+            cannot accept any liability for the content transmitted by others as
+            we are not affiliated nor endorsed by the external content. All
+            content is copyright of their respective owners. AJ Sports operates
+            as a search engine for streams and videos already hosted publicly on
+            the world wide web. For any legal issues please contact appropriate
+            media file owners.
+          </p>
+          <p className={classes["contact-email"]}>Email: info@ajsports.ch</p>
+          <div className={classes["footer-actions-mobile"]}>
+            <button className={classes["protected-button"]}>PROTECTED</button>
+            <button className={classes["dmca-button"]}>DMCA</button>
+          </div>
+        </div>
         <div className={classes["footer-container-second"]}>
           <div className={classes["footer-container-links"]}>
             <h4 className={classes["footer-container-links-heading"]}>
@@ -99,8 +150,52 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <div className={classes["copy-write"]}>
+        <div className={classes["mobile-news-letter"]}>
+          <input
+            className={classes["mobile-news-letter-input"]}
+            type="text"
+            placeholder=" Enter email for newsletter"
+          />
+          <button className={classes["mobile-news-letter-button"]}>
+            Subscribe
+          </button>
+        </div>
+        <p className={classes["copy-write-para"]}>
+          &#169; 2023 AJ Sports, Inc. All rights reserved
+        </p>
+        <div className={classes["copy-write-links"]}>
+          <p>DMCA</p> <span>-</span> Privacy Policy <span>-</span> <p>F.A.Q</p>
+        </div>
+        <div className={classes["copy-write-social"]}>
+          <Image
+            src="/svg/footer/facebook.svg"
+            alt="facebook"
+            width="18"
+            height="18"
+          />
+          <Image
+            src="/svg/footer/twitter.svg"
+            alt="facebook"
+            width="18"
+            height="18"
+          />
+          <Image
+            src="/svg/footer/insta.svg"
+            alt="insta"
+            width="18"
+            height="18"
+          />
+          <Image
+            src="/svg/footer/github.svg"
+            alt="github"
+            width="18"
+            height="18"
+          />
+        </div>
+      </div>
     </footer>
   );
-}
+};
 
-export default Footer
+export default Footer;

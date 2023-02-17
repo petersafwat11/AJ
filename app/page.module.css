@@ -3,25 +3,26 @@
   margin: auto;
 }
 .sports {
+  margin-top: 1.93rem;
   display: flex;
   align-items: start;
-  gap: 1.7rem;
+  gap: 1.3rem;
   justify-content: center;
 }
 .sport-element {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.38rem;
   cursor: pointer;
   padding-bottom: 1rem;
-  border-bottom: 5px solid transparent;
+  border-bottom: 4.5px solid transparent;
 }
 .time-zone {
   margin-bottom: 0.5rem;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1rem;
+  font-size: 0.7rem;
+  line-height: .8rem;
   opacity: 0.5;
   margin-left: auto;
   display: flex;
@@ -30,157 +31,30 @@
 .sport-element:hover {
   border-bottom: 5px solid #03a1cd;
 }
-.hot-matches,
-.other-matches {
+.matches-container {
   max-width: 63.75rem;
   margin: auto;
 }
 .other-matches {
-  margin-top: 4rem;
-  margin-bottom: 4.4375rem;
+  margin-top: 3.1rem;
+  margin-bottom: 3.5rem;
 }
 .matches {
   margin-top: 0.5rem;
   display: flex;
   align-items: start;
   flex-direction: column;
-  gap: 1.625rem;
+  gap: 1.6rem;
 }
 .title {
-  font-size: 3rem;
-  line-height: 3.5rem;
+  font-size: 2.4rem;
+  line-height: 2.7rem;
   margin-bottom: 1.3rem;
   margin-top: 1.75rem;
-}
-.match {
-  width: 100% ;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #203639;
-  border-radius: 0.6875rem;
-  padding: 1.375rem 2.4375rem;
-}
-.match-first {
-  display: none;
-}
-.match-second {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.match-details {
-  display: flex;
-  align-items: start;
-  flex-direction: column;
-  gap: 0.5rem;
-  font-size: 1rem;
-  line-height: 1.1875rem;
-}
-.leage {
-  font-weight: 300;
-  color: white;
-  opacity: 0.8;
-}
-.live-button {
-  padding: 0.3rem 0.6rem;
-  border: 1px solid var(--green);
-  color: var(--green);
-  display: flex;
-  align-items: center;
-  border-radius: 3px;
-  box-shadow: 0rem 0.3rem 0.5rem #41f3315b;
-}
-.live-button > span {
-  width: 1rem;
-  height: 1rem;
-  background-color: var(--green);
-  border-radius: 50%;
-  margin-right: 0.25rem;
-  box-shadow: 0rem 0.3rem 0.5rem #41f3315b;
-  animation: live 0.8s ease-in-out infinite;
-}
-@keyframes live {
-  0% {
-    transform: scale(0.2);
-  }
-  20% {
-    transform: scale(0.4);
-  }
-  40% {
-    transform: scale(0.6);
-  }
-  50% {
-    transform: scale(0.7);
-  }
-  60% {
-    transform: scale(0.8);
-  }
-  80% {
-    transform: scale(0.9);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.live-button > p {
-  font-weight: 500;
-  letter-spacing: 0.6px;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-}
-
-.first-team,
-.second-team {
-  display: flex;
-  align-items: center;
-  gap: 0.9375rem;
-}
-.first-team-name,
-.second-team-name {
-  font-weight: 600;
-  font-size: 1.3125rem;
-  line-height: 1.6rem;
-}
-.match-vs {
-  font-weight: 600;
-  font-size: 1.25rem;
-  line-height: 1.4375rem;
-}
-.status {
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.875;
-  color: #4ae96d;
-}
-.watch-button {
-  background-color: #ff4747;
-  border-radius: 0.5rem;
-  height: 2.3125rem;
-  width: 6rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.0625rem;
-  line-height: 1.1875rem;
-  border: none;
-  color: white;
-  font-weight: 500;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-}
-.watch-button:hover {
-  background-color: #d32727;
 }
 @media (max-width: 80rem) {
   .container {
     width: 90%;
-  }
-  .match {
-    width: 91%;
   }
 }
 @media (max-width: 56.25rem) {
@@ -190,7 +64,7 @@
   }
   .top-screen {
     display: flex;
-    align-items: start;
+    align-items: center;
     gap: 2.25rem;
     justify-content: center;
   }
@@ -209,7 +83,6 @@
     gap: 1.5rem;
     justify-content: start;
     cursor: grabbing;
-    justify-content: center;
     overflow-x: scroll;
     scroll-behavior: smooth;
   }
@@ -231,156 +104,24 @@
   }
 
   .time-zone {
-    margin-bottom: 0.5rem;
-    font-weight: 400;
-    font-size: 0.875rem;
-    line-height: 1rem;
-    opacity: 0.5;
-    margin-left: auto;
-    display: flex;
-    justify-content: end;
-  }
-  .hot-matches,
-  .other-matches {
-    max-width: 63.75rem;
-    margin: auto;
-  }
-  .other-matches {
-    margin-top: 4rem;
-    margin-bottom: 4.4375rem;
-  }
-  .matches {
-    margin-top: 0.5rem;
-    display: flex;
-    align-items: start;
-    flex-direction: column;
-    gap: 1.625rem;
+    margin-bottom: 0.3rem;
+    font-size: 0.7rem;
+    line-height: .8rem;
   }
   .title {
-    font-size: 3rem;
-    line-height: 3.5rem;
-    margin-bottom: 1.3rem;
-    margin-top: 1.75rem;
-  }
-  .match {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    background: #203639;
-    border-radius: 0.6875rem;
-    padding: 1.375rem 2.4375rem;
-  }
-  .match-second {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .match-details {
-    display: flex;
-    align-items: start;
-    flex-direction: column;
-    gap: 0.5rem;
-    font-size: 1rem;
-    line-height: 1.1875rem;
-    display: none;
-  }
-  .leage {
-    font-weight: 300;
-    color: white;
-    opacity: 0.8;
-  }
-  .live-button {
-    padding: 0.3rem 0.6rem;
-    border: 1px solid var(--green);
-    color: var(--green);
-    display: flex;
-    align-items: center;
-    border-radius: 3px;
-    box-shadow: 0rem 0.3rem 0.5rem #41f3315b;
-  }
-  .live-button > span {
-    width: 1rem;
-    height: 1rem;
-    background-color: var(--green);
-    border-radius: 50%;
-    margin-right: 0.25rem;
-    box-shadow: 0rem 0.3rem 0.5rem #41f3315b;
-    animation: live 0.8s ease-in-out infinite;
-  }
-  @keyframes live {
-    0% {
-      transform: scale(0.2);
-    }
-    20% {
-      transform: scale(0.4);
-    }
-    40% {
-      transform: scale(0.6);
-    }
-    50% {
-      transform: scale(0.7);
-    }
-    60% {
-      transform: scale(0.8);
-    }
-    80% {
-      transform: scale(0.9);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
+  font-size: 2.125rem;
+  line-height: 1.4375rem;
+  margin-bottom: 0rem;
+  margin-top: 1rem;
+}
 
-  .live-button > p {
-    font-weight: 500;
-    letter-spacing: 0.6px;
-    font-size: 1.1rem;
-    text-transform: uppercase;
+  .other-matches {
+    margin-top: 2.125rem;
+    margin-bottom: 0;
   }
-
-  .first-team,
-  .second-team {
-    display: flex;
-    align-items: center;
-    gap: 0.9375rem;
-  }
-  .first-team-name,
-  .second-team-name {
-    font-weight: 600;
-    font-size: 1.3125rem;
-    line-height: 1.6rem;
-  }
-  .match-vs {
-    font-weight: 600;
-    font-size: 1.25rem;
-    line-height: 1.4375rem;
-  }
-  .status {
-    font-weight: 600;
-    font-size: 1rem;
-    line-height: 1.875;
-    color: #4ae96d;
-    display: none;
-  }
-  .watch-button {
-    background-color: #ff4747;
-    border-radius: 0.5rem;
-    height: 2.3125rem;
-    width: 6rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.0625rem;
-    line-height: 1.1875rem;
-    border: none;
-    color: white;
-    font-weight: 500;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-  }
-  .watch-button:hover {
-    background-color: #d32727;
+}
+@media (max-width: 50rem) {
+  .matches{
+    gap: 1rem;
   }
 }

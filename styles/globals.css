@@ -54,3 +54,6 @@ input {
   border-radius: 8px;
   transition: 0.3s;
 }
+button{
+  border: none;
+}

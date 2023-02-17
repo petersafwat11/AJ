@@ -1,0 +1,268 @@
+.match {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #203639;
+  border-radius: 0.6rem;
+  padding: 1.2rem 2.3rem;
+}
+.match-first {
+  display: none;
+}
+.match-second {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.match-details {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  line-height: 0.95rem;
+}
+.leage {
+  font-weight: 300;
+  color: white;
+  opacity: 0.8;
+}
+.live-button {
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--green);
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  box-shadow: 0rem 0.3rem 0.5rem #41f3315b;
+}
+.live-button > span {
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: var(--green);
+  border-radius: 50%;
+  margin-right: 0.1rem;
+  margin-left: 0.25rem;
+  margin-top: -2px;
+  box-shadow: 0rem 0.3rem 0.5rem #41f3315b;
+  animation: live 0.8s ease-in-out infinite;
+}
+@keyframes live {
+  0% {
+    transform: scale(0.2);
+  }
+  20% {
+    transform: scale(0.4);
+  }
+  40% {
+    transform: scale(0.6);
+  }
+  50% {
+    transform: scale(0.7);
+  }
+  60% {
+    transform: scale(0.8);
+  }
+  80% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.live-button > p {
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+}
+
+.first-team,
+.second-team {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.first-team-name,
+.second-team-name {
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.28rem;
+}
+.match-vs {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.15rem;
+}
+.status {
+  font-weight: 600;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #4ae96d;
+}
+.watch-button {
+  background-color: #ff4747;
+  border-radius: 0.5rem;
+  height: 2rem;
+  width: 5.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  line-height: 0.95rem;
+  border: none;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.watch-button:hover {
+  background-color: #d32727;
+}
+@media (max-width: 56.25rem) {
+  .match {
+    padding: 0.9rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .match-first {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    font-size: .8rem;
+    line-height: 1rem;
+  }
+  .match-second {
+    padding-top: 0.6rem;
+    width: 100%;
+  }
+
+  .match-details {
+    display: none;
+  }
+  .leage {
+    font-weight: 300;
+    color: white;
+    opacity: 0.8;
+  }
+  .live-button {
+    padding: 0.25rem 0.4rem;
+  }
+  .live-button > span {
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-left: 0.2rem;
+    margin-top: -1px;
+  }
+
+  .live-button > p {
+    font-size: 0.8rem;
+  }
+
+  .first-team,
+  .second-team {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+  }
+  .first-team-image,
+  .second-team-image {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  .first-team-name,
+  .second-team-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    line-height: 1.1rem;
+  }
+  .first-team-image {
+    order: 2;
+  }
+  .second-team-name {
+    order: 2;
+  }
+  .match-vs {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.15rem;
+  }
+  .status {
+    display: none;
+  }
+  .status-mobile {
+    font-weight: 400;
+    font-size: .75rem;
+    line-height: 1.2;
+    color: #4ae96d;
+  }
+  .watch-button {
+    height: 1.7rem;
+    width: 4rem;
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+    font-weight: 300;
+    border-radius: .35rem;
+  }
+}
+@media (max-width: 28.125rem) {
+  .match-first {
+    font-size: .7rem;
+    line-height: .9rem;
+  }
+  .live-button {
+    padding: 0.2rem 0.3rem;
+  }
+  .live-button > span {
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-left: 0.1rem;
+  }
+
+  .live-button > p {
+    font-size: 0.7rem;
+  }
+
+  .first-team,
+  .second-team {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+  .first-team-image,
+  .second-team-image {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .first-team-name,
+  .second-team-name {
+    font-size: 0.7rem;
+    line-height: .9rem;
+  }
+  .match-vs {
+    font-weight: 500;
+    font-size: .8rem;
+    line-height: 1rem;
+  }
+  .status-mobile {
+    font-weight: 400;
+    font-size: .75rem;
+    line-height: 1.2;
+    color: #4ae96d;
+  }
+  .watch-button {
+    height: 1.5rem;
+    width: 3.5rem;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    font-weight: 300;
+    border-radius: .35rem;
+  }
+}
