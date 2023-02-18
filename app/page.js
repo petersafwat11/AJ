@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
-import Match from "../components/match/match";
+import Match from "../components/match/Match";
 import classes from "./page.module.css";
 const Page = () => {
   const router = useRouter();
