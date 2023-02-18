@@ -1,0 +1,44 @@
+.sports {
+  margin-top: 1.93rem;
+  display: flex;
+  align-items: start;
+  gap: 1.3rem;
+  justify-content: center;
+}
+.sport-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.38rem;
+  cursor: pointer;
+  padding-bottom: 1rem;
+  border-bottom: 4.5px solid transparent;
+}
+.sport-element:hover {
+  border-bottom: 5px solid #03a1cd;
+}
+@media (max-width: 56.25rem) {
+  .sports {
+    margin-top: .875rem;
+    gap: .875rem;
+    font-size: .625rem;
+    line-height: .75rem;
+
+  }
+  .sport-element {
+    /* display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer; */
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid transparent;
+  }
+  .sport-element:hover{
+    border-bottom: 1px solid #03a1cd;
+  }
+  .sport-image {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}

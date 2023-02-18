@@ -1,0 +1,49 @@
+.privacy-policy {
+  max-width: min(85%, 45rem);
+  margin: auto;
+}
+
+.top-heading {
+  margin-top: 3.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  color: #00c4fb;
+}
+.top-heading > span {
+  flex-grow: 1;
+  background-color: #00c4fb;
+  height: 1px;
+}
+.container::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+.container::-webkit-scrollbar-track {
+  background: inherit;
+}
+
+/* Handle */
+.container::-webkit-scrollbar-thumb {
+  background: rgba(217, 217, 217, 0.6);
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+.container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.container {
+  width: 100%;
+  margin-top: 1.15rem;
+  max-height: 62.5rem;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  background-color: #0d1317;
+  border-radius: 1.125rem;
+  padding: 2.4375rem 2.34rem 2.8125rem;
+}
