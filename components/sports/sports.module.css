@@ -2,20 +2,21 @@
   margin-top: 1.93rem;
   display: flex;
   align-items: start;
-  gap: 1.3rem;
+  gap: 1.875rem;
   justify-content: center;
 }
 .sport-element {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.38rem;
+  gap: 0.3rem;
   cursor: pointer;
-  padding-bottom: 1rem;
-  border-bottom: 4.5px solid transparent;
+  padding-bottom: .2rem;
+  border-bottom: 3px solid transparent;
+  font-size: .8rem;
 }
 .sport-element:hover {
-  border-bottom: 5px solid #03a1cd;
+  border-bottom: 3px solid #03a1cd;
 }
 @media (max-width: 56.25rem) {
   .sports {

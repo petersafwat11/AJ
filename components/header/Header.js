@@ -16,14 +16,14 @@ const Header = () => {
           <Image
             src="/svg/social-icons/twitter.svg"
             alt="twitter-icon"
-            width="23"
-            height="23"
+            width="20"
+            height="20"
           />
           <Image
             src="/svg/social-icons/facebook.svg"
             alt="facebook-icon"
-            width="23"
-            height="23"
+            width="20"
+            height="20"
           />
           <Image
             src="/svg/social-icons/social.svg"
@@ -34,20 +34,20 @@ const Header = () => {
           <Image
             src="/svg/social-icons/insta.svg"
             alt="insta-icon"
-            width="23"
-            height="23"
+            width="20"
+            height="20"
           />
           <Image
             src="/svg/social-icons/ticktok.svg"
             alt="tiktok-icon"
-            width="23"
-            height="23"
+            width="20"
+            height="20"
           />
           <Image
             src="/svg/social-icons/telegram.svg"
             alt="telegram-icon"
-            width="23"
-            height="23"
+            width="20"
+            height="20"
           />
         </div>
         <div className={classes["header-lang"]}>

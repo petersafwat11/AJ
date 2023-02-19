@@ -3,7 +3,7 @@ import classes from './donate.module.css'
 import Image from 'next/image';
 const donate = () => {
   return (
-    <main className={classes["give-away"]}>
+    <main className={classes["donate"]}>
       <div className={classes["container"]}>
         <div className={classes["donate-heading"]}>
           <h2 className={classes["heading"]}>DONATE</h2>

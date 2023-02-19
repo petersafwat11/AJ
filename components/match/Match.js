@@ -25,21 +25,21 @@ export const Match = () => {
             className={classes["first-team-image"]}
             src="/svg/teams/man-united.svg"
             alt="nfl"
-            width="37"
-            height="37"
+            width="31"
+            height="31"
           />
           <p className={classes["first-team-name"]}>Man Utd</p>
         </div>
         <div className={classes["match-vs"]}>vs</div>
         <div className={classes["second-team"]}>
-          <p className={classes["second-team-name"]}>Man Utd</p>
+          <p className={classes["second-team-name"]}>Liverpool</p>
 
           <Image
             className={classes["second-team-image"]}
             src="/svg/teams/liverpool.svg"
-            alt="nfl"
-            width="37"
-            height="37"
+            alt="liverpool"
+            width="31"
+            height="31"
           />
         </div>
         <div className={classes["status"]}>2nd Half: 47’</div>

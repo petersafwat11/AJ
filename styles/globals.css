@@ -1,31 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Libre+Franklin:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Libre+Franklin:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap");
 
-:root{
---score-board: #203639;
---gray-dark: #666769;
---green: #41f331;
---blue:#00C4FB;
---btn-background: #ff4747;
+@font-face {
+  font-family: "RobotoRegular";
+  src: url("RobotoCondensed-Regular.woff2") format("woff2"), url("RobotoCondensed-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
---background: #0d1318;
+@font-face {
+  font-family: "RobotoSemiBold";
+  src: url("RobotoCondensed-SemiBold.woff2") format("woff2"), url("RobotoCondensed-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RobotoBold";
+  src: url("RobotoCondensed-Bold.woff2") format("woff2"), url("RobotoCondensed-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --score-board: #203639;
+  --gray-dark: #666769;
+  --green: #41f331;
+  --blue: #00c4fb;
+  --btn-background: #ff4747;
+  --background: #0d1318;
 }
 body {
-
-
   overflow-x: hidden;
-  font-family: 'Roboto Condensed','Lato' ,'Libre Franklin', sans-serif;
+  font-family: "Roboto Condensed", "Lato", "Libre Franklin", sans-serif;
   background: linear-gradient(
-      to right bottom,
-      rgba(13, 19, 23, 0.953),
-      rgba(13, 19, 23, 0.938)
-    );
-    color: white;
-    /* url(/backimage.png); */
+    to right bottom,
+    rgba(13, 19, 23, 0.953),
+    rgba(13, 19, 23, 0.938)
+  );
+  color: white;
+  /* url(/backimage.png); */
   /* background-position: top;
   overscroll-behavior: none;  */
 }
 html {
-  font-family: 'Roboto Condensed','Lato' ,'Libre Franklin', sans-serif;
+  font-family: "Roboto Condensed", "Lato", "Libre Franklin", sans-serif;
 }
 *,
 *::after,
@@ -34,7 +55,7 @@ html {
   margin: 0;
   font-weight: 500;
   box-sizing: border-box;
-  font-family: 'Roboto Condensed','Lato' ,'Libre Franklin', sans-serif;
+  font-family: "Roboto Condensed", "Lato", "Libre Franklin", sans-serif;
 }
 li {
   list-style: none;
@@ -50,10 +71,10 @@ input {
   width: 100%;
   border: none;
   outline: none;
-  padding: 10px;
+  /* padding: 10px; */
   border-radius: 8px;
   transition: 0.3s;
 }
-button{
+button {
   border: none;
 }

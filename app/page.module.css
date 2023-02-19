@@ -1,5 +1,5 @@
 .container {
-  width: 85%;
+  width: 75%;
   margin: auto;
 }
 .time-zone {
@@ -13,11 +13,11 @@
   justify-content: end;
 }
 .matches-container {
-  max-width: 63.75rem;
+  max-width: 52rem;
   margin: auto;
 }
 .other-matches {
-  margin-top: 3.1rem;
+  margin-top: 2rem;
   margin-bottom: 3.5rem;
 }
 .matches {
@@ -28,10 +28,10 @@
   gap: 1.6rem;
 }
 .title {
-  font-size: 2.4rem;
-  line-height: 2.7rem;
-  margin-bottom: 1.3rem;
-  margin-top: 1.75rem;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  margin-bottom: 1rem;
+  margin-top: .75rem;
 }
 @media (max-width: 80rem) {
   .container {

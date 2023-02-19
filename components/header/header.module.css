@@ -1,5 +1,5 @@
 .header-top {
-  max-width: auto;
+  max-width: 36rem;
   display: flex;
   justify-content: center;
   padding: 0.82rem 5.625rem .7rem;
@@ -7,21 +7,21 @@
   text-align: center;
   background: url("/topimage.png");
   background-position: bottom;
-  /* background-size: 85%; */
+  background-size: 85%;
   background-repeat: no-repeat;
-  height: 5rem;
+  height: 3.5rem;
 }
 .header-top > p {
-  font-size: 0.934rem;
-  line-height: 1.125rem;
+  font-size: 0.75rem;
+  line-height: .85rem;
   padding-bottom: 0.7rem ;
 }
 .header-social{
   display: flex ;
   align-items: center;
   justify-content: center;
-  gap: 2.3rem;
-  margin: .75rem auto 0;
+  gap: 1.5rem;
+  margin: .6rem auto 0;
 }
 .header-social > *{
   cursor: pointer;
@@ -30,9 +30,10 @@
   display: flex ;
   align-items: center;
   justify-content: center;
-  gap: 1.8rem;
+  gap: 1.5rem;
   margin: .75rem auto 0; 
-  line-height: 1.87rem;
+  line-height: 1.4rem;
+  font-size: .85rem;
 }
 .header-lang > p{
 transition: all .4s ease-out;

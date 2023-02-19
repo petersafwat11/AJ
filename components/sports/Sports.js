@@ -17,8 +17,8 @@ const Sports = () => {
           className={classes["sport-image"]}
           src="/svg/sports/nfl.svg"
           alt="nfl"
-          width="65"
-          height="52"
+          width="57"
+          height="57"
         />
         <p>Nfl</p>
       </div>
@@ -32,8 +32,8 @@ const Sports = () => {
           className={classes["sport-image"]}
           src="/svg/sports/basketball.svg"
           alt="nfl"
-          width="65"
-          height="52"
+          width="57"
+          height="57"
         />
         <p>Basketball</p>
       </div>
@@ -47,8 +47,8 @@ const Sports = () => {
           className={classes["sport-image"]}
           src="/svg/sports/football.svg"
           alt="nfl"
-          width="65"
-          height="52"
+          width="57"
+          height="57"
         />
         <p>Football</p>
       </div>
@@ -62,8 +62,8 @@ const Sports = () => {
           className={classes["sport-image"]}
           src="/svg/sports/boxing.svg"
           alt="boxing"
-          width="65"
-          height="52"
+          width="57"
+          height="57"
         />
         <p>Boxing</p>
       </div>
@@ -77,8 +77,8 @@ const Sports = () => {
           className={classes["sport-image"]}
           src="/svg/sports/other.svg"
           alt="other"
-          width="65"
-          height="52"
+          width="57"
+          height="57"
         />
         <p>Others</p>
       </div>

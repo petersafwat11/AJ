@@ -45,5 +45,27 @@
   scroll-behavior: smooth;
   background-color: #0d1317;
   border-radius: 1.125rem;
-  padding: 2.4375rem 2.34rem 2.8125rem;
+  padding: 2.9rem 4.2rem 1.36rem;
+  color: #c3c4c5;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.22rem;
+}
+.privacy-policy-haeding {
+  color: #606364;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  font-size: 1rem;
+  /* gap: 0.1rem; */
+}
+.wrapper {
+  margin-top: 1.3rem;
+}
+.wrapper-list {
+  margin-top: 1rem;
+  list-style: circle !important;
+}
+.privay-policy-heading {
+  opacity: white;
 }
