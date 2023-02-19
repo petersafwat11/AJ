@@ -4,8 +4,8 @@
   align-items: center;
   justify-content: space-between;
   background: #203639;
-  border-radius: 0.6rem;
-  padding: 1.2rem 2.3rem;
+  border-radius: 0.55rem;
+  padding: 1rem 1.75rem
 }
 .match-first {
   display: none;
@@ -21,19 +21,16 @@
   display: flex;
   align-items: start;
   flex-direction: column;
-  gap: 0.4rem;
-  font-size: 0.59rem;
-  line-height: 0.8rem;
-  font-weight: 400;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  line-height: .9rem;
 }
 .leage {
-  font-size: .57rem;
-  font-weight: 500;
-  color: white;
-  opacity: 0.8;
+  color: #ffffff68;
+  /* opacity: 0.8; */
 }
 .live-button {
-  padding: 0.25rem 0.7rem;
+  padding: 0.25rem 0.6rem;
   border: 1px solid var(--green);
   color: var(--green);
   display: flex;
@@ -47,7 +44,7 @@
   background-color: var(--green);
   border-radius: 50%;
   margin-right: 0.1rem;
-  margin-left: 0.25rem;
+  margin-left: 0.1rem;
   margin-top: -2px;
   box-shadow: 0rem 0.3rem 0.5rem #41f3315b;
   animation: live 0.8s ease-in-out infinite;
@@ -78,8 +75,7 @@
 
 .live-button > p {
   font-weight: 500;
-  letter-spacing: 0.6px;
-  font-size: 0.88rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
 }
 
@@ -91,19 +87,19 @@
 }
 .first-team-name,
 .second-team-name {
-  font-weight: 500;
-  font-size: 1rem;
-  line-height: 1.2rem;
+  font-weight: 600;
+  font-size: .98rem;
+  line-height: 1.125rem;
 }
 .match-vs {
-  font-weight: 700;
-  font-size: .7rem;
-  line-height: 1rem;
+  font-weight: 600;
+  font-size: .98rem;
+  line-height: 1.125rem;
 }
 .status {
-  font-weight: 500;
-  font-size: 0.56rem;
-  line-height: 1.5;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1;
   color: #4ae96d;
 }
 .watch-button {
@@ -111,12 +107,12 @@
   border-radius: 0.3rem;
   /* height: 1.3rem;
   width: 3.15rem; */
-  padding: .3rem .75rem;;
+  padding: .3rem 1.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
-  line-height: 0.75rem;
+  font-size: 0.8rem;
+  line-height: 1.1rem;
   border: none;
   color: white;
   font-weight: 500;
