@@ -74,3 +74,73 @@
   border-radius: 0.42rem;
   cursor: pointer;
 }
+@media (max-width: 56.25rem) {
+  .top-heading {
+    margin-top: 1.65rem;
+    gap: 0.4rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+
+  .container {
+    margin-top: 1rem;
+    border-radius: 1rem;
+  }
+  .disclaimer {
+    padding: 1.54rem 3.34rem 2.96rem;
+    gap: 0.8rem;
+  }
+  .disclaimer-heading {
+    font-size: 1.35rem;
+    line-height: 1.58rem;
+  }
+  .disclaimer-para {
+    gap: 1rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+  .second-part {
+    background: #172026;
+    padding: 4.75rem 4.7rem 2.2rem;
+  }
+  .companies-logoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 4.2rem;
+    margin-bottom: 2.9rem;
+  }
+  .contact-us-button {
+    width: 6.2rem;
+    height: 2.15rem;
+    font-size: 0.6rem;
+    line-height: 0.8rem;
+  }
+}
+
+@media (max-width: 43.75rem) {
+  .disclaimer {
+    padding: 1rem 2.15rem 2rem;
+  }
+  .disclaimer-heading {
+    font-size: 1.35rem;
+    line-height: 1.58rem;
+  }
+  .disclaimer-para {
+    gap: 1rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+  .second-part {
+    padding: 2rem 1.8rem 1.45rem;
+  }
+  .companies-logoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    grid-row-gap: 2rem;
+  }
+  .companies-logoes > *{
+    width: 6rem;
+    height: 1.5rem;
+  }
+}

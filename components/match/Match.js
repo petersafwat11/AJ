@@ -1,7 +1,11 @@
+"use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 import classes from "./match.module.css";
+
 export const Match = () => {
+  const router = useRouter();
   return (
     <div className={classes["match"]}>
       <div className={classes["match-first"]}>
@@ -44,7 +48,14 @@ export const Match = () => {
         </div>
         <div className={classes["status"]}>2nd Half: 47’</div>
         <div className={classes["action-button"]}>
-          <button className={classes["watch-button"]}>watch</button>
+          <button
+            onClick={() => {
+              router.push("/watch");
+            }}
+            className={classes["watch-button"]}
+          >
+            watch
+          </button>
         </div>
       </div>
     </div>

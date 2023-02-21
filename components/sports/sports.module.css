@@ -20,6 +20,8 @@
 }
 @media (max-width: 56.25rem) {
   .sports {
+    margin-top: 0;
+    padding-top: .7rem;
     display: flex;
     align-items: start;
     gap: 1.5rem;

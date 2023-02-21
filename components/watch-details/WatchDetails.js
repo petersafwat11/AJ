@@ -1,21 +1,32 @@
-import React from 'react'
+import Image from "next/image";
+import React from "react";
+import LiveButton from "../live-button/LiveButton";
 import classes from "./watchDetails.module.css";
-import Image from 'next/image'
-const WatchDetails = ({lieageImage, firstTeamImage, firstTeamName, seconteamImage, seconteamName, date, place, half}) => {
+const WatchDetails = ({
+  lieageImage,
+  firstTeamImage,
+  firstTeamName,
+  seconteamImage,
+  seconteamName,
+  date,
+  place,
+  half,
+}) => {
   return (
     <div className={classes["watch-details"]}>
       <div className={classes["watch-details-first"]}>
         <Image
           className={classes["sport-image"]}
-          src="/svg/sports/other.svg"
+          src={lieageImage}
           alt="other"
-          width="120"
+          width="121"
           height="51"
         />
+        <p className={classes["date"]}>{date}</p>
+        <p className={classes["place"]}>{place}</p>
       </div>
       <div className={classes["watch-details-second"]}>
         <div className={classes["first-team"]}>
-          <p className={classes["first-team-name"]}>{firstTeamName}</p>
           <Image
             className={classes["first-team-image"]}
             src={firstTeamImage}
@@ -23,9 +34,10 @@ const WatchDetails = ({lieageImage, firstTeamImage, firstTeamName, seconteamImag
             width="104"
             height="104"
           />
+          <p className={classes["first-team-name"]}>{firstTeamName}</p>
         </div>
-        <span className={classes['vs']}>VS</span>
-        <div className={classes['second-team']}>
+        <span className={classes["vs"]}>VS</span>
+        <div className={classes["second-team"]}>
           <p className={classes["second-team-name"]}>{seconteamName}</p>
           <Image
             className={classes["second-team-image"]}
@@ -36,9 +48,12 @@ const WatchDetails = ({lieageImage, firstTeamImage, firstTeamName, seconteamImag
           />
         </div>
       </div>
-      <div className={classes["watch-details-last"]}></div>
+      <div className={classes["watch-details-last"]}>
+        <p className={classes["half"]}>{half}</p>
+        <LiveButton/>
+      </div>
     </div>
   );
-}
+};
 
-export default WatchDetails
+export default WatchDetails;

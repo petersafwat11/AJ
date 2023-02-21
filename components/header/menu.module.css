@@ -27,7 +27,7 @@
   justify-content: center;
 }
 .menu-desktop-list-item {
-  padding: 0.25rem .75rem;
+  padding: 0.25rem 0.75rem;
   border-radius: 0.4rem;
   transition: 0.3s all ease-out;
   cursor: pointer;
@@ -43,7 +43,7 @@
   gap: 0.625rem;
 }
 .menu-desktop-actions-button {
-  padding: 0.35rem .76rem;
+  padding: 0.35rem 0.76rem;
   background: var(--btn-background);
   border-radius: 0.4rem;
   font-size: inherit;
@@ -198,4 +198,14 @@
   background-color: black;
   opacity: 0.6;
   z-index: 9;
+}
+@media (max-width: 43.75rem) {
+  .menu-mobile-logo {
+    margin-right: 40vw;
+  }
+}
+@media (max-width: 31.25rem) {
+  .menu-mobile-logo {
+    margin-right: 33vw;
+  }
 }

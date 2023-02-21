@@ -1,7 +1,10 @@
+'use client'
 import Image from "next/image";
 import React from "react";
 import classes from "./footer.module.css";
+import {useRouter} from 'next/navigation'
 const Footer = () => {
+  const router = useRouter();
   return (
     <footer className={classes["footer"]}>
       <div className={classes["footer-container"]}>
@@ -14,7 +17,14 @@ const Footer = () => {
           />
           <div className={classes["footer-actions"]}>
             <button className={classes["protected-button"]}>PROTECTED</button>
-            <button className={classes["dmca-button"]}>DMCA</button>
+            <button
+              onClick={() => {
+                router.push("/DMCA");
+              }}
+              className={classes["dmca-button"]}
+            >
+              DMCA
+            </button>
           </div>
           <div className={classes["footer-social"]}>
             <div className={classes["footer-social-element"]}>
@@ -93,22 +103,47 @@ const Footer = () => {
               Quick Menus
             </h4>
             <ul className={classes["footer-container-links-list"]}>
-              <li className={classes["footer-container-links-list-item"]}>
+              <li
+                onClick={() => {
+                  router.push("/");
+                }}
+                className={classes["footer-container-links-list-item"]}
+              >
                 About Us
               </li>
-              <li className={classes["footer-container-links-list-item"]}>
+              <li
+                onClick={() => {
+                  router.push("/contact-us");
+                }}
+                className={classes["footer-container-links-list-item"]}
+              >
                 Contact Us
               </li>
-              <li className={classes["footer-container-links-list-item"]}>
+              <li
+                onClick={() => {
+                  router.push("/donate");
+                }}
+                className={classes["footer-container-links-list-item"]}
+              >
                 Donate
               </li>
-              <li className={classes["footer-container-links-list-item"]}>
+              <li
+                onClick={() => {
+                  router.push("/give-away");
+                }}
+                className={classes["footer-container-links-list-item"]}
+              >
                 Giveaways
               </li>
             </ul>
           </div>
           <div className={classes["footer-container-links"]}>
-            <h4 className={classes["footer-container-links-heading"]}>
+            <h4
+              onClick={() => {
+                router.push("/");
+              }}
+              className={classes["footer-container-links-heading"]}
+            >
               Statistics
             </h4>
             <ul className={classes["footer-container-links-list"]}>
@@ -127,7 +162,12 @@ const Footer = () => {
             </ul>
           </div>
           <div className={classes["footer-container-links"]}>
-            <h4 className={classes["footer-container-links-heading"]}>
+            <h4
+              onClick={() => {
+                router.push("/");
+              }}
+              className={classes["footer-container-links-heading"]}
+            >
               Sports
             </h4>
             <nav className={classes["footer-container-links-list"]}>

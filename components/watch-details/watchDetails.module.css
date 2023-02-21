@@ -1,0 +1,50 @@
+.watch-details {
+  margin: 3.2rem auto 0;
+  max-width: 55rem;
+}
+.watch-details-first {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
+}
+.date,
+.place {
+  font-size: 1.93rem;
+  line-height: 1.6rem;
+  margin-top: 0.125rem;
+}
+.watch-details-second {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.first-team,
+.second-team {
+  display: flex;
+  align-items: center;
+  gap: 3.25rem;
+}
+.first-team-name,
+.second-team-name {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+.vs {
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.25rem;
+}
+.watch-details-last{
+    margin-top: .3rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.half{
+    font-weight: 600;
+    font-size: .9375rem;
+    line-height: 1.17rem;
+    color: #4AE96D;
+}

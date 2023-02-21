@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Chat from "../../components/chat/Chat";
+import LiveButton from "../../components/live-button/LiveButton";
 import ShareLinks from "../../components/shareLinks/ShareLinks";
 import classes from "./channels.module.css";
 const page = () => {
@@ -10,10 +11,8 @@ const page = () => {
         <div className={classes["top-heading"]}>
           <span className={classes["heading-span"]}> Now Playing </span>
           <h3 className={classes["heading-title"]}>Sky Sports</h3>
-          <button className={classes["heading-button"]}>
-            <span></span>
-            LIVE
-          </button>
+          <LiveButton/>
+         
         </div>
         <div className={classes["watch-video-wrapper"]}>
           <div className={classes["watch-video-first"]}>

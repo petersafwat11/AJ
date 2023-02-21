@@ -15,27 +15,6 @@
   font-size: 1.875rem;
   line-height: 2.2rem;
 }
-.heading-button {
-  margin-top: 1rem;
-  background: var(--btn-background);
-  border-radius: 0.58rem;
-  color: white;
-  padding: 0.24rem 1rem 0.24rem 2.1rem;
-  font-size: 1.1rem;
-  line-height: 1.3rem;
-  font-weight: 300;
-  position: relative;
-  cursor: pointer;
-}
-.heading-button > span {
-  width: 0.65rem;
-  height: 0.65rem;
-  border-radius: 50%;
-  background-color: white;
-  position: absolute;
-  left: 1rem;
-  top: 0.6rem;
-}
 .watch-video-wrapper {
   margin-top: 1rem;
   margin-left: auto;

@@ -9,11 +9,19 @@ const Page = () => {
   const router = useRouter();
   return (
     <div className={classes["container"]}>
+      <div className={classes["search-mobile"]}>
+        <input
+          className={classes["search-mobile-input"]}
+          type="text"
+          placeholder="Enter keyword..."
+        />
+        <button className={classes["search-mobile-button"]}>SEARCH</button>
+      </div>
       <div className={classes["top-screen"]}>
         <div className={classes["top-screen-live-icon"]}>
-          <Image src="/live.png" alt="live" width="29" height="32" />
+          <Image src="/svg/live.svg" alt="live" width="29" height="32" />
         </div>
-        <Sports/>
+        <Sports />
       </div>
       <div className={classes["matches-container"]}>
         <section className={classes["hot-matches"]}>

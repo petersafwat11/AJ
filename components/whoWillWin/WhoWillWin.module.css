@@ -1,0 +1,26 @@
+.who-will-win {
+  background: #0d1317;
+  border-radius: 0.56rem;
+  padding: 0.85rem 2.2rem 1.25rem 2.15rem;
+  max-width: 26.7rem;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.first-team, .second-team{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: .98rem;
+}
+.first-team-percentage, .second-team-percentage{
+    margin-left: .42rem;
+    flex-grow: 1;
+    background-color: white;
+    height: .75rem;
+    border-radius: 1.25rem;
+}
+.first-team-percentage > span, .second-team-percentage > span{
+    background-color: ;
+}

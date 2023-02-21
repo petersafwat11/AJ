@@ -1,4 +1,84 @@
-.news-letter{
-    background: #182228;
-    box-shadow: 0px 20px 50px rgba(18, 17, 39, 0.08);
+.news-letter {
+  margin-top: 5rem;
+  background: #182228;
+  box-shadow: 0px 20px 50px rgba(18, 17, 39, 0.08);
+  width: 100%;
+}
+.container {
+  display: flex;
+  align-items: center;
+  gap: 8.7rem;
+  padding: 2.9rem 2rem 2.76rem;
+  max-width: 61rem;
+  margin: auto;
+}
+.news-letter-first {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  flex-direction: column;
+  max-width: 27.5rem;
+}
+.title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 2.34rem;
+}
+.para {
+  color: rgba(255, 255, 255, 0.56);
+  font-weight: 400;
+  font-size: 1.17rem;
+  line-height: 2.1rem;
+}
+.news-letter-second {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-direction: column;
+}
+.notify {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.notify-input {
+  padding: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: rgba(18, 17, 39, 0.4);
+  background-color: white;
+  width: 12.5rem;
+}
+.notify-button {
+  background-color: #01bcf1;
+  border-radius: 0.5rem;
+  padding: 0.65rem 2.05rem;
+  font-size: 1.125rem;
+  line-height: 1.7rem;
+  font-weight: 500;
+  color: white;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.news-letter-second-para {
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.36rem;
+  color: rgba(255, 255, 255, 0.48);
+}
+.news-letter-second-para > span {
+  color: #01bcf1;
+  cursor: pointer;
+}
+@media (max-width: 75rem) {
+  .container {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 56.25rem) {
+  .news-letter {
+    display: none;
+  }
 }

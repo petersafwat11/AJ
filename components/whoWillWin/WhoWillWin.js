@@ -1,37 +1,39 @@
-import React from 'react'
-import classes from './WhoWillWin.mobile.css'
 import Image from "next/image";
+import React from "react";
+import classes from "./WhoWillWin.module.css";
 
 const WhoWillWin = () => {
   return (
     <div className={classes["who-will-win"]}>
-      <h4>Who will win? </h4>
+      <h4 className={classes["heading"]}>Who will win? </h4>
       <div className={classes["first-team"]}>
         <Image
           className={classes["team-image"]}
-          src="/svg/teams/man-united.svg"
+          src="/svg/watch/man-united.png"
           alt="nfl"
-          width="31"
-          height="31"
+          width="27"
+          height="27"
         />
-        <span className={classes["first-team-percentage"]}></span>
+        <span className={classes["first-team-percentage"]}>
+          <span></span>
+        </span>
         <p className={classes["first-team-para"]}>73%</p>
       </div>
       <div className={classes["second-team"]}>
         <Image
           className={classes["team-image"]}
-          src="/svg/teams/liverpool.svg"
+          src="/svg/watch/Liverpool.png"
           alt="liverpool"
-          width="31"
-          height="31"
+          width="27"
+          height="27"
         />
         <span className={classes["second-team-percentage"]}>
-            <span></span>
+          <span></span>
         </span>
         <p className={classes["second-team-para"]}>27%</p>
       </div>
     </div>
   );
-}
+};
 
-export default WhoWillWin
+export default WhoWillWin;

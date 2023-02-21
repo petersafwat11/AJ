@@ -1,12 +1,12 @@
-.container {
+/* .container {
   width: 75%;
   margin: auto;
-}
+} */
 .time-zone {
   margin-bottom: 0.5rem;
   font-weight: 400;
   font-size: 0.7rem;
-  line-height: .8rem;
+  line-height: 0.8rem;
   opacity: 0.5;
   margin-left: auto;
   display: flex;
@@ -27,33 +27,67 @@
   flex-direction: column;
   gap: 1.6rem;
 }
+.top-screen-live-icon,
+.search-mobile {
+  display: none;
+}
 .title {
   font-size: 2.5rem;
   line-height: 2.7rem;
   margin-bottom: 1rem;
-  margin-top: .75rem;
+  margin-top: 0.75rem;
 }
 @media (max-width: 80rem) {
-  .container {
+  .matches-container {
     width: 90%;
   }
 }
 @media (max-width: 56.25rem) {
-  .container {
+  .matches-container {
     width: 95%;
     margin: auto;
+  }
+  .search-mobile {
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 95%;
+    max-width: 30rem;
+    margin: .75rem auto 0;
+  }
+  .search-mobile-input {
+    padding: 0.875rem 0.5rem;
+    background-color: #0e1317;
+    color: white;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    border-radius: 0.45rem;
+  }
+  .search-mobile-button {
+    background-color: #02b3e5;
+    border-radius: 0.45rem;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    padding: 0.85rem 1.45rem;
+    color: white;
   }
   .top-screen {
     display: flex;
     align-items: center;
     gap: 2.25rem;
     justify-content: center;
+    margin-top: 1.125rem;
+    height: 3.7rem;
+    background-color: #0c1215;
   }
   .top-screen-live-icon {
+    display: inline-block;
     background-color: #00c4fb;
+    padding: 0.8rem 1.7rem;
+    border-radius: 0.45rem;
   }
   .top-screen-live-icon > * {
-    padding: 0.8rem 1.6rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,14 +95,14 @@
   .time-zone {
     margin-bottom: 0.3rem;
     font-size: 0.7rem;
-    line-height: .8rem;
+    line-height: 0.8rem;
   }
   .title {
-  font-size: 2.125rem;
-  line-height: 1.4375rem;
-  margin-bottom: 0rem;
-  margin-top: 1rem;
-}
+    font-size: 2.125rem;
+    line-height: 1.4375rem;
+    margin-bottom: 0rem;
+    margin-top: 1rem;
+  }
 
   .other-matches {
     margin-top: 2.125rem;
@@ -76,7 +110,7 @@
   }
 }
 @media (max-width: 50rem) {
-  .matches{
+  .matches {
     gap: 1rem;
   }
 }
