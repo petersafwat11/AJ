@@ -1,0 +1,75 @@
+.fixure {
+  background-color: #0d1317;
+  border-radius: 0.9rem;
+  /* padding: 2.95rem 0 0; */
+  width: 100%;
+}
+.date-heading {
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+}
+.date-para {
+  font-size: 0.7rem;
+  line-height: 0.8rem;
+  opacity: 0.7;
+}
+.matches {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  width: 100%;
+}
+.match {
+  width: 100%;
+  display: grid;
+  /* align-items: center;
+  justify-content: center; */
+  /* width: 72%;
+  margin-left: auto; */
+  grid-template-columns: 25% 15% 25% 1fr;
+  /* justify-content: space-between; */
+  padding: 0.7rem 0 0.52rem 28%;
+  border-bottom: 1px solid #8e8e8e;
+}
+.first-team,
+.second-team {
+  display: flex;
+  align-items: center;
+  gap: 0.94rem;
+}
+.result,.vs {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  font-weight: 600;
+}
+.first-team-name,
+.second-team-name {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  line-height: 1.125rem;
+}
+.match-date {
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+  justify-self: end;
+}
+.today,
+.two-days-ago,
+.yesterday,
+.three-days-ago {
+  padding: 2rem 2.3rem 2.1rem 2.7rem;
+}
+.today {
+  padding-top: 2.95rem;
+}
+.yesterday,
+.three-days-ago {
+  background-color: #161f24;
+}
+.three-days-ago {
+  padding-bottom: 4.65rem;
+}

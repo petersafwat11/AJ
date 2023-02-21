@@ -1,52 +1,42 @@
+'use client'
 import Image from "next/image";
-import React from "react";
+import React, { useState} from "react";
+import LeagueMenu from "../../components/leage/League";
 import StatisticsSports from "../../components/statistics-sport/statistics-sports";
+import FixtureAndResults from "../../components/statistics/fixitureAndResults/FixtureAndResults";
+import Standings from "../../components/statistics/standings/Standings";
 import classes from "./statistics.module.css";
-const statistics = () => {
+
+const Statistics = () => {
+  const [statisticsType, setStatisticsType] = useState("fixtures");
   return (
     <div className={classes["statistics"]}>
       <div className={classes["container"]}>
-        <StatisticsSports />
-        <div className={classes["most-important-lieges"]}>
-          <Image
-            src="/svg/statistics/uefa.svg"
-            alt="uefa"
-            height="40"
-            width="40"
-          />
-          <Image
-            src="/svg/statistics/uefa.svg"
-            alt="uefa"
-            height="40"
-            width="40"
-          />
-          <Image
-            src="/svg/statistics/uefa.svg"
-            alt="uefa"
-            height="40"
-            width="40"
-          />
-          <Image
-            src="/svg/statistics/uefa.svg"
-            alt="uefa"
-            height="40"
-            width="40"
-          />
-          <Image
-            src="/svg/statistics/uefa.svg"
-            alt="uefa"
-            height="40"
-            width="40"
-          />
-        </div>
+        {/* <StatisticsSports /> */}
+        <LeagueMenu />
         <div className={classes["statistics-types"]}>
-          <p className={classes["statistics-type"]}>FIXTURES</p>
-          <p className={classes["statistics-type"]}>STANDINGS</p>
+          <p
+            onClick={() => {
+              setStatisticsType("fixtures");
+            }}
+            className={classes["statistics-type"]}
+          >
+            FIXTURES
+          </p>
+          <p
+            onClick={() => {
+              setStatisticsType("standings");
+            }}
+            className={classes["statistics-type"]}
+          >
+            STANDINGS
+          </p>
           <p className={classes["statistics-type"]}>RESULTS</p>
         </div>
+        {statisticsType == "fixtures" ? <FixtureAndResults /> : <Standings />}
       </div>
     </div>
   );
 };
 
-export default statistics;
+export default Statistics;

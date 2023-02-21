@@ -1,16 +1,16 @@
-import React from "react";
-import classes from './news.module.css';
 import Image from "next/image";
+import React from "react";
+import classes from "./news.module.css";
 const page = () => {
   return (
     <main className={classes["news"]}>
+      <div className={classes["top-heading"]}>
+        <h2 className={classes["heading"]}>NEWS</h2>
+        <span></span>
+      </div>
       <div className={classes["container"]}>
-        <div className={classes["news-heading"]}>
-          <h2 className={classes["heading"]}>NEWS</h2>
-          <span></span>
-        </div>
         <div className={classes["news-items"]}>
-          {[1, 2, 3, 4, 5, 6].map((i) => (
+          {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
             <>
               <NewsItem
                 src={"/svg/news-photo.png"}
@@ -30,20 +30,20 @@ const page = () => {
 };
 
 export default page;
-export const NewsItem=( {src, alt, heading, para})=>{
-    return(
+export const NewsItem = ({ src, alt, heading, para }) => {
+  return (
     <div className={classes["news-item"]}>
       <Image
         className={classes["news-item-image"]}
         src={src}
         alt={alt}
-        width='108'
-        height='85'
+        width="108"
+        height="85"
       />
       <div className={classes["news-item-content"]}>
         <h3 className={classes["news-item-heading"]}>{heading}</h3>
         <p className={classes["news-item-para"]}>{para}</p>
       </div>
     </div>
-    )
-}
+  );
+};

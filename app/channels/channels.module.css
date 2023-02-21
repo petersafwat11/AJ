@@ -1,0 +1,148 @@
+.top-heading {
+  margin-top: 6rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.heading-span {
+  opacity: 0.7;
+  font-size: 0.85rem;
+  line-height: 1rem;
+  font-weight: 300;
+}
+.heading-title {
+  font-weight: 600;
+  font-size: 1.875rem;
+  line-height: 2.2rem;
+}
+.heading-button {
+  margin-top: 1rem;
+  background: var(--btn-background);
+  border-radius: 0.58rem;
+  color: white;
+  padding: 0.24rem 1rem 0.24rem 2.1rem;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+  font-weight: 300;
+  position: relative;
+  cursor: pointer;
+}
+.heading-button > span {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  left: 1rem;
+  top: 0.6rem;
+}
+.watch-video-wrapper {
+  margin-top: 1rem;
+  margin-left: auto;
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  justify-content: end;
+  margin-right: 3%;
+  flex-wrap: wrap;
+  height: 40.6rem;
+
+}
+.watch-video-first {
+  width: 55rem;
+  /* margin-left: auto; */
+  /* margin-right: 20rem; */
+}
+.watch-video-share {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 0.5rem;
+}
+.watch-video-share-icon {
+  opacity: 0.3;
+  transition: all 0.2s ease-out;
+}
+.watch-video-share-icon:hover {
+  opacity: 1;
+}
+.watch-video-share-text,
+.watch-video-share-icon {
+  cursor: pointer;
+}
+.watch-video-share-text {
+  color: #ff4b4b;
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+  font-weight: 600;
+  align-self: flex-end;
+  margin-bottom: -2px;
+}
+
+.watch-video {
+  margin-top: 0.4rem;
+  width: 100%;
+  height: 25rem;
+  border-radius: 1.25rem;
+  background: #0c1115;
+}
+.watch-video-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem;
+}
+.watch-video-options-server-name {
+  border-radius: 1.3125rem;
+  padding: 0.45rem 1.3rem;
+  font-size: 0.843rem;
+  line-height: 1rem;
+  /* font-weight: 600; */
+  background: var(--btn-background);
+}
+.watch-video-options > * {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+.watch-video-options-extend-button {
+  border-radius: 1.3125rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.65rem;
+  line-height: 0.75rem;
+  background: rgba(86, 86, 86, 0.5);
+  opacity: 0.8;
+  color: white;
+}
+.watch-video-servers {
+  margin-top: 2.8rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 0.4rem;
+  grid-column-gap: 0.45rem;
+}
+.watch-video-servers-button {
+  background: var(--btn-background);
+  cursor: pointer;
+  height: 2.6rem;
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 0.9375rem;
+  line-height: 1.125rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.watch-video-servers-button:hover {
+  background-color: #d32727;
+}
+.watch-video-second{
+  align-self: flex-end;
+}
+.share-links{
+  margin-left: 5.625rem;
+}

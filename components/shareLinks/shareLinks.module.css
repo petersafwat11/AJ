@@ -1,0 +1,65 @@
+.share-links {
+  background-color: #182228;
+  border-radius: 2.86rem;
+  padding: 2rem 1.45rem 1.83rem 2rem;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  width: max-content;
+}
+.share-links-top {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  width: 100%;
+}
+.share-links-exit {
+  cursor: pointer;
+}
+.share-links-title {
+  font-size: 1.5rem;
+  line-height: 1.78rem;
+  font-weight: 700;
+}
+.share-links-body {
+  margin-top: 1.22rem;
+  display: flex;
+  align-items: center;
+}
+.share-links-websites {
+  display: flex;
+  align-items: center;
+  gap: 1.125rem;
+}
+.share-links-website {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1rem;
+}
+.share-links-carousel {
+  margin-left: -0.3rem;
+  cursor: pointer;
+}
+.share-links-bottom {
+  position: relative;
+  margin-top: 1.78rem;
+  height: 2.53rem;
+  width: 18.3rem;
+  border-radius: 2.25rem;
+  font-size: 1rem;
+  line-height: 1.22rem;
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+.share-links-copy{
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}

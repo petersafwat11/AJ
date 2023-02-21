@@ -1,0 +1,26 @@
+.container {
+  max-width: 50rem;
+  margin: auto;
+}
+.statistics-types {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 28rem;
+  margin-top: 1.4rem;
+  padding-bottom: 0.5rem;
+  margin: auto;
+}
+.statistics-type {
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  font-weight: 500;
+  padding: 0.6rem 0.4rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease-out;
+}
+.statistics-type:hover {
+  border-bottom: 2px solid #03a1cd;
+  color: #03a1cd;
+}

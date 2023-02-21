@@ -1,0 +1,28 @@
+.leagueMenu {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  width: 45%;
+  margin: auto;
+}
+.leagueMenu-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+/* .leagueMenu-container {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+} */
+
+.leagueMenu-container-img > img {
+  background-color: black;
+  opacity: 0.4;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.leagueMenu-container-img > img:hover {
+  opacity: 1;
+}

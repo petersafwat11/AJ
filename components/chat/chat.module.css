@@ -1,0 +1,94 @@
+.chat::before {
+  margin-top: 2rem;
+}
+.chat {
+  margin: auto;
+  width: 25rem;
+  height: 30rem;
+  background: #0d1318;
+  border-radius: 0.475rem;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.chat-top {
+  background-color: #03a1cd;
+  height: 1.875rem;
+  width: 100%;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.chat-top-text {
+  font-size: 0.875rem;
+  line-height: 1rem;
+}
+.chat-top-extend,
+.chat-top-exit {
+  cursor: pointer;
+}
+.chat-body {
+  width: 100%;
+  padding: 1.78rem 0.85rem 0;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 0.47rem;
+}
+.message {
+  width: calc(100% - 1.9rem);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.message-details {
+  background: #292929;
+  border-radius: 0.3rem;
+  padding: 0.75rem 0.65rem 0.5rem;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: start;
+  gap: 3rem;
+  flex-grow: 1;
+}
+.message-username {
+  font-size: 0.56rem;
+  line-height: 0.65rem;
+}
+.message-content {
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+}
+.chat-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  width: 100%;
+  padding: 1.4rem 0.98rem 0.93rem 1.125rem;
+}
+.chat-input {
+  background-color: white;
+  border-radius: 0.3rem;
+  flex-grow: 1;
+  padding: 0 0.85rem;
+  height: 1.54rem;
+  font-weight: 400;
+  font-size: 0.7rem;
+  line-height: 0.85rem;
+}
+.chat-bottom-send {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  background-color: #03a1cd;
+  border-radius: 50%;
+}
+.chat-bottom-send,
+.chat-bottom-emojy,
+.chat-bottom-user {
+  cursor: pointer;
+}

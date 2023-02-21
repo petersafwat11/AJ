@@ -26,8 +26,8 @@ const page = () => {
           <div
             style={{
               background: i % 2 == 0 ? "#182228" : "inherit",
-              position: i == 5 ? "relative" : "",
-              paddingBottom: i==5 ? '5rem ' : ''
+              // position: i == 5 ? "relative" : "",
+              // paddingBottom: i==5 ? '5rem ' : ''
             }}
             key={i}
             className={classes["news-item"]}
