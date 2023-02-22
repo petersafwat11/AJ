@@ -19,7 +19,7 @@
 .share-links-title {
   font-size: 1.5rem;
   line-height: 1.78rem;
-  font-weight: 700;
+  font-family: RobotoBold;
 }
 .share-links-body {
   margin-top: 1.22rem;
@@ -57,9 +57,9 @@
   align-items: center;
   padding: 0 1.5rem;
 }
-.share-links-copy{
-    position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
+.share-links-copy {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
 }

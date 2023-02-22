@@ -28,7 +28,7 @@ const Page = () => {
           <h2 className={classes["title"]}>HOT MATCHES</h2>
           <span className={classes["time-zone"]}>Timezone: UTC +7</span>
           <div className={classes["matches"]}>
-            {[1, 2, 3, 4].map((i) => (
+            {[1, 2, 3].map((i) => (
               <>
                 <Match />
               </>

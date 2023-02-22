@@ -2,7 +2,7 @@
   margin-top: 1.625rem;
 }
 .container {
-  max-width:  90%;
+  max-width: 90%;
   margin: auto;
 }
 .give-away-heading {
@@ -37,7 +37,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   /* grid-column-gap: 2.5rem; */
   padding: 0 0.3rem 1.1rem 0.6875rem;
-  font-weight: 600;
+  font-family: RobotoSemiBold;
   font-size: 1rem;
   line-height: 1.1875rem;
   text-align: center;
@@ -122,16 +122,15 @@
   margin-left: 10.6%;
   margin-right: auto;
 }
-@media (min-width:31.25rem ) {
-    .container {
+@media (min-width: 31.25rem) {
+  .container {
     width: 70%;
     margin: auto;
   }
-
 }
 @media (min-width: 40rem) {
   .container {
-    width: min(30rem,60%);
+    width: min(30rem, 60%);
     margin: auto;
   }
   .give-away-image {
@@ -238,7 +237,7 @@
   }
   .give-away-details {
     padding: 0 0.3rem 1.1rem 0.6875rem;
-    font-weight: 500;
+    font-family: RobotoRegular;
     font-size: 1.3125rem;
     line-height: 1.575rem;
     text-align: center;

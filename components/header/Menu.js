@@ -14,10 +14,10 @@ export const Menu = () => {
             router.push("/");
           }}
           className={classes["menu-desktop-logo"]}
-          src="/LOGO.png"
+          src="/LOGO.svg"
           alt="logo"
-          width="110"
-          height="87"
+          width="100"
+          height="79"
         />
         <ul className={classes["menu-desktop-list"]}>
           <li>

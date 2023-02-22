@@ -56,7 +56,7 @@
 .container-heading-title {
   font-size: 2.15rem;
   line-height: 3rem;
-  font-weight: 700;
+  font-family: RobotoBold;
 }
 .container-heading-para {
   color: rgba(255, 255, 255, 0.56);
@@ -86,7 +86,7 @@
 .question-wrapper-question {
   font-size: 1.125rem;
   line-height: 1.6rem;
-  font-weight: 700;
+  font-family: RobotoBold;
 }
 .question-wrapper-answer {
   color: rgba(255, 255, 255, 0.56);
@@ -106,7 +106,7 @@
 .uesr-feedback-heading {
   font-size: 1.125rem;
   line-height: 1.56rem;
-  font-weight: 700;
+  font-family: RobotoBold;
 }
 .uesr-feedback-para {
   font-size: 0.75rem;
@@ -118,7 +118,7 @@
 .uesr-feedback-button {
   font-size: 1.125rem;
   line-height: 1.56rem;
-  font-weight: 700;
+  font-family: RobotoBold;
   color: white;
   background-color: #03a1cd;
   border-radius: 1.73rem;
@@ -157,7 +157,7 @@
     line-height: 2.4rem;
   }
   .container-heading-para {
-    font-size: .8rem;
+    font-size: 0.8rem;
     line-height: 1.6rem;
   }
 
@@ -187,12 +187,12 @@
   .uesr-feedback-heading {
     font-size: 1rem;
     line-height: 1.25rem;
-    font-weight: 700;
+    font-family: RobotoBold;
   }
   .uesr-feedback-para {
     font-size: 0.6rem;
     line-height: 1rem;
-    margin: 0.1rem 0 .8rem;
+    margin: 0.1rem 0 0.8rem;
   }
   .uesr-feedback-button {
     font-size: 1rem;
@@ -202,8 +202,8 @@
     height: 2rem;
   }
 }
-@media (max-width:31.5rem) {
-  .FAQ{
+@media (max-width: 31.5rem) {
+  .FAQ {
     max-width: 100%;
   }
 }

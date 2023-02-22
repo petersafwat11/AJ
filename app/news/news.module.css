@@ -73,7 +73,7 @@
   width: 58%;
 }
 .news-item-heading {
-  font-weight: 600;
+  font-family: RobotoSemiBold;
   font-size: 1.125rem;
   line-height: 1.3215rem;
 }
@@ -121,7 +121,7 @@
     width: 58%;
   }
   .news-item-heading {
-    font-weight: 600;
+    font-family: RobotoSemiBold;
     font-size: 1rem;
     line-height: 1.15rem;
   }
@@ -196,7 +196,7 @@
     width: 58%;
   }
   .news-item-heading {
-    font-weight: 600;
+    font-family: RobotoSemiBold;
     font-size: 0.625rem;
     line-height: 0.75rem;
   }

@@ -11,7 +11,7 @@
   font-weight: 300;
 }
 .heading-title {
-  font-weight: 600;
+  font-family: RobotoSemiBold;
   font-size: 1.875rem;
   line-height: 2.2rem;
 }
@@ -25,7 +25,6 @@
   margin-right: 3%;
   flex-wrap: wrap;
   height: 40.6rem;
-
 }
 .watch-video-first {
   width: 55rem;
@@ -53,7 +52,7 @@
   color: #ff4b4b;
   font-size: 0.75rem;
   line-height: 0.9rem;
-  font-weight: 600;
+  font-family: RobotoSemiBold;
   align-self: flex-end;
   margin-bottom: -2px;
 }
@@ -77,7 +76,7 @@
   padding: 0.45rem 1.3rem;
   font-size: 0.843rem;
   line-height: 1rem;
-  /* font-weight: 600; */
+  /*  font-family: RobotoSemiBold; */
   background: var(--btn-background);
 }
 .watch-video-options > * {
@@ -85,7 +84,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 500;
+  font-family: RobotoRegular;
 }
 .watch-video-options-extend-button {
   border-radius: 1.3125rem;
@@ -111,7 +110,7 @@
   color: white;
   font-size: 0.9375rem;
   line-height: 1.125rem;
-  font-weight: 500;
+  font-family: RobotoRegular;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -119,9 +118,9 @@
 .watch-video-servers-button:hover {
   background-color: #d32727;
 }
-.watch-video-second{
+.watch-video-second {
   align-self: flex-end;
 }
-.share-links{
+.share-links {
   margin-left: 5.625rem;
 }

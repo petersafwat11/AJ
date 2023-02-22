@@ -12,8 +12,8 @@ const Footer = () => {
           <Image
             src="/svg/LOGO-FOOTER.svg"
             alt="logo"
-            width="177"
-            height="154"
+            width="165"
+            height="142"
           />
           <div className={classes["footer-actions"]}>
             <button className={classes["protected-button"]}>PROTECTED</button>

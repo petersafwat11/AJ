@@ -59,7 +59,7 @@
 .article-top-heading {
   font-size: 1.5rem;
   line-height: 1.75rem;
-  font-weight: 600;
+  font-family: RobotoSemiBold;
 }
 .article-top > span {
   font-size: 0.6rem;
@@ -132,7 +132,7 @@
   .article-top-heading {
     font-size: 1.275rem;
     line-height: 1.48rem;
-    font-weight: 600;
+    font-family: RobotoSemiBold;
   }
   .article-top > span {
     font-size: 0.5rem;

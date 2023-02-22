@@ -1,5 +1,4 @@
 .news-letter {
-  margin-top: 5rem;
   background: #182228;
   box-shadow: 0px 20px 50px rgba(18, 17, 39, 0.08);
   width: 100%;
@@ -21,7 +20,7 @@
 }
 .title {
   font-size: 1.7rem;
-  font-weight: 700;
+  font-family: RobotoBold;
   line-height: 2.34rem;
 }
 .para {
@@ -56,7 +55,7 @@
   padding: 0.65rem 2.05rem;
   font-size: 1.125rem;
   line-height: 1.7rem;
-  font-weight: 500;
+  font-family: RobotoRegular;
   color: white;
   white-space: nowrap;
   cursor: pointer;
@@ -74,6 +73,42 @@
 @media (max-width: 75rem) {
   .container {
     gap: 3rem;
+    padding: 2.56rem 1.7rem 2.34rem;
+    max-width: 51rem;
+  }
+  .news-letter-first {
+    gap: 0.85rem;
+    max-width: 23.375rem;
+  }
+  .title {
+    font-size: 1.45rem;
+    line-height: 2rem;
+  }
+  .para {
+    font-size: 1rem;
+    line-height: 1.785rem;
+  }
+  .news-letter-second {
+    gap: 0.51rem;
+  }
+  .notify {
+    gap: 0.68rem;
+  }
+  .notify-input {
+    padding: 0.63rem;
+    font-size: 0.72rem;
+    line-height: 1.275rem;
+    width: 10.6rem;
+  }
+  .notify-button {
+    border-radius: 0.425rem;
+    padding: 0.55rem 1.75rem;
+    font-size: 0.96rem;
+    line-height: 1.45rem;
+  }
+  .news-letter-second-para {
+    font-size: 0.63rem;
+    line-height: 1.16rem;
   }
 }
 

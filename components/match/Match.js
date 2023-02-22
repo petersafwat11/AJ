@@ -9,13 +9,13 @@ export const Match = () => {
   return (
     <div className={classes["match"]}>
       <div className={classes["match-first"]}>
-        <p className="date">Aug 18 - 15:00</p>
+        <p className={classes["date"]}>Aug 18 - 15:00</p>
         <div className={classes["status-mobile"]}>2nd Half: 47’</div>
         <p className={classes["leage"]}>Premeir League</p>
       </div>
       <div className={classes["match-second"]}>
         <div className={classes["match-details"]}>
-          <p className="date">Aug 18 - 15:00</p>
+          <p className={classes["date"]}>Aug 18 - 15:00</p>
           <p className={classes["leage"]}>Premeir League</p>
         </div>
         <div className="live-button-div">
