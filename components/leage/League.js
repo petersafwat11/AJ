@@ -1,4 +1,4 @@
-import classes from "./League.module.css";
+import classes from "./league.module.css";
 
 import Image from "next/image";
 const LeagueMenu = () => {
