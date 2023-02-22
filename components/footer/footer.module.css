@@ -28,6 +28,7 @@
   font-size: 1.4rem;
   line-height: 1.65rem;
   font-family: RobotoRegular;
+  font-weight: 500;
 }
 .footer-container-disclaimer > p {
   font-size: 0.75rem;
@@ -77,6 +78,7 @@
 
 .footer-container-links-heading {
   font-family: RobotoRegular;
+  font-weight: 500;
   font-size: 0.94rem;
   line-height: 1.15rem;
   margin-bottom: 0.85rem;

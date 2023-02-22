@@ -4,26 +4,26 @@
   font-family: RobotoRegular;
   src: url("/fonts/RobotoCondensed-Regular.woff2") format("woff2"),
     url("/fonts/RobotoCondensed-Regular.woff") format("woff");
-  /* font-weight: 500;
-  font-style: normal; */
-  /* font-display: swap; */
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: RobotoSemiBold;
   src: url("/fonts/RobotoCondensed-SemiBold.woff2") format("woff2"),
     url("/fonts/RobotoCondensed-SemiBold.woff") format("woff");
-  /*  font-family: RobotoSemiBold;
-  font-style: normal; */
-  /* font-display: swap; */
+   font-family: RobotoSemiBold;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: RobotoBold;
   src: url("/fonts/RobotoCondensed-Bold.woff2") format("woff2"),
     url("/fonts/RobotoCondensed-Bold.woff") format("woff");
-  /*  font-family: RobotoBold;
-  font-style: normal; */
+   font-family: RobotoBold;
+  font-style: normal;
   font-display: swap;
 }
 

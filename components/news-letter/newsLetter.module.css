@@ -14,7 +14,7 @@
 .news-letter-first {
   display: flex;
   align-items: start;
-  gap: 1rem;
+  gap: .75rem;
   flex-direction: column;
   max-width: 27.5rem;
 }
@@ -38,7 +38,7 @@
 .notify {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.75rem;
 }
 .notify-input {
   padding: 0.75rem;
