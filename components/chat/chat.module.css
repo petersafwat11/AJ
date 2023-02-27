@@ -37,6 +37,14 @@
   align-items: start;
   flex-direction: column;
   gap: 0.47rem;
+  position: relative;
+}
+.chat-info {
+  position: absolute;
+  top: 6rem;
+  left: 3.45rem;
+  height: max-content;
+  width: max-content;
 }
 .message {
   width: calc(100% - 1.9rem);
@@ -72,18 +80,21 @@
 }
 .chat-input {
   background-color: white;
+  color: #afafaf;
   border-radius: 0.3rem;
-  flex-grow: 1;
+  /* width: 63%; */
   padding: 0 0.85rem;
-  height: 1.54rem;
+  height: 1.75rem;
   font-weight: 400;
-  font-size: 0.7rem;
-  line-height: 0.85rem;
+  font-size: 0.65rem;
+  line-height: 0.8rem;
 }
 .chat-bottom-send {
-  width: 1.5rem;
-  height: 1.5rem;
+  min-width: 1.69rem;
+  height: 1.69rem;
   display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #03a1cd;
   border-radius: 50%;
 }

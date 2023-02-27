@@ -6,52 +6,69 @@ const LeagueMenu = () => {
     <div className={classes["leagueMenu"]}>
       <div className={classes["leagueMenu-container"]}>
         <div className={classes["leagueMenu-container-img"]}>
-          <Image src="/league-Menu/one.png" alt="one" width="60" height="60" />
-        </div>
-        <div className={classes["leagueMenu-container-img"]}>
-          <Image src="/league-Menu/two.png" alt="two" width="60" height="60" />
-        </div>
-        <div className={classes["leagueMenu-container-img"]}>
           <Image
-            src="/league-Menu/three.png"
-            alt="three"
-            width="60"
-            height="60"
+            src="/svg/statistics/eight.svg"
+            alt="one"
+            width="70"
+            height="70"
           />
         </div>
         <div className={classes["leagueMenu-container-img"]}>
           <Image
-            src="/league-Menu/four.png"
-            alt="four"
-            width="60"
-            height="60"
-          />
-        </div>
-        <div className={classes["leagueMenu-container-img"]}>
-          <Image
-            src="/league-Menu/five.png"
-            alt="five"
-            width="60"
-            height="60"
-          />
-        </div>
-        <div className={classes["leagueMenu-container-img"]}>
-          <Image src="/league-Menu/six.png" alt="six" width="60" height="60" />
-        </div>
-        <div className={classes["leagueMenu-container-img"]}>
-          <Image
-            src="/league-Menu/seven.png"
+            src="/svg/statistics/seven.svg"
             alt="seven"
-            width="60"
-            height="60"
+            width="70"
+            height="70"
+          />
+        </div>
+        <div className={classes["leagueMenu-container-img"]}>
+          <div className={classes["leagueMenu-container-img-six"]}>
+            <Image
+              src="/svg/statistics/six.svg"
+              alt="six"
+              width="60"
+              height="60"
+            />
+          </div>
+        </div>
+        <div className={classes["leagueMenu-container-img"]}>
+          <Image
+            src="/svg/statistics/five.svg"
+            alt="five"
+            width="70"
+            height="70"
           />
         </div>
         <div className={classes["leagueMenu-container-img"]}>
           <Image
-            src="/league-Menu/eight.png"
-            alt="eight"
-            width="60"
-            height="60"
+            src="/svg/statistics/four.svg"
+            alt="four"
+            width="70"
+            height="70"
+          />
+        </div>
+        <div className={classes["leagueMenu-container-img"]}>
+          <Image
+            src="/svg/statistics/three.svg"
+            alt="three"
+            width="70"
+            height="70"
+          />
+        </div>
+        <div className={classes["leagueMenu-container-img"]}>
+          <Image
+            src="/svg/statistics/two.svg"
+            alt="two"
+            width="70"
+            height="70"
+          />
+        </div>
+        <div className={classes["leagueMenu-container-img"]}>
+          <Image
+            src="/svg/statistics/one.svg"
+            alt="one"
+            width="70"
+            height="70"
           />
         </div>
       </div>

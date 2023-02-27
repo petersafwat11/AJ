@@ -27,7 +27,7 @@ const Standings = () => {
               <p className={classes["standings-item-para"]}>01</p>
               <div className={classes["first-team"]}>
                 <Image
-                  className={classes["news-item-image"]}
+                  className={classes["first-team-image"]}
                   src="/svg/teams/man-united.svg"
                   alt="team"
                   width="23"
@@ -45,7 +45,7 @@ const Standings = () => {
               <p className={classes["standings-item-para"]}>6</p>
               <p className={classes["standings-item-para"]}>7</p>
               <Image
-                className={classes["news-item-image"]}
+                className={classes["second-item-image"]}
                 src="/svg/teams/liverpool.svg"
                 alt="team"
                 width="23"

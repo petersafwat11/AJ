@@ -22,8 +22,10 @@ const WatchDetails = ({
           width="121"
           height="51"
         />
-        <p className={classes["date"]}>{date}</p>
-        <p className={classes["place"]}>{place}</p>
+        <div className={classes['date-and-place']}>
+          <p className={classes["date"]}>{date}</p>
+          <p className={classes["place"]}>{place}</p>
+        </div>
       </div>
       <div className={classes["watch-details-second"]}>
         <div className={classes["first-team"]}>
@@ -50,7 +52,7 @@ const WatchDetails = ({
       </div>
       <div className={classes["watch-details-last"]}>
         <p className={classes["half"]}>{half}</p>
-        <LiveButton/>
+        <LiveButton text={"LIVE"} />
       </div>
     </div>
   );

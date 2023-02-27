@@ -8,19 +8,37 @@
   align-items: center;
   flex-direction: column;
 }
-.first-team, .second-team{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: .98rem;
+.first-team,
+.second-team {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.82rem;
 }
-.first-team-percentage, .second-team-percentage{
-    margin-left: .42rem;
-    flex-grow: 1;
-    background-color: white;
-    height: .75rem;
-    border-radius: 1.25rem;
+.second-team {
+  margin-top: 0.6rem;
 }
-.first-team-percentage > span, .second-team-percentage > span{
-    /* background-color: ; */
+.first-team-percentage,
+.second-team-percentage {
+  flex-grow: 1;
+  background-color: white;
+  height: 0.75rem;
+  border-radius: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+.first-team-percentage > span,
+.second-team-percentage > span {
+  border-radius: 1.25rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #03a1cd;
+  height: 100%;
+}
+.first-team-percentage > span {
+  width: 73%;
+}
+.second-team-percentage > span {
+  width: 27%;
 }

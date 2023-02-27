@@ -27,7 +27,7 @@
   justify-content: center;
 }
 .menu-desktop-list-item {
-  padding: 0.27rem 0.9rem;
+  padding: 0.46rem 1.05rem;
   border-radius: 0.4rem;
   transition: 0.3s all ease-out;
   font-family: RobotoRegular;
@@ -36,8 +36,7 @@
   color: white;
 }
 .menu-desktop-list-item:hover {
-  background-color: var(--blue);
-  opacity: 0.8;
+  background-color: #03a1ce;
 }
 .menu-desktop-actions {
   display: flex;
@@ -47,7 +46,7 @@
 .menu-desktop-actions-button {
   padding: 0.45rem 1.5rem;
   background: var(--btn-background);
-  border-radius: 0.4rem;
+  border-radius: 0.37rem;
   font-size: inherit;
   color: white;
   line-height: inherit;
@@ -60,6 +59,7 @@
 .menu-desktop-actions-button:hover {
   background-color: #d32727;
 }
+
 @media (max-width: 93.75rem) {
   .menu-desktop {
     width: 80%;

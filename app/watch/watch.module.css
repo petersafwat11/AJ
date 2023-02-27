@@ -1,0 +1,86 @@
+.report-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.change-avatar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  /* background: rgba(0, 0, 0, 0.8); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chat-icon {
+  position: fixed;
+  bottom: 20vh;
+  right: 10vw;
+  z-index: 10;
+  cursor: pointer;
+}
+.chat {
+  position: fixed;
+  bottom: 10vh;
+  right: 1vw;
+  z-index: 8;
+}
+
+.navigate {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.navigate > * {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.937rem;
+  line-height: 1.07rem;
+  margin-top: 1rem;
+}
+.watch-video-wrapper {
+  margin: 1.3rem auto 0;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  /* min-height: 40.6rem; */
+  max-width: 55rem;
+}
+.watch-video {
+  margin-top: 0.4rem;
+  width: 100%;
+  height: 25rem;
+  border-radius: 1.25rem;
+  background: #0c1115;
+  overflow: hidden;
+}
+.social-icons {
+  display: flex;
+  justify-content: end;
+  width: 98%;
+}
+
+.dropdowns {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  margin-left: 0.6rem;
+  margin-top: 0.45rem;
+  gap: 0.56rem;
+  
+}
+
+.who-will-win {
+  margin-top: 2rem;
+  margin-bottom: 1.82rem;
+}

@@ -9,7 +9,7 @@ const WhoWillWin = () => {
       <div className={classes["first-team"]}>
         <Image
           className={classes["team-image"]}
-          src="/svg/watch/man-united.png"
+          src="/svg/man-united.svg"
           alt="nfl"
           width="27"
           height="27"
@@ -22,7 +22,7 @@ const WhoWillWin = () => {
       <div className={classes["second-team"]}>
         <Image
           className={classes["team-image"]}
-          src="/svg/watch/Liverpool.png"
+          src="/svg/liverpool.svg"
           alt="liverpool"
           width="27"
           height="27"

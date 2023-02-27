@@ -5,21 +5,25 @@
 }
 .container {
   /* width: 25.3125rem; */
-  margin: auto;
+  margin: 0 auto 3rem;
   font-size: 0.75rem;
   line-height: 0.875rem;
 }
 .donate-heading {
   margin-top: 2rem;
   color: #00c4fb;
-  line-height: 1rem;
-  font-size: 1rem;
   padding-right: 0.2rem;
   width: 100%;
   display: flex;
   align-items: center;
   gap: 2px;
   margin-bottom: 0.5rem;
+}
+.heading {
+  font-family: RobotoRegular;
+  font-weight: 500;
+  line-height: 1rem;
+  font-size: 1.1rem;
 }
 .donate-heading > span {
   flex-grow: 1;
@@ -53,6 +57,8 @@
   font-size: 0.75rem;
   line-height: 0.875rem;
   border-radius: 1.25rem;
+  cursor: pointer;
+  font-family: RobotoRegular;
 }
 .donate-option:hover {
   background-color: rgba(255, 255, 255, 0.5);
@@ -64,6 +70,7 @@
   border-radius: 1.25rem;
   font-size: 0.75rem;
   line-height: 0.875rem;
+  font-family: RobotoRegular;
 }
 .donation-methods {
   display: grid;
@@ -90,6 +97,7 @@
 }
 .or {
   /* height: 2.5rem; */
+  font-family: RobotoRegular;
 }
 .paypal {
   background-color: white;
@@ -112,6 +120,7 @@
   line-height: 0.875rem;
   margin: auto;
   text-align: center;
+  font-family: RobotoRegular;
 }
 @media (min-width: 28.125rem) {
   .donate {
@@ -176,15 +185,20 @@
 @media (min-width: 56.25rem) {
   .container {
     width: 36rem;
+    margin-bottom: 5.8rem;
   }
   .donate-heading {
     margin-top: 3.65rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 1.5rem;
-    line-height: 1.75rem;
     margin-bottom: 1.44rem;
+  }
+  .heading {
+    font-family: RobotoRegular;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.78rem;
   }
   .donate-wrapper {
     height: 42rem;
@@ -197,8 +211,9 @@
     grid-row-gap: 1.125rem;
   }
   .donate-option {
-    font-size: 1.255rem;
+    font-size: 1.125rem;
     line-height: 1.32rem;
+    border-radius: 2rem;
   }
   .donate-input {
     font-size: 1.6rem;
@@ -208,13 +223,16 @@
   .donation-methods {
     gap: 0.75rem;
   }
-  .pay-by-card,
-  .or {
+  .pay-by-card {
     font-size: 1.32rem;
-    line-height: 1.57rem;
+    line-height: 1.75rem;
+  }
+  .or {
+    font-size: 1.125rem;
+    line-height: 1.32rem;
   }
   .paragraph {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     line-height: 1.32rem;
     margin-top: 0.97rem;
   }

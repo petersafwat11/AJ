@@ -1,0 +1,56 @@
+.watch-video-share {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 0.5rem;
+}
+.watch-video-share > * {
+  font-size: 1.25rem;
+  color: gray;
+  cursor: pointer;
+}
+.twitter-icon:hover {
+  color: #1c96e8;
+}
+.facebook-icon:hover {
+  color: #4064ac;
+}
+.whatsapp-icon:hover {
+  color: #53c960;
+}
+.instagram-div {
+  height: 20px;
+}
+.instagram-div:hover {
+  background: linear-gradient(to right bottom, #5442d6, #d7246e, #fec053);
+  border-radius: 0.5rem;
+}
+.instagram-div:hover > * {
+  color: white;
+}
+.discord-icon:hover {
+  color: #5865f2;
+}
+.telegram-icon:hover {
+  /* color: #0088cc; */
+  color: #0088cc;
+}
+.share-icon:hover {
+  color: rgb(252, 252, 252, 0.8);
+}
+
+.watch-video-share-icon:hover {
+  opacity: 1;
+}
+.watch-video-share-text,
+.watch-video-share-icon {
+  cursor: pointer;
+}
+.watch-video-share-text {
+  color: #ff4b4b;
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+  font-family: RobotoSemiBold;
+  align-self: flex-end;
+  margin-bottom: -2px;
+}

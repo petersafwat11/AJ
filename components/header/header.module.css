@@ -2,7 +2,7 @@
   max-width: 35rem;
   display: flex;
   justify-content: center;
-  padding: 0.5rem 5.625rem 0.7rem;
+  padding: 0.5rem 5.625rem 0.45rem;
   margin: 0 auto;
   text-align: center;
   background: url("/topimage.png");
@@ -16,6 +16,7 @@
   font-size: 0.7rem;
   line-height: 0.85rem;
   padding-bottom: 0.56rem;
+  color: rgba(255, 255, 255, 0.86);
   font-family: RobotoRegular;
 }
 .header-social {
@@ -33,7 +34,7 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  margin: 0.9rem auto 0;
+  margin: 1rem auto 0;
   line-height: 0.9rem;
   font-size: 0.75rem;
 }

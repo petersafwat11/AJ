@@ -10,13 +10,19 @@
     "prettier": "prettier --write ."
   },
   "dependencies": {
+    "@videojs/themes": "^1.0.1",
+    "i": "^0.3.7",
     "next": "13.1.6",
+    "npm": "^9.5.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
+    "react-marquee-slider": "^1.1.5"
   },
   "devDependencies": {
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
-    "prettier": "^2.8.4"
+    "prettier": "^2.8.4",
+    "video.js": "^8.0.4"
   }
 }

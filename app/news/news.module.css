@@ -1,15 +1,19 @@
 .news {
   max-width: min(85%, 40rem);
-  margin: auto;
+  margin: 0 auto 4.875rem;
 }
 .top-heading {
   margin-top: 3.65rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  color: #00c4fb;
+}
+.heading {
+  font-weight: 500;
+  font-family: RobotoRegular;
   font-size: 1.5rem;
   line-height: 1.75rem;
-  color: #00c4fb;
 }
 .top-heading > span {
   flex-grow: 1;
@@ -74,6 +78,7 @@
 }
 .news-item-heading {
   font-family: RobotoSemiBold;
+  font-weight: 600;
   font-size: 1.125rem;
   line-height: 1.3215rem;
 }

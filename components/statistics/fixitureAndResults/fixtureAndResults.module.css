@@ -1,11 +1,12 @@
 .fixure {
   background-color: #0d1317;
-  border-radius: 0.9rem;
+  border-radius: 0.95rem;
   /* padding: 2.95rem 0 0; */
   width: 100%;
 }
 .date-heading {
   font-family: RobotoSemiBold;
+  font-weight: 600;
   font-size: 1.125rem;
   line-height: 1.3125rem;
 }
@@ -23,12 +24,7 @@
 .match {
   width: 100%;
   display: grid;
-  /* align-items: center;
-  justify-content: center; */
-  /* width: 72%;
-  margin-left: auto; */
   grid-template-columns: 25% 15% 25% 1fr;
-  /* justify-content: space-between; */
   padding: 0.7rem 0 0.52rem 28%;
   border-bottom: 1px solid #8e8e8e;
 }
@@ -46,10 +42,12 @@
   font-size: 1.125rem;
   line-height: 1.3125rem;
   font-family: RobotoSemiBold;
+  font-weight: 600;
 }
 .first-team-name,
 .second-team-name {
   font-family: RobotoSemiBold;
+  font-weight: 600;
   font-size: 0.9375rem;
   line-height: 1.125rem;
 }
@@ -57,6 +55,8 @@
   font-size: 0.75rem;
   line-height: 0.9rem;
   justify-self: end;
+  font-family: RobotoRegular;
+  font-weight: 500;
 }
 .today,
 .two-days-ago,
@@ -73,4 +73,109 @@
 }
 .three-days-ago {
   padding-bottom: 4.65rem;
+}
+@media (max-width: 56.25rem) {
+  .fixure {
+    border-radius: 0.5rem;
+    margin-bottom: 4rem;
+  }
+  .date-heading {
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+  }
+  .date-para {
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+    margin-top: 0.25rem;
+  }
+  .matches {
+    width: 100%;
+  }
+  .match {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% 15% 25% 1fr;
+    padding: 0.25rem 0.4rem 0.3rem 20%;
+    align-items: center;
+    border-bottom: 1px solid #8e8e8e;
+  }
+  .first-team,
+  .second-team {
+    gap: 0.5rem;
+  }
+  .result,
+  .vs {
+    gap: 0.3rem;
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+  }
+  .first-team-name,
+  .second-team-name {
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+  }
+  .first-team-image,
+  .second-team-image {
+    width: 1rem;
+    height: 1rem;
+  }
+  .match-date {
+    font-size: 0.625rem;
+    line-height: 0.71rem;
+    align-self: end;
+  }
+  .today,
+  .two-days-ago,
+  .yesterday,
+  .three-days-ago {
+    padding: 0.75rem 0.938rem 0.85rem 0.75rem;
+  }
+  .today {
+    padding-top: 1.067rem;
+  }
+  .yesterday,
+  .three-days-ago {
+    background-color: #161f24;
+  }
+  .three-days-ago {
+    padding-bottom: 2.7rem;
+  }
+}
+@media (max-width: 28.125rem) {
+  .date-heading {
+    font-size: 0.7rem;
+    line-height: 0.8rem;
+  }
+  .date-para {
+    font-size: 0.7rem;
+    line-height: 0.8rem;
+  }
+  .match {
+    grid-template-columns: 25% 15% 25% 1fr;
+    padding: 0.25rem 0.4rem 0.3rem 15%;
+  }
+  .first-team,
+  .second-team {
+    gap: 0.45rem;
+  }
+  .result,
+  .vs {
+    gap: 0.25rem;
+    font-size: 0.7rem;
+    line-height: 0.8rem;
+  }
+  .first-team-name,
+  .second-team-name {
+    font-size: 0.7rem;
+    line-height: 0.8rem;
+  }
+  .first-team-image,
+  .second-team-image {
+    width: .9rem;
+    height: .9rem;
+  }
+  .match-date {
+    font-size: 0.6rem;
+    line-height: 0.65rem;
+  }
 }

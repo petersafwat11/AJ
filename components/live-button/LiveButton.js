@@ -1,12 +1,15 @@
-import React from 'react'
-import classes from './live-button.module.css'
-const LiveButton = () => {
+import Link from "next/link";
+import React from "react";
+import classes from "./live-button.module.css";
+const LiveBtn = ({ text }) => {
   return (
-    <button className={classes["heading-button"]}>
-      <span></span>
-      LIVE
-    </button>
+    <>
+      <Link href='/' className={classes["live-btn"]}>
+        <div className={classes["live-btn-rounded"]}></div>
+        {text}
+      </Link>
+    </>
   );
-}
+};
 
-export default LiveButton
+export default LiveBtn;

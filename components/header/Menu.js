@@ -59,7 +59,7 @@ export const Menu = () => {
             }}
             className={classes["menu-desktop-actions-button"]}
           >
-            DONATIE
+            DONATE
           </button>
           <button
             onClick={() => {

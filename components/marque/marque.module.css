@@ -1,0 +1,40 @@
+.marque-container {
+  /* // height: 5vh; */
+  padding: 0.25rem;
+  width: 20%;
+  margin: auto;
+  margin-top: .7rem;
+}
+.marque-container-tag {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.marque-container-tag > span {
+  color: var(--blue);
+  margin-left: 1.25rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.marque-container-tag > p {
+  font-weight: 300;
+  font-size: .815rem;
+  color: white;
+  margin-left: 2rem;
+}
+@media (max-width: 112.5rem) {
+  .marque-container {
+    width: 280px;
+    padding-left: 2.8125rem;
+  }
+}
+
+@media (max-width: 56.25rem) {
+  .marque-container {
+    height: 0vh;
+    width: 60%;
+    margin-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+}

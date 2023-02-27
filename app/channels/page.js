@@ -1,114 +1,119 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import Link from "next/link";
+import React, { useState } from "react";
+import { ChangeAvatar } from "../../components/chat/changeAvatar";
 import Chat from "../../components/chat/Chat";
 import LiveButton from "../../components/live-button/LiveButton";
+import Report from "../../components/report/Report";
 import ShareLinks from "../../components/shareLinks/ShareLinks";
+import SocialIcons from "../../components/whatchShare/socialIcons";
 import classes from "./channels.module.css";
-const page = () => {
+const Page = () => {
+  const [showChat, setShowChat] = useState(false);
+  const [showShareLinks, setShowShareLinks] = useState(false);
+  const [showReport, setShowReport] = useState(false);
+  const [changeAvatar, setChangeAvatar] = useState(false);
+  const [selectedAvatar, setSelectedAvatar] = useState("/svg/chat/5.svg");
+  const toggleChat = () => {
+    setShowChat(!showChat);
+  };
+  const toggleShareLinks = () => {
+    console.log("clicked", showShareLinks);
+    setShowShareLinks(!showShareLinks);
+  };
+  const toggleReport = () => {
+    setShowReport(!showReport);
+  };
+  const toggleChangeAvatar = () => {
+    setChangeAvatar(!changeAvatar);
+  };
+  const selectAvatar = (avatar) => {
+    setSelectedAvatar(avatar);
+  };
   return (
     <div className={classes["channels"]}>
+      {showReport && (
+        <div className={classes["report-wrapper"]}>
+          <Report toggleReport={toggleReport} />
+        </div>
+      )}
+      {changeAvatar && (
+        <div className={classes["change-avatar-wrapper"]}>
+          <ChangeAvatar
+            selectAvatar={selectAvatar}
+            toggleChangeAvatar={toggleChangeAvatar}
+          />
+        </div>
+      )}
+      {!showChat && (
+        <Image
+          onClick={toggleChat}
+          className={classes["chat-icon"]}
+          src="/svg/chat-floating.svg"
+          alt="chat"
+          width="156"
+          height="156"
+        />
+      )}
+      {showChat && (
+        <div className={classes["chat"]}>
+          <Chat
+            selectedAvatar={selectedAvatar}
+            toggleChangeAvatar={toggleChangeAvatar}
+            toggleChat={toggleChat}
+          />
+        </div>
+      )}
       <div className={classes["container"]}>
+        <div className={classes["navigate"]}>
+          <Link href="/">Home</Link>
+          <span> &gt; </span>
+          <Link href="/channels">Channels</Link>
+        </div>
         <div className={classes["top-heading"]}>
           <span className={classes["heading-span"]}> Now Playing </span>
-          <h3 className={classes["heading-title"]}>Sky Sports</h3>
-          <LiveButton/>
-         
+          <h3 onClick={toggleShareLinks} className={classes["heading-title"]}>
+            Sky Sports
+          </h3>
+          <LiveButton text={"LIVE"} />
         </div>
         <div className={classes["watch-video-wrapper"]}>
-          <div className={classes["watch-video-first"]}>
-            <div className={classes["watch-video-share"]}>
-              <Image
-                className={classes["watch-video-share-icon"]}
-                src="/svg/social-icons/twitter.svg"
-                alt="twitter-icon"
-                width="20"
-                height="20"
-              />
-              <Image
-                className={classes["watch-video-share-icon"]}
-                src="/svg/social-icons/facebook.svg"
-                alt="facebook-icon"
-                width="20"
-                height="20"
-              />
-              <Image
-                className={classes["watch-video-share-icon"]}
-                src="/svg/social-icons/insta.svg"
-                alt="insta-icon"
-                width="20"
-                height="20"
-              />
-              <Image
-                className={classes["watch-video-share-icon"]}
-                src="/svg/social-icons/telegram.svg"
-                alt="telegram-icon"
-                width="20"
-                height="20"
-              />
-              <Image
-                className={classes["watch-video-share-icon"]}
-                src="/svg/social-icons/insta.svg"
-                alt="insta-icon"
-                width="20"
-                height="20"
-              />
-              <Image
-                className={classes["watch-video-share-icon"]}
-                src="/svg/social-icons/telegram.svg"
-                alt="telegram-icon"
-                width="20"
-                height="20"
-              />
-              <span className={classes["watch-video-share-text"]}>
-                Report Link
-              </span>
-            </div>
-            <div className={classes["watch-video"]}></div>
-            <div className={classes["watch-video-options"]}>
-              <button className={classes["watch-video-options-server-name"]}>
-                Server 1
-              </button>
-              <button className={classes["watch-video-options-extend-button"]}>
-                EXTEND
-              </button>
-            </div>
-            <div className={classes["watch-video-servers"]}>
-              <button className={classes["watch-video-servers-button"]}>
-                Sky Sports 1
-              </button>
-              <button className={classes["watch-video-servers-button"]}>
-                Sky Sports 1
-              </button>
-              <button className={classes["watch-video-servers-button"]}>
-                Sky Sports 1
-              </button>
-              <button className={classes["watch-video-servers-button"]}>
-                Sky Sports 1
-              </button>
-              <button className={classes["watch-video-servers-button"]}>
-                Sky Sports 1
-              </button>
-              <button className={classes["watch-video-servers-button"]}>
-                Sky Sports 1
-              </button>
-              <button className={classes["watch-video-servers-button"]}>
-                Sky Sports 1
-              </button>
-              <button className={classes["watch-video-servers-button"]}>
-                Sky Sports 1
-              </button>
-            </div>
+          <div className={classes["social-icons"]}>
+            <SocialIcons
+              toggleShareLinks={toggleShareLinks}
+              toggleReport={toggleReport}
+            />
           </div>
-          <div className={classes["watch-video-second"]}>
-            <Chat />
+
+          <div className={classes["watch-video"]}>{/* <VideoJs /> */}</div>
+          <div className={classes["watch-video-options"]}>
+            <button className={classes["watch-video-options-server-name"]}>
+              Server 1
+            </button>
+            <button className={classes["watch-video-options-extend-button"]}>
+              EXTEND
+            </button>
+          </div>
+          <div className={classes["watch-video-servers"]}>
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((item, index) => (
+              <button
+                key={index}
+                className={classes["watch-video-servers-button"]}
+              >
+                Sky Sports 1
+              </button>
+            ))}
           </div>
         </div>
-        <div className={classes['share-links']}>
-          <ShareLinks/>
-        </div>
+        {showShareLinks && (
+          <div className={classes["share-links"]}>
+            <ShareLinks toggleShareLinks={toggleShareLinks} />
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default page;
+export default Page;

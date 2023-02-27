@@ -54,7 +54,8 @@ export const Match = () => {
             }}
             className={classes["watch-button"]}
           >
-            watch
+            {/* 72 28 */}
+            WATCH
           </button>
         </div>
       </div>

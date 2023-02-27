@@ -1,0 +1,64 @@
+.report {
+  background: #0c1115;
+  border-radius: 2.86rem;
+  padding: 3.75rem 6.5rem 2.06rem 3.75rem;
+  width: 30.7rem;
+}
+.causes {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 2rem;
+}
+.cause {
+  display: flex;
+  align-items: center;
+  gap: 2.48rem;
+}
+.cause > span {
+  width: 0.93rem;
+  height: 0.93rem;
+  border-radius: 50%;
+  background-color: white;
+}
+.cause > p {
+  font-weight: 600;
+  font-size: 1.68rem;
+  line-height: 1.97rem;
+  color: white;
+}
+.try-again-para {
+  font-weight: 400;
+  font-size: 1.22rem;
+  line-height: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 1.7rem;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.send-button {
+  width: 8rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #00b1ff;
+  border-radius: 2.53rem;
+  color: white;
+  font-weight: 600;
+  font-size: 1.22rem;
+  line-height: 1.4rem;
+}
+.close-button {
+  background: inherit;
+  color: white;
+  font-weight: 500;
+  font-size: 0.937rem;
+  line-height: 1.07rem;
+}
+.send-button, .close-button, .cause{
+    cursor: pointer;
+}

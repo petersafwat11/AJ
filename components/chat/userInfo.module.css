@@ -1,0 +1,71 @@
+.user-info {
+  background: #182228;
+  /* border: 0.1px solid #9f9f9f; */
+  border-radius: 1.4rem;
+  width: 18.93rem;
+  padding: 1.03rem 1.03rem 0.46rem 2.57rem;
+}
+.user-info-top {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  margin-left: 41.5%;
+}
+.user-info-top > img {
+  cursor: pointer;
+}
+.user-info-top-first {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.change-button {
+  background-color: #01bcf1;
+  border-radius: 0.28rem;
+  color: white;
+  font-size: 0.5rem;
+  line-height: 0.75rem;
+  padding: 0.25rem 0.8rem;
+  cursor: pointer;
+}
+.user-info-para {
+  font-weight: 700;
+  font-size: 0.93rem;
+  line-height: 1.2rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.user-data {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.user-data-input {
+  background: #ffffff;
+  border: 2px solid rgba(255, 0, 0, 0.7);
+  border-radius: 0.375rem;
+  width: 9.23rem;
+  height: 1.92rem;
+  color: rgba(18, 17, 39, 0.4);
+  font-size: 0.65rem;
+  line-height: 1.17rem;
+  font-weight: 400;
+  padding: 0.3rem 0.75rem;
+}
+.user-data-button {
+  background: #01bcf1;
+  border-radius: 0.375rem;
+  color: white;
+  padding: 0.48rem 0.97rem;
+  font-size: 0.65rem;
+  line-height: 0.98rem;
+}
+.taken-message {
+  color: #ff0000;
+  font-size: 0.65rem;
+  line-height: 0.75rem;
+  margin-top: 0.2rem;
+  padding-left: 0.3rem;
+}

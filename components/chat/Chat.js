@@ -1,7 +1,13 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import classes from "./chat.module.css";
-const Chat = () => {
+import UserInfo from "./UserInfo";
+const Chat = ({ toggleChangeAvatar, selectedAvatar, toggleChat }) => {
+  const [showUserInfo, setShowUserInfo] = useState(true);
+  const toggleUserInf = () => {
+    setShowUserInfo(!showUserInfo);
+  };
   return (
     <div className={classes["chat"]}>
       <div className={classes["chat-top"]}>
@@ -14,6 +20,7 @@ const Chat = () => {
         />
         <p className={classes["chat-top-text"]}>Chat</p>
         <Image
+          onClick={toggleChat}
           className={classes["chat-top-exit"]}
           src="/svg/chat/exit-chat.svg"
           alt="exit"
@@ -22,6 +29,15 @@ const Chat = () => {
         />
       </div>
       <div className={classes["chat-body"]}>
+        {showUserInfo && (
+          <div className={classes["chat-info"]}>
+            <UserInfo
+              toggleUserInf={toggleUserInf}
+              selectedAvatar={selectedAvatar}
+              toggleChangeAvatar={toggleChangeAvatar}
+            />
+          </div>
+        )}
         {[1, 2, 3, 4, 5, 6].map((message, index) => (
           <div
             style={{
@@ -57,17 +73,20 @@ const Chat = () => {
       <div className={classes["chat-bottom"]}>
         <Image
           className={classes["chat-bottom-user"]}
-          src="/svg/chat/user-icon.svg"
-          alt="user-icon"
-          width="21"
-          height="24"
+          src="/svg/chat/user.svg"
+          alt="user"
+          width="22"
+          height="25"
         />
+        {/* <HiUser
+          style={{ fontSize: "1.25rem", color: "white", cursor: "pointer" }}
+        /> */}
         <Image
           className={classes["chat-bottom-emojy"]}
           src="/svg/chat/emojy.svg"
           alt="emojy"
-          width="21"
-          height="20"
+          width="22"
+          height="21"
         />
 
         <input

@@ -30,7 +30,18 @@
   display: flex;
   align-items: center;
   gap: 1.125rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
 }
+.share-links-wrapper {
+  width: 371.95px;
+  position: relative;
+  height: 88px;
+  overflow: hidden;
+}
+
 .share-links-website {
   display: flex;
   align-items: center;
@@ -39,13 +50,22 @@
   font-size: 0.85rem;
   line-height: 1rem;
 }
+.share-links-website-embed {
+  background-color: white;
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .share-links-carousel {
   margin-left: -0.3rem;
   cursor: pointer;
+  z-index: 10;
 }
 .share-links-bottom {
   position: relative;
-  margin-top: 1.78rem;
   height: 2.53rem;
   width: 18.3rem;
   border-radius: 2.25rem;
@@ -55,11 +75,19 @@
   color: black;
   display: flex;
   align-items: center;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
+  margin: 1.78rem auto 0;
 }
 .share-links-copy {
   position: absolute;
-  top: 0;
+  top: -1px;
   right: 0;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.81rem;
+  height: 2.81rem;
+  border-radius: 50%;
+  background-color: #d1d1d1;
 }

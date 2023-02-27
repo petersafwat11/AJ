@@ -34,22 +34,22 @@
   font-family: RobotoRegular;
 }
 .live-button {
-  padding: 0.25rem 0.45rem 0.25rem 0.78rem;
-  border: 1px solid var(--green);
-  color: var(--green);
+  padding: 0.32rem 0.4rem 0.3rem 0.57rem;
+  border: 1px solid #35b034;
   display: flex;
   align-items: center;
   border-radius: 3px;
-  box-shadow: 0rem 0.3rem 0.5rem #41f3315b;
+  margin-top: -1px;
+  /* box-shadow: 0rem 0.3rem 0.5rem #41f3315b; */
 }
 .live-button > span {
-  width: 0.75rem;
-  height: 0.75rem;
-  background-color: var(--green);
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: #41f331;
   border-radius: 50%;
-  margin-right: 0.2rem;
+  margin-right: 0.3rem;
   margin-top: -1px;
-  box-shadow: 0rem 0.3rem 0.5rem #41f3315b;
+  /* box-shadow: 0rem 0.3rem 0.5rem #41f3315b; */
   animation: live 0.8s ease-in-out infinite;
 }
 @keyframes live {
@@ -77,8 +77,10 @@
 }
 
 .live-button > p {
-  font-family: RobotoRegular;
-  font-size: 0.75rem;
+  color: #41f331;
+  font-family: RobotoSemibold;
+  font-size: 0.8rem;
+  line-height: 0.9;
   text-transform: uppercase;
 }
 
@@ -110,7 +112,7 @@
   border-radius: 0.3rem;
   /* height: 1.3rem;
   width: 3.15rem; */
-  padding: 0.4rem 1.3rem;
+  padding: 0.4rem 1.1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,6 +126,12 @@
 }
 .watch-button:hover {
   background-color: #d32727;
+}
+.first-team-name,
+.second-team-name,
+.status,
+.live-button {
+  margin-top: 2px;
 }
 @media (max-width: 56.25rem) {
   .match {
