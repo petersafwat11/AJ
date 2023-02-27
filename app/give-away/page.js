@@ -29,11 +29,14 @@ const giveAway = () => {
             <h2 className={classes["give-away-heading-2"]}>
               WIN A <span>FREE</span> PLAY STATION 5 DIGITAL EDITION
             </h2>
-            
-            <div style={{marginTop:'-.6rem'}} className={classes["give-away-image"]}>
+
+            <div
+              style={{ marginTop: "-.6rem" }}
+              className={classes["give-away-image"]}
+            >
               <Image
                 className={classes["give-away-center-image"]}
-                src="/svg/give-away/playstation_5.svg"
+                src="/svg/give-away/playStation.svg"
                 alt="playstation"
                 width={151}
                 height={176}
