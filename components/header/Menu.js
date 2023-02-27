@@ -16,8 +16,8 @@ export const Menu = () => {
           className={classes["menu-desktop-logo"]}
           src="/LOGO.svg"
           alt="logo"
-          width="100"
-          height="79"
+          width="104"
+          height="80"
         />
         <ul className={classes["menu-desktop-list"]}>
           <li>
@@ -177,7 +177,14 @@ export const MenuMobile = () => {
           />
         </div>
       </div>
-      {showMenu&&<div onClick={()=>{setShowMenu(false)}} className={classes["overlay"]}></div>}
+      {showMenu && (
+        <div
+          onClick={() => {
+            setShowMenu(false);
+          }}
+          className={classes["overlay"]}
+        ></div>
+      )}
     </div>
   );
 };

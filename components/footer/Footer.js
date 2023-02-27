@@ -10,7 +10,7 @@ const Footer = () => {
       <div className={classes["container"]}>
         <div className={classes["footer-container"]}>
           <div className={classes["footer-container-image"]}>
-            <Image src="/LOGO.svg" alt="logo" width="250" height="160" />
+            <Image src="/LOGO.svg" alt="logo" width="220" height="170" />
             <div className={classes["footer-social"]}>
               <div className={classes["footer-social-element"]}>
                 <Image

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto+Condensed:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto+Condensed:wght@300;400;700&display=swap");
 
 @font-face {
   font-family: RobotoRegular;
@@ -13,7 +13,7 @@
   font-family: RobotoSemiBold;
   src: url("/fonts/RobotoCondensed-SemiBold.woff2") format("woff2"),
     url("/fonts/RobotoCondensed-SemiBold.woff") format("woff");
-   font-family: RobotoSemiBold;
+  font-family: RobotoSemiBold;
   font-style: normal;
   font-display: swap;
 }
@@ -22,7 +22,7 @@
   font-family: RobotoBold;
   src: url("/fonts/RobotoCondensed-Bold.woff2") format("woff2"),
     url("/fonts/RobotoCondensed-Bold.woff") format("woff");
-   font-family: RobotoBold;
+  font-family: RobotoBold;
   font-style: normal;
   font-display: swap;
 }
@@ -33,7 +33,7 @@
   --green: #41f331;
   --blue: #00c4fb;
   --btn-background: #ff4747;
-  --background: #0d1318;
+  --background: rgba(13, 19, 24, 0.95);
 }
 
 body {
