@@ -13,6 +13,7 @@ import WhoWillWin from "../../components/whoWillWin/WhoWillWin";
 import Image from "next/image";
 
 import classes from "./watch.module.css";
+import { VideoJs } from "../../components/video/VideoJs";
 const Page = () => {
   const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
@@ -95,7 +96,9 @@ const Page = () => {
             />
           </div>
 
-          <div className={classes["watch-video"]}>{/* <VideoJs /> */}</div>
+          <div className={classes["watch-video"]}>
+            <VideoJs />
+            </div>
           <div className={classes["dropdowns"]}>
             <Dropdown name={"english"} options={["1", "2", "3"]} />
 

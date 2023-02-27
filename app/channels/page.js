@@ -7,6 +7,7 @@ import Chat from "../../components/chat/Chat";
 import LiveButton from "../../components/live-button/LiveButton";
 import Report from "../../components/report/Report";
 import ShareLinks from "../../components/shareLinks/ShareLinks";
+import { VideoJs } from "../../components/video/VideoJs";
 import SocialIcons from "../../components/whatchShare/socialIcons";
 import classes from "./channels.module.css";
 const Page = () => {
@@ -86,7 +87,9 @@ const Page = () => {
             />
           </div>
 
-          <div className={classes["watch-video"]}>{/* <VideoJs /> */}</div>
+          <div className={classes["watch-video"]}>
+            <VideoJs />
+            </div>
           <div className={classes["watch-video-options"]}>
             <button className={classes["watch-video-options-server-name"]}>
               Server 1
