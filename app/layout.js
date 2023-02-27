@@ -1,6 +1,6 @@
 import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
-import Marque from "../components/marque/marque";
+// import Marque from "../components/marque/marque";
 import NewsLetter from "../components/news-letter/NewsLetter";
 import "../styles/globals.css";
 import styles from "./layout.module.css";
@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
       <head />
       <body className={styles.wrapper}>
         <Header />
-        <Marque />
+        {/* <Marque /> */}
         {children}
         <NewsLetter />
         <Footer />

@@ -8,7 +8,7 @@ import Report from "../../components/report/Report";
 import ShareLinks from "../../components/shareLinks/ShareLinks";
 import WatchDetails from "../../components/watch-details/WatchDetails";
 import Takticks from "../../components/watchtaktick/takticks";
-import SocialIcons from "../../components/whatchShare/socialIcons";
+import SocialIcons from "../../components/whatchShare/SocialIcons";
 import WhoWillWin from "../../components/whoWillWin/WhoWillWin";
 import Image from "next/image";
 

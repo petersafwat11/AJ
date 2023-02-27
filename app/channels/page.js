@@ -8,7 +8,7 @@ import LiveButton from "../../components/live-button/LiveButton";
 import Report from "../../components/report/Report";
 import ShareLinks from "../../components/shareLinks/ShareLinks";
 import { VideoJs } from "../../components/video/VideoJs";
-import SocialIcons from "../../components/whatchShare/socialIcons";
+import SocialIcons from "../../components/whatchShare/SocialIcons";
 import classes from "./channels.module.css";
 const Page = () => {
   const [showChat, setShowChat] = useState(false);
