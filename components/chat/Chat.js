@@ -78,9 +78,6 @@ const Chat = ({ toggleChangeAvatar, selectedAvatar, toggleChat }) => {
           width="22"
           height="25"
         />
-        {/* <HiUser
-          style={{ fontSize: "1.25rem", color: "white", cursor: "pointer" }}
-        /> */}
         <Image
           className={classes["chat-bottom-emojy"]}
           src="/svg/chat/emojy.svg"

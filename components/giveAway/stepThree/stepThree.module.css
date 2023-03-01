@@ -1,0 +1,56 @@
+.step-three {
+  width: 29rem;
+  height: 21.6rem;
+  background: #182228;
+  border-radius: 2.25rem;
+  padding: 1.68rem;
+  padding-left: 1.97rem;
+}
+.exit {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+}
+.exit-icon {
+  cursor: pointer;
+}
+.success {
+  background-color: #10adff;
+  width: 8.76rem;
+  height: 8.76rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.2rem auto 0.7rem;
+}
+.body {
+  text-align: center;
+}
+.success-id {
+  font-family: "Poppins";
+  font-weight: 800;
+  font-size: 0.93rem;
+  line-height: 1.69rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+.success-message {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 0.12rem;
+  margin-bottom: 1.3125rem;
+  max-width: 95%;
+}
+.good-luck {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.93rem;
+  line-height: 1.68rem;
+  color: rgba(255, 255, 255, 0.9);
+}

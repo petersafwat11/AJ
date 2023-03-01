@@ -1,9 +1,24 @@
-import React from 'react'
-import classes from './donate.module.css'
-import Image from 'next/image';
+import Image from "next/image";
+import React from "react";
+import OtherPaymentMethod from "../../components/donate/otherPaymentMethod/OtherPaymentMethod";
+import classes from "./donate.module.css";
 const donate = () => {
   return (
     <main className={classes["donate"]}>
+      <OtherPaymentMethod
+        title={"ETH (Ethereum Wallet)"}
+        data={"0x5c7f5ca94419a446002b16aa4b335221300e86e3"}
+        message={
+          "Please send any Ethereum donations to the above wallet address, we highly appreciate it!"
+        }
+      />
+      <OtherPaymentMethod
+        title={"BTC (Bitcoin Wallet)"}
+        data={"0x5C7f5cA94419A446002b16aA4B335221300E86E3"}
+        message={
+          "Please send any Bitcoin donations to the above wallet address, we highly appreciate it!"
+        }
+      />
       <div className={classes["container"]}>
         <div className={classes["donate-heading"]}>
           <h2 className={classes["heading"]}>DONATE</h2>
@@ -61,12 +76,12 @@ const donate = () => {
           </div>
         </div>
         <p className={classes["paragraph"]}>
-          We highly appreciate any donations and invest the <br/> funds into our
-          platform to provide a greater service to the fans
+          We highly appreciate any donations and invest the <br /> funds into
+          our platform to provide a greater service to the fans
         </p>
       </div>
     </main>
   );
-}
+};
 
-export default donate
+export default donate;

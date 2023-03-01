@@ -103,3 +103,90 @@
 .chat-bottom-user {
   cursor: pointer;
 }
+@media (max-width: 56.25rem) {
+  .chat {
+    width: 17.25rem;
+    height: 21.43rem;
+    border-radius: 0.375rem;
+  }
+  .chat-top {
+    height: 1.3125rem;
+    padding: 0.625rem 0.375rem;
+  }
+  .chat-top-text {
+    font-size: 0.875rem;
+    line-height: 1rem;
+  }
+  .chat-top-extend,
+  .chat-top-exit {
+    cursor: pointer;
+  }
+  .chat-body {
+    width: 100%;
+    padding: 1.78rem 0.85rem 0;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 0.47rem;
+    position: relative;
+  }
+  .chat-info {
+    position: absolute;
+    top: 6rem;
+    left: 3.45rem;
+    height: max-content;
+    width: max-content;
+  }
+  .message {
+    width: calc(100% - 1.9rem);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .message-details {
+    background: #292929;
+    border-radius: 0.3rem;
+    padding: 0.75rem 0.65rem 0.5rem;
+    min-height: 2.5rem;
+    display: flex;
+    align-items: start;
+    gap: 3rem;
+    flex-grow: 1;
+  }
+  .message-username {
+    font-size: 0.56rem;
+    line-height: 0.65rem;
+  }
+  .message-content {
+    font-size: 0.75rem;
+    line-height: 0.9rem;
+  }
+  .chat-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.85rem;
+    width: 100%;
+    padding: 1.4rem 0.98rem 0.93rem 1.125rem;
+  }
+  .chat-input {
+    background-color: white;
+    color: #afafaf;
+    border-radius: 0.3rem;
+    /* width: 63%; */
+    padding: 0 0.85rem;
+    height: 1.75rem;
+    font-weight: 400;
+    font-size: 0.65rem;
+    line-height: 0.8rem;
+  }
+  .chat-bottom-send {
+    min-width: 1.69rem;
+    height: 1.69rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #03a1cd;
+    border-radius: 50%;
+  }
+}

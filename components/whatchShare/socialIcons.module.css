@@ -20,13 +20,16 @@
 }
 .instagram-div {
   height: 20px;
+  border-radius: 0.5rem;
 }
 .instagram-div:hover {
-  background: linear-gradient(to right bottom, #5442d6, #d7246e, #fec053);
-  border-radius: 0.5rem;
+  /* background: linear-gradient(to right bottom, #5442d6, #d7246e, #fec053); */
 }
 .instagram-div:hover > * {
   color: white;
+  background: -webkit-linear-gradient(#5442d6, #d7246e, #fec053);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .discord-icon:hover {
   color: #5865f2;
@@ -53,4 +56,21 @@
   font-family: RobotoSemiBold;
   align-self: flex-end;
   margin-bottom: -2px;
+}
+@media (max-width: 56.25rem) {
+  .watch-video-share {
+    gap: 0.45rem;
+  }
+  .watch-video-share > * {
+    font-size: 0.85rem;
+  }
+  .instagram-div {
+    height: 13.6px;
+  }
+
+  .watch-video-share-text {
+    font-size: 0.68rem;
+    line-height: 0.8125rem;
+    margin-bottom: -1.5px;
+  }
 }

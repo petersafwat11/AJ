@@ -1,0 +1,122 @@
+.error {
+  background: #0d1317;
+  border-radius: 0.85rem;
+  max-width: 44.5rem;
+  margin: 5.85rem auto 7rem;
+}
+.first-section {
+  padding: 3.48rem 8rem 2.8rem 7.54rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.875rem;
+}
+.title {
+  font-weight: 800;
+  font-size: 2.3rem;
+}
+.error-message {
+  font-family: RobotoRegular;
+  font-weight: 500;
+  font-size: 1.4rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 88%;
+}
+.second-section {
+  background: #172026;
+  padding: 4.36rem 7rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 4.4rem;
+}
+.return-para {
+  font-family: RobotoRegular;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.92rem;
+}
+.return-para > span {
+  color: #00b1ff;
+  border-bottom: 1px solid #00b1ff;
+  cursor: pointer;
+}
+.button {
+  background: #00b1ff;
+  border-radius: 0.37rem;
+  width: 7.6rem;
+  height: 2.67rem;
+  font-family: RobotoBold;
+  font-weight: 700;
+  font-size: 1.03rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+@media (max-width: 56.25rem) {
+  .error {
+    border-radius: 0.63rem;
+    max-width: min(35rem, 95%);
+    margin: 2.9rem auto 3.5rem;
+  }
+  .first-section {
+    padding: 2.8rem 3rem 2.1rem;
+    gap: 2.1rem;
+  }
+  .title {
+    font-size: 1.87rem;
+  }
+  .error-message {
+    font-size: 1.16rem;
+    width: 78%;
+  }
+  .second-section {
+    padding: 3.27rem 3rem;
+    gap: 3.45rem;
+  }
+  .return-para {
+    font-size: 1.15rem;
+    line-height: 1.5rem;
+  }
+  .button {
+    border-radius: 0.3rem;
+    width: 6.2rem;
+    height: 2.3rem;
+    font-size: 0.82rem;
+  }
+}
+@media (max-width: 31.25rem) {
+  .error {
+    border-radius: 0.63rem;
+    max-width: min(35rem, 95%);
+    margin: 2.5rem auto 3rem;
+  }
+  .first-section {
+    padding: 1.86rem 2rem 1.4rem;
+    gap: 1.4rem;
+  }
+  .title {
+    font-weight: 800;
+    font-size: 1.6rem;
+  }
+  .error-message {
+    font-size: 0.98rem;
+  }
+  .second-section {
+    background: #172026;
+    padding: 2.18rem 2rem;
+    gap: 2.3rem;
+  }
+  .return-para {
+    font-size: 0.98rem;
+    line-height: 1.34rem;
+  }
+  .button {
+    border-radius: 0.26rem;
+    width: 5.3rem;
+    height: 1.87rem;
+    font-size: 0.7rem;
+  }
+}

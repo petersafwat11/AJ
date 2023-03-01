@@ -88,7 +88,7 @@ const Page = () => {
           </div>
 
           <div className={classes["watch-video"]}>
-            <VideoJs />
+            {/* <VideoJs /> */}
             </div>
           <div className={classes["watch-video-options"]}>
             <button className={classes["watch-video-options-server-name"]}>

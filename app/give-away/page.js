@@ -1,9 +1,16 @@
 import Image from "next/image";
 import React from "react";
+import StepOne from "../../components/giveAway/stepOne/StepOne";
+import StepThree from "../../components/giveAway/stepThree/StepThree";
+import StepTwo from "../../components/giveAway/stepTwo/StepTwo";
 import classes from "./page.module.css";
 const giveAway = () => {
   return (
     <main className={classes["give-away"]}>
+      <StepOne />
+      <StepTwo />
+      <StepThree />
+
       <div className={classes["container"]}>
         <div className={classes["give-away-heading"]}>
           <h2 className={classes["heading"]}>GIVEAWAY</h2>

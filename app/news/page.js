@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import SendMessage from "../../components/send-message/SendMessage";
 import classes from "./news.module.css";
 const page = () => {
   return (
@@ -8,22 +9,26 @@ const page = () => {
         <h2 className={classes["heading"]}>NEWS</h2>
         <span></span>
       </div>
-      <div className={classes["container"]}>
-        <div className={classes["news-items"]}>
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-            <>
-              <NewsItem
-                src={"/svg/news-photo.png"}
-                alt={"photo"}
-                heading={"Sports News Title 1"}
-                para={
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
-                }
-              />
-            </>
-          ))}
+      <div className={classes["wrapper"]}>
+        <div className={classes["send-message"]}>
+          <SendMessage />
         </div>
-        <div className={classes[""]}></div>
+        <div className={classes["container"]}>
+          <div className={classes["news-items"]}>
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+              <>
+                <NewsItem
+                  src={"/svg/news-photo.png"}
+                  alt={"photo"}
+                  heading={"Sports News Title 1"}
+                  para={
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+                  }
+                />
+              </>
+            ))}
+          </div>
+        </div>
       </div>
     </main>
   );
