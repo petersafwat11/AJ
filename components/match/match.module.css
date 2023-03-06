@@ -34,11 +34,13 @@
   font-family: RobotoRegular;
 }
 .live-button {
-  padding: 0.32rem 0.4rem 0.3rem 0.57rem;
-  border: 1px solid #35b034;
+  border: 1px solid rgba(65, 243, 49, 0.5);
   display: flex;
   align-items: center;
-  border-radius: 3px;
+  justify-content: center;
+  height: 1.5rem;
+  width: 3.65rem;
+  border-radius: 3.75px;
   margin-top: -1px;
   /* box-shadow: 0rem 0.3rem 0.5rem #41f3315b; */
 }
@@ -48,7 +50,7 @@
   background-color: #41f331;
   border-radius: 50%;
   margin-right: 0.3rem;
-  margin-top: -1px;
+  margin-top: 0.6px;
   /* box-shadow: 0rem 0.3rem 0.5rem #41f3315b; */
   animation: live 0.8s ease-in-out infinite;
 }
@@ -79,8 +81,9 @@
 .live-button > p {
   color: #41f331;
   font-family: RobotoSemibold;
-  font-size: 0.8rem;
-  line-height: 0.9;
+  font-size: 0.75rem;
+  margin-top: 3px;
+  line-height: 0%;
   text-transform: uppercase;
 }
 

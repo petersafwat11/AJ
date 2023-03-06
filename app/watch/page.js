@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { ChangeAvatar } from "../../components/chat/changeAvatar";
@@ -10,10 +11,9 @@ import WatchDetails from "../../components/watch-details/WatchDetails";
 import Takticks from "../../components/watchtaktick/takticks";
 import SocialIcons from "../../components/whatchShare/SocialIcons";
 import WhoWillWin from "../../components/whoWillWin/WhoWillWin";
-import Image from "next/image";
 
+import ProtonVpn from "../../components/protonVpn/ProtonVpn";
 import classes from "./watch.module.css";
-import { VideoJs } from "../../components/video/VideoJs";
 const Page = () => {
   const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
@@ -39,6 +39,12 @@ const Page = () => {
 
   return (
     <section className={classes["watch"]}>
+      {showShareLinks && (
+        <div className={classes["share-links-wrapper"]}>
+          <ShareLinks toggleShareLinks={toggleShareLinks} />
+        </div>
+      )}
+
       {showReport && (
         <div className={classes["report-wrapper"]}>
           <Report toggleReport={toggleReport} />
@@ -80,9 +86,9 @@ const Page = () => {
 
         <WatchDetails
           lieageImage={"/svg/watch/primier-liage.svg"}
-          firstTeamImage={"/svg/watch/man-united.png"}
+          firstTeamImage={"/svg/watch/man-united.svg"}
           firstTeamName={"Man united"}
-          seconteamImage={"/svg/watch/Liverpool.png"}
+          seconteamImage={"/svg/watch/liverpool.svg"}
           seconteamName={"Liverpool"}
           date={"Aug 18 15:00"}
           place={"Old Trafford"}
@@ -96,9 +102,7 @@ const Page = () => {
             />
           </div>
 
-          <div className={classes["watch-video"]}>
-            <VideoJs />
-            </div>
+          <div className={classes["watch-video"]}>{/* <VideoJs /> */}</div>
           <div className={classes["dropdowns"]}>
             <Dropdown name={"english"} options={["1", "2", "3"]} />
 
@@ -110,16 +114,18 @@ const Page = () => {
             />
           </div>
         </div>
-        <Takticks />
-        <div className={classes["who-will-win"]}>
-          <WhoWillWin />
+        <div className={classes["bottom"]}>
+          <div className={classes["buy-vpn"]}>
+            <ProtonVpn />
+          </div>
+          <div className={classes["takticks"]}>
+            <Takticks />
+          </div>
+          <div className={classes["who-will-win"]}>
+            <WhoWillWin />
+          </div>
         </div>
       </div>
-      {showShareLinks && (
-        <div className={classes["share-links"]}>
-          <ShareLinks toggleShareLinks={toggleShareLinks} />
-        </div>
-      )}
     </section>
   );
 };

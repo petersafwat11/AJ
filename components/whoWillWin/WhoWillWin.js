@@ -1,37 +1,110 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import classes from "./WhoWillWin.module.css";
 
 const WhoWillWin = () => {
+  const [selectedValue, setSelectedValue] = useState("");
   return (
     <div className={classes["who-will-win"]}>
       <h4 className={classes["heading"]}>Who will win? </h4>
-      <div className={classes["first-team"]}>
-        <Image
-          className={classes["team-image"]}
-          src="/svg/man-united.svg"
-          alt="nfl"
-          width="27"
-          height="27"
-        />
-        <span className={classes["first-team-percentage"]}>
-          <span></span>
-        </span>
-        <p className={classes["first-team-para"]}>73%</p>
+      <div className={classes["options"]}>
+        <div
+          onClick={() => {
+            if (selectedValue === "first-wins") {
+              setSelectedValue("");
+              return;
+            }
+            setSelectedValue("first-wins");
+          }}
+          className={classes["option"]}
+        >
+          <span className={classes["overlay-color-first"]}></span>
+          <div className={classes["first"]}>
+            <p className={classes["number"]}>1.</p>
+            <p className={classes["name"]}>
+              {selectedValue === "first-wins" && (
+                <Image
+                  className={classes["check-icon"]}
+                  src="/svg/watch/check.svg"
+                  alt="chaeck"
+                  width="14"
+                  height="12"
+                />
+              )}
+              Anthony Joshua
+            </p>
+          </div>
+          <div className={classes["second"]}>
+            <p className={classes["votes"]}>1728 votes</p>
+            <p className={classes["percentage"]}>89%</p>
+          </div>
+        </div>
+        <div
+          onClick={() => {
+            if (selectedValue === "draw") {
+              setSelectedValue("");
+              return;
+            }
+            setSelectedValue("draw");
+          }}
+          className={classes["option"]}
+        >
+          <span className={classes["overlay-color-draw"]}></span>
+          <div className={classes["first"]}>
+            <p className={classes["number"]}>2.</p>
+            <p className={classes["name"]}>
+              {selectedValue === "draw" && (
+                <Image
+                  className={classes["check-icon"]}
+                  src="/svg/watch/check.svg"
+                  alt="chaeck"
+                  width="14"
+                  height="12"
+                />
+              )}
+              Drew
+            </p>
+          </div>
+          <div className={classes["second"]}>
+            <p className={classes["votes"]}>72 votes</p>
+            <p className={classes["percentage"]}>4%</p>
+          </div>
+        </div>
+        <div
+          onClick={() => {
+            if (selectedValue === "second-wins") {
+              setSelectedValue("");
+              return;
+            }
+
+            setSelectedValue("second-wins");
+          }}
+          className={classes["option"]}
+        >
+          <span className={classes["overlay-color-second"]}></span>
+
+          <div className={classes["first"]}>
+            <p className={classes["number"]}>3.</p>
+            <p className={classes["name"]}>
+              {selectedValue === "second-wins" && (
+                <Image
+                  className={classes["check-icon"]}
+                  src="/svg/watch/check.svg"
+                  alt="chaeck"
+                  width="14"
+                  height="12"
+                />
+              )}
+              Tyson Fury
+            </p>
+          </div>
+          <div className={classes["second"]}>
+            <p className={classes["votes"]}>152 votes</p>
+            <p className={classes["percentage"]}>7%</p>
+          </div>
+        </div>
       </div>
-      <div className={classes["second-team"]}>
-        <Image
-          className={classes["team-image"]}
-          src="/svg/liverpool.svg"
-          alt="liverpool"
-          width="27"
-          height="27"
-        />
-        <span className={classes["second-team-percentage"]}>
-          <span></span>
-        </span>
-        <p className={classes["second-team-para"]}>27%</p>
-      </div>
+      <p className={classes['all-votes']}>442k overall votes </p>
     </div>
   );
 };

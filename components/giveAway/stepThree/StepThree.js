@@ -1,14 +1,18 @@
 import Image from "next/image";
 import React from "react";
 import classes from "./stepThree.module.css";
-const StepThree = () => {
+const StepThree = ({ controlDisplaySteps }) => {
   return (
     <div className={classes["step-three"]}>
       <div className={classes["exit"]}>
         <Image
-          //   onClick={() => {
-          //     setShowComponent(!showComponent);
-          //   }}
+          onClick={() => {
+            controlDisplaySteps({
+              stepOne: false,
+              stepTwo: false,
+              stepThree: false,
+            });
+          }}
           className={classes["exit-icon"]}
           src="/svg/chat/exit-chat.svg"
           alt="exit"

@@ -1,13 +1,51 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import classes from "./tikticks.module.css";
 const Takticks = () => {
+  const [category, setCategory] = useState("lineups");
   return (
     <div className={classes["container"]}>
       <div className={classes["header"]}>
-        <p className={classes["header-item"]}>STATS</p>
+        <p
+          onClick={() => {
+            setCategory("lineups");
+          }}
+          style={{
+            borderBottom: category == "lineups" ? "1px solid #03a1cd" : "",
+            color: category == "lineups" ? "#03a1cd" : "",
+          }}
+          className={classes["header-item"]}
+        >
+          LINEUPS
+          <span className={classes["ripple"]}></span>
+        </p>
+        <p
+          onClick={() => {
+            setCategory("stats");
+          }}
+          style={{
+            borderBottom: category == "stats" ? "1px solid #03a1cd" : "",
+            color: category == "stats" ? "#03a1cd" : "",
+          }}
+          className={classes["header-item"]}
+        >
+          {" "}
+          STATS
+        </p>
 
-        <p className={classes["header-item"]}>SUBSITUTES</p>
+        <p
+          onClick={() => {
+            setCategory("subsitutes");
+          }}
+          style={{
+            borderBottom: category == "subsitutes" ? "1px solid #03a1cd" : "",
+            color: category == "subsitutes" ? "#03a1cd" : "",
+          }}
+          className={classes["header-item"]}
+        >
+          SUBSITUTES
+        </p>
       </div>
       <div className={classes["takticks"]}>
         <div className={classes["substitute-first-team"]}>

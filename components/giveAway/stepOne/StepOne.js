@@ -1,15 +1,20 @@
 import Image from "next/image";
 import React from "react";
 import classes from "./stepOne.module.css";
-const StepOne = () => {
+const StepOne = ({ controlDisplaySteps, joinWebsiteGroup }) => {
+  console.log(joinWebsiteGroup);
   return (
     <div className={classes["step-one"]}>
       <div className={classes["top"]}>
         <h2 className={classes["heading"]}>Step 1:</h2>
         <Image
-          //   onClick={() => {
-          //     setShowComponent(!showComponent);
-          //   }}
+          onClick={() => {
+            controlDisplaySteps({
+              stepOne: false,
+              stepTwo: false,
+              stepThree: false,
+            });
+          }}
           className={classes["exit"]}
           src="/svg/chat/exit-chat.svg"
           alt="exit"
@@ -46,7 +51,30 @@ const StepOne = () => {
           Please enter the details accurately as the winner will be contacted
           via email.
         </p>
-        <button className={classes["next-button"]}>Next</button>
+        <button
+          onClick={() => {
+            if (
+              joinWebsiteGroup.text === "Twitter" ||
+              joinWebsiteGroup.text === "Retweet" ||
+              joinWebsiteGroup.text === "Telegram"
+            ) {
+              controlDisplaySteps({
+                stepOne: false,
+                stepTwo: true,
+                stepThree: false,
+              });
+            } else {
+              controlDisplaySteps({
+                stepOne: false,
+                stepTwo: false,
+                stepThree: true,
+              });
+            }
+          }}
+          className={classes["next-button"]}
+        >
+          Next
+        </button>
       </div>
     </div>
   );

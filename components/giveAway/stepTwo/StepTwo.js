@@ -1,25 +1,33 @@
 import Image from "next/image";
 import React from "react";
 import classes from "./stepTwo.module.css";
-const StepTwo = () => {
+const StepTwo = ({ joinWebsiteGroup, controlDisplaySteps }) => {
   return (
     <div className={classes["step-two"]}>
       <div className={classes["step-two-top"]}>
         <Image
-          //   onClick={() => {
-          //     setShowComponent(!showComponent);
-          //   }}
-          className={classes["exit"]}
+          onClick={() => {
+            controlDisplaySteps({
+              stepOne: true,
+              stepTwo: false,
+              stepThree: false,
+            });
+          }}
+          className={classes["back-icon"]}
           src="/svg/chat/exit-chat.svg"
           alt="exit"
           width="16"
           height="16"
         />
-        <h2 className={classes['heading']}>Step 2:</h2>
+        <h2 className={classes["heading"]}>Step 2:</h2>
         <Image
-          //   onClick={() => {
-          //     setShowComponent(!showComponent);
-          //   }}
+          onClick={() => {
+            controlDisplaySteps({
+              stepOne: false,
+              stepTwo: false,
+              stepThree: false,
+            });
+          }}
           className={classes["exit"]}
           src="/svg/chat/exit-chat.svg"
           alt="exit"
@@ -28,20 +36,53 @@ const StepTwo = () => {
         />
       </div>
       <div className={classes["body"]}>
-        <div className={classes["telegram"]}>
-          <Image
-            //   onClick={() => {
-            //     setShowComponent(!showComponent);
-            //   }}
-            className={classes["telegram-icon"]}
-            src="/svg/give-away/telegram-steps.svg"
-            alt="telegram"
-            width="54"
-            height="45"
-          />
-        </div>
+        {joinWebsiteGroup.text === "Telegram" ? (
+          <div className={classes["telegram"]}>
+            <Image
+              className={classes["telegram-icon"]}
+              src={"/svg/give-away/telegram-steps.svg"}
+              alt="telegram"
+              width="54"
+              height="45"
+            />
+          </div>
+        ) : joinWebsiteGroup.text === "Twitter" ? (
+          <div className={classes["twitter"]}>
+            <Image
+              className={classes["telegram-icon"]}
+              src={"/svg/give-away/twitter-steps.svg"}
+              alt="twitter"
+              width="66"
+              height="53"
+            />
+          </div>
+        ) : (
+          <div className={classes["retweet"]}>
+            <Image
+              className={classes["retweet-icon"]}
+              src={"/svg/give-away/retweet-steps.svg"}
+              alt="twitter"
+              width="66"
+              height="66"
+            />
+          </div>
+        )}
+
         <div className={classes["join"]}>
-          <button className={classes["join-button"]}>Join Telegram</button>
+          <button
+            onClick={() => {
+              controlDisplaySteps({
+                stepOne: false,
+                stepTwo: false,
+                stepThree: true,
+              });
+            }}
+            className={classes["join-button"]}
+          >
+            {joinWebsiteGroup.text == "Retweet"
+              ? joinWebsiteGroup.text
+              : "Join" + joinWebsiteGroup.text}
+          </button>
           <span className={classes["loading"]}>
             <span></span>
           </span>

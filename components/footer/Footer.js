@@ -10,7 +10,12 @@ const Footer = () => {
       <div className={classes["container"]}>
         <div className={classes["footer-container"]}>
           <div className={classes["footer-container-image"]}>
-            <Image src="/LOGO.svg" alt="logo" width="220" height="170" />
+            <Image
+              src="/svg/footer-logo.svg"
+              alt="logo"
+              width="212"
+              height="156"
+            />
             <div className={classes["footer-social"]}>
               <div className={classes["footer-social-element"]}>
                 <Image
@@ -66,17 +71,12 @@ const Footer = () => {
             <h3>Disclaimer</h3>
             <p>
               AJ Sports merely links/embeds content uploaded to popular media
-              hosting websites such Vimeo.com, sssssss ddDailymotion.com,
-              Youtube.com, twitch.tv, reddit.com, etc. AJ Sports does not host
-              any audio-visual content ss itself and has no ability to modify
-              such content. We thus cannot accept any liability for the content
-              transmitted by ddd others as we are not affiliated nor endorsed by
-              the external content. All content is copyright of their sssssss
-              respective d owners. AJ Sports operates as a search engine for
-              streams and videos already hosted publicly on ss the world wide
-              web. For any legal issues please contact appropriate media file
-              owners. lorem lorem lorem lorem lorem lorem llll... Email:
-              info@ajsports.ch
+              hosting websites such Vimeo.com, Dailymotion.com, Youtube.com,
+              twitch.tv, reddit.com, etc. AJSports does not host any audiovisual
+              content itself and has no ability to modify such content. We thus
+              cannot accept any liability for the content transmitted by others
+              as we are not affiliated nor endorsed by the external content. All
+              content is copyright of their respective owners.
             </p>
             <p className={classes["contact-email"]}>Email: info@ajsports.ch</p>
             <div className={classes["footer-actions-mobile"]}>
@@ -206,8 +206,29 @@ const Footer = () => {
               &#169; 2023 AJ Sports, Inc. All rights reserved
             </p>
             <div className={classes["copy-write-links"]}>
-              <p>DMCA</p> <span>-</span> Privacy Policy <span>-</span>{" "}
-              <p>F.A.Q</p>
+              <p
+                onClick={() => {
+                  router.push("DMCA");
+                }}
+              >
+                DMCA
+              </p>
+              <span>-</span>
+              <p
+                onClick={() => {
+                  router.push("privacy-policy");
+                }}
+              >
+                Privacy Policy
+              </p>
+              <span>-</span>
+              <p
+                onClick={() => {
+                  router.push("FAQ");
+                }}
+              >
+                F.A.Q
+              </p>
             </div>
             <div className={classes["copy-write-social"]}>
               <Image
@@ -229,8 +250,8 @@ const Footer = () => {
                 height="18"
               />
               <Image
-                src="/svg/footer/github.svg"
-                alt="github"
+                src="/svg/footer/telegram.svg"
+                alt="telegram"
                 width="18"
                 height="18"
               />

@@ -10,7 +10,7 @@
   background-size: 85%;
   background-repeat: no-repeat;
 
-  /* height: 4.2rem; */
+  height: 3.33rem;
 }
 .header-top > p {
   font-size: 0.7rem;
@@ -23,7 +23,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.97rem;
+  gap: 1.85rem;
   margin: 0.6rem auto 0;
 }
 .header-social > * {
@@ -35,8 +35,8 @@
   justify-content: center;
   gap: 2rem;
   margin: 1rem auto 0;
-  line-height: 0.9rem;
-  font-size: 0.75rem;
+  line-height: 0.94rem;
+  font-size: 0.8rem;
 }
 
 .header-lang > p {

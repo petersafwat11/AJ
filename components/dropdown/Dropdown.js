@@ -16,6 +16,7 @@ const Dropdown = ({ name, options }) => {
       >
         {name}{" "}
         <Image
+        className={classes['drop-icon']}
           src="/svg/watch/down-arrow.svg"
           alt="arrow"
           height="14"

@@ -10,6 +10,9 @@
   align-items: center;
   justify-content: space-between;
 }
+.step-two-top > img {
+  cursor: pointer;
+}
 .heading {
   font-family: "Poppins";
   font-style: normal;
@@ -18,7 +21,9 @@
   line-height: 2.5rem;
   color: rgba(255, 255, 255, 0.95);
 }
-.telegram {
+.telegram,
+.retweet,
+.twitter {
   background: linear-gradient(to right, #2aabee, #229ed9);
   width: 6.235rem;
   height: 6.235rem;
@@ -28,6 +33,10 @@
   justify-content: center;
   margin: 0.937rem auto 2.1rem;
 }
+.retweet,
+.twitter {
+  background: #55acee;
+}
 .join {
   display: flex;
   align-items: center;
@@ -35,6 +44,7 @@
   flex-direction: column;
   gap: 1.3rem;
   margin-bottom: 1.45rem;
+  white-space: nowrap;
 }
 .loading {
   width: 14.48rem;
@@ -100,4 +110,70 @@
   line-height: 1.36rem;
   text-align: center;
   color: rgba(255, 255, 255, 0.48);
+}
+@media (max-width: 56.25rem) {
+  .step-two {
+    max-width: min(90%, 23.375rem);
+    height: auto;
+    background: #182228;
+    border-radius: 2.18rem;
+    padding: 1.45rem 1.45rem 1.55rem 1.6rem;
+  }
+  .back-icon {
+    width: 13px;
+    height: 12px;
+  }
+  .exit-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .heading {
+    font-size: 1.75rem;
+    line-height: 3.125rem;
+  }
+  .telegram,
+  .retweet,
+  .twitter {
+    width: 5rem;
+    height: 5rem;
+    margin: 0.25rem auto 1.625rem;
+  }
+  .twitter-icon{
+
+  }
+  .retweet-icon{
+
+  }
+  .telegram-icon{
+    width: 44px;
+    height: 37px;
+  }
+  .join {
+    gap: 1rem;
+    margin-bottom: 1.125rem;
+    white-space: nowrap;
+  }
+  .loading {
+    width: 11.7rem;
+    height: 0.32rem;
+    border-radius: 1.125rem;
+  }
+  .loading > span {
+    border-radius: 1.125rem;
+    height: 100%;
+    width: 5.25rem;
+  }
+
+  .join-button {
+    width: 6.43rem;
+    height: 1.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+  }
+  .message {
+    font-size: 0.75rem;
+    line-height: 1.36rem;
+    color: rgba(255, 255, 255, 0.48);
+  }
 }

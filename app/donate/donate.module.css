@@ -3,12 +3,25 @@
   max-width: 90%;
   margin: auto;
 }
+.popup-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.8);
+}
 .container {
-  /* width: 25.3125rem; */
+  max-width: 25.3125rem;
   margin: 0 auto 3rem;
   font-size: 0.75rem;
   line-height: 0.875rem;
 }
+
 .donate-heading {
   margin-top: 2rem;
   color: #00c4fb;
@@ -53,25 +66,47 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: inherit;
   font-size: 0.75rem;
-  line-height: 0.875rem;
+  line-height: 0%;
   border-radius: 1.25rem;
   cursor: pointer;
   font-family: RobotoRegular;
+  border: 1px solid #192228;
+}
+.donate-option:last-of-type {
+  background-color: #1a242a;
+  border: none;
 }
 .donate-option:hover {
   background-color: rgba(255, 255, 255, 0.5);
 }
+.input-wrapper {
+  position: relative;
+}
 .donate-input {
-  padding: 0 1rem;
-  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.85rem 1.4rem 0.6rem 3rem;
   color: white;
-  border-radius: 1.25rem;
+  border-radius: 0.92rem;
   font-size: 0.75rem;
   line-height: 0.875rem;
+  background: #1a242a;
+  border: 1px solid #1a242a;
+  display: flex;
+  align-items: center;
   font-family: RobotoRegular;
 }
+.input-wrapper > span {
+  padding: 0.85rem 1.4rem 0.6rem;
+  color: white;
+  font-size: 1.5rem;
+  line-height: 0.875rem;
+  font-family: RobotoRegular;
+  position: absolute;
+  top: 0.6rem;
+  left: -0.2rem;
+}
+
 .donation-methods {
   display: grid;
   grid-template-columns: 1fr;
@@ -93,10 +128,12 @@
 }
 .pay-by-card {
   background-color: #03a1ce;
-  /* height: 2.42rem; */
+  font-family: RobotoRegular;
+  padding: 0.85rem 0 0.6rem;
 }
 .or {
   /* height: 2.5rem; */
+  padding: 0.85rem 0 0.6rem;
   font-family: RobotoRegular;
 }
 .paypal {
@@ -184,7 +221,7 @@
 } */
 @media (min-width: 56.25rem) {
   .container {
-    width: 36rem;
+    max-width: 36rem;
     margin-bottom: 5.8rem;
   }
   .donate-heading {
@@ -211,8 +248,9 @@
     grid-row-gap: 1.125rem;
   }
   .donate-option {
+    padding-top: 2.5px;
     font-size: 1.125rem;
-    line-height: 1.32rem;
+    line-height: 0%;
     border-radius: 2rem;
   }
   .donate-input {

@@ -1,18 +1,21 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
+import { BsSkype, BsSnapchat, BsYoutube } from "react-icons/bs";
+import { FaDiscord, FaPinterestP, FaRegCopy } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import classes from "./shareLinks.module.css";
 const ShareLinks = ({ toggleShareLinks }) => {
-  const manipaletePosition = useRef(null);
-  const [position, setPosition] = useState(0);
-  const [clicks, setClicks] = useState(0);
-  const maxClicks = 2;
-  useEffect(() => {
-    console.log("position", position);
-    if (clicks <= maxClicks) {
-      manipaletePosition.current.style.left = -position + "px";
-    }
-  }, [position, setPosition, clicks]);
+  // const manipaletePosition = useRef(null);
+  // const [position, setPosition] = useState(0);
+  // const [clicks, setClicks] = useState(0);
+  // const maxClicks = 2;
+  // useEffect(() => {
+  //   console.log("position", position);
+  //   if (clicks <= maxClicks) {
+  //     manipaletePosition.current.style.left = -position + "px";
+  //   }
+  // }, [position, setPosition, clicks]);
 
   return (
     <div className={classes["share-links"]}>
@@ -21,114 +24,68 @@ const ShareLinks = ({ toggleShareLinks }) => {
         <Image
           onClick={toggleShareLinks}
           className={classes["share-links-exit"]}
-          src="/svg/chat/exit-chat.svg"
+          src="/svg/share-links/exit.svg"
           alt="exit"
-          width="15"
-          height="15"
+          width="11"
+          height="11"
         />
       </div>
       <div className={classes["share-links-body"]}>
-        <div className={classes["share-links-wrapper"]}>
-          <div
-            ref={manipaletePosition}
-            className={classes["share-links-websites"]}
-          >
-            <div className={classes["share-links-website"]}>
-              <div className={classes["share-links-website-embed"]}>
-                <Image
-                  src="/svg/share-links/vector.svg"
-                  alt="embed"
-                  width="28"
-                  height="18"
-                />
+        <div
+          // ref={manipaletePosition}
+          className={classes["share-links-websites"]}
+        >
+          <div className={classes["share-links-website"]}>
+            <div className={classes["share-links-website-logo"]}>
+              <div className={classes["pinterest"]}>
+                <FaPinterestP className={classes["pinterest-icon"]} />
               </div>
-              <p>Embed</p>
             </div>
-            <div className={classes["share-links-website"]}>
-              <Image
-                className={classes["share-links-website"]}
-                src="/svg/share-links/youtube.svg"
-                alt="youtube"
-                width="60"
-                height="60"
-              />
-              <p>Youtube</p>
-            </div>{" "}
-            <div className={classes["share-links-website"]}>
-              <Image
-                className={classes["share-links-website"]}
-                src="/svg/share-links/pinterist.svg"
-                alt="pinterest"
-                width="60"
-                height="60"
-              />
-              <p>Pinterest</p>
-            </div>{" "}
-            <div className={classes["share-links-website"]}>
-              <Image
-                className={classes["share-links-website"]}
-                src="/svg/share-links/snapchat.svg"
-                alt="snapshat"
-                width="60"
-                height="60"
-              />
-              <p>Snapchat</p>
+            <p>Pinterest</p>
+          </div>
+          <div className={classes["share-links-website"]}>
+            <div className={classes["share-links-website-logo"]}>
+              <BsYoutube className={classes["youtube-icon"]} />
             </div>
-            <div className={classes["share-links-website"]}>
-              <Image
-                className={classes["share-links-website"]}
-                src="/svg/share-links/discord.svg"
-                alt="discord"
-                width="60"
-                height="60"
-              />
-              <p>Discord</p>
+            <p>Youtube</p>
+          </div>{" "}
+          <div className={classes["share-links-website"]}>
+            <div className={classes["share-links-website-logo"]}>
+              <BsSnapchat className={classes["spantube-icon"]} />
             </div>
-            <div className={classes["share-links-website"]}>
-              <Image
-                className={classes["share-links-website"]}
-                src="/svg/share-links/skype.svg"
-                alt="snapshat"
-                width="60"
-                height="60"
-              />
-              <p>Skybe</p>
+            <p>Snapchat</p>
+          </div>{" "}
+          <div className={classes["share-links-website"]}>
+            <div className={classes["share-links-website-logo"]}>
+              <FaDiscord className={classes["discord-icon"]} />
             </div>
-            <div className={classes["share-links-website"]}>
-              <Image
-                className={classes["share-links-website"]}
-                src="/svg/share-links/gmail.svg"
-                alt="snapshat"
-                width="60"
-                height="60"
-              />
-              <p>Gmail</p>
+            <p>Discord</p>
+          </div>
+          <div className={classes["share-links-website"]}>
+            <div className={classes["share-links-website-logo"]}>
+              <MdEmail className={classes["email-icon"]} />
             </div>
+            <p>Email</p>
+          </div>
+          <div className={classes["share-links-website"]}>
+            <div className={classes["share-links-website-logo"]}>
+              <BsSkype className={classes["skype-icon"]} />
+            </div>
+            <p>Skybe</p>
           </div>
         </div>
-        <Image
-          onClick={() => {
-            setPosition(position + 78);
-            setClicks(clicks + 1);
-          }}
-          className={classes["share-links-carousel"]}
-          src="/svg/share-links/carousel.svg"
-          alt="extend"
-          width="30"
-          height="30"
-        />
       </div>
       <div className={classes["share-links-bottom"]}>
-        https://ajsports.ch/watchaj
-        <div className={classes["share-links-copy"]}>
+        https://www.ajsports.ch/watch/manutdvsliverpool/Share...
+        <FaRegCopy className={classes["copy-icon"]} />
+        {/* <div className={classes["share-links-copy"]}>
           <Image
-          
             src="/svg/share-links/copy.svg"
             alt="copy"
             width="21"
             height="21"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -1,24 +1,46 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import OtherPaymentMethod from "../../components/donate/otherPaymentMethod/OtherPaymentMethod";
 import classes from "./donate.module.css";
-const donate = () => {
+const Donate = () => {
+  const [ethereumPopup, setEthereumPopup] = useState(false);
+  const [bitcoinPopup, setBitcoinPopup] = useState(false);
+  const [donationValue, setDonationValue] = useState(null);
+  const toggleEthereum = () => {
+    setEthereumPopup(!ethereumPopup);
+  };
+  const toggleBitcoin = () => {
+    setBitcoinPopup(!bitcoinPopup);
+  };
+
   return (
     <main className={classes["donate"]}>
-      <OtherPaymentMethod
-        title={"ETH (Ethereum Wallet)"}
-        data={"0x5c7f5ca94419a446002b16aa4b335221300e86e3"}
-        message={
-          "Please send any Ethereum donations to the above wallet address, we highly appreciate it!"
-        }
-      />
-      <OtherPaymentMethod
-        title={"BTC (Bitcoin Wallet)"}
-        data={"0x5C7f5cA94419A446002b16aA4B335221300E86E3"}
-        message={
-          "Please send any Bitcoin donations to the above wallet address, we highly appreciate it!"
-        }
-      />
+      {ethereumPopup && (
+        <div className={classes["popup-overlay"]}>
+          <OtherPaymentMethod
+            toggle={toggleEthereum}
+            title={"ETH (Ethereum Wallet)"}
+            data={"0x5c7f5ca94419a446002b16aa4b335221300e86e3"}
+            message={
+              "Please send any Ethereum donations to the above wallet address, we highly appreciate it!"
+            }
+          />
+        </div>
+      )}
+
+      {bitcoinPopup && (
+        <div className={classes["popup-overlay"]}>
+          <OtherPaymentMethod
+            toggle={toggleBitcoin}
+            title={"BTC (Bitcoin Wallet)"}
+            data={"0x5C7f5cA94419A446002b16aA4B335221300E86E3"}
+            message={
+              "Please send any Bitcoin donations to the above wallet address, we highly appreciate it!"
+            }
+          />
+        </div>
+      )}
       <div className={classes["container"]}>
         <div className={classes["donate-heading"]}>
           <h2 className={classes["heading"]}>DONATE</h2>
@@ -26,18 +48,62 @@ const donate = () => {
         </div>
         <div className={classes["donate-wrapper"]}>
           <div className={classes["donate-options"]}>
-            <p className={classes["donate-option"]}>£1</p>
-            <p className={classes["donate-option"]}>£2</p>
-            <p className={classes["donate-option"]}>£3</p>
-            <p className={classes["donate-option"]}>£5</p>
-            <p className={classes["donate-option"]}>£10</p>
+            <p
+              onClick={() => {
+                setDonationValue(1);
+              }}
+              className={classes["donate-option"]}
+            >
+              $1
+            </p>
+            <p
+              onClick={() => {
+                setDonationValue(2);
+              }}
+              className={classes["donate-option"]}
+            >
+              $2
+            </p>
+            <p
+              onClick={() => {
+                setDonationValue(3);
+              }}
+              className={classes["donate-option"]}
+            >
+              $3
+            </p>
+            <p
+              onClick={() => {
+                setDonationValue(5);
+              }}
+              className={classes["donate-option"]}
+            >
+              $5
+            </p>
+            <p
+              onClick={() => {
+                setDonationValue(10);
+              }}
+              className={classes["donate-option"]}
+            >
+              $10
+            </p>
             <p className={classes["donate-option"]}>Other Amount</p>
           </div>
-          <input
-            placeholder="£"
-            type="text"
-            className={classes["donate-input"]}
-          />
+          <div className={classes["input-wrapper"]}>
+            {donationValue && <span>$</span>}
+            <input
+              onChange={(e) => {
+                setDonationValue(e.target.value);
+              }}
+              value={donationValue}
+              placeholder="$"
+              type="text"
+              style={{ paddingLeft: donationValue !== null ? "3rem" : "" }}
+              className={classes["donate-input"]}
+            />
+          </div>
+
           <div className={classes["pay-by-card"]}>PAY BY CARD</div>
           <div className={classes["or"]}>OR</div>
           <div className={classes["donation-methods"]}>
@@ -45,32 +111,32 @@ const donate = () => {
               <Image
                 src="/svg/donate/paypal.svg"
                 alt="paypall"
-                width="52"
-                height="26"
+                width="30"
+                height="36"
               />
             </div>
-            <div className={classes["bitcoin"]}>
+            <div onClick={toggleBitcoin} className={classes["bitcoin"]}>
               <Image
                 src="/svg/donate/bitcoin.svg"
                 alt="bitcoin"
-                width="35"
-                height="34"
+                width="23"
+                height="30"
               />
             </div>
             <div className={classes["stripe"]}>
               <Image
                 src="/svg/donate/stripe.svg"
                 alt="stripe"
-                width="60"
-                height="24"
+                width="81"
+                height="33"
               />
             </div>
-            <div className={classes["share"]}>
+            <div onClick={toggleEthereum} className={classes["share"]}>
               <Image
-                src="/svg/donate/share.svg"
+                src="/svg/donate/ethereum.svg"
                 alt="share"
-                width="24"
-                height="24"
+                width="19"
+                height="32"
               />
             </div>
           </div>
@@ -84,4 +150,4 @@ const donate = () => {
   );
 };
 
-export default donate;
+export default Donate;
