@@ -115,6 +115,80 @@
 
 @media (max-width: 56.25rem) {
   .news-letter {
-    display: none;
+    background: #182228;
+    box-shadow: 0px 20px 50px rgba(18, 17, 39, 0.08);
+    width: 100%;
+  }
+  .container {
+    flex-direction: column;
+    gap: 5.7rem;
+    padding: 3.3rem 2rem 2.5rem;
+    max-width: 65%;
+    margin: auto;
+  }
+  .news-letter-first {
+    max-width: 100%;
+    gap: 0.5rem;
+  }
+  .title {
+    font-size: 1.46rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    line-height: 2rem;
+  }
+  .para {
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.35rem;
+    color: rgba(255, 255, 255, 0.56);
+    font-family: "Poppins", sans-serif;
+  }
+  .news-letter-second {
+    display: flex;
+    align-items: start;
+    gap: 0.65rem;
+    flex-direction: column;
+  }
+  .notify {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
+  .notify-input {
+    padding: 0.78rem 0.9rem;
+    font-weight: 400;
+    font-size: 0.73rem;
+    line-height: 0%;
+    color: rgba(18, 17, 39, 0.4);
+    font-family: "Poppins", sans-serif;
+    background-color: white;
+    width: 15rem;
+  }
+  .notify-button {
+    background-color: #01bcf1;
+    border-radius: 0.5rem;
+    padding: 0.72rem 1.85rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.95rem;
+    /* line-height: 0%; */
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .news-letter-second-para {
+    padding-left: 0.35rem;
+    font-weight: 400;
+    font-size: 0.675rem;
+    line-height: 1.23rem;
+    color: rgba(255, 255, 255, 0.48);
+    font-family: "Poppins", sans-serif;
+    width: max-content;
+  }
+  .news-letter-second-para > span {
+    color: #01bcf1;
+    cursor: pointer;
   }
 }
