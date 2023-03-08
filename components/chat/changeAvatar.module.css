@@ -88,17 +88,29 @@
   align-items: center;
   justify-content: center;
 }
-.change-avatar-button {
+.actions {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
+  gap: 1.5rem;
+  margin-top: 1.92rem;
 }
 .apply-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.46rem 0.75rem;
+  width: 3.4rem;
+  height: 1.82rem;
   background: #01bcf1;
-  border-radius: 0.375rem;
-  color: white;
-  padding: 0.58rem 1.7rem;
-  font-size: 0.937rem;
-  line-height: 1.07rem;
+  border-radius: 0.18rem;
+  cursor: pointer;
+}
+.cancel-button {
+  font-family: RobotoRegular;
+  font-weight: 500;
+  font-size: 0.65rem;
+  line-height: 0.75rem;
+  color: #b5b5b5;
   cursor: pointer;
 }

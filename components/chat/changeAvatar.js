@@ -66,8 +66,8 @@ export const ChangeAvatar = ({ toggleChangeAvatar, selectAvatar, avatars }) => {
           ))}
         </div>
         <div className={classes["actions"]}>
-          <button> Apply</button>
-          <button>Cancel </button>
+          <button onClick={applyChanges} className={classes['applay-button']}> Apply</button>
+          <button className={classes['cancel-button']}>Cancel </button>
         </div>
       </div>
       <div className={classes["change-avatars-second"]}>

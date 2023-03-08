@@ -18,11 +18,11 @@ const hidePopup=()=>{
       <body className={styles.wrapper}>
         <Header />
         {/* <Marque /> */}
-        {showPopup && (
+        {/* {showPopup && (
           <div className={styles["popup"]}>
             <Popup hidePopup={hidePopup} />
           </div>
-        )}
+        )} */}
         {children}
         <NewsLetter />
         <Footer />
