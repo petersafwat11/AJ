@@ -30,11 +30,11 @@
 .title {
   font-size: 1.5rem;
   font-family: "Poppins";
-  font-weight: 700;
+  font-weight: 600;
   line-height: 2.1rem;
 }
 .para {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 0.75rem;
   line-height: 1.36rem;
   color: rgba(255, 255, 255, 0.56);
@@ -68,7 +68,7 @@
   background-color: #01bcf1;
   border-radius: 0.5rem;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 0.75rem;
   width: 6.75rem;
   height: 2.43rem;
@@ -85,7 +85,7 @@
 .popup-second-para {
   padding-left: 0.35rem;
   font-weight: 400;
-  font-size: 0.57rem;
+  font-size: 0.56rem;
   line-height: 0.65rem;
   color: rgba(255, 255, 255, 0.48);
   font-family: "Poppins";

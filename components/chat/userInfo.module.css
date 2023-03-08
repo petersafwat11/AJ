@@ -1,9 +1,9 @@
 .user-info {
-  background: #182228;
-  /* border: 0.1px solid #9f9f9f; */
+  background: #0d1317;
+  box-shadow: 0px 3.20559px 32.0559px rgba(0, 0, 0, 0.08);
   border-radius: 1.4rem;
-  width: 18.93rem;
-  padding: 1.03rem 1.03rem 0.46rem 2.57rem;
+  width: 24.23rem;
+  padding: 1.734rem 3.9rem 1.83rem 3rem;
 }
 .user-info-top {
   display: flex;
@@ -68,4 +68,33 @@
   line-height: 0.75rem;
   margin-top: 0.2rem;
   padding-left: 0.3rem;
+}
+.user-info-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.26rem;
+}
+.confirm-button {
+  width: 4.2rem;
+  height: 1.8rem;
+  background: #01bcf1;
+  color: white;
+  border-radius: 0.18rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: RobotoRegular;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+  cursor: pointer;
+}
+.cancel-button {
+  cursor: pointer;
+  font-family: RobotoRegular;
+  font-weight: 500;
+  font-size: 0.65rem;
+  line-height: 0.75rem;
+  color: #acacac;
 }

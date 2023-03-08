@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
 import classes from "./match.module.css";
@@ -25,11 +24,11 @@ export const Match = () => {
           </div>
         </div>
         <div className={classes["first-team"]}>
-          <Image
+          <img
             className={classes["first-team-image"]}
             src="/svg/teams/man-united.svg"
             alt="nfl"
-            width="31"
+            // width="31"
             height="31"
           />
           <p className={classes["first-team-name"]}>Man Utd</p>
@@ -38,11 +37,11 @@ export const Match = () => {
         <div className={classes["second-team"]}>
           <p className={classes["second-team-name"]}>Liverpool</p>
 
-          <Image
+          <img
             className={classes["second-team-image"]}
             src="/svg/teams/liverpool.svg"
             alt="liverpool"
-            width="31"
+            // width="31"
             height="31"
           />
         </div>

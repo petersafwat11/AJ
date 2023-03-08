@@ -44,7 +44,7 @@
   gap: 0.787rem;
 }
 .menu-desktop-actions-button {
-  padding: 0.45rem 1.5rem;
+  padding: 0.45rem 1.5rem ;
   background: var(--btn-background);
   border-radius: 0.37rem;
   font-size: inherit;
@@ -93,7 +93,7 @@
     gap: 0.66rem;
   }
   .menu-desktop-actions-button {
-    padding: 0.38rem 1.275rem;
+    padding: 0.4rem 1.275rem ;
     border-radius: 0.34rem;
   }
 }

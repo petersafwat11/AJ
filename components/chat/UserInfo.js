@@ -1,7 +1,8 @@
 import Image from "next/image";
 import classes from "./userInfo.module.css";
 
-const UserInfo = ({ toggleChangeAvatar, selectedAvatar, toggleUserInf }) => {
+const UserInfo = ({ toggleChangeAvatar, selectedAvatar }) => {
+
   return (
     <div className={classes["user-info"]}>
       <div className={classes["user-info-top"]}>
@@ -14,26 +15,21 @@ const UserInfo = ({ toggleChangeAvatar, selectedAvatar, toggleUserInf }) => {
             CHANGE
           </button>
         </div>
-
-        <Image
-          onClick={toggleUserInf}
-          src="/svg/chat/exit-chat.svg"
-          alt="send"
-          width="12"
-          height="12"
-        />
       </div>
       <div className={classes["user-info-body"]}>
-        <p className={classes["user-info-para"]}>Display Name</p>
+        <p className={classes["user-info-para"]}>Your Display Name</p>
         <div className={classes["user-data"]}>
           <input
             className={classes["user-data-input"]}
             type="text"
             placeholder="Enter username...."
           />
-          <button className={classes["user-data-button"]}>CONFIRM</button>
         </div>
         <p className={classes["taken-message"]}>Username taken</p>
+      </div>
+      <div className={classes["user-info-actions"]}>
+        <button className={classes["confirm-button"]}>Confirm </button>
+        <button className={classes["cancel-button"]}>cancel </button>
       </div>
     </div>
   );

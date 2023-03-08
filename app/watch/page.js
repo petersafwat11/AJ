@@ -18,8 +18,6 @@ const Page = () => {
   const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
   const [showReport, setShowReport] = useState(false);
-  const [changeAvatar, setChangeAvatar] = useState(false);
-  const [selectedAvatar, setSelectedAvatar] = useState("/svg/chat/5.svg");
   const toggleChat = () => {
     setShowChat(!showChat);
   };
@@ -29,12 +27,6 @@ const Page = () => {
   };
   const toggleReport = () => {
     setShowReport(!showReport);
-  };
-  const toggleChangeAvatar = () => {
-    setChangeAvatar(!changeAvatar);
-  };
-  const selectAvatar = (avatar) => {
-    setSelectedAvatar(avatar);
   };
 
   return (
@@ -50,14 +42,7 @@ const Page = () => {
           <Report toggleReport={toggleReport} />
         </div>
       )}
-      {changeAvatar && (
-        <div className={classes["change-avatar-wrapper"]}>
-          <ChangeAvatar
-            selectAvatar={selectAvatar}
-            toggleChangeAvatar={toggleChangeAvatar}
-          />
-        </div>
-      )}
+      
       {!showChat && (
         <Image
           onClick={toggleChat}
@@ -71,8 +56,6 @@ const Page = () => {
       {showChat && (
         <div className={classes["chat"]}>
           <Chat
-            selectedAvatar={selectedAvatar}
-            toggleChangeAvatar={toggleChangeAvatar}
             toggleChat={toggleChat}
           />
         </div>

@@ -1,15 +1,52 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
+import { ChangeAvatar } from "./changeAvatar";
 import classes from "./chat.module.css";
 import UserInfo from "./UserInfo";
-const Chat = ({ toggleChangeAvatar, selectedAvatar, toggleChat }) => {
-  const [showUserInfo, setShowUserInfo] = useState(true);
+const Chat = ({ toggleChat }) => {
+  const [showUserInfo, setShowUserInfo] = useState(false);
+  const [selectedAvatar, setSelectedAvatar] = useState(
+    "/svg/chat/change-avatars/5.svg"
+  );
+  const [changeAvatar, setChangeAvatar] = useState(false);
+
+  const toggleChangeAvatar = () => {
+    setChangeAvatar(!changeAvatar);
+  };
+
+  const selectAvatar = (avatar) => {
+    setSelectedAvatar(avatar);
+  };
+
   const toggleUserInf = () => {
     setShowUserInfo(!showUserInfo);
   };
+  let avatars = [];
+  for (let i = 1; i < 323; i = i + 1) {
+    avatars.push(i);
+  }
+
   return (
     <div className={classes["chat"]}>
+      {showUserInfo && (
+        <div className={classes["chat-info"]}>
+          <UserInfo
+            toggleUserInf={toggleUserInf}
+            selectedAvatar={selectedAvatar}
+            toggleChangeAvatar={toggleChangeAvatar}
+          />
+        </div>
+      )}
+      {changeAvatar && (
+        <div className={classes["change-avatar-wrapper"]}>
+          <ChangeAvatar
+            avatars={avatars}
+            selectAvatar={selectAvatar}
+            toggleChangeAvatar={toggleChangeAvatar}
+          />
+        </div>
+      )}
       <div className={classes["chat-top"]}>
         <Image
           className={classes["chat-top-extend"]}
@@ -18,7 +55,22 @@ const Chat = ({ toggleChangeAvatar, selectedAvatar, toggleChat }) => {
           width="13"
           height="13"
         />
-        <p className={classes["chat-top-text"]}>Chat</p>
+        <p className={classes["chat-top-text"]}>
+          Chat
+          <Image
+            src="/svg/chat/down-arrow.svg"
+            alt="extend"
+            width="14"
+            height="14"
+          />
+          <div className={classes["chat-rooms"]}>
+            <p className={classes["chat-room"]}>English (Default)</p>
+            <p className={classes["chat-room"]}>Espain</p>
+            <p className={classes["arabic"]}>العربية</p>
+            <p className={classes["chat-room"]}>Français</p>
+          </div>
+        </p>
+
         <Image
           onClick={toggleChat}
           className={classes["chat-top-exit"]}
@@ -29,15 +81,6 @@ const Chat = ({ toggleChangeAvatar, selectedAvatar, toggleChat }) => {
         />
       </div>
       <div className={classes["chat-body"]}>
-        {showUserInfo && (
-          <div className={classes["chat-info"]}>
-            <UserInfo
-              toggleUserInf={toggleUserInf}
-              selectedAvatar={selectedAvatar}
-              toggleChangeAvatar={toggleChangeAvatar}
-            />
-          </div>
-        )}
         {[1, 2, 3, 4, 5, 6].map((message, index) => (
           <div
             style={{
@@ -72,6 +115,7 @@ const Chat = ({ toggleChangeAvatar, selectedAvatar, toggleChat }) => {
       </div>
       <div className={classes["chat-bottom"]}>
         <Image
+          onClick={toggleUserInf}
           className={classes["chat-bottom-user"]}
           src="/svg/chat/user.svg"
           alt="user"

@@ -11,7 +11,7 @@ const Sports = () => {
         onClick={() => {
           router.push("/nfl");
         }}
-        className={classes["sport-element"]}
+        className={classes["nfl"]}
       >
         <Image
           className={classes["sport-image"]}
@@ -26,7 +26,7 @@ const Sports = () => {
         onClick={() => {
           router.push("/basketball");
         }}
-        className={classes["sport-element"]}
+        className={classes["basketball"]}
       >
         <Image
           className={classes["sport-image"]}
@@ -41,7 +41,7 @@ const Sports = () => {
         onClick={() => {
           router.push("/football");
         }}
-        className={classes["sport-element"]}
+        className={classes["football"]}
       >
         <Image
           className={classes["sport-image"]}
@@ -56,7 +56,7 @@ const Sports = () => {
         onClick={() => {
           router.push("/boxing");
         }}
-        className={classes["sport-element"]}
+        className={classes["boxing"]}
       >
         <Image
           className={classes["sport-image"]}
@@ -71,7 +71,7 @@ const Sports = () => {
         onClick={() => {
           router.push("/other");
         }}
-        className={classes["sport-element"]}
+        className={classes["other"]}
       >
         <Image
           className={classes["sport-image"]}

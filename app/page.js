@@ -19,7 +19,7 @@ const Page = () => {
       </div>
       <div className={classes["top-screen"]}>
         <div className={classes["top-screen-live-icon"]}>
-          <Image src="/svg/live.svg" alt="live" width="29" height="32" />
+          <Image src="/svg/live.svg" alt="live" width="33" height="37" />
         </div>
         <Sports />
       </div>
