@@ -93,10 +93,10 @@ export const MenuMobile = () => {
         />
         <Image
           className={classes["menu-mobile-logo"]}
-          src="/svg/LOGO.svg"
+          src="/svg/mobile-menu-logo.svg"
           alt="logo"
-          width="69"
-          height="63"
+          width="76"
+          height="62"
         />
       </div>
       <div

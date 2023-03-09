@@ -105,5 +105,6 @@
   background-color: inherit;
 }
 .selected-avatar {
-  background: url("/svg/chat/change-avatar/background-avatar.svg");
+  background: url("/svg/chat/background-avatar.svg");
+  background-size: 100%;
 }

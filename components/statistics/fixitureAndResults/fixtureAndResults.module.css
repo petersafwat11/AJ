@@ -95,9 +95,9 @@
     width: 100%;
     display: grid;
     grid-template-columns: 25% 15% 25% 1fr;
-    padding: 0.25rem 0.4rem 0.3rem 20%;
+    padding: 0.25rem 0.4rem 0.3rem 27%;
     align-items: center;
-    border-bottom: 1px solid #8e8e8e;
+    border-bottom: 0.5px solid #8e8e8e;
   }
   .first-team,
   .second-team {
@@ -143,39 +143,38 @@
 }
 @media (max-width: 28.125rem) {
   .date-heading {
-    font-size: 0.7rem;
-    line-height: 0.8rem;
+    font-size: 0.625rem;
+    line-height: 0.75rem;
   }
   .date-para {
-    font-size: 0.7rem;
-    line-height: 0.8rem;
+    font-size: 0.56rem;
+    line-height: 0.68rem;
   }
   .match {
-    grid-template-columns: 25% 15% 25% 1fr;
-    padding: 0.25rem 0.4rem 0.3rem 15%;
+    grid-template-columns: 28% 15% 28% 1fr;
   }
   .first-team,
   .second-team {
-    gap: 0.45rem;
+    gap: 0.5rem;
   }
   .result,
   .vs {
-    gap: 0.25rem;
-    font-size: 0.7rem;
-    line-height: 0.8rem;
+    gap: 0.3rem;
+    font-size: 0.625rem;
+    line-height: 0.75rem;
   }
   .first-team-name,
   .second-team-name {
-    font-size: 0.7rem;
-    line-height: 0.8rem;
+    font-size: 0.625rem;
+    line-height: 0.75rem;
   }
   .first-team-image,
   .second-team-image {
-    width: .9rem;
-    height: .9rem;
+    width: 0.9rem;
+    height: 0.9rem;
   }
   .match-date {
-    font-size: 0.6rem;
-    line-height: 0.65rem;
+    font-size: 0.5rem;
+    line-height: 0.55rem;
   }
 }

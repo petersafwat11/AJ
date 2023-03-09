@@ -1,10 +1,15 @@
 import Image from "next/image";
 import { useState } from "react";
 import classes from "./changeAvatar.module.css";
-export const ChangeAvatar = ({ toggleChangeAvatar, selectAvatar, avatars }) => {
-  const [selectedAvatar, setSelectedAvatar] = useState();
+export const ChangeAvatar = ({
+  toggleChangeAvatar,
+  selectAvatar,
+  avatars,
+  selectedAvatar,
+}) => {
+  const [newSelectedAvatar, setNewSElectedAvatar] = useState();
   const applyChanges = () => {
-    selectAvatar(`/svg/chat/change-avatars/${selectedAvatar + 1}.svg`);
+    selectAvatar(`/svg/chat/avatars/${newSelectedAvatar + 1}.svg`);
     toggleChangeAvatar();
   };
 
@@ -35,20 +40,20 @@ export const ChangeAvatar = ({ toggleChangeAvatar, selectAvatar, avatars }) => {
             <div
               style={{
                 background:
-                  selectedAvatar == index
+                  newSelectedAvatar == index
                     ? "url('/svg/chat/background.svg')"
                     : "",
-                backgroundSize: selectedAvatar == index ? "100%" : "",
-                backgroundRepeat: selectedAvatar == index ? "no-repeat" : "",
-                backgroundPosition: selectedAvatar == index ? "top" : "",
+                backgroundSize: newSelectedAvatar == index ? "93%" : "",
+                backgroundRepeat: newSelectedAvatar == index ? "no-repeat" : "",
+                backgroundPosition: newSelectedAvatar == index ? " bottom" : "",
               }}
               onClick={() => {
-                setSelectedAvatar(index);
+                setNewSElectedAvatar(index);
               }}
               key={index}
               className={classes["avatar"]}
             >
-              {selectedAvatar == index && (
+              {setNewSElectedAvatar == index && (
                 <Image
                   className={classes["checked-icon"]}
                   src="/svg/chat/check.svg"
@@ -57,30 +62,49 @@ export const ChangeAvatar = ({ toggleChangeAvatar, selectAvatar, avatars }) => {
                   height="21"
                 />
               )}
-              <img
+              <Image
                 src={`/svg/chat/avatars/${index + 1}.svg`}
                 alt="avatar"
                 width="57"
+                height="57"
               />
             </div>
           ))}
         </div>
         <div className={classes["actions"]}>
-          <button onClick={applyChanges} className={classes['applay-button']}> Apply</button>
-          <button className={classes['cancel-button']}>Cancel </button>
+          <button onClick={applyChanges} className={classes["apply-button"]}>
+            Apply
+          </button>
+          <button
+            onClick={toggleChangeAvatar}
+            className={classes["cancel-button"]}
+          >
+            Cancel{" "}
+          </button>
         </div>
       </div>
       <div className={classes["change-avatars-second"]}>
         <Image
           className={classes["exit"]}
           onClick={toggleChangeAvatar}
-          src="/svg/chat/change-avatar/exit.svg"
+          src="svg/chat/change-avatar/exit.svg"
           alt="send"
           width="12"
           height="12"
         />
         <div className={classes["selected-avatar"]}>
-          <img src={selectedAvatar} alt="avatar" width="114" />
+          <div className={classes["new-selected-image"]}>
+            {newSelectedAvatar ? (
+              <img
+                src={`/svg/chat/avatars/${newSelectedAvatar + 1}.svg`}
+                alt="avatar"
+                width="114"
+              />
+            ) : (
+              <img src={selectedAvatar} alt="avatar" width="114" />
+            )}
+          </div>
+
           <p>Your selected avatar</p>
         </div>
       </div>

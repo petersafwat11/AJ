@@ -1,7 +1,7 @@
 .container {
   max-width: min(50rem, 95%);
   margin: auto;
-  margin-bottom: 20.2rem;
+  margin-bottom: 7rem;
 }
 .statistics-types {
   display: flex;
@@ -21,7 +21,23 @@
   border-bottom: 2px solid transparent;
   transition: all 0.2s ease-out;
 }
-.statistics-type:hover {
-  border-bottom: 2px solid #03a1cd;
-  color: #03a1cd;
+@media (max-width: 56.25rem) {
+  .container {
+    margin-bottom: 3.5rem;
+  }
+  .statistics-types {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.625rem;
+    max-width: auto;
+    margin-top: 0.5rem;
+    padding-bottom: 0.1rem;
+  }
+  .statistics-type {
+    font-size: 0.875rem;
+    line-height: 1rem;
+    padding: 0.6rem 0.4rem;
+    border-bottom: 1.5px solid transparent;
+  }
 }

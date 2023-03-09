@@ -1,5 +1,5 @@
 .proton-vpn {
-  background: linear-gradient(to right, #755f90, #4f6cdd);
+  background: url("/svg/Subscribe-background.svg");
   width: 34rem;
   height: 7.78rem;
   border-radius: 0.7rem;
@@ -66,7 +66,8 @@
 }
 @media (max-width: 56.25rem) {
   .proton-vpn {
-    max-width: min(90%, 28rem);
+    width: min(90%, 28rem);
+    margin: 0;
     height: auto;
     border-radius: 0.56rem;
     padding: 0.65rem 0 0.67rem;

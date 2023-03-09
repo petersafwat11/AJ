@@ -29,6 +29,8 @@
   height: 2.15rem;
   padding: 0 0.42rem 0 1.5rem;
   cursor: pointer;
+  background: #131b20;
+  border-radius: 0.22rem;
 }
 .overlay-color-first,
 .overlay-color-draw,
@@ -106,7 +108,7 @@
   letter-spacing: 0.02em;
   color: #f8f8f8;
 }
-.all-votes {
+/* .all-votes {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 300;
@@ -115,8 +117,7 @@
   letter-spacing: 0.02em;
   color: #f8f8f8;
   margin-top: 0.4rem;
-  
-}
+} */
 @media (max-width: 56.25rem) {
   .who-will-win {
     max-width: min(90%, 25rem);

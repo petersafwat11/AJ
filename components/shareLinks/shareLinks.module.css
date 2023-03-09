@@ -105,16 +105,48 @@
 .copy-icon:hover {
   color: #01bcf1;
 }
-/* .share-links-copy {
-  position: absolute;
-  top: -1px;
-  right: 0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.81rem;
-  height: 2.81rem;
-  border-radius: 50%;
-  background-color: #d1d1d1;
-} */
+@media (max-width: 56.25rem) {
+  .share-links {
+    border-radius: 1.44rem;
+    padding: 1.477rem 1.477rem 1.275rem 1.3rem;
+    width: min(23.625rem, 95%);
+  }
+  .share-links-title {
+    font-size: 0.945rem;
+    line-height: 0.7rem;
+  }
+  .share-links-exit {
+    width: 8.25px;
+    height: 8.25px;
+  }
+  .share-links-body {
+    margin-top: 2.2rem;
+  }
+  .share-links-websites {
+    gap: 0.75rem;
+  }
+  .share-links-website-logo {
+    width: 40.5px;
+    height: 40.5px;
+  }
+  .share-links-website-logo > * {
+    transition: all 0.5s ease-out;
+    font-size: 1.05rem;
+  }
+  .share-links-website {
+    gap: 0.28rem;
+    font-size: 0.48rem;
+    line-height: 0.525rem;
+  }
+  .share-links-bottom {
+    height: 2.175rem;
+    border-radius: 0.56rem;
+    font-size: 0.56rem;
+    line-height: 0.63rem;
+    padding: 0 0.5rem;
+    margin: 1.36rem auto 0;
+  }
+  .copy-icon {
+    font-size: 0.75rem;
+  }
+}

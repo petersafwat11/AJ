@@ -1,8 +1,6 @@
-'use client'
-import Image from "next/image";
-import React, { useState} from "react";
+"use client";
+import React, { useState } from "react";
 import LeagueMenu from "../../components/leage/League";
-import StatisticsSports from "../../components/statistics-sport/statistics-sports";
 import FixtureAndResults from "../../components/statistics/fixitureAndResults/FixtureAndResults";
 import Standings from "../../components/statistics/standings/Standings";
 import classes from "./statistics.module.css";
@@ -16,6 +14,11 @@ const Statistics = () => {
         <LeagueMenu />
         <div className={classes["statistics-types"]}>
           <p
+            style={{
+              borderBottom:
+                statisticsType === "fixtures" ? "2px solid #03a1cd" : "",
+              color: statisticsType === "fixtures" ? "#03a1cd" : "",
+            }}
             onClick={() => {
               setStatisticsType("fixtures");
             }}
@@ -28,10 +31,25 @@ const Statistics = () => {
               setStatisticsType("standings");
             }}
             className={classes["statistics-type"]}
+            style={{
+              borderBottom:
+                statisticsType === "fixtures" ? "2px solid #03a1cd" : "",
+              color: statisticsType === "fixtures" ? "#03a1cd" : "",
+            }}
           >
             STANDINGS
           </p>
-          <p className={classes["statistics-type"]}>RESULTS</p>
+
+          <p
+            style={{
+              borderBottom:
+                statisticsType === "fixtures" ? "2px solid #03a1cd" : "",
+              color: statisticsType === "fixtures" ? "#03a1cd" : "",
+            }}
+            className={classes["statistics-type"]}
+          >
+            RESULTS
+          </p>
         </div>
         {statisticsType == "fixtures" ? <FixtureAndResults /> : <Standings />}
       </div>

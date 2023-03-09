@@ -129,6 +129,7 @@
   .title {
     font-size: 1.25rem;
     line-height: 1.75rem;
+    align-self: center;
   }
   .para {
     font-size: 0.687rem;

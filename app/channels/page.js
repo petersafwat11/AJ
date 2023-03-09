@@ -5,9 +5,9 @@ import React, { useState } from "react";
 import { ChangeAvatar } from "../../components/chat/changeAvatar";
 import Chat from "../../components/chat/Chat";
 import LiveButton from "../../components/live-button/LiveButton";
+import ProtonVpn from "../../components/protonVpn/ProtonVpn";
 import Report from "../../components/report/Report";
 import ShareLinks from "../../components/shareLinks/ShareLinks";
-import { VideoJs } from "../../components/video/VideoJs";
 import SocialIcons from "../../components/whatchShare/SocialIcons";
 import classes from "./channels.module.css";
 const Page = () => {
@@ -66,6 +66,11 @@ const Page = () => {
           />
         </div>
       )}
+      {showShareLinks && (
+        <div className={classes["share-links"]}>
+          <ShareLinks toggleShareLinks={toggleShareLinks} />
+        </div>
+      )}
       <div className={classes["container"]}>
         <div className={classes["navigate"]}>
           <Link href="/">Home</Link>
@@ -87,9 +92,7 @@ const Page = () => {
             />
           </div>
 
-          <div className={classes["watch-video"]}>
-            {/* <VideoJs /> */}
-            </div>
+          <div className={classes["watch-video"]}>{/* <VideoJs /> */}</div>
           <div className={classes["watch-video-options"]}>
             <button className={classes["watch-video-options-server-name"]}>
               Server 1
@@ -97,6 +100,23 @@ const Page = () => {
             <button className={classes["watch-video-options-extend-button"]}>
               EXTEND
             </button>
+          </div>
+          <div className={classes["vpn"]}>
+            <ProtonVpn />
+          </div>
+          <div className={classes["search-div"]}>
+            <input
+              className={classes["channel-search"]}
+              type="text"
+              placeholder="Search for channel..."
+            />
+            <Image
+              className={classes["search-icon"]}
+              src="/svg/search-icon.svg"
+              alt="search"
+              width="9"
+              height="9"
+            />
           </div>
           <div className={classes["watch-video-servers"]}>
             {[1, 2, 3, 4, 5, 6, 7, 8].map((item, index) => (
@@ -109,11 +129,6 @@ const Page = () => {
             ))}
           </div>
         </div>
-        {showShareLinks && (
-          <div className={classes["share-links"]}>
-            <ShareLinks toggleShareLinks={toggleShareLinks} />
-          </div>
-        )}
       </div>
     </div>
   );

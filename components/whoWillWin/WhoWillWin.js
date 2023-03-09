@@ -16,6 +16,9 @@ const WhoWillWin = () => {
             }
             setSelectedValue("first-wins");
           }}
+          style={{
+            border: selectedValue === "first-wins" ? "1px solid #005174" : "",
+          }}
           className={classes["option"]}
         >
           <span className={classes["overlay-color-first"]}></span>
@@ -46,6 +49,9 @@ const WhoWillWin = () => {
               return;
             }
             setSelectedValue("draw");
+          }}
+          style={{
+            border: selectedValue === "draw" ? "1px solid #005174" : "",
           }}
           className={classes["option"]}
         >
@@ -79,6 +85,9 @@ const WhoWillWin = () => {
 
             setSelectedValue("second-wins");
           }}
+          style={{
+            border: selectedValue === "second-wins" ? "1px solid #005174" : "",
+          }}
           className={classes["option"]}
         >
           <span className={classes["overlay-color-second"]}></span>
@@ -104,7 +113,7 @@ const WhoWillWin = () => {
           </div>
         </div>
       </div>
-      <p className={classes['all-votes']}>442k overall votes </p>
+      {/* <p className={classes["all-votes"]}>442k overall votes </p> */}
     </div>
   );
 };

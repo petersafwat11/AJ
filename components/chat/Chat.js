@@ -75,8 +75,9 @@ know anything as you are spurs! `,
       {changeAvatar && (
         <div className={classes["change-avatar-wrapper"]}>
           <ChangeAvatar
-            avatars={avatars}
+            selectedAvatar={selectedAvatar}
             selectAvatar={selectAvatar}
+            avatars={avatars}
             toggleChangeAvatar={toggleChangeAvatar}
           />
         </div>
@@ -115,39 +116,66 @@ know anything as you are spurs! `,
         />
       </div>
       <div className={classes["chat-body"]}>
-        {messages.map((message, index) => (
-          <div key={index}>
-            <div className={classes["message-details"]}>
-              <p className={classes["message-username"]}>{message.usename}</p>
-              <p className={classes["message-time"]}>{message.time}</p>
-            </div>
-            <div className={classes["message"]}>
-              <img
-                className={classes["chat-body-user"]}
-                src={message.avatarSrc}
-                alt="user-avatar"
-                width="45"
-              />
-              <div className={classes["message-content"]}>
-                {message.message.charAt(0) === "@" && (
-                  <span className={classes["mention-user"]}>
-                    {message.message.split(" ")[0]}
-                  </span>
-                )}
-                {getSubString(message.message)}
+        {messages.map((message, index) =>
+          message.usename.split(" ")[0] === "You" ? (
+            <div className={classes['my-message-wrapper']} key={index}>
+              <div className={classes["my-message-details"]}>
+                <p className={classes["my-message-username"]}>
+                  {message.usename}
+                </p>
+                <p className={classes["my-message-time"]}>{message.time}</p>
               </div>
-              <img
-                onClick={() => {
-                  setMentionUserName("@" + message.usename + " ");
-                }}
-                className={classes["mention-icon"]}
-                src="/svg/chat/mention-icon.svg"
-                alt="user-avatar"
-                width="14"
-              />
+              <div className={classes["my-message"]}>
+                <div className={classes["my-message-content"]}>
+                  {message.message.charAt(0) === "@" && (
+                    <span className={classes["my-mention-user"]}>
+                      {message.message.split(" ")[0]}
+                    </span>
+                  )}
+                  {getSubString(message.message)}
+                </div>
+                <img
+                  className={classes["chat-body-user"]}
+                  src={message.avatarSrc}
+                  alt="user-avatar"
+                  width="45"
+                />
+              </div>
             </div>
-          </div>
-        ))}
+          ) : (
+            <div key={index}>
+              <div className={classes["message-details"]}>
+                <p className={classes["message-username"]}>{message.usename}</p>
+                <p className={classes["message-time"]}>{message.time}</p>
+              </div>
+              <div className={classes["message"]}>
+                <img
+                  className={classes["chat-body-user"]}
+                  src={message.avatarSrc}
+                  alt="user-avatar"
+                  width="45"
+                />
+                <div className={classes["message-content"]}>
+                  {message.message.charAt(0) === "@" && (
+                    <span className={classes["mention-user"]}>
+                      {message.message.split(" ")[0]}
+                    </span>
+                  )}
+                  {getSubString(message.message)}
+                </div>
+                <img
+                  onClick={() => {
+                    setMentionUserName("@" + message.usename + " ");
+                  }}
+                  className={classes["mention-icon"]}
+                  src="/svg/chat/mention-icon.svg"
+                  alt="user-avatar"
+                  width="14"
+                />
+              </div>
+            </div>
+          )
+        )}
       </div>
       <div className={classes["chat-bottom"]}>
         <Image

@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import { ChangeAvatar } from "../../components/chat/changeAvatar";
 import Chat from "../../components/chat/Chat";
 import Dropdown from "../../components/dropdown/Dropdown";
 import Report from "../../components/report/Report";
@@ -42,7 +41,7 @@ const Page = () => {
           <Report toggleReport={toggleReport} />
         </div>
       )}
-      
+
       {!showChat && (
         <Image
           onClick={toggleChat}
@@ -55,9 +54,7 @@ const Page = () => {
       )}
       {showChat && (
         <div className={classes["chat"]}>
-          <Chat
-            toggleChat={toggleChat}
-          />
+          <Chat toggleChat={toggleChat} />
         </div>
       )}
       <div className={classes["container"]}>
@@ -69,9 +66,9 @@ const Page = () => {
 
         <WatchDetails
           lieageImage={"/svg/watch/primier-liage.svg"}
-          firstTeamImage={"/svg/watch/man-united.svg"}
+          firstTeamImage={"/svg/teams/man-united.svg"}
           firstTeamName={"Man united"}
-          seconteamImage={"/svg/watch/liverpool.svg"}
+          seconteamImage={"/svg/teams/liverpool.svg"}
           seconteamName={"Liverpool"}
           date={"Aug 18 15:00"}
           place={"Old Trafford"}
