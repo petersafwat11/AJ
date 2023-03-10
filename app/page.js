@@ -30,7 +30,7 @@ const Page = () => {
           <div className={classes["matches"]}>
             {[1, 2, 3].map((i) => (
               <>
-                <Match />
+                <Match live={true} />
               </>
             ))}
           </div>
@@ -41,7 +41,7 @@ const Page = () => {
           <div className={classes["matches"]}>
             {[1, 2, 3, 4].map((i) => (
               <>
-                <Match />
+                <Match live={false} />
               </>
             ))}
           </div>

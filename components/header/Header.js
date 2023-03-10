@@ -51,7 +51,7 @@ const Header = () => {
           />
         </div>
         <div className={classes["header-lang"]}>
-          <p>العربية </p>
+          <p className={classes['arabic']}>العربية </p>
           <p>English</p>
           <p>Español</p>
         </div>

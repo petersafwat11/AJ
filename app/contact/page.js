@@ -4,14 +4,14 @@ import classes from "./contact.module.css";
 
 const Page = () => {
   const topics = [
-    "Connection Trouble",
-    "Server playing wrong match",
-    "Advertise with us ",
-    "Feedback",
-    "Add a Channel",
-    "Sport or League",
-    "Chat issues",
-    "Something else",
+    "Adding or removing users",
+    "Billing and plans",
+    "Connection Trouble ",
+    "Notifications",
+    "Managing Channels",
+    "Signing in",
+    "New design feedback",
+    "Trial of a paid plan",
   ];
   return (
     <section className={classes["contact"]}>
@@ -89,7 +89,8 @@ const Page = () => {
         <div className={classes["contact-us-first"]}>
           <div className={classes["contact-us-item"]}>
             <Image
-              src="/svg/contact/first.svg"
+              className={classes["email-icon"]}
+              src="/svg/contact/email.svg"
               alt="mail"
               width="27"
               height="27"
@@ -98,7 +99,8 @@ const Page = () => {
           </div>
           <div className={classes["contact-us-item"]}>
             <Image
-              src="/svg/contact/first.svg"
+              className={classes["phone-icon"]}
+              src="/svg/contact/phone.svg"
               alt="phone"
               width="27"
               height="27"
@@ -108,7 +110,13 @@ const Page = () => {
         </div>
         <div className={classes["contact-us-second"]}>
           <div className={classes["contact-us-item-second"]}>
-            <Image src="/svg/contact/first.svg" alt="" width="22" height="30" />
+            <Image
+              className={classes["location-icon"]}
+              src="/svg/contact/location.svg"
+              alt=""
+              width="22"
+              height="30"
+            />
             <p>Festival naya Ul, bld. 10, appt. 19, Kostroma, Russia</p>
           </div>
         </div>

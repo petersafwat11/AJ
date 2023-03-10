@@ -5,7 +5,7 @@
   padding: 0.5rem 5.625rem 0.45rem;
   margin: 0 auto;
   text-align: center;
-  background: url("/topimage.png");
+  background: url("/topimage.svg");
   background-position: bottom;
   background-size: 85%;
   background-repeat: no-repeat;
@@ -43,6 +43,9 @@
   transition: all 0.4s ease-out;
   cursor: pointer;
   font-family: RobotoRegular;
+}
+.arabic {
+  font-family: "Tajawal";
 }
 .header-lang > p:hover {
   color: var(--blue);

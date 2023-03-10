@@ -3,13 +3,17 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import classes from "./match.module.css";
 
-export const Match = () => {
+export const Match = ({ live }) => {
   const router = useRouter();
   return (
     <div className={classes["match"]}>
       <div className={classes["match-first"]}>
         <p className={classes["date"]}>Aug 18 - 15:00</p>
-        <div className={classes["status-mobile"]}>2nd Half: 47’</div>
+        {live ? (
+          <div className={classes["status-mobile"]}>2nd Half: 47’</div>
+        ) : (
+          <div className={classes["remaining-time-mobile"]}>15h 20m 15s</div>
+        )}
         <p className={classes["leage"]}>Premeir League</p>
       </div>
       <div className={classes["match-second"]}>
@@ -17,12 +21,16 @@ export const Match = () => {
           <p className={classes["date"]}>Aug 18 - 15:00</p>
           <p className={classes["leage"]}>Premeir League</p>
         </div>
-        <div className="live-button-div">
-          <div className={classes["live-button"]}>
-            <span></span>
-            <p>Live</p>
+        {live ? (
+          <div className="live-button-div">
+            <div className={classes["live-button"]}>
+              <span></span>
+              <p>Live</p>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className={classes["not-live"]}>LIVE</div>
+        )}
         <div className={classes["first-team"]}>
           <img
             className={classes["first-team-image"]}
@@ -45,7 +53,11 @@ export const Match = () => {
             height="31"
           />
         </div>
-        <div className={classes["status"]}>2nd Half: 47’</div>
+        {live ? (
+          <div className={classes["status"]}>2nd Half: 47’</div>
+        ) : (
+          <div className={classes["remaining-time"]}>15h 20m 15s</div>
+        )}
         <div className={classes["action-button"]}>
           <button
             onClick={() => {

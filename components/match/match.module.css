@@ -34,23 +34,25 @@
   font-family: RobotoRegular;
 }
 .live-button {
-  border: 1px solid rgba(65, 243, 49, 0.5);
+  border: 1px solid #41f331;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 1.5rem;
-  width: 3.65rem;
+  height: 1.6rem;
+  width: 3.75rem;
   border-radius: 3.75px;
-  margin-top: -1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
   /* box-shadow: 0rem 0.3rem 0.5rem #41f3315b; */
 }
 .live-button > span {
-  width: 0.8rem;
-  height: 0.8rem;
+  width: 0.75rem;
+  height: 0.75rem;
   background-color: #41f331;
   border-radius: 50%;
-  margin-right: 0.3rem;
-  margin-top: 0.6px;
+  /* margin-right: 0.2rem; */
   /* box-shadow: 0rem 0.3rem 0.5rem #41f3315b; */
   animation: live 0.8s ease-in-out infinite;
 }
@@ -82,11 +84,21 @@
   color: #41f331;
   font-family: RobotoSemibold;
   font-size: 0.75rem;
-  margin-top: 3px;
   line-height: 0%;
   text-transform: uppercase;
 }
-
+.not-live {
+  padding: 0.28rem 1.12rem;
+  border: 1px solid #7b7b7b;
+  border-radius: 0.23rem;
+  font-family: RobotoSemibold;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+  color: #929292;
+  display: flex;
+  justify-content: center;
+}
 .first-team,
 .second-team {
   display: flex;
@@ -98,17 +110,29 @@
   font-size: 0.98rem;
   line-height: 1.12rem;
   font-family: RobotoSemiBold;
+  margin-top: 2px;
 }
 .match-vs {
   font-family: RobotoSemiBold;
   font-size: 0.93rem;
   line-height: 1.125rem;
+  margin-top: 2px;
 }
 .status {
   font-family: RobotoSemiBold;
   font-size: 0.75rem;
   line-height: 0.9;
+  margin-top: 2px;
+
   color: #4ae96d;
+}
+.remaining-time {
+  font-family: RobotoSemiBold;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+  color: #a1a1a1;
+  margin-top: 2px;
 }
 .watch-button {
   background-color: #ff4747;
@@ -163,6 +187,16 @@
     line-height: 0.82rem;
     color: #4ae96d;
   }
+  .remaining-time {
+    display: none;
+  }
+  .remaining-time-mobile {
+    font-weight: 600;
+    font-family: RobotoSemiBold;
+    font-size: 0.72rem;
+    line-height: 0.82rem;
+    color: #a1a1a1;
+  }
   .leage {
     font-weight: 400;
     font-size: 0.72rem;
@@ -179,7 +213,8 @@
   .match-details {
     display: none;
   }
-  .live-button {
+  .live-button,
+  .not-live {
     padding: 0.25rem 0.4rem;
     width: 3.25rem;
     height: 1.31rem;
@@ -190,11 +225,10 @@
   .live-button > span {
     width: 0.625rem;
     height: 0.625rem;
-    margin-left: 0.2rem;
-    margin-top: 0px;
   }
 
-  .live-button > p {
+  .live-button > p,
+  .not-live {
     font-size: 0.625rem;
     font-family: RobotoSemiBold;
     font-weight: 600;
@@ -249,7 +283,8 @@
     font-size: 0.663rem;
     line-height: 0.8rem;
   }
-  .status-mobile {
+  .status-mobile,
+  .remaining-time-mobile {
     font-size: 0.612rem;
     line-height: 0.7rem;
   }
@@ -262,21 +297,20 @@
     padding-top: 0.51rem;
   }
 
-  .live-button {
+  .live-button,
+  .not-live {
     padding: 0.212rem 0.34rem;
     width: 2.76rem;
     height: 1.1rem;
-    border: 0.6px solid #41f331;
     border-radius: 0.25rem;
   }
   .live-button > span {
     width: 0.55rem;
     height: 0.55rem;
-    margin-left: 0.1rem;
-    margin-right: 0.2rem;
   }
 
-  .live-button > p {
+  .live-button > p,
+  .not-live {
     font-size: 0.625rem;
   }
 

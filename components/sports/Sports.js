@@ -20,7 +20,7 @@ const Sports = () => {
           width="60"
           height="60"
         />
-        <p>Nfl</p>
+        <p>NFL</p>
       </div>
       <div
         onClick={() => {

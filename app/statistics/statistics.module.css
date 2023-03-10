@@ -18,8 +18,6 @@
   font-family: RobotoRegular;
   padding: 0.6rem 0.4rem;
   cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: all 0.2s ease-out;
 }
 @media (max-width: 56.25rem) {
   .container {
@@ -38,6 +36,5 @@
     font-size: 0.875rem;
     line-height: 1rem;
     padding: 0.6rem 0.4rem;
-    border-bottom: 1.5px solid transparent;
   }
 }

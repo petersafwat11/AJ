@@ -33,8 +33,8 @@ const Statistics = () => {
             className={classes["statistics-type"]}
             style={{
               borderBottom:
-                statisticsType === "fixtures" ? "2px solid #03a1cd" : "",
-              color: statisticsType === "fixtures" ? "#03a1cd" : "",
+                statisticsType === "standings" ? "2px solid #03a1cd" : "",
+              color: statisticsType === "standings" ? "#03a1cd" : "",
             }}
           >
             STANDINGS
@@ -43,8 +43,8 @@ const Statistics = () => {
           <p
             style={{
               borderBottom:
-                statisticsType === "fixtures" ? "2px solid #03a1cd" : "",
-              color: statisticsType === "fixtures" ? "#03a1cd" : "",
+                statisticsType === "results" ? "2px solid #03a1cd" : "",
+              color: statisticsType === "results" ? "#03a1cd" : "",
             }}
             className={classes["statistics-type"]}
           >
