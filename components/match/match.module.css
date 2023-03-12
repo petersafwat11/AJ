@@ -249,6 +249,7 @@
     font-family: RobotoSemiBold;
     font-size: 1.06rem;
     line-height: 1.25rem;
+    white-space: nowrap;
     /* margin-top: 0.25rem; */
   }
   .first-team-image {
