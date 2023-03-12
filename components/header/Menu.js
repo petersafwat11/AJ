@@ -77,6 +77,7 @@ export const Menu = () => {
 
 export const MenuMobile = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const router = useRouter();
 
   return (
     <div>
@@ -125,12 +126,59 @@ export const MenuMobile = () => {
           <p>Español</p>
         </div>
         <div className={classes["menu-mobile-pages-links"]}>
-          <p className={classes["menu-mobile-page-link"]}>SPORTS </p>
-          <p className={classes["menu-mobile-page-link"]}> CHANNELS </p>
-          <p className={classes["menu-mobile-page-link"]}> STATISTICS </p>
-          <p className={classes["menu-mobile-page-link"]}> NEWS </p>
-          <p className={classes["menu-mobile-page-link"]}> DONATE </p>
-          <p className={classes["menu-mobile-page-link"]}> GIVEAWAY</p>
+          <p
+            onClick={() => {
+              router.push("/");
+            }}
+            className={classes["menu-mobile-page-link"]}
+          >
+            SPORTS{" "}
+          </p>
+          <p
+            onClick={() => {
+              router.push("/channels");
+            }}
+            className={classes["menu-mobile-page-link"]}
+          >
+            {" "}
+            CHANNELS{" "}
+          </p>
+          <p
+            onClick={() => {
+              router.push("/statistics");
+            }}
+            className={classes["menu-mobile-page-link"]}
+          >
+            {" "}
+            STATISTICS{" "}
+          </p>
+          <p
+            onClick={() => {
+              router.push("/news");
+            }}
+            className={classes["menu-mobile-page-link"]}
+          >
+            {" "}
+            NEWS{" "}
+          </p>
+          <p
+            onClick={() => {
+              router.push("/donate");
+            }}
+            className={classes["menu-mobile-page-link"]}
+          >
+            {" "}
+            DONATE{" "}
+          </p>
+          <p
+            onClick={() => {
+              router.push("/give-away");
+            }}
+            className={classes["menu-mobile-page-link"]}
+          >
+            {" "}
+            GIVEAWAY
+          </p>
         </div>
         <div className={classes["menu-mobile-social"]}>
           <Image
