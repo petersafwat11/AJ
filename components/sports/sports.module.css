@@ -16,8 +16,7 @@
   font-size: 1.07rem;
 }
 .sports p {
-  /* font-family: RobotoRegular; */
-  font-weight: 400;
+  font-family: RobotoRegular;
 }
 .sports > div:hover {
   border-bottom: 4px solid #03a1cd;

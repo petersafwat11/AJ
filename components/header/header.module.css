@@ -44,8 +44,7 @@
 .header-lang > p {
   transition: all 0.4s ease-out;
   cursor: pointer;
-  /* font-family: RobotoRegular; */
-  font-weight: 400;
+  font-family: RobotoRegular;
 }
 .arabic {
   font-family: "Tajawal";
