@@ -33,11 +33,11 @@
   line-height: 1.65rem;
 }
 .footer-container-disclaimer > p {
-  font-family: RobotoSemiBold;
+  font-family: "Poppins";
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 600;
-  opacity: 0.75;
+  color: rgba(255, 255, 255, 0.75);
 }
 .footer-container-second {
   display: flex;
@@ -128,6 +128,10 @@
   font-size: 0.73rem;
   line-height: 1.3rem;
   color: rgba(255, 255, 255, 0.56);
+}
+.copy-write > *,
+.copy-write-links > * {
+  font-family: "Poppins";
 }
 .copy-write-links {
   display: flex;
@@ -364,9 +368,7 @@
     font-size: 0.625rem;
     line-height: 0.75rem;
     font-weight: 500;
-    font-family: RobotoRegular;
     color: #eeeeee;
-    opacity: 1;
   }
   .footer-actions-mobile {
     display: flex;

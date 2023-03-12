@@ -63,6 +63,7 @@ export const ChangeAvatar = ({
                 />
               )}
               <Image
+                className={classes["avatar-icon"]}
                 src={`/svg/chat/avatars/${index + 1}.svg`}
                 alt="avatar"
                 width="57"
@@ -96,6 +97,7 @@ export const ChangeAvatar = ({
           <div className={classes["new-selected-image"]}>
             {newSelectedAvatar ? (
               <img
+                className={classes["selected-avatar-icon"]}
                 src={`/svg/chat/avatars/${newSelectedAvatar + 1}.svg`}
                 alt="avatar"
                 width="114"

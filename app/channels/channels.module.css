@@ -224,6 +224,9 @@
     padding-left: 0.75;
     margin-top: 0.3rem;
   }
+  .vpn {
+    margin-top: 0.68rem;
+  }
   .watch-video-options-server-name {
     padding: auto;
     font-size: 0.56rem;

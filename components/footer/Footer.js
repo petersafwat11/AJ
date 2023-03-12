@@ -165,9 +165,6 @@ const Footer = () => {
                 <li className={classes["footer-container-links-list-item"]}>
                   Boxing
                 </li>
-                {/* <li  className={classes["footer-container-links-list-item"]}>
-                Others
-              </li> */}
               </nav>
             </div>
           </div>

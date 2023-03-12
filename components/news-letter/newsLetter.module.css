@@ -6,8 +6,8 @@
 .container {
   display: flex;
   align-items: center;
-  gap: 8.7rem;
-  padding: 3.5rem 2rem 3.32rem;
+  gap: 5.73rem;
+  padding: 3.318rem 2rem 2.41rem;
   max-width: max-content;
   margin: auto;
 }
@@ -15,26 +15,28 @@
   display: flex;
   align-items: start;
   flex-direction: column;
-  max-width: 41rem;
-  gap: 0.9rem;
+  max-width: 33.18rem;
+  gap: 0.15rem;
 }
 .title {
-  font-size: 2rem;
+  font-size: 1.4rem;
+  width: 90%;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  line-height: 2.8rem;
+  line-height: 2rem;
 }
 .para {
   font-weight: 300;
-  font-size: 1.4rem;
-  line-height: 1.95rem;
+  font-size: 0.9rem;
+  line-height: 1.35rem;
   color: rgba(255, 255, 255, 0.4);
   font-family: "Poppins", sans-serif;
+  padding-bottom: 1rem;
 }
 .news-letter-second {
   display: flex;
   align-items: start;
-  gap: 0.65rem;
+  gap: 0.55rem;
   flex-direction: column;
 }
 .notify {
@@ -51,6 +53,7 @@
   font-family: "Poppins", sans-serif;
   background-color: white;
   width: 15rem;
+  height: 2.925rem;
 }
 .notify-button {
   background-color: #01bcf1;
@@ -64,6 +67,7 @@
   color: white;
   white-space: nowrap;
   cursor: pointer;
+  height: 2.925rem;
 }
 .news-letter-second-para {
   font-weight: 300;

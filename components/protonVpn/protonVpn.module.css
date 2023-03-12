@@ -30,7 +30,7 @@
 }
 .title {
   margin-top: 0.44rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.88rem;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 700;
@@ -66,7 +66,7 @@
 }
 @media (max-width: 56.25rem) {
   .proton-vpn {
-    width: min(90%, 28rem);
+    width: min(90vw, 23.8rem);
     margin: 0;
     height: auto;
     border-radius: 0.56rem;

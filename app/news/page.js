@@ -1,6 +1,9 @@
+"use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
-import SendMessage from "../../components/send-message/SendMessage";
+import { MdKeyboardArrowLeft } from "react-icons/md";
+import { RiArrowRightSLine } from "react-icons/ri";
 import classes from "./news.module.css";
 const page = () => {
   return (
@@ -10,15 +13,13 @@ const page = () => {
         <span></span>
       </div>
       <div className={classes["wrapper"]}>
-        <div className={classes["send-message"]}>
-          <SendMessage />
-        </div>
+        <div className={classes["send-message"]}>{/* <SendMessage /> */}</div>
         <div className={classes["container"]}>
           <div className={classes["news-items"]}>
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+            {[1, 2, 3, 4, 5].map((i) => (
               <>
                 <NewsItem
-                  src={"/svg/news-photo.png"}
+                  src={"/svg/boxers.svg"}
                   alt={"photo"}
                   heading={"Sports News Title 1"}
                   para={
@@ -30,14 +31,39 @@ const page = () => {
           </div>
         </div>
       </div>
+      <div className={classes["paginations"]}>
+        <div className={classes["paginations-options"]}>
+          <div className={classes["previous"]}>
+            <MdKeyboardArrowLeft className={classes["arrow"]} />
+            <p className={classes["paginations-option"]}>Previous</p>
+          </div>
+          <p className={classes["paginations-option"]}>1</p>
+          <p className={classes["paginations-option"]}>2</p>
+          <p className={classes["paginations-option"]}>3</p>
+          <p className={classes["paginations-option"]}>4</p>
+          <p>...</p>
+          <p className={classes["paginations-option"]}>10</p>
+          <div className={classes["next"]}>
+            <p className={classes["paginations-option"]}>next</p>
+            <RiArrowRightSLine className={classes["arrow"]} />
+          </div>
+        </div>
+      </div>
     </main>
   );
 };
 
 export default page;
 export const NewsItem = ({ src, alt, heading, para }) => {
+  const router = useRouter();
+
   return (
-    <div className={classes["news-item"]}>
+    <div
+      onClick={() => {
+        router.push("/news/1");
+      }}
+      className={classes["news-item"]}
+    >
       <Image
         className={classes["news-item-image"]}
         src={src}

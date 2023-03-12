@@ -5,7 +5,7 @@
   padding: 0.5rem 5.625rem 0.45rem;
   margin: 0 auto;
   text-align: center;
-  background: url("/topimage.svg");
+  background: url("/top-header.svg");
   background-position: bottom;
   background-size: 85%;
   background-repeat: no-repeat;
@@ -13,11 +13,12 @@
   height: 3.33rem;
 }
 .header-top > p {
-  font-size: 0.7rem;
+  font-size: 0.73rem;
   line-height: 0.85rem;
   padding-bottom: 0.56rem;
-  color: rgba(255, 255, 255, 0.86);
+  color: rgba(255, 255, 255, 0.7);
   font-family: RobotoRegular;
+  letter-spacing: 0.03em;
 }
 .header-social {
   display: flex;

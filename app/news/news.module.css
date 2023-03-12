@@ -1,12 +1,12 @@
 .news {
-  max-width: min(85%, 40rem);
-  margin: 0 auto 4.875rem;
+  max-width: min(85%, 42rem);
+  margin: 0 auto 2.5rem;
 }
 .top-heading {
   margin-top: 3.65rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.7rem;
   color: #00c4fb;
 }
 .heading {
@@ -21,35 +21,12 @@
   height: 1px;
 }
 
-.container::-webkit-scrollbar {
-  width: 6px;
-}
-
-/* Track */
-.container::-webkit-scrollbar-track {
-  background: inherit;
-}
-
-/* Handle */
-.container::-webkit-scrollbar-thumb {
-  background: rgba(217, 217, 217, 0.6);
-  border-radius: 8px;
-}
-
-/* Handle on hover */
-.container::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
 .container {
   width: 100%;
-  margin-top: 1.15rem;
-  max-height: 62.5rem;
-  overflow-y: auto;
-  scroll-behavior: smooth;
+  margin-top: 1.07rem;
   background-color: #0d1317;
   border-radius: 1.125rem;
-  padding: 0.65rem 1.4rem 1.4rem;
+  padding: 0.125rem 1.5rem 0.75rem;
 }
 .news-items {
   display: flex;
@@ -59,156 +36,172 @@
 .news-item {
   display: flex;
   align-items: start;
-  gap: 0.75rem;
-  padding: 1rem 0 0.75rem;
+  gap: 1.17rem;
+  padding: 0.75rem 0 0.75rem;
   cursor: pointer;
 }
 .news-item-image {
-  width: 12.2rem;
+  width: 13.2rem;
   height: 11rem;
   border-radius: 0.6rem;
 }
 .news-item-content {
-  margin-top: 1rem;
+  margin-top: 0.625rem;
   display: flex;
   flex-direction: column;
   align-items: start;
-  gap: 0.75rem;
-  width: 58%;
+  gap: 0.625rem;
+  padding-right: 1.3rem;
 }
 .news-item-heading {
-  font-family: RobotoSemiBold;
-  font-weight: 600;
+  font-family: RobotoBold;
+  font-weight: 700;
   font-size: 1.125rem;
   line-height: 1.3215rem;
 }
 .news-item-para {
   font-weight: 400;
-  font-size: 0.8rem;
-  line-height: 0.95rem;
-  opacity: 0.7;
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+.paginations {
+  margin-top: 1.36rem;
+}
+.paginations > * {
+  color: white;
+}
+.paginations-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.125rem;
+}
+.next,
+.previous {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.paginations-option:hover,
+.next:hover,
+.previous:hover {
+  color: #01bcf1;
+  cursor: pointer;
+}
+.arrow {
+  font-size: 1.4rem;
+}
+.paginations-option {
+  font-size: 1rem;
+  line-height: 1.22rem;
+}
+.previous > p,
+.next > p {
+  font-size: 1rem;
+  line-height: 0.93rem;
 }
 @media (max-width: 56.25rem) {
   .news {
-    max-width: min(85%, 37rem);
-    margin: auto;
+    max-width: min(87%, 35rem);
   }
   .top-heading {
-    margin-top: 1.625rem;
-    line-height: 1.575rem;
-    font-size: 1.35rem;
-    padding-left: 0.25rem;
-    padding-right: 0.75rem;
-    gap: 0.125rem;
+    margin-top: 2rem;
+  }
+  .heading {
+    font-size: 1.3rem;
+    line-height: 1.52rem;
   }
   .container {
-    width: 100%;
-    margin-top: 1rem;
-    max-height: 62.5rem;
-    overflow-y: auto;
-    scroll-behavior: smooth;
-    background-color: #0d1317;
-    border-radius: 1.125rem;
-    padding: 0.65rem 1.4rem 1.4rem;
+    margin-top: 0.92rem;
+    border-radius: 0.97rem;
+    padding: 0.1rem 1.3rem 0.65rem;
   }
   .news-item {
-    gap: 0.6rem;
-    padding: 0.75rem 0;
+    gap: 1rem;
+    padding: 0.65rem 0 0.65rem;
   }
   .news-item-image {
-    width: 11rem;
-    height: 10rem;
-    border-radius: 0.5rem;
+    width: 11.48rem;
+    height: 9.57rem;
+    border-radius: 0.522rem;
   }
   .news-item-content {
-    margin-top: 0.7rem;
-    gap: 0.65rem;
-    width: 58%;
+    margin-top: 0.54rem;
+    gap: 0.54rem;
+    padding-right: 1.13rem;
   }
   .news-item-heading {
-    font-family: RobotoSemiBold;
-    font-size: 1rem;
+    font-size: 0.97rem;
     line-height: 1.15rem;
   }
   .news-item-para {
-    font-weight: 400;
-    font-size: 0.72rem;
-    line-height: 0.855rem;
+    font-size: 0.65rem;
+    line-height: 0.78rem;
+  }
+  .paginations {
+    margin-top: 1.875rem;
+  }
+  .paginations-options {
+    gap: 0.81rem;
+  }
+  .next,
+  .previous {
+    gap: 0.1rem;
+  }
+  .arrow {
+    font-size: 1rem;
+  }
+  .paginations-option,
+  .previous > p,
+  .next > p {
+    font-size: 0.625rem;
+    line-height: 1.25rem;
   }
 }
-
-@media (max-width: 37.5rem) {
+@media (max-width: 40.6rem) {
   .news {
-    width: 85%;
-    margin: auto;
+    max-width: min(97%, 28rem);
+    margin: 0 auto 3.375rem;
   }
   .top-heading {
-    margin-top: 1.625rem;
-    color: #00c4fb;
-    line-height: 1.125rem;
-    font-size: 1rem;
+    margin-top: 1.5rem;
     padding-left: 0.25rem;
     padding-right: 0.75rem;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 0.125rem;
-    margin-bottom: 0.5rem;
   }
-  .top-heading > span {
-    flex-grow: 1;
-    height: 2px;
-    background-color: #00c4fb;
+  .heading {
+    line-height: 1rem;
+    font-size: 1.35rem;
   }
   .container {
-    width: 100%;
-    margin-top: 0;
-    max-height: auto;
-    overflow-y: hidden;
-    background-color: inherit;
-    border-radius: none;
-    padding: 0;
-  }
-
-  .news-items {
-    display: flex;
-    align-items: start;
-    flex-direction: column;
+    margin-top: 0.5rem;
+    background-color: #0d1317;
+    border-radius: 0.625rem;
+    padding: 0.16rem 0.9rem 0.3rem;
   }
   .news-item {
-    display: flex;
-    align-items: start;
-    gap: 0.6rem;
-    padding: 0.3125rem 0;
-    border-bottom: 2px solid #666769;
-    cursor: pointer;
+    gap: 0.76rem;
+    padding: 0.4625rem 0;
   }
   .news-item-image {
-    width: 6.875rem;
-    height: 5rem;
-    border-radius: 0.5rem;
-  }
-
-  .news-item-image {
-    border-radius: 0.6rem;
+    width: 124px;
+    height: 104px;
+    border-radius: 0.3rem;
   }
   .news-item-content {
-    margin-top: 0.3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 0.3rem;
-    width: 58%;
+    margin-top: 0.5rem;
+    gap: 0.5rem;
+    padding-right: 3px;
   }
   .news-item-heading {
-    font-family: RobotoSemiBold;
-    font-size: 0.625rem;
-    line-height: 0.75rem;
+    font-size: 0.68rem;
+    line-height: 0.82rem;
   }
   .news-item-para {
-    font-weight: 400;
-    font-size: 0.4375rem;
-    line-height: 0.5rem;
-    opacity: 0.7;
+    font-weight: 500;
+    font-family: RobotoRegular;
+    font-size: 0.5rem;
+    line-height: 0.567rem;
   }
 }
