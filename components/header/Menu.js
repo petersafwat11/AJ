@@ -149,8 +149,7 @@ export const MenuMobile = () => {
             }}
             className={classes["menu-mobile-page-link"]}
           >
-            {" "}
-            STATISTICS{" "}
+            STATISTICS
           </p>
           <p
             onClick={() => {
@@ -158,8 +157,7 @@ export const MenuMobile = () => {
             }}
             className={classes["menu-mobile-page-link"]}
           >
-            {" "}
-            NEWS{" "}
+            NEWS
           </p>
           <p
             onClick={() => {

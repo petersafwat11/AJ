@@ -26,12 +26,14 @@
   line-height: 0.9rem;
 }
 .leage {
-  font-family: RobotoRegular;
+  font-weight: 400;
+  /* font-family: RobotoRegular; */
   color: rgba(255, 255, 255, 0.408);
   /* opacity: 0.8; */
 }
 .date {
-  font-family: RobotoRegular;
+  font-weight: 400;
+  /* font-family: RobotoRegular; */
 }
 .live-button {
   border: 1px solid #41f331;
@@ -82,7 +84,9 @@
 
 .live-button > p {
   color: #41f331;
-  font-family: RobotoSemibold;
+  font-family: RobotoRegular;
+
+  /* font-family: RobotoSemibold; */
   font-size: 0.75rem;
   line-height: 0%;
   text-transform: uppercase;
@@ -91,8 +95,10 @@
   padding: 0.28rem 1.12rem;
   border: 1px solid #7b7b7b;
   border-radius: 0.23rem;
-  font-family: RobotoSemibold;
-  font-weight: 600;
+  font-family: RobotoRegular;
+  font-weight: 500;
+  /* font-family: RobotoSemibold;
+  font-weight: 600; */
   font-size: 0.75rem;
   line-height: 0.9rem;
   color: #929292;
@@ -109,17 +115,23 @@
 .second-team-name {
   font-size: 0.98rem;
   line-height: 1.12rem;
-  font-family: RobotoSemiBold;
+  /* font-family: RobotoSemiBold; */
+  font-family: RobotoRegular;
+
   margin-top: 2px;
 }
 .match-vs {
-  font-family: RobotoSemiBold;
+  /* font-family: RobotoSemiBold; */
+  font-family: RobotoRegular;
+
   font-size: 0.93rem;
   line-height: 1.125rem;
   margin-top: 2px;
 }
 .status {
-  font-family: RobotoSemiBold;
+  font-family: RobotoRegular;
+
+  /* font-family: RobotoSemiBold; */
   font-size: 0.75rem;
   line-height: 0.9;
   margin-top: 2px;
@@ -127,8 +139,10 @@
   color: #4ae96d;
 }
 .remaining-time {
-  font-family: RobotoSemiBold;
-  font-weight: 600;
+  /* font-family: RobotoSemiBold;
+  font-weight: 600; */
+  font-family: RobotoRegular;
+
   font-size: 0.75rem;
   line-height: 0.9rem;
   color: #a1a1a1;
@@ -147,7 +161,8 @@
   line-height: 0.94rem;
   border: none;
   color: white;
-  font-family: RobotoRegular;
+  /* font-family: RobotoRegular; */
+  font-weight: 400;
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
