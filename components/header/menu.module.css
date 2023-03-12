@@ -25,8 +25,7 @@
   padding: 0.46rem 1.05rem;
   border-radius: 0.4rem;
   transition: 0.3s all ease-out;
-  /* font-family: RobotoRegular; */
-  font-weight: 400;
+  font-family: RobotoRegular;
   font-size: 1.28rem;
   line-height: 1.48rem;
   cursor: pointer;
@@ -49,8 +48,7 @@
   line-height: inherit;
   cursor: pointer;
   transition: 0.3s all ease-out;
-  /* font-family: RobotoRegular; */
-  font-weight: 400;
+  font-family: RobotoRegular;
   display: flex;
   align-items: center;
 }
