@@ -297,52 +297,19 @@
     padding-top: 0.51rem;
   }
 
-  .live-button,
-  .not-live {
-    padding: 0.212rem 0.34rem;
-    width: 2.76rem;
-    height: 1.1rem;
-    border-radius: 0.25rem;
-  }
-  .live-button > span {
-    width: 0.55rem;
-    height: 0.55rem;
-  }
-
-  .live-button > p,
-  .not-live {
-    font-size: 0.625rem;
-  }
-
   .first-team,
   .second-team {
-    gap: 0.63rem;
-  }
-  .first-team-image,
-  .second-team-image {
-    height: 1.65rem;
-    /* height: 1.8rem; */
-  }
-  .first-team-name,
-  .second-team-name {
-    font-size: 0.93rem;
-    line-height: 1.06rem;
-    align-self: center;
-  }
-  .first-team-image {
-    order: 2;
-  }
-  .second-team-name {
-    order: 2;
+    gap: 0.5rem;
   }
   .match-vs {
-    font-size: 0.8rem;
-    line-height: 0.97rem;
+    font-size: 0.75rem;
+    line-height: 0.85rem;
   }
+
   .watch-button {
     height: 1.275rem;
     width: 2.9rem;
-    padding-top: 0.6rem;
     border-radius: 0.22rem;
+    font-size: 0.57rem;
   }
 }
