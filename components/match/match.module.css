@@ -27,7 +27,7 @@
 }
 .leage {
   font-family: RobotoRegular;
-  color: #ffffff68;
+  color: rgba(255, 255, 255, 0.408);
   /* opacity: 0.8; */
 }
 .date {
@@ -201,12 +201,11 @@
     font-weight: 400;
     font-size: 0.72rem;
     line-height: 0.82rem;
-    color: #d2d2d2;
-    opacity: 0.8;
+    color: rgba(210, 210, 210, 0.7);
   }
 
   .match-second {
-    padding-top: 0.6rem;
+    padding-top: 0.7rem;
     width: 100%;
   }
 
@@ -274,10 +273,10 @@
 }
 @media (max-width: 26rem) {
   .match {
-    padding: 0.58rem 0.72rem;
+    padding: 0.58rem 0.8rem;
   }
   .match-first {
-    padding-bottom: 0.34rem;
+    padding-bottom: 0.5rem;
   }
   .match-first .date {
     font-size: 0.663rem;
@@ -320,12 +319,12 @@
   }
   .first-team-image,
   .second-team-image {
-    height: 1.57rem;
+    height: 1.65rem;
     /* height: 1.8rem; */
   }
   .first-team-name,
   .second-team-name {
-    font-size: 0.9rem;
+    font-size: 0.93rem;
     line-height: 1.06rem;
     align-self: center;
   }
@@ -336,7 +335,7 @@
     order: 2;
   }
   .match-vs {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     line-height: 0.97rem;
   }
   .watch-button {

@@ -94,7 +94,7 @@ export const MenuMobile = () => {
         />
         <Image
           className={classes["menu-mobile-logo"]}
-          src="/svg/mobile-menu-logo.svg"
+          src="/Logo-mobile.svg"
           alt="logo"
           width="76"
           height="62"
@@ -167,7 +167,6 @@ export const MenuMobile = () => {
             }}
             className={classes["menu-mobile-page-link"]}
           >
-            {" "}
             DONATE{" "}
           </p>
           <p
@@ -176,7 +175,6 @@ export const MenuMobile = () => {
             }}
             className={classes["menu-mobile-page-link"]}
           >
-            {" "}
             GIVEAWAY
           </p>
         </div>

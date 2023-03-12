@@ -368,7 +368,6 @@
     font-size: 0.625rem;
     line-height: 0.75rem;
     font-weight: 500;
-    color: #eeeeee;
   }
   .footer-actions-mobile {
     display: flex;
@@ -378,9 +377,12 @@
     margin: auto;
     gap: 0.3rem;
   }
+
   .dmca-button,
   .protected-button {
+    padding: 0.125rem 0.73rem;
     width: auto;
+    height: 18px;
   }
   .contact-email {
     align-self: center;
@@ -411,6 +413,7 @@
   }
   .footer-bottom {
     display: flex;
+    margin: auto;
   }
   .copy-write {
     display: flex;
