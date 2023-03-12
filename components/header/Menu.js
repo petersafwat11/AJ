@@ -94,7 +94,7 @@ export const MenuMobile = () => {
         />
         <Image
           className={classes["menu-mobile-logo"]}
-          src="/Logo-mobile.svg"
+          src="/logo-mobile.svg"
           alt="logo"
           width="76"
           height="62"
