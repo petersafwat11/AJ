@@ -6,13 +6,13 @@ import Chat from "../../components/chat/Chat";
 import Dropdown from "../../components/dropdown/Dropdown";
 import Report from "../../components/report/Report";
 import ShareLinks from "../../components/shareLinks/ShareLinks";
-import WatchDetails from "../../components/watch-details/WatchDetails";
-import Takticks from "../../components/watchtaktick/takticks";
+import WatchDetails from "../../components/watch-details/WatchDetailsBoxing";
+import Takticks from "../../components/watchtaktick/takticksFootball";
 import SocialIcons from "../../components/whatchShare/SocialIcons";
 import WhoWillWin from "../../components/whoWillWin/WhoWillWin";
 
 import ProtonVpn from "../../components/protonVpn/ProtonVpn";
-import classes from "./watch.module.css";
+import classes from "./football.module.css";
 const Page = () => {
   const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
@@ -29,7 +29,7 @@ const Page = () => {
   };
 
   return (
-    <section className={classes["watch"]}>
+    <section className={classes["watch-football"]}>
       {showShareLinks && (
         <div className={classes["share-links-wrapper"]}>
           <ShareLinks toggleShareLinks={toggleShareLinks} />
@@ -65,11 +65,11 @@ const Page = () => {
         </div>
 
         <WatchDetails
-          lieageImage={"/svg/watch/primier-liage.svg"}
-          firstTeamImage={"/svg/teams/man-united.svg"}
-          firstTeamName={"Man united"}
-          seconteamImage={"/svg/teams/liverpool.svg"}
-          seconteamName={"Liverpool"}
+          lieageImage={"/svg/watch/WBA.svg"}
+          firstTeamImage={"/svg/watch/boxing-icon-1.svg"}
+          firstTeamName={"Anthony Joshua"}
+          seconteamImage={"/svg/watch/boxing-icon-2.svg"}
+          seconteamName={"Tyson Fury"}
           date={"Aug 18 15:00"}
           place={"Old Trafford"}
           half={"2nd Half: 47’"}
@@ -98,9 +98,9 @@ const Page = () => {
           <div className={classes["buy-vpn"]}>
             <ProtonVpn />
           </div>
-          <div className={classes["takticks"]}>
+          {/* <div className={classes["takticks"]}>
             <Takticks />
-          </div>
+          </div> */}
           <div className={classes["who-will-win"]}>
             <WhoWillWin />
           </div>

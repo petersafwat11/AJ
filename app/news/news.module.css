@@ -1,5 +1,5 @@
 .news {
-  max-width: min(85%, 42rem);
+  max-width: min(85%, 45rem);
   margin: 0 auto 2.5rem;
 }
 .top-heading {
@@ -26,7 +26,7 @@
   margin-top: 1.07rem;
   background-color: #0d1317;
   border-radius: 1.125rem;
-  padding: 0.125rem 1.5rem 0.75rem;
+  padding: 0.125rem 0 0.75rem;
 }
 .news-items {
   display: flex;
@@ -37,7 +37,7 @@
   display: flex;
   align-items: start;
   gap: 1.17rem;
-  padding: 0.75rem 0 0.75rem;
+  padding: 13.4px 36.75px 11.25px 22.5px;
   cursor: pointer;
 }
 .news-item-image {
@@ -63,7 +63,7 @@
   font-weight: 400;
   font-size: 0.75rem;
   line-height: 0.9rem;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.7);
 }
 .paginations {
   margin-top: 1.36rem;
@@ -110,17 +110,17 @@
     margin-top: 2rem;
   }
   .heading {
-    font-size: 1.3rem;
-    line-height: 1.52rem;
+    font-size: 1rem;
+    line-height: 1.3rem;
   }
   .container {
     margin-top: 0.92rem;
     border-radius: 0.97rem;
-    padding: 0.1rem 1.3rem 0.65rem;
+    padding: 0.1rem 0 0.65rem;
   }
   .news-item {
     gap: 1rem;
-    padding: 0.65rem 0 0.65rem;
+    padding: 0.65rem 1.3rem 0.65rem;
   }
   .news-item-image {
     width: 11.48rem;
@@ -171,8 +171,8 @@
     padding-right: 0.75rem;
   }
   .heading {
-    line-height: 1rem;
-    font-size: 1.35rem;
+    line-height: 1.35rem;
+    font-size: 1rem;
   }
   .container {
     margin-top: 0.5rem;
@@ -185,8 +185,8 @@
     padding: 0.4625rem 0;
   }
   .news-item-image {
-    width: 124px;
-    height: 104px;
+    width: 129px;
+    height: 100px;
     border-radius: 0.3rem;
   }
   .news-item-content {

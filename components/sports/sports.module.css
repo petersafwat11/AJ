@@ -27,7 +27,7 @@
     padding-top: 0.7rem;
     display: flex;
     align-items: start;
-    gap: 1.625rem;
+    gap: 1.75rem;
     justify-content: start;
     cursor: grabbing;
     overflow-x: scroll;
@@ -68,10 +68,84 @@
   }
 
   .sport-image {
-    width: 3.125rem;
-    height: 3.125rem;
+    width: 46px;
+    height: 46px;
   }
   .sport-element:hover {
     border-bottom: 2px solid #03a1cd;
+  }
+}
+@media (max-width: 400px) {
+  .sports {
+    margin-top: 0;
+    padding-top: 12.15px;
+    gap: 25.5px;
+  }
+  .sports > div {
+    gap: 0.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2.5px solid transparent;
+  }
+  .sports > div:hover {
+    border-bottom: 2.5px solid #03a1cd;
+  }
+  .sports p {
+    font-weight: 400;
+    font-size: 1.07rem;
+  }
+
+  .sport-image {
+    width: 45.5px;
+    height: 45.5px;
+  }
+}
+
+@media (max-width: 390) {
+  .sports {
+    padding-top: 11.5px;
+    gap: 23.5px;
+  }
+  .sports > div:hover {
+    border-bottom: 2.5px solid #03a1cd;
+  }
+}
+
+@media (max-width: 370px) {
+  @media (max-width: 56.25rem) {
+    .sports {
+      margin-top: 0;
+      padding-top: 11px;
+      gap: 1.4rem;
+    }
+    .sports > div {
+      gap: 8.5px;
+      padding-bottom: 0.75rem;
+      border-bottom: 2.5px solid transparent;
+    }
+    .sports > div:hover {
+      border-bottom: 2.5px solid #03a1cd;
+    }
+    .sports p {
+      font-weight: 400;
+      font-size: 1rem;
+    }
+
+    .sport-image {
+      width: 43px;
+      height: 43px;
+    }
+  }
+}
+@media (max-width: 340px) {
+  .sports {
+    padding-top: 10.15px;
+    gap: 19.8px;
+  }
+  .sports > div {
+    padding-bottom: 11.6px;
+  }
+  .sport-image {
+    width: 38.7px;
+    height: 38.7px;
   }
 }

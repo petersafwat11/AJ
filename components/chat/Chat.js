@@ -118,7 +118,7 @@ know anything as you are spurs! `,
       <div className={classes["chat-body"]}>
         {messages.map((message, index) =>
           message.usename.split(" ")[0] === "You" ? (
-            <div className={classes['my-message-wrapper']} key={index}>
+            <div className={classes["my-message-wrapper"]} key={index}>
               <div className={classes["my-message-details"]}>
                 <p className={classes["my-message-username"]}>
                   {message.usename}
@@ -135,7 +135,7 @@ know anything as you are spurs! `,
                   {getSubString(message.message)}
                 </div>
                 <img
-                  className={classes["chat-body-user"]}
+                  className={classes["user-avatar"]}
                   src={message.avatarSrc}
                   alt="user-avatar"
                   width="45"
@@ -150,7 +150,7 @@ know anything as you are spurs! `,
               </div>
               <div className={classes["message"]}>
                 <img
-                  className={classes["chat-body-user"]}
+                  className={classes["user-avatar"]}
                   src={message.avatarSrc}
                   alt="user-avatar"
                   width="45"

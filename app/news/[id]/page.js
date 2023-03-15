@@ -1,7 +1,11 @@
+"use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import classes from "./news-article.module.css";
-const page = () => {
+const Page = () => {
+  const router = useRouter();
   return (
     <div className={classes["news-article"]}>
       <div className={classes["top-heading"]}>
@@ -10,24 +14,30 @@ const page = () => {
       </div>
       <div className={classes["container"]}>
         <div className={classes["article-top"]}>
-          <Image
+          <BsFillArrowLeftCircleFill
+            onClick={() => {
+              router.push("/news");
+            }}
+            className={classes["arrow-back"]}
+          />
+          {/* <Image
             className={classes["article-top-icon"]}
             src="/svg/arrow-circle-left.svg"
             alt="arrow"
             width="25"
             height="25"
-          />
-          <h2 className={["news-article-heading"]}>
-            2022-2023 Serie A Week 2: Match Highlights
-          </h2>
-          <span>Posted by AJ Sports Admin</span>
+          /> */}
+          <div className={classes["top-text"]}>
+            <h2 className={classes["news-article-heading"]}>
+              2022-2023 Serie A Week 2: Match Highlights
+            </h2>
+            <span>Posted by AJ Sports Admin</span>
+          </div>
         </div>
         {[1, 2, 3, 4, 5].map((i) => (
           <div
             style={{
               background: i % 2 == 0 ? "#182228" : "inherit",
-              // position: i == 5 ? "relative" : "",
-              // paddingBottom: i==5 ? '5rem ' : ''
             }}
             key={i}
             className={classes["news-item"]}
@@ -58,7 +68,9 @@ const page = () => {
               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
               sunt in culpa qui officia deserunt mollit anim id est laborum
             </p>
-            {i==5&& <button className={classes["view-more"]}>VIEW MORE</button>}
+            {i == 5 && (
+              <button className={classes["view-more"]}>VIEW MORE</button>
+            )}
           </div>
         ))}
       </div>
@@ -66,4 +78,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -166,6 +166,7 @@
 .watch-video-servers-button:hover {
   background-color: #d32727;
 }
+
 @media (max-width: 56.25rem) {
   .container {
     margin-bottom: 3.5rem;

@@ -4,9 +4,7 @@ import classes from "./report.module.css";
 const Report = ({ toggleReport }) => {
   const [cause, setCause] = useState("");
   return (
-    <div
-      className={classes["report"]}
-    >
+    <div className={classes["report"]}>
       <div className={classes["causes"]}>
         <div
           onClick={() => {
@@ -54,7 +52,7 @@ const Report = ({ toggleReport }) => {
       <div className={classes["actions"]}>
         <button className={classes["send-button"]}>Send</button>
         <button onClick={toggleReport} className={classes["close-button"]}>
-          close
+          Close
         </button>
       </div>
     </div>

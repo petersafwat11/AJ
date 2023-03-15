@@ -37,7 +37,7 @@ export const Match = ({ live }) => {
             src="/svg/teams/man-united.svg"
             alt="nfl"
             // width="31"
-            height="31"
+            height="34"
           />
           <p className={classes["first-team-name"]}>Man Utd</p>
         </div>
@@ -49,8 +49,7 @@ export const Match = ({ live }) => {
             className={classes["second-team-image"]}
             src="/svg/teams/liverpool.svg"
             alt="liverpool"
-            // width="31"
-            height="31"
+            height="34"
           />
         </div>
         {live ? (

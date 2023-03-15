@@ -28,19 +28,14 @@
   transition: all 0.3s ease-out;
 }
 .stadium {
-  background: url("/svg/watch/football-background.svg");
+  background: url("/svg/watch/nfl-background.svg");
   background-size: 100%;
   background-repeat: no-repeat;
-  width: 20.5rem;
-  height: 23.85rem;
+  width: 18.28rem;
+  height: 35.6rem;
   position: relative;
 }
 
-.goalkeaper-first {
-  position: absolute;
-  top: 14.25px;
-  left: 147.3px;
-}
 .stadium p {
   font-weight: 600;
   font-family: RobotoSemiBold;
@@ -67,8 +62,8 @@
 .eighteen,
 .nineteen,
 .twenty,
-.goalkeaper-first,
-.goalkeaper-second {
+.twenty-one,
+.twenty-two {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -113,7 +108,7 @@
 .eight {
   position: absolute;
   top: 114.75px;
-  left: 280px;
+  left: 160px;
 }
 .nine {
   position: absolute;
@@ -180,25 +175,11 @@
   bottom: 132px;
   left: 260px;
 }
-.red-card,
-.yellow-card {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0.3rem;
-  height: 0.3rem;
-  z-index: 10;
-}
-.yellow-card {
-  background: #ffc700;
-}
-.red-card {
-  background: #ff0000;
-}
+
 .takticks {
   display: flex;
   align-items: center;
-  gap: 0.937rem;
+  gap: 3.94rem;
   width: 100%;
 }
 .substitute-first-team,
@@ -216,8 +197,8 @@
 .substitute-player p {
   font-weight: 600;
   font-family: RobotoSemiBold;
-  font-size: 0.65rem;
-  line-height: 0.75rem;
+  font-size: 0.54rem;
+  line-height: 0.65rem;
 }
 .stats {
   display: flex;
@@ -239,6 +220,21 @@
   font-size: 1.125rem;
   line-height: 1.31rem;
 }
+.events {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-direction: column;
+  max-width: min(70%, 16rem);
+  margin-top: 0.56rem;
+}
+.events-para {
+  font-family: RobotoBold;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.31rem;
+  color: #ffffff;
+}
 @media (max-width: 56.25rem) {
   .container {
     display: flex;
@@ -259,12 +255,14 @@
     border-bottom: 1.5px solid transparent;
   }
   .takticks {
-    gap: 0.4rem;
+    gap: 1.07rem;
   }
 
   .stadium {
-    width: 11.96rem;
-    height: 15.5rem;
+    background: url("/svg/watch/nfl-background-2.svg");
+    background-size: 99%;
+    width: 10.2rem;
+    height: 19.6rem;
     position: relative;
   }
   .stadium img {
@@ -300,7 +298,7 @@
   .four {
     position: absolute;
     top: 21px;
-    left: 152px;
+    left: 120px;
   }
   .five {
     position: absolute;
@@ -320,7 +318,7 @@
   .eight {
     position: absolute;
     top: 67px;
-    left: 162.7px;
+    left: 130px;
   }
   .nine {
     position: absolute;
@@ -355,7 +353,7 @@
   .fourteen {
     position: absolute;
     bottom: 31.3px;
-    left: 154px;
+    left: 130px;
   }
   .fivteen {
     position: absolute;
@@ -385,12 +383,7 @@
   .twenty {
     position: absolute;
     bottom: 87.9px;
-    left: 147.9px;
-  }
-  .red-card,
-  .yellow-card {
-    width: 0.26rem;
-    height: 0.26rem;
+    left: 135px;
   }
   .substitute-first-team,
   .substitute-second-team {
@@ -413,5 +406,14 @@
   .stats-option p {
     font-size: 0.93rem;
     line-height: 1rem;
+  }
+  .events {
+    gap: 0.5rem;
+    max-width: 20rem;
+    margin-top: 0.56rem;
+  }
+  .events-para {
+    font-size: 0.85rem;
+    line-height: 0.95rem;
   }
 }

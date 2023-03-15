@@ -95,7 +95,21 @@
   margin-top: 1.4rem;
   margin-bottom: 3.375rem;
 }
+
 @media (max-width: 56.25rem) {
+  .chat-icon {
+    bottom: 10vh;
+    right: 8.4%;
+    width: 70px;
+    height: 70px;
+  }
+  .chat {
+    position: fixed;
+    bottom: 5vh;
+    right: 0.7vw;
+    z-index: 8;
+  }
+
   .navigate {
     gap: 0.25rem;
   }
@@ -103,5 +117,8 @@
     font-size: 0.65rem;
     line-height: 0.75rem;
     margin-top: 1.6rem;
+  }
+  .who-will-win {
+    width: 100%;
   }
 }

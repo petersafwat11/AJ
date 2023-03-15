@@ -34,7 +34,7 @@
   font-family: RobotoRegular;
 }
 .live-button {
-  border: 1px solid #41f331;
+  border: 0.9px solid #32b126;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,12 +84,11 @@
   color: #41f331;
   font-family: RobotoSemibold;
   font-size: 0.75rem;
-  line-height: 0%;
   text-transform: uppercase;
 }
 .not-live {
   padding: 0.28rem 1.12rem;
-  border: 1px solid #7b7b7b;
+  border: 0.9px solid #7b7b7b;
   border-radius: 0.23rem;
   font-family: RobotoSemibold;
   font-weight: 600;
@@ -107,16 +106,15 @@
 }
 .first-team-name,
 .second-team-name {
-  font-size: 0.98rem;
-  line-height: 1.12rem;
+  font-size: 1.125rem;
+  line-height: 1.25rem;
   font-family: RobotoSemiBold;
   margin-top: 2px;
 }
 .match-vs {
   font-family: RobotoSemiBold;
-
-  font-size: 0.93rem;
-  line-height: 1.125rem;
+  font-size: 0.84rem;
+  line-height: 1rem;
   margin-top: 2px;
 }
 .status {
@@ -274,44 +272,262 @@
     border-radius: 0.25rem;
   }
 }
-@media (max-width: 26rem) {
+@media (max-width: 25rem) {
   .match {
-    padding: 0.58rem 0.8rem;
+    padding: 14px;
   }
   .match-first {
-    padding-bottom: 0.5rem;
+    padding-bottom: 5px;
   }
   .match-first .date {
-    font-size: 0.663rem;
-    line-height: 0.8rem;
+    font-size: 12.5px;
+    line-height: 14px;
   }
   .status-mobile,
   .remaining-time-mobile {
-    font-size: 0.612rem;
-    line-height: 0.7rem;
+    font-size: 11.5px;
+    line-height: 13.48px;
+    font-weight: 400;
+    font-family: "Roboto Condensed";
   }
   .leage {
-    font-size: 0.612rem;
-    line-height: 0.7rem;
+    font-size: 11px;
+    line-height: 13px;
+    font-weight: 300;
+    font-family: "Roboto Condensed";
   }
 
   .match-second {
-    padding-top: 0.51rem;
+    padding-top: 5px;
+  }
+  .live-button,
+  .not-live {
+    padding: 0.25rem 0.4rem 0.15rem;
+    width: 3rem;
+    height: 1.25rem;
+    margin-top: 0;
+  }
+  .live-button > span {
+    width: 9.8px;
+    height: 9.8px;
   }
 
+  .live-button > p,
+  .not-live {
+    font-size: 10px;
+    font-family: RobotoSemiBold;
+  }
   .first-team,
   .second-team {
-    gap: 0.5rem;
+    gap: 11px;
   }
+  .first-team > img,
+  .second-team > img {
+    height: 27px;
+  }
+  /* .first-team-name,
+  .second-team-name{
+    font-size: 17px;
+    line-height: 19px;
+  } */
   .match-vs {
     font-size: 0.75rem;
-    line-height: 0.85rem;
+    line-height: 0.875rem;
   }
 
   .watch-button {
-    height: 1.275rem;
-    width: 2.9rem;
+    height: 1.5rem;
+    width: 3.5rem;
     border-radius: 0.22rem;
-    font-size: 0.57rem;
+    font-size: 10px;
+    line-height: 0%;
+    margin: 0;
+  }
+}
+@media (max-width: 390px) {
+  .match {
+    padding: 12px 14px;
+  }
+  .match-first .date {
+    font-size: 12.5px;
+    line-height: 14.65px;
+  }
+  .status-mobile,
+  .remaining-time-mobile {
+    font-size: 11.5px;
+    line-height: 13.48px;
+    font-weight: 400;
+    font-family: "Roboto Condensed";
+  }
+  .leage {
+    font-size: 11.5px;
+    line-height: 13.5px;
+    font-weight: 300;
+    font-family: "Roboto Condensed";
+  }
+
+  .live-button,
+  .not-live {
+    padding: 0.25rem 0.4rem 0.15rem;
+    width: 47px;
+    height: 19px;
+    margin-top: 0;
+  }
+  .live-button > span {
+    width: 9.55px;
+    height: 9.55px;
+  }
+
+  .live-button > p,
+  .not-live {
+    font-size: 9.5px;
+    font-family: RobotoSemiBold;
+  }
+  .first-team,
+  .second-team {
+    gap: 9px;
+  }
+  .first-team > img,
+  .second-team > img {
+    height: 26px;
+  }
+
+  /* .first-team-name,
+  .second-team-name{
+    font-size: 17px;
+    line-height: 19px;
+  } */
+  .match-vs {
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+  }
+
+  .watch-button {
+    height: 23px;
+    width: 55px;
+    border-radius: 0.25rem;
+    font-size: 9.5px;
+  }
+}
+@media (max-width: 370px) {
+  .match {
+    padding: 11px 13px 10.23px;
+  }
+  .match-first .date {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .status-mobile,
+  .remaining-time-mobile {
+    font-size: 11px;
+    line-height: 13px;
+  }
+  .leage {
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  .live-button,
+  .not-live {
+    padding: 0.25rem 0.4rem 0.15rem;
+    width: 44.8px;
+    height: 18.2px;
+    margin-top: 0;
+  }
+  .live-button > span {
+    width: 9.09px;
+    height: 9.09px;
+  }
+
+  .live-button > p,
+  .not-live {
+    font-size: 9px;
+  }
+  .first-team,
+  .second-team {
+    gap: 7px;
+  }
+  .first-team > img,
+  .second-team > img {
+    height: 25.5px;
+  }
+
+  .first-team-name,
+  .second-team-name {
+    font-size: 16px;
+    line-height: 18.7px;
+  }
+  .match-vs {
+    font-size: 11px;
+    line-height: 13.5px;
+  }
+
+  .watch-button {
+    height: 22px;
+    width: 52px;
+    border-radius: 0.25rem;
+    font-size: 9px;
+  }
+}
+@media (max-width: 340px) {
+  .match {
+    padding: 9px 12px 11px 13px;
+  }
+  .match-first {
+    padding-bottom: 4px;
+  }
+  .match-second {
+    padding-top: 5px;
+  }
+  .match-first .date {
+    font-size: 10.5px;
+    line-height: 12.3px;
+  }
+  .status-mobile,
+  .remaining-time-mobile {
+    font-size: 10px;
+    line-height: 11.72px;
+  }
+  .leage {
+    font-size: 10px;
+    line-height: 11.72px;
+  }
+
+  .live-button,
+  .not-live {
+    padding: 0.25rem 0.3rem 0.15rem;
+    width: 40.94px;
+    height: 16.6px;
+    margin-top: 0;
+  }
+  .live-button > span {
+    width: 8.3px;
+    height: 8.3px;
+  }
+
+  .live-button > p,
+  .not-live {
+    font-size: 8.5px;
+  }
+  .first-team > img,
+  .second-team > img {
+    height: 23px;
+  }
+
+  .first-team-name,
+  .second-team-name {
+    font-size: 15px;
+    line-height: 17.6px;
+  }
+  .match-vs {
+    font-size: 11px;
+    line-height: 12.9px;
+  }
+
+  .watch-button {
+    height: 20px;
+    width: 48px;
+    border-radius: 0.25rem;
+    font-size: 8px;
   }
 }

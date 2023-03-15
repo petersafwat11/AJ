@@ -16,9 +16,10 @@ const page = () => {
         <div className={classes["send-message"]}>{/* <SendMessage /> */}</div>
         <div className={classes["container"]}>
           <div className={classes["news-items"]}>
-            {[1, 2, 3, 4, 5].map((i) => (
+            {[1, 2, 3, 4, 5].map((i, index) => (
               <>
                 <NewsItem
+                  index={index}
                   src={"/svg/boxers.svg"}
                   alt={"photo"}
                   heading={"Sports News Title 1"}
@@ -54,11 +55,12 @@ const page = () => {
 };
 
 export default page;
-export const NewsItem = ({ src, alt, heading, para }) => {
+export const NewsItem = ({ src, alt, heading, para, index }) => {
   const router = useRouter();
-
+  console.log(index);
   return (
     <div
+      style={{ background: (index + 1) % 2 == 0 ? "#182228" : "inherit" }}
       onClick={() => {
         router.push("/news/1");
       }}

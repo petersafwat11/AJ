@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import classes from "./newsLetter.module.css";
 const NewsLetter = () => {
-  const [email, setEmail] = useState();
+  // const [email, setEmail] = useState();
   const router = useRouter();
   return (
     <div className={classes["news-letter"]}>
@@ -20,11 +20,11 @@ const NewsLetter = () => {
         <div className={classes["news-letter-second"]}>
           <div className={classes["notify"]}>
             <input
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-              style={{ color: email ? "rgba(18, 17, 39, 1)" : "" }}
+              // value={email}
+              // onChange={(e) => {
+              //   setEmail(e.target.value);
+              // }}
+              // style={{ color: email ? "rgba(18, 17, 39, 1)" : "" }}
               className={classes["notify-input"]}
               type="text"
               placeholder="Enter email address"

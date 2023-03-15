@@ -1,0 +1,104 @@
+.watch-details {
+  margin: 1.73rem auto 0;
+  max-width: 52.5rem;
+}
+.watch-details-first {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-direction: column;
+}
+.date-and-place {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.date,
+.place {
+  font-size: 0.93rem;
+  line-height: 1.54rem;
+}
+.watch-details-second {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.first-team,
+.second-team {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 19.875rem;
+}
+.first-team-name,
+.second-team-name {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-family: RobotoBold;
+}
+.vs {
+  font-family: RobotoSemiBold;
+  font-size: 1.125rem;
+  line-height: 1.25rem;
+}
+.watch-details-last {
+  margin-top: 2.25rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.half {
+  font-family: RobotoSemiBold;
+  font-size: 0.9375rem;
+  line-height: 1.125rem;
+  color: #4ae96d;
+}
+@media (max-width: 56.25rem) {
+  .watch-details {
+    margin: 0.7rem auto 0;
+    max-width: 22.8rem;
+  }
+  .team-image {
+    width: 52px;
+  }
+  .watch-details-first {
+    gap: 0.9rem;
+  }
+  .sport-image-first {
+    width: 71px;
+  }
+  .date-and-place {
+    gap: 0.7rem;
+  }
+  .date,
+  .place {
+    font-size: 0.75rem;
+    line-height: 0.8rem;
+  }
+  .first-team,
+  .second-team {
+    gap: 1.125rem;
+  }
+  .first-team-name,
+  .second-team-name {
+    font-size: 1rem;
+    line-height: 1.125rem;
+    font-family: RobotoSemiBold;
+  }
+  .vs {
+    font-family: RobotoSemiBold;
+    font-size: 0.625rem;
+    line-height: 0.75rem;
+  }
+  .watch-details-last {
+    margin-top: 0.15rem;
+    gap: 0.65rem;
+  }
+  .half {
+    font-family: RobotoSemiBold;
+    font-size: 0.625rem;
+    line-height: 0.75rem;
+  }
+}

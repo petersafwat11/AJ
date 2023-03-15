@@ -150,7 +150,7 @@
 }
 @media (max-width: 56.25rem) {
   .contact {
-    max-width: min(35rem, 96%);
+    max-width: min(35rem, 95%);
     margin: 0 auto 4rem;
   }
 
@@ -206,7 +206,7 @@
     font-size: 0.75rem;
     color: #ffffff;
     background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.16);
+    /* border: 1px solid rgba(255, 255, 255, 0.16); */
     border-radius: 6.25rem;
   }
   .input-group-textarea {
@@ -222,7 +222,7 @@
     width: 6.25rem;
     height: 2.75rem;
     border-radius: 0.5rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.5rem;
     margin: 2.875rem auto 0;
   }
@@ -261,6 +261,10 @@
   }
 }
 @media (max-width: 500px) {
+  .contact {
+    max-width: min(35rem, 98%);
+    margin: 0 5px 3rem;
+  }
   .input-group-textarea {
     display: none;
   }
@@ -278,6 +282,7 @@
   .contact-us-methods {
     gap: 2.5rem;
     margin-top: 2.5rem;
+    overflow: hidden;
   }
   .contact-us-first,
   .contact-us-second {
@@ -285,6 +290,6 @@
     gap: 2.5rem;
     align-items: start;
     width: 100%;
-    margin-left: 2.375rem;
+    padding-left: 2.375rem;
   }
 }

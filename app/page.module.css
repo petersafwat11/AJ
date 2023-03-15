@@ -54,10 +54,10 @@
   .search-mobile {
     display: flex;
     align-items: center;
-    gap: 0.85rem;
+    gap: 0.75rem;
     width: 97%;
     max-width: 30rem;
-    margin: 0.75rem auto 0;
+    margin: 1.25rem auto 0;
   }
   .search-mobile-input {
     padding: 1rem 0.75rem;
@@ -65,24 +65,24 @@
     color: white;
     font-weight: 400;
     color: rgba(153, 153, 153, 0.3);
-    font-size: 0.875rem;
-    line-height: 94rem;
-    height: 3rem;
-    border-radius: 0.55rem;
+    font-size: 0.81rem;
+    line-height: 0.94rem;
+    height: 2.81rem;
+    border-radius: 7px;
   }
   .search-mobile-button {
-    background-color: #02b3e5;
+    background-color: rgba(2, 180, 229, 0.9);
     border-radius: 0.55rem;
     font-weight: 500;
     font-family: RobotoRegular;
-    font-size: 0.93rem;
+    font-size: 0.81rem;
     line-height: 0%;
     display: flex;
     align-items: center;
     justify-content: center;
     /* padding-top: 0.36rem; */
-    min-width: 5.82rem;
-    height: 2.875rem;
+    min-width: 5.4rem;
+    height: 2.68rem;
     color: white;
   }
   .top-screen {
@@ -90,19 +90,19 @@
     align-items: center;
     gap: 1.93rem;
     justify-content: center;
-    margin: 1.125rem auto 0;
+    margin: 1rem auto 0;
     max-width: 97%;
-    height: 4.75rem;
+    height: 4.18rem;
     background-color: rgba(12, 18, 21, 0.55);
   }
   .top-screen-live-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 4.75rem;
+    height: 4.18rem;
     min-width: 5.87rem;
     background-color: #00c4fb;
-    border-radius: 0.56rem;
+    border-radius: 7px;
   }
   .top-screen-live-icon > * {
     display: flex;
@@ -111,29 +111,25 @@
   }
   .time-zone {
     margin-bottom: 0.3rem;
-    font-size: 0.7rem;
-    line-height: 0.8rem;
+    font-size: 9px;
+    line-height: 10.5px;
     padding-right: 5px;
   }
   .title {
-    font-size: 1.56rem;
-    line-height: 1.8125rem;
+    font-size: 1.375rem;
+    line-height: 1.625rem;
     margin-left: 0.25rem;
-    margin-bottom: 0.22rem;
-    margin-top: 1.875rem;
-  }
-  .time-zone {
-    margin-bottom: 0.25rem;
-    font-size: 0.56rem;
-    line-height: 0.67rem;
+    margin-bottom: 0.2rem;
+    margin-top: 1.75rem;
   }
 
   .other-matches {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     margin-bottom: 0;
   }
   .matches {
     margin-top: 0;
+    gap: 6px;
   }
 }
 @media (max-width: 50rem) {
@@ -145,5 +141,211 @@
   .search-mobile-input,
   .search-mobile-button {
     border-radius: 0.46rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .search-mobile {
+    gap: 0.75rem;
+    margin: 19px auto 0;
+  }
+  .search-mobile-input {
+    padding: 1rem 0.75rem;
+    font-size: 0.81rem;
+    line-height: 0.94rem;
+    height: 2.75rem;
+  }
+  .search-mobile-button {
+    min-width: 5.4rem;
+    height: 2.68rem;
+    color: white;
+  }
+  .top-screen {
+    gap: 1.18rem;
+    margin: 1rem auto 0;
+    max-width: 97%;
+    height: 4.1875rem;
+    background-color: rgba(12, 18, 21, 0.55);
+  }
+  .top-screen-live-icon {
+    height: 4.1875rem;
+    min-width: 5.87rem;
+    background-color: #00c4fb;
+    border-radius: 9px;
+  }
+
+  .time-zone {
+    font-size: 9px;
+    line-height: 10.5px;
+  }
+  .title {
+    font-size: 1.375rem;
+    line-height: 1.625rem;
+  }
+  .time-zone {
+    margin-bottom: 0.25rem;
+    font-size: 0.56rem;
+    line-height: 0.67rem;
+  }
+
+  .other-matches {
+    margin-top: 1.9375rem;
+    margin-bottom: 0;
+  }
+  .matches {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 370px) {
+  .search-mobile {
+    gap: 0.75rem;
+    width: 97%;
+    max-width: 30rem;
+    margin: 1.25rem auto 0;
+  }
+  .search-mobile-input {
+    padding: 1rem 0.75rem;
+    font-size: 0.81rem;
+    line-height: 0.94rem;
+    height: 2.81rem;
+    border-radius: 7px;
+  }
+  .search-mobile-button {
+    border-radius: 0.55rem;
+    font-weight: 500;
+    font-family: RobotoRegular;
+    font-size: 0.81rem;
+    line-height: 0%;
+    /* padding-top: 0.36rem; */
+    min-width: 5.4rem;
+    height: 2.68rem;
+  }
+  .top-screen {
+    gap: 1.93rem;
+    margin: 1rem auto 0;
+    max-width: 97%;
+    height: 4.18rem;
+    background-color: rgba(12, 18, 21, 0.55);
+  }
+  .top-screen-live-icon {
+    height: 4.18rem;
+    min-width: 5.87rem;
+    border-radius: 7px;
+  }
+  .time-zone {
+    margin-bottom: 0.3rem;
+    font-size: 9px;
+    line-height: 10.5px;
+    padding-right: 5px;
+  }
+  .title {
+    font-size: 1.375rem;
+    line-height: 1.625rem;
+    margin-left: 0.25rem;
+    margin-bottom: 0.2rem;
+    margin-top: 1.75rem;
+  }
+
+  .other-matches {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+  .matches {
+    margin-top: 0;
+    gap: 6px;
+  }
+}
+@media (max-width: 340px) {
+  .search-mobile {
+    gap: 11px;
+    margin: 1.25rem auto 0;
+  }
+  .search-mobile-input {
+    padding: 15px 0.75rem 14px;
+    font-size: 12.5px;
+    line-height: 14.5px;
+    height: 2.56rem;
+    border-radius: 6.5px;
+  }
+  .search-mobile-button {
+    border-radius: 6.5px;
+    font-size: 12px;
+    min-width: 81px;
+    height: 39px;
+  }
+  .top-screen {
+    gap: 1.687rem;
+    margin: 15px auto 0;
+    max-width: 97%;
+    height: 4rem;
+  }
+  .top-screen-live-icon {
+    height: 4rem;
+    min-width: 5rem;
+    border-radius: 8px;
+  }
+  .time-zone {
+    margin-bottom: 7px;
+    font-size: 8.5px;
+    line-height: 10px;
+    padding-right: 5px;
+  }
+  .title {
+    font-size: 21.5px;
+    line-height: 23px;
+    margin-bottom: 1px;
+    margin-top: 27px;
+  }
+
+  .other-matches {
+    margin-top: 33px;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 340px) {
+  .search-mobile {
+    gap: 10px;
+    margin: 23px auto 0;
+  }
+  .search-mobile-input {
+    padding: 13px 11px;
+    font-size: 11px;
+    line-height: 13.5px;
+    height: 38px;
+    border-radius: 6px;
+  }
+  .search-mobile-button {
+    border-radius: 6px;
+    font-family: RobotoRegular;
+    font-size: 11px;
+    min-width: 13px;
+    height: 37px;
+  }
+  .top-screen {
+    gap: 24.3px;
+    margin: 13px auto 0;
+    max-width: 97%;
+    height: 58px;
+  }
+  .top-screen-live-icon {
+    height: 58px;
+    min-width: 73px;
+    border-radius: 8px;
+  }
+  .time-zone {
+    margin-bottom: 5px;
+    font-size: 8px;
+    line-height: 9.4px;
+  }
+  .title {
+    font-size: 20px;
+    line-height: 23.4px;
+    margin-bottom: 2px;
+    margin-top: 24px;
+  }
+
+  .other-matches {
+    margin-top: 25px;
   }
 }
