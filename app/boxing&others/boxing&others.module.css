@@ -40,7 +40,7 @@
   max-width: 95%;
   margin: 0 auto 7.2rem;
 }
-/* .navigate {
+.navigate {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -51,7 +51,7 @@
   font-size: 0.937rem;
   line-height: 1.07rem;
   margin-top: 1rem;
-} */
+}
 .watch-video-wrapper {
   margin: 1.3rem auto 0;
   display: flex;
