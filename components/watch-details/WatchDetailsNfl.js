@@ -18,8 +18,8 @@ const WatchDetails = ({
           className={classes["sport-image-first"]}
           src={lieageImage}
           alt="other"
-          width="60"
-          // height="51"
+          // width="60"
+          height="73"
         />
         <div className={classes["date-and-place"]}>
           <p className={classes["date"]}>{date}</p>
@@ -32,7 +32,7 @@ const WatchDetails = ({
             className={classes["team-image"]}
             src={firstTeamImage}
             alt="other"
-            width="161"
+            width="132"
             // height="104"
           />
           <p className={classes["first-team-name"]}>{firstTeamName}</p>
@@ -44,7 +44,7 @@ const WatchDetails = ({
             className={classes["team-image"]}
             src={seconteamImage}
             alt="other"
-            width="154"
+            width="132"
           />
         </div>
       </div>

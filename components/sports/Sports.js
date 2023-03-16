@@ -54,7 +54,7 @@ const Sports = () => {
       </div>
       <div
         onClick={() => {
-          router.push("/boxing");
+          router.push("/boxing&others");
         }}
         className={classes["boxing"]}
       >
@@ -69,7 +69,7 @@ const Sports = () => {
       </div>
       <div
         onClick={() => {
-          router.push("/other");
+          router.push("/boxing&others");
         }}
         className={classes["other"]}
       >

@@ -32,7 +32,7 @@ const WatchDetails = ({
             className={classes["team-image"]}
             src={firstTeamImage}
             alt="other"
-            width="121"
+            height="105"
             // height="104"
           />
           <p className={classes["first-team-name"]}>{firstTeamName}</p>
@@ -44,7 +44,7 @@ const WatchDetails = ({
             className={classes["team-image"]}
             src={seconteamImage}
             alt="other"
-            width="104"
+            height="105"
           />
         </div>
       </div>

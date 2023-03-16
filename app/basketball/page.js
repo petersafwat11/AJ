@@ -11,6 +11,7 @@ import Takticks from "../../components/watchtaktick/takticksBasketball";
 import SocialIcons from "../../components/whatchShare/SocialIcons";
 import WhoWillWin from "../../components/whoWillWin/WhoWillWin";
 
+import Casino from "../../components/casino/Casino";
 import ProtonVpn from "../../components/protonVpn/ProtonVpn";
 import classes from "./basketball.module.css";
 const Page = () => {
@@ -65,10 +66,10 @@ const Page = () => {
         </div>
 
         <WatchDetails
-          lieageImage={"/svg/watch/nba.svg"}
-          firstTeamImage={"/svg/watch/basket-team-1.svg"}
+          lieageImage={"/svg/watch/basketball-nba.svg"}
+          firstTeamImage={"/svg/watch/basketball-1.svg"}
           firstTeamName={"LA Lakers"}
-          seconteamImage={"/svg/watch/basket-team-2.svg"}
+          seconteamImage={"/svg/watch/basketball-2.svg"}
           seconteamName={"Chicago’s Bulls"}
           date={"Aug 18 15:00"}
           place={"Crypto.com Arena"}
@@ -101,6 +102,10 @@ const Page = () => {
           <div className={classes["takticks"]}>
             <Takticks />
           </div>
+          <div className={classes["casino"]}>
+            <Casino />
+          </div>
+
           <div className={classes["who-will-win"]}>
             <WhoWillWin />
           </div>

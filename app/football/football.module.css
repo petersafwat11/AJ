@@ -52,26 +52,25 @@
   line-height: 1.07rem;
   margin-top: 1rem;
 }
+.social-icons {
+  display: flex;
+  justify-content: end;
+  width: 98%;
+}
 .watch-video-wrapper {
   margin: 1.3rem auto 0;
   display: flex;
   align-items: start;
   flex-direction: column;
-  /* min-height: 40.6rem; */
-  max-width: 55rem;
+  max-width: 59rem;
 }
 .watch-video {
   margin-top: 0.4rem;
   width: 100%;
-  height: 25rem;
+  height: 32.3rem;
   border-radius: 1.25rem;
   background: #0c1115;
   overflow: hidden;
-}
-.social-icons {
-  display: flex;
-  justify-content: end;
-  width: 98%;
 }
 
 .dropdowns {
@@ -88,18 +87,22 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 3.84rem;
+  margin-top: 2.15rem;
   width: 100%;
 }
 .takticks {
-  margin-top: 0.9rem;
-  margin-bottom: 3.845rem;
+  margin-top: 1.125rem;
+  margin-bottom: 3rem;
+}
+
+.casino {
+  margin-bottom: 3.32rem;
 }
 
 @media (max-width: 56.25rem) {
-  /* .watch-football{
-    margin: auto;
-  } */
+  .watch-football {
+    margin: 0 auto 3rem;
+  }
   .chat-icon {
     bottom: 10vh;
     right: 8.4%;
@@ -112,6 +115,13 @@
     right: 0.7vw;
     z-index: 8;
   }
+  .watch-video {
+    width: 100%;
+    height: min(60vh, 23rem);
+    border-radius: 0.625rem;
+    background: #0c1115;
+    overflow: hidden;
+  }
 
   .navigate {
     gap: 0.25rem;
@@ -121,7 +131,22 @@
     line-height: 0.75rem;
     margin-top: 1.6rem;
   }
+  .bottom {
+    margin-top: 1.25rem;
+  }
+  .takticks {
+    margin-top: 0.625rem;
+    margin-bottom: 2rem;
+  }
+  .casino {
+    margin-bottom: 1.75rem;
+  }
   .who-will-win {
-    width: 100%;
+    width: min(95.5%, 27rem);
+  }
+}
+@media (max-width: 500px) {
+  .watch-video {
+    height: 14.5rem;
   }
 }

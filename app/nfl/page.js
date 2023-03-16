@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import React, { useState } from "react";
 import Chat from "../../components/chat/Chat";
 import Dropdown from "../../components/dropdown/Dropdown";
@@ -11,6 +10,7 @@ import Takticks from "../../components/watchtaktick/takticksNfl";
 import SocialIcons from "../../components/whatchShare/SocialIcons";
 import WhoWillWin from "../../components/whoWillWin/WhoWillWin";
 
+import Casino from "../../components/casino/Casino";
 import ProtonVpn from "../../components/protonVpn/ProtonVpn";
 import classes from "./nfl.module.css";
 const Page = () => {
@@ -58,17 +58,11 @@ const Page = () => {
         </div>
       )}
       <div className={classes["container"]}>
-        <div className={classes["navigate"]}>
-          <Link href="/">Home</Link>
-          <span> &gt; </span>
-          <Link href="/channels">Watch</Link>
-        </div>
-
         <WatchDetails
-          lieageImage={"/svg/watch/nfl-liage.svg"}
-          firstTeamImage={"/svg/watch/nflteam2.svg"}
+          lieageImage={"/svg/watch/nfl-3.svg"}
+          firstTeamImage={"/svg/watch/nfl-2.svg"}
           firstTeamName={"Philadelphia E..."}
-          seconteamImage={"/svg/watch/nflteam.svg"}
+          seconteamImage={"/svg/watch/nfl-1.svg"}
           seconteamName={"Kansas City"}
           date={"Aug 18 15:00"}
           place={"Alliegiant Stadium"}
@@ -100,6 +94,9 @@ const Page = () => {
           </div>
           <div className={classes["takticks"]}>
             <Takticks />
+          </div>
+          <div className={classes["casino"]}>
+            <Casino />
           </div>
           <div className={classes["who-will-win"]}>
             <WhoWillWin />

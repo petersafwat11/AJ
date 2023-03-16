@@ -40,30 +40,18 @@
   max-width: 95%;
   margin: 0 auto 7.2rem;
 }
-.navigate {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  justify-content: center;
-}
-.navigate > * {
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 0.937rem;
-  line-height: 1.07rem;
-  margin-top: 1rem;
-}
 .watch-video-wrapper {
   margin: 1.3rem auto 0;
   display: flex;
   align-items: start;
   flex-direction: column;
   /* min-height: 40.6rem; */
-  max-width: 55rem;
+  max-width: 59rem;
 }
 .watch-video {
   margin-top: 0.4rem;
   width: 100%;
-  height: 25rem;
+  height: 32.3rem;
   border-radius: 1.25rem;
   background: #0c1115;
   overflow: hidden;
@@ -88,14 +76,16 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 3.84rem;
+  margin-top: 4.874rem;
   width: 100%;
 }
 .takticks {
   margin-top: 1.4rem;
   margin-bottom: 3.375rem;
 }
-
+.casino {
+  margin-bottom: 3.6rem;
+}
 @media (max-width: 56.25rem) {
   .chat-icon {
     bottom: 10vh;
@@ -109,6 +99,13 @@
     right: 0.7vw;
     z-index: 8;
   }
+  .watch {
+    max-width: min(38rem, 98%);
+  }
+  .watch-video {
+    height: min(60vh, 23rem);
+    border-radius: 0.625rem;
+  }
 
   .navigate {
     gap: 0.25rem;
@@ -118,7 +115,22 @@
     line-height: 0.75rem;
     margin-top: 1.6rem;
   }
+  .bottom {
+    margin-top: 1.25rem;
+  }
+  .takticks {
+    margin-top: 1.75rem;
+    margin-bottom: 2.8rem;
+  }
   .who-will-win {
     width: 100%;
+  }
+  .casino {
+    margin-bottom: 1.75rem;
+  }
+}
+@media (max-width: 500px) {
+  .watch-video {
+    height: 14.5rem;
   }
 }

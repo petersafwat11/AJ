@@ -28,9 +28,8 @@
   transition: all 0.3s ease-out;
 }
 .stadium {
-  background: url("/svg/watch/nfl-background.svg");
+  background: url("/svg/watch/nnfl-background.svg");
   background-size: 100%;
-  background-repeat: no-repeat;
   width: 18.28rem;
   height: 35.6rem;
   position: relative;
@@ -72,110 +71,114 @@
 
 .one {
   position: absolute;
-  top: 36px;
-  left: 39.25px;
+  top: 5%;
+  left: 10%;
 }
 .two {
   position: absolute;
-  top: 49.5px;
-  left: 109.5px;
+  top: 5%;
+  left: 36%;
 }
 .three {
   position: absolute;
-  top: 46.5px;
-  left: 197.25px;
+  top: 5%;
+  left: 50%;
 }
 .four {
   position: absolute;
-  top: 51px;
-  left: 258px;
+  top: 5%;
+  left: 80%;
 }
 .five {
   position: absolute;
-  top: 111px;
-  left: 31.5px;
+  top: 20%;
+  left: 10%;
 }
 .six {
   position: absolute;
-  top: 98.25px;
-  left: 107.25px;
+  top: 20%;
+  left: 36%;
 }
 .seven {
   position: absolute;
-  top: 102.75px;
-  left: 185.25px;
+  top: 20%;
+  left: 50%;
 }
 .eight {
   position: absolute;
-  top: 114.75px;
-  left: 160px;
+  top: 20%;
+  left: 80%;
 }
 .nine {
   position: absolute;
-  top: 124px;
-  left: 229.5px;
+  top: 35%;
+  left: 25%;
 }
 .ten {
   position: absolute;
-  top: 148.5px;
-  left: 147px;
-}
-.goalkeaper-second {
-  position: absolute;
-  bottom: 2.25px;
-  left: 147px;
+  top: 35%;
+  left: 55%;
 }
 .eleven {
   position: absolute;
-  bottom: 36px;
-  left: 35px;
+  top: 35%;
+  left: 75%;
 }
 .twelve {
   position: absolute;
-  bottom: 28.5px;
-  left: 102px;
+  bottom: 5%;
+  left: 10%;
 }
 .thirteen {
   position: absolute;
-  bottom: 28.5px;
-  left: 192.37px;
+  bottom: 5%;
+  left: 36%;
 }
 .fourteen {
   position: absolute;
-  bottom: 32.25px;
-  left: 264.75px;
+  bottom: 5%;
+  left: 50%;
 }
 .fivteen {
   position: absolute;
-  bottom: 77px;
-  left: 96.75px;
+  bottom: 5%;
+  left: 80%;
 }
 .sixteen {
   position: absolute;
-  bottom: 77px;
-  left: 196.5px;
+  bottom: 20%;
+  left: 10%;
 }
 .seventeen {
   position: absolute;
-  bottom: 99px;
-  left: 149px;
+  bottom: 20%;
+  left: 36%;
 }
 .eighteen {
   position: absolute;
-  bottom: 132px;
-  left: 39px;
+  bottom: 20%;
+  left: 50%;
 }
 .nineteen {
   position: absolute;
-  bottom: 144px;
-  left: 149.25px;
+  bottom: 20%;
+  left: 80%;
 }
 .twenty {
   position: absolute;
-  bottom: 132px;
-  left: 260px;
+  bottom: 35%;
+  left: 25%;
 }
-
+.twenty-one {
+  position: absolute;
+  bottom: 35%;
+  left: 55%;
+}
+.twenty-two {
+  position: absolute;
+  bottom: 35%;
+  left: 75%;
+}
 .takticks {
   display: flex;
   align-items: center;
@@ -225,7 +228,7 @@
   align-items: center;
   gap: 0.85rem;
   flex-direction: column;
-  max-width: min(70%, 16rem);
+  max-width: min(70%, 19rem);
   margin-top: 0.56rem;
 }
 .events-para {
@@ -259,8 +262,6 @@
   }
 
   .stadium {
-    background: url("/svg/watch/nfl-background-2.svg");
-    background-size: 99%;
     width: 10.2rem;
     height: 19.6rem;
     position: relative;
@@ -273,117 +274,6 @@
   .stadium p {
     font-size: 0.54rem;
     line-height: 0.65rem;
-  }
-  .goalkeaper-first {
-    position: absolute;
-    top: 8px;
-    left: 84.4px;
-  }
-
-  .one {
-    position: absolute;
-    top: 21.75px;
-    left: 23.5px;
-  }
-  .two {
-    position: absolute;
-    top: 28.7px;
-    left: 63px;
-  }
-  .three {
-    position: absolute;
-    top: 27.84px;
-    left: 111.36px;
-  }
-  .four {
-    position: absolute;
-    top: 21px;
-    left: 120px;
-  }
-  .five {
-    position: absolute;
-    top: 65px;
-    left: 18px;
-  }
-  .six {
-    position: absolute;
-    top: 57.4px;
-    left: 53.9px;
-  }
-  .seven {
-    position: absolute;
-    top: 59.5px;
-    left: 108.2px;
-  }
-  .eight {
-    position: absolute;
-    top: 67px;
-    left: 130px;
-  }
-  .nine {
-    position: absolute;
-    top: 72px;
-    left: 133px;
-  }
-  .ten {
-    position: absolute;
-    top: 83.5px;
-    left: 84.4px;
-  }
-  .goalkeaper-second {
-    position: absolute;
-    bottom: 2.25px;
-    left: 78.3px;
-  }
-  .eleven {
-    position: absolute;
-    bottom: 34px;
-    left: 17.5px;
-  }
-  .twelve {
-    position: absolute;
-    bottom: 28.7px;
-    left: 58.3px;
-  }
-  .thirteen {
-    position: absolute;
-    bottom: 29.6px;
-    left: 110.5px;
-  }
-  .fourteen {
-    position: absolute;
-    bottom: 31.3px;
-    left: 130px;
-  }
-  .fivteen {
-    position: absolute;
-    bottom: 58.3px;
-    left: 52.2px;
-  }
-  .sixteen {
-    position: absolute;
-    bottom: 60px;
-    left: 115.7px;
-  }
-  .seventeen {
-    position: absolute;
-    bottom: 71px;
-    left: 84.4px;
-  }
-  .eighteen {
-    position: absolute;
-    bottom: 87.9px;
-    left: 24px;
-  }
-  .nineteen {
-    position: absolute;
-    bottom: 100px;
-    left: 84.4px;
-  }
-  .twenty {
-    position: absolute;
-    bottom: 87.9px;
-    left: 135px;
   }
   .substitute-first-team,
   .substitute-second-team {

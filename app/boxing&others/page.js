@@ -7,12 +7,12 @@ import Dropdown from "../../components/dropdown/Dropdown";
 import Report from "../../components/report/Report";
 import ShareLinks from "../../components/shareLinks/ShareLinks";
 import WatchDetails from "../../components/watch-details/WatchDetailsBoxing";
-import Takticks from "../../components/watchtaktick/takticksFootball";
 import SocialIcons from "../../components/whatchShare/SocialIcons";
 import WhoWillWin from "../../components/whoWillWin/WhoWillWin";
 
+import Casino from "../../components/casino/Casino";
 import ProtonVpn from "../../components/protonVpn/ProtonVpn";
-import classes from "./football.module.css";
+import classes from "./boxing&others.module.css";
 const Page = () => {
   const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
@@ -29,7 +29,7 @@ const Page = () => {
   };
 
   return (
-    <section className={classes["watch-football"]}>
+    <section className={classes["watch"]}>
       {showShareLinks && (
         <div className={classes["share-links-wrapper"]}>
           <ShareLinks toggleShareLinks={toggleShareLinks} />
@@ -66,13 +66,13 @@ const Page = () => {
 
         <WatchDetails
           lieageImage={"/svg/watch/WBA.svg"}
-          firstTeamImage={"/svg/watch/boxing-icon-1.svg"}
+          firstTeamImage={"/svg/watch/boxing-1.svg"}
           firstTeamName={"Anthony Joshua"}
-          seconteamImage={"/svg/watch/boxing-icon-2.svg"}
+          seconteamImage={"/svg/watch/boxing-2.svg"}
           seconteamName={"Tyson Fury"}
           date={"Aug 18 15:00"}
           place={"Old Trafford"}
-          half={"2nd Half: 47’"}
+          // half={"2nd Half: 47’"}
         />
         <div className={classes["watch-video-wrapper"]}>
           <div className={classes["social-icons"]}>
@@ -103,6 +103,9 @@ const Page = () => {
           </div> */}
           <div className={classes["who-will-win"]}>
             <WhoWillWin />
+          </div>
+          <div className={classes["casino"]}>
+            <Casino />
           </div>
         </div>
       </div>

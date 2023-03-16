@@ -13,6 +13,7 @@ import WhoWillWin from "../../components/whoWillWin/WhoWillWin";
 
 import ProtonVpn from "../../components/protonVpn/ProtonVpn";
 import classes from "./football.module.css";
+import Casino from "../../components/casino/Casino";
 const Page = () => {
   const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
@@ -66,9 +67,9 @@ const Page = () => {
 
         <WatchDetails
           lieageImage={"/svg/watch/primier-liage.svg"}
-          firstTeamImage={"/svg/teams/man-united.svg"}
+          firstTeamImage={"/svg/watch/man-united.svg"}
           firstTeamName={"Man united"}
-          seconteamImage={"/svg/teams/liverpool.svg"}
+          seconteamImage={"/svg/watch/liverpool.svg"}
           seconteamName={"Liverpool"}
           date={"Aug 18 15:00"}
           place={"Old Trafford"}
@@ -100,6 +101,9 @@ const Page = () => {
           </div>
           <div className={classes["takticks"]}>
             <Takticks />
+          </div>
+          <div className={classes['casino']}>
+            <Casino/>
           </div>
           <div className={classes["who-will-win"]}>
             <WhoWillWin />

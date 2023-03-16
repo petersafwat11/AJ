@@ -36,7 +36,7 @@ const Takticks = () => {
       {category == "lineups" ? (
         <div className={classes["takticks"]}>
           <div className={classes["substitute-first-team"]}>
-            {[1, 2, 3, 4, 5, 6, 7].map((item, index) => (
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,13].map((item, index) => (
               <div key={index} className={classes["substitute-player"]}>
                 <Image
                   src="/svg/watch/vest-grey.svg"
@@ -44,7 +44,7 @@ const Takticks = () => {
                   height="27"
                   width="35"
                 />
-                <p>C. Ronaldo</p>
+                <p>M. Jordan</p>
               </div>
             ))}
           </div>
@@ -141,7 +141,7 @@ const Takticks = () => {
             </div>
           </div>
           <div className={classes["substitute-second-team"]}>
-            {[1, 2, 3, 4, 5, 6, 7].map((item, index) => (
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((item, index) => (
               <div key={index} className={classes["substitute-player"]}>
                 <Image
                   src="/svg/watch/vest-white.svg"
@@ -149,7 +149,7 @@ const Takticks = () => {
                   height="27"
                   width="35"
                 />
-                <p>M. Salah</p>
+                <p>M. Jordan</p>
               </div>
             ))}
           </div>

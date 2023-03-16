@@ -18,7 +18,7 @@ const WatchDetails = ({
           className={classes["sport-image-first"]}
           src={lieageImage}
           alt="other"
-          width="70"
+          width="75"
           // height="51"
         />
         <div className={classes["date-and-place"]}>
@@ -32,7 +32,7 @@ const WatchDetails = ({
             className={classes["team-image"]}
             src={firstTeamImage}
             alt="other"
-            width="128"
+            width="125"
             // height="104"
           />
           <p className={classes["first-team-name"]}>{firstTeamName}</p>
@@ -44,12 +44,12 @@ const WatchDetails = ({
             className={classes["team-image"]}
             src={seconteamImage}
             alt="other"
-            width="128"
+            width="125"
           />
         </div>
       </div>
       <div className={classes["watch-details-last"]}>
-        <p className={classes["half"]}>{half}</p>
+        {half && <p className={classes["half"]}>{half}</p>}
         <LiveButton text={"LIVE"} />
       </div>
     </div>

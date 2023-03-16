@@ -1,16 +1,11 @@
 .proton-vpn {
-  background: url("/svg/Subscribe-background.svg");
+  background: url("/svg/Subscribe.svg");
+  background-origin: top left;
   width: 34rem;
   height: 7.78rem;
   border-radius: 0.7rem;
   padding: 1.22rem 0 1.125rem;
-  position: relative;
   margin: auto;
-}
-.logo {
-  position: absolute;
-  top: 1rem;
-  left: 1.1rem;
 }
 .body {
   display: flex;
@@ -66,7 +61,7 @@
 }
 @media (max-width: 56.25rem) {
   .proton-vpn {
-    width: min(90vw, 23.8rem);
+    width: min(98vw, 28rem);
     margin: 0;
     height: auto;
     border-radius: 0.56rem;
