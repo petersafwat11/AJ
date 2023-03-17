@@ -19,7 +19,7 @@ const WatchDetails = ({
           src={lieageImage}
           alt="other"
           // width="79"
-          height="61"
+          height="55"
         />
         <div className={classes["date-and-place"]}>
           <p className={classes["date"]}>{date}</p>

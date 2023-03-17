@@ -282,18 +282,20 @@ const Takticks = () => {
         <div className={classes["takticks"]}>
           <div className={classes["stats"]}>
             {[
-              "FIELD GOALS %",
-              "3 POINTERS %",
-              "FREE THROWS %",
-              "TOTAL",
-              "REBOUNDS",
-              "OFFENSIVE",
-              "REBOUNDS",
-              "ASSISTS",
-              "BLOCKS",
-              "STEALS",
-              "TURNOVERS",
-              "FOULS",
+              "TOTAL YARDS",
+              "PASSING YARDS",
+              "RUSHING YARDS",
+              "YARDS PER PLAY",
+              "FIRST DOWNS",
+              "3RD DOWN EFFICIENCY",
+              "TOTAL PLAYS",
+              "SACKS ALLOWED",
+              "PUNTS",
+              "PENALTIES",
+              "FUMBLES LOST",
+              "INTERCEPTIONS THROWN",
+              "TIME OF POSSESSION",
+              "PENALTIES",
             ].map((i, index) => (
               <div key={index} className={classes["stats-option"]}>
                 <p className={classes["first"]}>0</p>

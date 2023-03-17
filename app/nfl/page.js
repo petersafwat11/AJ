@@ -60,9 +60,9 @@ const Page = () => {
       <div className={classes["container"]}>
         <WatchDetails
           lieageImage={"/svg/watch/nfl-3.svg"}
-          firstTeamImage={"/svg/watch/nfl-2.svg"}
+          firstTeamImage={"/svg/watch/nfl-1.svg"}
           firstTeamName={"Philadelphia E..."}
-          seconteamImage={"/svg/watch/nfl-1.svg"}
+          seconteamImage={"/svg/watch/nfl-2.svg"}
           seconteamName={"Kansas City"}
           date={"Aug 18 15:00"}
           place={"Alliegiant Stadium"}

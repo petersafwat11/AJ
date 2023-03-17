@@ -108,7 +108,7 @@
   .chat {
     position: fixed;
     bottom: 5vh;
-    right: 0.7vw;
+    right: 13px;
     z-index: 8;
   }
   .watch {

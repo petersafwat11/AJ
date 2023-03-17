@@ -1,7 +1,10 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { AiOutlineArrowUp } from "react-icons/ai";
+import { MdEmojiEmotions } from "react-icons/md";
 import { ChangeAvatar } from "./changeAvatar";
+import {FaUser} from 'react-icons/fa'
 import classes from "./chat.module.css";
 import UserInfo from "./UserInfo";
 const Chat = ({ toggleChat }) => {
@@ -12,7 +15,7 @@ const Chat = ({ toggleChat }) => {
   };
   const [showUserInfo, setShowUserInfo] = useState(false);
   const [selectedAvatar, setSelectedAvatar] = useState(
-    "/svg/chat/avatars/5.svg"
+    "/svg/chat/avatars/main/5.svg"
   );
   const [changeAvatar, setChangeAvatar] = useState(false);
   const [userName, setMentionUserName] = useState("");
@@ -35,9 +38,15 @@ const Chat = ({ toggleChat }) => {
   const toggleUserInf = () => {
     setShowUserInfo(!showUserInfo);
   };
-  let avatars = [];
-  for (let i = 1; i < 323; i = i + 1) {
-    avatars.push(i);
+  let avatars = { main: [], clubs: [], flags: [] };
+  for (let i = 1; i < 203; i = i + 1) {
+    avatars.main.push(i);
+  }
+  for (let i = 1; i < 264; i = i + 1) {
+    avatars.flags.push(i);
+  }
+  for (let i = 1; i < 59; i = i + 1) {
+    avatars.clubs.push(i);
   }
   const [messages, setMessages] = useState([
     {
@@ -45,20 +54,20 @@ const Chat = ({ toggleChat }) => {
       time: "22:29",
       message:
         "Really excited for the match !!!!! Really excited for the match !!!!! Really excited for the match !!!!! haha wow Really excited for the match !!!!!",
-      avatarSrc: "/svg/chat/avatars/7.svg",
+      avatarSrc: "/svg/chat/avatars/main/7.svg",
     },
     {
       usename: "championsleague208",
       time: "22: 35",
       message: `@messiog10 I absolutely hate messi, he is so bad, this is why I say hala madrid! It is not fair for the world wide capcity to infuriate social ecom... `,
-      avatarSrc: "/svg/chat/avatars/8.svg",
+      avatarSrc: "/svg/chat/avatars/main/8.svg",
     },
     {
       usename: "You (blackdestroyer101)",
       time: "22: 37",
       message: `@championsleague208 you wouldnt
 know anything as you are spurs! `,
-      avatarSrc: "/svg/chat/avatars/10.svg",
+      avatarSrc: "/svg/chat/avatars/main/10.svg",
     },
   ]);
   return (
@@ -178,21 +187,26 @@ know anything as you are spurs! `,
         )}
       </div>
       <div className={classes["chat-bottom"]}>
-        <Image
-          onClick={toggleUserInf}
+        <div className={classes["user-dev"]}>
+          <FaUser onClick={toggleUserInf} className={classes["user-icon"]} />
+        </div>
+        {/* <Image
           className={classes["chat-bottom-user"]}
           src="/svg/chat/user.svg"
           alt="user"
           width="22"
           height="25"
-        />
-        <Image
+        /> */}
+        {/* <Image
           className={classes["chat-bottom-emojy"]}
           src="/svg/chat/emojy.svg"
           alt="emojy"
           width="22"
           height="21"
-        />
+        /> */}
+        <div className={classes["emojy-dev"]}>
+          <MdEmojiEmotions className={classes["emojy"]} />
+        </div>
 
         <input
           value={message}
@@ -207,7 +221,7 @@ know anything as you are spurs! `,
           placeholder="Type a message here"
         />
         <div className={classes["chat-bottom-send"]}>
-          <Image src="/svg/chat/send.svg" alt="send" width="13" height="15" />
+          <AiOutlineArrowUp style={{ fontSize: ".75rem", color: "white" }} />
         </div>
       </div>
     </div>

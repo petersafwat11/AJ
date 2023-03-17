@@ -61,18 +61,17 @@
   margin-top: 0.35rem;
 }
 .watch-video-wrapper {
+  margin: 1.3rem auto 0;
   display: flex;
   align-items: start;
   flex-direction: column;
-  min-height: 40.6rem;
-  max-width: 55rem;
-  margin: auto;
+  /* min-height: 40.6rem; */
+  max-width: 59rem;
 }
-
 .watch-video {
   margin-top: 0.4rem;
   width: 100%;
-  height: 25rem;
+  height: 32.3rem;
   border-radius: 1.25rem;
   background: #0c1115;
   overflow: hidden;
@@ -207,17 +206,13 @@
   }
   .watch-video-wrapper {
     margin: 0;
-    display: flex;
-    align-items: start;
-    flex-direction: column;
     min-height: 40.6rem;
     max-width: 55rem;
   }
   .watch-video {
-    margin-top: 0.4rem;
     width: 100%;
-    height: 25rem;
-    border-radius: 1.25rem;
+    height: min(60vh, 23rem);
+    border-radius: 0.625rem;
     background: #0c1115;
     overflow: hidden;
   }
@@ -284,5 +279,10 @@
   }
   .watch-video-servers-button:hover {
     background-color: #d32727;
+  }
+}
+@media (max-width: 500px) {
+  .watch-video {
+    height: 14.5rem;
   }
 }

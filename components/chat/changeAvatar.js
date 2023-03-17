@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import classes from "./changeAvatar.module.css";
 export const ChangeAvatar = ({
   toggleChangeAvatar,
@@ -9,10 +9,14 @@ export const ChangeAvatar = ({
 }) => {
   const [newSelectedAvatar, setNewSElectedAvatar] = useState();
   const applyChanges = () => {
-    selectAvatar(`/svg/chat/avatars/${newSelectedAvatar + 1}.svg`);
+    selectAvatar(`/svg/chat/avatars/${newSelectedAvatar}.svg`);
     toggleChangeAvatar();
   };
-
+  useEffect(() => {
+    console.log(newSelectedAvatar);
+  }, [newSelectedAvatar]);
+  const avatarCategories = ["main", "flags", "clubs"];
+  const [avatarCategory, setAvatarCategory] = useState("main");
   return (
     <div className={classes["change-avatar"]}>
       <div className={classes["change-avatars-first"]}>
@@ -36,42 +40,140 @@ export const ChangeAvatar = ({
           </p>
         </div>
         <div className={classes["avatars"]}>
-          {avatars.map((i, index) => (
-            <div
-              style={{
-                background:
-                  newSelectedAvatar == index
-                    ? "url('/svg/chat/background.svg')"
-                    : "",
-                backgroundSize: newSelectedAvatar == index ? "93%" : "",
-                backgroundRepeat: newSelectedAvatar == index ? "no-repeat" : "",
-                backgroundPosition: newSelectedAvatar == index ? " bottom" : "",
-              }}
-              onClick={() => {
-                setNewSElectedAvatar(index);
-              }}
-              key={index}
-              className={classes["avatar"]}
-            >
-              {setNewSElectedAvatar == index && (
+          {avatarCategories
+            .filter((i) => i !== avatarCategory)
+            .map((i, index) => (
+              <div
+                key={index}
+                onClick={() => {
+                  setAvatarCategory(i);
+                }}
+                className={classes["avatar-category"]}
+              >
                 <Image
-                  className={classes["checked-icon"]}
-                  src="/svg/chat/check.svg"
-                  alt="avatar"
-                  width="21"
-                  height="21"
+                  src="svg/chat/change-avatar/folder-icon.svg"
+                  alt="folder-icon"
+                  width="70"
+                  height="56"
                 />
-              )}
-              <Image
-                className={classes["avatar-icon"]}
-                src={`/svg/chat/avatars/${index + 1}.svg`}
-                alt="avatar"
-                width="57"
-                height="57"
-              />
-            </div>
-          ))}
+                {i}
+              </div>
+            ))}
+          {avatarCategory == "main"
+            ? avatars.main.map((i, index) => (
+                <div
+                  style={{
+                    background:
+                      newSelectedAvatar == index
+                        ? "url('/svg/chat/background.svg')"
+                        : "",
+                    backgroundSize: newSelectedAvatar == index ? "93%" : "",
+                    backgroundRepeat:
+                      newSelectedAvatar == index ? "no-repeat" : "",
+                    backgroundPosition:
+                      newSelectedAvatar == index ? " bottom" : "",
+                  }}
+                  onClick={() => {
+                    setNewSElectedAvatar("main/" + Number(Number(index) + 1));
+                  }}
+                  key={index}
+                  className={classes["avatar"]}
+                >
+                  {setNewSElectedAvatar == index && (
+                    <Image
+                      className={classes["checked-icon"]}
+                      src="/svg/chat/check.svg"
+                      alt="avatar"
+                      width="21"
+                      height="21"
+                    />
+                  )}
+                  <Image
+                    className={classes["avatar-icon"]}
+                    src={`/svg/chat/avatars/${avatarCategory}/${index + 1}.svg`}
+                    alt="avatar"
+                    width="57"
+                    height="57"
+                  />
+                </div>
+              ))
+            : avatarCategory === "clubs"
+            ? avatars.clubs.map((i, index) => (
+                <div
+                  style={{
+                    background:
+                      newSelectedAvatar == index
+                        ? "url('/svg/chat/background.svg')"
+                        : "",
+                    backgroundSize: newSelectedAvatar == index ? "93%" : "",
+                    backgroundRepeat:
+                      newSelectedAvatar == index ? "no-repeat" : "",
+                    backgroundPosition:
+                      newSelectedAvatar == index ? " bottom" : "",
+                  }}
+                  onClick={() => {
+                    setNewSElectedAvatar("main/" + Number(Number(index) + 1));
+                  }}
+                  key={index}
+                  className={classes["avatar"]}
+                >
+                  {setNewSElectedAvatar == index && (
+                    <Image
+                      className={classes["checked-icon"]}
+                      src="/svg/chat/check.svg"
+                      alt="avatar"
+                      width="21"
+                      height="21"
+                    />
+                  )}
+                  <Image
+                    className={classes["avatar-icon"]}
+                    src={`/svg/chat/avatars/${avatarCategory}/${index + 1}.svg`}
+                    alt="avatar"
+                    width="57"
+                    height="57"
+                  />
+                </div>
+              ))
+            : avatars.flags.map((i, index) => (
+                <div
+                  style={{
+                    background:
+                      newSelectedAvatar == index
+                        ? "url('/svg/chat/background.svg')"
+                        : "",
+                    backgroundSize: newSelectedAvatar == index ? "93%" : "",
+                    backgroundRepeat:
+                      newSelectedAvatar == index ? "no-repeat" : "",
+                    backgroundPosition:
+                      newSelectedAvatar == index ? " bottom" : "",
+                  }}
+                  onClick={() => {
+                    setNewSElectedAvatar("main/" + Number(Number(index) + 1));
+                  }}
+                  key={index}
+                  className={classes["avatar"]}
+                >
+                  {setNewSElectedAvatar == index && (
+                    <Image
+                      className={classes["checked-icon"]}
+                      src="/svg/chat/check.svg"
+                      alt="avatar"
+                      width="21"
+                      height="21"
+                    />
+                  )}
+                  <Image
+                    className={classes["avatar-icon"]}
+                    src={`/svg/chat/avatars/${avatarCategory}/${index + 1}.svg`}
+                    alt="avatar"
+                    width="57"
+                    height="57"
+                  />
+                </div>
+              ))}
         </div>
+
         <div className={classes["actions"]}>
           <button onClick={applyChanges} className={classes["apply-button"]}>
             Apply
@@ -98,7 +200,7 @@ export const ChangeAvatar = ({
             {newSelectedAvatar ? (
               <img
                 className={classes["selected-avatar-icon"]}
-                src={`/svg/chat/avatars/${newSelectedAvatar + 1}.svg`}
+                src={`/svg/chat/avatars/${newSelectedAvatar}.svg`}
                 alt="avatar"
                 width="114"
               />

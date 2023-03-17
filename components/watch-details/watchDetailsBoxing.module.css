@@ -45,8 +45,8 @@
 }
 .vs {
   font-family: RobotoSemiBold;
-  font-size: 1.125rem;
-  line-height: 1.25rem;
+  font-size: 1rem;
+  line-height: 1.125rem;
 }
 .watch-details-last {
   margin-top: 2.95rem;
@@ -101,7 +101,7 @@
   }
   .vs {
     font-family: RobotoSemiBold;
-    font-size: 0.625rem;
+    font-size: 0.7rem;
     line-height: 0.75rem;
   }
   .watch-details-last {
@@ -152,6 +152,8 @@
     text-overflow: ellipsis;
   }
   .vs {
+    font-size: .55rem;
+    line-height: .65rem;
     font-family: RobotoSemiBold;
   }
   .watch-details-last {

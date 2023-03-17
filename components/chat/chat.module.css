@@ -177,6 +177,9 @@
   background-color: #03a1cd;
   border-radius: 50%;
 }
+.chat-bottom-send:hover {
+  background-color: rgba(3, 161, 205, 0.4);
+}
 .chat-bottom-send,
 .chat-bottom-emojy,
 .chat-bottom-user {
@@ -205,11 +208,34 @@
   flex-direction: column;
   margin-left: auto;
 }
+.emojy {
+  font-size: 1.4rem;
+  color: white;
+  background: black;
+  border-radius: 55%;
+  cursor: pointer;
+}
+.emojy-dev,
+.user-dev {
+  display: flex;
+  align-self: center;
+}
+.emojy:hover,
+.user-icon:hover {
+  color: rgb(156, 155, 155);
+  background: inherit;
+}
+.user-icon {
+  font-size: 1.25rem;
+  color: white;
+  cursor: pointer;
+}
+
 @media (max-width: 56.25rem) {
   .chat {
-    margin: auto;
+    margin: 0 13px 0 auto;
     width: min(18.812rem, 95%);
-    height: auto;
+    height: 24.5rem;
     border-radius: 0.475rem;
   }
   .chat-top {
@@ -244,9 +270,10 @@
   }
   .chat-body {
     flex-grow: 1;
-    padding: 0.25rem 0.625rem 0;
+    padding: 0.17rem 0.7rem 0;
     gap: 0.5rem;
   }
+
   .message,
   .my-message {
     gap: 0.47rem;
@@ -267,8 +294,8 @@
     line-height: 0.567rem;
   }
   .user-avatar {
-    width: 1.6875rem;
-    height: auto;
+    height: 29px;
+    width: auto;
   }
 
   .my-mention-user,
@@ -288,12 +315,20 @@
     width: 8px;
     height: 8px;
   }
+
+  .my-message-content {
+    max-width: 10.43rem;
+  }
+  .my-message-details {
+    margin-left: 0;
+  }
   .chat-bottom {
-    gap: 7px;
-    width: 100%;
-    padding: 1rem 0.75rem 0.75rem 0.55rem;
+    gap: 0.45rem;
+    padding: 1.07rem 0.75rem 0.75rem 0.55rem;
   }
   .chat-input {
+    background-color: white;
+    color: #afafaf;
     border-radius: 0.3rem;
     /* width: 63%; */
     padding: 0 0.85rem;
@@ -303,40 +338,8 @@
     line-height: 0.8rem;
   }
   .chat-bottom-send {
-    min-width: 1.69rem;
-    height: 1.69rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #03a1cd;
+    min-width: 22px;
+    height: 22px;
     border-radius: 50%;
-  }
-  .chat-bottom-send,
-  .chat-bottom-emojy,
-  .chat-bottom-user {
-    cursor: pointer;
-  }
-  .my-message {
-    justify-content: end;
-  }
-  .my-message-details {
-    justify-content: start;
-    margin-left: 0;
-  }
-  .my-message-username {
-    color: #ffffff;
-  }
-  .my-mention-user {
-    color: #e4e900;
-  }
-  .my-message-content {
-    background: #03a1cd;
-    color: white;
-    max-width: 15.6rem;
-  }
-  .my-message-wrapper {
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
   }
 }

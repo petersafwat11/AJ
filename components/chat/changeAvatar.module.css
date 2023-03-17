@@ -188,6 +188,17 @@
   line-height: 0.89rem;
   color: #ffffff;
 }
+.avatar-category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-weight: 400;
+  font-size: 0.7rem;
+  line-height: 0.93rem;
+}
+
 @media (max-width: 56.25rem) {
   .change-avatar {
     border-radius: 0.75rem;
