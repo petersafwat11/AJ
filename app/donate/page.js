@@ -2,6 +2,10 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import OtherPaymentMethod from "../../components/donate/otherPaymentMethod/OtherPaymentMethod";
+import Popup from "../../components/popupWrapper/Popup";
+import SendMessage, {
+  SendMessageButton,
+} from "../../components/send-message/SendMessage";
 import classes from "./donate.module.css";
 const Donate = () => {
   const [ethereumPopup, setEthereumPopup] = useState(false);
@@ -13,11 +17,16 @@ const Donate = () => {
   const toggleBitcoin = () => {
     setBitcoinPopup(!bitcoinPopup);
   };
+  const [showSendMessage, setShowSendMessage] = useState(false);
+  const toggleSendMessageComponent = () => {
+    setShowSendMessage(!showSendMessage);
+    console.log("clicked", showSendMessage);
+  };
 
   return (
     <main className={classes["donate"]}>
       {ethereumPopup && (
-        <div className={classes["popup-overlay"]}>
+        <Popup>
           <OtherPaymentMethod
             toggle={toggleEthereum}
             title={"ETH (Ethereum Wallet)"}
@@ -26,11 +35,11 @@ const Donate = () => {
               "Please send any Ethereum donations to the above wallet address, we highly appreciate it!"
             }
           />
-        </div>
+        </Popup>
       )}
 
       {bitcoinPopup && (
-        <div className={classes["popup-overlay"]}>
+        <Popup>
           <OtherPaymentMethod
             toggle={toggleBitcoin}
             title={"BTC (Bitcoin Wallet)"}
@@ -39,7 +48,7 @@ const Donate = () => {
               "Please send any Bitcoin donations to the above wallet address, we highly appreciate it!"
             }
           />
-        </div>
+        </Popup>
       )}
       <div className={classes["container"]}>
         <div className={classes["donate-heading"]}>

@@ -12,10 +12,10 @@
   height: 3.33rem;
 }
 .header-top > p {
-  font-size: 0.73rem;
-  line-height: 0.85rem;
+  font-size: 0.67rem;
+  line-height: 0.8rem;
   padding-bottom: 0.56rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.75);
   font-weight: 400;
   letter-spacing: 0.04em;
 }
@@ -42,10 +42,10 @@
 .header-lang > p {
   transition: all 0.4s ease-out;
   cursor: pointer;
-  font-family: "Poppins";
+  font-family: RobotoRegular;
 }
 .header-lang > .arabic {
-  font-family: "Tajawal";
+  font-family: "Noto Sans Arabic";
 }
 .header-lang > p:hover {
   color: var(--blue);

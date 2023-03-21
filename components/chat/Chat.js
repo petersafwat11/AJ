@@ -1,13 +1,16 @@
 "use client";
+import data from "@emoji-mart/data";
+import Picker from "@emoji-mart/react";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { AiOutlineArrowUp } from "react-icons/ai";
+import { FaUser } from "react-icons/fa";
 import { MdEmojiEmotions } from "react-icons/md";
 import { ChangeAvatar } from "./changeAvatar";
-import {FaUser} from 'react-icons/fa'
 import classes from "./chat.module.css";
 import UserInfo from "./UserInfo";
 const Chat = ({ toggleChat }) => {
+  const [showEmojyPicker, setShowEmojyPicker] = useState(false);
   const getSubString = (string) => {
     let i = string.indexOf(" ");
     let rest = string.substring(i);
@@ -205,7 +208,24 @@ know anything as you are spurs! `,
           height="21"
         /> */}
         <div className={classes["emojy-dev"]}>
-          <MdEmojiEmotions className={classes["emojy"]} />
+          <MdEmojiEmotions
+            onClick={() => {
+              setShowEmojyPicker(!showEmojyPicker);
+            }}
+            className={classes["emojy"]}
+          />
+          {showEmojyPicker && (
+            <Picker
+            className={classes['emojy-picker']}
+              data={data}
+              theme="dark"
+              previewPosition="none"
+              perLine="8"
+              onEmojiSelect={() => {
+                console.log("clicked");
+              }}
+            />
+          )}
         </div>
 
         <input

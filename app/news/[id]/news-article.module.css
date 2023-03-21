@@ -1,5 +1,5 @@
 .news-article {
-  max-width: min(85%, 39rem);
+  max-width: min(85%, 45rem);
   margin: 0 auto 7rem;
 }
 .arrow-back {
@@ -59,8 +59,8 @@
 }
 
 .news-article-heading {
-  font-size: 1.5rem;
-  line-height: 1.75rem;
+  font-size: 1.7rem;
+  line-height: 1.9rem;
   font-family: RobotoSemiBold;
 }
 .article-top span {
@@ -148,10 +148,11 @@
     align-items: center;
     gap: 0.25rem;
   }
-  .article-top-heading {
+  .news-article-heading {
     font-size: 1.275rem;
     line-height: 1.48rem;
     font-family: RobotoSemiBold;
+    text-align: center;
   }
   .article-top span {
     font-size: 0.45rem;
@@ -190,9 +191,9 @@
     justify-content: center;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .news-article {
-    max-width: min(30rem, 97%);
-    margin: 0 auto 3rem;
+    max-width: 100%;
+    margin: 0 3px;
   }
 }

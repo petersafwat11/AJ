@@ -308,12 +308,21 @@ const Takticks = () => {
       ) : (
         <div className={classes["events"]}>
           {[
-            "MICHAEL JORDAN JUST PASSED THE BALL TO MY MUM AND SCORED! HAHA",
-            "LIONEL MESSI SCORED AN AMAZING TOUCHDOWN EQUALIZING THESCOREBOARD.",
-          ].map((para, index) => (
-            <p key={index} className={classes["events-para"]}>
-              {para}
-            </p>
+            {
+              event:
+                "MICHAEL JORDAN JUST PASSED THE BALL TO MY MUM AND SCORED! HAHA",
+              time: "10:15",
+            },
+            {
+              event:
+                "LIONEL MESSI SCORED AN AMAZING TOUCHDOWN EQUALIZING THESCOREBOARD.",
+              time: "10:15",
+            },
+          ].map((item, index) => (
+            <div key={index} className={classes["event"]}>
+              <p className={classes["event-time"]}>{item.time}</p>
+              <p className={classes["event-para"]}>{item.event}</p>
+            </div>
           ))}
         </div>
       )}

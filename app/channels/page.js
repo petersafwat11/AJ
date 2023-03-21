@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { ChangeAvatar } from "../../components/chat/changeAvatar";
 import Chat from "../../components/chat/Chat";
 import LiveButton from "../../components/live-button/LiveButton";
+import Popup from "../../components/popupWrapper/Popup";
 import ProtonVpn from "../../components/protonVpn/ProtonVpn";
 import Report from "../../components/report/Report";
 import ShareLinks from "../../components/shareLinks/ShareLinks";
@@ -35,17 +36,17 @@ const Page = () => {
   return (
     <div className={classes["channels"]}>
       {showReport && (
-        <div className={classes["report-wrapper"]}>
+        <Popup>
           <Report toggleReport={toggleReport} />
-        </div>
+        </Popup>
       )}
       {changeAvatar && (
-        <div className={classes["change-avatar-wrapper"]}>
+        <Popup>
           <ChangeAvatar
             selectAvatar={selectAvatar}
             toggleChangeAvatar={toggleChangeAvatar}
           />
-        </div>
+        </Popup>
       )}
       {!showChat && (
         <Image
@@ -124,7 +125,7 @@ const Page = () => {
                 key={index}
                 className={classes["watch-video-servers-button"]}
               >
-                Sky Sports 1
+                Sky Sports {item}
               </button>
             ))}
           </div>

@@ -1,22 +1,10 @@
 .donate {
   /* margin-top: 2rem; */
-  max-width: min(98%, 25rem);
-  margin: auto;
-}
-.popup-overlay {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  z-index: 20;
-  background: rgba(0, 0, 0, 0.8);
+  max-width: 100%;
+  margin: 0 3px 3rem;
 }
 .container {
-  max-width: 25.3125rem;
+  max-width: 100%;
   margin: 0 auto 3rem;
   font-size: 0.75rem;
   line-height: 0.875rem;
@@ -44,7 +32,7 @@
   background-color: #00c4fb;
 }
 .donate-wrapper {
-  padding: 1.47rem;
+  padding: 1.47rem 1rem;
   padding-bottom: 1.25rem;
   background-color: #0d1317;
   border-radius: 1.125rem;
@@ -81,6 +69,9 @@
 }
 .donate-option:hover {
   background-color: rgba(0, 0, 0, 0.8);
+}
+.donate-option:last-of-type:hover {
+  background-color: #10161b;
 }
 .input-wrapper {
   position: relative;
@@ -143,12 +134,20 @@
   background-color: white;
   transition: all 0.3s ease-out;
 }
+.paypal img {
+  width: 22.5px;
+  height: 26px;
+}
 .paypal:hover {
   background-color: rgba(255, 255, 255, 0.5);
 }
 .bitcoin {
   background-color: #ff940c;
   transition: all 0.3s ease-out;
+}
+.bitcoin img {
+  width: 21px;
+  height: 26px;
 }
 .bitcoin:hover {
   background-color: rgba(255, 150, 12, 0.5);
@@ -157,12 +156,20 @@
   background-color: #665bff;
   transition: all 0.3s ease-out;
 }
+.stripe img {
+  width: 66px;
+  height: 27px;
+}
 .stripe:hover {
   background-color: rgba(102, 91, 255, 0.5);
 }
 .share {
   background-color: #03a1ce;
   transition: all 0.3s ease-out;
+}
+.share img {
+  width: 18px;
+  height: 30.5px;
 }
 .share:hover {
   background-color: rgba(3, 162, 206, 0.5);
@@ -174,9 +181,10 @@
   text-align: center;
   font-family: RobotoRegular;
 }
-@media (min-width: 31.25rem) {
+@media (min-width: 32.5rem) {
   .donate {
-    max-width: min(82%, 33rem);
+    max-width: min(82%, 29rem);
+    margin: 0 auto 3rem;
   }
 }
 /* @media (min-width: 40rem) {

@@ -1,6 +1,6 @@
 .who-will-win {
   width: 34.4rem;
-  height: 13.5rem;
+  height: 13rem;
   background: #0d1317;
   border-radius: 1.07rem;
   padding: 1.03rem 1.5rem 1.5rem 1.687rem;
@@ -30,7 +30,7 @@
   padding: 0 0.42rem 0 1.5rem;
   cursor: pointer;
   background: #131b20;
-  border-radius: 0.22rem;
+  border-radius: 0.38rem;
 }
 .overlay-color-first,
 .overlay-color-draw,
@@ -124,7 +124,7 @@
     margin: auto;
     height: auto;
     border-radius: 0.65rem;
-    padding: 1rem 1.17rem;
+    padding: 1rem 1.13rem 1rem 1.25rem;
   }
   .heading {
     font-size: 0.875rem;
@@ -132,10 +132,10 @@
   }
   .options {
     gap: 0.43rem;
-    margin-top: 0.625rem;
+    margin-top: 0.75rem;
   }
   .option {
-    height: 1.56rem;
+    height: 1.5rem;
     padding: 0 0.75rem 0 1.07rem;
   }
   .overlay-color-first,

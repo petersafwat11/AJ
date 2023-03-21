@@ -4,7 +4,7 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  gap: 1.5rem;
+  gap: 1.625rem;
   /* margin-top: 5rem; */
 }
 .header {
@@ -137,8 +137,8 @@
   align-items: center;
   flex-direction: column;
   gap: 0.7rem;
-  width: 15rem;
-  margin: 0 20% 0 14%;
+  width: 90%;
+  margin: auto;
 }
 .stats-option {
   display: flex;
@@ -165,8 +165,8 @@
     gap: 0.87rem;
   }
   .header-item {
-    font-size: 0.81rem;
-    line-height: 0.92rem;
+    font-size: 0.93rem;
+    line-height: 1rem;
     padding: 1rem 0.92rem;
     margin-bottom: 0;
     border-bottom: 1.5px solid transparent;

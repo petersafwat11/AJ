@@ -4,14 +4,15 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  gap: 0.2rem;
+  gap: 1.625rem;
   /* margin-top: 5rem; */
 }
 .header {
   display: flex;
   align-items: center;
-  justify-self: end;
+  /* justify-self: end; */
   gap: 2rem;
+  /* width: 23.4rem; */
 }
 .header-item {
   font-weight: 700;
@@ -26,6 +27,9 @@
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   transition: all 0.3s ease-out;
+}
+.header-item:first-of-type {
+  margin-right: 29.25px;
 }
 .stadium {
   background: url("/svg/watch/football-background.svg");
@@ -224,8 +228,8 @@
   align-items: center;
   flex-direction: column;
   gap: 0.7rem;
-  width: 15rem;
-  margin: 0 20% 0 14%;
+  width: 90%;
+  margin: auto;
 }
 .stats-option {
   display: flex;
@@ -252,12 +256,16 @@
     gap: 0.87rem;
   }
   .header-item {
-    font-size: 0.81rem;
-    line-height: 0.92rem;
+    font-size: 0.93rem;
+    line-height: 1rem;
     padding: 1rem 0.92rem;
     margin-bottom: 0;
     border-bottom: 1.5px solid transparent;
   }
+  .header-item:first-of-type {
+    margin-right: 20px;
+  }
+
   .takticks {
     gap: 0.4rem;
   }

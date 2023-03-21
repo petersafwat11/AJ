@@ -4,6 +4,10 @@ import React, { useState } from "react";
 import StepOne from "../../components/giveAway/stepOne/StepOne";
 import StepThree from "../../components/giveAway/stepThree/StepThree";
 import StepTwo from "../../components/giveAway/stepTwo/StepTwo";
+import Popup from "../../components/popupWrapper/Popup";
+import SendMessage, {
+  SendMessageButton,
+} from "../../components/send-message/SendMessage";
 import classes from "./page.module.css";
 const GiveAway = () => {
   const [joinWebsiteGroup, setJoinWebsiteGroup] = useState(null);
@@ -20,8 +24,10 @@ const GiveAway = () => {
     setShowSteps({ ...showSteps, stepOne: true });
     console.log(value);
   };
+
   return (
     <main className={classes["give-away"]}>
+
       {(showSteps.stepOne || showSteps.stepTwo || showSteps.stepThree) && (
         <div className={classes["steps-wrapper"]}>
           {showSteps.stepOne && (
@@ -41,7 +47,6 @@ const GiveAway = () => {
           )}
         </div>
       )}
-
     </main>
   );
 };

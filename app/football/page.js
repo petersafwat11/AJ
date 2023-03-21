@@ -11,9 +11,13 @@ import Takticks from "../../components/watchtaktick/takticksFootball";
 import SocialIcons from "../../components/whatchShare/SocialIcons";
 import WhoWillWin from "../../components/whoWillWin/WhoWillWin";
 
-import ProtonVpn from "../../components/protonVpn/ProtonVpn";
-import classes from "./football.module.css";
 import Casino from "../../components/casino/Casino";
+import Popup from "../../components/popupWrapper/Popup";
+import ProtonVpn from "../../components/protonVpn/ProtonVpn";
+import SendMessage, {
+  SendMessageButton,
+} from "../../components/send-message/SendMessage";
+import classes from "./football.module.css";
 const Page = () => {
   const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
@@ -31,16 +35,17 @@ const Page = () => {
 
   return (
     <section className={classes["watch-football"]}>
+
       {showShareLinks && (
-        <div className={classes["share-links-wrapper"]}>
+        <Popup>
           <ShareLinks toggleShareLinks={toggleShareLinks} />
-        </div>
+        </Popup>
       )}
 
       {showReport && (
-        <div className={classes["report-wrapper"]}>
+        <Popup>
           <Report toggleReport={toggleReport} />
-        </div>
+        </Popup>
       )}
 
       {!showChat && (
@@ -84,15 +89,18 @@ const Page = () => {
           </div>
 
           <div className={classes["watch-video"]}>{/* <VideoJs /> */}</div>
-          <div className={classes["dropdowns"]}>
-            <Dropdown name={"english"} options={["1", "2", "3"]} />
+          <div className={classes["watch-video-wrapper-bottom"]}>
+            <div className={classes["dropdowns"]}>
+              <Dropdown name={"english"} options={["1", "2", "3"]} />
 
-            <Dropdown name={"arabic"} options={["1", "2", "3"]} />
-            <Dropdown name={"espanol"} options={["1", "2", "3"]} />
-            <Dropdown
-              name={"more"}
-              options={["FRENCH", "TURKISH", "PORTUGUE.."]}
-            />
+              <Dropdown name={"arabic"} options={["1", "2", "3"]} />
+              <Dropdown name={"espanol"} options={["1", "2", "3"]} />
+              <Dropdown
+                name={"more"}
+                options={["FRENCH", "TURKISH", "PORTUGUE.."]}
+              />
+            </div>
+            <button className={classes["extend-button"]}>EXTEND</button>
           </div>
         </div>
         <div className={classes["bottom"]}>
@@ -102,8 +110,8 @@ const Page = () => {
           <div className={classes["takticks"]}>
             <Takticks />
           </div>
-          <div className={classes['casino']}>
-            <Casino/>
+          <div className={classes["casino"]}>
+            <Casino />
           </div>
           <div className={classes["who-will-win"]}>
             <WhoWillWin />

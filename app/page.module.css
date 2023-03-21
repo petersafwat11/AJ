@@ -71,7 +71,7 @@
     border-radius: 7px;
   }
   .search-mobile-button {
-    background-color: rgba(2, 180, 229, 0.9);
+    background-color: rgba(2, 180, 229);
     border-radius: 0.55rem;
     font-weight: 500;
     font-family: RobotoRegular;
@@ -85,15 +85,30 @@
     height: 2.68rem;
     color: white;
   }
+  .search-mobile-input::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+  }
+
+  .search-mobile-input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: rgba(117, 117, 117, 0.5);
+  }
+
+  .search-mobile-input::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: rgba(117, 117, 117, 0.5);
+  }
+
   .top-screen {
     display: flex;
     align-items: center;
     gap: 1.93rem;
     justify-content: center;
     margin: 1rem auto 0;
+    padding-right: 0.65rem;
     max-width: 97%;
     height: 4.18rem;
-    background-color: rgba(12, 18, 21, 0.55);
+    background-color: rgba(12, 18, 21);
   }
   .top-screen-live-icon {
     display: flex;

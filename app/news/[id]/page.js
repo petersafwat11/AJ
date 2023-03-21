@@ -1,13 +1,19 @@
 "use client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+import Popup from "../../../components/popupWrapper/Popup";
+import SendMessage, {
+  SendMessageButton,
+} from "../../../components/send-message/SendMessage";
 import classes from "./news-article.module.css";
 const Page = () => {
   const router = useRouter();
+  const [showSendMessage, setShowSendMessage] = useState(false);
   return (
     <div className={classes["news-article"]}>
+
       <div className={classes["top-heading"]}>
         <h2 className={classes["top-heading-title"]}>NEWS</h2>
         <span></span>

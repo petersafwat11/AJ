@@ -1,20 +1,14 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import classes from "./sendMessage.module.css";
-const SendMessage = () => {
-  const [showComponent, setShowComponent] = useState(true);
+const SendMessage = ({ toggleSendMessageComponent }) => {
   return (
-    <div
-      style={{ display: !showComponent ? "none" : "" }}
-      className={classes["send-message"]}
-    >
+    <div className={classes["send-message"]}>
       <div className={classes["send-message-top"]}>
         <h3 className={classes["heading"]}>Feedback</h3>
         <Image
-          onClick={() => {
-            setShowComponent(!showComponent);
-          }}
+          onClick={toggleSendMessageComponent}
           className={classes["exit"]}
           src="/svg/chat/exit-chat.svg"
           alt="exit"
@@ -38,3 +32,14 @@ const SendMessage = () => {
 };
 
 export default SendMessage;
+
+export const SendMessageButton = ({ toggleSendMessageComponent }) => {
+  return (
+    <div
+      onClick={toggleSendMessageComponent}
+      className={classes["send-message-button"]}
+    >
+      <p>Feedback</p>
+    </div>
+  );
+};

@@ -1,18 +1,20 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import classes from "./contact.module.css";
 
 const Page = () => {
   const topics = [
-    "Adding or removing users",
-    "Billing and plans",
-    "Connection Trouble ",
-    "Notifications",
-    "Managing Channels",
-    "Signing in",
-    "New design feedback",
-    "Trial of a paid plan",
+    "Connection Trouble",
+    "Server playing wrong match",
+    "Advertise with us ",
+    "Feedback",
+    "Add a Channel",
+    "Add a Sport or League",
+    "Chat issues",
+    "Something else",
   ];
+  const [topic, setTopic] = useState("");
   return (
     <section className={classes["contact"]}>
       <h2 className={classes["heading"]}>Contact Us</h2>
@@ -33,45 +35,89 @@ const Page = () => {
           <div className={classes["topics-options"]}>
             <div className={classes["topics-options-first"]}>
               {topics.slice(0, 3).map((item, index) => (
-                <p key={index} className={classes["topic-option"]}>
+                <p
+                  style={{ backgroundColor: topic === item ? "#03a1cd" : "" }}
+                  onClick={() => {
+                    setTopic(item);
+                  }}
+                  key={index}
+                  className={classes["topic-option"]}
+                >
                   {item}
                 </p>
               ))}
             </div>
             <div className={classes["topics-options-second"]}>
               {topics.slice(3, 6).map((item, index) => (
-                <p key={index} className={classes["topic-option"]}>
+                <p
+                  style={{ backgroundColor: topic === item ? "#03a1cd" : "" }}
+                  onClick={() => {
+                    setTopic(item);
+                  }}
+                  key={index}
+                  className={classes["topic-option"]}
+                >
                   {item}
                 </p>
               ))}
             </div>
             <div className={classes["topics-options-third"]}>
               {topics.slice(6, 8).map((item, index) => (
-                <p key={index} className={classes["topic-option"]}>
+                <p
+                  style={{ backgroundColor: topic === item ? "#03a1cd" : "" }}
+                  onClick={() => {
+                    if (topic !== item) {
+                      setTopic(item);
+                      return;
+                    } else {
+                      setTopic("");
+                    }
+                  }}
+                  key={index}
+                  className={classes["topic-option"]}
+                >
                   {item}
                 </p>
               ))}
             </div>
             <div className={classes["topics-mobile"]}>
               {topics.slice(0, 8).map((item, index) => (
-                <p key={index} className={classes["topic-option"]}>
+                <p
+                  style={{ backgroundColor: topic === item ? "#03a1cd" : "" }}
+                  onClick={() => {
+                    if (topic !== item) {
+                      setTopic(item);
+                      return;
+                    } else {
+                      setTopic("");
+                    }
+                  }}
+                  key={index}
+                  className={classes["topic-option"]}
+                >
                   {item}
                 </p>
               ))}
             </div>
           </div>
         </div>
-        <div className={classes["input-group"]}>
-          <label htmlFor="topic-title" className={classes["label"]}>
-            Specify your topic
-          </label>
-          <input
-            id="topic-title"
-            type="text"
-            placeholder="Type a topic..."
-            className={classes["input"]}
-          />
-        </div>
+        {topic === "Something else" && (
+          <div className={classes["input-group"]}>
+            <label htmlFor="topic-title" className={classes["label"]}>
+              Specify your topic
+            </label>
+            <input
+              // value={topic}
+              // onChange={(e) => {
+              //   setTopic(e.target.value);
+              // }}
+              id="topic-title"
+              type="text"
+              placeholder="Type a topic..."
+              className={classes["input"]}
+            />
+          </div>
+        )}
         <div className={classes["input-group-textarea"]}>
           <label htmlFor="topic-message" className={classes["label"]}>
             Tell us what you need help with?

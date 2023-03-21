@@ -1,17 +1,20 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
+import Casino from "../../components/casino/Casino";
 import Chat from "../../components/chat/Chat";
 import Dropdown from "../../components/dropdown/Dropdown";
+import Popup from "../../components/popupWrapper/Popup";
+import ProtonVpn from "../../components/protonVpn/ProtonVpn";
 import Report from "../../components/report/Report";
+import SendMessage, {
+  SendMessageButton,
+} from "../../components/send-message/SendMessage";
 import ShareLinks from "../../components/shareLinks/ShareLinks";
 import WatchDetails from "../../components/watch-details/WatchDetailsNfl";
 import Takticks from "../../components/watchtaktick/takticksNfl";
 import SocialIcons from "../../components/whatchShare/SocialIcons";
 import WhoWillWin from "../../components/whoWillWin/WhoWillWin";
-
-import Casino from "../../components/casino/Casino";
-import ProtonVpn from "../../components/protonVpn/ProtonVpn";
 import classes from "./nfl.module.css";
 const Page = () => {
   const [showChat, setShowChat] = useState(false);
@@ -31,15 +34,15 @@ const Page = () => {
   return (
     <section className={classes["watch"]}>
       {showShareLinks && (
-        <div className={classes["share-links-wrapper"]}>
+        <Popup>
           <ShareLinks toggleShareLinks={toggleShareLinks} />
-        </div>
+        </Popup>
       )}
 
       {showReport && (
-        <div className={classes["report-wrapper"]}>
+        <Popup>
           <Report toggleReport={toggleReport} />
-        </div>
+        </Popup>
       )}
 
       {!showChat && (
@@ -77,15 +80,18 @@ const Page = () => {
           </div>
 
           <div className={classes["watch-video"]}>{/* <VideoJs /> */}</div>
-          <div className={classes["dropdowns"]}>
-            <Dropdown name={"english"} options={["1", "2", "3"]} />
+          <div className={classes["watch-video-wrapper-bottom"]}>
+            <div className={classes["dropdowns"]}>
+              <Dropdown name={"english"} options={["1", "2", "3"]} />
 
-            <Dropdown name={"arabic"} options={["1", "2", "3"]} />
-            <Dropdown name={"espanol"} options={["1", "2", "3"]} />
-            <Dropdown
-              name={"more"}
-              options={["FRENCH", "TURKISH", "PORTUGUE.."]}
-            />
+              <Dropdown name={"arabic"} options={["1", "2", "3"]} />
+              <Dropdown name={"espanol"} options={["1", "2", "3"]} />
+              <Dropdown
+                name={"more"}
+                options={["FRENCH", "TURKISH", "PORTUGUE.."]}
+              />
+            </div>
+            <button className={classes["extend-button"]}>EXTEND</button>
           </div>
         </div>
         <div className={classes["bottom"]}>

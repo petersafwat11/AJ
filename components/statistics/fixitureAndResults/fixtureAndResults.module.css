@@ -25,20 +25,20 @@
   width: 100%;
   display: grid;
   grid-template-columns: 30% 20% 30% 1fr;
-  padding: 0.7rem 0 0.52rem 16%;
+  padding: 0.7rem 0 0.52rem 25%;
   border-bottom: 1px solid #3b3b3b;
 }
 .first-team,
 .second-team {
   display: flex;
   align-items: center;
-  gap: 0.94rem;
+  gap: 0.5rem;
 }
 .result,
 .vs {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.4rem;
   font-size: 1.125rem;
   line-height: 1.3125rem;
   font-family: RobotoSemiBold;

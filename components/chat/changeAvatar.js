@@ -64,22 +64,31 @@ export const ChangeAvatar = ({
                 <div
                   style={{
                     background:
-                      newSelectedAvatar == index
+                      newSelectedAvatar == "main/" + Number(Number(index) + 1)
                         ? "url('/svg/chat/background.svg')"
                         : "",
-                    backgroundSize: newSelectedAvatar == index ? "93%" : "",
+                    backgroundSize:
+                      newSelectedAvatar == "main/" + Number(Number(index) + 1)
+                        ? "93%"
+                        : "",
                     backgroundRepeat:
-                      newSelectedAvatar == index ? "no-repeat" : "",
+                      newSelectedAvatar == "main/" + Number(Number(index) + 1)
+                        ? "no-repeat"
+                        : "",
                     backgroundPosition:
-                      newSelectedAvatar == index ? " bottom" : "",
+                      newSelectedAvatar == "main/" + Number(Number(index) + 1)
+                        ? " bottom"
+                        : "",
                   }}
                   onClick={() => {
                     setNewSElectedAvatar("main/" + Number(Number(index) + 1));
+                    console.log(newSelectedAvatar);
                   }}
                   key={index}
                   className={classes["avatar"]}
                 >
-                  {setNewSElectedAvatar == index && (
+                  {setNewSElectedAvatar ==
+                    "main/" + Number(Number(index) + 1) && (
                     <Image
                       className={classes["checked-icon"]}
                       src="/svg/chat/check.svg"
@@ -102,22 +111,30 @@ export const ChangeAvatar = ({
                 <div
                   style={{
                     background:
-                      newSelectedAvatar == index
+                      newSelectedAvatar == "clubs/" + Number(Number(index) + 1)
                         ? "url('/svg/chat/background.svg')"
                         : "",
-                    backgroundSize: newSelectedAvatar == index ? "93%" : "",
+                    backgroundSize:
+                      newSelectedAvatar == "clubs/" + Number(Number(index) + 1)
+                        ? "93%"
+                        : "",
                     backgroundRepeat:
-                      newSelectedAvatar == index ? "no-repeat" : "",
+                      newSelectedAvatar == "clubs/" + Number(Number(index) + 1)
+                        ? "no-repeat"
+                        : "",
                     backgroundPosition:
-                      newSelectedAvatar == index ? " bottom" : "",
+                      newSelectedAvatar == "clubs/" + Number(Number(index) + 1)
+                        ? " bottom"
+                        : "",
                   }}
                   onClick={() => {
-                    setNewSElectedAvatar("main/" + Number(Number(index) + 1));
+                    setNewSElectedAvatar("clubs/" + Number(Number(index) + 1));
                   }}
                   key={index}
                   className={classes["avatar"]}
                 >
-                  {setNewSElectedAvatar == index && (
+                  {setNewSElectedAvatar ==
+                    "clubs/" + Number(Number(index) + 1) && (
                     <Image
                       className={classes["checked-icon"]}
                       src="/svg/chat/check.svg"
@@ -139,22 +156,30 @@ export const ChangeAvatar = ({
                 <div
                   style={{
                     background:
-                      newSelectedAvatar == index
+                      newSelectedAvatar == "flags/" + Number(Number(index) + 1)
                         ? "url('/svg/chat/background.svg')"
                         : "",
-                    backgroundSize: newSelectedAvatar == index ? "93%" : "",
+                    backgroundSize:
+                      newSelectedAvatar == "flags/" + Number(Number(index) + 1)
+                        ? "93%"
+                        : "",
                     backgroundRepeat:
-                      newSelectedAvatar == index ? "no-repeat" : "",
+                      newSelectedAvatar == "flags/" + Number(Number(index) + 1)
+                        ? "no-repeat"
+                        : "",
                     backgroundPosition:
-                      newSelectedAvatar == index ? " bottom" : "",
+                      newSelectedAvatar == "flags/" + Number(Number(index) + 1)
+                        ? " bottom"
+                        : "",
                   }}
                   onClick={() => {
-                    setNewSElectedAvatar("main/" + Number(Number(index) + 1));
+                    setNewSElectedAvatar("flags/" + Number(Number(index) + 1));
                   }}
                   key={index}
                   className={classes["avatar"]}
                 >
-                  {setNewSElectedAvatar == index && (
+                  {setNewSElectedAvatar ==
+                    "flags/" + Number(Number(index) + 1) && (
                     <Image
                       className={classes["checked-icon"]}
                       src="/svg/chat/check.svg"
@@ -205,7 +230,12 @@ export const ChangeAvatar = ({
                 width="114"
               />
             ) : (
-              <img src={selectedAvatar} alt="avatar" width="114" />
+              <img
+                className={classes["selected-avatar-icon"]}
+                src={selectedAvatar}
+                alt="avatar"
+                width="114"
+              />
             )}
           </div>
 

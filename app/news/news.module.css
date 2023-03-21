@@ -26,7 +26,7 @@
   margin-top: 1.07rem;
   background-color: #0d1317;
   border-radius: 1.125rem;
-  padding: 0.125rem 0 0.75rem;
+  padding: 0;
 }
 .news-items {
   display: flex;
@@ -37,7 +37,7 @@
   display: flex;
   align-items: start;
   gap: 1.17rem;
-  padding: 13.4px 36.75px 11.25px 22.5px;
+  padding: 13.4px 36.75px 13.4px 22.5px;
   cursor: pointer;
 }
 .news-item-image {
@@ -178,11 +178,10 @@
     margin-top: 0.5rem;
     background-color: #0d1317;
     border-radius: 0.625rem;
-    padding: 0.16rem 0.9rem 0.3rem;
   }
   .news-item {
     gap: 0.76rem;
-    padding: 0.4625rem 0;
+    padding: 0.7rem 0.9rem;
   }
   .news-item-image {
     width: 129px;
@@ -203,5 +202,11 @@
     font-family: RobotoRegular;
     font-size: 0.5rem;
     line-height: 0.567rem;
+  }
+}
+@media (max-width: 600px) {
+  .news {
+    max-width: 100%;
+    margin: 0 3px;
   }
 }

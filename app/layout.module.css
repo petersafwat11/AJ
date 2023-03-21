@@ -22,3 +22,17 @@
   z-index: 20;
   background-color: rgba(0, 0, 0, 0.8);
 }
+.scroll-top {
+  position: fixed;
+  bottom: 29%;
+  right: 8%;
+  z-index: 10;
+  cursor: pointer;
+}
+@media (max-width: 56.25rem) {
+  .scroll-top {
+    width: 20px;
+    height: 20px;
+    bottom: 15%;
+  }
+}

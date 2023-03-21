@@ -70,7 +70,7 @@
   font-size: 0.75rem;
 }
 .button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #002342;
   color: white;
 }
 @media (max-width: 56.25rem) {

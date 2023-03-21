@@ -1,5 +1,6 @@
-import Image from "next/image";
 import React from "react";
+import { BiRightArrowAlt } from "react-icons/bi";
+
 import classes from "./protonVpn.module.css";
 const ProtonVpn = () => {
   return (
@@ -11,12 +12,7 @@ const ProtonVpn = () => {
         </h2>
         <button className={classes["button"]}>
           Buy now for $10
-          <Image
-            src="svg/watch/arrow-right.svg"
-            alt="logo"
-            width="9"
-            height="9"
-          />
+          <BiRightArrowAlt className={classes["right-arrow"]} />
         </button>
       </div>
     </div>

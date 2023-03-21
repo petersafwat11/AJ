@@ -1,16 +1,3 @@
-.report-wrapper,
-.share-links {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.8);
-}
 .chat-icon {
   position: fixed;
   bottom: 20vh;
@@ -114,6 +101,7 @@
   opacity: 0.8;
   color: white;
   font-family: RobotoSemiBold;
+  cursor: pointer;
 }
 .vpn {
   margin: auto;
@@ -153,7 +141,7 @@
   background: var(--btn-background);
   cursor: pointer;
   height: 2.6rem;
-  border-radius: 0.5rem;
+  border-radius: 0.35rem;
   color: white;
   font-size: 0.9375rem;
   line-height: 1.125rem;
@@ -281,8 +269,12 @@
     background-color: #d32727;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .watch-video {
     height: 14.5rem;
+  }
+  .watch-football {
+    max-width: 100%;
+    margin: 0 3px;
   }
 }

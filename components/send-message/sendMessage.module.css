@@ -63,3 +63,23 @@
   cursor: pointer;
   font-family: "Poppins";
 }
+.send-message-button {
+  background: #00c4fb;
+  width: 1.687rem;
+  height: 6.375rem;
+  border-radius: 1.6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 45%;
+  left: 0;
+  cursor: pointer;
+}
+.send-message-button p {
+  rotate: 90deg;
+  font-weight: 600;
+  font-family: RobotoSemiBold;
+  font-size: 0.93rem;
+  letter-spacing: 0.75px;
+}

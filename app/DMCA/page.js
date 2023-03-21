@@ -1,7 +1,13 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import Popup from "../../components/popupWrapper/Popup";
+import SendMessage, {
+  SendMessageButton,
+} from "../../components/send-message/SendMessage";
 import classes from "./DMCA.module.css";
-const page = () => {
+const Page = () => {
+
   return (
     <section className={classes["DMCA"]}>
       <div className={classes["top-heading"]}>
@@ -31,47 +37,53 @@ const page = () => {
         <div className={classes["second-part"]}>
           <div className={classes["companies-logoes"]}>
             <Image
+              className={classes["netflix-icon"]}
               src="/svg/DMCA/netflix.svg"
               alt="netflix"
               width="114"
               height="30"
             />
             <Image
+              className={classes["vimeo-icon"]}
               src="/svg/DMCA/vimeo.svg"
               alt="vimeo"
               width="105"
               height="29"
             />
             <Image
+              className={classes["dailymotion-icon"]}
               src="/svg/DMCA/dailymotion.svg"
               alt="dailymotion"
               width="165"
               height="30"
             />
             <Image
+              className={classes["google-icon"]}
               src="/svg/DMCA/google.svg"
               alt="google"
               width="110"
               height="36"
             />
             <Image
+              className={classes["twitch-icon"]}
               src="/svg/DMCA/twitch.svg"
               alt="twitch"
               width="93"
               height="30"
             />
             <Image
+              className={classes["youtube-icon"]}
               src="/svg/DMCA/youtube.svg"
               alt="youtube"
               width="127"
               height="27"
             />
           </div>
-          <button className={classes['contact-us-button']}>CONTACT US</button>
+          {/* <button className={classes['contact-us-button']}>CONTACT US</button> */}
         </div>
       </div>
     </section>
   );
 };
 
-export default page;
+export default Page;

@@ -128,6 +128,16 @@
 "@colors/colors@1.5.0":
   "version" "1.5.0"
 
+"@emoji-mart/data@^1.1.2":
+  "integrity" "sha512-1HP8BxD2azjqWJvxIaWAMyTySeZY0Osr83ukYjltPVkNXeJvTz7yDrPLBtnrD5uqJ3tg4CcLuuBW09wahqL/fg=="
+  "resolved" "https://registry.npmjs.org/@emoji-mart/data/-/data-1.1.2.tgz"
+  "version" "1.1.2"
+
+"@emoji-mart/react@^1.1.1":
+  "integrity" "sha512-NMlFNeWgv1//uPsvLxvGQoIerPuVdXwK/EUek8OOkJ6wVOWPUizRBJU0hDqWZCOROVpfBgCemaC3m6jDOXi03g=="
+  "resolved" "https://registry.npmjs.org/@emoji-mart/react/-/react-1.1.1.tgz"
+  "version" "1.1.1"
+
 "@emotion/is-prop-valid@^1.1.0":
   "integrity" "sha512-3aDpDprjM0AwaxGE09bOPkNxHpBd+kA6jty3RnaEXdweX1DF1U3VQpPYb0g1IStAuK7SVQ1cy+bNBBKp4W3Fjg=="
   "resolved" "https://registry.npmjs.org/@emotion/is-prop-valid/-/is-prop-valid-1.2.0.tgz"
@@ -1375,6 +1385,11 @@
   "integrity" "sha512-ERuAqNq7YknVY3+47VbB+Q92kWH7O7sX3mkZINqZtsGJMQFb0dj71d5U3PRTihX03qt2NWIfZic2CCcGXOHJ7A=="
   "resolved" "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.321.tgz"
   "version" "1.4.321"
+
+"emoji-mart@^5.2", "emoji-mart@^5.5.2":
+  "integrity" "sha512-Sqc/nso4cjxhOwWJsp9xkVm8OF5c+mJLZJFoFfzRuKO+yWiN7K8c96xmtughYb0d/fZ8UC6cLIQ/p4BR6Pv3/A=="
+  "resolved" "https://registry.npmjs.org/emoji-mart/-/emoji-mart-5.5.2.tgz"
+  "version" "5.5.2"
 
 "emoji-regex@^8.0.0":
   "integrity" "sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A=="
@@ -3896,7 +3911,7 @@
   "resolved" "https://registry.npmjs.org/react-marquee-slider/-/react-marquee-slider-1.1.5.tgz"
   "version" "1.1.5"
 
-"react@*", "react@^18.2.0", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@18.2.0":
+"react@*", "react@^16.8 || ^17 || ^18", "react@^18.2.0", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@18.2.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"

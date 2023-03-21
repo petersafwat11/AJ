@@ -10,8 +10,11 @@
     "prettier": "prettier --write ."
   },
   "dependencies": {
+    "@emoji-mart/data": "^1.1.2",
+    "@emoji-mart/react": "^1.1.1",
     "@videojs/themes": "^1.0.1",
     "autoprefixer": "^10.4.13",
+    "emoji-mart": "^5.5.2",
     "i": "^0.3.7",
     "next": "13.1.6",
     "npm": "^9.5.1",

@@ -51,12 +51,16 @@
   display: flex;
   align-items: center;
   letter-spacing: -0.011em;
-  color: #6966ff;
+  color: #c93e54;
   cursor: pointer;
   transition: all 0.3s ease-out;
 }
+.right-arrow {
+  font-size: 0.75rem;
+}
+
 .button:hover {
-  background: rgb(38 38 139 / 88%);
+  background: #c93e54;
   color: white;
 }
 @media (max-width: 56.25rem) {
@@ -90,5 +94,8 @@
     height: 1.5rem;
     border-radius: 0.28rem;
     font-size: 0.5rem;
+  }
+  .right-arrow {
+    font-size: 0.6rem;
   }
 }

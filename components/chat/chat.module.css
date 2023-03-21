@@ -30,7 +30,7 @@
   background-color: #03a1cd;
   height: 1.875rem;
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.6rem 0.7rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,12 +54,15 @@
 .chat-rooms {
   display: none;
   position: absolute;
-  top: 100%;
+  top: 147%;
   left: 50%;
   margin-left: -3.97rem;
   background-color: #03a1cd;
   width: 7.875rem;
   z-index: 10;
+  border-radius: 4.5px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
 }
 .chat-room,
 .arabic {
@@ -68,7 +71,7 @@
   display: flex;
   align-items: center;
   padding-left: 0.65rem;
-  font-family: RobotoRegular;
+  font-family: "Poppins";
   font-weight: 500;
   font-size: 0.75rem;
   line-height: 0.9rem;
@@ -113,16 +116,16 @@
 }
 .message-username,
 .my-message-username {
-  font-family: RobotoRegular;
+  font-family: "Poppins";
   font-weight: 500;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   line-height: 1.25rem;
 }
 .my-message-time,
 .message-time {
   font-family: "Poppins";
   font-weight: 500;
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   line-height: 0.75rem;
   color: rgba(255, 255, 255, 0.4);
 }
@@ -130,7 +133,7 @@
 .mention-user {
   color: #03a1cd;
   font-weight: 700;
-  font-family: RobotoBold;
+  font-family: "Poppins";
   font-size: 0.75rem;
   line-height: 1.125rem;
   cursor: pointer;
@@ -140,10 +143,10 @@
   background: #292929;
   border-radius: 0.28rem;
   font-family: "Poppins";
-  font-weight: 500;
+  font-weight: 400;
   font-size: 0.75rem;
   line-height: 1.125rem;
-  padding: 0.375rem 1.17rem 0.1rem 0.98rem;
+  padding: 0.5rem 1rem;
   display: inline;
 }
 .mention-icon {
@@ -159,14 +162,17 @@
 }
 .chat-input {
   background-color: white;
-  color: #afafaf;
+  color: #000000;
   border-radius: 0.3rem;
   /* width: 63%; */
   padding: 0 0.85rem;
   height: 1.75rem;
   font-weight: 400;
-  font-size: 0.65rem;
-  line-height: 0.8rem;
+  font-size: 0.8rem;
+  line-height: 0.9rem;
+}
+.chat-input:focus-visible {
+  border: 1.5px solid #03a1cd;
 }
 .chat-bottom-send {
   min-width: 1.69rem;
@@ -209,7 +215,7 @@
   margin-left: auto;
 }
 .emojy {
-  font-size: 1.4rem;
+  font-size: 1.65rem;
   color: white;
   background: black;
   border-radius: 55%;
@@ -226,7 +232,7 @@
   background: inherit;
 }
 .user-icon {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   color: white;
   cursor: pointer;
 }
@@ -244,12 +250,12 @@
     padding: 0.55rem;
   }
   .chat-top-extend {
-    width: 9px;
-    height: 9px;
+    width: 10.2px;
+    height: 10.2px;
   }
   .chat-top-exit {
-    width: 9px;
-    height: 8px;
+    width: 10.2px;
+    height: 9.2px;
   }
 
   .chat-top-text {
@@ -328,15 +334,27 @@
   }
   .chat-input {
     background-color: white;
-    color: #afafaf;
     border-radius: 0.3rem;
     /* width: 63%; */
     padding: 0 0.85rem;
-    height: 1.75rem;
+    height: 1.5rem;
     font-weight: 400;
     font-size: 0.65rem;
     line-height: 0.8rem;
   }
+  .emojy {
+    font-size: 1.42rem;
+  }
+  .emojy-picker{
+    height: 20rem;
+    position: absolute;
+    top:0;
+    left:0;
+  }
+  .user-icon {
+    font-size: 1.25rem;
+  }
+
   .chat-bottom-send {
     min-width: 22px;
     height: 22px;

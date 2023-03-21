@@ -4,7 +4,7 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  gap: 0.2rem;
+  gap: 1.625rem;
   /* margin-top: 5rem; */
 }
 .header {
@@ -26,6 +26,9 @@
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   transition: all 0.3s ease-out;
+}
+.header-item:first-of-type {
+  margin-right: 23.54px;
 }
 .stadium {
   background: url("/svg/watch/nnfl-background.svg");
@@ -208,8 +211,8 @@
   align-items: center;
   flex-direction: column;
   gap: 0.7rem;
-  width: 15rem;
-  margin: 0 20% 0 14%;
+  width: 90%;
+  margin: auto;
 }
 .stats-option {
   display: flex;
@@ -228,10 +231,21 @@
   align-items: center;
   gap: 0.85rem;
   flex-direction: column;
-  max-width: min(70%, 19rem);
-  margin-top: 0.56rem;
+  width: 30rem;
 }
-.events-para {
+.event {
+  display: flex;
+  align-items: center;
+  gap: 2.48rem;
+  color: #868686;
+}
+.event-time {
+  font-family: RobotoBold;
+  font-weight: 700;
+  font-size: 0.85rem;
+  line-height: 0.98rem;
+}
+.event-para {
   font-family: RobotoBold;
   font-weight: 700;
   font-size: 1.125rem;
@@ -251,12 +265,16 @@
     gap: 0.87rem;
   }
   .header-item {
-    font-size: 0.81rem;
-    line-height: 0.92rem;
+    font-size: 0.93rem;
+    line-height: 1rem;
     padding: 1rem 0.92rem;
     margin-bottom: 0;
     border-bottom: 1.5px solid transparent;
   }
+  .header-item:first-of-type {
+    margin-right: 17px;
+  }
+
   .takticks {
     gap: 1.07rem;
   }

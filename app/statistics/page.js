@@ -41,6 +41,9 @@ const Statistics = () => {
           </p>
 
           <p
+            onClick={() => {
+              setStatisticsType("results");
+            }}
             style={{
               borderBottom:
                 statisticsType === "results" ? "2px solid #03a1cd" : "",
@@ -51,7 +54,13 @@ const Statistics = () => {
             RESULTS
           </p>
         </div>
-        {statisticsType == "fixtures" ? <FixtureAndResults /> : <Standings />}
+        {statisticsType == "fixtures" ? (
+          <FixtureAndResults type={"fixture"} />
+        ) : statisticsType == "standings" ? (
+          <Standings />
+        ) : (
+          <FixtureAndResults type={"result"} />
+        )}
       </div>
     </div>
   );

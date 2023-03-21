@@ -30,8 +30,8 @@ const Standings = () => {
                   className={classes["first-team-image"]}
                   src="/svg/teams/man-united.svg"
                   alt="team"
-                  width="23"
-                  height="23"
+                  width="25"
+                  height="25"
                 />
                 <p className={classes["standings-item-para"]}>Man Utd</p>
               </div>
@@ -48,8 +48,8 @@ const Standings = () => {
                 className={classes["second-item-image"]}
                 src="/svg/teams/liverpool.svg"
                 alt="team"
-                width="23"
-                height="23"
+                width="25"
+                height="25"
               />
             </div>
           </div>

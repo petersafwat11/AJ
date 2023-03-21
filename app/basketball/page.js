@@ -84,15 +84,18 @@ const Page = () => {
           </div>
 
           <div className={classes["watch-video"]}>{/* <VideoJs /> */}</div>
-          <div className={classes["dropdowns"]}>
-            <Dropdown name={"english"} options={["1", "2", "3"]} />
+          <div className={classes["watch-video-wrapper-bottom"]}>
+            <div className={classes["dropdowns"]}>
+              <Dropdown name={"english"} options={["1", "2", "3"]} />
 
-            <Dropdown name={"arabic"} options={["1", "2", "3"]} />
-            <Dropdown name={"espanol"} options={["1", "2", "3"]} />
-            <Dropdown
-              name={"more"}
-              options={["FRENCH", "TURKISH", "PORTUGUE.."]}
-            />
+              <Dropdown name={"arabic"} options={["1", "2", "3"]} />
+              <Dropdown name={"espanol"} options={["1", "2", "3"]} />
+              <Dropdown
+                name={"more"}
+                options={["FRENCH", "TURKISH", "PORTUGUE.."]}
+              />
+            </div>
+            <button className={classes["extend-button"]}>EXTEND</button>
           </div>
         </div>
         <div className={classes["bottom"]}>

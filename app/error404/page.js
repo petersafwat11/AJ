@@ -1,9 +1,12 @@
 "use client";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
+import Popup from "../../components/popupWrapper/Popup";
+import SendMessage, { SendMessageButton } from "../../components/send-message/SendMessage";
 import classes from "./error.module.css";
 const Page = () => {
   const router = useRouter();
+
   return (
     <div className={classes["error"]}>
       <div className={classes["first-section"]}>

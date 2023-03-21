@@ -1,6 +1,11 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import Popup from "../../components/popupWrapper/Popup";
+import SendMessage, {
+  SendMessageButton,
+} from "../../components/send-message/SendMessage";
 import classes from "./FAQ.module.css";
-const page = () => {
+const Page = () => {
   const FAQ = [
     {
       question: "Are all streams free to watch?",
@@ -58,6 +63,7 @@ const page = () => {
         "As we do not host the content of our streams, we are not of any threat to authorities and therefore our website will remain forever.In the rare case that our official website www.ajsports.ch does get taken down, we have 20 other domains which is displayed to you at the top of the page. Kindly note them down and we will always be up and running!Ensure to join our Telegram Channel and Follow us on Twitter.",
     },
   ];
+
   return (
     <section className={classes["FAQ"]}>
       <div className={classes["top-heading"]}>
@@ -103,4 +109,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

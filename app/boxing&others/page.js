@@ -11,6 +11,7 @@ import SocialIcons from "../../components/whatchShare/SocialIcons";
 import WhoWillWin from "../../components/whoWillWin/WhoWillWin";
 
 import Casino from "../../components/casino/Casino";
+import Popup from "../../components/popupWrapper/Popup";
 import ProtonVpn from "../../components/protonVpn/ProtonVpn";
 import classes from "./boxing&others.module.css";
 const Page = () => {
@@ -31,15 +32,15 @@ const Page = () => {
   return (
     <section className={classes["watch"]}>
       {showShareLinks && (
-        <div className={classes["share-links-wrapper"]}>
+        <Popup>
           <ShareLinks toggleShareLinks={toggleShareLinks} />
-        </div>
+        </Popup>
       )}
 
       {showReport && (
-        <div className={classes["report-wrapper"]}>
+        <Popup>
           <Report toggleReport={toggleReport} />
-        </div>
+        </Popup>
       )}
 
       {!showChat && (
@@ -83,15 +84,18 @@ const Page = () => {
           </div>
 
           <div className={classes["watch-video"]}>{/* <VideoJs /> */}</div>
-          <div className={classes["dropdowns"]}>
-            <Dropdown name={"english"} options={["1", "2", "3"]} />
+          <div className={classes["watch-video-wrapper-bottom"]}>
+            <div className={classes["dropdowns"]}>
+              <Dropdown name={"english"} options={["1", "2", "3"]} />
 
-            <Dropdown name={"arabic"} options={["1", "2", "3"]} />
-            <Dropdown name={"espanol"} options={["1", "2", "3"]} />
-            <Dropdown
-              name={"more"}
-              options={["FRENCH", "TURKISH", "PORTUGUE.."]}
-            />
+              <Dropdown name={"arabic"} options={["1", "2", "3"]} />
+              <Dropdown name={"espanol"} options={["1", "2", "3"]} />
+              <Dropdown
+                name={"more"}
+                options={["FRENCH", "TURKISH", "PORTUGUE.."]}
+              />
+            </div>
+            <button className={classes["extend-button"]}>EXTEND</button>
           </div>
         </div>
         <div className={classes["bottom"]}>

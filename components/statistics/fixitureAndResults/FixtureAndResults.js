@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import classes from "./fixtureAndResults.module.css";
-const FixtureAndResults = () => {
+const FixtureAndResults = ({ type }) => {
   return (
     <div className={classes["fixure"]}>
       <div className={classes["today"]}>
@@ -11,7 +11,7 @@ const FixtureAndResults = () => {
         </div>
         {[1, 2, 3, 4].map((item, index) => (
           <div key={index} className={classes["matches"]}>
-            <Match last={index == 3 ? true : false} />
+            <Match type={type} last={index == 3 ? true : false} />
           </div>
         ))}
       </div>
@@ -54,7 +54,7 @@ const FixtureAndResults = () => {
 
 export default FixtureAndResults;
 
-export const Match = ({ last,type }) => {
+export const Match = ({ last, type }) => {
   return (
     <div
       style={{ borderBottom: last == true ? "none" : "" }}
@@ -70,12 +70,16 @@ export const Match = ({ last,type }) => {
         />
         <p className={classes["first-team-name"]}>Man Utd</p>
       </div>
-      
-     {type!=='fixure'? <div className={classes["result"]}>
-        <p>2</p>
-        <p>-</p>
-        <p>1</p>
-      </div>: <div className={classes['vs']}> vs</div> }
+
+      {type === "result" ? (
+        <div className={classes["result"]}>
+          <p>2</p>
+          <p>-</p>
+          <p>1</p>
+        </div>
+      ) : (
+        <div className={classes["vs"]}> vs</div>
+      )}
       <div className={classes["second-team"]}>
         <p className={classes["second-team-name"]}>Liverpool</p>
 

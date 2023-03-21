@@ -1,6 +1,6 @@
 .DMCA {
   max-width: min(85%, 45rem);
-  margin: auto;
+  margin: 0 auto 7rem;
 }
 
 .top-heading {
@@ -8,8 +8,6 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1.5rem;
-  line-height: 1.75rem;
   color: #00c4fb;
 }
 .top-heading > span {
@@ -17,17 +15,23 @@
   background-color: #00c4fb;
   height: 1px;
 }
-
+.top-heading-title {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  font-family: RobotoRegular;
+}
 .container {
   width: 100%;
   margin-top: 1.15rem;
   background-color: #0d1317;
   border-radius: 1.125rem;
+  padding-bottom: 2.625rem;
   /* padding: 2.4375rem 2.34rem 2.8125rem; */
   overflow: hidden;
 }
 .disclaimer {
-  padding: 1.92rem 4.22rem 3.7rem;
+  padding: 1.92rem 4.22rem 3rem;
   display: flex;
   align-items: start;
   flex-direction: column;
@@ -35,7 +39,9 @@
 }
 .disclaimer-heading {
   align-self: center;
-  font-weight: 800;
+  font-weight: 700;
+  font-family: RobotoBold;
+
   font-size: 1.687rem;
   line-height: 1.97rem;
 }
@@ -43,23 +49,27 @@
   display: flex;
   align-items: start;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2.5rem;
   color: rgba(255, 255, 255, 0.75);
   font-family: RobotoSemiBold;
   font-size: 0.9rem;
   line-height: 1.22rem;
 }
 .second-part {
-  background: #172026;
-  padding: 4.6875rem 5.86rem 2.72rem;
+  background: #131d23;
+  width: 86%;
+  margin: auto;
+  padding: 3rem 3.75rem;
+  border-radius: 0.85rem;
 }
+
 .companies-logoes {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-row-gap: 5.2rem;
-  margin-bottom: 3.6rem;
+  /* margin-bottom: 3.6rem; */
 }
-.contact-us-button {
+/* .contact-us-button {
   margin: auto;
   display: flex;
   align-items: center;
@@ -73,74 +83,112 @@
   background: #00b1ff;
   border-radius: 0.42rem;
   cursor: pointer;
-}
+} */
 @media (max-width: 56.25rem) {
+  .DMCA {
+    max-width: min(85%, 32rem);
+    margin: 0 auto 3rem;
+  }
   .top-heading {
     margin-top: 1.65rem;
     gap: 0.4rem;
+  }
+  .top-heading-title {
     font-size: 1.2rem;
     line-height: 1.4rem;
   }
-
   .container {
-    margin-top: 1rem;
-    border-radius: 1rem;
+    margin-top: 0.5rem;
+    border-radius: 0.75rem;
+    background-color: #0d1317;
+    padding-bottom: 1.75rem;
   }
   .disclaimer {
-    padding: 1.54rem 3.34rem 2.96rem;
+    padding: 1.375rem 2.75rem 1.65rem;
     gap: 0.8rem;
   }
   .disclaimer-heading {
-    font-size: 1.35rem;
-    line-height: 1.58rem;
+    font-size: 1.3125rem;
+    line-height: 1.5rem;
   }
   .disclaimer-para {
-    gap: 1rem;
-    font-size: 0.75rem;
-    line-height: 1rem;
+    gap: 2rem;
+    font-size: 0.625rem;
+    line-height: 0.875rem;
   }
   .second-part {
     background: #172026;
-    padding: 4.75rem 4.7rem 2.2rem;
+    width: 86.7%;
+    margin: auto;
+    padding: 1.4375rem 1.816rem;
+    border-radius: 0.5rem;
   }
   .companies-logoes {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-row-gap: 4.2rem;
-    margin-bottom: 2.9rem;
+    grid-row-gap: 3.125rem;
   }
-  .contact-us-button {
+  .netflix-icon {
+    width: 77px;
+    height: 23px;
+  }
+  .vimeo-icon {
+    width: 66.7px;
+    height: 18.4px;
+  }
+  .dailymotion-icon {
+    width: 110px;
+    height: 20.7px;
+  }
+  .google-icon {
+    width: 75px;
+    height: 24.15px;
+  }
+  .twitch-icon {
+    width: 65.5px;
+    height: 21.85px;
+  }
+  .youtube-icon {
+    width: 87.4px;
+    height: 19.55px;
+  }
+
+  /* .contact-us-button {
     width: 6.2rem;
     height: 2.15rem;
     font-size: 0.6rem;
     line-height: 0.8rem;
+  } */
+}
+@media (max-width: 700px) {
+  .netflix-icon {
+    width: 67px;
+    height: 20px;
+  }
+  .vimeo-icon {
+    width: 58px;
+    height: 16px;
+  }
+  .dailymotion-icon {
+    width: 95px;
+    height: 18px;
+  }
+  .google-icon {
+    width: 65px;
+    height: 21px;
+  }
+  .twitch-icon {
+    width: 57px;
+    height: 19px;
+  }
+  .youtube-icon {
+    width: 76px;
+    height: 17px;
   }
 }
-
-@media (max-width: 43.75rem) {
-  .disclaimer {
-    padding: 1rem 2.15rem 2rem;
-  }
-  .disclaimer-heading {
-    font-size: 1.35rem;
-    line-height: 1.58rem;
-  }
-  .disclaimer-para {
-    gap: 1rem;
-    font-size: 0.75rem;
-    line-height: 1rem;
-  }
-  .second-part {
-    padding: 2rem 1.8rem 1.45rem;
-  }
-  .companies-logoes {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-    grid-row-gap: 2rem;
-  }
-  .companies-logoes > * {
-    width: 6rem;
-    height: 1.5rem;
+@media (max-width: 500px) {
+  .DMCA {
+    max-width: 100%;
+    margin: 0 3px 7rem;
   }
 }

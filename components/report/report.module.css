@@ -1,7 +1,7 @@
 .report {
   background: #0c1115;
   border-radius: 2.86rem;
-  padding: 3.75rem 3.75rem 2.06rem ;
+  padding: 3.75rem 3.75rem 2.06rem;
   max-width: 27.63rem;
 }
 .causes {
@@ -23,8 +23,8 @@
 }
 .cause > p {
   font-weight: 600;
-  font-size: 1.512rem;
-  line-height: 1.77rem;
+  font-size: 1.7rem;
+  line-height: 1.9rem;
   color: white;
 }
 .try-again-para {
@@ -57,7 +57,7 @@
   color: white;
   font-weight: 500;
   font-size: 0.84rem;
-  line-height: .96rem;
+  line-height: 0.96rem;
 }
 .send-button,
 .close-button,
@@ -66,42 +66,42 @@
 }
 @media (max-width: 56.25rem) {
   .report {
-    border-radius: 1.7rem;
-    padding: 2rem 2rem 2rem 2.25rem;
-    width: min(90%, 22.2rem);
+    border-radius: 1.5rem;
+    padding: 2.2rem 2.2rem 2.2rem 2.42rem;
+    width: min(90%, 19rem);
   }
   .causes {
-    gap: 1.2rem;
+    gap: 1rem;
   }
   .cause {
-    gap: 1.488rem;
+    gap: 1.26rem;
   }
   .cause > span {
-    width: 0.625rem;
-    height: 0.625rem;
+    width: 0.55rem;
+    height: 0.55rem;
   }
   .cause > p {
-    font-size: 1.5rem;
-    line-height: 1.75rem;
+    font-size: 1.275rem;
+    line-height: 1.5rem;
   }
   .try-again-para {
-    font-size: 0.925rem;
-    line-height: 0.84rem;
-    margin-top: 1.2rem;
-    margin-bottom: 1.4rem;
+    font-size: 0.78rem;
+    line-height: 0.714rem;
+    margin-top: 1.02rem;
+    margin-bottom: 1.2rem;
   }
   .actions {
-    gap: 0.92rem;
+    gap: 0.8rem;
   }
   .send-button {
-    width: 5.875rem;
-    height: 2rem;
-    border-radius: 3.375rem;
-    font-size: 0.875rem;
-    line-height: 1rem;
+    width: 5rem;
+    height: 1.7rem;
+    border-radius: 2.86rem;
+    font-size: 0.75rem;
+    line-height: 0.85rem;
   }
   .close-button {
-    font-size: 0.75rem;
-    line-height: 0.875rem;
+    font-size: 0.67rem;
+    line-height: 0.8rem;
   }
 }
