@@ -51,6 +51,12 @@
   align-items: start;
   flex-direction: column;
 }
+.chat-top-text > img {
+  transition: all 0.5s ease-out;
+}
+.chat-top-text:hover > img {
+  rotate: -180deg;
+}
 .chat-rooms {
   display: none;
   position: absolute;
@@ -151,6 +157,13 @@
 }
 .mention-icon {
   cursor: pointer;
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 1rem;
+  transition: all 0.2s ease-out;
+  min-width: 1rem;
+}
+.mention-icon:hover {
+  color: #03a1cd;
 }
 .chat-bottom {
   display: flex;
@@ -316,10 +329,14 @@
     line-height: 0.75rem;
     padding: 0.3125rem 0.875rem;
   }
-  .mention-icon {
-    margin-left: 3px;
+  /* .mention-icon {
     width: 8px;
     height: 8px;
+  } */
+  .mention-icon {
+    font-size: 0.7rem;
+    min-width: 0.7rem;
+    margin-left: 3px;
   }
 
   .my-message-content {
@@ -345,11 +362,11 @@
   .emojy {
     font-size: 1.42rem;
   }
-  .emojy-picker{
+  .emojy-picker {
     height: 20rem;
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
   }
   .user-icon {
     font-size: 1.25rem;

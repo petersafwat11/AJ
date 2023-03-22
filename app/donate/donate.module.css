@@ -78,7 +78,7 @@
 }
 .donate-input {
   height: 100%;
-  padding: 0.85rem 1.4rem 0.6rem 3rem;
+  padding: 0rem 1.4rem 0rem 3rem;
   color: white;
   border-radius: 0.92rem;
   font-size: 0.75rem;
@@ -199,7 +199,7 @@
 } */
 @media (min-width: 56.25rem) {
   .container {
-    max-width: 36rem;
+    max-width: 38rem;
     margin-bottom: 5.8rem;
   }
   .donate-heading {
@@ -216,7 +216,7 @@
     line-height: 1.78rem;
   }
   .donate-wrapper {
-    height: 42rem;
+    height: 39rem;
     padding: 2rem 1.875rem 1.67rem;
     grid-template-rows: 21% 1fr 1fr 1fr 42%;
     gap: 1.1rem;

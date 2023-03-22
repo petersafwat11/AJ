@@ -30,9 +30,9 @@
 .stadium {
   width: 18.75rem;
   height: 32rem;
-  background: url("/svg/watch/football-background.svg");
+  background: url("/svg/watch/basketball-background.svg");
   background-size: 100%;
-  /* background-repeat: no-repeat; */
+  background-repeat: no-repeat;
   position: relative;
 }
 

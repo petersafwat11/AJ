@@ -22,14 +22,12 @@ const LeagueMenu = () => {
           />
         </div>
         <div className={classes["leagueMenu-container-img"]}>
-          <div className={classes["leagueMenu-container-img-six"]}>
-            <Image
-              src="/svg/statistics/six.svg"
-              alt="six"
-              width="60"
-              height="60"
-            />
-          </div>
+          <Image
+            src="/svg/statistics/six.svg"
+            alt="six"
+            width="60"
+            height="60"
+          />
         </div>
         <div className={classes["leagueMenu-container-img"]}>
           <Image

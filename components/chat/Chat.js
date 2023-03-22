@@ -7,6 +7,7 @@ import { AiOutlineArrowUp } from "react-icons/ai";
 import { FaUser } from "react-icons/fa";
 import { MdEmojiEmotions } from "react-icons/md";
 import { ChangeAvatar } from "./changeAvatar";
+import {FiAtSign} from 'react-icons/fi'
 import classes from "./chat.module.css";
 import UserInfo from "./UserInfo";
 const Chat = ({ toggleChat }) => {
@@ -175,14 +176,12 @@ know anything as you are spurs! `,
                   )}
                   {getSubString(message.message)}
                 </div>
-                <img
+                <FiAtSign
                   onClick={() => {
                     setMentionUserName("@" + message.usename + " ");
                   }}
+
                   className={classes["mention-icon"]}
-                  src="/svg/chat/mention-icon.svg"
-                  alt="user-avatar"
-                  width="14"
                 />
               </div>
             </div>
@@ -193,20 +192,6 @@ know anything as you are spurs! `,
         <div className={classes["user-dev"]}>
           <FaUser onClick={toggleUserInf} className={classes["user-icon"]} />
         </div>
-        {/* <Image
-          className={classes["chat-bottom-user"]}
-          src="/svg/chat/user.svg"
-          alt="user"
-          width="22"
-          height="25"
-        /> */}
-        {/* <Image
-          className={classes["chat-bottom-emojy"]}
-          src="/svg/chat/emojy.svg"
-          alt="emojy"
-          width="22"
-          height="21"
-        /> */}
         <div className={classes["emojy-dev"]}>
           <MdEmojiEmotions
             onClick={() => {
@@ -216,7 +201,7 @@ know anything as you are spurs! `,
           />
           {showEmojyPicker && (
             <Picker
-            className={classes['emojy-picker']}
+              className={classes["emojy-picker"]}
               data={data}
               theme="dark"
               previewPosition="none"

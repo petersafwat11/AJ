@@ -6,7 +6,7 @@ import Chat from "../../components/chat/Chat";
 import Dropdown from "../../components/dropdown/Dropdown";
 import Report from "../../components/report/Report";
 import ShareLinks from "../../components/shareLinks/ShareLinks";
-import WatchDetails from "../../components/watch-details/WatchDetailsBoxing";
+import WatchDetails from "../../components/watch-details/WatchDetailsFootball";
 import SocialIcons from "../../components/whatchShare/SocialIcons";
 import WhoWillWin from "../../components/whoWillWin/WhoWillWin";
 
@@ -49,8 +49,8 @@ const Page = () => {
           className={classes["chat-icon"]}
           src="/svg/chat-floating.svg"
           alt="chat"
-          width="156"
-          height="156"
+          width="140"
+          height="140"
         />
       )}
       {showChat && (
@@ -68,12 +68,24 @@ const Page = () => {
         <WatchDetails
           lieageImage={"/svg/watch/WBA.svg"}
           firstTeamImage={"/svg/watch/boxing-1.svg"}
+          lieageImageDimetions={{
+            width: { desktop: "59", tablet: "45", mobile: "35" },
+            height: { desktop: "59", tablet: "45", mobile: "35" },
+          }}
           firstTeamName={"Anthony Joshua"}
+          firstTeamImageDimentions={{
+            width: { desktop: "107", tablet: "90", mobile: "75" },
+            height: { desktop: "107", tablet: "90", mobile: "75" },
+          }}
           seconteamImage={"/svg/watch/boxing-2.svg"}
+          secondTeamImageDimentions={{
+            width: { desktop: "107", tablet: "90", mobile: "75" },
+            height: { desktop: "107", tablet: "90", mobile: "75" },
+          }}
           seconteamName={"Tyson Fury"}
           date={"Aug 18 15:00"}
           place={"Old Trafford"}
-          // half={"2nd Half: 47’"}
+          half={"2nd Half: 47’"}
         />
         <div className={classes["watch-video-wrapper"]}>
           <div className={classes["social-icons"]}>

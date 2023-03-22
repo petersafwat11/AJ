@@ -7,11 +7,8 @@ import Dropdown from "../../components/dropdown/Dropdown";
 import Popup from "../../components/popupWrapper/Popup";
 import ProtonVpn from "../../components/protonVpn/ProtonVpn";
 import Report from "../../components/report/Report";
-import SendMessage, {
-  SendMessageButton,
-} from "../../components/send-message/SendMessage";
 import ShareLinks from "../../components/shareLinks/ShareLinks";
-import WatchDetails from "../../components/watch-details/WatchDetailsNfl";
+import WatchDetails from "../../components/watch-details/WatchDetailsFootball";
 import Takticks from "../../components/watchtaktick/takticksNfl";
 import SocialIcons from "../../components/whatchShare/SocialIcons";
 import WhoWillWin from "../../components/whoWillWin/WhoWillWin";
@@ -51,8 +48,8 @@ const Page = () => {
           className={classes["chat-icon"]}
           src="/svg/chat-floating.svg"
           alt="chat"
-          width="156"
-          height="156"
+          width="140"
+          height="140"
         />
       )}
       {showChat && (
@@ -63,6 +60,18 @@ const Page = () => {
       <div className={classes["container"]}>
         <WatchDetails
           lieageImage={"/svg/watch/nfl-3.svg"}
+          lieageImageDimetions={{
+            width: { desktop: "53", tablet: "37", mobile: "32" },
+            height: { desktop: "72", tablet: "51", mobile: "44" },
+          }}
+          firstTeamImageDimentions={{
+            width: { desktop: "128", tablet: "90", mobile: "71" },
+            height: { desktop: "86", tablet: "60", mobile: "84" },
+          }}
+          secondTeamImageDimentions={{
+            width: { desktop: "124", tablet: "87", mobile: "77" },
+            height: { desktop: "75", tablet: "53", mobile: "41" },
+          }}
           firstTeamImage={"/svg/watch/nfl-1.svg"}
           firstTeamName={"Philadelphia E..."}
           seconteamImage={"/svg/watch/nfl-2.svg"}

@@ -14,9 +14,6 @@ import WhoWillWin from "../../components/whoWillWin/WhoWillWin";
 import Casino from "../../components/casino/Casino";
 import Popup from "../../components/popupWrapper/Popup";
 import ProtonVpn from "../../components/protonVpn/ProtonVpn";
-import SendMessage, {
-  SendMessageButton,
-} from "../../components/send-message/SendMessage";
 import classes from "./football.module.css";
 const Page = () => {
   const [showChat, setShowChat] = useState(false);
@@ -35,7 +32,6 @@ const Page = () => {
 
   return (
     <section className={classes["watch-football"]}>
-
       {showShareLinks && (
         <Popup>
           <ShareLinks toggleShareLinks={toggleShareLinks} />
@@ -54,8 +50,8 @@ const Page = () => {
           className={classes["chat-icon"]}
           src="/svg/chat-floating.svg"
           alt="chat"
-          width="156"
-          height="156"
+          width="140"
+          height="140"
         />
       )}
       {showChat && (
@@ -72,6 +68,18 @@ const Page = () => {
 
         <WatchDetails
           lieageImage={"/svg/watch/primier-liage.svg"}
+          lieageImageDimetions={{
+            width: { desktop: "120", tablet: "84", mobile: "35" },
+            height: { desktop: "51", tablet: "36", mobile: "35" },
+          }}
+          firstTeamImageDimentions={{
+            width: { desktop: "106", tablet: "75", mobile: "54" },
+            height: { desktop: "108", tablet: "76", mobile: "52" },
+          }}
+          secondTeamImageDimentions={{
+            width: { desktop: "80", tablet: "56", mobile: "50" },
+            height: { desktop: "110", tablet: "78", mobile: "54" },
+          }}
           firstTeamImage={"/svg/watch/man-united.svg"}
           firstTeamName={"Man united"}
           seconteamImage={"/svg/watch/liverpool.svg"}

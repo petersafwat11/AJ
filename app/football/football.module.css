@@ -1,6 +1,6 @@
 .chat-icon {
   position: fixed;
-  bottom: 20vh;
+  bottom: 5vh;
   right: 10vw;
   z-index: 10;
   cursor: pointer;

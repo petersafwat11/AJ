@@ -70,16 +70,17 @@
     margin: 1.25rem auto 0;
     max-width: 30rem;
   }
-  .team-image {
+  /* .team-image {
     width: 65px;
-  }
+    height: 63px;
+  } */
   .watch-details-first {
     gap: 1rem;
   }
-  .sport-image-first {
+  /* .sport-image-first {
     height: 40px;
-    width: auto;
-  }
+    width: 94px;
+  } */
   .date-and-place {
     gap: 0.7rem;
   }
@@ -123,17 +124,20 @@
 @media (max-width: 35rem) {
   .watch-details {
     margin: 0.7rem auto 0;
-    max-width: 22.8rem;
+    max-width: min(27rem, 90vw);
   }
-  .team-image {
+  /* .team-image {
     height: 52px;
-  }
+    width: 54px;
+  } */
+
   .watch-details-first {
     gap: 0.7rem;
   }
-  .sport-image-first {
-    width: 71px;
-  }
+  /* .sport-image-first {
+    width: 78px;
+    height: 33.6px;
+  } */
   .date-and-place {
     gap: 0.5rem;
   }

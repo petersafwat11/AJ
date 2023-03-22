@@ -1,6 +1,6 @@
 .menu {
   display: flex;
-  background-color: var(--background);
+  background-color: rgba(13, 19, 24);
   margin-top: 1.125rem;
 }
 .menu-desktop {
@@ -26,7 +26,7 @@
   border-radius: 0.4rem;
   transition: 0.3s all ease-out;
   font-family: RobotoRegular;
-  font-size: 1.28rem;
+  font-size: 1.34rem;
   line-height: 1.48rem;
   cursor: pointer;
   color: white;
@@ -108,7 +108,7 @@
   top: 0;
   left: 0;
   height: 74px;
-  background-color: var(--background);
+  background-color: rgba(13, 19, 24);
   display: flex;
   align-items: center;
   padding: 0 1.4rem;
