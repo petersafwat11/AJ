@@ -66,7 +66,7 @@ export default function RootLayout({ children }) {
             height="30"
           />
         )}
-        <Marque />
+        {/* <Marque /> */}
         {/* {showPopup && (
           <div className={styles["popup"]}>
             <Popup hidePopup={hidePopup} />

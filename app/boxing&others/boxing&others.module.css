@@ -94,8 +94,8 @@
     max-width: min(98%, 38rem);
   }
   .chat-icon {
-    bottom: 10vh;
-    right: 8.4%;
+    bottom: 3vh;
+    right: 8%;
     width: 70px;
     height: 70px;
   }
