@@ -4,6 +4,7 @@ import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
 // import Marque from "../components/marque/marque";
 import Image from "next/image";
+import Marque from "../components/marque/Marque";
 import NewsLetter from "../components/news-letter/NewsLetter";
 import Popup from "../components/popupWrapper/Popup";
 import SendMessage, {
@@ -65,7 +66,7 @@ export default function RootLayout({ children }) {
             height="30"
           />
         )}
-        {/* <Marque /> */}
+        <Marque />
         {/* {showPopup && (
           <div className={styles["popup"]}>
             <Popup hidePopup={hidePopup} />

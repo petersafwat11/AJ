@@ -49,10 +49,10 @@
 }
 .watch-video-share > * {
   font-size: 1.25rem;
-  color: gray;
+  color: rgba(128, 128, 128, 0.534);
   cursor: pointer;
 }
-.wrapper:hover > .twitter-icon {
+/* .wrapper:hover > .twitter-icon {
   color: #1c96e8;
 }
 .wrapper:hover > .facebook-icon {
@@ -60,14 +60,14 @@
 }
 .wrapper:hover > .whatsapp-icon {
   color: #53c960;
-}
+} */
 .instagram {
   height: 20px;
   border-radius: 0.5rem;
 }
-.instagram:hover {
+/* .instagram:hover {
   background: linear-gradient(to right bottom, #5442d6, #d7246e, #fec053);
-}
+} */
 .instagram:hover > * {
   color: white;
   /* background:linear-gradient(#5442d6, #d7246e, #fec053); */
@@ -78,19 +78,23 @@
   height: 20px;
   width: 20px;
   border-radius: 50%;
-  background-color: gray;
+  background-color: rgba(128, 128, 128, 0.534);
   /* rgba(47, 52, 56, 0.9); */
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.2 ease-out;
 }
+/* .reddit:hover > *, */
+.instagram:hover > *,
+.wrapper:hover > * {
+  /* color: #f74300; */
+  color: white !important;
+}
 .reddit:hover {
   background-color: white;
 }
-.reddit:hover > * {
-  color: #f74300;
-}
+
 .reddit-icon {
   font-size: 0.9rem;
   color: #1d2226;

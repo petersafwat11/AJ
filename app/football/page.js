@@ -100,7 +100,6 @@ const Page = () => {
           <div className={classes["watch-video-wrapper-bottom"]}>
             <div className={classes["dropdowns"]}>
               <Dropdown name={"english"} options={["1", "2", "3"]} />
-
               <Dropdown name={"arabic"} options={["1", "2", "3"]} />
               <Dropdown name={"espanol"} options={["1", "2", "3"]} />
               <Dropdown

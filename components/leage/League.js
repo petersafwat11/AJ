@@ -25,8 +25,8 @@ const LeagueMenu = () => {
           <Image
             src="/svg/statistics/six.svg"
             alt="six"
-            width="60"
-            height="60"
+            width="70"
+            height="70"
           />
         </div>
         <div className={classes["leagueMenu-container-img"]}>

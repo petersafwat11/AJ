@@ -20,17 +20,28 @@
   gap: 0.3rem;
   cursor: pointer;
 }
-.options {
+.dropdown:hover > .options,
+.option:hover {
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 0.4rem;
+}
+.options {
   position: absolute;
   top: 37.11px;
   left: 0;
   z-index: 10;
-  /* margin-top: 0.4rem; */
+  display: none;
+  transition: all 0.3s ease-out;
 }
+.drop-icon {
+  transition: all 0.5s ease-out;
+}
+.dropdown:hover .drop-icon {
+  rotate: -180deg;
+}
+
 .option {
   font-family: RobotoSemiBold;
   background-color: #323232;

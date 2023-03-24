@@ -33,7 +33,7 @@
 }
 .stadium {
   background: url("/svg/watch/football-background.svg");
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   width: 20.5rem;
   height: 23.85rem;

@@ -27,7 +27,6 @@ const GiveAway = () => {
 
   return (
     <main className={classes["give-away"]}>
-
       {(showSteps.stepOne || showSteps.stepTwo || showSteps.stepThree) && (
         <div className={classes["steps-wrapper"]}>
           {showSteps.stepOne && (
@@ -47,6 +46,7 @@ const GiveAway = () => {
           )}
         </div>
       )}
+      {/* <FollowUS src={'/give-away/'} alt={alt} width={width} height={height}  para={} num={}/> */}
     </main>
   );
 };
