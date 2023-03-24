@@ -52,6 +52,9 @@
   color: rgba(128, 128, 128, 0.534);
   cursor: pointer;
 }
+.share-icon {
+  font-size: 1.2rem;
+}
 /* .wrapper:hover > .twitter-icon {
   color: #1c96e8;
 }
@@ -75,8 +78,8 @@
   -webkit-text-fill-color: transparent; */
 }
 .reddit {
-  height: 20px;
-  width: 20px;
+  height: 19px;
+  width: 19px;
   border-radius: 50%;
   background-color: rgba(128, 128, 128, 0.534);
   /* rgba(47, 52, 56, 0.9); */
@@ -100,14 +103,14 @@
   color: #1d2226;
   transition: all 0.2 ease-out;
 }
-.wrapper:hover > .telegram-icon {
-  /* color: #0088cc; */
+/* .wrapper:hover > .telegram-icon {
   color: #0088cc;
-}
-.wrapper:hover > .share-icon {
+  color: #0088cc;
+} */
+/* .wrapper:hover > .share-icon {
   color: rgb(252, 252, 252, 0.8);
 }
-
+ */
 .watch-video-share-icon:hover {
   opacity: 1;
 }

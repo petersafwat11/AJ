@@ -77,7 +77,7 @@ const Sports = () => {
           className={classes["sport-image"]}
           src="/svg/sports/other.svg"
           alt="other"
-          width="60"
+          width="65"
           height="60"
         />
         <p>Others</p>

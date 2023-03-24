@@ -301,7 +301,52 @@ const Takticks = () => {
           </div>
         </div>
       ) : (
-        <div></div>
+        <div className={classes["subsitutes"]}>
+            {[1, 2, 3, 4, 5].map((item) => (
+              <div key={item} className={classes["subsitutes-wrapper"]}>
+                <div className={classes["subsitutes-item"]}>
+                  <div className={classes["subsitutes-images"]}>
+                    <Image
+                      alt="change"
+                      src="/svg/watch/up.svg"
+                      width="14"
+                      height="19"
+                    />
+                    <Image
+                      alt="change"
+                      src="/svg/watch/down.svg"
+                      width="10"
+                      height="14"
+                    />
+                  </div>
+                  <div className={classes["subsitutes-text"]}>
+                    <h4>M.Salah</h4>
+                    <p>Fred</p>
+                  </div>
+                </div>
+                <div className={classes["subsitutes-item"]}>
+                  <div className={classes["subsitutes-text"]}>
+                    <h4>M.Salah</h4>
+                    <p>Fred</p>
+                  </div>
+                  <div className={classes["subsitutes-images"]}>
+                    <Image
+                      alt="change"
+                      src="/svg/watch/up.svg"
+                      width="14"
+                      height="19"
+                    />
+                    <Image
+                      alt="change"
+                      src="/svg/watch/down.svg"
+                      width="10"
+                      height="14"
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+        </div>
       )}
     </div>
   );

@@ -1,16 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 27.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 381 328" style="enable-background:new 0 0 381 328" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#60A963;fill-opacity:0.9;stroke:#FFFFFF;stroke-width:2;}
-	.st1{fill:none;stroke:#FFFFFF;stroke-width:2;}
-</style>
-<rect x="7.787234" y="5.284874" class="st0" width="370" height="316.5513"/>
-<path class="st1" d="M224.351334,149.970352c0,19.133987-14.877869,34.542572-33.105637,34.542572
-	c-18.227463,0-33.105347-15.408585-33.105347-34.542572s14.877884-34.5411,33.105347-34.5411
-	C209.473465,115.429253,224.351334,130.83638,224.351334,149.970352z"/>
-<line class="st1" x1="7.787234" y1="148.602905" x2="377.787231" y2="148.602905"/>
-<rect x="132.358047" y="290.493713" class="st1" width="113.831146" height="31.791162"/>
-<rect x="132.358047" y="5.284874" class="st1" width="113.831146" height="31.098593"/>
+<svg width="542" height="630" viewBox="0 0 542 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="1" y="1" width="540" height="628" fill="#60A963" stroke="white" stroke-width="2"/>
+<circle cx="271.5" cy="315.5" r="56.5" stroke="white" stroke-width="2"/>
+<line x1="4" y1="315" x2="538" y2="315" stroke="white" stroke-width="2"/>
 </svg>

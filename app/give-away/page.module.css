@@ -1,28 +1,12 @@
 .give-away {
   position: relative;
-  margin-top: 1.625rem;
+  margin: 1.625rem 3px 3rem;
 }
-.steps-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 20;
-}
-
 .container {
-  max-width: 90%;
-  margin: 0 auto 4rem;
+  max-width: 100%;
 }
 .give-away-heading {
   color: #00c4fb;
-  line-height: 1.125rem;
-  font-size: 1rem;
   padding-left: 0.25rem;
   padding-right: 0.75rem;
   width: 100%;
@@ -31,6 +15,13 @@
   gap: 0.125rem;
   margin-bottom: 0.5rem;
 }
+.heading {
+  font-family: RobotoRegular;
+  font-weight: 500;
+  line-height: 1rem;
+  font-size: 1.1rem;
+}
+
 .give-away-heading > span {
   flex-grow: 1;
   height: 2px;
@@ -145,15 +136,15 @@
   margin-left: 10.6%;
   margin-right: auto;
 }
-@media (min-width: 31.25rem) {
+@media (min-width: 34rem) {
   .container {
-    width: 70%;
+    width: min(75%, 27rem);
     margin: auto;
   }
 }
 @media (min-width: 40rem) {
   .container {
-    width: min(30rem, 60%);
+    width: min(30rem, 70%);
     margin: auto;
   }
   .give-away-image {

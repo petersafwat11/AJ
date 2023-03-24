@@ -5,9 +5,9 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { AiOutlineArrowUp } from "react-icons/ai";
 import { FaUser } from "react-icons/fa";
+import { FiAtSign } from "react-icons/fi";
 import { MdEmojiEmotions } from "react-icons/md";
 import { ChangeAvatar } from "./changeAvatar";
-import {FiAtSign} from 'react-icons/fi'
 import classes from "./chat.module.css";
 import UserInfo from "./UserInfo";
 const Chat = ({ toggleChat }) => {
@@ -109,7 +109,7 @@ know anything as you are spurs! `,
             src="/svg/chat/down-arrow.svg"
             alt="extend"
             width="14"
-            height="14"
+            height="10"
           />
           <div className={classes["chat-rooms"]}>
             <p className={classes["chat-room"]}>English (Default)</p>
@@ -180,7 +180,6 @@ know anything as you are spurs! `,
                   onClick={() => {
                     setMentionUserName("@" + message.usename + " ");
                   }}
-
                   className={classes["mention-icon"]}
                 />
               </div>

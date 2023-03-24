@@ -174,12 +174,12 @@
   padding: 1.4rem 0.98rem 0.93rem 1.125rem;
 }
 .chat-input {
-  background-color: white;
+  background-color: #101a22;
   color: #000000;
   border-radius: 0.3rem;
   /* width: 63%; */
-  padding: 0 0.85rem;
-  height: 1.75rem;
+  padding: 0.4rem 0.8rem;
+  height: 2.1rem;
   font-weight: 400;
   font-size: 0.8rem;
   line-height: 0.9rem;
@@ -188,13 +188,14 @@
   border: 1.5px solid #03a1cd;
 }
 .chat-bottom-send {
-  min-width: 1.69rem;
-  height: 1.69rem;
+  min-width: 1.79rem;
+  height: 1.79rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #03a1cd;
   border-radius: 50%;
+  transition: all 0.2s ease-out;
 }
 .chat-bottom-send:hover {
   background-color: rgba(3, 161, 205, 0.4);
@@ -263,12 +264,12 @@
     padding: 0.55rem;
   }
   .chat-top-extend {
-    width: 10.2px;
-    height: 10.2px;
+    width: 17.2px;
+    height: 12.2px;
   }
   .chat-top-exit {
-    width: 10.2px;
-    height: 9.2px;
+    width: 20.2px;
+    height: 13.2px;
   }
 
   .chat-top-text {
@@ -353,11 +354,11 @@
     background-color: white;
     border-radius: 0.3rem;
     /* width: 63%; */
-    padding: 0 0.85rem;
+    padding: 0.3125rem 0.6rem;
     height: 1.5rem;
     font-weight: 400;
     font-size: 0.65rem;
-    line-height: 0.8rem;
+    line-height: 0.75rem;
   }
   .emojy {
     font-size: 1.42rem;
@@ -373,8 +374,8 @@
   }
 
   .chat-bottom-send {
-    min-width: 22px;
-    height: 22px;
+    min-width: 24px;
+    height: 24px;
     border-radius: 50%;
   }
 }
