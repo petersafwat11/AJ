@@ -1,9 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Popup from "../../components/popupWrapper/Popup";
-import SendMessage, {
-  SendMessageButton,
-} from "../../components/send-message/SendMessage";
+import SendMessage from "../../components/send-message/SendMessage";
 import classes from "./FAQ.module.css";
 const Page = () => {
   const FAQ = [
@@ -63,9 +61,19 @@ const Page = () => {
         "As we do not host the content of our streams, we are not of any threat to authorities and therefore our website will remain forever.In the rare case that our official website www.ajsports.ch does get taken down, we have 20 other domains which is displayed to you at the top of the page. Kindly note them down and we will always be up and running!Ensure to join our Telegram Channel and Follow us on Twitter.",
     },
   ];
-
+  const [feedBackMessage, setFeedBackMessage] = useState(false);
+  const toggleSendMessageComponent = () => {
+    setFeedBackMessage(!feedBackMessage);
+  };
   return (
     <section className={classes["FAQ"]}>
+      {feedBackMessage && (
+        <Popup>
+          <SendMessage
+            toggleSendMessageComponent={toggleSendMessageComponent}
+          />
+        </Popup>
+      )}
       <div className={classes["top-heading"]}>
         <h2 className={classes["top-heading-title"]}>FAQ</h2>
         <span></span>
@@ -102,7 +110,14 @@ const Page = () => {
             channels, sports, languages or leagues that you require, we will
             fulfil your needs within one week.
           </p>
-          <button className={classes["uesr-feedback-button"]}>Feedback</button>
+          <button
+            onClick={() => {
+              setFeedBackMessage(!feedBackMessage);
+            }}
+            className={classes["uesr-feedback-button"]}
+          >
+            Feedback
+          </button>
         </div>
       </div>
     </section>

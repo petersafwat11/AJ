@@ -65,7 +65,7 @@
 }
 @media (max-width: 56.25rem) {
   .proton-vpn {
-    width: min(98vw, 28rem);
+    width: min(93vw, 28rem);
     margin: 0;
     height: auto;
     border-radius: 0.56rem;

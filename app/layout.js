@@ -66,7 +66,21 @@ export default function RootLayout({ children }) {
             height="30"
           />
         )}
-        {/* <Marque /> */}
+        <Marque />
+        <a
+          href="https://t.me/ajsportstv"
+          target={"_blank"}
+          className={styles["telegram-link"]}
+          rel="noreferrer"
+        >
+          <Image
+            className={styles["telegram-icon"]}
+            src="/svg/telegram-floating.svg"
+            alt="telegram-channel"
+            width="36"
+            height="30"
+          />
+        </a>
         {/* {showPopup && (
           <div className={styles["popup"]}>
             <Popup hidePopup={hidePopup} />

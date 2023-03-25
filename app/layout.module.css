@@ -29,10 +29,33 @@
   z-index: 5;
   cursor: pointer;
 }
+.telegram-link {
+  width: 4.17rem;
+  height: 4.17rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#2aabee, #229ed9);
+  position: fixed;
+  top: 35%;
+  right: 5%;
+  cursor: pointer;
+}
 @media (max-width: 56.25rem) {
   .scroll-top {
     width: 23px;
     height: 23px;
     bottom: 18%;
+  }
+  .telegram-icon {
+    width: 22px;
+    height: 18px;
+  }
+  .telegram-link {
+    width: 2.5rem;
+    height: 2.5rem;
+    top: 22%;
+    right: 4%;
   }
 }

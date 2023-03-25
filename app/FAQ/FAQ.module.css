@@ -85,15 +85,15 @@
   width: 60%;
 }
 .uesr-feedback-heading {
-  font-size: 1.125rem;
+  font-size: 1.625rem;
   line-height: 1.56rem;
   font-family: RobotoBold;
 }
 .uesr-feedback-para {
   font-size: 0.75rem;
-  line-height: 1.36rem;
+  line-height: 1.06rem;
   font-weight: 400;
-  margin: 0.125rem 0 1rem;
+  margin: 0.725rem 0 1rem;
   color: rgba(255, 255, 255, 0.56);
 }
 .uesr-feedback-button {
@@ -104,10 +104,11 @@
   background-color: #03a1cd;
   border-radius: 1.73rem;
   width: 9rem;
-  height: 2.58rem;
+  height: 2.68rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 @media (max-width: 56.5rem) {
   .FAQ {

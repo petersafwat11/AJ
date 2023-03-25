@@ -1,9 +1,8 @@
 .marque-container {
   /* // height: 5vh; */
-  padding: 0.25rem;
+  padding: 0.225rem;
   width: 20%;
-  margin: auto;
-  margin-top: .7rem;
+  margin: 1rem auto 0;
 }
 .marque-container-tag {
   margin: auto;
@@ -12,29 +11,34 @@
   justify-content: center;
 }
 .marque-container-tag > span {
-  color: var(--blue);
-  margin-left: 1.25rem;
+  color: #00c4fb;
+  margin-left: 1.125rem;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.84rem;
 }
 .marque-container-tag > p {
   font-weight: 300;
-  font-size: .815rem;
+  font-size: 0.73rem;
   color: white;
-  margin-left: 2rem;
-}
-@media (max-width: 112.5rem) {
-  .marque-container {
-    width: 280px;
-    padding-left: 2.8125rem;
-  }
+  margin-left: 1.125rem;
 }
 
+.marque-container {
+  width: 280px;
+  padding-left: 0.5rem;
+}
+
+/* @include respond(tab-port) {
+  height: 0vh;
+  width: 60%;
+  margin-top: 0.5rem;
+  padding-bottom: 1rem;
+} */
 @media (max-width: 56.25rem) {
   .marque-container {
     height: 0vh;
     width: 60%;
-    margin-top: 1.25rem;
-    padding-bottom: 1.25rem;
+    margin-top: 0.56rem;
+    padding-bottom: 1.125rem;
   }
 }

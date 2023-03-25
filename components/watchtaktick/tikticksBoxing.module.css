@@ -4,7 +4,7 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  gap: 1.625rem;
+  gap: 2.325rem;
   /* margin-top: 5rem; */
 }
 .header {
@@ -19,7 +19,7 @@
   line-height: 1.31rem;
   cursor: pointer;
   padding: 1.2rem 0.94rem;
-  border-bottom: 2.5px solid transparent;
+  border-bottom: 2px solid transparent;
   border-radius: 0.3rem;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
