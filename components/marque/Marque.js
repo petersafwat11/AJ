@@ -40,7 +40,7 @@
 // export default Marque;
 import React from "react";
 import Marquee from "react-fast-marquee";
-import classes from  "./marque.module.css";
+import classes from "./marque.module.css";
 
 const Marque = () => {
   return (
@@ -53,21 +53,26 @@ const Marque = () => {
           gradient={false}
         >
           <div className={classes["marque-container-tag"]}>
-            <span>Alternative Domains </span>
-            <p>www.ajsports.tv</p>
-            <p>www.ajsports.live</p>
-            <p>www.ajsports.xyz</p>
-            <p>www.ajsports.vip</p>
-            <p>www.ajsports.io</p>
-            <p>www.ajsports.uk</p>
-            <p>www.ajsports.app</p>
-            <p>www.ajsports.fun</p>
+            <span>Alternative Domains -</span>
             <p>www.ajsports.pro</p>
+            <p>www.ajsports.soccer</p>
+            <p>www.ajsports.us</p>
+            <p>www.ajsportstv.ch</p>
+            <p>www.ajsports.vip</p>
+            <p>www.ajsports.watch</p>
+            <p>www.ajsports.xyz</p>
+            <p>www.ajsports.app</p>
+            <p>www.ajsports.football</p>
+            <p>www.ajsports.cc</p>
+            <p>www.ajsports.games</p>
+            <p>www.ajsports.info</p>
+            <p>www.ajsports.io</p>
             <p>www.ajsports.life</p>
-            <p>www.ajsports.it</p>
-            <p>www.ajsports.es</p>
             <p>www.ajsports.gay</p>
-            <p>www.ajsports.london</p>
+            <p>www.ajsports.asia</p>
+            <p>www.ajsports.lol</p>
+            <p>www.9goaltv.us</p>
+            <p>www.9goal.app</p>
           </div>
         </Marquee>
       </div>

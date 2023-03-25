@@ -113,6 +113,7 @@
 }
 .follow-us {
   display: grid;
+
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-row-gap: 0.4375rem;
@@ -122,15 +123,16 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.9rem 1.75rem;
-  background-color: #282c2d;
+  background-color: #182228;
   border-radius: 0.625rem;
   font-size: 0.875rem;
   line-height: 0.9375rem;
   font-weight: 400;
   cursor: pointer;
+  transition: all 0.3s ease-out;
 }
 .follow-us-method:hover {
-  background-color: #191a1a;
+  background-color: rgba(24, 34, 40, 0.25);
 }
 .follow-us-method-para {
   margin-left: 10.6%;
@@ -281,7 +283,7 @@
     height: 70%;
     margin-top: -2rem;
     background: url("/svg/give-away/wrapper.svg");
-    max-width: 80%;
+    /* max-width: 80%; */
     margin: auto;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -298,6 +300,7 @@
     margin-top: 1rem;
   }
   .follow-us {
+    margin-top: 1.875rem;
     grid-row-gap: 0.7rem;
   }
   .follow-us-method {
