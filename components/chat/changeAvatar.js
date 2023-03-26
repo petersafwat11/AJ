@@ -218,24 +218,24 @@ export const ChangeAvatar = ({
                 <div
                   style={{
                     background:
-                      newSelectedAvatar == "flags/" + Number(Number(index) + 1)
+                      newSelectedAvatar == "Flags/" + Number(Number(index) + 1)
                         ? "url('/svg/chat/background.svg')"
                         : "",
                     backgroundSize:
-                      newSelectedAvatar == "flags/" + Number(Number(index) + 1)
+                      newSelectedAvatar == "Flags/" + Number(Number(index) + 1)
                         ? "93%"
                         : "",
                     backgroundRepeat:
-                      newSelectedAvatar == "flags/" + Number(Number(index) + 1)
+                      newSelectedAvatar == "Flags/" + Number(Number(index) + 1)
                         ? "no-repeat"
                         : "",
                     backgroundPosition:
-                      newSelectedAvatar == "flags/" + Number(Number(index) + 1)
+                      newSelectedAvatar == "Flags/" + Number(Number(index) + 1)
                         ? " bottom"
                         : "",
                   }}
                   onClick={() => {
-                    setNewSElectedAvatar("flags/" + Number(Number(index) + 1));
+                    setNewSElectedAvatar("Flags/" + Number(Number(index) + 1));
                   }}
                   key={index}
                   className={classes["avatar"]}
