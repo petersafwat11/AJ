@@ -19,7 +19,7 @@ const Chat = ({ toggleChat }) => {
   };
   const [showUserInfo, setShowUserInfo] = useState(false);
   const [selectedAvatar, setSelectedAvatar] = useState(
-    "/svg/chat/avatars/main/5.svg"
+    "/svg/chat/avatars/Avatars/5.svg"
   );
   const [changeAvatar, setChangeAvatar] = useState(false);
   const [userName, setMentionUserName] = useState("");
@@ -42,15 +42,77 @@ const Chat = ({ toggleChat }) => {
   const toggleUserInf = () => {
     setShowUserInfo(!showUserInfo);
   };
-  let avatars = { main: [], clubs: [], flags: [] };
-  for (let i = 1; i < 203; i = i + 1) {
-    avatars.main.push(i);
+  let avatars = {
+    Avatars: [],
+    Clubs: [],
+    Flags: [],
+    NBA: { Eastern: [], Western: [] },
+    Others: {
+      NHL: { Eastern: [], Western: [] },
+      NFL: [],
+      MLB: [],
+      Circket: [],
+    },
+    Football: {
+      Brazil1stDivision: [],
+      Bundesliga: [],
+      LaLiga: [],
+      LigaPortugal: [],
+      Ligue1: [],
+      MLS: { WesternConference: [], EasternConference: [] },
+      Others: [],
+      PremierLeague: [],
+      ScottishPremiership: [],
+      SerieA: [],
+    },
+  };
+  for (let i = 0; i < 213; i = i + 1) {
+    avatars.Avatars.push(i);
   }
-  for (let i = 1; i < 264; i = i + 1) {
-    avatars.flags.push(i);
+  for (let i = 0; i < 264; i = i + 1) {
+    avatars.Flags.push(i);
   }
   for (let i = 1; i < 59; i = i + 1) {
-    avatars.clubs.push(i);
+    avatars.Clubs.push(i);
+  }
+  for (let i = 0; i < 15; i = i + 1) {
+    avatars.NBA.Eastern.push(i);
+    avatars.NBA.Western.push(i);
+  }
+  for (let i = 0; i < 30; i = i + 1) {
+    avatars.Others.MLB.push(i);
+    avatars.Others.NFL.push(i);
+    if (i < 11) {
+      avatars.Others.Circket.push(i);
+    }
+    if (i < 16) {
+      avatars.Others.NHL.Eastern.push(i);
+      avatars.Others.NHL.Western.push(i);
+    }
+  }
+  for (let i = 0; i < 31; i = i + 1) {
+    avatars.Football.Others.push(i);
+
+    if (i < 20) {
+      avatars.Football.Brazil1stDivision.push(i);
+      avatars.Football.LaLiga.push(i);
+      avatars.Football.Ligue1.push(i);
+      avatars.Football.PremierLeague.push(i);
+      avatars.Football.SerieA.push(i);
+    }
+    if (i < 18) {
+      avatars.Football.Bundesliga.push(i);
+      avatars.Football.LigaPortugal.push(i);
+    }
+    if (i < 15) {
+      avatars.Football.MLS.EasternConference.push(i);
+    }
+    if (i < 14) {
+      avatars.Football.MLS.WesternConference.push(i);
+    }
+    if (i < 12) {
+      avatars.Football.ScottishPremiership.push(i);
+    }
   }
   const [messages, setMessages] = useState([
     {
@@ -58,20 +120,20 @@ const Chat = ({ toggleChat }) => {
       time: "22:29",
       message:
         "Really excited for the match !!!!! Really excited for the match !!!!! Really excited for the match !!!!! haha wow Really excited for the match !!!!!",
-      avatarSrc: "/svg/chat/avatars/main/7.svg",
+      avatarSrc: "/svg/chat/avatars/Avatars/7.svg",
     },
     {
       usename: "championsleague208",
       time: "22: 35",
       message: `@messiog10 I absolutely hate messi, he is so bad, this is why I say hala madrid! It is not fair for the world wide capcity to infuriate social ecom... `,
-      avatarSrc: "/svg/chat/avatars/main/8.svg",
+      avatarSrc: "/svg/chat/avatars/Avatars/8.svg",
     },
     {
       usename: "You (blackdestroyer101)",
       time: "22: 37",
       message: `@championsleague208 you wouldnt
 know anything as you are spurs! `,
-      avatarSrc: "/svg/chat/avatars/main/10.svg",
+      avatarSrc: "/svg/chat/avatars/Avatars/10.svg",
     },
   ]);
   return (

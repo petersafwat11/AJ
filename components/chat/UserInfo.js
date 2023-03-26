@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 import classes from "./userInfo.module.css";
 
@@ -8,7 +9,7 @@ const UserInfo = ({ toggleChangeAvatar, selectedAvatar, toggleUserInf }) => {
     <div className={classes["user-info"]}>
       <div className={classes["user-info-top"]}>
         <div className={classes["selected-avatar"]}>
-          <img src={selectedAvatar} alt="avatar" height="79" />
+          <Image src={selectedAvatar} alt="avatar" height="105" width='91' />
         </div>
         <button
           onClick={toggleChangeAvatar}

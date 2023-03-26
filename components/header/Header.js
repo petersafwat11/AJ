@@ -1,7 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import classes from "./header.module.css";
-import { Menu, MenuMobile } from "./Menu";
+import { Menu } from "./Menu";
+import { MenuMobile } from "./Mobile-menu";
 const Header = () => {
   return (
     <>
@@ -51,7 +52,7 @@ const Header = () => {
           />
         </div>
         <div className={classes["header-lang"]}>
-          <p className={classes['arabic']}>العربية </p>
+          <p className={classes["arabic"]}>العربية </p>
           <p>English</p>
           <p>Español</p>
         </div>

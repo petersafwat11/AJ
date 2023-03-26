@@ -61,6 +61,45 @@
   cursor: pointer;
   color: #01bcf1;
 }
+.avatars-categories {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+.avatar-category {
+  font-size: 0.6rem;
+  line-height: 0.93rem;
+  width: 3.515rem;
+  height: 1.17rem;
+  background-color: #182228;
+  border-radius: 0.93rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.avatar-category:hover {
+  background-color: #2195f1;
+}
+
+.sub-category {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-family: RobotoRegular;
+  font-size: 0.65rem;
+  line-height: 0.93rem;
+  letter-spacing: 2px;
+  text-align: center;
+  height: min-content;
+  overflow-x: hidden;
+}
+.sub-category p {
+  width: 80px;
+}
 .avatars::-webkit-scrollbar {
   width: 4.5px;
 }
@@ -90,6 +129,7 @@
   height: 12.1rem;
   width: 100%;
   overflow-y: scroll;
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -198,19 +238,6 @@
   font-size: 0.75rem;
   line-height: 0.89rem;
   color: rgba(255, 255, 255, 0.6);
-}
-.avatar-category {
-  gap: 0.2rem;
-  font-size: 0.65rem;
-  line-height: 0.93rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.avatar-category img {
-  width: 5.4rem;
-  height: 2.875rem;
 }
 
 @media (max-width: 56.25rem) {
