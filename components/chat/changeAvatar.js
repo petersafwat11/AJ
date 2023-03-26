@@ -241,7 +241,7 @@ export const ChangeAvatar = ({
                   className={classes["avatar"]}
                 >
                   {setNewSElectedAvatar ==
-                    "flags/" + Number(Number(index) + 1) && (
+                    "Flags/" + Number(Number(index) + 1) && (
                     <Image
                       className={classes["checked-icon"]}
                       src="/svg/chat/check.svg"
