@@ -64,7 +64,6 @@ const Chat = ({ toggleChat }) => {
       PremierLeague: [],
       ScottishPremiership: [],
       SerieA: [],
-      Flags:[]
     },
   };
   for (let i = 0; i < 213; i = i + 1) {

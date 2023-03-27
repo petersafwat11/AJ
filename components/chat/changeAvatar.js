@@ -61,42 +61,234 @@ export const ChangeAvatar = ({
           ))}
         </div>
         <div className={classes["avatars"]}>
-          {avatarCategory == "Avatars"
-            ? avatars.Avatars.map((i, index) => (
+          {avatarCategory == "Avatars" ? (
+            avatars.Avatars.map((i, index) => (
+              <div
+                style={{
+                  background:
+                    newSelectedAvatar == "Avatars/" + Number(Number(index) + 1)
+                      ? "url('/svg/chat/background.svg')"
+                      : "",
+                  backgroundSize:
+                    newSelectedAvatar == "Avatars/" + Number(Number(index) + 1)
+                      ? "93%"
+                      : "",
+                  backgroundRepeat:
+                    newSelectedAvatar == "Avatars/" + Number(Number(index) + 1)
+                      ? "no-repeat"
+                      : "",
+                  backgroundPosition:
+                    newSelectedAvatar == "Avatars/" + Number(Number(index) + 1)
+                      ? " bottom"
+                      : "",
+                }}
+                onClick={() => {
+                  setNewSElectedAvatar("Avatars/" + Number(Number(index) + 1));
+                  console.log(newSelectedAvatar);
+                }}
+                key={index}
+                className={classes["avatar"]}
+              >
+                {setNewSElectedAvatar ==
+                  "Avatars/" + Number(Number(index) + 1) && (
+                  <Image
+                    className={classes["checked-icon"]}
+                    src="/svg/chat/check.svg"
+                    alt="avatar"
+                    width="21"
+                    height="21"
+                  />
+                )}
+                <Image
+                  className={classes["avatar-icon"]}
+                  src={`/svg/chat/avatars/${avatarCategory}/${index + 1}.svg`}
+                  alt="avatar"
+                  width="57"
+                  height="57"
+                />
+              </div>
+            ))
+          ) : avatarCategory === "NBA" && !subCategory ? Object.keys(avatars.NBA).map((i, index)=>
+            <div
+              onClick={() => {
+                setSubCategory(i);
+                console.log(
+                  `/svg/chat/avatars/${avatarCategory}/${i}/${index + 1}.svg`
+                );
+              }}
+              key={index}
+              className={classes["sub-category"]}
+            >
+              <Image
+                src="svg/chat/change-avatar/folder-icon.svg"
+                alt="folder-icon"
+                width="67"
+                height="54"
+              />
+              <p>{i}</p>
+            </div>
+          ) : avatarCategory === "NBA" && subCategory ? (
+            avatars.NBA[subCategory].map((i, index) => (
+              <div
+                style={{
+                  background:
+                    newSelectedAvatar ==
+                    "NBA/" + subCategory + "/" + Number(Number(index) + 1)
+                      ? "url('/svg/chat/background.svg')"
+                      : "",
+                  backgroundSize:
+                    newSelectedAvatar ==
+                    "NBA/" + subCategory + "/" + Number(Number(index) + 1)
+                      ? "93%"
+                      : "",
+                  backgroundRepeat:
+                    newSelectedAvatar ==
+                    "NBA/" + subCategory + "/" + Number(Number(index) + 1)
+                      ? "no-repeat"
+                      : "",
+                  backgroundPosition:
+                    newSelectedAvatar ==
+                    "NBA/" + subCategory + "/" + Number(Number(index) + 1)
+                      ? " bottom"
+                      : "",
+                }}
+                onClick={() => {
+                  setNewSElectedAvatar(
+                    "NBA/" + subCategory + "/" + Number(Number(index) + 1)
+                  );
+                }}
+                key={index}
+                className={classes["avatar"]}
+              >
+                {setNewSElectedAvatar ==
+                  "NBA/" + subCategory + "/" + Number(Number(index) + 1) && (
+                  <Image
+                    className={classes["checked-icon"]}
+                    src="/svg/chat/check.svg"
+                    alt="avatar"
+                    width="21"
+                    height="21"
+                  />
+                )}
+                <Image
+                  className={classes["avatar-icon"]}
+                  src={`/svg/chat/avatars/${avatarCategory}/${subCategory}/${
+                    index + 1
+                  }.svg`}
+                  alt="avatar"
+                  width="57"
+                  height="57"
+                />
+              </div>
+            ))
+          ) : avatarCategory === "Flags" ? (
+            avatars.Flags.map((i, index) => (
+              <div
+                style={{
+                  background:
+                    newSelectedAvatar == "Flags/" + Number(Number(index) + 1)
+                      ? "url('/svg/chat/background.svg')"
+                      : "",
+                  backgroundSize:
+                    newSelectedAvatar == "Flags/" + Number(Number(index) + 1)
+                      ? "93%"
+                      : "",
+                  backgroundRepeat:
+                    newSelectedAvatar == "Flags/" + Number(Number(index) + 1)
+                      ? "no-repeat"
+                      : "",
+                  backgroundPosition:
+                    newSelectedAvatar == "Flags/" + Number(Number(index) + 1)
+                      ? " bottom"
+                      : "",
+                }}
+                onClick={() => {
+                  setNewSElectedAvatar("Flags/" + Number(Number(index) + 1));
+                }}
+                key={index}
+                className={classes["avatar"]}
+              >
+                {setNewSElectedAvatar ==
+                  "Flags/" + Number(Number(index) + 1) && (
+                  <Image
+                    className={classes["checked-icon"]}
+                    src="/svg/chat/check.svg"
+                    alt="avatar"
+                    width="21"
+                    height="21"
+                  />
+                )}
+                <Image
+                  className={classes["avatar-icon"]}
+                  src={`/svg/chat/avatars/${avatarCategory}/${index + 1}.svg`}
+                  alt="avatar"
+                  width="57"
+                  height="57"
+                />
+              </div>
+            ))
+          ) : avatarCategory === "Others" &&
+            !Object.keys(avatars.Others).find((i) => i === subCategory) ? (
+            Object.keys(avatars.Others).map((i, index) => (
+              <div
+                onClick={() => {
+                  setSubCategory(i);
+                  console.log(
+                    `/svg/chat/avatars/${avatarCategory}/${i}/${index + 1}.svg`
+                  );
+                }}
+                key={index}
+                className={classes["sub-category"]}
+              >
+                <Image
+                  src="svg/chat/change-avatar/folder-icon.svg"
+                  alt="folder-icon"
+                  width="67"
+                  height="54"
+                />
+                <p>{i}</p>
+              </div>
+            ))
+          ) : avatarCategory === "Others" &&
+            Object.keys(avatars.Others).find((i) => i === subCategory) ? (
+            subCategory !== "NHL" ? (
+              avatars.Others[subCategory].map((i, index) => (
                 <div
                   style={{
                     background:
                       newSelectedAvatar ==
-                      "Avatars/" + Number(Number(index) + 1)
+                      "Others/" + subCategory + "/" + Number(Number(index) + 1)
                         ? "url('/svg/chat/background.svg')"
                         : "",
                     backgroundSize:
                       newSelectedAvatar ==
-                      "Avatars/" + Number(Number(index) + 1)
+                      "Others/" + subCategory + "/" + Number(Number(index) + 1)
                         ? "93%"
                         : "",
                     backgroundRepeat:
                       newSelectedAvatar ==
-                      "Avatars/" + Number(Number(index) + 1)
+                      "Others/" + subCategory + "/" + Number(Number(index) + 1)
                         ? "no-repeat"
                         : "",
                     backgroundPosition:
                       newSelectedAvatar ==
-                      "Avatars/" + Number(Number(index) + 1)
+                      "Others/" + subCategory + "/" + Number(Number(index) + 1)
                         ? " bottom"
                         : "",
                   }}
                   onClick={() => {
                     setNewSElectedAvatar(
-                      "Avatars/" + Number(Number(index) + 1)
+                      "Others/" + subCategory + "/" + Number(Number(index) + 1)
                     );
-                    console.log(newSelectedAvatar);
                   }}
                   key={index}
                   className={classes["avatar"]}
                 >
                   {setNewSElectedAvatar ==
-                    "Avatars/" + Number(Number(index) + 1) && (
+                    "Others/" +
+                      subCategory +
+                      "/" +
+                      Number(Number(index) + 1) && (
                     <Image
                       className={classes["checked-icon"]}
                       src="/svg/chat/check.svg"
@@ -107,141 +299,106 @@ export const ChangeAvatar = ({
                   )}
                   <Image
                     className={classes["avatar-icon"]}
-                    src={`/svg/chat/avatars/${avatarCategory}/${index + 1}.svg`}
+                    src={`/svg/chat/avatars/${avatarCategory}/${subCategory}/${
+                      index + 1
+                    }.svg`}
                     alt="avatar"
                     width="57"
                     height="57"
                   />
                 </div>
               ))
-            : avatarCategory === "NBA"
-            ? Object.keys(avatars.NBA).map((i, index) => (
-                <>
-                  {!Object.keys(avatars.NBA).find((i) => i === subCategory) ? (
-                    <div
-                      onClick={() => {
-                        setSubCategory(i);
-                        console.log(
-                          `/svg/chat/avatars/${avatarCategory}/${i}/${
-                            index + 1
-                          }.svg`
-                        );
-                      }}
-                      key={index}
-                      className={classes["sub-category"]}
-                    >
-                      <Image
-                        src="svg/chat/change-avatar/folder-icon.svg"
-                        alt="folder-icon"
-                        width="67"
-                        height="54"
-                      />
-                      <p>{i}</p>
-                    </div>
-                  ) : (
-                    avatars.NBA[subCategory].map((i, index) => (
-                      <div
-                        style={{
-                          background:
-                            newSelectedAvatar ==
-                            "NBA/" +
-                              subCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                              ? "url('/svg/chat/background.svg')"
-                              : "",
-                          backgroundSize:
-                            newSelectedAvatar ==
-                            "NBA/" +
-                              subCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                              ? "93%"
-                              : "",
-                          backgroundRepeat:
-                            newSelectedAvatar ==
-                            "NBA/" +
-                              subCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                              ? "no-repeat"
-                              : "",
-                          backgroundPosition:
-                            newSelectedAvatar ==
-                            "NBA/" +
-                              subCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                              ? " bottom"
-                              : "",
-                        }}
-                        onClick={() => {
-                          setNewSElectedAvatar(
-                            "NBA/" +
-                              subCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                          );
-                        }}
-                        key={index}
-                        className={classes["avatar"]}
-                      >
-                        {setNewSElectedAvatar ==
-                          "NBA/" +
-                            subCategory +
-                            "/" +
-                            Number(Number(index) + 1) && (
-                          <Image
-                            className={classes["checked-icon"]}
-                            src="/svg/chat/check.svg"
-                            alt="avatar"
-                            width="21"
-                            height="21"
-                          />
-                        )}
-                        <Image
-                          className={classes["avatar-icon"]}
-                          src={`/svg/chat/avatars/${avatarCategory}/${subCategory}/${
-                            index + 1
-                          }.svg`}
-                          alt="avatar"
-                          width="57"
-                          height="57"
-                        />
-                      </div>
-                    ))
-                  )}
-                </>
+            ) : !Object.keys(avatars.Others.NHL).find(
+                (i) => i === subSubCategory
+              ) ? (
+              Object.keys(avatars.Others.NHL).map((i, index) => (
+                <div
+                  onClick={() => {
+                    setSubSubCategory(i);
+                    console.log(
+                      `/svg/chat/avatars/${avatarCategory}/${subCategory} /${i}/${
+                        index + 1
+                      }.svg`,
+                      Object.keys(avatars.Others.NHL)
+                    );
+                  }}
+                  key={index}
+                  className={classes["sub-category"]}
+                >
+                  <Image
+                    src="svg/chat/change-avatar/folder-icon.svg"
+                    alt="folder-icon"
+                    width="67"
+                    height="54"
+                  />
+                  <p>{i}</p>
+                </div>
               ))
-            : avatarCategory === "Flags"
-            ? avatars.Flags.map((i, index) => (
+            ) : (
+              avatars.Others.NHL[subSubCategory].map((i, index) => (
                 <div
                   style={{
                     background:
-                      newSelectedAvatar == "Flags/" + Number(Number(index) + 1)
+                      newSelectedAvatar ==
+                      "Others/" +
+                        subCategory +
+                        "/" +
+                        subSubCategory +
+                        "/" +
+                        Number(Number(index) + 1)
                         ? "url('/svg/chat/background.svg')"
                         : "",
                     backgroundSize:
-                      newSelectedAvatar == "Flags/" + Number(Number(index) + 1)
+                      newSelectedAvatar ==
+                      "Others/" +
+                        subCategory +
+                        "/" +
+                        subSubCategory +
+                        "/" +
+                        Number(Number(index) + 1)
                         ? "93%"
                         : "",
                     backgroundRepeat:
-                      newSelectedAvatar == "Flags/" + Number(Number(index) + 1)
+                      newSelectedAvatar ==
+                      "Others/" +
+                        subCategory +
+                        "/" +
+                        subSubCategory +
+                        "/" +
+                        Number(Number(index) + 1)
                         ? "no-repeat"
                         : "",
                     backgroundPosition:
-                      newSelectedAvatar == "Flags/" + Number(Number(index) + 1)
+                      newSelectedAvatar ==
+                      "Others/" +
+                        subCategory +
+                        "/" +
+                        subSubCategory +
+                        "/" +
+                        Number(Number(index) + 1)
                         ? " bottom"
                         : "",
                   }}
                   onClick={() => {
-                    setNewSElectedAvatar("Flags/" + Number(Number(index) + 1));
+                    setNewSElectedAvatar(
+                      "Others/" +
+                        subCategory +
+                        "/" +
+                        subSubCategory +
+                        "/" +
+                        Number(Number(index) + 1)
+                    );
                   }}
                   key={index}
                   className={classes["avatar"]}
                 >
                   {setNewSElectedAvatar ==
-                    "Flags/" + Number(Number(index) + 1) && (
+                    "Others/" +
+                      subCategory +
+                      "/" +
+                      subSubCategory +
+                      "/" +
+                      Number(Number(index) + 1) && (
                     <Image
                       className={classes["checked-icon"]}
                       src="/svg/chat/check.svg"
@@ -252,438 +409,208 @@ export const ChangeAvatar = ({
                   )}
                   <Image
                     className={classes["avatar-icon"]}
-                    src={`/svg/chat/avatars/${avatarCategory}/${index + 1}.svg`}
+                    src={`/svg/chat/avatars/${avatarCategory}/${subCategory}/${subSubCategory}/${
+                      index + 1
+                    }.svg`}
                     alt="avatar"
                     width="57"
                     height="57"
                   />
                 </div>
               ))
-            : avatarCategory === "Others"
-            ? Object.keys(avatars.Others).map((i, index) => (
-                <>
-                  {!Object.keys(avatars.Others).find(
-                    (i) => i === subCategory
-                  ) ? (
-                    <div
-                      onClick={() => {
-                        setSubCategory(i);
-                        console.log(
-                          `/svg/chat/avatars/${avatarCategory}/${i}/${
-                            index + 1
-                          }.svg`
-                        );
-                      }}
-                      key={index}
-                      className={classes["sub-category"]}
-                    >
-                      <Image
-                        src="svg/chat/change-avatar/folder-icon.svg"
-                        alt="folder-icon"
-                        width="67"
-                        height="54"
-                      />
-                      <p>{i}</p>
-                    </div>
-                  ) : subCategory !== "NHL" ? (
-                    avatars.Others[subCategory].map((i, index) => (
-                      <div
-                        style={{
-                          background:
-                            newSelectedAvatar ==
-                            "Others/" +
-                              subCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                              ? "url('/svg/chat/background.svg')"
-                              : "",
-                          backgroundSize:
-                            newSelectedAvatar ==
-                            "Others/" +
-                              subCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                              ? "93%"
-                              : "",
-                          backgroundRepeat:
-                            newSelectedAvatar ==
-                            "Others/" +
-                              subCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                              ? "no-repeat"
-                              : "",
-                          backgroundPosition:
-                            newSelectedAvatar ==
-                            "Others/" +
-                              subCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                              ? " bottom"
-                              : "",
-                        }}
-                        onClick={() => {
-                          setNewSElectedAvatar(
-                            "Others/" +
-                              subCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                          );
-                        }}
-                        key={index}
-                        className={classes["avatar"]}
-                      >
-                        {setNewSElectedAvatar ==
-                          "Others/" +
-                            subCategory +
-                            "/" +
-                            Number(Number(index) + 1) && (
-                          <Image
-                            className={classes["checked-icon"]}
-                            src="/svg/chat/check.svg"
-                            alt="avatar"
-                            width="21"
-                            height="21"
-                          />
-                        )}
-                        <Image
-                          className={classes["avatar-icon"]}
-                          src={`/svg/chat/avatars/${avatarCategory}/${subCategory}/${
-                            index + 1
-                          }.svg`}
-                          alt="avatar"
-                          width="57"
-                          height="57"
-                        />
-                      </div>
-                    ))
-                  ) : !Object.keys(avatars.Others.NHL).find(
-                      (i) => i === subSubCategory
-                    ) ? (
+            )
+          ) : avatarCategory === "Football" &&
+            !Object.keys(avatars.Football).find((i) => i === subCategory) ? (
+            Object.keys(avatars.Football).map((i, index) => (
+              <div
+                onClick={() => {
+                  setSubCategory(i);
+                  console.log(
+                    `/svg/chat/avatars/${avatarCategory}/${i}/${index + 1}.svg`
+                  );
+                }}
+                key={index}
+                className={classes["sub-category"]}
+              >
+                <Image
+                  src="svg/chat/change-avatar/folder-icon.svg"
+                  alt="folder-icon"
+                  width="67"
+                  height="54"
+                />
+                <p>{i}</p>
+              </div>
+            ))
+          ) : avatarCategory === "Football" &&
+            Object.keys(avatars.Football).find((i) => i === subCategory) &&
+            subCategory !== "MLS" ? (
+            avatars.Football[subCategory].map((i, index) => (
+              <div
+                style={{
+                  background:
+                    newSelectedAvatar ==
+                    "Football/" + subCategory + "/" + Number(Number(index) + 1)
+                      ? "url('/svg/chat/background.svg')"
+                      : "",
+                  backgroundSize:
+                    newSelectedAvatar ==
+                    "Football/" + subCategory + "/" + Number(Number(index) + 1)
+                      ? "93%"
+                      : "",
+                  backgroundRepeat:
+                    newSelectedAvatar ==
+                    "Football/" + subCategory + "/" + Number(Number(index) + 1)
+                      ? "no-repeat"
+                      : "",
+                  backgroundPosition:
+                    newSelectedAvatar ==
+                    "Football/" + subCategory + "/" + Number(Number(index) + 1)
+                      ? " bottom"
+                      : "",
+                }}
+                onClick={() => {
+                  setNewSElectedAvatar(
+                    "Football/" + subCategory + "/" + Number(Number(index) + 1)
+                  );
+                }}
+                key={index}
+                className={classes["avatar"]}
+              >
+                {setNewSElectedAvatar ==
+                  "Football/" +
+                    subCategory +
+                    "/" +
+                    Number(Number(index) + 1) && (
+                  <Image
+                    className={classes["checked-icon"]}
+                    src="/svg/chat/check.svg"
+                    alt="avatar"
+                    width="21"
+                    height="21"
+                  />
+                )}
+                <Image
+                  className={classes["avatar-icon"]}
+                  src={`/svg/chat/avatars/${avatarCategory}/${subCategory}/${
+                    index + 1
+                  }.svg`}
+                  alt="avatar"
+                  width="57"
+                  height="57"
+                />
+              </div>
+            ))
+          ) : !Object.keys(avatars.Football.MLS).find(
+              (i) => i === subSubCategory
+            ) ? (
+            Object.keys(avatars.Football.MLS).map((i, index) => (
+              <div
+                onClick={() => {
+                  setSubSubCategory(i);
+                  console.log(
+                    `/svg/chat/avatars/${avatarCategory}/${subCategory} /${i}/${
+                      index + 1
+                    }.svg`,
                     Object.keys(avatars.Others.NHL)
-                      .slice(0, 2)
-                      .map((i, index) => (
-                        <div
-                          onClick={() => {
-                            setSubSubCategory(i);
-                            console.log(
-                              `/svg/chat/avatars/${avatarCategory}/${subCategory} /${i}/${
-                                index + 1
-                              }.svg`,
-                              Object.keys(avatars.Others.NHL)
-                            );
-                          }}
-                          key={index}
-                          className={classes["sub-category"]}
-                        >
-                          <Image
-                            src="svg/chat/change-avatar/folder-icon.svg"
-                            alt="folder-icon"
-                            width="67"
-                            height="54"
-                          />
-                          <p>{i}</p>
-                        </div>
-                      ))
-                  ) : (
-                    avatars.Others.NHL[subSubCategory].map((i, index) => (
-                      <div
-                        style={{
-                          background:
-                            newSelectedAvatar ==
-                            "Others/" +
-                              subCategory +
-                              "/" +
-                              subSubCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                              ? "url('/svg/chat/background.svg')"
-                              : "",
-                          backgroundSize:
-                            newSelectedAvatar ==
-                            "Others/" +
-                              subCategory +
-                              "/" +
-                              subSubCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                              ? "93%"
-                              : "",
-                          backgroundRepeat:
-                            newSelectedAvatar ==
-                            "Others/" +
-                              subCategory +
-                              "/" +
-                              subSubCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                              ? "no-repeat"
-                              : "",
-                          backgroundPosition:
-                            newSelectedAvatar ==
-                            "Others/" +
-                              subCategory +
-                              "/" +
-                              subSubCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                              ? " bottom"
-                              : "",
-                        }}
-                        onClick={() => {
-                          setNewSElectedAvatar(
-                            "Others/" +
-                              subCategory +
-                              "/" +
-                              subSubCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                          );
-                        }}
-                        key={index}
-                        className={classes["avatar"]}
-                      >
-                        {setNewSElectedAvatar ==
-                          "Others/" +
-                            subCategory +
-                            "/" +
-                            subSubCategory +
-                            "/" +
-                            Number(Number(index) + 1) && (
-                          <Image
-                            className={classes["checked-icon"]}
-                            src="/svg/chat/check.svg"
-                            alt="avatar"
-                            width="21"
-                            height="21"
-                          />
-                        )}
-                        <Image
-                          className={classes["avatar-icon"]}
-                          src={`/svg/chat/avatars/${avatarCategory}/${subCategory}/${subSubCategory}/${
-                            index + 1
-                          }.svg`}
-                          alt="avatar"
-                          width="57"
-                          height="57"
-                        />
-                      </div>
-                    ))
-                  )}
-                </>
-              ))
-            : Object.keys(avatars.Football).map((i, index) => (
-                <>
-                  {!Object.keys(avatars.Football).find(
-                    (i) => i === subCategory
-                  ) ? (
-                    <div
-                      onClick={() => {
-                        setSubCategory(i);
-                        console.log(
-                          `/svg/chat/avatars/${avatarCategory}/${i}/${
-                            index + 1
-                          }.svg`
-                        );
-                      }}
-                      key={index}
-                      className={classes["sub-category"]}
-                    >
-                      <Image
-                        src="svg/chat/change-avatar/folder-icon.svg"
-                        alt="folder-icon"
-                        width="67"
-                        height="54"
-                      />
-                      <p>{i}</p>
-                    </div>
-                  ) : subCategory !== "MLS" ? (
-                    avatars.Football[subCategory].map((i, index) => (
-                      <div
-                        style={{
-                          background:
-                            newSelectedAvatar ==
-                            "Football/" +
-                              subCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                              ? "url('/svg/chat/background.svg')"
-                              : "",
-                          backgroundSize:
-                            newSelectedAvatar ==
-                            "Football/" +
-                              subCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                              ? "93%"
-                              : "",
-                          backgroundRepeat:
-                            newSelectedAvatar ==
-                            "Football/" +
-                              subCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                              ? "no-repeat"
-                              : "",
-                          backgroundPosition:
-                            newSelectedAvatar ==
-                            "Football/" +
-                              subCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                              ? " bottom"
-                              : "",
-                        }}
-                        onClick={() => {
-                          setNewSElectedAvatar(
-                            "Football/" +
-                              subCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                          );
-                        }}
-                        key={index}
-                        className={classes["avatar"]}
-                      >
-                        {setNewSElectedAvatar ==
-                          "Football/" +
-                            subCategory +
-                            "/" +
-                            Number(Number(index) + 1) && (
-                          <Image
-                            className={classes["checked-icon"]}
-                            src="/svg/chat/check.svg"
-                            alt="avatar"
-                            width="21"
-                            height="21"
-                          />
-                        )}
-                        <Image
-                          className={classes["avatar-icon"]}
-                          src={`/svg/chat/avatars/${avatarCategory}/${subCategory}/${
-                            index + 1
-                          }.svg`}
-                          alt="avatar"
-                          width="57"
-                          height="57"
-                        />
-                      </div>
-                    ))
-                  ) : !Object.keys(avatars.Football.MLS).find(
-                      (i) => i === subSubCategory
-                    ) ? (
-                    Object.keys(avatars.Football.MLS)
-                      .slice(0, 2)
-                      .map((i, index) => (
-                        <div
-                          onClick={() => {
-                            setSubSubCategory(i);
-                            console.log(
-                              `/svg/chat/avatars/${avatarCategory}/${subCategory} /${i}/${
-                                index + 1
-                              }.svg`,
-                              Object.keys(avatars.Football.MLS)
-                            );
-                          }}
-                          key={index}
-                          className={classes["sub-category"]}
-                        >
-                          <Image
-                            src="svg/chat/change-avatar/folder-icon.svg"
-                            alt="folder-icon"
-                            width="67"
-                            height="54"
-                          />
-                          <p>{i}</p>
-                        </div>
-                      ))
-                  ) : (
-                    avatars.Football.MLS[subSubCategory].map((i, index) => (
-                      <div
-                        style={{
-                          background:
-                            newSelectedAvatar ==
-                            "Football/" +
-                              subCategory +
-                              "/" +
-                              subSubCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                              ? "url('/svg/chat/background.svg')"
-                              : "",
-                          backgroundSize:
-                            newSelectedAvatar ==
-                            "Football/" +
-                              subCategory +
-                              "/" +
-                              subSubCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                              ? "93%"
-                              : "",
-                          backgroundRepeat:
-                            newSelectedAvatar ==
-                            "Football/" +
-                              subCategory +
-                              "/" +
-                              subSubCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                              ? "no-repeat"
-                              : "",
-                          backgroundPosition:
-                            newSelectedAvatar ==
-                            "Football/" +
-                              subCategory +
-                              "/" +
-                              subSubCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                              ? " bottom"
-                              : "",
-                        }}
-                        onClick={() => {
-                          setNewSElectedAvatar(
-                            "Football/" +
-                              subCategory +
-                              "/" +
-                              subSubCategory +
-                              "/" +
-                              Number(Number(index) + 1)
-                          );
-                        }}
-                        key={index}
-                        className={classes["avatar"]}
-                      >
-                        {setNewSElectedAvatar ==
-                          "Football/" +
-                            subCategory +
-                            "/" +
-                            subSubCategory +
-                            "/" +
-                            Number(Number(index) + 1) && (
-                          <Image
-                            className={classes["checked-icon"]}
-                            src="/svg/chat/check.svg"
-                            alt="avatar"
-                            width="21"
-                            height="21"
-                          />
-                        )}
-                        <Image
-                          className={classes["avatar-icon"]}
-                          src={`/svg/chat/avatars/${avatarCategory}/${subCategory}/${subSubCategory}/${
-                            index + 1
-                          }.svg`}
-                          alt="avatar"
-                          width="57"
-                          height="57"
-                        />
-                      </div>
-                    ))
-                  )}
-                </>
-              ))}
+                  );
+                }}
+                key={index}
+                className={classes["sub-category"]}
+              >
+                <Image
+                  src="svg/chat/change-avatar/folder-icon.svg"
+                  alt="folder-icon"
+                  width="67"
+                  height="54"
+                />
+                <p>{i}</p>
+              </div>
+            ))
+          ) : (
+            avatars.Football.MLS[subSubCategory].map((i, index) => (
+              <div
+                style={{
+                  background:
+                    newSelectedAvatar ==
+                    "Football/" +
+                      subCategory +
+                      "/" +
+                      subSubCategory +
+                      "/" +
+                      Number(Number(index) + 1)
+                      ? "url('/svg/chat/background.svg')"
+                      : "",
+                  backgroundSize:
+                    newSelectedAvatar ==
+                    "Football/" +
+                      subCategory +
+                      "/" +
+                      subSubCategory +
+                      "/" +
+                      Number(Number(index) + 1)
+                      ? "93%"
+                      : "",
+                  backgroundRepeat:
+                    newSelectedAvatar ==
+                    "Football/" +
+                      subCategory +
+                      "/" +
+                      subSubCategory +
+                      "/" +
+                      Number(Number(index) + 1)
+                      ? "no-repeat"
+                      : "",
+                  backgroundPosition:
+                    newSelectedAvatar ==
+                    "Football/" +
+                      subCategory +
+                      "/" +
+                      subSubCategory +
+                      "/" +
+                      Number(Number(index) + 1)
+                      ? " bottom"
+                      : "",
+                }}
+                onClick={() => {
+                  setNewSElectedAvatar(
+                    "Football/" +
+                      subCategory +
+                      "/" +
+                      subSubCategory +
+                      "/" +
+                      Number(Number(index) + 1)
+                  );
+                }}
+                key={index}
+                className={classes["avatar"]}
+              >
+                {setNewSElectedAvatar ==
+                  "Football/" +
+                    subCategory +
+                    "/" +
+                    subSubCategory +
+                    "/" +
+                    Number(Number(index) + 1) && (
+                  <Image
+                    className={classes["checked-icon"]}
+                    src="/svg/chat/check.svg"
+                    alt="avatar"
+                    width="21"
+                    height="21"
+                  />
+                )}
+                <Image
+                  className={classes["avatar-icon"]}
+                  src={`/svg/chat/avatars/${avatarCategory}/${subCategory}/${subSubCategory}/${
+                    index + 1
+                  }.svg`}
+                  alt="avatar"
+                  width="57"
+                  height="57"
+                />
+              </div>
+            ))
+          )}
         </div>
 
         <div className={classes["actions"]}>
