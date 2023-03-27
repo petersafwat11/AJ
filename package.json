@@ -15,6 +15,7 @@
     "@videojs/themes": "^1.0.1",
     "autoprefixer": "^10.4.13",
     "emoji-mart": "^5.5.2",
+    "gif-picker-react": "^1.1.0",
     "i": "^0.3.7",
     "next": "13.1.6",
     "npm": "^9.5.1",

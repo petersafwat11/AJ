@@ -84,7 +84,10 @@ const Footer = () => {
               <h4 className={classes["footer-container-links-heading"]}>
                 Quick Menus
               </h4>
-              <ul className={classes["footer-container-links-list"]}>
+              <ul
+                style={{ listStyle: "none" }}
+                className={classes["footer-container-links-list"]}
+              >
                 <li
                   onClick={() => {
                     router.push("/");
@@ -128,7 +131,10 @@ const Footer = () => {
               >
                 Statistics
               </h4>
-              <ul className={classes["footer-container-links-list"]}>
+              <ul
+                style={{ listStyle: "none" }}
+                className={classes["footer-container-links-list"]}
+              >
                 <li className={classes["footer-container-links-list-item"]}>
                   Premier League
                 </li>

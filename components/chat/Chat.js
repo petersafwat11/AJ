@@ -1,6 +1,7 @@
 "use client";
 import data from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
+import GifPicker from "gif-picker-react";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { AiOutlineArrowUp } from "react-icons/ai";
@@ -10,8 +11,10 @@ import { MdEmojiEmotions } from "react-icons/md";
 import { ChangeAvatar } from "./changeAvatar";
 import classes from "./chat.module.css";
 import UserInfo from "./UserInfo";
+
 const Chat = ({ toggleChat }) => {
-  const [showEmojyPicker, setShowEmojyPicker] = useState(false);
+  const [showEmojiesAndGifs, setShowEmojiesAndGifs] = useState(false);
+  const [emojyOrGifs, setEmojyOrGifs] = useState("emojy");
   const getSubString = (string) => {
     let i = string.indexOf(" ");
     let rest = string.substring(i);
@@ -256,21 +259,66 @@ know anything as you are spurs! `,
         <div className={classes["emojy-dev"]}>
           <MdEmojiEmotions
             onClick={() => {
-              setShowEmojyPicker(!showEmojyPicker);
+              setShowEmojiesAndGifs(!showEmojiesAndGifs);
             }}
             className={classes["emojy"]}
           />
-          {showEmojyPicker && (
-            <Picker
-              className={classes["emojy-picker"]}
-              data={data}
-              theme="dark"
-              previewPosition="none"
-              perLine="8"
-              onEmojiSelect={() => {
-                console.log("clicked");
-              }}
-            />
+          {showEmojiesAndGifs && (
+            <div className={classes["emojies-gifs"]}>
+              <img
+                onClick={() => {
+                  setShowEmojiesAndGifs(false);
+                }}
+                className={classes["exit-emojy"]}
+                src="/svg/exit-emojy.svg"
+                alt="exit"
+                height="14"
+                width="14"
+              />
+              <div className={classes["emojies-gifs-top"]}>
+                <p
+                  style={{
+                    background: emojyOrGifs == "emojy" ? "#03A1CD" : "",
+                  }}
+                  onClick={() => {
+                    setEmojyOrGifs("emojy");
+                  }}
+                >
+                  Emojis
+                </p>
+                <p
+                  style={{ background: emojyOrGifs == "gifs" ? "#03A1CD" : "" }}
+                  onClick={() => {
+                    setEmojyOrGifs("gifs");
+                  }}
+                >
+                  GIFs
+                </p>
+              </div>
+              {emojyOrGifs === "emojy" && (
+                <Picker
+                  navPosition="none"
+                  className={classes["emojy-picker"]}
+                  data={data}
+                  theme="dark"
+                  previewPosition="none"
+                  perLine="8"
+                  onEmojiSelect={(e) => {
+                    console.log("clicked");
+                    setMessage(message + e.native);
+                  }}
+                />
+              )}
+              {emojyOrGifs === "gifs" && (
+                <GifPicker
+                  tenorApiKey={"AIzaSyC8EsPMPT17ZCZHFdKpQg9z0i8BgEr29eE"}
+                  theme="dark"
+                  onGifClick={(TenorImage) => {
+                    setMessage(TenorImage);
+                  }}
+                />
+              )}
+            </div>
           )}
         </div>
 

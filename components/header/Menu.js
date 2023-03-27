@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React from "react";
 import classes from "./menu.module.css";
 export const Menu = () => {
   const router = useRouter();
@@ -16,10 +16,13 @@ export const Menu = () => {
           className={classes["menu-desktop-logo"]}
           src="/LOGO.svg"
           alt="logo"
-          width="104"
-          height="80"
+          width="94"
+          height="73"
         />
-        <ul className={classes["menu-desktop-list"]}>
+        <ul
+          style={{ listStyle: "none" }}
+          className={classes["menu-desktop-list"]}
+        >
           <li>
             <Link className={classes["menu-desktop-list-item"]} href="/">
               SPORTS
@@ -74,4 +77,3 @@ export const Menu = () => {
     </div>
   );
 };
-

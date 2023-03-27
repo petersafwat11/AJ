@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans+Arabic:wght@500&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300&family=Roboto+Condensed:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans+Arabic:wght@500&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300&family=Roboto+Condensed:wght@300;400;700&display=swap");
 @font-face {
   font-family: RobotoRegular;
   src: url("/fonts/NEW-MEDIUM.woff2") format("woff2"),
@@ -72,9 +72,9 @@ body {
 li {
   list-style: none;
 }
-ul {
+/* ul {
   list-style: none;
-}
+} */
 a {
   display: inline;
   text-decoration: none;
