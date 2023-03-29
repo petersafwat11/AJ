@@ -117,7 +117,7 @@
 @media (max-width: 56.25rem) {
   .user-info {
     max-width: min(90%, 24rem);
-    border-radius: 2rem;
+    border-radius: 1.5rem;
     padding: 2.43rem 16.3vw 1.68rem;
   }
   .user-info-top {
@@ -142,6 +142,7 @@
     line-height: 1rem;
     margin-top: 1.5rem;
     margin-bottom: 0.625rem;
+    letter-spacing: 0.5px;
   }
 
   .user-data {

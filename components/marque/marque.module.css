@@ -38,7 +38,14 @@
   .marque-container {
     height: 0vh;
     width: 60%;
-    margin-top: 0.56rem;
+    margin-top: 0.16rem;
     padding-bottom: 1.125rem;
+  }
+  .marque-container span {
+    font-size: 1rem;
+  }
+  .marque-container-tag > p {
+    font-size: 0.8rem;
+    margin-left: 1rem;
   }
 }

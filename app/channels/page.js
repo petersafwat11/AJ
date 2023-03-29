@@ -68,9 +68,9 @@ const Page = () => {
         </div>
       )}
       {showShareLinks && (
-        <div className={classes["share-links"]}>
+        <Popup>
           <ShareLinks toggleShareLinks={toggleShareLinks} />
-        </div>
+        </Popup>
       )}
       <div className={classes["container"]}>
         <div className={classes["navigate"]}>

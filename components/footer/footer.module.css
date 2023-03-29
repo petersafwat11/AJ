@@ -340,8 +340,10 @@
     gap: 1.375rem;
   }
   .footer-container-image > img {
-    width: 150px;
-    height: 110px;
+    width: 140px;
+    height: 100px;
+    color: rgb(24, 34, 40)
+;
   }
   .footer-social {
     display: flex;

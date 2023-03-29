@@ -1,13 +1,29 @@
 .proton-vpn {
-  background: url("/svg/Subscribe.svg");
+  background: linear-gradient(#003a71, #002f59);
   background-origin: top left;
   width: 34rem;
   height: 7.78rem;
   border-radius: 0.7rem;
   padding: 1.22rem 0 1.125rem;
   margin: auto;
+  position: relative;
+}
+.logo {
+  position: absolute;
+  top: 11.25px;
+  left: 22.5px;
+}
+.map {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+.map-mobile {
+  display: none;
 }
 .body {
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,7 +76,7 @@
 }
 
 .button:hover {
-  background: #c93e54;
+  background: #042c4e;
   color: white;
 }
 @media (max-width: 56.25rem) {
@@ -71,12 +87,22 @@
     border-radius: 0.56rem;
     padding: 0.65rem 0 0.67rem;
   }
+  .map-mobile {
+    display: inline;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
+  .map {
+    display: none;
+  }
+
   .logo {
     position: absolute;
-    top: 0.8rem;
-    left: 0.88rem;
-    width: 77px;
-    height: 16px;
+    top: 10px;
+    left: 13px;
+    width: 27px;
   }
   .para {
     font-size: 0.56rem;

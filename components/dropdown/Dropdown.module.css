@@ -20,19 +20,21 @@
   gap: 0.3rem;
   cursor: pointer;
 }
-.dropdown:hover > .options,
+/* .dropdown > .options,
 .option:hover {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 0.4rem;
-}
+} */
 .options {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.4rem;
   position: absolute;
   top: 37.11px;
   left: 0;
   z-index: 10;
-  display: none;
   transition: all 0.3s ease-out;
 }
 .drop-icon {

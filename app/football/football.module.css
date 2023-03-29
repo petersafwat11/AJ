@@ -9,7 +9,7 @@
   position: fixed;
   bottom: 10vh;
   right: 1vw;
-  z-index: 8;
+  z-index: 100;
 }
 .watch-football {
   max-width: 95%;
@@ -105,8 +105,21 @@
     position: fixed;
     bottom: 5vh;
     right: 0.7vw;
-    z-index: 8;
+    z-index: 100;
   }
+  .extend-button {
+    border-radius: 1.72rem;
+    width: 43px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.1rem 0.3rem;
+    font-size: 7px;
+    line-height: 8.2px;
+    background: rgba(86, 86, 86, 0.5);
+  }
+
   .watch-video {
     width: 100%;
     height: min(60vh, 23rem);

@@ -57,7 +57,9 @@
     gap: 0.75rem;
     width: 97%;
     max-width: 30rem;
-    margin: 2rem auto 0;
+    margin: 1.5rem auto 0;
+    color: rgb(24, 34, 40)
+;
   }
   .search-mobile-input {
     padding: 1.06rem 0.75rem 1rem;
@@ -104,7 +106,7 @@
     align-items: center;
     gap: 1.93rem;
     justify-content: center;
-    margin: 1rem auto 0;
+    margin: 1.3rem auto 0;
     padding-right: 0.65rem;
     max-width: 97%;
     height: 4.18rem;
@@ -116,7 +118,7 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    min-width: 5.87rem;
+    min-width: 5.37rem;
     background-color: #00c4fb;
     border-radius: 7px;
   }

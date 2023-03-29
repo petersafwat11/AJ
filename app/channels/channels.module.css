@@ -9,7 +9,7 @@
   position: fixed;
   bottom: 10vh;
   right: 1vw;
-  z-index: 8;
+  z-index: 100;
 }
 .container {
   max-width: 95%;
@@ -168,7 +168,7 @@
     position: fixed;
     bottom: 5vh;
     right: 0.7vw;
-    z-index: 8;
+    z-index: 100;
   }
   .container {
     max-width: 95%;
@@ -268,13 +268,26 @@
   .watch-video-servers-button:hover {
     background-color: #d32727;
   }
+    .extend-button {
+    border-radius: 1.72rem;
+    width: 43px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.1rem 0.3rem;
+    font-size: 7px;
+    line-height: 8.2px;
+    background: rgba(86, 86, 86, 0.5);
+  }
+
 }
 @media (max-width: 600px) {
   .watch-video {
     height: 14.5rem;
   }
-  .watch-football {
+  .container {
     max-width: 100%;
-    margin: 0 3px;
+    margin: 0 3px 3rem;
   }
 }

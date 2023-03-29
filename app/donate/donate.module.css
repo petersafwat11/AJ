@@ -184,7 +184,7 @@
 } */
 @media (min-width: 56.25rem) {
   .donate {
-    max-width: min(82%, 33rem);
+    max-width: min(82%, 36.5rem);
     margin: 0 auto 3rem;
   }
   .donate-heading {

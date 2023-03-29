@@ -6,31 +6,38 @@
   margin: 5.85rem auto 7rem;
 }
 .first-section {
-  padding: 3.48rem 8rem 2.8rem 7.54rem;
+  padding: 3.46rem 4rem 2.8rem;
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 1.875rem;
+  /* height: 17.4375rem; */
 }
 .title {
-  font-weight: 800;
+  font-family: RobotoBold;
+
+  font-weight: 700;
   font-size: 2.3rem;
+  line-height: 2.76rem;
 }
 .error-message {
   font-family: RobotoRegular;
   font-weight: 500;
   font-size: 1.4rem;
+  line-height: 1.92rem;
   text-align: center;
   color: rgba(255, 255, 255, 0.65);
-  max-width: 88%;
+  max-width: 72%;
 }
 .second-section {
   background: #172026;
-  padding: 4.36rem 7rem;
+  padding: 3.5rem 7rem 2.81rem;
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 4.4rem;
+  gap: 2.5rem;
+  margin: 0 2.25rem 2rem;
+  border-radius: 1.125rem;
 }
 .return-para {
   font-family: RobotoRegular;
@@ -74,8 +81,8 @@
     width: 78%;
   }
   .second-section {
-    padding: 3.27rem 3rem;
-    gap: 3.45rem;
+    padding: 2.5rem 3rem;
+    gap: 1.7rem;
   }
   .return-para {
     font-size: 1.15rem;
@@ -96,23 +103,29 @@
   }
   .first-section {
     padding: 1.86rem 2rem 1.4rem;
-    gap: 1.4rem;
+    gap: 1rem;
   }
   .title {
-    font-weight: 800;
-    font-size: 1.6rem;
+    font-size: 1.625rem;
+    white-space: nowrap;
   }
   .error-message {
-    font-size: 0.98rem;
+    font-size: 1rem;
+    line-height: 1.375rem;
+    max-width: 15.75rem;
   }
   .second-section {
     background: #172026;
-    padding: 2.18rem 2rem;
-    gap: 2.3rem;
+    padding: 1.8rem 2.81rem 1.5rem;
+    max-width: 100%;
+    margin: 0 27px 30px;
+    border-radius: 0.5rem;
+    gap: 1.33rem;
   }
   .return-para {
-    font-size: 0.98rem;
+    font-size: 1rem;
     line-height: 1.34rem;
+    white-space: nowrap;
   }
   .button {
     border-radius: 0.26rem;

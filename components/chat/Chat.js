@@ -139,6 +139,22 @@ know anything as you are spurs! `,
       avatarSrc: "/svg/chat/avatars/Avatars/10.svg",
     },
   ]);
+  const [windowDimensions, setWindowDimensions] = useState({
+    width: "",
+    height: "",
+  });
+  const handleResize = () => {
+    setWindowDimensions({
+      width: window.screen.width,
+      height: window.screen.height,
+    });
+  };
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className={classes["chat"]}>
       {showUserInfo && (
@@ -160,6 +176,70 @@ know anything as you are spurs! `,
           />
         </div>
       )}
+      {showEmojiesAndGifs && (
+        <div
+          style={{ paddingBottom: emojyOrGifs === "gifs" ? "0" : "" }}
+          id="emojies-gifs"
+          className={classes["emojies-gifs"]}
+        >
+          <div className={classes["space"]}></div>
+
+          <img
+            onClick={() => {
+              setShowEmojiesAndGifs(false);
+            }}
+            className={classes["exit-emojy"]}
+            src="/svg/exit-emojy.svg"
+            alt="exit"
+            height="14"
+            width="14"
+          />
+          <div className={classes["emojies-gifs-top"]}>
+            <p
+              style={{
+                background: emojyOrGifs == "emojy" ? "#03A1CD" : "",
+              }}
+              onClick={() => {
+                setEmojyOrGifs("emojy");
+              }}
+            >
+              Emojis
+            </p>
+            <p
+              style={{ background: emojyOrGifs == "gifs" ? "#03A1CD" : "" }}
+              onClick={() => {
+                setEmojyOrGifs("gifs");
+              }}
+            >
+              GIFs
+            </p>
+          </div>
+          {emojyOrGifs === "emojy" && (
+            <Picker
+              navPosition="none"
+              className={classes["emojy-picker"]}
+              data={data}
+              theme="dark"
+              previewPosition="none"
+              perLine={windowDimensions.width < 900 ? 6 : 8}
+              onEmojiSelect={(e) => {
+                console.log("clicked");
+                setMessage(message + e.native);
+              }}
+            />
+          )}
+          {emojyOrGifs === "gifs" && (
+            <GifPicker
+              tenorApiKey={"AIzaSyC8EsPMPT17ZCZHFdKpQg9z0i8BgEr29eE"}
+              theme="dark"
+              onGifClick={(TenorImage) => {
+                setMessage(TenorImage);
+              }}
+            />
+          )}
+        </div>
+      )}
+
       <div className={classes["chat-top"]}>
         <Image
           className={classes["chat-top-extend"]}
@@ -221,7 +301,7 @@ know anything as you are spurs! `,
               </div>
             </div>
           ) : (
-            <div key={index}>
+            <div className={classes["my-message-wrapper"]} key={index}>
               <div className={classes["message-details"]}>
                 <p className={classes["message-username"]}>{message.usename}</p>
                 <p className={classes["message-time"]}>{message.time}</p>
@@ -252,74 +332,17 @@ know anything as you are spurs! `,
           )
         )}
       </div>
-      <div className={classes["chat-bottom"]}>
+      <div id="chat-bottom" className={classes["chat-bottom"]}>
         <div className={classes["user-dev"]}>
           <FaUser onClick={toggleUserInf} className={classes["user-icon"]} />
         </div>
-        <div className={classes["emojy-dev"]}>
+        <div id="emojy-dev" className={classes["emojy-dev"]}>
           <MdEmojiEmotions
             onClick={() => {
               setShowEmojiesAndGifs(!showEmojiesAndGifs);
             }}
             className={classes["emojy"]}
           />
-          {showEmojiesAndGifs && (
-            <div className={classes["emojies-gifs"]}>
-              <img
-                onClick={() => {
-                  setShowEmojiesAndGifs(false);
-                }}
-                className={classes["exit-emojy"]}
-                src="/svg/exit-emojy.svg"
-                alt="exit"
-                height="14"
-                width="14"
-              />
-              <div className={classes["emojies-gifs-top"]}>
-                <p
-                  style={{
-                    background: emojyOrGifs == "emojy" ? "#03A1CD" : "",
-                  }}
-                  onClick={() => {
-                    setEmojyOrGifs("emojy");
-                  }}
-                >
-                  Emojis
-                </p>
-                <p
-                  style={{ background: emojyOrGifs == "gifs" ? "#03A1CD" : "" }}
-                  onClick={() => {
-                    setEmojyOrGifs("gifs");
-                  }}
-                >
-                  GIFs
-                </p>
-              </div>
-              {emojyOrGifs === "emojy" && (
-                <Picker
-                  navPosition="none"
-                  className={classes["emojy-picker"]}
-                  data={data}
-                  theme="dark"
-                  previewPosition="none"
-                  perLine="8"
-                  onEmojiSelect={(e) => {
-                    console.log("clicked");
-                    setMessage(message + e.native);
-                  }}
-                />
-              )}
-              {emojyOrGifs === "gifs" && (
-                <GifPicker
-                  tenorApiKey={"AIzaSyC8EsPMPT17ZCZHFdKpQg9z0i8BgEr29eE"}
-                  theme="dark"
-                  onGifClick={(TenorImage) => {
-                    setMessage(TenorImage);
-                  }}
-                />
-              )}
-            </div>
-          )}
         </div>
 
         <input
@@ -335,7 +358,7 @@ know anything as you are spurs! `,
           placeholder="Type a message here"
         />
         <div className={classes["chat-bottom-send"]}>
-          <AiOutlineArrowUp style={{ fontSize: ".75rem", color: "white" }} />
+          <AiOutlineArrowUp style={{ fontSize: ".95rem", color: "white" }} />
         </div>
       </div>
     </div>

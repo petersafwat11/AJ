@@ -120,32 +120,32 @@ const Donate = () => {
               <Image
                 src="/svg/donate/paypal.svg"
                 alt="paypall"
-                width="30"
-                height="36"
+                width="32"
+                height="38"
               />
             </div>
             <div onClick={toggleBitcoin} className={classes["bitcoin"]}>
               <Image
                 src="/svg/donate/bitcoin.svg"
                 alt="bitcoin"
-                width="23"
-                height="30"
+                width="25"
+                height="32"
               />
             </div>
             <div className={classes["stripe"]}>
               <Image
                 src="/svg/donate/stripe.svg"
                 alt="stripe"
-                width="81"
-                height="33"
+                width="83"
+                height="35"
               />
             </div>
             <div onClick={toggleEthereum} className={classes["share"]}>
               <Image
                 src="/svg/donate/ethereum.svg"
                 alt="share"
-                width="19"
-                height="32"
+                width="21"
+                height="34"
               />
             </div>
           </div>

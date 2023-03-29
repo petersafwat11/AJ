@@ -35,12 +35,49 @@
 }
 
 :root {
+  --rgb-background: blue !important;
   --score-board: #203639;
   --gray-dark: #666769;
   --green: #41f331;
   --blue: #00c4fb;
   --btn-background: #ff4747;
   --background: rgba(13, 19, 24, 0.95);
+}
+body * {
+  --gpr-bg-color: inherit !important;
+}
+body .GifPickerReact.gpr-main {
+  border: none;
+}
+body .GifPickerReact .gpr-header {
+  border: none;
+}
+.GifPickerReact.gpr-main.gpr-main {
+  border-color: inherit !important;
+  width: 100% !important;
+}
+body .flex-column {
+  width: 100% !important;
+  overflow: hidden;
+}
+#emojies-gifs > em-emoji-picker {
+  width: 100% !important;
+}
+.gpr-category-list::-webkit-scrollbar {
+  width: 14px;
+}
+
+.gpr-category-list::-webkit-scrollbar-track {
+  background: inherit;
+}
+
+.gpr-category-list::-webkit-scrollbar-thumb {
+  background: #515151;
+  transition: all 0.2s ease-in-out;
+  border-radius: 20px;
+}
+.gpr-category-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(217, 217, 217, 0.39);
 }
 
 body {
