@@ -342,8 +342,7 @@
   .footer-container-image > img {
     width: 140px;
     height: 100px;
-    color: rgb(24, 34, 40)
-;
+    color: rgb(24, 34, 40);
   }
   .footer-social {
     display: flex;
@@ -387,7 +386,7 @@
     padding: 0.125rem 0.73rem;
     width: auto;
     height: 18px;
-    font-size: 0.47rem;
+    font-size: 0.27rem;
   }
   .contact-email {
     align-self: center;

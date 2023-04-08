@@ -61,6 +61,7 @@
 .file-upload-para > span {
   cursor: pointer;
   color: #01bcf1;
+  margin-left: 0.2rem;
 }
 .avatars-categories {
   display: flex;
@@ -93,7 +94,7 @@
   font-family: RobotoRegular;
   font-size: 0.65rem;
   line-height: 0.93rem;
-  letter-spacing: 2px;
+  letter-spacing: 0.5px;
   text-align: center;
   height: min-content;
   overflow-x: hidden;
@@ -364,7 +365,7 @@
     right: 1.125rem;
   }
   .selected-avatar {
-    gap: 0.15rem;
+    gap: 0.25rem;
   }
   .new-selected-image {
     width: 6.375rem;

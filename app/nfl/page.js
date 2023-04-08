@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 import Casino from "../../components/casino/Casino";
 import Chat from "../../components/chat/Chat";
@@ -17,6 +18,11 @@ const Page = () => {
   const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
   const [showReport, setShowReport] = useState(false);
+  const [selectedOption, setSelectedOption] = useState({
+    index: 0,
+    name: "english",
+  });
+
   const toggleChat = () => {
     setShowChat(!showChat);
   };
@@ -26,6 +32,10 @@ const Page = () => {
   };
   const toggleReport = () => {
     setShowReport(!showReport);
+  };
+
+  const selectOption = (option) => {
+    setSelectedOption(option);
   };
 
   return (
@@ -58,6 +68,12 @@ const Page = () => {
         </div>
       )}
       <div className={classes["container"]}>
+        <div className={classes["navigate"]}>
+          <Link href="/">Home</Link>
+          <span> &gt; </span>
+          <Link href="/channels">Watch</Link>
+        </div>
+
         <WatchDetails
           lieageImage={"/svg/watch/nfl-3.svg"}
           lieageImageDimetions={{
@@ -91,11 +107,28 @@ const Page = () => {
           <div className={classes["watch-video"]}>{/* <VideoJs /> */}</div>
           <div className={classes["watch-video-wrapper-bottom"]}>
             <div className={classes["dropdowns"]}>
-              <Dropdown name={"english"} options={["1", "2", "3"]} />
-
-              <Dropdown name={"arabic"} options={["1", "2", "3"]} />
-              <Dropdown name={"espanol"} options={["1", "2", "3"]} />
               <Dropdown
+                selectOption={selectOption}
+                selectedOption={selectedOption}
+                name={"english"}
+                options={["1", "2", "3"]}
+              />
+
+              <Dropdown
+                selectOption={selectOption}
+                selectedOption={selectedOption}
+                name={"arabic"}
+                options={["1", "2", "3"]}
+              />
+              <Dropdown
+                selectOption={selectOption}
+                selectedOption={selectedOption}
+                name={"espanol"}
+                options={["1", "2", "3"]}
+              />
+              <Dropdown
+                selectOption={selectOption}
+                selectedOption={selectedOption}
                 name={"more"}
                 options={["FRENCH", "TURKISH", "PORTUGUE.."]}
               />

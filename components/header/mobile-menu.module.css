@@ -56,6 +56,9 @@
   line-height: 0.92rem;
   color: white;
 }
+.menu-mobile-lang .arabic {
+  font-family: "Noto Sans Arabic";
+}
 .menu-mobile-lang > *:hover,
 .menu-mobile-lang-english > *:hover {
   color: #03a1cd;
@@ -71,10 +74,10 @@
   line-height: 17px;
   letter-spacing: 0.02em;
   color: rgba(255, 255, 255, 0.9);
-  margin: 0 1.25rem;
-  padding: 14.5px 9px;
+  margin: 0 auto;
+  padding: 14.5px 0 14.5px 5px;
   border-radius: 6px;
-  width: calc(100% - 2.7rem);
+  width: 91%;
 }
 .menu-mobile-page-link:hover {
   background: #131b20;
@@ -127,7 +130,7 @@
   align-items: start;
   flex-direction: column;
   gap: 0.25rem;
-  margin-top: 1.75rem;
+  margin-top: 1.9rem;
   width: calc(100% - 2.7rem);
 }
 
@@ -169,11 +172,11 @@
   }
 
   .menu-mobile-page-link {
-    margin: 0 1rem;
-    padding: 12.5px 9px;
+    padding: 12.5px 0px 12.5px 5px;
     border-radius: 6px;
-    width: calc(100% - 2.3rem);
+    width: 90%;
   }
+
   .menu-mobile-page-link:hover {
     background: #131b20;
   }
@@ -219,7 +222,6 @@
   }
   .different-leagues {
     gap: 3px;
-    margin-top: 1.6rem;
     width: calc(100% - 2.3rem);
   }
 
@@ -259,12 +261,10 @@
 
   .menu-mobile-page-link {
     margin: 0 11px;
-    padding: 11px 9px;
+    padding: 11px 0px 11px 5px;
     border-radius: 6px;
-    width: calc(100% - 2rem);
   }
   .devider {
-    width: 92%;
     height: 0.8px;
     margin: 4px auto;
   }
@@ -342,9 +342,8 @@
 
   .menu-mobile-page-link {
     margin: 0 10px;
-    padding: 11px 8px;
+    padding: 11px 0 11px 5px;
     border-radius: 6px;
-    width: calc(100% - 1.7rem);
   }
   .buttons {
     gap: 12px;

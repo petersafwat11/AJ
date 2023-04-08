@@ -144,7 +144,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 140%;
 }
 .stats-option p {
   font-family: RobotoBold;
@@ -163,9 +163,11 @@
   }
   .header {
     gap: 0.87rem;
+        margin-top: 0.4rem;
+
   }
   .header-item {
-    font-size: 0.93rem;
+    font-size: 0.9rem;
     line-height: 1rem;
     padding: 1rem 0.92rem;
     margin-bottom: 0;

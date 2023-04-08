@@ -6,7 +6,9 @@
       rgba(13, 19, 23, 0.953),
       rgba(13, 19, 23, 0.938)
     ),
-    url(../public/backimage.png);
+    url(../public/wallpaper/main.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   background-position: top;
   overscroll-behavior: none;
 }
@@ -43,6 +45,10 @@
   cursor: pointer;
   z-index: 10;
 }
+body .padding-lr {
+  margin-bottom: 0.5rem !important;
+}
+
 @media (max-width: 56.25rem) {
   .scroll-top {
     width: 23px;

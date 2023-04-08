@@ -81,11 +81,6 @@ export default function RootLayout({ children }) {
             height="30"
           />
         </a>
-        {/* {showPopup && (
-          <div className={styles["popup"]}>
-            <Popup hidePopup={hidePopup} />
-          </div>
-        )} */}
         {children}
         <NewsLetter />
         <Footer />

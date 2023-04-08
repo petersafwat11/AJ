@@ -2,7 +2,7 @@
   /* // height: 5vh; */
   padding: 0.225rem;
   width: 20%;
-  margin: 9.75px auto 0;
+  margin: 3.75px auto 0;
 }
 .marque-container-tag {
   margin: auto;
@@ -42,10 +42,10 @@
     padding-bottom: 1.125rem;
   }
   .marque-container span {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
   .marque-container-tag > p {
     font-size: 0.8rem;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
   }
 }

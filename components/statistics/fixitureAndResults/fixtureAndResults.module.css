@@ -39,10 +39,10 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.825rem;
   line-height: 1.3125rem;
-  font-family: RobotoSemiBold;
-  font-weight: 600;
+  font-size: 1.15rem;
+  font-family: RobotoBold;
+  font-weight: 700;
 }
 .first-team-name,
 .second-team-name {
@@ -112,7 +112,7 @@
   }
   .first-team-name,
   .second-team-name {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     line-height: 0.875rem;
   }
   .first-team-image,

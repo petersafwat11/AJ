@@ -58,9 +58,15 @@
   /* Handle on hover */
 
   .standings {
-    max-height: 50rem;
+    /* max-height: 50rem; */
     border-radius: 0.5rem;
-    padding: 1.07rem 1.25rem 0 1.125rem;
+    grid-row-gap: 0;
+
+    padding: 1.37rem 1.55rem 0 1.525rem;
+  }
+  .standings-header-second *:last-child,
+  .standings-item-second *:last-child {
+    display: none;
   }
   .standings-header,
   .standings-item {

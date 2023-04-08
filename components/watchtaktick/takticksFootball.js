@@ -12,7 +12,7 @@ const Takticks = () => {
             setCategory("lineups");
           }}
           style={{
-            borderBottom: category == "lineups" ? "1.5px solid #03a1cd" : "",
+            borderBottom: category == "lineups" ? "2px solid #03a1cd" : "",
             color: category == "lineups" ? "#03a1cd" : "",
           }}
           className={classes["header-item"]}
@@ -25,7 +25,7 @@ const Takticks = () => {
             setCategory("stats");
           }}
           style={{
-            borderBottom: category == "stats" ? "1px solid #03a1cd" : "",
+            borderBottom: category == "stats" ? "2px solid #03a1cd" : "",
             color: category == "stats" ? "#03a1cd" : "",
           }}
           className={classes["header-item"]}
@@ -39,7 +39,7 @@ const Takticks = () => {
             setCategory("subsitutes");
           }}
           style={{
-            borderBottom: category == "subsitutes" ? "1px solid #03a1cd" : "",
+            borderBottom: category == "subsitutes" ? "2px solid #03a1cd" : "",
             color: category == "subsitutes" ? "#03a1cd" : "",
           }}
           className={classes["header-item"]}
@@ -302,50 +302,50 @@ const Takticks = () => {
         </div>
       ) : (
         <div className={classes["subsitutes"]}>
-            {[1, 2, 3, 4, 5].map((item) => (
-              <div key={item} className={classes["subsitutes-wrapper"]}>
-                <div className={classes["subsitutes-item"]}>
-                  <div className={classes["subsitutes-images"]}>
-                    <Image
-                      alt="change"
-                      src="/svg/watch/up.svg"
-                      width="14"
-                      height="19"
-                    />
-                    <Image
-                      alt="change"
-                      src="/svg/watch/down.svg"
-                      width="10"
-                      height="14"
-                    />
-                  </div>
-                  <div className={classes["subsitutes-text"]}>
-                    <h4>M.Salah</h4>
-                    <p>Fred</p>
-                  </div>
+          {[1, 2, 3, 4, 5].map((item) => (
+            <div key={item} className={classes["subsitutes-wrapper"]}>
+              <div className={classes["subsitutes-item"]}>
+                <div className={classes["subsitutes-images"]}>
+                  <Image
+                    alt="change"
+                    src="/svg/watch/up.svg"
+                    width="14"
+                    height="19"
+                  />
+                  <Image
+                    alt="change"
+                    src="/svg/watch/down.svg"
+                    width="10"
+                    height="14"
+                  />
                 </div>
-                <div className={classes["subsitutes-item"]}>
-                  <div className={classes["subsitutes-text"]}>
-                    <h4>M.Salah</h4>
-                    <p>Fred</p>
-                  </div>
-                  <div className={classes["subsitutes-images"]}>
-                    <Image
-                      alt="change"
-                      src="/svg/watch/up.svg"
-                      width="14"
-                      height="19"
-                    />
-                    <Image
-                      alt="change"
-                      src="/svg/watch/down.svg"
-                      width="10"
-                      height="14"
-                    />
-                  </div>
+                <div className={classes["subsitutes-text"]}>
+                  <h4>M.Salah</h4>
+                  <p>Fred</p>
                 </div>
               </div>
-            ))}
+              <div className={classes["subsitutes-item"]}>
+                <div className={classes["subsitutes-text"]}>
+                  <h4>M.Salah</h4>
+                  <p>Fred</p>
+                </div>
+                <div className={classes["subsitutes-images"]}>
+                  <Image
+                    alt="change"
+                    src="/svg/watch/up.svg"
+                    width="18"
+                    height="23"
+                  />
+                  <Image
+                    alt="change"
+                    src="/svg/watch/down.svg"
+                    width="14"
+                    height="18"
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       )}
     </div>

@@ -263,9 +263,10 @@
   }
   .header {
     gap: 0.87rem;
+    margin-top: 0.4rem;
   }
   .header-item {
-    font-size: 0.93rem;
+    font-size: 0.8rem;
     line-height: 1rem;
     padding: 1rem 0.92rem;
     margin-bottom: 0;
@@ -320,8 +321,15 @@
     max-width: 20rem;
     margin-top: 0.56rem;
   }
-  .events-para {
-    font-size: 0.85rem;
-    line-height: 0.95rem;
+  .event {
+    gap: 1rem;
+  }
+  .event-time {
+    font-size: 0.8rem;
+    line-height: 0.9rem;
+  }
+  .event-para {
+    font-size: 0.7rem;
+    line-height: 0.8rem;
   }
 }

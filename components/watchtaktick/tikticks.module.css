@@ -263,12 +263,12 @@
   gap: 1.25rem;
 }
 .subsitutes-text > h4 {
-  font-size: 0.7rem;
+  font-size: 1.125rem;
   font-weight: 400;
 }
 .subsitutes-text > p {
   color: gray;
-  font-size: 0.6rem;
+  font-size: 1rem;
   font-weight: 400;
 }
 
@@ -279,13 +279,14 @@
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    gap: 1.18rem;
+    gap: 2rem;
   }
   .header {
     gap: 0.87rem;
+    margin-top: 0.4rem;
   }
   .header-item {
-    font-size: 0.93rem;
+    font-size: 0.8rem;
     line-height: 1rem;
     padding: 1rem 0.92rem;
     margin-bottom: 0;
@@ -301,8 +302,8 @@
 
   .stadium {
     background-image: url("/svg/watch/football-mobile.svg");
-    width: 13.6rem;
-    height: 17.67rem;
+    width: 14.7rem;
+    height: 24.67rem;
     position: relative;
   }
   .stadium img {
@@ -451,5 +452,11 @@
   .stats-option p {
     font-size: 0.93rem;
     line-height: 1rem;
+  }
+  .subsitutes-text > h4 {
+    font-size: 0.8rem;
+  }
+  .subsitutes-text > p {
+    font-size: 0.8rem;
   }
 }

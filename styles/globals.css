@@ -79,6 +79,9 @@ body .flex-column {
 .gpr-category-list::-webkit-scrollbar-thumb:hover {
   background: rgba(217, 217, 217, 0.39);
 }
+body #root input[type="search"] {
+  margin-bottom: 0.5rem !important;
+}
 
 body {
   overflow-x: hidden;
@@ -126,4 +129,18 @@ input {
 }
 button {
   border: none;
+}
+.boxing {
+  padding: 0;
+  margin: 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(13, 19, 23, 0.953),
+      rgba(13, 19, 23, 0.938)
+    ),
+    url(../public/wallpaper/boxing.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  overscroll-behavior: none;
 }

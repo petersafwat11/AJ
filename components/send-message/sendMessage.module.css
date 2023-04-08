@@ -81,6 +81,7 @@
   top: 45%;
   left: 0;
   cursor: pointer;
+  z-index: 100;
 }
 .send-message-button p {
   rotate: 90deg;

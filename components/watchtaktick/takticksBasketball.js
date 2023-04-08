@@ -12,7 +12,7 @@ const Takticks = () => {
             setCategory("lineups");
           }}
           style={{
-            borderBottom: category == "lineups" ? "1px solid #03a1cd" : "",
+            borderBottom: category == "lineups" ? "2px solid #03a1cd" : "",
             color: category == "lineups" ? "#03a1cd" : "",
           }}
           className={classes["header-item"]}
@@ -25,7 +25,7 @@ const Takticks = () => {
             setCategory("statistics");
           }}
           style={{
-            borderBottom: category == "statistics" ? "1px solid #03a1cd" : "",
+            borderBottom: category == "statistics" ? "2px solid #03a1cd" : "",
             color: category == "statistics" ? "#03a1cd" : "",
           }}
           className={classes["header-item"]}
@@ -36,7 +36,7 @@ const Takticks = () => {
       {category == "lineups" ? (
         <div className={classes["takticks"]}>
           <div className={classes["substitute-first-team"]}>
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,13].map((item, index) => (
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((item, index) => (
               <div key={index} className={classes["substitute-player"]}>
                 <Image
                   src="/svg/watch/vest-grey.svg"

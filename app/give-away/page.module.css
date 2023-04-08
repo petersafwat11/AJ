@@ -62,7 +62,7 @@
   padding-top: 2.125rem;
 }
 .give-away-heading-2 {
-  font-size: 1.625rem;
+  font-size: 1.875rem;
   line-height: 1.875rem;
   max-width: 72%;
   text-align: center;
@@ -82,6 +82,7 @@
   margin: auto;
   background-repeat: no-repeat;
   background-position: top;
+  margin-bottom: 1.5rem;
 }
 .give-away-center-image {
   margin-top: 2.6rem;
@@ -255,7 +256,7 @@
   .give-away-wrapper {
     height: 65rem;
     grid-template-rows: 7.5% 1fr 40%;
-    padding: 1.1rem 1rem 1.17rem 1.08rem;
+    padding: 1.1rem 1rem 1.95rem 1.08rem;
   }
   .give-away-details {
     padding: 0 0.3rem 1.1rem 0.6875rem;

@@ -77,8 +77,8 @@ const GiveAway = () => {
                 className={classes["give-away-center-image"]}
                 src="/svg/give-away/playStation.svg"
                 alt="playstation"
-                width={151}
-                height={176}
+                width={160}
+                height={190}
               />
               <p className={classes["give-away-para"]}>
                 Enter using the below methods for a chance to win a brand new

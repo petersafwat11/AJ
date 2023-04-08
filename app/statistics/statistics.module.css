@@ -9,7 +9,7 @@
   justify-content: center;
   gap: 2rem;
   margin-top: 1.4rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 0;
   margin: auto;
 }
 .statistics-type {
@@ -21,7 +21,8 @@
 }
 @media (max-width: 56.25rem) {
   .container {
-    margin-bottom: 3.5rem;
+    max-width: 100%;
+    margin: 0 3px 3.5rem;
   }
   .statistics-types {
     display: flex;
@@ -33,7 +34,7 @@
     padding-bottom: 0rem;
   }
   .statistics-type {
-    font-size: 0.875rem;
+    font-size: 0.675rem;
     line-height: 1rem;
   }
 }

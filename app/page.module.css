@@ -63,7 +63,7 @@
   }
   .search-mobile-input {
     padding: 1.06rem 0.75rem 1rem;
-    background-color: rgba(14, 19, 23, 0.6);
+    background-color: rgba(12, 18, 21);
     color: white;
     font-weight: 400;
     color: rgba(153, 153, 153, 0.3);
@@ -183,7 +183,7 @@
     margin: 1rem auto 0;
     max-width: 97%;
     height: 4.1875rem;
-    background-color: rgba(12, 18, 21, 0.55);
+    background-color: rgba(13, 19, 24);
   }
   .top-screen-live-icon {
     min-width: 5.45rem;
@@ -243,7 +243,7 @@
     margin: 1rem auto 0;
     max-width: 97%;
     height: 4.18rem;
-    background-color: rgba(12, 18, 21, 0.55);
+    background-color: rgba(13, 19, 24);
   }
   .top-screen-live-icon {
     min-width: 5.34rem;

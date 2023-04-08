@@ -12,7 +12,7 @@ const Takticks = () => {
             setCategory("lineups");
           }}
           style={{
-            borderBottom: category == "lineups" ? "1.5px solid #03a1cd" : "",
+            borderBottom: category == "lineups" ? "2px solid #03a1cd" : "",
             color: category == "lineups" ? "#03a1cd" : "",
           }}
           className={classes["header-item"]}
@@ -25,7 +25,7 @@ const Takticks = () => {
             setCategory("events");
           }}
           style={{
-            borderBottom: category == "events" ? "1.5px solid #03a1cd" : "",
+            borderBottom: category == "events" ? "2px solid #03a1cd" : "",
             color: category == "events" ? "#03a1cd" : "",
           }}
           className={classes["header-item"]}
@@ -38,7 +38,7 @@ const Takticks = () => {
             setCategory("statistics");
           }}
           style={{
-            borderBottom: category == "statistics" ? "1.5px solid #03a1cd" : "",
+            borderBottom: category == "statistics" ? "2px solid #03a1cd" : "",
             color: category == "statistics" ? "#03a1cd" : "",
           }}
           className={classes["header-item"]}

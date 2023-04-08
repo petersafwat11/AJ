@@ -27,6 +27,8 @@ const Chat = ({ toggleChat }) => {
   const [changeAvatar, setChangeAvatar] = useState(false);
   const [userName, setMentionUserName] = useState("");
   const [message, setMessage] = useState("");
+  const [chatRoomSelection, setChatRoomSelection] =
+    useState("English (Default)");
   useEffect(() => {
     let messageWithoutUSerName = message;
     if (message.charAt(0) === "@") {
@@ -34,6 +36,7 @@ const Chat = ({ toggleChat }) => {
     }
     setMessage(userName + messageWithoutUSerName);
   }, [userName]);
+
   const toggleChangeAvatar = () => {
     setChangeAvatar(!changeAvatar);
   };
@@ -257,10 +260,26 @@ know anything as you are spurs! `,
             height="10"
           />
           <div className={classes["chat-rooms"]}>
-            <p className={classes["chat-room"]}>English (Default)</p>
-            <p className={classes["chat-room"]}>Espain</p>
-            <p className={classes["arabic"]}>العربية</p>
-            <p className={classes["chat-room"]}>Français</p>
+            {["English (Default)", "Espain", "العربية", "Français"].map(
+              (i, index) => (
+                <p
+                  onClick={() => {
+                    setChatRoomSelection(i);
+                  }}
+                  key={index}
+                  className={classes[i == "العربية" ? "arabic" : "chat-room"]}
+                  style={{
+                    background: chatRoomSelection === i ? "#0085aa" : "",
+                  }}
+                >
+                  {i}
+                </p>
+              )
+            )}
+            {/* <p className={classes["chat-room"]}></p>
+            <p className={classes["chat-room"]}></p>
+            <p className={classes["arabic"]}></p>
+            <p className={classes["chat-room"]}></p> */}
           </div>
         </p>
 

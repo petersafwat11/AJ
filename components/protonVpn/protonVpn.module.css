@@ -84,7 +84,7 @@
     width: min(93vw, 28rem);
     margin: 0;
     height: auto;
-    border-radius: 0.56rem;
+    border-radius: 0.76rem;
     padding: 0.65rem 0 0.67rem;
   }
   .map-mobile {
@@ -103,6 +103,9 @@
     top: 10px;
     left: 13px;
     width: 27px;
+  }
+  .body {
+    gap: 0.2rem;
   }
   .para {
     font-size: 0.56rem;
