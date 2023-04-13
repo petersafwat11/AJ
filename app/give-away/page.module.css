@@ -1,6 +1,22 @@
+.wrapper {
+  padding: 0;
+  margin: 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(13, 19, 23, 0.953),
+      rgba(13, 19, 23, 0.938)
+    ),
+    url(../../public/wallpaper/main.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  overscroll-behavior: none;
+}
+
 .give-away {
   position: relative;
-  margin: 1.625rem 3px 3rem;
+  margin: 1.625rem 3px ;
+  padding-bottom: 3rem;
 }
 .container {
   max-width: 100%;
@@ -238,7 +254,8 @@
   .container {
     margin-top: 3.65rem;
     width: 100%;
-    margin-bottom: 9.2rem;
+    margin-bottom: ;
+    padding-bottom: 9.2rem;
   }
   .give-away-heading {
     display: flex;

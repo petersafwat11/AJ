@@ -1,6 +1,22 @@
+.wrapper {
+  padding: 0;
+  margin: 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(13, 19, 23, 0.953),
+      rgba(13, 19, 23, 0.938)
+    ),
+    url(../../public/wallpaper/main.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  overscroll-behavior: none;
+}
+
 .privacy-policy {
   max-width: min(85%, 45rem);
-  margin: 0 auto 7rem;
+  margin: 0 auto ;
+  padding-bottom: 7rem;
 }
 .privacy-policy * {
   font-family: RobotoRegular;
@@ -81,7 +97,8 @@
 @media (max-width: 56.25rem) {
   .privacy-policy {
     max-width: min(87%, 35rem);
-    margin: 0 auto 3rem;
+    margin: 0 auto ;
+    padding-bottom: 3rem;
   }
   .privacy-policy * {
     font-size: 0.75rem;
@@ -120,7 +137,8 @@
 @media (max-width: 550px) {
   .privacy-policy {
     max-width: 100%;
-    margin: 0 3px 3rem;
+    margin: 0 3px ;
+    padding-bottom: 3rem;
   }
   .privacy-policy * {
     font-size: 0.55rem;

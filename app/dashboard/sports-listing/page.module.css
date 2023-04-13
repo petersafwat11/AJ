@@ -1,0 +1,19 @@
+.sports-listing {
+  background: #f2f3f5;
+  padding: 6.9rem 1.25rem 12rem 12.5rem;
+}
+.title {
+  color: #000000;
+  font-size: 2.25rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  font-family: "Public Sans";
+  margin-bottom: 5.125rem;
+}
+.sports-listings-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 13.75rem;
+  margin-bottom: 3rem;
+}

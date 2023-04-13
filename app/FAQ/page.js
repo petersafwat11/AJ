@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Popup from "../../components/popupWrapper/Popup";
 import SendMessage from "../../components/send-message/SendMessage";
 import classes from "./FAQ.module.css";
+import TopLayout from "../../components/topLayout/TopLayout";
 const Page = () => {
   const FAQ = [
     {
@@ -66,61 +67,64 @@ const Page = () => {
     setFeedBackMessage(!feedBackMessage);
   };
   return (
-    <section className={classes["FAQ"]}>
-      {feedBackMessage && (
-        <Popup>
-          <SendMessage
-            toggleSendMessageComponent={toggleSendMessageComponent}
-          />
-        </Popup>
-      )}
-      <div className={classes["top-heading"]}>
-        <h2 className={classes["top-heading-title"]}>FAQ</h2>
-        <span></span>
-      </div>
-      <div className={classes["container"]}>
-        {/* <span className={classes['back-icon']}>Back</span> */}
-        <div className={classes["container-heading"]}>
-          <h3 className={classes["container-heading-title"]}>
-            Frequently asked questions
-          </h3>
-          <p className={classes["container-heading-para"]}>
-            The ultimate sports streaming platform’s F.A.Q
-          </p>
+    <div className={classes["wrapper"]}>
+      <TopLayout />
+      <section className={classes["FAQ"]}>
+        {feedBackMessage && (
+          <Popup>
+            <SendMessage
+              toggleSendMessageComponent={toggleSendMessageComponent}
+            />
+          </Popup>
+        )}
+        <div className={classes["top-heading"]}>
+          <h2 className={classes["top-heading-title"]}>FAQ</h2>
+          <span></span>
         </div>
-        <div className={classes["questions-wrapper"]}>
-          {FAQ.map((elem, index) => (
-            <div key={index} className={classes["question-wrapper"]}>
-              <h4 className={classes["question-wrapper-question"]}>
-                {elem.question}
-              </h4>
-              <p className={classes["question-wrapper-answer"]}>
-                {elem.answer}
-              </p>
-            </div>
-          ))}
+        <div className={classes["container"]}>
+          {/* <span className={classes['back-icon']}>Back</span> */}
+          <div className={classes["container-heading"]}>
+            <h3 className={classes["container-heading-title"]}>
+              Frequently asked questions
+            </h3>
+            <p className={classes["container-heading-para"]}>
+              The ultimate sports streaming platform’s F.A.Q
+            </p>
+          </div>
+          <div className={classes["questions-wrapper"]}>
+            {FAQ.map((elem, index) => (
+              <div key={index} className={classes["question-wrapper"]}>
+                <h4 className={classes["question-wrapper-question"]}>
+                  {elem.question}
+                </h4>
+                <p className={classes["question-wrapper-answer"]}>
+                  {elem.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className={classes["uesr-feedback"]}>
+            <h4 className={classes["uesr-feedback-heading"]}>
+              Have any other questions?
+            </h4>
+            <p className={classes["uesr-feedback-para"]}>
+              You may ask us any other question you may have by navigating to
+              the contact page. Using our feedback form please enlist all the
+              channels, sports, languages or leagues that you require, we will
+              fulfil your needs within one week.
+            </p>
+            <button
+              onClick={() => {
+                setFeedBackMessage(!feedBackMessage);
+              }}
+              className={classes["uesr-feedback-button"]}
+            >
+              Feedback
+            </button>
+          </div>
         </div>
-        <div className={classes["uesr-feedback"]}>
-          <h4 className={classes["uesr-feedback-heading"]}>
-            Have any other questions?
-          </h4>
-          <p className={classes["uesr-feedback-para"]}>
-            You may ask us any other question you may have by navigating to the
-            contact page. Using our feedback form please enlist all the
-            channels, sports, languages or leagues that you require, we will
-            fulfil your needs within one week.
-          </p>
-          <button
-            onClick={() => {
-              setFeedBackMessage(!feedBackMessage);
-            }}
-            className={classes["uesr-feedback-button"]}
-          >
-            Feedback
-          </button>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 

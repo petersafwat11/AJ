@@ -1,9 +1,25 @@
+.wrapper {
+  padding: 0;
+  margin: 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(13, 19, 23, 0.953),
+      rgba(13, 19, 23, 0.938)
+    ),
+    url(../../public/wallpaper/main.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  overscroll-behavior: none;
+}
+
 .error {
   background: #0d1317;
   border-radius: 0.85rem;
   overflow: hidden;
   max-width: 44.5rem;
-  margin: 5.85rem auto 7rem;
+  margin: 5.85rem auto ;
+  padding-bottom: 7rem;
 }
 .first-section {
   padding: 3.46rem 4rem 2.8rem;
@@ -67,7 +83,8 @@
   .error {
     border-radius: 0.63rem;
     max-width: min(35rem, 95%);
-    margin: 2.9rem auto 3.5rem;
+    margin: 2.9rem auto;
+    padding-bottom:  3.5rem;
   }
   .first-section {
     padding: 2.8rem 3rem 2.1rem;
@@ -99,7 +116,8 @@
   .error {
     border-radius: 0.63rem;
     max-width: min(35rem, 95%);
-    margin: 2.5rem auto 3rem;
+    margin: 2.5rem auto ;
+    padding-bottom: 3rem;
   }
   .first-section {
     padding: 1.86rem 2rem 1.4rem;

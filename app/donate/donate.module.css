@@ -1,7 +1,23 @@
+.wrapper {
+  padding: 0;
+  margin: 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(13, 19, 23, 0.953),
+      rgba(13, 19, 23, 0.938)
+    ),
+    url(../../public/wallpaper/main.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  overscroll-behavior: none;
+}
+
 .donate {
   /* margin-top: 2rem; */
   max-width: 100%;
-  margin: 0 3px 3rem;
+  margin: 0 3px ;
+  padding-bottom: 3rem;
 }
 .container {
   max-width: 100%;
@@ -170,7 +186,8 @@
 @media (min-width: 32.5rem) {
   .donate {
     max-width: min(82%, 29rem);
-    margin: 0 auto 3rem;
+    margin: 0 auto ;
+    padding-bottom: 3rem;
   }
 }
 /* @media (min-width: 40rem) {
@@ -186,7 +203,8 @@
 @media (min-width: 56.25rem) {
   .donate {
     max-width: min(82%, 36.5rem);
-    margin: 0 auto 3rem;
+    margin: 0 auto ;
+    padding-bottom: 3rem;
   }
   .donate-heading {
     margin-top: 3.65rem;

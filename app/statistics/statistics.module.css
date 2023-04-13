@@ -1,7 +1,22 @@
+.wrapper {
+  padding: 0;
+  margin: 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(13, 19, 23, 0.953),
+      rgba(13, 19, 23, 0.938)
+    ),
+    url(../../public/wallpaper/main.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  overscroll-behavior: none;
+}
+
 .container {
   max-width: min(50rem, 95%);
   margin: auto;
-  margin-bottom: 7rem;
+  padding-bottom: 7rem;
 }
 .statistics-types {
   display: flex;
@@ -22,7 +37,8 @@
 @media (max-width: 56.25rem) {
   .container {
     max-width: 100%;
-    margin: 0 3px 3.5rem;
+    margin: 0 3px ;
+    padding-bottom: 3.5rem;
   }
   .statistics-types {
     display: flex;

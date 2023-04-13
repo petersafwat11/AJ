@@ -1,4 +1,4 @@
-.wrapper {
+/* .wrapper {
   padding: 0;
   margin: 0;
   background-image: linear-gradient(
@@ -11,7 +11,7 @@
   background-size: cover;
   background-position: top;
   overscroll-behavior: none;
-}
+} */
 .popup {
   position: fixed;
   top: 0;

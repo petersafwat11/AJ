@@ -1,0 +1,26 @@
+.create-listing {
+  background: #f2f3f5;
+  padding: 6.9rem 1.25rem 12rem 12.5rem;
+}
+.title {
+  color: #000000;
+  font-size: 2.25rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  font-family: "Public Sans";
+  margin-bottom: 0.82remrem;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-right: 13.75rem;
+}
+.label {
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  letter-spacing: 1%;
+  color: #323c47;
+  margin-bottom: 1.125rem;
+}

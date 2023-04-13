@@ -1,42 +1,81 @@
-"use client";
 import React from "react";
-import videojs from "video.js";
+import JWPlayer from "@jwplayer/jwplayer-react";
 
-// This imports the functional component from the previous sample.
-import VideoJS from "./Video";
+class PlayerContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loaded: false,
+    };
+    this.players = {};
+    this.onBeforePlay = this.onBeforePlay.bind(this);
+    this.didMountCallback = this.didMountCallback.bind(this);
+    this.loadPlayerLibrary();
+  }
 
-export const VideoJs = () => {
-  const playerRef = React.useRef(null);
+  // Load a player library
+  loadPlayerLibrary() {
+    const src = "https://cdn.jwplayer.com/libraries/lqsWlr4Z.js";
+    const script = document.createElement("script");
+    script.src = src;
+    script.type = "text/javascript";
+    script.onload = () => this.setState({ loaded: true }); // On load, we're ready to set up our player instances
+    document.body.append(script);
+  }
 
-  const videoJsOptions = {
-    autoplay: false,
-    controls: true,
-    responsive: true,
-    fluid: true,
-    sources: [
-      {
-        src: "/match.mp4",
-        type: "video/mp4",
-      },
-    ],
-  };
+  // Registers players to container as they mount
+  didMountCallback({ player, id }) {
+    this.players[id] = player;
+    const eventLog = document.getElementById("log");
 
-  const handlePlayerReady = (player) => {
-    playerRef.current = player;
-
-    // You can handle player events here, for example:
-    player.on("waiting", () => {
-      videojs.log("player is waiting");
+    // Log all events by player id.
+    player.on("all", (event) => {
+      const li = document.createElement("li");
+      li.innerText = `${id}: ${event}`;
+      eventLog.prepend(li);
     });
+  }
 
-    player.on("dispose", () => {
-      videojs.log("player will dispose");
+  // Prevent simultaneous playbacks
+  onBeforePlay(event) {
+    Object.keys(this.players).forEach((playerId) => {
+      const player = this.players[playerId];
+      const isPlaying = player.getState() === "playing";
+      if (isPlaying) {
+        player.pause();
+      }
     });
-  };
+  }
 
-  return (
-    <>
-      <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
-    </>
-  );
-};
+  render() {
+    // Re-usable defaults to use between multiple players.
+    const configDefaults = { width: 320, height: 180 };
+
+    return this.state.loaded ? (
+      <div className="players-container">
+        <JWPlayer
+          config={configDefaults}
+          onBeforePlay={this.onBeforePlay}
+          didMountCallback={this.didMountCallback}
+          playlist="/match.mp4"
+        />
+        {/* <JWPlayer
+          config={configDefaults}
+          onBeforePlay={this.onBeforePlay}
+          didMountCallback={this.didMountCallback}
+          playlist="https://cdn.jwplayer.com/v2/media/QcK3l9Uv"
+        />
+        <JWPlayer
+          config={configDefaults}
+          onBeforePlay={this.onBeforePlay}
+          didMountCallback={this.didMountCallback}
+          playlist="https://cdn.jwplayer.com/v2/playlists/B8FTSH9D"
+          playlistIndex="1"
+        /> */}
+      </div>
+    ) : (
+      "loading..."
+    );
+  }
+}
+export default PlayerContainer;

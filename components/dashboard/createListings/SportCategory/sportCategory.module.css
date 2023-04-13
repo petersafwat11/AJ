@@ -1,0 +1,41 @@
+.sport-category {
+  width: 15.75rem;
+  background: white;
+  border-radius: 15px;
+  padding: 1.375rem 5.125rem 1.625rem 1.93rem;
+}
+.title {
+  font-family: "Public Sans";
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  color: #000000;
+}
+.categories {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 1.625rem;
+  margin-top: 1.3rem;
+}
+.category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Public Sans";
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: #000000;
+  width: 100%;
+  cursor: pointer;
+}
+.category p {
+  font-family: "Public Sans";
+}
+.check {
+  width: 10px;
+  height: 10px;
+  background: #c0c0c0;
+}

@@ -1,6 +1,22 @@
+.wrapper {
+  padding: 0;
+  margin: 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(13, 19, 23, 0.953),
+      rgba(13, 19, 23, 0.938)
+    ),
+    url(../../public/wallpaper/main.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  overscroll-behavior: none;
+}
+
 .news {
   max-width: min(85%, 45rem);
-  margin: 0 auto 2.5rem;
+  margin: 0 auto ;
+  padding-bottom: 2.5rem;
 }
 .top-heading {
   margin-top: 3.65rem;
@@ -105,6 +121,7 @@
 @media (max-width: 56.25rem) {
   .news {
     max-width: min(87%, 35rem);
+    padding-bottom: 3rem;
   }
   .top-heading {
     margin-top: 2rem;
@@ -163,7 +180,8 @@
 @media (max-width: 40.6rem) {
   .news {
     max-width: min(97%, 28rem);
-    margin: 0 auto 3.375rem;
+    margin: 0 auto ;
+    padding-bottom: 3.375rem;
   }
   .top-heading {
     margin-top: 1.5rem;
