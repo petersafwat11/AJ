@@ -82,16 +82,11 @@
 
 import "jwplayer-video-element";
 import Image from "next/image";
-import Script from "next/script";
 import React from "react";
 import classes from "./video.module.css";
 const VideoJs = () => {
   return (
     <div className={classes["video-wrapper"]}>
-      <Script
-        type="module"
-        src="https://cdn.jsdelivr.net/npm/jwplayer-video-element@1.0/+esm"
-      ></Script>
 
       <jwplayer-video
         controls
@@ -100,7 +95,13 @@ const VideoJs = () => {
         className={classes["video-player"]}
         src="https://cdn.jwplayer.com/players/C8YE48zj-IxzuqJ4M.html"
       ></jwplayer-video>
-      <Image className={classes['logo']} src="/LOGO.svg" alt="logo" width="94" height="73" />
+      <Image
+        className={classes["logo"]}
+        src="/LOGO.svg"
+        alt="logo"
+        width="94"
+        height="73"
+      />
     </div>
   );
 };
