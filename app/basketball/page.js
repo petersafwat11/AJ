@@ -14,9 +14,9 @@ import WhoWillWin from "../../components/whoWillWin/WhoWillWin";
 import Casino from "../../components/casino/Casino";
 import Popup from "../../components/popupWrapper/Popup";
 import ProtonVpn from "../../components/protonVpn/ProtonVpn";
-import classes from "./basketball.module.css";
 import TopLayout from "../../components/topLayout/TopLayout";
 import VideoJs from "../../components/video/VideoJs";
+import classes from "./basketball.module.css";
 const Page = () => {
   const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
@@ -78,7 +78,7 @@ const Page = () => {
             <Link href="/channels">Watch</Link>
           </div>
 
-          {/* <WatchDetails
+          <WatchDetails
             lieageImage={"/svg/watch/basketball-nba.svg"}
             firstTeamImage={"/svg/watch/basketball-1.svg"}
             lieageImageDimetions={{
@@ -99,7 +99,7 @@ const Page = () => {
             date={"Aug 18 15:00"}
             place={"Crypto.com Arena"}
             half={"2nd Half: 47’"}
-          /> */}
+          />
           <div className={classes["watch-video-wrapper"]}>
             <div className={classes["social-icons"]}>
               <SocialIcons
@@ -108,7 +108,9 @@ const Page = () => {
               />
             </div>
 
-            <div className={classes["watch-video"]}><VideoJs /></div>
+            <div className={classes["watch-video"]}>
+              <VideoJs />
+            </div>
             <div className={classes["watch-video-wrapper-bottom"]}>
               <div className={classes["dropdowns"]}>
                 <Dropdown

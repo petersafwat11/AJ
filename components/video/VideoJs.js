@@ -1,3 +1,4 @@
+"use client";
 import "jwplayer-video-element";
 import Image from "next/image";
 import React from "react";
