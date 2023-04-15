@@ -1,7 +1,7 @@
 import React from "react";
 import ActionsButtons from "../../../../components/dashboard/actionsButtons/ActionsButtons";
-import ChannelName from "../../../../components/dashboard/channelsListings/channelName/ChannelNAme";
-import Preview from "../../../../components/dashboard/streamLink/preview/preview";
+import ChannelName from "../../../../components/dashboard/channelsListings/channelName/ChannelName";
+import Preview from "../../../../components/dashboard/streamLink/preview/Preview";
 import StreamLink from "../../../../components/dashboard/streamLink/streamLink/StreamLink";
 import classes from "./page.module.css";
 const page = () => {
