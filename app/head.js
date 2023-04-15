@@ -13,10 +13,10 @@ export default function Head() {
         name="viewport"
         content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,viewport-fit=cover"
       />
-      <Script
+      {/* <Script
         type="module"
         src="https://cdn.jsdelivr.net/npm/jwplayer-video-element@1.0/+esm"
-      ></Script>
+      ></Script> */}
 
       <link rel="icon" href="/favicon.ico" />
     </>
