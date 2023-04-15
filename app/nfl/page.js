@@ -78,7 +78,7 @@ const Page = () => {
             <Link href="/channels">Watch</Link>
           </div>
 
-          <WatchDetails
+          {/* <WatchDetails
             lieageImage={"/svg/watch/nfl-3.svg"}
             lieageImageDimetions={{
               width: { desktop: "53", tablet: "37", mobile: "32" },
@@ -99,7 +99,7 @@ const Page = () => {
             date={"Aug 18 15:00"}
             place={"Alliegiant Stadium"}
             // half={"2nd Half: 47’"}
-          />
+          /> */}
           <div className={classes["watch-video-wrapper"]}>
             <div className={classes["social-icons"]}>
               <SocialIcons
