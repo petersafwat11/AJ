@@ -6,7 +6,7 @@
       rgba(13, 19, 23, 0.953),
       rgba(13, 19, 23, 0.938)
     ),
-    url(../../public/wallpaper/main.jpg);
+    url(../../public/wallpaper/nfl.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
@@ -172,6 +172,5 @@
   .watch {
     max-width: 100%;
     margin: 0 3px;
-    
   }
 }

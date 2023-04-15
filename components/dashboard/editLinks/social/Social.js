@@ -16,14 +16,14 @@ const Social = () => {
             Team 1
           </label>
           <input
-            value={teamsNames.firstTeam}
+            // value={teamsNames.firstTeam}
             id="first-team"
-            onChange={(e) => {
-              setTeamsNames({
-                firstTeam: e.target.value,
-                secondTeam: teamsNames.secondTeam,
-              });
-            }}
+            // onChange={(e) => {
+            //   setTeamsNames({
+            //     firstTeam: e.target.value,
+            //     secondTeam: teamsNames.secondTeam,
+            //   });
+            // }}
             placeholder="team 1"
             className={classes["input-1"]}
           />
