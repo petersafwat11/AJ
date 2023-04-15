@@ -8,7 +8,7 @@
   line-height: 1.5rem;
   font-weight: 700;
   font-family: "Public Sans";
-  margin-bottom: 0.82remrem;
+  margin-bottom: 0.82rem;
 }
 .actions {
   display: flex;
@@ -21,6 +21,17 @@
   font-size: 1.25rem;
   line-height: 1.5rem;
   letter-spacing: 1%;
-  color: #323c47;
+  color: rgba(50, 60, 71, 0.6);
   margin-bottom: 1.125rem;
+}
+.first,
+.second {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: max-content;
+  gap: 21px;
+}
+.second {
+  margin-top: 4rem;
 }

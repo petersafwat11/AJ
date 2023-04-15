@@ -1,13 +1,14 @@
 .table {
   border-radius: 14px;
-  box-shadow: 0px, 4px rgba(0, 0, 0, 0.25);
   background: white;
   padding-top: 1.25rem;
+  box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.25);
 }
 .search-wrapper {
   position: relative;
-  width: 80.75rem;
-  margin: 1.25rem 0.66rem;
+  display: flex;
+  flex-grow: 1;
+  margin: 1.25rem 2.9rem 1.25rem 0.66rem;
 }
 .search {
   width: 100%;
@@ -32,10 +33,10 @@
 .table-header,
 .table-row {
   display: grid;
-  grid-template-columns: 3rem 5rem 1fr 1fr 10rem 1fr 1fr 8rem 1fr;
+  grid-template-columns: 12rem 1fr 11rem 11rem;
   justify-items: center;
   align-items: center;
-  padding: 1.5rem 2rem 1.5rem;
+  padding: 1.5rem 2rem 1.5rem 3.5rem;
 }
 .table-header {
   background-color: #2a3042;
@@ -48,13 +49,24 @@
   font-size: 1.06rem;
   line-height: 1.6rem;
 }
+.table-cell:nth-child(2) {
+  margin-right: 2rem;
+}
+.table-cell:first-of-type {
+  font-size: 0.93rem;
+  line-height: 1.125rem;
+  justify-self: start;
+}
+.table-cell:nth-child(2) {
+  justify-self: start;
+}
 .table-header .table-cell {
   font-weight: 600;
 }
 .table-row {
   color: #575757;
-  height: 4.25rem;
-  padding: 0 2rem;
+  height: auto;
+  padding: 1.25rem 2rem 1.25rem 3.5rem;
   border-bottom: 1px solid #e1e0e2;
 }
 .date-and-time {
@@ -70,13 +82,6 @@
   cursor: pointer;
 }
 
-.square {
-  width: 22px;
-  height: 20px;
-  border-radius: 4px;
-  border: 1px solid #0832de;
-  justify-self: start;
-}
 .edit-button {
   display: flex;
   align-items: center;

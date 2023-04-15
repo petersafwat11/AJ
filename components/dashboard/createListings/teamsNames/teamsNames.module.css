@@ -1,0 +1,56 @@
+.container {
+  background: #ffffff;
+  border-radius: 15px;
+  width: 24rem;
+  padding: 1.375rem 1.5rem 2.9rem;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  color: #000000;
+  font-family: "Public Sans";
+}
+.details {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 21px;
+  width: 100%;
+}
+.input-group {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 1.125rem;
+  width: 100%;
+}
+.label-1,
+.label-2 {
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-family: "Public Sans";
+  color: #007bff;
+}
+.label-1 {
+  color: #ff0000;
+}
+.input-1,
+.input-2 {
+  background-color: rgba(123, 151, 206, 0.06);
+  height: 3rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 0.875rem 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.3rem;
+  font-family: "Public Sans";
+  border: 1px solid #007bff;
+}
+.input-1 {
+  border: 1px solid #ff0000;
+}

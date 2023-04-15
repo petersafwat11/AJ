@@ -10,13 +10,13 @@
   justify-content: space-between;
   font-size: 1.2rem;
   line-height: 1.4rem;
-  padding: 0.625rem 0 0.815rem;
+  padding: 0.825rem 0 0.815rem;
   margin: auto;
 }
 .menu-desktop-list {
   display: flex;
   align-items: center;
-  gap: 1.125rem;
+  gap: 1.42rem;
   margin-left: 9rem;
   flex-grow: 1;
   justify-content: center;

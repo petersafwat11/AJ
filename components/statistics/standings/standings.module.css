@@ -82,6 +82,7 @@
   .standings-item-second,
   .standings-header-second {
     align-items: end;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   }
   .standings-item-first,
   .standings-header-first {

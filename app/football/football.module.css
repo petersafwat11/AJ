@@ -28,7 +28,7 @@
 }
 .watch-football {
   max-width: 95%;
-  margin: 0 auto ;
+  margin: 0 auto;
   padding-bottom: 7.2rem;
 }
 .navigate {
@@ -57,10 +57,10 @@
 }
 .watch-video {
   margin-top: 0.4rem;
-  width: 100%;
+  width: 98%;
   height: 32.3rem;
   border-radius: 1.25rem;
-  background: #0c1115;
+  background: #0d1316;
   overflow: hidden;
 }
 .watch-video-wrapper-bottom {
@@ -94,11 +94,11 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 2.15rem;
+  margin-top: 2.775rem;
   width: 100%;
 }
 .takticks {
-  margin-top: 1.125rem;
+  margin-top: 2.625rem;
   margin-bottom: 3rem;
 }
 
@@ -108,7 +108,7 @@
 
 @media (max-width: 56.25rem) {
   .watch-football {
-    margin: 0 auto ;
+    margin: 0 auto;
     padding-bottom: 3rem;
     max-width: min(38rem, 98%);
   }
@@ -173,7 +173,7 @@
   }
   .watch-football {
     max-width: 100%;
-    margin: 0 3px ;
+    margin: 0 3px;
     padding-bottom: 3rem;
   }
 }

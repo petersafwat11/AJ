@@ -186,6 +186,7 @@ know anything as you are spurs! `,
           className={classes["emojies-gifs"]}
         >
           <div className={classes["space"]}></div>
+          <div className={classes["space-2"]}></div>
 
           <img
             onClick={() => {

@@ -106,6 +106,7 @@
   }
   .result,
   .vs {
+    justify-self: center;
     gap: 0.3rem;
     font-size: 0.75rem;
     line-height: 0.875rem;
@@ -114,6 +115,10 @@
   .second-team-name {
     font-size: 0.8rem;
     line-height: 0.875rem;
+    white-space: nowrap;
+  }
+  .second-team {
+    justify-self: end;
   }
   .first-team-image,
   .second-team-image {
@@ -152,6 +157,8 @@
     line-height: 0.68rem;
   }
   .match {
+    padding: 0.25rem 0.4rem 0.3rem 22%;
+
     grid-template-columns: 28% 15% 28% 1fr;
   }
   .first-team,
@@ -161,11 +168,6 @@
   .result,
   .vs {
     gap: 0.3rem;
-    font-size: 0.625rem;
-    line-height: 0.75rem;
-  }
-  .first-team-name,
-  .second-team-name {
     font-size: 0.625rem;
     line-height: 0.75rem;
   }

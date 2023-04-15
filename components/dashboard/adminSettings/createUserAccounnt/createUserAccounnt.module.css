@@ -1,0 +1,91 @@
+.container {
+  background: #ffffff;
+  border-radius: 15px;
+  width: 40.25rem;
+  padding: 1.125rem 3.43rem 1.25rem 1.75rem;
+  display: flex;
+  align-items: start;
+  gap: 3.31rem;
+}
+.first {
+  width: 26.25rem;
+}
+.title {
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  color: #000000;
+  font-family: "Public Sans";
+}
+.details {
+  margin-top: 1.125rem;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+.details-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+.input-group {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 3px;
+  width: 100%;
+}
+.label {
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-family: "Public Sans";
+  color: #909090;
+}
+.input {
+  background-color: rgba(123, 151, 206, 0.06);
+  height: 3rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 0.75rem 0.875rem;
+  font-weight: 500;
+  font-size: 0.93rem;
+  line-height: 1.1rem;
+  font-family: "Public Sans";
+  border: 1px solid #d0d0d0;
+}
+.create-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #4340da;
+  height: 2.5rem;
+  width: 8.31rem;
+  border-radius: 0.5rem;
+  font-family: RobotoRegular;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 17.58px;
+  letter-spacing: 0.15px;
+  margin: 1.25rem auto 0;
+  color: white;
+  cursor: pointer;
+}
+.checkbox-input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.checkbox-input-group .label {
+  font-family: "Inter";
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: #242424;
+}
+.checkbox-input-group input {
+  width: 1.25rem;
+  height: 1.25rem;
+}

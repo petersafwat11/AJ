@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans+Arabic:wght@500&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300&family=Public+Sans:wght@500;700&family=Roboto+Condensed:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans+Arabic:wght@500&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,300&family=Public+Sans:wght@500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap");
 @font-face {
   font-family: RobotoRegular;
   src: url("/fonts/NEW-MEDIUM.woff2") format("woff2"),
@@ -82,23 +82,24 @@ body .flex-column {
 body #root input[type="search"] {
   margin-bottom: 0.5rem !important;
 }
-
+#player-2.jwplayer.jw-reset.jw-state-idle.jw-stretch-uniform.jw-breakpoint-0.jw-flag-small-player.jw-flag-user-inactive {
+  width: 50rem !important;
+  height: 30 !important;
+}
+body [controls="true"] {
+  width: 100% !important;
+  height: 100% !important;
+}
 body {
   overflow-x: hidden;
-  /* font-family: 'RobotoRegular',"Roboto Condensed", "Lato", "Libre Franklin", sans-serif; */
-  background: linear-gradient(
-    to right bottom,
-    rgba(13, 19, 23, 0.953),
-    rgba(13, 19, 23, 0.938)
-  );
   color: white;
-  /* url(/backimage.png); */
-  /* background-position: top;
-  overscroll-behavior: none;  */
+  /* padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left); */
 }
-/* html {
-  font-family: "Roboto Condensed", "Lato", "Libre Franklin", sans-serif;
-} */
+html {
+  /* padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left); */
+}
 *,
 *::after,
 *::before {

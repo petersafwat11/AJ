@@ -1,0 +1,111 @@
+.container {
+  background: #ffffff;
+  border-radius: 15px;
+  width: 16.7rem;
+  padding: 1.5rem 1.625rem 2.125rem;
+}
+.top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.title {
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  color: #000000;
+  font-family: "Public Sans";
+}
+.toggler-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.toggle {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.toggle-switch {
+  display: inline-block;
+  background: #ccc;
+  border-radius: 16px;
+  width: 58px;
+  height: 32px;
+  position: relative;
+  vertical-align: middle;
+  transition: all 0.25s;
+}
+.toggle-switch:before,
+.toggle-switch:after {
+  content: "";
+}
+.toggle-switch:before {
+  display: block;
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: left 0.25s;
+}
+.toggle:hover .toggle-switch:before {
+  background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+.toggle-checkbox:checked + .toggle-switch {
+  background: #4c34c2;
+}
+.toggle-checkbox:checked + .toggle-switch:before {
+  left: 30px;
+}
+
+.toggle-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+.toggle-label {
+  color: #484848;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  font-family: "Inter";
+  margin-left: 8px;
+}
+.details {
+  margin-top: 2.25rem;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 21px;
+  width: 100%;
+}
+.input-group {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 1.125rem;
+  width: 100%;
+}
+.label {
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-family: "Public Sans";
+  color: #909090;
+}
+.input {
+  background-color: rgba(123, 151, 206, 0.06);
+  height: 3rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 0.875rem 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.3rem;
+  font-family: "Public Sans";
+  border: 1px solid #d0d0d0;
+}

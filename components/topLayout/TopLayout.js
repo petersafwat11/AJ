@@ -8,7 +8,7 @@ import Image from "next/image";
 import Marque from "../marque/Marque";
 import Popup from "../popupWrapper/Popup";
 import SendMessage, { SendMessageButton } from "../send-message/SendMessage";
-import styles from "./Toplayout.module.css";
+import styles from "./TopLayout.module.css";
 
 const TopLayout = () => {
   const [showPopup, setShowPopup] = useState(true);

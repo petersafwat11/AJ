@@ -1,0 +1,30 @@
+.container {
+  background: #ffffff;
+  border-radius: 15px;
+  width: 53.1875rem;
+  padding: 1.375rem 1.5rem 1.56rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.75rem;
+}
+.title {
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  color: #000000;
+  font-family: "Public Sans";
+}
+.text-area {
+  background-color: rgba(123, 151, 206, 0.06);
+  height: 10rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 0.875rem 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.3rem;
+  font-family: "Public Sans";
+  border: 1px solid rgba(0, 123, 255, 0.94);
+  resize: none;
+}

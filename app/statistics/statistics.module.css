@@ -37,14 +37,14 @@
 @media (max-width: 56.25rem) {
   .container {
     max-width: 100%;
-    margin: 0 3px ;
+    margin: 0 3px;
     padding-bottom: 3.5rem;
   }
   .statistics-types {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1.625rem;
+    gap: 0.625rem;
     max-width: auto;
     margin-top: 0.5rem;
     padding-bottom: 0rem;

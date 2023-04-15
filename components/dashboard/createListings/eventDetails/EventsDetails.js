@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import classes from "./eventsDetails.module.css";
 const EventsDetails = () => {
@@ -10,41 +11,43 @@ const EventsDetails = () => {
   });
   return (
     <div className={classes["container"]}>
-      <h2>Event details</h2>
+      <h2 className={classes["title"]}>Event details</h2>
       <div className={classes["details-first"]}>
-        <div className={classes["input-group"]}>
-          <label htmlFor="date" className={classes["label"]}>
-            Date
-          </label>
-          <input
-            value={eventsDetails.date}
-            id="date"
-            onChange={(e) => {
-              eventsDetails({
-                ...EventsDetails,
-                date: e.target.value,
-              });
-            }}
-            placeholder="date"
-            className="input"
-          />
-        </div>
-        <div className={classes["input-group"]}>
-          <label htmlFor="date-text" className={classes["label"]}>
-            Date Text
-          </label>
-          <input
-            value={eventsDetails.dateText}
-            id="date-text"
-            onChange={(e) => {
-              eventsDetails({
-                ...EventsDetails,
-                dateText: e.target.value,
-              });
-            }}
-            placeholder="date text"
-            className="input"
-          />
+        <div className={classes["groups-wrapper"]}>
+          <div className={classes["input-group"]}>
+            <label htmlFor="date" className={classes["label"]}>
+              Date
+            </label>
+            <input
+              value={eventsDetails.date}
+              id="date"
+              onChange={(e) => {
+                eventsDetails({
+                  ...EventsDetails,
+                  date: e.target.value,
+                });
+              }}
+              placeholder="date"
+              className={classes["input"]}
+            />
+          </div>
+          <div className={classes["input-group"]}>
+            <label htmlFor="date-text" className={classes["label"]}>
+              Date Text
+            </label>
+            <input
+              value={eventsDetails.dateText}
+              id="date-text"
+              onChange={(e) => {
+                eventsDetails({
+                  ...EventsDetails,
+                  dateText: e.target.value,
+                });
+              }}
+              placeholder="date text"
+              className={classes["input"]}
+            />
+          </div>
         </div>
         <div className={classes["input-group"]}>
           <label htmlFor="league" className={classes["label"]}>
@@ -60,7 +63,7 @@ const EventsDetails = () => {
               });
             }}
             placeholder="leugue"
-            className="input"
+            className={classes["input"]}
           />
         </div>
       </div>
@@ -79,7 +82,7 @@ const EventsDetails = () => {
               });
             }}
             placeholder="time"
-            className="input"
+            className={classes["input"]}
           />
         </div>
         <div className={classes["input-group"]}>
@@ -96,7 +99,7 @@ const EventsDetails = () => {
               });
             }}
             placeholder="stadium"
-            className="input"
+            className={classes["input"]}
           />
         </div>
       </div>

@@ -17,6 +17,7 @@
     "emoji-mart": "^5.5.2",
     "gif-picker-react": "^1.1.0",
     "i": "^0.3.7",
+    "jwplayer-video-element": "^1.0.4",
     "next": "13.1.6",
     "npm": "^9.5.1",
     "react": "18.2.0",
