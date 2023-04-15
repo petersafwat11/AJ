@@ -13,8 +13,9 @@ import WhoWillWin from "../../components/whoWillWin/WhoWillWin";
 import Casino from "../../components/casino/Casino";
 import Popup from "../../components/popupWrapper/Popup";
 import ProtonVpn from "../../components/protonVpn/ProtonVpn";
-import classes from "./boxing&others.module.css";
 import TopLayout from "../../components/topLayout/TopLayout";
+import VideoJs from "../../components/video/VideoJs";
+import classes from "./boxing&others.module.css";
 const Page = () => {
   const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
@@ -107,7 +108,9 @@ const Page = () => {
               />
             </div>
 
-            <div className={classes["watch-video"]}>{/* <VideoJs /> */}</div>
+            <div className={classes["watch-video"]}>
+              <VideoJs />
+            </div>
             <div className={classes["watch-video-wrapper-bottom"]}>
               <div className={classes["dropdowns"]}>
                 <Dropdown

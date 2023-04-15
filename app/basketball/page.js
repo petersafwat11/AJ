@@ -16,6 +16,7 @@ import Popup from "../../components/popupWrapper/Popup";
 import ProtonVpn from "../../components/protonVpn/ProtonVpn";
 import classes from "./basketball.module.css";
 import TopLayout from "../../components/topLayout/TopLayout";
+import VideoJs from "../../components/video/VideoJs";
 const Page = () => {
   const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
@@ -107,7 +108,7 @@ const Page = () => {
               />
             </div>
 
-            <div className={classes["watch-video"]}>{/* <VideoJs /> */}</div>
+            <div className={classes["watch-video"]}><VideoJs /></div>
             <div className={classes["watch-video-wrapper-bottom"]}>
               <div className={classes["dropdowns"]}>
                 <Dropdown
