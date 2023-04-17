@@ -9,9 +9,10 @@ const Dropdown = ({ name, options, selectOption, selectedOption }) => {
       <div
         style={{
           fontFamily: name === "arabic" ? "Noto Sans Arabic" : "",
-          background: name === selectedOption.name ? "#fe4747" : "",
         }}
-        className={classes["name"]}
+        className={
+          name !== selectedOption.name ? classes["name"] : classes["name-2"]
+        }
       >
         {name}
         <Image

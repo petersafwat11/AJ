@@ -123,7 +123,7 @@ const Page = () => {
                 <Dropdown
                   selectOption={selectOption}
                   selectedOption={selectedOption}
-                  name={"arabic"}
+                  name={"العربية"}
                   options={["1", "2", "3"]}
                 />
                 <Dropdown
