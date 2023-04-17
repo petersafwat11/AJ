@@ -6,8 +6,14 @@ const Dropdown = ({ name, options, selectOption, selectedOption }) => {
   console.log(name, "name");
   return (
     <div className={classes["dropdown"]}>
-      <div className={classes["name"]}>
-        {name}{" "}
+      <div
+        style={{
+          fontFamily: name === "arabic" ? "Noto Sans Arabic" : "",
+          background: name === selectedOption.name ? "#fe4747" : "",
+        }}
+        className={classes["name"]}
+      >
+        {name}
         <Image
           className={classes["drop-icon"]}
           src="/svg/chat/down-arrow.svg"

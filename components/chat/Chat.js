@@ -8,9 +8,9 @@ import { AiOutlineArrowUp } from "react-icons/ai";
 import { FaUser } from "react-icons/fa";
 import { FiAtSign } from "react-icons/fi";
 import { MdEmojiEmotions } from "react-icons/md";
+import UserInfo from "./UserInfo";
 import { ChangeAvatar } from "./changeAvatar";
 import classes from "./chat.module.css";
-import UserInfo from "./UserInfo";
 
 const Chat = ({ toggleChat }) => {
   const [showEmojiesAndGifs, setShowEmojiesAndGifs] = useState(false);
@@ -186,7 +186,7 @@ know anything as you are spurs! `,
           className={classes["emojies-gifs"]}
         >
           <div className={classes["space"]}></div>
-          <div className={classes["space-2"]}></div>
+          {emojyOrGifs == "emojy" && <div className={classes["space-2"]}></div>}
 
           <img
             onClick={() => {

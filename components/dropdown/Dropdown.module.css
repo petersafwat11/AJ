@@ -6,7 +6,8 @@
 }
 .name {
   font-family: RobotoSemiBold;
-  background-color: #fe4747;
+  background-color: #323232;
+  /* #fe4747; */
   border-radius: 1.4rem;
   width: 6rem;
   height: 1.92rem;

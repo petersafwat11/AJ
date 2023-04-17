@@ -3,14 +3,14 @@ import React, { useState } from "react";
 import LeagueMenu from "../../components/leage/League";
 import FixtureAndResults from "../../components/statistics/fixitureAndResults/FixtureAndResults";
 import Standings from "../../components/statistics/standings/Standings";
-import classes from "./statistics.module.css";
 import TopLayout from "../../components/topLayout/TopLayout";
+import classes from "./statistics.module.css";
 
 const Statistics = () => {
   const [statisticsType, setStatisticsType] = useState("fixtures");
   return (
-    <div className="wrapper">
-      <TopLayout/>
+    <div className={classes["wrapper"]}>
+      <TopLayout />
       <div className={classes["statistics"]}>
         <div className={classes["container"]}>
           {/* <StatisticsSports /> */}

@@ -35,6 +35,7 @@
 }
 
 :root {
+  --rgb-input: white !important;
   --rgb-background: blue !important;
   --score-board: #203639;
   --gray-dark: #666769;
@@ -43,8 +44,27 @@
   --btn-background: #ff4747;
   --background: rgba(13, 19, 24, 0.95);
 }
+html {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
 body * {
   --gpr-bg-color: inherit !important;
+  --color-border: #0d1318 !important;
+}
+body .gpr-search-container .gpr-search:focus,
+#emojies-gifs.emojies-gifs #root .search input {
+  border: 1px solid #03a1cd !important;
+}
+.GifPickerReact .gpr-search-container input.gpr-search {
+  background-color: #0d1318 !important;
+}
+/* #root .search input {
+  background-color: #03a1cd !important;
+} */
+#root {
+  --color-border: blue !important;
 }
 body .GifPickerReact.gpr-main {
   border: none;
@@ -76,16 +96,16 @@ body .flex-column {
   transition: all 0.2s ease-in-out;
   border-radius: 20px;
 }
+/* body .emojies-gifs .search input[type="search"]:focus {
+  background: blue !important;
+} */
 .gpr-category-list::-webkit-scrollbar-thumb:hover {
   background: rgba(217, 217, 217, 0.39);
 }
-body #root input[type="search"] {
-  margin-bottom: 0.5rem !important;
+body #root .padding-lr.flex.flex-middle .search input[type="search"] {
+  border: wheat !important;
 }
-#player-2.jwplayer.jw-reset.jw-state-idle.jw-stretch-uniform.jw-breakpoint-0.jw-flag-small-player.jw-flag-user-inactive {
-  width: 50rem !important;
-  height: 30 !important;
-}
+
 body [controls="true"] {
   width: 100% !important;
   height: 100% !important;
@@ -130,20 +150,6 @@ input {
 }
 button {
   border: none;
-}
-.boxing {
-  padding: 0;
-  margin: 0;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(13, 19, 23, 0.953),
-      rgba(13, 19, 23, 0.938)
-    ),
-    url(../public/wallpaper/boxing.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top;
-  overscroll-behavior: none;
 }
 .wrapper-background {
   padding: 0;

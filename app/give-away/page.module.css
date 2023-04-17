@@ -15,7 +15,7 @@
 
 .give-away {
   position: relative;
-  margin: 1.625rem 3px ;
+  margin: 1.625rem 3px;
   padding-bottom: 3rem;
 }
 .container {
@@ -44,7 +44,7 @@
   background-color: #00c4fb;
 }
 .give-away-wrapper {
-  height: 51rem;
+  height: 54rem;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 9% 1fr 40%;
@@ -254,7 +254,7 @@
   .container {
     margin-top: 3.65rem;
     width: 100%;
-    margin-bottom: ;
+    margin-bottom: 3rem;
     padding-bottom: 9.2rem;
   }
   .give-away-heading {

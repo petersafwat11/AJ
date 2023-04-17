@@ -24,7 +24,7 @@ const Page = () => {
   const [showReport, setShowReport] = useState(false);
   const [selectedOption, setSelectedOption] = useState({
     index: 0,
-    name: "ENGLISH",
+    name: "english",
   });
   const toggleChat = () => {
     setShowChat(!showChat);
