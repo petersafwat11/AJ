@@ -1,10 +1,11 @@
-"use client";
-import "jwplayer-video-element";
+// "use client";
+// import "jwplayer-video-element";
 import React from "react";
 import classes from "./video.module.css";
 const VideoJs = () => {
   return (
     <div className={classes["video-wrapper"]}>
+
       {/* <jwplayer-video
         controls
         aspectRatio="inherit"
