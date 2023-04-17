@@ -1,12 +1,11 @@
 "use client";
 import "jwplayer-video-element";
-import Image from "next/image";
 import React from "react";
 import classes from "./video.module.css";
 const VideoJs = () => {
   return (
     <div className={classes["video-wrapper"]}>
-      <jwplayer-video
+      {/* <jwplayer-video
         controls
         aspectRatio="inherit"
         image="/video-background.svg"
@@ -19,7 +18,7 @@ const VideoJs = () => {
         alt="logo"
         width="94"
         height="73"
-      />
+      /> */}
     </div>
   );
 };
