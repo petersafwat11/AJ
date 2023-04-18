@@ -15,7 +15,7 @@ import SocialIcons from "../../components/whatchShare/SocialIcons";
 import WhoWillWin from "../../components/whoWillWin/WhoWillWin";
 import classes from "./nfl.module.css";
 import TopLayout from "../../components/topLayout/TopLayout";
-import VideoJs from "../../components/video/VideoJs";
+// import VideoJs from "../../components/video/VideoJs";
 const Page = () => {
   const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);

@@ -40,10 +40,10 @@ const Page = () => {
   const selectOption = (option) => {
     setSelectedOption(option);
   };
-  const [showVideo, setshowVideo] = useState(false);
-  useEffect(() => {
-    setshowVideo(true);
-  }, []);
+  const[showVideo, setshowVideo]= useState(false)
+useEffect(()=>{
+setshowVideo(true)
+},[])
   return (
     <div className={classes["wrapper"]}>
       <TopLayout />
@@ -113,7 +113,7 @@ const Page = () => {
             </div>
 
             <div id="my-root-div" className={classes["watch-video"]}>
-              {showVideo && <PlayerContainer />}
+              <PlayerContainer />
             </div>
             <div className={classes["watch-video-wrapper-bottom"]}>
               <div className={classes["dropdowns"]}>
