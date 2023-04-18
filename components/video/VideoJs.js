@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import classes from "./video.module.css";
 import 'jwplayer-video-element';
-
+// require("jwplayer-video-element");
 const VideoJs = () => {
   return (
     <div className={classes['wrapper']} >
