@@ -23,11 +23,11 @@
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-.name:hover {
+.dropdown:hover .name {
   color: #ffffff;
   background: rgba(50, 50, 50, 0.9);
 }
-.name-2:hover {
+.dropdown:hover .name-2 {
   background: rgb(179, 31, 31);
 }
 .name-2 {
@@ -57,13 +57,18 @@
   transition: all 0.3s ease-out;
 }
 .drop-icon {
+  font-size: 1rem;
+  color: inherit;
+
   transition: all 0.25s ease-out;
 }
 .dropdown:hover .drop-icon {
   rotate: -180deg;
+  color: white;
 }
 
-.option {
+.option,
+.option-2 {
   font-family: RobotoSemiBold;
   background-color: #323232;
   border-radius: 1.4rem;
@@ -79,6 +84,18 @@
   gap: 0.3rem;
   cursor: pointer;
   z-index: 10;
+  transition: all 0.5s ease-in-out;
+}
+.option-2 {
+  background-color: rgb(254, 71, 71);
+  color: rgba(255, 255, 255, 0.8);
+}
+.option-2:hover {
+  background: rgb(179, 31, 31);
+}
+.option:hover {
+  color: #ffffff;
+  background: rgb(65, 64, 64);
 }
 /* .option:first-child {
   background-color: rgb(254, 71, 71, 0.6);
