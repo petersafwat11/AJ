@@ -12,6 +12,7 @@ import SocialIcons from "../../components/whatchShare/SocialIcons";
 import WhoWillWin from "../../components/whoWillWin/WhoWillWin";
 
 import Casino from "../../components/casino/Casino";
+import Marque from "../../components/marque/Marque";
 import Popup from "../../components/popupWrapper/Popup";
 import ProtonVpn from "../../components/protonVpn/ProtonVpn";
 import TopLayout from "../../components/topLayout/TopLayout";
@@ -45,9 +46,12 @@ const Page = () => {
     setshowVideo(true);
   }, []);
   return (
-    <div>
+    <div className={classes["wrapper"]}>
       <TopLayout />
-      <div className={classes["wrapper"]}>
+
+      <div className={classes["wrapper-2"]}>
+        <Marque />
+
         <section className={classes["watch-football"]}>
           {showShareLinks && (
             <Popup>

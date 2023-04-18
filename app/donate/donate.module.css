@@ -1,5 +1,6 @@
-.wrapper {
-  padding: 0;
+.wrapper-2 {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
   margin: 0;
   background-image: linear-gradient(
       to right bottom,
@@ -10,13 +11,19 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
-  overscroll-behavior: none;
+  /* overscroll-behavior: none; */
+}
+.wrapper {
+  padding: 0;
+  margin: 0;
+  background-image: none;
+  /* overscroll-behavior: none; */
 }
 
 .donate {
   /* margin-top: 2rem; */
   max-width: 100%;
-  margin: 0 3px ;
+  margin: 0 3px;
   padding-bottom: 3rem;
 }
 .container {
@@ -186,7 +193,7 @@
 @media (min-width: 32.5rem) {
   .donate {
     max-width: min(82%, 29rem);
-    margin: 0 auto ;
+    margin: 0 auto;
     padding-bottom: 3rem;
   }
 }
@@ -201,9 +208,24 @@
   }
 } */
 @media (min-width: 56.25rem) {
+  .wrapper {
+    padding: 0;
+    margin: 0;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(13, 19, 23, 0.953),
+        rgba(13, 19, 23, 0.938)
+      ),
+      url(../../public/wallpaper/main.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    overscroll-behavior: none;
+  }
+
   .donate {
     max-width: min(82%, 36.5rem);
-    margin: 0 auto ;
+    margin: 0 auto;
     padding-bottom: 3rem;
   }
   .donate-heading {

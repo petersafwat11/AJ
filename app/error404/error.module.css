@@ -18,7 +18,7 @@
   border-radius: 0.85rem;
   overflow: hidden;
   max-width: 44.5rem;
-  margin: 5.85rem auto ;
+  margin: 5.85rem auto;
   padding-bottom: 7rem;
 }
 .first-section {
@@ -80,11 +80,33 @@
   color: white;
 }
 @media (max-width: 56.25rem) {
+  .wrapper-2 {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right)
+      env(safe-area-inset-bottom) env(safe-area-inset-left);
+    margin: 0;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(13, 19, 23, 0.953),
+        rgba(13, 19, 23, 0.938)
+      ),
+      url(../../public/wallpaper/main.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    /* overscroll-behavior: none; */
+  }
+  .wrapper {
+    padding: 0;
+    margin: 0;
+    background-image: none;
+    /* overscroll-behavior: none; */
+  }
+
   .error {
     border-radius: 0.63rem;
     max-width: min(35rem, 95%);
     margin: 2.9rem auto;
-    padding-bottom:  3.5rem;
+    padding-bottom: 3.5rem;
   }
   .first-section {
     padding: 2.8rem 3rem 2.1rem;
@@ -116,7 +138,7 @@
   .error {
     border-radius: 0.63rem;
     max-width: min(35rem, 95%);
-    margin: 2.5rem auto ;
+    margin: 2.5rem auto;
     padding-bottom: 3rem;
   }
   .first-section {

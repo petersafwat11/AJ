@@ -9,12 +9,16 @@ import SendMessage, {
 } from "../../../components/send-message/SendMessage";
 import classes from "./news-article.module.css";
 import TopLayout from "../../../components/topLayout/TopLayout";
+import Marque from "../../../components/marque/Marque";
 const Page = () => {
   const router = useRouter();
   const [showSendMessage, setShowSendMessage] = useState(false);
   return (
     <div className={classes["wrapper"]}>
       <TopLayout />
+            <div className={classes["wrapper-2"]}>
+        <Marque />
+
       <div className={classes["news-article"]}>
         <div className={classes["top-heading"]}>
           <h2 className={classes["top-heading-title"]}>NEWS</h2>
@@ -82,6 +86,7 @@ const Page = () => {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </div>
   );

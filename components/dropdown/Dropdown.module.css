@@ -85,7 +85,8 @@
   color: rgba(255, 255, 255, 0.8);
 } */
 @media (max-width: 56.25rem) {
-  .name {
+  .name,
+  .name-2 {
     border-radius: 1.85rem;
     width: 4.375rem;
     height: 1.375rem;

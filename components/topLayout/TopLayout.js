@@ -63,7 +63,6 @@ const TopLayout = () => {
           height="30"
         />
       )}
-      <Marque />
       <a
         href="https://t.me/ajsportstv"
         target={"_blank"}

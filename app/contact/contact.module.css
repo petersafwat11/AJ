@@ -15,7 +15,7 @@
 
 .contact {
   max-width: 45rem;
-  margin: 0 auto ;
+  margin: 0 auto;
   padding-bottom: 7rem;
 }
 .heading {
@@ -172,9 +172,31 @@
   display: none;
 }
 @media (max-width: 56.25rem) {
+  .wrapper-2 {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right)
+      env(safe-area-inset-bottom) env(safe-area-inset-left);
+    margin: 0;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(13, 19, 23, 0.953),
+        rgba(13, 19, 23, 0.938)
+      ),
+      url(../../public/wallpaper/main.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    /* overscroll-behavior: none; */
+  }
+  .wrapper {
+    padding: 0;
+    margin: 0;
+    background-image: none;
+    /* overscroll-behavior: none; */
+  }
+
   .contact {
     max-width: min(35rem, 95%);
-    margin: 0 auto ;
+    margin: 0 auto;
     padding-bottom: 4rem;
   }
 
@@ -287,7 +309,7 @@
 @media (max-width: 500px) {
   .contact {
     max-width: 100%;
-    margin: 0 3px ;
+    margin: 0 3px;
     padding-bottom: 3rem;
   }
   /* .input-group-textarea {
