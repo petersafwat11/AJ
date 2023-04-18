@@ -11,7 +11,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
-  overscroll-behavior: none;
+  /* overscroll-behavior: none; */
 }
 
 .chat-icon {

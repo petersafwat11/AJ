@@ -45,7 +45,7 @@ useEffect(()=>{
 setshowVideo(true)
 },[])
   return (
-    <div className={classes["wrappermm"]}>
+    <div className={classes["wrapper"]}>
       <TopLayout />
       <section className={classes["watch-football"]}>
         {showShareLinks && (
