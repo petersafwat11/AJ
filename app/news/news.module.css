@@ -15,7 +15,7 @@
 
 .news {
   max-width: min(85%, 45rem);
-  margin: 0 auto ;
+  margin: 0 auto;
   padding-bottom: 2.5rem;
 }
 .top-heading {
@@ -119,7 +119,7 @@
   line-height: 0.93rem;
 }
 @media (max-width: 56.25rem) {
-      .wrapper-2 {
+  .wrapper-2 {
     padding: env(safe-area-inset-top) env(safe-area-inset-right)
       env(safe-area-inset-bottom) env(safe-area-inset-left);
     margin: 0;
@@ -202,7 +202,7 @@
 @media (max-width: 40.6rem) {
   .news {
     max-width: min(97%, 28rem);
-    margin: 0 auto ;
+    margin: 0 auto;
     padding-bottom: 3.375rem;
   }
   .top-heading {

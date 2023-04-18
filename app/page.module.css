@@ -67,7 +67,7 @@
         rgba(13, 19, 23, 0.953),
         rgba(13, 19, 23, 0.938)
       ),
-      url(../../public/wallpaper/main.jpg);
+      url(../public/wallpaper/main.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
