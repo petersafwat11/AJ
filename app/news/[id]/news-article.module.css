@@ -15,7 +15,7 @@
 
 .news-article {
   max-width: min(85%, 45rem);
-  margin: 0 auto ;
+  margin: 0 auto;
   padding-bottom: 7rem;
 }
 .arrow-back {
@@ -131,7 +131,7 @@
   background-color: rgba(0, 179, 255, 0.4);
 }
 @media (max-width: 56.25rem) {
-      .wrapper-2 {
+  .wrapper-2 {
     padding: env(safe-area-inset-top) env(safe-area-inset-right)
       env(safe-area-inset-bottom) env(safe-area-inset-left);
     margin: 0;
@@ -140,7 +140,7 @@
         rgba(13, 19, 23, 0.953),
         rgba(13, 19, 23, 0.938)
       ),
-      url(../../public/wallpaper/main.jpg);
+      url(../../../public/wallpaper/main.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -155,7 +155,7 @@
 
   .news-article {
     max-width: min(90%, 36rem);
-    margin: 0 auto ;
+    margin: 0 auto;
     padding-bottom: 3rem;
   }
   .top-heading {
