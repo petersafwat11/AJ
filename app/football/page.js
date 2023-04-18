@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Chat from "../../components/chat/Chat";
 import Dropdown from "../../components/dropdown/Dropdown";
 import Report from "../../components/report/Report";
@@ -40,7 +40,10 @@ const Page = () => {
   const selectOption = (option) => {
     setSelectedOption(option);
   };
-
+  const [showVideo, setshowVideo] = useState(false);
+  useEffect(() => {
+    setshowVideo(true);
+  }, []);
   return (
     <div className={classes["wrapper"]}>
       <TopLayout />
@@ -110,7 +113,7 @@ const Page = () => {
             </div>
 
             <div id="my-root-div" className={classes["watch-video"]}>
-              <PlayerContainer />
+              {showVideo && <PlayerContainer />}
             </div>
             <div className={classes["watch-video-wrapper-bottom"]}>
               <div className={classes["dropdowns"]}>

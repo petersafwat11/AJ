@@ -7,7 +7,7 @@
 .name,
 .name-2 {
   font-family: RobotoSemiBold;
-  background-color: #323232;
+  background-color: rgba(50, 50, 50, 0.4);
   /* #fe4747; */
   border-radius: 1.4rem;
   width: 6rem;
@@ -25,12 +25,13 @@
 }
 .name:hover {
   color: #ffffff;
+  background: rgba(50, 50, 50, 0.9);
 }
 .name-2:hover {
-  background: rgba(254, 71, 71, 0.9);
+  background: rgb(179, 31, 31);
 }
 .name-2 {
-  background: rgba(254, 71, 71, 0.4);
+  background: rgba(254, 71, 71);
   color: white;
 }
 .dropdown:hover .options {

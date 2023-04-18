@@ -2,10 +2,17 @@
 import Image from "next/image";
 import React from "react";
 import classes from "./video.module.css";
+import 'jwplayer-video-element';
 
 const VideoJs = () => {
   return (
-    <div>
+    <div className={classes['wrapper']} >
+      <jwplayer-video
+      className={classes['video-player']}
+        controls
+        src="https://cdn.jwplayer.com/players/C8YE48zj-IxzuqJ4M.html"
+      ></jwplayer-video>
+
       {/* <Image
         className={classes["logo"]}
         src="/LOGO.svg"

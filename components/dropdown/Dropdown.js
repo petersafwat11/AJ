@@ -8,7 +8,7 @@ const Dropdown = ({ name, options, selectOption, selectedOption }) => {
     <div className={classes["dropdown"]}>
       <div
         style={{
-          fontFamily: name === "arabic" ? "Noto Sans Arabic" : "",
+          fontFamily: name === "العربية" ? "Noto Sans Arabic" : "",
         }}
         className={
           name !== selectedOption.name ? classes["name"] : classes["name-2"]

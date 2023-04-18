@@ -108,7 +108,9 @@ const Page = () => {
               />
             </div>
 
-            <div className={classes["watch-video"]}><VideoJs /></div>
+            <div className={classes["watch-video"]}>
+              {/* <VideoJs /> */}
+              </div>
             <div className={classes["watch-video-wrapper-bottom"]}>
               <div className={classes["dropdowns"]}>
                 <Dropdown
