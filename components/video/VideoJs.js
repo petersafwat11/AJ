@@ -1,14 +1,14 @@
 // import "jwplayer-video-element";
-import Image from "next/image";
+import "jwplayer-video-element";
 import React from "react";
 import classes from "./video.module.css";
-import 'jwplayer-video-element';
+
 // require("jwplayer-video-element");
 const VideoJs = () => {
   return (
-    <div className={classes['wrapper']} >
+    <div className={classes["wrapper"]}>
       <jwplayer-video
-      className={classes['video-player']}
+        className={classes["video-player"]}
         controls
         src="https://cdn.jwplayer.com/players/C8YE48zj-IxzuqJ4M.html"
       ></jwplayer-video>
