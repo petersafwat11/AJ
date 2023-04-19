@@ -1,6 +1,7 @@
 import "jwplayer-video-element";
 import React from "react";
 import classes from "./video.module.css";
+import Image from "next/image";
 
 const VideoJs = () => {
   return (
