@@ -1,23 +1,23 @@
-// import "jwplayer-video-element";
+import "jwplayer-video-element";
 import React from "react";
 import classes from "./video.module.css";
 
 const VideoJs = () => {
   return (
     <div className={classes["wrapper"]}>
-      {/* <jwplayer-video
+      <jwplayer-video
         className={classes["video-player"]}
         controls
         src="https://cdn.jwplayer.com/players/C8YE48zj-IxzuqJ4M.html"
-      ></jwplayer-video> */}
+      ></jwplayer-video>
 
-      {/* <Image
+      <Image
         className={classes["logo"]}
         src="/LOGO.svg"
         alt="logo"
         width="94"
         height="73"
-      /> */}
+      />
     </div>
   );
 };
