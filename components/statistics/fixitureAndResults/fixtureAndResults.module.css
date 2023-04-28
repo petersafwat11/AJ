@@ -25,7 +25,8 @@
   width: 100%;
   display: grid;
   grid-template-columns: 30% 20% 30% 1fr;
-  padding: 0.7rem 0 0.52rem 25%;
+  padding: 0.7rem 0 0.52rem 15%;
+  justify-items: center;
   border-bottom: 1px solid #3b3b3b;
 }
 .first-team,
@@ -96,7 +97,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: 25% 15% 25% 1fr;
-    padding: 0.25rem 0.4rem 0.3rem 27%;
+    padding: 0.25rem 0.4rem 0.3rem 25%;
     align-items: center;
     border-bottom: 0.5px solid #3b3b3b;
   }

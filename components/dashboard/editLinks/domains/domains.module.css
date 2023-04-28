@@ -1,0 +1,31 @@
+.container {
+  background: #ffffff;
+  border-radius: 15px;
+  width: 57.5rem;
+  padding: 1.5rem 2rem 1.875rem 1.43rem;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 1.18rem;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-family: "Public Sans";
+  color: black;
+}
+.input {
+  margin-left: 0.25rem;
+  background-color: rgba(123, 151, 206, 0.06);
+  height: 3rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 0.875rem 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.3rem;
+  font-family: "Public Sans";
+  border: 1px solid #007bff;
+}

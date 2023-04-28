@@ -89,7 +89,7 @@ const Page = () => {
             {/* <span className={classes['back-icon']}>Back</span> */}
             <div className={classes["container-heading"]}>
               <h3 className={classes["container-heading-title"]}>
-                Frequently asked questions
+                Frequently Asked Questions
               </h3>
               <p className={classes["container-heading-para"]}>
                 The ultimate sports streaming platform’s F.A.Q

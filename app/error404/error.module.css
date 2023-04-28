@@ -11,6 +11,7 @@
   background-size: cover;
   background-position: top;
   overscroll-behavior: none;
+  padding-bottom: 7rem;
 }
 
 .error {
@@ -18,8 +19,7 @@
   border-radius: 0.85rem;
   overflow: hidden;
   max-width: 44.5rem;
-  margin: 5.85rem auto;
-  padding-bottom: 7rem;
+  margin: 5.85rem auto 0;
 }
 .first-section {
   padding: 3.46rem 4rem 2.8rem;

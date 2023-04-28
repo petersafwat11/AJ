@@ -68,7 +68,7 @@ const WhoWillWin = () => {
                   height="12"
                 />
               )}
-              Drew
+              Draw
             </p>
           </div>
           <div className={classes["second"]}>

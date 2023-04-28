@@ -11,6 +11,8 @@ import { MdEmojiEmotions } from "react-icons/md";
 import UserInfo from "./UserInfo";
 import { ChangeAvatar } from "./changeAvatar";
 import classes from "./chat.module.css";
+import ChatRules from "./chatRules/ChatRules";
+import Poll from "./poll/Poll";
 
 const Chat = ({ toggleChat }) => {
   const [showEmojiesAndGifs, setShowEmojiesAndGifs] = useState(false);
@@ -157,9 +159,24 @@ know anything as you are spurs! `,
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  const [isSending, setIsSending] = useState(false);
 
+  const handleClick = () => {
+    setIsSending(true);
+
+    // Simulate sending message for 2 seconds
+    setTimeout(() => {
+      setIsSending(false);
+    }, 500);
+  };
+  const [showRules, setShowRules] = useState(true);
+  const rulesVisability = () => {
+    setShowRules(false);
+  };
   return (
     <div className={classes["chat"]}>
+      {true&& <Poll/>}
+      {showRules && <ChatRules rulesVisability={rulesVisability} />}
       {showUserInfo && (
         <div className={classes["chat-info"]}>
           <UserInfo
@@ -225,7 +242,7 @@ know anything as you are spurs! `,
               data={data}
               theme="dark"
               previewPosition="none"
-              perLine={windowDimensions.width < 900 ? 6 : 8}
+              perLine={windowDimensions.width < 900 ? 6 : 9}
               onEmojiSelect={(e) => {
                 console.log("clicked");
                 setMessage(message + e.native);
@@ -277,10 +294,6 @@ know anything as you are spurs! `,
                 </p>
               )
             )}
-            {/* <p className={classes["chat-room"]}></p>
-            <p className={classes["chat-room"]}></p>
-            <p className={classes["arabic"]}></p>
-            <p className={classes["chat-room"]}></p> */}
           </div>
         </p>
 
@@ -377,8 +390,11 @@ know anything as you are spurs! `,
           type="text"
           placeholder="Type a message here"
         />
-        <div className={classes["chat-bottom-send"]}>
-          <AiOutlineArrowUp style={{ fontSize: ".95rem", color: "white" }} />
+        <div onClick={handleClick} className={classes["chat-bottom-send"]}>
+          <AiOutlineArrowUp
+            className={isSending ? classes["sending"] : classes[""]}
+            style={{ fontSize: ".95rem", color: "white" }}
+          />
         </div>
       </div>
     </div>

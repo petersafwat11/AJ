@@ -22,8 +22,15 @@
   flex-direction: column;
   gap: 2rem;
 }
+.first,
+.second {
+  display: flex;
+  align-items: center;
+  gap: 1.93rem;
+}
 .details-wrapper {
   display: flex;
   align-items: center;
+  flex-direction: column;
   gap: 23px;
 }

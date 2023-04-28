@@ -1,19 +1,20 @@
 "use client";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import React from "react";
-import Match from "../components/match/Match";
-import Sports from "../components/sports/Sports";
-import classes from "./page.module.css";
-import TopLayout from "../components/topLayout/TopLayout";
+import HomeSearch from "../components/homeSearch/HomeSearch";
 import Marque from "../components/marque/Marque";
+import Match from "../components/match/Match";
+import ShowMore from "../components/showMore/ShowMore";
+import Sports from "../components/sports/Sports";
+import TimezoneDropdown from "../components/timezomeDropdowm/TimezoneDropdown";
+import TopLayout from "../components/topLayout/TopLayout";
+import classes from "./page.module.css";
 const Page = () => {
-  const router = useRouter();
   return (
     <div className={classes["wrapper"]}>
       <TopLayout />
       <div className={classes["wrapper-2"]}>
-        <Marque/>
+        <Marque />
         <div className={classes["container"]}>
           <div className={classes["search-mobile"]}>
             <input
@@ -32,7 +33,9 @@ const Page = () => {
           <div className={classes["matches-container"]}>
             <section className={classes["hot-matches"]}>
               <h2 className={classes["title"]}>HOT MATCHES</h2>
-              <span className={classes["time-zone"]}>Timezone: UTC +7</span>
+              <div className={classes["time-zone"]}>
+                <TimezoneDropdown />
+              </div>
               <div className={classes["matches"]}>
                 {[1, 2, 3].map((i) => (
                   <>
@@ -43,7 +46,12 @@ const Page = () => {
             </section>
             <section className={classes["other-matches"]}>
               <h2 className={classes["title"]}>OTHER MATCHES</h2>
-              <span className={classes["time-zone"]}>Timezone: UTC +7</span>
+              <div className={classes["search-desktop"]}>
+                <HomeSearch />
+              </div>
+              <div className={classes["time-zone"]}>
+                <TimezoneDropdown />
+              </div>
               <div className={classes["matches"]}>
                 {[1, 2, 3, 4].map((i) => (
                   <>
@@ -52,6 +60,9 @@ const Page = () => {
                 ))}
               </div>
             </section>
+          </div>
+          <div className={classes["show-more-button"]}>
+            <ShowMore />
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ import EventsDetails from "../../../components/dashboard/createListings/eventDet
 import PlayerTiming from "../../../components/dashboard/createListings/playerTiming/PlayerTiming";
 import Poll from "../../../components/dashboard/createListings/poll/Poll";
 // import SportCategory from "../../../components/dashboard/createListings/sportCategory/SportCategory";
+import AreaChart from "../../../components/dashboard/charts/areaChart/AreaChart";
 import TeamsLogos from "../../../components/dashboard/createListings/teamsLogos/TeamsLogos";
 import TeamsNames from "../../../components/dashboard/createListings/teamsNames/TeamsNames";
 import classes from "./page.module.css";
@@ -33,6 +34,7 @@ const page = () => {
           <Poll />
         </div>
       </div>
+      <AreaChart />
     </div>
   );
 };

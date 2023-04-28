@@ -3,6 +3,18 @@ import Image from "next/image";
 import React, { useState } from "react";
 import classes from "./tikticksBasketBall.module.css";
 const Takticks = () => {
+  const players = [
+    { num: "one" },
+    { num: "two" },
+    { num: "three" },
+    { num: "four" },
+    { num: "five" },
+    { num: "six" },
+    { num: "seven" },
+    { num: "eight" },
+    { num: "nine" },
+    { num: "ten" },
+  ];
   const [category, setCategory] = useState("lineups");
   return (
     <div className={classes["container"]}>
@@ -41,104 +53,36 @@ const Takticks = () => {
                 <Image
                   src="/svg/watch/vest-grey.svg"
                   alt="player"
-                  height="27"
-                  width="35"
+                  height="25"
+                  width="33"
                 />
                 <p>M. Jordan</p>
               </div>
             ))}
           </div>
           <div className={classes["stadium"]}>
-            <div className={classes["one"]}>
-              <Image
-                src="/svg/watch/vest-grey.svg"
-                alt="player"
-                height="27"
-                width="35"
-              />
-              <p>lorem</p>
-            </div>
-            <div className={classes["two"]}>
-              <Image
-                src="/svg/watch/vest-grey.svg"
-                alt="player"
-                height="27"
-                width="35"
-              />
-              <p>lorem</p>
-            </div>
-            <div className={classes["three"]}>
-              <Image
-                src="/svg/watch/vest-grey.svg"
-                alt="player"
-                height="27"
-                width="35"
-              />
-              <p>lorem</p>
-            </div>
-            <div className={classes["four"]}>
-              <Image
-                src="/svg/watch/vest-grey.svg"
-                alt="player"
-                height="27"
-                width="35"
-              />
-              <p>lorem</p>
-            </div>
-            <div className={classes["five"]}>
-              <Image
-                src="/svg/watch/vest-grey.svg"
-                alt="player"
-                height="27"
-                width="35"
-              />
-              <p>lorem</p>
-            </div>
-            <div className={classes["six"]}>
-              <Image
-                src="/svg/watch/vest-white.svg"
-                alt="player"
-                height="27"
-                width="35"
-              />
-              <p>lorem</p>
-            </div>
-            <div className={classes["seven"]}>
-              <Image
-                src="/svg/watch/vest-white.svg"
-                alt="player"
-                height="27"
-                width="35"
-              />
-              <p>lorem</p>
-            </div>
-            <div className={classes["eight"]}>
-              <Image
-                src="/svg/watch/vest-white.svg"
-                alt="player"
-                height="27"
-                width="35"
-              />
-              <p>lorem</p>
-            </div>
-            <div className={classes["nine"]}>
-              <Image
-                src="/svg/watch/vest-white.svg"
-                alt="player"
-                height="27"
-                width="35"
-              />
-              <p>lorem</p>
-            </div>
-            <div className={classes["ten"]}>
-              <Image
-                src="/svg/watch/vest-white.svg"
-                alt="player"
-                height="27"
-                width="35"
-              />
-              <p>lorem</p>
-            </div>
+            {players.slice(0, 5).map((item, index) => (
+              <div key={index} className={classes[item.num]}>
+                <Image
+                  src="/svg/watch/vest-grey.svg"
+                  alt="player"
+                  height="32"
+                  width="37"
+                />
+                <p>lorem</p>
+              </div>
+            ))}
+            {players.slice(5, 10).map((item, index) => (
+              <div key={index} className={classes[item.num]}>
+                <Image
+                  src="/svg/watch/vest-white.svg"
+                  alt="player"
+                  height="32"
+                  width="37"
+                />
+                <p>lorem</p>
+              </div>
+            ))}
           </div>
           <div className={classes["substitute-second-team"]}>
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((item, index) => (
@@ -146,8 +90,8 @@ const Takticks = () => {
                 <Image
                   src="/svg/watch/vest-white.svg"
                   alt="player"
-                  height="27"
-                  width="35"
+                  height="25"
+                  width="33"
                 />
                 <p>M. Jordan</p>
               </div>

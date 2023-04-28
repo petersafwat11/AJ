@@ -10,6 +10,7 @@ const page = () => {
         <ActionsButtons first={"Save"} second={"Delete"} />
       </div>
       <Table />
+      
     </div>
   );
 };

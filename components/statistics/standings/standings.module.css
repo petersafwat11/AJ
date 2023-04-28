@@ -4,7 +4,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-row-gap: 0.8rem;
+  /* grid-row-gap: 0.8rem; */
   padding: 3rem 2.41rem 2.5rem;
 }
 .standings-header,
@@ -36,7 +36,7 @@
   font-family: RobotoRegular;
 }
 .standings-item {
-  padding: 0.5rem 0;
+  padding: 0.9rem 0;
   border-bottom: 0.75px solid #3b3b3b;
 }
 .first-team {
