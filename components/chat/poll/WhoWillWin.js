@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import classes from "./WhoWillWin.module.css";
+import classes from "./whoWillWin.module.css";
 
 const WhoWillWin = () => {
   const [selectedValue, setSelectedValue] = useState("");
