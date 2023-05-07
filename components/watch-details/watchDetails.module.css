@@ -98,7 +98,7 @@
   }
   .first-team-name,
   .second-team-name {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     line-height: 1.5rem;
     font-family: RobotoSemiBold;
     white-space: nowrap;
@@ -143,7 +143,7 @@
   }
   .date,
   .place {
-    font-size: 0.7rem;
+    font-size: 0.73rem;
     line-height: 0.8rem;
   }
   .watch-details-second {
@@ -155,7 +155,7 @@
   }
   .first-team-name,
   .second-team-name {
-    font-size: 1.125rem;
+    font-size: 1.165rem;
     line-height: 1.25rem;
     font-family: RobotoSemiBold;
   }
@@ -170,7 +170,7 @@
   }
   .half {
     font-family: RobotoSemiBold;
-    font-size: 0.625rem;
+    font-size: 0.645rem;
     line-height: 0.75rem;
   }
 }

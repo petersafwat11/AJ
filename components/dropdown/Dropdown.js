@@ -1,8 +1,7 @@
 "use client";
-import Image from "next/image";
 import React from "react";
+import { IoIosArrowUp } from "react-icons/io";
 import classes from "./Dropdown.module.css";
-import {IoIosArrowUp} from 'react-icons/io'
 const Dropdown = ({ name, options, selectOption, selectedOption }) => {
   console.log(name, "name");
   return (
@@ -15,8 +14,8 @@ const Dropdown = ({ name, options, selectOption, selectedOption }) => {
           name !== selectedOption.name ? classes["name"] : classes["name-2"]
         }
       >
-        {name}
-        <IoIosArrowUp className={classes["drop-icon"]}/>
+        <p className={classes["lang-name"]}>{name}</p>
+        <IoIosArrowUp className={classes["drop-icon"]} />
       </div>
       <div className={classes["options"]}>
         <div className={classes["space"]}></div>
@@ -26,10 +25,13 @@ const Dropdown = ({ name, options, selectOption, selectedOption }) => {
               selectOption({ index: index, name: name });
             }}
             // style={{
-              
+
             // }}
-            className={selectedOption.index == index && selectedOption.name == name
-                  ?classes["option-2"]: classes["option"]}
+            className={
+              selectedOption.index == index && selectedOption.name == name
+                ? classes["option-2"]
+                : classes["option"]
+            }
             key={index}
           >
             {item}

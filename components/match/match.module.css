@@ -47,7 +47,12 @@
   gap: 3px;
   /* box-shadow: 0rem 0.3rem 0.5rem #41f3315b; */
 }
-.live-button > span {
+.dot-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.dot-wrapper > span {
   width: 0.75rem;
   height: 0.75rem;
   background-color: #41f331;
@@ -181,8 +186,8 @@
     display: none;
   }
   .status-mobile {
-    font-weight: 600;
-    font-family: RobotoSemiBold;
+    font-weight: 500;
+    font-family: RobotoRegular;
     font-size: 0.72rem;
     line-height: 0.82rem;
     color: #4ae96d;
@@ -221,7 +226,10 @@
     align-items: center;
     margin-top: 0;
   }
-  .live-button > span {
+  .dot-wrapper {
+    padding-top: 0.6px;
+  }
+  .dot-wrapper > span {
     width: 0.625rem;
     height: 0.625rem;
   }
@@ -229,8 +237,8 @@
   .live-button > p,
   .not-live {
     font-size: 0.625rem;
-    font-family: RobotoSemiBold;
-    font-weight: 600;
+    font-family: RobotoRegular;
+    font-weight: 500;
   }
 
   .first-team,
@@ -307,7 +315,7 @@
     height: 1.25rem;
     margin-top: 0;
   }
-  .live-button > span {
+  .dot-wrapper > span {
     width: 9.8px;
     height: 9.8px;
   }
@@ -375,7 +383,7 @@
     height: 19px;
     margin-top: 0;
   }
-  .live-button > span {
+  .dot-wrapper > span {
     width: 9.55px;
     height: 9.55px;
   }
@@ -437,7 +445,7 @@
     height: 18.2px;
     margin-top: 0;
   }
-  .live-button > span {
+  .dot-wrapper > span {
     width: 9.09px;
     height: 9.09px;
   }
@@ -505,7 +513,7 @@
     height: 16.6px;
     margin-top: 0;
   }
-  .live-button > span {
+  .dot-wrapper > span {
     width: 8.3px;
     height: 8.3px;
   }

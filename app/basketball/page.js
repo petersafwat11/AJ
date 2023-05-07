@@ -16,6 +16,7 @@ import Popup from "../../components/popupWrapper/Popup";
 import ProtonVpn from "../../components/protonVpn/ProtonVpn";
 import TopLayout from "../../components/topLayout/TopLayout";
 // import VideoJs from "../../components/video/VideoJs";
+import ExtendButton from "../../components/extendButton/ExtendButton";
 import Marque from "../../components/marque/Marque";
 import classes from "./basketball.module.css";
 const Page = () => {
@@ -115,33 +116,25 @@ const Page = () => {
               <div className={classes["watch-video"]}>{/* <VideoJs /> */}</div>
               <div className={classes["watch-video-wrapper-bottom"]}>
                 <div className={classes["dropdowns"]}>
-                  <Dropdown
-                    selectOption={selectOption}
-                    selectedOption={selectedOption}
-                    name={"english"}
-                    options={["1", "2", "3"]}
-                  />
-
-                  <Dropdown
-                    selectOption={selectOption}
-                    selectedOption={selectedOption}
-                    name={"العربية"}
-                    options={["1", "2", "3"]}
-                  />
-                  <Dropdown
-                    selectOption={selectOption}
-                    selectedOption={selectedOption}
-                    name={"espanol"}
-                    options={["1", "2", "3"]}
-                  />
-                  <Dropdown
-                    selectOption={selectOption}
-                    selectedOption={selectedOption}
-                    name={"more"}
-                    options={["FRENCH", "TURKISH", "PORTUGUE.."]}
-                  />
+                  {[
+                    { name: "english", options: ["1", "2", "3"] },
+                    { name: "العربية", options: ["1", "2", "3"] },
+                    { name: "espanol", options: ["1", "2", "3"] },
+                    {
+                      name: "more",
+                      options: ["FRENCH", "TURKISH", "PORTUGUE.."],
+                    },
+                  ].map((item, index) => (
+                    <Dropdown
+                      key={index}
+                      selectOption={selectOption}
+                      selectedOption={selectedOption}
+                      name={item.name}
+                      options={item.options}
+                    />
+                  ))}{" "}
                 </div>
-                <button className={classes["extend-button"]}>EXTEND</button>
+                <ExtendButton />
               </div>
             </div>
             <div className={classes["bottom"]}>

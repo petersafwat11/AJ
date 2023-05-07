@@ -397,12 +397,22 @@
   }
   .footer-container-second {
     margin-top: 1.75rem;
+    margin-left: 0;
+    display: flex;
+    align-items: center;
   }
   .footer-container-links {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 33.33%;
+  }
+  .footer-container-links:first-of-type {
+    align-items: start;
+  }
+  .footer-container-links:last-of-type {
+    align-items: end;
   }
   .footer-container-links-heading {
     font-weight: 600;

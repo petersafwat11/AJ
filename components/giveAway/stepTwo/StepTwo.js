@@ -1,24 +1,23 @@
 import Image from "next/image";
 import React from "react";
 import classes from "./stepTwo.module.css";
+import {BsArrowLeftShort} from 'react-icons/bs'
 const StepTwo = ({ joinWebsiteGroup, controlDisplaySteps }) => {
   return (
     <div className={classes["step-two"]}>
       <div className={classes["step-two-top"]}>
-        <Image
-          onClick={() => {
-            controlDisplaySteps({
-              stepOne: true,
-              stepTwo: false,
-              stepThree: false,
-            });
-          }}
-          className={classes["back-icon"]}
-          src="/svg/chat/exit-chat.svg"
-          alt="exit"
-          width="16"
-          height="16"
-        />
+        <div className={classes["back-div"]}>
+          <BsArrowLeftShort
+            onClick={() => {
+              controlDisplaySteps({
+                stepOne: true,
+                stepTwo: false,
+                stepThree: false,
+              });
+            }}
+            className={classes["back-icon"]}
+          />
+        </div>
         <h2 className={classes["heading"]}>Step 2:</h2>
         <Image
           onClick={() => {
@@ -81,7 +80,7 @@ const StepTwo = ({ joinWebsiteGroup, controlDisplaySteps }) => {
           >
             {joinWebsiteGroup.text == "Retweet"
               ? joinWebsiteGroup.text
-              : "Join" + joinWebsiteGroup.text}
+              : "Join " + joinWebsiteGroup.text}
           </button>
           <span className={classes["loading"]}>
             <span></span>

@@ -10,6 +10,28 @@
   align-items: center;
   justify-content: space-between;
 }
+.back-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: all 0.2s ease-in-out;
+}
+.back-icon {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #182228;
+  transition: all 0.2s ease-in-out;
+}
+.back-div:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.back-div:hover .back-icon {
+  color: #101518;
+}
 .step-two-top > img {
   cursor: pointer;
 }
@@ -101,6 +123,11 @@
   align-items: center;
   justify-content: center;
   color: white;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.join-button:hover {
+  background: rgba(1, 189, 241, 0.3);
 }
 .message {
   font-family: "Poppins";
@@ -139,13 +166,11 @@
     height: 5rem;
     margin: 0.25rem auto 1.625rem;
   }
-  .twitter-icon{
-
+  .twitter-icon {
   }
-  .retweet-icon{
-
+  .retweet-icon {
   }
-  .telegram-icon{
+  .telegram-icon {
     width: 44px;
     height: 37px;
   }

@@ -131,6 +131,8 @@
   }
   .send-message-button {
     background: #00c4fb;
+    font-family: RobotoRegular;
+    font-weight: 500;
     width: 1.25rem;
     height: 4.81rem;
     border-radius: 0.3rem;

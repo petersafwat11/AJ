@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Chat from "../../components/chat/Chat";
 import { ChangeAvatar } from "../../components/chat/changeAvatar";
+import ExtendButton from "../../components/extendButton/ExtendButton";
 import LiveButton from "../../components/live-button/LiveButton";
 import Marque from "../../components/marque/Marque";
 import Popup from "../../components/popupWrapper/Popup";
@@ -108,11 +109,7 @@ const Page = () => {
                 <button className={classes["watch-video-options-server-name"]}>
                   Server 1
                 </button>
-                <button
-                  className={classes["watch-video-options-extend-button"]}
-                >
-                  EXTEND
-                </button>
+                <ExtendButton />
               </div>
               <div className={classes["vpn"]}>
                 <ProtonVpn />

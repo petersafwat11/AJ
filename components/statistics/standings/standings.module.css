@@ -76,8 +76,8 @@
   }
   .first-team-image,
   .second-team-image {
-    width: 1.1rem;
-    height: 1.1rem;
+    width: 1.35rem;
+    height: 1.35rem;
   }
   .standings-item-second,
   .standings-header-second {
@@ -102,9 +102,10 @@
   .standings-item-para {
     font-size: 0.875rem;
     line-height: 1rem;
+    margin-bottom: 2.3px;
   }
   .standings-item {
-    padding: 0.81rem 0 0.945rem;
+    padding: 1rem 0 1.1rem;
   }
   .first-team {
     gap: 0.5rem;
@@ -121,8 +122,8 @@
   }
   .first-team-image,
   .second-team-image {
-    width: 0.935rem;
-    height: 0.935rem;
+    width: 1.235rem;
+    height: 1.235rem;
   }
   .standings-item-first,
   .standings-header-first {
@@ -134,12 +135,12 @@
     line-height: 0.57rem;
   }
   .standings-item-para {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     line-height: 0.8rem;
   }
-  .standings-item {
-    padding: 0.7rem 0 0.8rem;
-  }
+  /* .standings-item {
+    padding: 1rem 0 1.1rem;
+  } */
   .first-team {
     gap: 0.25rem;
   }

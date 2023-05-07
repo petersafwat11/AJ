@@ -23,7 +23,7 @@
   margin-top: 3.65rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.7rem;
   color: #00c4fb;
 }
 .top-heading-title {
@@ -164,7 +164,6 @@
     margin-top: 1.625rem;
     padding-left: 0.25rem;
     padding-right: 0.75rem;
-    gap: 0.125rem;
   }
   .container {
     width: 100%;
@@ -174,6 +173,8 @@
   }
   .container-heading-title {
     font-size: 1.6rem;
+    font-family: RobotoSemiBold;
+
     line-height: 2rem;
   }
   .container-heading-para {
@@ -194,6 +195,7 @@
   .question-wrapper-question {
     font-size: 1rem;
     line-height: 1.3rem;
+    font-family: RobotoSemiBold;
   }
   .question-wrapper-answer {
     color: rgba(255, 255, 255, 0.56);
@@ -212,7 +214,8 @@
   .uesr-feedback-para {
     font-size: 0.6rem;
     line-height: 1rem;
-    margin: 0.1rem 0 0.8rem;
+    margin: 0.4rem 0 1.05rem;
+    width: 20rem;
   }
   .uesr-feedback-button {
     font-size: 1rem;

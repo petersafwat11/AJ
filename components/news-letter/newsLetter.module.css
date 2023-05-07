@@ -159,7 +159,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.425rem;
+    gap: 0.5rem;
     padding: 2.2rem 2rem 2.937rem;
     max-width: auto;
   }

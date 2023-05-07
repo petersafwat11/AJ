@@ -23,7 +23,7 @@ const Poll = () => {
       <div className={classes["arrow-wrapper"]}>
         <RiArrowDownSLine
           onClick={() => {
-            setShowPoll(true);
+            setShowPoll(!showPoll);
           }}
           className={classes["arrow"]}
         />

@@ -51,8 +51,8 @@ export const MenuMobile = () => {
             className={classes["exit"]}
             src="/svg/mobile-menu/exit.svg"
             alt="donate"
-            width="13"
-            height="13"
+            width="17"
+            height="17"
           />
 
           <div className={classes["menu-mobile-lang"]}>
@@ -219,7 +219,7 @@ export const MenuMobile = () => {
                 width="25"
                 height="31"
               />
-              <p> UFFA Nations league</p>
+              <p> UEFA Nations League</p>
             </div>
             <div className={classes["league"]}>
               <Image
@@ -229,7 +229,7 @@ export const MenuMobile = () => {
                 width="32"
                 height="33"
               />
-              <p> Champions league</p>
+              <p> Champions League</p>
             </div>
             <div className={classes["league"]}>
               <Image
@@ -259,7 +259,7 @@ export const MenuMobile = () => {
                 width="31"
                 height="32"
               />
-              <p>La Liga league</p>
+              <p>La Liga</p>
             </div>
             <div className={classes["league"]}>
               <Image

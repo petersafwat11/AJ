@@ -4,9 +4,9 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { RiArrowRightSLine } from "react-icons/ri";
+import Marque from "../../components/marque/Marque";
 import TopLayout from "../../components/topLayout/TopLayout";
 import classes from "./news.module.css";
-import Marque from "../../components/marque/Marque";
 const Page = () => {
   const [showSendMessage, setShowSendMessage] = useState(false);
 
@@ -56,7 +56,7 @@ const Page = () => {
               <p>...</p>
               <p className={classes["paginations-option"]}>10</p>
               <div className={classes["next"]}>
-                <p className={classes["paginations-option"]}>next</p>
+                <p className={classes["paginations-option"]}>Next</p>
                 <RiArrowRightSLine className={classes["arrow"]} />
               </div>
             </div>

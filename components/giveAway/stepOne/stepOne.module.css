@@ -58,6 +58,11 @@
   align-items: center;
   justify-content: center;
   padding: 0.56rem 0.75rem;
+  transition: all 0.2s ease-in-out;
+}
+.input:focus-visible {
+  background-color: inherit;
+  border: 1px solid white;
 }
 .bottom {
   margin-top: 1.36rem;
@@ -90,6 +95,11 @@
   text-align: center;
   color: #ffffff;
   margin: auto;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.next-button:hover {
+  background: rgba(1, 189, 241, 0.3);
 }
 @media (max-width: 56.25rem) {
   .step-one {
@@ -107,8 +117,8 @@
     line-height: 3.125rem;
   }
   .exit {
-    width: 11px;
-    height: 11px;
+    width: 15px;
+    height: 15px;
   }
   .body {
     margin-top: 0.87rem;

@@ -1,9 +1,9 @@
 "use client";
-import Image from "next/image";
 import React from "react";
 import { BsSkype, BsSnapchat, BsYoutube } from "react-icons/bs";
 import { FaDiscord, FaPinterestP, FaRegCopy } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { RxCross1 } from "react-icons/rx";
 import classes from "./shareLinks.module.css";
 const ShareLinks = ({ toggleShareLinks }) => {
   // const manipaletePosition = useRef(null);
@@ -21,14 +21,7 @@ const ShareLinks = ({ toggleShareLinks }) => {
     <div className={classes["share-links"]}>
       <div className={classes["share-links-top"]}>
         <h3 className={classes["share-links-title"]}>Share a link</h3>
-        <Image
-          onClick={toggleShareLinks}
-          className={classes["share-links-exit"]}
-          src="/svg/share-links/exit.svg"
-          alt="exit"
-          width="11"
-          height="11"
-        />
+        <RxCross1 onClick={toggleShareLinks} className={classes["exit"]} />
       </div>
       <div className={classes["share-links-body"]}>
         <div
@@ -71,7 +64,7 @@ const ShareLinks = ({ toggleShareLinks }) => {
             <div className={classes["share-links-website-logo"]}>
               <BsSkype className={classes["skype-icon"]} />
             </div>
-            <p>Skybe</p>
+            <p>Skype</p>
           </div>
         </div>
       </div>

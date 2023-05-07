@@ -24,7 +24,9 @@ export const Match = ({ live }) => {
         {live ? (
           <div className="live-button-div">
             <div className={classes["live-button"]}>
-              <span></span>
+              <div className={classes["dot-wrapper"]}>
+                <span></span>
+              </div>
               <p>Live</p>
             </div>
           </div>

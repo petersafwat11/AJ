@@ -23,7 +23,7 @@
   margin-top: 3.65rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.7rem;
   color: #00c4fb;
 }
 .top-heading > span {
@@ -130,7 +130,10 @@
   }
   .top-heading {
     margin-top: 1.65rem;
-    gap: 0.4rem;
+        padding-left: 0.25rem;
+    padding-right: 0.75rem;
+}
+
   }
   .top-heading-title {
     font-size: 1.2rem;
@@ -166,6 +169,15 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-row-gap: 3.125rem;
+    justify-items: center;
+  }
+  .netflix-icon,
+  .google-icon {
+    justify-self: start;
+  }
+  .dailymotion-icon,
+  .youtube-icon {
+    justify-self: end;
   }
   .netflix-icon {
     width: 77px;
@@ -198,7 +210,7 @@
     font-size: 0.6rem;
     line-height: 0.8rem;
   } */
-}
+
 @media (max-width: 700px) {
   .netflix-icon {
     width: 67px;

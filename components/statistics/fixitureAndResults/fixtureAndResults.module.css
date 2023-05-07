@@ -114,8 +114,10 @@
   }
   .first-team-name,
   .second-team-name {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     line-height: 0.875rem;
+    font-weight: 400;
+    font-family: "Roboto Condensed";
     white-space: nowrap;
   }
   .second-team {
@@ -129,13 +131,13 @@
   .match-date {
     font-size: 0.625rem;
     line-height: 0.71rem;
-    align-self: end;
+    /* align-self: end; */
   }
   .today,
   .two-days-ago,
   .yesterday,
   .three-days-ago {
-    padding: 0.75rem 0.938rem 0.85rem 0.75rem;
+    padding: 0.95rem 1.28rem 0.85rem 1.05rem;
   }
   .today {
     padding-top: 1.067rem;
@@ -158,9 +160,9 @@
     line-height: 0.68rem;
   }
   .match {
-    padding: 0.25rem 0.4rem 0.3rem 22%;
+    padding: 0.55rem 0.5rem 0.6rem 17%;
 
-    grid-template-columns: 28% 15% 28% 1fr;
+    grid-template-columns: 30% 17% 32% 1fr;
   }
   .first-team,
   .second-team {
@@ -169,13 +171,13 @@
   .result,
   .vs {
     gap: 0.3rem;
-    font-size: 0.625rem;
+    font-size: 0.9rem;
     line-height: 0.75rem;
   }
   .first-team-image,
   .second-team-image {
-    width: 0.9rem;
-    height: 0.9rem;
+    width: 1.4rem;
+    height: 1.4rem;
   }
   .match-date {
     font-size: 0.5rem;

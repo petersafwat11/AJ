@@ -13,8 +13,16 @@
   justify-content: space-between;
   width: 100%;
 }
-.share-links-exit {
+.exit {
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 1rem;
+  color: rgba(221, 221, 221, 0.5);
+}
+.exit:hover {
+  rotate: -90deg;
+  color: white;
+  transform: scale(130%);
 }
 .share-links-title {
   font-size: 1.26rem;
@@ -62,7 +70,7 @@
   transition: all 0.35s ease-out;
 }
 .pinterest-icon {
-  color: black;
+  color: #0d1317;
   background: white;
   border-radius: 50%;
   display: flex;
