@@ -63,6 +63,7 @@ const Takticks = () => {
             ))}
           </div>
           <div className={classes["stadium"]}>
+            
             <div className={classes["goalkeaper-first"]}>
               <Image
                 className={classes["team-shirt"]}

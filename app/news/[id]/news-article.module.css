@@ -3,8 +3,8 @@
   margin: 0;
   background-image: linear-gradient(
       to right bottom,
-      rgba(13, 19, 23, 0.953),
-      rgba(13, 19, 23, 0.938)
+      rgba(16, 23, 26, 0.95),
+      rgba(21, 26, 31, 0.938)
     ),
     url(../../../public/wallpaper/main.jpg);
   background-repeat: no-repeat;
@@ -136,10 +136,10 @@
       env(safe-area-inset-bottom) env(safe-area-inset-left);
     margin: 0;
     background-image: linear-gradient(
-        to right bottom,
-        rgba(13, 19, 23, 0.953),
-        rgba(13, 19, 23, 0.938)
-      ),
+      to right bottom,
+      rgba(16, 23, 26, 0.95),
+      rgba(21, 26, 31, 0.938)
+    ),
       url(../../../public/wallpaper/main.jpg);
     background-repeat: no-repeat;
     background-size: cover;

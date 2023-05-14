@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import Chat from "../../components/chat/Chat";
-import { ChangeAvatar } from "../../components/chat/changeAvatar";
 import ExtendButton from "../../components/extendButton/ExtendButton";
 import LiveButton from "../../components/live-button/LiveButton";
 import Marque from "../../components/marque/Marque";
@@ -46,14 +45,6 @@ const Page = () => {
           {showReport && (
             <Popup>
               <Report toggleReport={toggleReport} />
-            </Popup>
-          )}
-          {changeAvatar && (
-            <Popup>
-              <ChangeAvatar
-                selectAvatar={selectAvatar}
-                toggleChangeAvatar={toggleChangeAvatar}
-              />
             </Popup>
           )}
           {!showChat && (

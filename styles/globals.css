@@ -35,7 +35,7 @@
 }
 
 :root {
-  --rgb-input: white !important;
+  /* --rgb-input: white !important; */
   --rgb-background: blue !important;
   --score-board: #203639;
   --gray-dark: #666769;
@@ -49,24 +49,7 @@ html {
   width: 100%;
   /* overscroll-behavior: none; */
 }
-/* html::before {
-  z-index: -1;
-  content: "";
-  width: 100%;
-  height: 100px;
-  background-color: rgba(13, 19, 24);
-  right: 0;
-  position: fixed;
-}
- */
-/* body::before {
-  z-index: -1;
-  content: "";
-  width: 100%;
-  height: 100px;
-  background-color: #0d1317; 
-  position: fixed;
-} */
+
 body {
   overscroll-behavior: contain; /* or contain-x, contain-y */
   background-color: #0d1316; /* set your desired background color */
@@ -76,16 +59,16 @@ body * {
   --gpr-bg-color: inherit !important;
   --color-border: #0d1318 !important;
 }
-body .gpr-search-container .gpr-search:focus,
+.skin-tone-button .skin-tone:after {
+  border: 1px solid blue !important;
+}
+/* body .gpr-search-container .gpr-search:focus,
 #emojies-gifs.emojies-gifs #root .search input {
   border: 1px solid #03a1cd !important;
-}
+} */
 .GifPickerReact .gpr-search-container input.gpr-search {
   background-color: #0d1318 !important;
 }
-/* #root .search input {
-  background-color: #03a1cd !important;
-} */
 #root {
   --color-border: blue !important;
 }
@@ -103,6 +86,15 @@ body .flex-column {
   width: 100% !important;
   overflow: hidden;
 }
+body .gpr-category-overlay:focus-visible {
+  border: 1px solid red !important;
+}
+body .GifPickerReact .gpr-category:hover {
+  box-shadow: 0 0 0 2px rgb(3, 161, 205);
+}
+body .GifPickerReact .gpr-result-image:hover {
+  box-shadow: 0 0 0 2px rgb(3, 161, 205);
+}
 #emojies-gifs > em-emoji-picker {
   width: 100% !important;
 }
@@ -119,9 +111,6 @@ body .flex-column {
   transition: all 0.2s ease-in-out;
   border-radius: 20px;
 }
-/* body .emojies-gifs .search input[type="search"]:focus {
-  background: blue !important;
-} */
 .gpr-category-list::-webkit-scrollbar-thumb:hover {
   background: rgba(217, 217, 217, 0.39);
 }
@@ -181,4 +170,9 @@ button {
   background-size: cover;
   background-position: top;
   overscroll-behavior: none;
+}
+@media (max-width: 56.25rem) {
+  .gpr-category-list::-webkit-scrollbar {
+    width: 11px;
+  }
 }

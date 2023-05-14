@@ -11,7 +11,13 @@ const Poll = () => {
     <div className={classes["container"]}>
       <div className={classes["top"]}>
         <p className={classes["poll-maker"]}> Pinned by AJ Sports Admin</p>
-        <Image alt="pin" src="/svg/chat/pin.svg" width="18" height="18" />
+        <Image
+          className={classes["poll-icon"]}
+          alt="pin"
+          src="/svg/chat/pin.svg"
+          width="18"
+          height="18"
+        />
       </div>
       <div className={classes["body"]}>
         <h2 className={classes["poll-title"]}>POLL TIME</h2>
@@ -25,7 +31,7 @@ const Poll = () => {
           onClick={() => {
             setShowPoll(!showPoll);
           }}
-          className={classes["arrow"]}
+          className={showPoll ? classes["arrow-down"] : classes["arrow-up"]}
         />
       </div>
     </div>

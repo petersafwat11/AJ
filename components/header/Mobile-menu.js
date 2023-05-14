@@ -206,7 +206,7 @@ export const MenuMobile = () => {
                 className={classes["league-image"]}
                 src="/svg/mobile-menu/1.svg"
                 alt="leageu"
-                width="31"
+                width="32"
                 height="36"
               />
               <p> World Cup</p>
@@ -216,8 +216,8 @@ export const MenuMobile = () => {
                 className={classes["league-image"]}
                 src="/svg/mobile-menu/2.svg"
                 alt="leageu"
-                width="25"
-                height="31"
+                width="32"
+                height="34"
               />
               <p> UEFA Nations League</p>
             </div>
@@ -236,8 +236,8 @@ export const MenuMobile = () => {
                 className={classes["league-image"]}
                 src="/svg/mobile-menu/4.svg"
                 alt="leageu"
-                width="31"
-                height="31"
+                width="32"
+                height="32"
               />
               <p>Premier League</p>
             </div>
@@ -256,8 +256,8 @@ export const MenuMobile = () => {
                 className={classes["league-image"]}
                 src="/svg/mobile-menu/6.svg"
                 alt="leageu"
-                width="31"
-                height="32"
+                width="32"
+                height="33"
               />
               <p>La Liga</p>
             </div>
@@ -266,8 +266,8 @@ export const MenuMobile = () => {
                 className={classes["league-image"]}
                 src="/svg/mobile-menu/7.svg"
                 alt="leageu"
-                width="33"
-                height="32"
+                width="32"
+                height="31"
               />
               <p>Bundesliga</p>
             </div>
@@ -286,8 +286,8 @@ export const MenuMobile = () => {
                 className={classes["league-image"]}
                 src="/svg/mobile-menu/9.svg"
                 alt="leageu"
-                width="31"
-                height="34"
+                width="32"
+                height="35"
               />
               <p>Serie A </p>
             </div>{" "}

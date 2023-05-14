@@ -158,12 +158,13 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
     gap: 1.125rem;
+    margin: auto;
   }
   .header {
     gap: 0.87rem;
-        margin-top: 0.4rem;
+    margin-top: 0.4rem;
 
   }
   .header-item {
