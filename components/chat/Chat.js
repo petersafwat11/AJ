@@ -11,7 +11,6 @@ import dummyMessages from "./dummyMessages";
 import EmojiaAndGifs from "./emojiAndGifs/EmojiaAndGifs";
 import Poll from "./poll/Poll";
 import UserInfo from "./userInfo/UserInfo";
-
 const Chat = ({ toggleChat }) => {
   const [showEmojiesAndGifs, setShowEmojiesAndGifs] = useState(false);
   const [emojyOrGifs, setEmojyOrGifs] = useState("emojy");

@@ -139,29 +139,25 @@
 .avatars > * {
   cursor: pointer;
 }
-.avatar {
+.avatar,
+.clicked-avatar {
   position: relative;
   height: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.clicked-avatar {
+  background: url("/svg/chat/background.svg");
+  background-size: 93%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
 .checked-icon {
   position: absolute;
   top: 0;
   right: 0;
 }
-/* .avatar .checked-circle {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-.avatar img {
-  z-index: 2;
-} */
 .actions {
   display: flex;
   align-items: center;
@@ -309,10 +305,12 @@
     height: 10.8rem;
     align-items: start;
   }
-  .avatar {
+  .avatar,
+  .clicked-avatar {
     height: 4.8rem;
   }
-  .avatar img {
+  .avatar img,
+  .clicked-avatar img {
     height: 2.875rem;
     width: auto;
   }

@@ -1,80 +1,34 @@
-import React, { useState } from "react";
-import ReactCrop from "react-image-crop";
-import "react-image-crop/dist/ReactCrop.css";
+import React, { useState } from 'react';
+import Dropzone from 'react-dropzone';
 
-const ImageUpload = () => {
-  const [imageFile, setImageFile] = useState(null);
-  const [imageSrc, setImageSrc] = useState(null);
-  const [crop, setCrop] = useState({
-    aspect: 1,
-    unit: "px",
-    width: 200,
-    height: 200,
-  });
+function ImageUploader() {
+  const [image, setImage] = useState(null);
 
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
+  const handleDrop = acceptedFiles => {
+    const file = acceptedFiles[0];
+    const reader = new FileReader();
 
-    if (file) {
-      const reader = new FileReader();
-
-      reader.onload = (e) => {
-        setImageFile(file);
-        setImageSrc(e.target.result);
-      };
-
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handleCropChange = (newCrop) => {
-    setCrop(newCrop);
-  };
-
-  const handleCropComplete = (crop, pixelCrop) => {
-    // Create a canvas element to draw the cropped image
-    const canvas = document.createElement("canvas");
-    canvas.width = crop.width;
-    canvas.height = crop.height;
-    const ctx = canvas.getContext("2d");
-
-    // Draw the cropped image onto the canvas
-    const image = new Image();
-    image.src = imageSrc;
-    image.onload = () => {
-      ctx.drawImage(
-        image,
-        pixelCrop.x,
-        pixelCrop.y,
-        pixelCrop.width,
-        pixelCrop.height,
-        0,
-        0,
-        crop.width,
-        crop.height
-      );
-
-      // Convert the canvas to a data URL and set it as the source of the preview image
-      const croppedImage = canvas.toDataURL("image/png");
-      setImageSrc(croppedImage);
+    reader.onload = () => {
+      setImage(reader.result);
     };
+
+    reader.readAsDataURL(file);
   };
 
   return (
-    <div>
-      <input type="file" accept="image/*" onChange={handleFileChange} />
-      {imageSrc && (
-        <ReactCrop
-          src={imageSrc}
-          crop={crop}
-          onChange={handleCropChange}
-          onComplete={handleCropComplete}
-          circularCrop={true}
-        />
+    <Dropzone onDrop={handleDrop}>
+      {({ getRootProps, getInputProps }) => (
+        <div {...getRootProps()}>
+          <input {...getInputProps()} />
+          {image ? (
+            <img src={image} alt="uploaded" />
+          ) : (
+            <p>Drag and drop your image here, or click to select an image.</p>
+          )}
+        </div>
       )}
-      {imageSrc && <img src={imageSrc} alt="Preview" />}
-    </div>
+    </Dropzone>
   );
-};
+}
 
-export default ImageUpload;
+export default ImageUploader;
