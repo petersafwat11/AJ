@@ -2,7 +2,9 @@ import Image from "next/image";
 import { useState } from "react";
 import Popup from "../../popupWrapper/Popup";
 import ImageUploader from "./../imageUpload/ImageUpload";
+import { Actions, TopPart } from "./TopAndBottom";
 import classes from "./changeAvatar.module.css";
+import RightPart from "./rightPart";
 
 const ChangeAvatar = ({
   toggleChangeAvatar,
@@ -15,18 +17,14 @@ const ChangeAvatar = ({
     selectAvatar(`/svg/chat/avatars/${newSelectedAvatar}.svg`);
     toggleChangeAvatar();
   };
-  // useEffect(() => {
-  //   console.log(newSelectedAvatar);
-  // }, [newSelectedAvatar]);
   const avatarCategories = ["Avatars", "Flags", "Football", "NBA", "Others"];
   const [avatarCategory, setAvatarCategory] = useState("Avatars");
   const [subCategory, setSubCategory] = useState("");
   const [subSubCategory, setSubSubCategory] = useState("");
-  // useEffect(() => {
-  //   setSubCategory("");
-  //   setSubSubCategory("");
-  // }, [avatarCategory]);
   const [imageUpload, setShowImageUpload] = useState(false);
+  const toggleImageUpload = () => {
+    setShowImageUpload(!imageUpload);
+  };
   return (
     <div className={classes["change-avatar"]}>
       {imageUpload && (
@@ -35,33 +33,10 @@ const ChangeAvatar = ({
         </Popup>
       )}
       <div className={classes["change-avatars-first"]}>
-        <div className={classes["change-avatar-text"]}>
-          <h3 className={classes["title"]}>Select an avatar</h3>
-          <p className={classes["para"]}>
-            Choose an avatar to be displayed on your profile picture.
-          </p>
-        </div>
-        <div className={classes["file-pload-wrapper"]}>
-          <Image
-            className={classes["upload-icon"]}
-            onClick={toggleChangeAvatar}
-            src="/svg/chat/change-avatar/upload.svg"
-            alt="upload"
-            width="15"
-            height="18"
-          />
-          <p className={classes["file-upload-para"]}>
-            Drag and drop file or
-            <span
-              onClick={() => {
-                setShowImageUpload(!imageUpload);
-              }}
-            >
-              browse computer
-            </span>
-          </p>
-        </div>
-
+        <TopPart
+          toggleChangeAvatar={toggleChangeAvatar}
+          toggleImageUpload={toggleImageUpload}
+        />
         <div className={classes["avatars-categories"]}>
           {avatarCategories.map((i, index) => (
             <div
@@ -86,27 +61,36 @@ const ChangeAvatar = ({
                     key={index}
                     onClick={() => {
                       setNewSElectedAvatar(
-                        "Avatars/" +
+                        avatarCategory +
+                          "/" +
                           subCategory +
+                          "/" +
                           subSubCategory +
+                          "/" +
                           Number(Number(index) + 1)
                       );
                       // console.log(newSelectedAvatar);
                     }}
                     className={
                       newSelectedAvatar ==
-                      "Avatars/" +
+                      avatarCategory +
+                        "/" +
                         subCategory +
+                        "/" +
                         subSubCategory +
+                        "/" +
                         Number(Number(index) + 1)
                         ? classes["clicked-avatar"]
                         : classes["avatar"]
                     }
                   >
-                    {setNewSElectedAvatar ==
-                      "Avatars/" +
+                    {newSelectedAvatar ==
+                      avatarCategory +
+                        "/" +
                         subCategory +
+                        "/" +
                         subSubCategory +
+                        "/" +
                         Number(Number(index) + 1) && (
                       <Image
                         className={classes["checked-icon"]}
@@ -117,13 +101,6 @@ const ChangeAvatar = ({
                       />
                     )}
                     <Image
-                      onClick={() => {
-                        console.log(
-                          avatarCategory,
-                          subCategory,
-                          subSubCategory
-                        );
-                      }}
                       className={classes["avatar-icon"]}
                       src={`/svg/chat/avatars/${avatarCategory}/${subCategory}/${subSubCategory}/${
                         index + 1
@@ -142,19 +119,31 @@ const ChangeAvatar = ({
                     key={index}
                     onClick={() => {
                       setNewSElectedAvatar(
-                        "Avatars/" + subCategory + Number(Number(index) + 1)
+                        avatarCategory +
+                          "/" +
+                          subCategory +
+                          "/" +
+                          Number(index + 1)
                       );
-                      // console.log(newSelectedAvatar);
+                      console.log(newSelectedAvatar, "//");
                     }}
                     className={
                       newSelectedAvatar ==
-                      "Avatars/" + subCategory + Number(Number(index) + 1)
+                      avatarCategory +
+                        "/" +
+                        subCategory +
+                        "/" +
+                        Number(Number(index) + 1)
                         ? classes["clicked-avatar"]
                         : classes["avatar"]
                     }
                   >
-                    {setNewSElectedAvatar ==
-                      "Avatars/" + subCategory + Number(Number(index) + 1) && (
+                    {newSelectedAvatar ==
+                      avatarCategory +
+                        "/" +
+                        subCategory +
+                        "/" +
+                        Number(Number(index) + 1) && (
                       <Image
                         className={classes["checked-icon"]}
                         src="/svg/chat/check.svg"
@@ -199,18 +188,19 @@ const ChangeAvatar = ({
                   key={index}
                   onClick={() => {
                     setNewSElectedAvatar(
-                      "Avatars/" + Number(Number(index) + 1)
+                      avatarCategory + "/" + Number(Number(index) + 1)
                     );
-                    // console.log(newSelectedAvatar);
+                    console.log(newSelectedAvatar);
                   }}
                   className={
-                    newSelectedAvatar == "Avatars/" + Number(Number(index) + 1)
+                    newSelectedAvatar ==
+                    avatarCategory + "/" + Number(Number(index) + 1)
                       ? classes["clicked-avatar"]
                       : classes["avatar"]
                   }
                 >
-                  {setNewSElectedAvatar ==
-                    "Avatars/" + Number(Number(index) + 1) && (
+                  {newSelectedAvatar ==
+                    avatarCategory + "/" + Number(Number(index) + 1) && (
                     <Image
                       className={classes["checked-icon"]}
                       src="/svg/chat/check.svg"
@@ -233,6 +223,7 @@ const ChangeAvatar = ({
                   key={index}
                   onClick={() => {
                     setSubCategory(i);
+                    console.log(i);
                   }}
                   className={classes["sub-category"]}
                 >
@@ -247,49 +238,16 @@ const ChangeAvatar = ({
               ))}
         </div>
 
-        <div className={classes["actions"]}>
-          <button onClick={applyChanges} className={classes["apply-button"]}>
-            Apply
-          </button>
-          <button
-            onClick={toggleChangeAvatar}
-            className={classes["cancel-button"]}
-          >
-            Cancel{" "}
-          </button>
-        </div>
-      </div>
-      <div className={classes["change-avatars-second"]}>
-        <Image
-          className={classes["exit"]}
-          onClick={toggleChangeAvatar}
-          src="svg/chat/change-avatar/exit.svg"
-          alt="send"
-          width="12"
-          height="12"
+        <Actions
+          applyChanges={applyChanges}
+          toggleChangeAvatar={toggleChangeAvatar}
         />
-        <div className={classes["selected-avatar"]}>
-          <div className={classes["new-selected-image"]}>
-            {newSelectedAvatar ? (
-              <img
-                className={classes["selected-avatar-icon"]}
-                src={`/svg/chat/avatars/${newSelectedAvatar}.svg`}
-                alt="avatar"
-                width="114"
-              />
-            ) : (
-              <img
-                className={classes["selected-avatar-icon"]}
-                src={selectedAvatar}
-                alt="avatar"
-                width="114"
-              />
-            )}
-          </div>
-
-          <p>Your selected avatar</p>
-        </div>
       </div>
+      <RightPart
+        toggleChangeAvatar={toggleChangeAvatar}
+        newSelectedAvatar={newSelectedAvatar}
+        selectedAvatar={selectedAvatar}
+      />
     </div>
   );
 };
