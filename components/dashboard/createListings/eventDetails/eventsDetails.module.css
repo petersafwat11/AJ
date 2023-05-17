@@ -1,58 +1,66 @@
 .container {
-  padding: 1.375rem 1.5rem 3rem;
+  padding: 1.21rem 1.32rem 2.64rem;
   background-color: #ffffff;
-  border-radius: 15px;
-  width: 46.4rem;
+  border-radius: 13.2px;
+  width: 40.832rem;
 }
+
 .title {
   font-weight: 500;
-  font-size: 1.25rem;
-  line-height: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.32rem;
   color: #000000;
   font-family: "Public Sans";
 }
+
 .details-first {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
-  margin-top: 1.5rem;
-  margin-bottom: 21px;
+  gap: 1.54rem;
+  margin-top: 1.32rem;
+  margin-bottom: 18.48px;
 }
+
 .details-second {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  gap: 1.54rem;
   justify-content: space-between;
   width: 100%;
 }
+
 .details-second .input-group {
   flex-grow: 1;
 }
+
 .groups-wrapper {
   display: flex;
   align-items: center;
-  gap: 1.875rem;
+  gap: 1.65rem;
 }
+
 .input-group {
   display: flex;
   align-items: start;
   flex-direction: column;
-  gap: 1.125rem;
+  gap: 0.99rem;
 }
+
 .label {
   color: #909090;
   font-weight: 600;
-  font-size: 0.75rem;
-  line-height: 1rem;
+  font-size: 0.66rem;
+  line-height: 0.88rem;
   font-family: "Public Sans";
 }
+
 .input {
   background: rgba(123, 151, 206, 0.06);
   border: 1px solid #dbdbdb;
-  border-radius: 0.5rem;
-  padding: 0.85rem 1rem;
+  border-radius: 0.44rem;
+  padding: 0.748rem 0.88rem;
   font-weight: 500;
-  font-size: 1rem;
-  line-height: 1.3rem;
+  font-size: 0.88rem;
+  line-height: 1.144rem;
   font-family: "Public Sans";
 }

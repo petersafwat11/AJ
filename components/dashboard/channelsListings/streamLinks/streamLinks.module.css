@@ -1,47 +1,51 @@
 .container {
   background: #ffffff;
-  border-radius: 15px;
-  width: 38.4rem;
-  height: 21.56rem;
-  padding: 1.18rem 1.5rem 1.55rem;
+  border-radius: 13.2px;
+  width: 33.79rem;
+  height: 18.99rem;
+  padding: 1.04rem 1.32rem 1.36rem;
 }
+
 .title {
-  font-weight: 500;
-  font-size: 1.25rem;
-  line-height: 1.5rem;
+  font-weight: 440;
+  font-size: 1.1rem;
+  line-height: 1.32rem;
   color: #000000;
   font-family: "Public Sans";
-  margin-bottom: 1.9rem;
+  margin-bottom: 1.672rem;
 }
+
 .input {
   background-color: white;
-  height: 2.07rem;
-  width: 24.8rem;
-  border-radius: 0.5rem;
-  padding: 0.55rem 1.25rem;
-  font-weight: 400;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  border: 1px solid #c4c4c4;
+  height: 1.82rem;
+  width: 21.84rem;
+  border-radius: 0.44rem;
+  padding: 0.484rem 1.1rem;
+  font-weight: 352;
+  font-size: 0.66rem;
+  line-height: 0.88rem;
+  border: 0.88px solid #c4c4c4;
 }
+
 .search-options {
   display: flex;
   align-items: start;
   flex-direction: column;
-  border-radius: 0.5rem;
-  width: 23.5rem;
-  box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.25);
-  margin-left: 0.5rem;
+  border-radius: 0.44rem;
+  width: 20.68rem;
+  box-shadow: 0px 0px 7.04px 3.52px rgba(0, 0, 0, 0.25);
+  margin-left: 0.44rem;
 }
+
 .option {
   width: 100%;
-  height: 2rem;
+  height: 1.76rem;
   display: flex;
   align-items: center;
-  padding: 6px 1rem;
+  padding: 5.28px 0.88rem;
   font-family: "Inter";
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  font-size: 0.77rem;
+  line-height: 1.1rem;
   color: #424242;
   cursor: pointer;
 }

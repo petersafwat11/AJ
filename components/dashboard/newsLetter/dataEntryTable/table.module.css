@@ -1,37 +1,36 @@
 .table {
-  border-radius: 14px;
-  box-shadow: 0px, 4px rgba(0, 0, 0, 0.25);
-  background: white;
-  padding-top: 1.25rem;
+  border-radius: 12.32px;
   box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.25);
+  background: white;
+  padding-top: 1.1rem;
 }
 .search-wrapper {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 1.875rem;
+  gap: 1.65rem;
   flex-grow: 1;
-  margin: 0 1.5rem 1.25rem 2.625rem;
+  margin: 0 1.32rem 1.1rem 2.31rem;
 }
 .search {
   width: 100%;
-  height: 3.125rem;
-  border-radius: 2.25rem;
-  padding: 1rem;
-  padding-left: 4.8rem;
+  height: 2.75rem;
+  border-radius: 1.98rem;
+  padding: 0.88rem;
+  padding-left: 4.22rem;
   background: #f0f0f0;
   color: #2a3042;
-  font-size: 0.75rem;
-  line-height: 0.875rem;
+  font-size: 0.66rem;
+  line-height: 0.77rem;
   font-weight: 400;
   font-family: "Inter";
 }
 .search-icon {
   color: #2a3042;
-  font-size: 1.5rem;
+  font-size: 1.32rem;
   position: absolute;
-  top: 12px;
-  left: 16px;
+  top: 10.56px;
+  left: 14.08px;
 }
 .download-button {
   display: flex;
@@ -39,27 +38,27 @@
   justify-content: center;
   background: #f5f5f5;
   border: 1px solid #c2c2c2;
-  border-radius: 3.125rem;
-  width: 8.2rem;
-  height: 1.875rem;
+  border-radius: 2.75rem;
+  width: 7.22rem;
+  height: 1.65rem;
   cursor: pointer;
   font-family: "Inter";
   font-weight: 500;
-  font-size: 0.75rem;
-  line-height: 1rem;
+  font-size: 0.66rem;
+  line-height: 0.88rem;
   color: #5f5f5f;
 }
 .table-header,
 .table-row {
   display: grid;
-  grid-template-columns: 3.5rem 12rem 1fr 1fr 12rem;
+  grid-template-columns: 3.08rem 10.56rem 0.88fr 0.88fr 10.56rem;
   justify-items: start;
   align-items: center;
-  padding: 1.5rem 2rem 1.5rem;
+  padding: 1.32rem 1.76rem 1.32rem;
 }
 .table-header {
-  background-color: #2a3042;
   color: white;
+  background-color: #2a3042;
 }
 .table-cell:first-of-type,
 .table-cell:last-of-type {
@@ -68,22 +67,22 @@
 .table-cell {
   font-family: "Poppins";
   font-weight: 500;
-  font-size: 1.06rem;
-  line-height: 1.6rem;
+  font-size: 0.93rem;
+  line-height: 1.408rem;
 }
 .table-header .table-cell {
   font-weight: 600;
 }
 .table-row {
   color: #575757;
-  height: 4.125rem;
-  padding: 0 2rem;
+  height: 3.63rem;
+  padding: 0 1.76rem;
   border-bottom: 1px solid #e1e0e2;
 }
 .square {
-  width: 22px;
-  height: 20px;
-  border-radius: 4px;
-  border: 1px solid #0832de;
+  width: 19.36px;
+  height: 17.6px;
+  border-radius: 3.52px;
+  border: 0.88px solid #0832de;
   justify-self: start;
 }

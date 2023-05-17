@@ -3,28 +3,31 @@
   align-items: center;
   justify-content: start;
   flex-direction: column;
-  gap: 4.8rem;
+  gap: 4.224rem;
   position: absolute;
-  top: 10px;
+  top: 8.8px;
   left: 0;
-  width: 5.9rem;
-  padding: 2.37rem 0 2.3rem;
+  width: 5.192rem;
+  padding: 2.0864rem 0 2.024rem;
   background: white;
-  border-radius: 1.25rem;
+  border-radius: 1.1rem;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
+
 .nav * {
   color: gray;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   cursor: pointer;
 }
+
 .nav *:hover {
   color: rgba(46, 46, 46, 0.5);
 }
+
 .logo-wrapper {
-  width: 2.625rem;
-  height: 2.625rem;
+  width: 2.31rem;
+  height: 2.31rem;
   border-radius: 50%;
   background-color: #0d111a;
   display: flex;

@@ -1,98 +1,109 @@
 .table {
-  border-radius: 14px;
-  box-shadow: 0px, 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12.32px;
   background: white;
-  padding-top: 1.25rem;
-  margin-right: 11.5rem;
-  box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.25)
+  padding-top: 1.1rem;
+  margin-right: 10.12rem;
+  box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.25);
 }
+
 .search-wrapper {
   position: relative;
   display: flex;
   flex-grow: 1;
-  margin: 1.25rem 2.9rem 1.25rem 0.66rem;
+  margin: 1.1rem 2.552rem 1.1rem 0.5808rem;
 }
+
 .search {
   width: 100%;
-  height: 3.125rem;
-  border-radius: 2.25rem;
-  padding: 1rem;
-  padding-left: 4.8rem;
+  height: 2.75rem;
+  border-radius: 1.98rem;
+  padding: 0.88rem;
+  padding-left: 4.224rem;
   background: #f0f0f0;
   color: #2a3042;
-  font-size: 0.75rem;
-  line-height: 0.875rem;
-  font-weight: 400;
+  font-size: 0.66rem;
+  line-height: 0.77rem;
+  font-weight: 352;
   font-family: "Inter";
 }
+
 .search-icon {
   color: #2a3042;
-  font-size: 1.5rem;
+  font-size: 1.32rem;
   position: absolute;
-  top: 12px;
-  left: 16px;
+  top: 10.56px;
+  left: 14.08px;
 }
+
 .table-header,
 .table-row {
   display: grid;
-  grid-template-columns: 3rem 5rem 3fr 4fr 10rem;
+  grid-template-columns: 2.64rem 4.4rem 2.64fr 3.52fr 8.8rem;
   justify-items: center;
   align-items: center;
-  padding: 1.5rem 2rem 1.5rem;
+  padding: 1.32rem 1.76rem 1.32rem;
 }
+
 .status {
   justify-self: start;
-  padding-left: 2rem;
+  padding-left: 1.76rem;
 }
+
 .table-header {
   background-color: #2a3042;
   color: white;
 }
+
 .table-cell,
 .status,
 .date-and-time {
   font-family: "Poppins";
-  font-weight: 500;
-  font-size: 1.06rem;
-  line-height: 1.6rem;
+  font-weight: 440;
+  font-size: 0.936rem;
+  line-height: 1.408rem;
 }
+
 .table-header .table-cell,
 .table-header .status {
-  font-weight: 600;
+  font-weight: 528;
 }
+
 .table-row {
   color: #575757;
-  height: 4.25rem;
-  padding: 0 2rem;
-  border-bottom: 1px solid #e1e0e2;
+  height: 3.74rem;
+  padding: 0 1.76rem;
+  border-bottom: 0.88px solid #e1e0e2;
 }
+
 .date-and-time {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.22rem;
 }
+
 .flag {
   color: #e1e1e1;
-  font-size: 1.5rem;
+  font-size: 1.32rem;
   cursor: pointer;
 }
 
 .square {
-  width: 22px;
-  height: 20px;
-  border-radius: 4px;
-  border: 1px solid #0832de;
+  width: 19.36px;
+  height: 17.6px;
+  border-radius: 3.52px;
+  border: 0.88px solid #0832de;
   justify-self: start;
 }
+
 .edit-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 6.8rem;
-  height: 2.06rem;
-  border-radius: 2.18rem;
+  width: 5.984rem;
+  height: 1.808rem;
+  border-radius: 1.92rem;
   background: #007bff;
   color: white;
   cursor: pointer;
