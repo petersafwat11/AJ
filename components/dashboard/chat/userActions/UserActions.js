@@ -7,17 +7,15 @@ const UserActions = () => {
   const [notValid, setNotValid] = useState();
   return (
     <div className={classes["container"]}>
-      <div className={classes["top"]}>
-        <div className={classes["selected-avatar"]}>
-          <Image
-            src="/svg/chat/avatars/Avatars/5.svg"
-            alt="avatar"
-            height="105"
-            width="91"
-          />
-        </div>
-      </div>
-      <div className={classes["body"]}>
+      <h2 className={classes["title"]}>User actions</h2>
+      <div className={classes["user"]}>
+        <Image
+          className={classes["avatar"]}
+          src="/svg/chat/avatars/Avatars/5.svg"
+          alt="avatar"
+          height="59"
+          width="71"
+        />
         <div className={classes["user-data"]}>
           <p className={classes["name"]}>messiog10</p>
           <p className={classes["id"]}>15.25.63.0.1</p>

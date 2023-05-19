@@ -1,6 +1,7 @@
+"use client";
 import React, { useState } from "react";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import classes from "./FilteredWords.module.css";
+import PAginations from "../paginations/PAginations";
+import classes from "./rules.module.css";
 const Rules = () => {
   const [rules, setRules] = useState([
     "Do not self promote",
@@ -20,23 +21,20 @@ const Rules = () => {
           <button className={classes["add"]}>Add</button>
           <button className={classes["delete"]}>Delete</button>
         </div>
-        <div className={classes["forbidden-words"]}>
-          {rules.map((item, index) => (
-            <div key={index} className={classes["group"]}>
-              <input type="checkbox" className={classes["input"]} />
-              <p>
-                {index + 1}. {item}
-              </p>
-            </div>
-          ))}
-        </div>
-        <div className={classes["paginations"]}>
-          <p>Page 1 of 9</p>
-          <div className={classes["arrows"]}>
-            <IoIosArrowBack /> <IoIosArrowForward />
-          </div>
-        </div>
       </div>
+      <div className={classes["rules"]}>
+        {rules.map((item, index) => (
+          <div key={index} className={classes["rule"]}>
+            <div>
+              <input type="checkbox" className={classes["input"]} />
+            </div>
+            <p className={classes["rule-para"]}>
+              <span className={classes["num"]}>{index + 1}.</span> {item}
+            </p>
+          </div>
+        ))}
+      </div>
+      {/* <PAginations /> */}
     </div>
   );
 };

@@ -30,47 +30,46 @@ const AutoMod = () => {
       <div className={classes["top"]}>
         <h2 className={classes["title"]}>Poll</h2>
         <div className={classes["actions"]}>
-          <button className={classes["add"]}>Add</button>
-          <button className={classes["delete"]}>Delete</button>
+          <button className={classes["allow"]}>Allow ALL</button>
+          <button className={classes["deny"]}>Deny ALL</button>
         </div>
-
-        {messages.map((message, index) => (
-          <div key={index} className={classes["wrapper"]}>
-            <div className={classes["my-message-wrapper"]}>
-              <div className={classes["message-details"]}>
-                <p className={classes["message-username"]}>{message.usename}</p>
-                <p className={classes["message-time"]}>{message.time}</p>
-              </div>
-              <div className={classes["message"]}>
-                <img
-                  className={classes["user-avatar"]}
-                  src={message.avatarSrc}
-                  alt="user-avatar"
-                  width="45"
-                />
-                <div className={classes["message-content"]}>
-                  {message.message.charAt(0) === "@" && (
-                    <span className={classes["mention-user"]}>
-                      {message.message.split(" ")[0]}
-                    </span>
-                  )}
-                  {getSubString(message.message)}
-                </div>
-                <FiAtSign
-                  onClick={() => {
-                    setMentionUserName("@" + message.usename + " ");
-                  }}
-                  className={classes["mention-icon"]}
-                />
-              </div>
+      </div>
+      {messages.map((message, index) => (
+        <div key={index} className={classes["wrapper"]}>
+          <div className={classes["my-message-wrapper"]}>
+            <div className={classes["message-details"]}>
+              <p className={classes["message-username"]}>{message.usename}</p>
+              <p className={classes["message-time"]}>{message.time}</p>
             </div>
-            <div className={classes["actions"]}>
-              <button className={classes["add"]}>Allow</button>
-              <button className={classes["delete"]}>Deny</button>
+            <div className={classes["message"]}>
+              <img
+                className={classes["user-avatar"]}
+                src={message.avatarSrc}
+                alt="user-avatar"
+                width="45"
+              />
+              <div className={classes["message-content"]}>
+                {message.message.charAt(0) === "@" && (
+                  <span className={classes["mention-user"]}>
+                    {message.message.split(" ")[0]}
+                  </span>
+                )}
+                {getSubString(message.message)}
+              </div>
+              <FiAtSign
+                onClick={() => {
+                  setMentionUserName("@" + message.usename + " ");
+                }}
+                className={classes["mention-icon"]}
+              />
             </div>
           </div>
-        ))}
-      </div>
+          <div className={classes["actions"]}>
+            <button className={classes["add"]}>Allow</button>
+            <button className={classes["delete"]}>Deny</button>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 .container {
   background: #ebebeb;
-  padding: 7.39rem 8.98rem 10.56rem 12.85rem;
+  padding: 7.3rem 11.22rem 8.8rem 8.9rem;
 }
 
 .title {
@@ -9,5 +9,29 @@
   line-height: 1.32rem;
   font-weight: 700;
   font-family: "Public Sans";
-  margin-bottom: 3.13rem;
+  margin-bottom: 1.265rem;
+}
+.actions {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 1.65rem;
+  margin-right: 2.03rem;
+}
+.description {
+  margin-top: 1rem;
+  margin-bottom: 1.265rem;
+}
+.details {
+  display: flex;
+  align-items: start;
+  gap: 1.1rem;
+}
+.sub-heading {
+  color: #000000;
+  font-size: 1.65rem;
+  line-height: 1.32rem;
+  font-weight: 500;
+  font-family: "Public Sans";
+  margin-bottom: 1.1rem;
+  margin-top: 3.08rem;
 }

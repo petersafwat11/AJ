@@ -8,7 +8,7 @@ const Description = () => {
   return (
     <div className={classes["container"]}>
       <h2 className={classes["title"]}> Description</h2>
-      <div className={classes["form-input"]}>
+      <div className={classes["input-group"]}>
         <label className={classes["label"]} htmlFor="description">
           mESSAGE
         </label>

@@ -8,7 +8,6 @@ const Title = () => {
   return (
     <div className={classes["container"]}>
       <h2 className={classes["title"]}> Title</h2>
-      <div className={classes["form-input"]}>
         <input
           type="text"
           className={classes["input"]}
@@ -17,7 +16,6 @@ const Title = () => {
             setTitle(e.target.value);
           }}
         />
-      </div>
     </div>
   );
 };
