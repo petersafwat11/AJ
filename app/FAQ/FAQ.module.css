@@ -53,10 +53,14 @@
 .container-heading-title {
   font-size: 2.15rem;
   line-height: 3rem;
-  font-family: RobotoBold;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
 }
 .container-heading-para {
   color: rgba(255, 255, 255, 0.56);
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+
   font-size: 1rem;
   line-height: 2rem;
 }
@@ -81,15 +85,17 @@
   border-radius: 0.75rem;
 }
 .question-wrapper-question {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   line-height: 1.6rem;
-  font-family: RobotoBold;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
 }
 .question-wrapper-answer {
   color: rgba(255, 255, 255, 0.56);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   line-height: 1.5rem;
   font-weight: 400;
+  font-family: "Poppins", sans-serif;
 }
 .uesr-feedback {
   display: flex;
@@ -132,10 +138,10 @@
       env(safe-area-inset-bottom) env(safe-area-inset-left);
     margin: 0;
     background-image: linear-gradient(
-      to right bottom,
-      rgba(16, 23, 26, 0.95),
-      rgba(21, 26, 31, 0.938)
-    ),
+        to right bottom,
+        rgba(16, 23, 26, 0.95),
+        rgba(21, 26, 31, 0.938)
+      ),
       url(../../public/wallpaper/main.jpg);
     background-repeat: no-repeat;
     background-size: cover;

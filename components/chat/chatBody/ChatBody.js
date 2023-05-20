@@ -1,5 +1,5 @@
 import React from "react";
-import { FiAtSign } from "react-icons/fi";
+import { GoMention } from "react-icons/go";
 import classes from "./chatBody.module.css";
 const ChatBody = ({ messages, getSubString, setMentionSomeone }) => {
   return (
@@ -51,7 +51,7 @@ const ChatBody = ({ messages, getSubString, setMentionSomeone }) => {
                 )}
                 {getSubString(message.message)}
               </div>
-              <FiAtSign
+              <GoMention
                 onClick={() => {
                   setMentionSomeone("@" + message.usename + " ");
                 }}

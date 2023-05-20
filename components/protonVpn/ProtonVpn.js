@@ -9,7 +9,7 @@ const ProtonVpn = () => {
         <img
           className={classes["logo"]}
           src="/svg/vpn/logo.svg"
-          width="37"
+          width="36"
           alt="logo"
         />
         <img className={classes["map"]} src="/svg/vpn/map.svg" alt="map" />

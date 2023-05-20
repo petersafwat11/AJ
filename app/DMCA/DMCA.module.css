@@ -67,7 +67,9 @@
   flex-direction: column;
   gap: 2.5rem;
   color: rgba(255, 255, 255, 0.75);
-  font-family: RobotoSemiBold;
+  font-family: "Poppins", sans-serif;
+
+  font-weight: 600;
   font-size: 0.9rem;
   line-height: 1.22rem;
 }
@@ -106,10 +108,10 @@
       env(safe-area-inset-bottom) env(safe-area-inset-left);
     margin: 0;
     background-image: linear-gradient(
-      to right bottom,
-      rgba(16, 23, 26, 0.95),
-      rgba(21, 26, 31, 0.938)
-    ),
+        to right bottom,
+        rgba(16, 23, 26, 0.95),
+        rgba(21, 26, 31, 0.938)
+      ),
       url(../../public/wallpaper/main.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -130,81 +132,83 @@
   }
   .top-heading {
     margin-top: 1.65rem;
-        padding-left: 0.25rem;
+    padding-left: 0.25rem;
     padding-right: 0.75rem;
+  }
+}
+.top-heading-title {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+}
+.container {
+  margin-top: 0.5rem;
+  border-radius: 0.75rem;
+  background-color: #0d1317;
+  padding-bottom: 1.75rem;
+}
+.disclaimer {
+  padding: 1.375rem 2.75rem 3.75rem;
+  gap: 0.8rem;
+}
+.disclaimer-heading {
+  font-size: 1.6rem;
+  line-height: 1.5rem;
+}
+.disclaimer-para {
+  gap: 2rem;
+  font-size: 0.825rem;
+  line-height: 0.875rem;
+}
+.second-part {
+  background: #172026;
+  width: 86.7%;
+  margin: auto;
+  padding: 1.4375rem 1.816rem;
+  border-radius: 0.5rem;
+}
+.companies-logoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 3.125rem;
+  justify-items: center;
+}
+.companies-logoes-mobile {
+  display: none;
+}
+.netflix-icon,
+.google-icon {
+  justify-self: start;
+}
+.dailymotion-icon,
+.youtube-icon {
+  justify-self: end;
+}
+.netflix-icon {
+  width: 77px;
+  height: 23px;
+}
+.vimeo-icon {
+  width: 66.7px;
+  height: 18.4px;
+}
+.dailymotion-icon {
+  width: 110px;
+  height: 20.7px;
+}
+.google-icon {
+  width: 75px;
+  height: 24.15px;
+}
+.twitch-icon {
+  width: 65.5px;
+  height: 21.85px;
+}
+.youtube-icon {
+  width: 87.4px;
+  height: 19.55px;
 }
 
-  }
-  .top-heading-title {
-    font-size: 1.2rem;
-    line-height: 1.4rem;
-  }
-  .container {
-    margin-top: 0.5rem;
-    border-radius: 0.75rem;
-    background-color: #0d1317;
-    padding-bottom: 1.75rem;
-  }
-  .disclaimer {
-    padding: 1.375rem 2.75rem 1.65rem;
-    gap: 0.8rem;
-  }
-  .disclaimer-heading {
-    font-size: 1.3125rem;
-    line-height: 1.5rem;
-  }
-  .disclaimer-para {
-    gap: 2rem;
-    font-size: 0.625rem;
-    line-height: 0.875rem;
-  }
-  .second-part {
-    background: #172026;
-    width: 86.7%;
-    margin: auto;
-    padding: 1.4375rem 1.816rem;
-    border-radius: 0.5rem;
-  }
-  .companies-logoes {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-row-gap: 3.125rem;
-    justify-items: center;
-  }
-  .netflix-icon,
-  .google-icon {
-    justify-self: start;
-  }
-  .dailymotion-icon,
-  .youtube-icon {
-    justify-self: end;
-  }
-  .netflix-icon {
-    width: 77px;
-    height: 23px;
-  }
-  .vimeo-icon {
-    width: 66.7px;
-    height: 18.4px;
-  }
-  .dailymotion-icon {
-    width: 110px;
-    height: 20.7px;
-  }
-  .google-icon {
-    width: 75px;
-    height: 24.15px;
-  }
-  .twitch-icon {
-    width: 65.5px;
-    height: 21.85px;
-  }
-  .youtube-icon {
-    width: 87.4px;
-    height: 19.55px;
-  }
-
-  /* .contact-us-button {
+/* .contact-us-button {
     width: 6.2rem;
     height: 2.15rem;
     font-size: 0.6rem;
@@ -212,29 +216,61 @@
   } */
 
 @media (max-width: 700px) {
+  .second-part {
+    background: inherit;
+    width: 86.7%;
+    margin: auto;
+    padding: 0;
+    border-radius: none;
+  }
+
+  .companies-logoes-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+  }
+  .companies-logoes {
+    display: none;
+  }
+  .companies-logoes-mobile > :nth-child(odd) {
+    background-color: #131d23;
+    border: 1px solid #131d23;
+    border-radius: 0.5rem;
+  }
+
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: inherit;
+    width: 100%;
+    height: 7.687rem;
+  }
+
   .netflix-icon {
-    width: 67px;
-    height: 20px;
+    width: 128px;
+    height: 40px;
   }
   .vimeo-icon {
-    width: 58px;
-    height: 16px;
+    width: 127px;
+    height: 35px;
   }
   .dailymotion-icon {
-    width: 95px;
-    height: 18px;
+    width: 217px;
+    height: 39px;
   }
   .google-icon {
-    width: 65px;
-    height: 21px;
+    width: 147px;
+    height: 47px;
   }
   .twitch-icon {
-    width: 57px;
-    height: 19px;
+    width: 123.4px;
+    height: 41px;
   }
   .youtube-icon {
-    width: 76px;
-    height: 17px;
+    width: 168px;
+    height: 37px;
   }
 }
 @media (max-width: 500px) {

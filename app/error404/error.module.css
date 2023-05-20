@@ -85,10 +85,10 @@
       env(safe-area-inset-bottom) env(safe-area-inset-left);
     margin: 0;
     background-image: linear-gradient(
-      to right bottom,
-      rgba(16, 23, 26, 0.95),
-      rgba(21, 26, 31, 0.938)
-    ),
+        to right bottom,
+        rgba(16, 23, 26, 0.95),
+        rgba(21, 26, 31, 0.938)
+      ),
       url(../../public/wallpaper/main.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -113,7 +113,8 @@
     gap: 2.1rem;
   }
   .title {
-    font-size: 1.87rem;
+    font-size: 2rem;
+    text-align: center;
   }
   .error-message {
     font-size: 1.16rem;
@@ -144,10 +145,6 @@
   .first-section {
     padding: 1.86rem 2rem 1.4rem;
     gap: 1rem;
-  }
-  .title {
-    font-size: 1.625rem;
-    white-space: nowrap;
   }
   .error-message {
     font-size: 1rem;

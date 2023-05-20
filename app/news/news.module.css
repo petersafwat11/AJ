@@ -70,13 +70,15 @@
   padding-right: 1.3rem;
 }
 .news-item-heading {
-  font-family: RobotoBold;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 1.125rem;
   line-height: 1.3215rem;
 }
 .news-item-para {
   font-weight: 400;
+  font-family: "Roboto", sans-serif;
+
   font-size: 0.75rem;
   line-height: 0.9rem;
   color: rgba(255, 255, 255, 0.7);
@@ -124,10 +126,10 @@
       env(safe-area-inset-bottom) env(safe-area-inset-left);
     margin: 0;
     background-image: linear-gradient(
-      to right bottom,
-      rgba(16, 23, 26, 0.95),
-      rgba(21, 26, 31, 0.938)
-    ),
+        to right bottom,
+        rgba(16, 23, 26, 0.95),
+        rgba(21, 26, 31, 0.938)
+      ),
       url(../../public/wallpaper/main.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -162,8 +164,8 @@
     padding: 0.65rem 1.3rem 0.65rem;
   }
   .news-item-image {
-    width: 11.48rem;
-    height: 9.57rem;
+    width: 140px;
+    height: 116px;
     border-radius: 0.522rem;
   }
   .news-item-content {
@@ -177,7 +179,7 @@
   }
   .news-item-para {
     font-size: 0.65rem;
-    line-height: 0.78rem;
+    line-height: 0.8rem;
   }
   .paginations {
     margin-top: 1.875rem;
@@ -223,30 +225,44 @@
     gap: 0.76rem;
     padding: 0.7rem 0.9rem;
   }
-  .news-item-image {
+  /* .news-item-image {
     width: 129px;
     height: 100px;
     border-radius: 0.3rem;
-  }
+  } */
   .news-item-content {
     margin-top: 0.5rem;
     gap: 0.5rem;
     padding-right: 3px;
   }
   .news-item-heading {
-    font-size: 0.68rem;
+    font-size: 1rem;
     line-height: 0.82rem;
   }
   .news-item-para {
     font-weight: 500;
-    font-family: RobotoRegular;
-    font-size: 0.5rem;
-    line-height: 0.567rem;
+    font-size: 0.75rem;
+    line-height: 0.8rem;
   }
 }
 @media (max-width: 600px) {
   .news {
     max-width: 100%;
     margin: 0 3px;
+  }
+}
+@media (max-width: 400px) {
+  .news-item-image {
+    width: 120px;
+    height: 100px;
+  }
+
+  .news-item-heading {
+    font-size: 0.8rem;
+    line-height: 0.7rem;
+  }
+  .news-item-para {
+    font-size: 0.6rem;
+    line-height: 0.567rem;
   }
 }

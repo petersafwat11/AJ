@@ -67,8 +67,8 @@ const Page = () => {
               className={classes["chat-icon"]}
               src="/svg/chat-floating.svg"
               alt="chat"
-              width="140"
-              height="140"
+              width="120"
+              height="120"
             />
           )}
           {showChat && (

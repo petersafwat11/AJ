@@ -34,10 +34,11 @@
   background-color: #101a22;
   color: rgba(255, 255, 255, 0.95);
   border-radius: 0.3rem;
-  /* width: 63%; */
   padding: 0.4rem 0.8rem;
   height: 2.1rem;
   font-weight: 400;
+  font-family: "Poppins", sans-serif;
+
   font-size: 0.8rem;
   line-height: 0.9rem;
 }

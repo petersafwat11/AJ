@@ -19,7 +19,7 @@
   padding-bottom: 7rem;
 }
 .privacy-policy * {
-  font-family: RobotoRegular;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 0.9rem;
   line-height: 1.22rem;
@@ -80,7 +80,7 @@
 .wrapper h3 {
   color: white;
   font-weight: 600;
-  font-family: RobotoSemiBold;
+  font-family: 'Poppins', sans-serif;
   margin-bottom: 0.1rem;
   font-size: 1rem;
 }

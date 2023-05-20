@@ -73,7 +73,7 @@ const TopLayout = () => {
           className={styles["telegram-icon"]}
           src="/svg/telegram-floating.svg"
           alt="telegram-channel"
-          width="36"
+          width="30"
           height="30"
         />
       </a>

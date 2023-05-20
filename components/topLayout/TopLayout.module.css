@@ -19,6 +19,10 @@
   cursor: pointer;
   z-index: 10;
 }
+.telegram-link:hover {
+  background: linear-gradient(#259dde, #1b8abd);
+}
+
 body .padding-lr {
   margin-bottom: 0.5rem !important;
 }

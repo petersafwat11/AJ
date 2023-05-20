@@ -15,7 +15,7 @@
   /* width: 23.4rem; */
 }
 .header-item {
-  font-weight: 700;
+  font-weight: 600;
   font-family: RobotoBold;
   font-size: 1.125rem;
   line-height: 1.31rem;
@@ -239,7 +239,7 @@
 }
 .stats-option p {
   font-family: RobotoBold;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.125rem;
   line-height: 1.31rem;
 }

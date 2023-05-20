@@ -1,7 +1,7 @@
 .footer {
   box-sizing: border-box;
   background-color: #0d1317;
-  padding: 3.85rem 0 1.5rem;
+  padding: 4.85rem 0 2rem;
 }
 .container {
   width: min(75%, 87.5rem);
@@ -29,15 +29,14 @@
 .footer-container-disclaimer > h3 {
   font-family: RobotoBold;
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   line-height: 1.65rem;
 }
 .footer-container-disclaimer > p {
   font-family: "Poppins";
-  font-size: 0.75rem;
+  font-size: 0.95rem;
   line-height: 1rem;
-  font-weight: 500;
-  font-family: RobotoRegular;
+  font-weight: 400;
 
   color: rgba(255, 255, 255, 0.75);
 }
@@ -60,7 +59,7 @@
 .footer-container-links-heading {
   font-weight: 600;
   font-family: RobotoSemiBold;
-  font-size: 0.94rem;
+  font-size: 1.14rem;
   line-height: 1.15rem;
   margin-bottom: 0.8rem;
   white-space: nowrap;
@@ -71,7 +70,7 @@
   align-items: start;
   gap: 0.7rem;
   line-height: 0.75rem;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 400;
   color: #666769;
 }

@@ -121,12 +121,12 @@
     gap: 0.25rem;
   }
   .selected-timezone {
-    font-size: 0.55rem;
+    font-size: 0.6rem;
     line-height: 0.67rem;
   }
   .arrow {
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
 }
   .space {
     height: 3px;

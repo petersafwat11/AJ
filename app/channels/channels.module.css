@@ -123,8 +123,8 @@
   background: rgba(255, 255, 255, 0.05);
   border-radius: 0.25rem;
   font-weight: 400;
-  font-size: 0.7rem;
-  line-height: 0.93rem;
+  font-size: 0.703rem;
+  line-height: 0.937rem;
   color: rgba(216, 216, 216, 0.4);
 }
 .search-icon {
@@ -209,11 +209,11 @@
     line-height: 0.75rem;
   }
   .heading-span {
-    font-size: 0.625rem;
+    font-size: 0.725rem;
     line-height: 0.75rem;
   }
   .heading-title {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     line-height: 1.375rem;
     margin-bottom: 0.7rem;
     margin-top: 0.17rem;
@@ -240,15 +240,15 @@
   }
   .watch-video-options-server-name {
     padding: auto;
-    font-size: 0.56rem;
+    font-size: 0.67rem;
     line-height: 0.68rem;
     font-family: RobotoSemiBold;
-    width: 4.3125rem;
-    height: 1.375rem;
+    width: 4.5125rem;
+    height: 1.525rem;
     border-radius: 1.875rem;
     white-space: nowrap;
   }
-  .watch-video-options-extend-button {
+  /* .watch-video-options-extend-button {
     border-radius: 1.75rem;
     padding: 0.4rem 0.9rem;
     height: 1.125rem;
@@ -257,7 +257,7 @@
     line-height: 0.5rem;
     font-weight: 600;
     font-family: RobotoSemiBold;
-  }
+  } */
   .search-div {
     margin-top: 1.75rem;
     position: relative;

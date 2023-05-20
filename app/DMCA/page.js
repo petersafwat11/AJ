@@ -39,48 +39,118 @@ const Page = () => {
             </div>
             <div className={classes["second-part"]}>
               <div className={classes["companies-logoes"]}>
-                <Image
-                  className={classes["netflix-icon"]}
-                  src="/svg/DMCA/netflix.svg"
-                  alt="netflix"
-                  width="114"
-                  height="30"
-                />
-                <Image
-                  className={classes["vimeo-icon"]}
-                  src="/svg/DMCA/vimeo.svg"
-                  alt="vimeo"
-                  width="105"
-                  height="29"
-                />
-                <Image
-                  className={classes["dailymotion-icon"]}
-                  src="/svg/DMCA/dailymotion.svg"
-                  alt="dailymotion"
-                  width="165"
-                  height="30"
-                />
-                <Image
-                  className={classes["google-icon"]}
-                  src="/svg/DMCA/google.svg"
-                  alt="google"
-                  width="110"
-                  height="36"
-                />
-                <Image
-                  className={classes["twitch-icon"]}
-                  src="/svg/DMCA/twitch.svg"
-                  alt="twitch"
-                  width="93"
-                  height="30"
-                />
-                <Image
-                  className={classes["youtube-icon"]}
-                  src="/svg/DMCA/youtube.svg"
-                  alt="youtube"
-                  width="127"
-                  height="27"
-                />
+                <div className={classes["icon-wrapper"]}>
+                  <Image
+                    className={classes["netflix-icon"]}
+                    src="/svg/DMCA/netflix.svg"
+                    alt="netflix"
+                    width="114"
+                    height="30"
+                  />
+                </div>
+                <div className={classes["icon-wrapper"]}>
+                  <Image
+                    className={classes["vimeo-icon"]}
+                    src="/svg/DMCA/vimeo.svg"
+                    alt="vimeo"
+                    width="105"
+                    height="29"
+                  />
+                </div>
+                <div className={classes["icon-wrapper"]}>
+                  <Image
+                    className={classes["dailymotion-icon"]}
+                    src="/svg/DMCA/dailymotion.svg"
+                    alt="dailymotion"
+                    width="165"
+                    height="30"
+                  />
+                </div>
+                <div className={classes["icon-wrapper"]}>
+                  <Image
+                    className={classes["google-icon"]}
+                    src="/svg/DMCA/google.svg"
+                    alt="google"
+                    width="110"
+                    height="36"
+                  />
+                </div>
+                <div className={classes["icon-wrapper"]}>
+                  <Image
+                    className={classes["twitch-icon"]}
+                    src="/svg/DMCA/twitch.svg"
+                    alt="twitch"
+                    width="93"
+                    height="30"
+                  />
+                </div>
+                <div className={classes["icon-wrapper"]}>
+                  <Image
+                    className={classes["youtube-icon"]}
+                    src="/svg/DMCA/youtube.svg"
+                    alt="youtube"
+                    width="127"
+                    height="27"
+                  />
+                </div>
+              </div>
+              <div className={classes["companies-logoes-mobile"]}>
+                <div className={classes["icon-wrapper"]}>
+                  <Image
+                    className={classes["netflix-icon"]}
+                    src="/svg/DMCA/netflix.svg"
+                    alt="netflix"
+                    width="114"
+                    height="30"
+                  />
+                </div>
+                <div className={classes["icon-wrapper"]}>
+                  <Image
+                    className={classes["vimeo-icon"]}
+                    src="/svg/DMCA/vimeo.svg"
+                    alt="vimeo"
+                    width="105"
+                    height="29"
+                  />
+                </div>
+
+                <div className={classes["icon-wrapper"]}>
+                  <Image
+                    className={classes["google-icon"]}
+                    src="/svg/DMCA/google.svg"
+                    alt="google"
+                    width="110"
+                    height="36"
+                  />
+                </div>
+                <div className={classes["icon-wrapper"]}>
+                  <Image
+                    className={classes["youtube-icon"]}
+                    src="/svg/DMCA/youtube.svg"
+                    alt="youtube"
+                    width="127"
+                    height="27"
+                  />
+                </div>
+
+                <div className={classes["icon-wrapper"]}>
+                  <Image
+                    className={classes["twitch-icon"]}
+                    src="/svg/DMCA/twitch.svg"
+                    alt="twitch"
+                    width="93"
+                    height="30"
+                  />
+                </div>
+                <div className={classes["icon-wrapper"]}>
+                  <Image
+                    className={classes["dailymotion-icon"]}
+                    src="/svg/DMCA/dailymotion.svg"
+                    alt="dailymotion"
+                    width="165"
+                    height="30"
+                  />
+                </div>
               </div>
               {/* <button className={classes['contact-us-button']}>CONTACT US</button> */}
             </div>
