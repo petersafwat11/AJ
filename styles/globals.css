@@ -54,7 +54,9 @@ body {
   overscroll-behavior: contain; /* or contain-x, contain-y */
   background-color: #0d1316; /* set your desired background color */
 }
-
+body .jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-logo-button {
+  display: none;
+}
 body * {
   --gpr-bg-color: inherit !important;
   --color-border: #0d1318 !important;

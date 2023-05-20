@@ -94,7 +94,7 @@
 .send-message-button p {
   rotate: 90deg;
   font-weight: 600;
-  font-family: RobotoSemiBold;
+  font-family: "Roboto", sans-serif;
   font-size: 0.93rem;
   letter-spacing: 0.75px;
 }

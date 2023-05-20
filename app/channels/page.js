@@ -80,7 +80,6 @@ const Page = () => {
             <div className={classes["top-heading"]}>
               <span className={classes["heading-span"]}> Now Playing </span>
               <h3
-                onClick={toggleShareLinks}
                 className={classes["heading-title"]}
               >
                 Sky Sports
