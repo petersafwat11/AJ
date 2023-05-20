@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import PAginations from "../paginations/PAginations";
-import classes from "./filteredWords.module.css";
+import classes from './filteredWords.module.css'
 
 const FilteredWords = () => {
   const [forbiddenWords, setForbiddenWords] = useState([

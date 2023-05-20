@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import PAginations from "../paginations/PAginations";
 import classes from "./rules.module.css";
 const Rules = () => {
   const [rules, setRules] = useState([
