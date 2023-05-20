@@ -98,7 +98,7 @@
     height: auto;
     border-radius: 0.76rem;
     padding: 0.65rem 0 0.67rem;
-    gap: 0.2rem;
+    gap: 0.35rem;
   }
 
   .background {
@@ -113,12 +113,12 @@
   }
   .para {
     z-index: 2;
-    font-size: 0.56rem;
+    font-size: 0.6rem;
     line-height: 1.5rem;
   }
   .title {
     z-index: 2;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     line-height: 0.125rem;
     margin-top: 0.1rem;
     margin-bottom: 0.5rem;
@@ -129,7 +129,7 @@
     width: 6.2rem;
     height: 1.5rem;
     border-radius: 0.28rem;
-    font-size: 0.5rem;
+    font-size: 0.65rem;
     padding-top: 1.7px;
   }
   .right-arrow {

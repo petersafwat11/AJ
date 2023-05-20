@@ -77,21 +77,21 @@
 }
 @media (max-width: 56.25rem) {
   .payment-method {
-    width: min(22rem, 95%);
+    width: min(24rem, 95%);
     height: auto;
     border-radius: 2.125rem;
-    padding: 1.28rem 1.2rem 1.28rem 1.42rem;
+    padding: 2rem 1.2rem 1.28rem 1.42rem;
   }
   .top {
     width: 100%;
     margin-left: auto;
   }
   .exit {
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 15px;
   }
   .heading {
-    font-size: 1.42rem;
+    font-size: 1.62rem;
     line-height: 2.88rem;
   }
   .data {
@@ -99,7 +99,7 @@
     width: 100%;
     height: 2.72rem;
     border-radius: 0.3rem;
-    font-size: 0.68rem;
+    font-size: 0.74rem;
     margin-top: 1.42rem;
   }
   .thankful-message {
@@ -115,6 +115,6 @@
     width: 6.3rem;
     height: 2.28rem;
     border-radius: 0.3rem;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 }

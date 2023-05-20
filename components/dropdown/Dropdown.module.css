@@ -115,13 +115,13 @@
   .name,
   .name-2 {
     border-radius: 1.85rem;
-    width: 4.375rem;
-    height: 1.375rem;
+    width: 4.475rem;
+    height: 1.475rem;
     padding: 0 0.4rem 0 1rem;
     justify-content: space-between;
   }
   .lang-name {
-    font-size: 0.56rem;
+    font-size: 0.66rem;
   }
   .drop-icon {
     width: 10px;

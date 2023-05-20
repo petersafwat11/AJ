@@ -116,11 +116,11 @@
 @media (max-width: 56.25rem) {
   .share-links {
     border-radius: 1.44rem;
-    padding: 1.477rem 1.477rem 1.275rem 1.3rem;
-    width: min(23.625rem, 95%);
+    padding: 1.577rem 1.477rem 1.275rem 1.3rem;
+    width: min(25.625rem, 97%);
   }
   .share-links-title {
-    font-size: 0.945rem;
+    font-size: 1.2rem;
     line-height: 0.7rem;
   }
   .share-links-exit {
@@ -149,9 +149,9 @@
   .share-links-bottom {
     height: 2.175rem;
     border-radius: 0.56rem;
-    font-size: 0.56rem;
+    font-size: 0.66rem;
     line-height: 0.63rem;
-    padding: 0 0.5rem;
+    padding: 0 0.7rem;
     margin: 1.36rem auto 0;
   }
   .copy-icon {
