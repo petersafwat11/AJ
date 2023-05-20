@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import PAginations from "../paginations/PAginations";
+import Paginations from "../paginations/Paginations";
 import classes from './filteredWords.module.css'
 
 const FilteredWords = () => {
@@ -26,7 +26,7 @@ const FilteredWords = () => {
           </div>
         ))}
       </div>
-      <PAginations />
+      <Paginations />
     </div>
   );
 };

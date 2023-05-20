@@ -4,7 +4,7 @@ import Popup from "../../popupWrapper/Popup";
 import ImageUploader from "./../imageUpload/ImageUpload";
 import { Actions, TopPart } from "./TopAndBottom";
 import classes from "./changeAvatar.module.css";
-import RightPart from "./rightPart";
+import RightPart from "./RightPart";
 
 const ChangeAvatar = ({
   toggleChangeAvatar,
