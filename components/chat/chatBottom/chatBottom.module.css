@@ -43,7 +43,7 @@
   line-height: 0.9rem;
 }
 .chat-input:focus-visible {
-  border: 1.5px solid #03a1cd;
+  border: 2px solid #03a1cd;
 }
 .chat-bottom-send {
   min-width: 1.79rem;
@@ -88,15 +88,15 @@
 @media (max-width: 56.25rem) {
   .chat-bottom {
     gap: 0.45rem;
-    padding: 1.07rem 0.75rem 0.75rem 0.55rem;
+    padding: 1.07rem 0.75rem 0.75rem 0.65rem;
   }
   .chat-input {
     border-radius: 0.3rem;
     /* width: 63%; */
     padding: 0.3125rem 0.6rem;
-    height: 1.5rem;
+    height: 1.65rem;
     font-weight: 400;
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     line-height: 0.75rem;
   }
   .emojy {

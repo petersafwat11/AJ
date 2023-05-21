@@ -92,13 +92,13 @@ const Page = () => {
               }}
               firstTeamName={"Anthony Joshua"}
               firstTeamImageDimentions={{
-                width: { desktop: "107", tablet: "90", mobile: "75" },
-                height: { desktop: "107", tablet: "90", mobile: "75" },
+                width: { desktop: "130", tablet: "90", mobile: "75" },
+                height: { desktop: "130", tablet: "90", mobile: "75" },
               }}
               seconteamImage={"/svg/watch/boxing-2.svg"}
               secondTeamImageDimentions={{
-                width: { desktop: "107", tablet: "90", mobile: "75" },
-                height: { desktop: "107", tablet: "90", mobile: "75" },
+                width: { desktop: "130", tablet: "90", mobile: "75" },
+                height: { desktop: "130", tablet: "90", mobile: "75" },
               }}
               seconteamName={"Tyson Fury"}
               date={"Aug 18 15:00"}

@@ -87,11 +87,11 @@
   }
 
   .title {
-    font-size: 0.84rem;
-    line-height: 0.95rem;
+    font-size: 0.95rem;
+    line-height: 1rem;
   }
   .para {
-    font-size: 0.55rem;
+    font-size: 0.7rem;
     line-height: 1.25rem;
   }
   .file-pload-wrapper {
@@ -104,8 +104,12 @@
     border-radius: 0.5rem;
   }
   .file-upload-para {
-    font-size: 0.55rem;
-    line-height: 0.625rem;
+    font-size: 0.65rem;
+    line-height: 0.6rem;
+  }
+  .upload-icon{
+    width: 17px;
+    height: 19.42px;
   }
   .actions {
     gap: 0.687rem;

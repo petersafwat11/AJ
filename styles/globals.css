@@ -61,6 +61,10 @@ body * {
   --gpr-bg-color: inherit !important;
   --color-border: #0d1318 !important;
 }
+body *::selection {
+  background-color: #03a1cd;
+}
+
 .skin-tone-button .skin-tone:after {
   border: 1px solid blue !important;
 }
