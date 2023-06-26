@@ -1,0 +1,105 @@
+.wrapper {
+  padding: 0;
+  margin: 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(16, 23, 26, 0.95),
+      rgba(21, 26, 31, 0.938)
+    ),
+    url(../../public/wallpaper/main.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  overscroll-behavior: none;
+}
+
+.pricing {
+  max-width: min(85%, 54.5rem);
+  margin: 0 auto;
+  padding-bottom: 2.5rem;
+}
+.top-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: #00c4fb;
+  width: 88%;
+  margin: 3.65rem auto 0;
+}
+.heading {
+  font-weight: 500;
+  font-family: RobotoRegular;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+}
+.top-heading > span {
+  flex-grow: 1;
+  background-color: #00c4fb;
+  height: 1px;
+}
+.notify-me {
+  width: 54.46rem;
+  height: 37.3rem;
+  border-radius: 41px;
+  background: #0d1317;
+  /* Drop Shadow/High */
+  box-shadow: 0px 20px 50px 0px rgba(18, 17, 39, 0.08);
+  padding: 4.45rem 4.03rem 3.6rem 4.125rem;
+  margin-top: 1.78rem;
+}
+.notify-me .container {
+  display: flex;
+  align-items: start;
+  gap: 1.125rem;
+}
+.remaining-time {
+  color: #eb5757;
+  font-size: 1.21rem;
+  font-family: "Poppins";
+  font-weight: 700;
+  letter-spacing: 0.26px;
+}
+.title {
+  color: #e8e8e8;
+  font-size: 3rem;
+  line-height: 140%;
+  font-family: "Poppins";
+  font-weight: 700;
+  letter-spacing: 0.64px;
+  margin-top: 1.36rem;
+}
+.left {
+  margin-top: 2.9rem;
+}
+.devider,
+.devider-2 {
+  width: 100%;
+  height: 1px;
+  display: block;
+  opacity: 0.6000000238418579;
+  background: #616161;
+  margin-top: 3.46rem;
+  margin-bottom: 2.43rem;
+}
+.devider-2 {
+  margin-top: 3rem;
+  margin-bottom: 1.12rem;
+}
+.sub-title {
+  color: #fff;
+  text-align: center;
+  font-size: 2.25rem;
+  font-family: "Roboto";
+  font-weight: 600;
+  margin-bottom: 2.25rem;
+}
+.comming-soon {
+  color: #fff;
+  text-align: center;
+  font-size: 2.25rem;
+  font-family: "Poppins";
+  font-weight: 600;
+}
+.comming-soon span {
+  color: #01bcf1;
+}

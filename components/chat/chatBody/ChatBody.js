@@ -1,6 +1,8 @@
 import React from "react";
 import { GoMention } from "react-icons/go";
+import TagUsers from "../tagUsers/TagUsers";
 import classes from "./chatBody.module.css";
+
 const ChatBody = ({ messages, getSubString, setMentionSomeone }) => {
   return (
     <div className={classes["chat-body"]}>

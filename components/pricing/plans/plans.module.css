@@ -1,0 +1,135 @@
+.plans {
+  display: flex;
+  align-items: start;
+}
+.plans > * {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.7rem;
+  box-shadow: 0px 4px 23px 0px rgba(0, 0, 0, 0.5);
+}
+.freebie {
+  padding: 1.78rem 1.83rem 1.875rem 1.78rem;
+  min-width: 21.23rem;
+  height: 47.15rem;
+  gap: 1.875rem;
+  background: #1a2126;
+  margin-right: -1.4rem;
+  margin-top: 29.25px;
+}
+.yearly {
+  width: 22.26rem;
+  height: 50.6rem;
+  padding: 3.1rem 2.43rem 2.4rem 2.06rem;
+  background: #0099ca;
+  z-index: 2;
+}
+.monthly {
+  width: 21.4rem;
+  height: 47.15rem;
+  padding: 1.73rem 2.43rem 1.875rem 1.78rem;
+  margin-left: -0.656rem;
+  background: #fff;
+  margin-top: 32.25px;
+}
+
+.plan-header {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.51rem;
+  margin-bottom: 0.937rem;
+}
+.monthly .plan-header {
+  margin-bottom: 0.798rem;
+}
+.header-title {
+  color: #fff;
+  font-size: 1.4rem;
+  font-family: "Manrope";
+  font-weight: 700;
+}
+.header-description {
+  color: #8d9fb8;
+  font-size: 1.03rem;
+  font-family: "Manrope";
+  font-weight: 500;
+}
+.yearly .header-description {
+  color: #f7f8f9;
+}
+.monthly .header-description {
+  color: #8a8a8a;
+}
+.monthly .price {
+  color: #191d23;
+}
+
+.price {
+  color: #fff;
+  font-size: 2.7rem;
+  font-family: "Manrope";
+  font-weight: 700;
+}
+.price .time {
+  color: #a9c2e4;
+  font-size: 0.85rem;
+  font-family: "Manrope";
+  font-weight: 300;
+}
+.yearly .price .time {
+  color: #f7f8f9;
+}
+.monthly .price .time {
+  color: #4b5768;
+}
+.comming-soon {
+  display: flex;
+  width: 17.7rem;
+  height: 2.5rem;
+  padding: 0.28rem 0.56rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.187rem;
+  align-self: stretch;
+  border-radius: 0.187rem;
+  background: #fff;
+  color: #1d4ed8;
+  text-align: center;
+  font-size: 0.93rem;
+  font-family: "Manrope";
+  font-weight: 600;
+  margin: 1.125rem 0 1.875rem;
+}
+.monthly .comming-soon {
+  border: 1.5px solid #1d4ed8;
+  margin: 0.98rem 0 1.7rem;
+}
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.609rem;
+}
+.yearly .features {
+  gap: 0.56rem;
+}
+.supported-feature,
+.not-supported-feature {
+  color: #fff;
+  font-size: 1.125rem;
+  font-family: "Manrope";
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.yearly .supported-feature {
+  font-size: 1.03rem;
+}
+.monthly .supported-feature {
+  color: #1d4ed8;
+  font-size: 1.03rem;
+}
+.not-supported-feature {
+  color: #a0abbb;
+}

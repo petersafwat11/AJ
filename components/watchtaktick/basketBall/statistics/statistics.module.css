@@ -1,0 +1,74 @@
+.container {
+  width: 27.9rem;
+}
+.stats {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 2px;
+}
+.stats-item,
+.stats-item-zero-state {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 0.703rem;
+  height: 4.6rem;
+  width: 100%;
+  border-radius: 0.56rem;
+  padding: 0 1.125rem;
+  transition: all 0.3s ease-in-out;
+}
+.stats-item:hover,
+.stats-item-zero-state:hover {
+  background: #222627;
+}
+.item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.item-top * {
+  font-size: 0.9rem;
+  font-family: "Roboto";
+  font-weight: 700;
+}
+.item-top .first {
+  color: #01bcf1;
+}
+.item-top .last {
+  color: #ff4747;
+}
+.stats-item-zero-state .first,
+.stats-item-zero-state .last {
+  color: #414141;
+}
+
+.progress-bar,
+.progress-bar-zero {
+  width: 100%;
+  height: 7.5px;
+  border-radius: 7.5px;
+  background: #ff4747;
+  position: relative;
+}
+.progress-bar span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  border-radius: 7.5px;
+  z-index: 2;
+  background: #01bcf1;
+}
+.progress-bar-zero {
+  background: #414141;
+}
+.progress-bar-zero span {
+  background: #414141;
+}

@@ -13,37 +13,21 @@
   overscroll-behavior: none;
 }
 
-.container {
+.statistics {
   max-width: min(50rem, 95%);
   margin: auto;
   padding-bottom: 7rem;
 }
-.statistics-types {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 1.4rem;
-  padding-bottom: 0;
-  margin: auto;
-}
-.statistics-type {
-  font-size: 1.125rem;
-  line-height: 1.9125rem;
-  font-family: RobotoRegular;
-  padding: 0.75rem 1rem;
-  cursor: pointer;
-}
 @media (max-width: 56.25rem) {
-    .wrapper-2 {
+  .wrapper-2 {
     padding: env(safe-area-inset-top) env(safe-area-inset-right)
       env(safe-area-inset-bottom) env(safe-area-inset-left);
     margin: 0;
     background-image: linear-gradient(
-      to right bottom,
-      rgba(16, 23, 26, 0.95),
-      rgba(21, 26, 31, 0.938)
-    ),
+        to right bottom,
+        rgba(16, 23, 26, 0.95),
+        rgba(21, 26, 31, 0.938)
+      ),
       url(../../public/wallpaper/main.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -57,22 +41,16 @@
     /* overscroll-behavior: none; */
   }
 
-  .container {
-    max-width: 100%;
-    margin: 0 3px;
+  .statistics {
+    max-width: min(85%, 40rem);
+    margin: 0 auto;
     padding-bottom: 3.5rem;
   }
-  .statistics-types {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.425rem;
-    max-width: auto;
-    margin-top: 0.5rem;
-    padding-bottom: 0rem;
+}
+@media (max-width: 700px) {
+  .statistics {
+    max-width: 100%;
+    margin: 0 3px;
   }
-  .statistics-type {
-    font-size: 0.85rem;
-    line-height: 1.4rem;
-  }
+  
 }

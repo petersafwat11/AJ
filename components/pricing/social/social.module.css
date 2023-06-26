@@ -1,0 +1,10 @@
+.header-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.3rem;
+  margin: 4.9rem auto 0;
+}
+.header-social > * {
+  cursor: pointer;
+}

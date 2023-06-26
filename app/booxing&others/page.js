@@ -8,7 +8,6 @@ import Report from "../../components/report/Report";
 import ShareLinks from "../../components/shareLinks/ShareLinks";
 import WatchDetails from "../../components/watch-details/WatchDetailsFootball";
 import SocialIcons from "../../components/whatchShare/SocialIcons";
-import WhoWillWin from "../../components/whoWillWin/WhoWillWin";
 
 import Casino from "../../components/casino/Casino";
 import Popup from "../../components/popupWrapper/Popup";
@@ -17,8 +16,8 @@ import TopLayout from "../../components/topLayout/TopLayout";
 // import VideoJs from "../../components/video/VideoJs";
 import ExtendButton from "../../components/extendButton/ExtendButton";
 import Marque from "../../components/marque/Marque";
-import classes from "./basketball.module.css";
-import Takticks from "../../components/watchtaktick/basketBall/Takticks";
+import Statistics from "../../components/watchtaktick/booxing/statistics";
+import classes from "./boxing&others.module.css";
 const Page = () => {
   const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
@@ -61,6 +60,7 @@ const Page = () => {
               <Report toggleReport={toggleReport} />
             </Popup>
           )}
+
           {!showChat && (
             <Image
               onClick={toggleChat}
@@ -84,25 +84,25 @@ const Page = () => {
             </div>
 
             <WatchDetails
-              lieageImage={"/svg/watch/basketball-nba.svg"}
-              firstTeamImage={"/svg/watch/basketball-1.svg"}
+              lieageImage={"/svg/watch/WBA.svg"}
+              firstTeamImage={"/svg/watch/boxing-1.svg"}
               lieageImageDimetions={{
-                width: { desktop: "79", tablet: "56", mobile: "55" },
-                height: { desktop: "46", tablet: "33", mobile: "32" },
+                width: { desktop: "59", tablet: "45", mobile: "35" },
+                height: { desktop: "59", tablet: "45", mobile: "35" },
               }}
+              firstTeamName={"Anthony Joshua"}
               firstTeamImageDimentions={{
-                width: { desktop: "150", tablet: "105", mobile: "78" },
-                height: { desktop: "93", tablet: "65", mobile: "49" },
+                width: { desktop: "130", tablet: "90", mobile: "75" },
+                height: { desktop: "130", tablet: "90", mobile: "75" },
               }}
+              seconteamImage={"/svg/watch/boxing-2.svg"}
               secondTeamImageDimentions={{
-                width: { desktop: "109", tablet: "97", mobile: "59" },
-                height: { desktop: "109", tablet: "97", mobile: "59" },
+                width: { desktop: "130", tablet: "90", mobile: "75" },
+                height: { desktop: "130", tablet: "90", mobile: "75" },
               }}
-              firstTeamName={"LA Lakers"}
-              seconteamImage={"/svg/watch/basketball-2.svg"}
-              seconteamName={"Chicago’s Bulls"}
+              seconteamName={"Tyson Fury"}
               date={"Aug 18 15:00"}
-              place={"Crypto.com Arena"}
+              place={"Old Trafford"}
               half={"2nd Half: 47’"}
             />
             <div className={classes["watch-video-wrapper"]}>
@@ -141,15 +141,17 @@ const Page = () => {
               <div className={classes["buy-vpn"]}>
                 <ProtonVpn />
               </div>
-              <div className={classes["takticks"]}>
-                <Takticks />
+              {/* <div className={classes["takticks"]}>
+            <Takticks />
+          </div> */}
+              {/* <div className={classes["who-will-win"]}>
+                <WhoWillWin />
+              </div> */}
+              <div className={classes["statistics"]}>
+                <Statistics />
               </div>
               <div className={classes["casino"]}>
                 <Casino />
-              </div>
-
-              <div className={classes["who-will-win"]}>
-                <WhoWillWin />
               </div>
             </div>
           </div>

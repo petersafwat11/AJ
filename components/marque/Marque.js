@@ -1,10 +1,10 @@
+"use client";
 import React from "react";
 import Marquee from "react-fast-marquee";
 import classes from "./marque.module.css";
-
 const Marque = () => {
   return (
-    <div className={classes['xx']}>
+    <div className={classes["xx"]}>
       <div className={classes["marque-container"]}>
         <Marquee
           speed={20}

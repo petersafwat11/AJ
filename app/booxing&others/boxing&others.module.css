@@ -87,10 +87,13 @@
   width: 100%;
 }
 .buy-vpn {
-  margin-bottom: 3.93rem;
+  margin-bottom: 2.15rem;
 }
 .who-will-win {
   margin-bottom: 4.4rem;
+}
+.statistics {
+  margin-bottom: 4.6rem;
 }
 @media (max-width: 56.25rem) {
   .wrapper-2 {
@@ -98,10 +101,10 @@
       env(safe-area-inset-bottom) env(safe-area-inset-left);
     margin: 0;
     background-image: linear-gradient(
-      to right bottom,
-      rgba(16, 23, 26, 0.95),
-      rgba(21, 26, 31, 0.938)
-    ),
+        to right bottom,
+        rgba(16, 23, 26, 0.95),
+        rgba(21, 26, 31, 0.938)
+      ),
       url(../../public/wallpaper/main.jpg);
     background-repeat: no-repeat;
     background-size: cover;

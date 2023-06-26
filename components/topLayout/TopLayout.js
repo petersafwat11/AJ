@@ -1,11 +1,8 @@
-
 "use client";
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../header/Header";
 // import Marque from "../components/marque/marque";
 import Image from "next/image";
-import Marque from "../marque/Marque";
 import Popup from "../popupWrapper/Popup";
 import SendMessage, { SendMessageButton } from "../send-message/SendMessage";
 import styles from "./TopLayout.module.css";
