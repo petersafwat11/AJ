@@ -1,0 +1,37 @@
+.top-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 5.8125rem;
+  background: rgba(13, 19, 23, 99);
+  padding-right: 5.15rem;
+}
+.logo-wrapper {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 23.8rem;
+}
+.right {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.top-header-items {
+  display: flex;
+  align-items: center;
+  gap: 2.06rem;
+}
+.top-header-item {
+  color: #fff;
+  font-size: 0.85rem;
+  font-family: "Roboto";
+  font-weight: 500;
+  line-height: normal;
+  cursor: pointer;
+}
+.user-wrapper {
+  margin-left: 1.45rem;
+  margin-right: 1.96rem;
+}
