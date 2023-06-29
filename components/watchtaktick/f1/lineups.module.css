@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.title {
+  color: #9a9a9a;
+  text-align: center;
+  font-size: 1.125rem;
+  font-family: 'Roboto';
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 1.26rem;
+}
+.temp {
+  margin-top: 0.562rem;
+  margin-bottom: 1.54rem;
+}
