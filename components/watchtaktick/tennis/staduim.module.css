@@ -1,0 +1,33 @@
+.stadium {
+  height: 38.4rem;
+  width: 23.9rem;
+  background: url("/svg/watch/tennis/pitch.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 0%;
+  position: relative;
+}
+.palyer-1,
+.palyer-2 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.palyer-1 {
+  position: absolute;
+  top: 10%;
+  left: 44%;
+}
+.palyer-2 {
+  position: absolute;
+  bottom: 10%;
+  left: 44%;
+}
+.player-name {
+  color: #394122;
+  font-size: 0.75rem;
+  font-family: "Roboto";
+  font-weight: 600;
+  line-height: normal;
+}

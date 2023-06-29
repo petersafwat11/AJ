@@ -17,8 +17,8 @@ import Popup from "../../components/popupWrapper/Popup";
 import ProtonVpn from "../../components/protonVpn/ProtonVpn";
 import TopLayout from "../../components/topLayout/TopLayout";
 import PlayerContainer from "../../components/video/VideoJs";
-import MatchSummery from "../../components/watchtaktick/tennis/MatchSummery";
-import classes from "./tennis.module.css";
+import MatchSummery from "../../components/watchtaktick/cricket/MatchSummery";
+import classes from "./circket.module.css";
 
 const Page = () => {
   const [showChat, setShowChat] = useState(false);

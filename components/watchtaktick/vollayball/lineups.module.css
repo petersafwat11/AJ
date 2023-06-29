@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+/* .temp {
+  margin-top: 2.81rem;
+  margin-bottom: 1.17rem;
+}
+.details-options{
+  margin-bottom: .98rem;
+} */

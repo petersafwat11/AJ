@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.temp {
+  margin-top: 2.1rem;
+  margin-bottom: 1.96rem;
+}
+.racing-cars {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 1.25rem;
+  grid-row-gap: 1.6rem;
+  margin: 2.95rem auto 1.55rem;
+}

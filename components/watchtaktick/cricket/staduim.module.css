@@ -1,0 +1,78 @@
+.stadium {
+  height: 32.9rem;
+  width: 31.6rem;
+  background: url("/svg/watch/cricket/pitch.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 0%;
+  position: relative;
+}
+.one,
+.two,
+.three,
+.four,
+.five,
+.six,
+.seven,
+.eight,
+.nine {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.one {
+  position: absolute;
+  top: 6%;
+  left: 45.5%;
+}
+.two {
+  position: absolute;
+  top: 18%;
+  left: 18%;
+}
+
+.three {
+  position: absolute;
+  top: 18%;
+  left: 72%;
+}
+.four {
+  position: absolute;
+  top: 42%;
+  left: 11%;
+}
+.five {
+  position: absolute;
+  top: 34%;
+  left: 45.5%;
+}
+.six {
+  position: absolute;
+  top: 42%;
+  left: 79%;
+}
+.seven {
+  position: absolute;
+  bottom: 18%;
+  left: 18%;
+}
+.eight {
+  position: absolute;
+  bottom: 18%;
+  left: 72%;
+}
+.nine {
+  position: absolute;
+  bottom: 6%;
+  left: 45.5%;
+}
+.player-name {
+  color: #274122;
+  text-align: center;
+  font-size: 0.75rem;
+  font-family: "Roboto";
+  font-weight: 600;
+  line-height: normal;
+}

@@ -1,0 +1,9 @@
+.stadium {
+  width: 30.8rem;
+  height: 18.9rem;
+  background: url("/svg/watch/nascar/pitch.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 0%;
+  position: relative;
+}

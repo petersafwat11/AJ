@@ -1,4 +1,3 @@
-"use client";
 import React, { useState } from "react";
 import Details from "../details/Details";
 import MatchDots from "../matchDots/MatchDots";
@@ -10,18 +9,20 @@ const Lineups = () => {
   const changeCategory = (option) => {
     setOption(option);
   };
+
   return (
     <div className={classes["container"]}>
       <Staduim />
-      <MatchDots
-        options={[1, 2, 3, 4]}
-        selectedOption={option}
-        changeOptions={changeCategory}
-      />
       <div className={classes["temp"]}>
         <Temprature />
       </div>
-
+      <div className={classes["details-options"]}>
+        <MatchDots
+          options={[1, 2]}
+          selectedOption={option}
+          changeOptions={changeCategory}
+        />
+      </div>
       <Details
         matchDetails={[
           { left: "VENUE", right: "O2 Arena" },
