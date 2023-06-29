@@ -17,7 +17,7 @@ import TopLayout from "../../components/topLayout/TopLayout";
 // import VideoJs from "../../components/video/VideoJs";
 import ExtendButton from "../../components/extendButton/ExtendButton";
 import Marque from "../../components/marque/Marque";
-import classes from "./boxing&others.module.css";
+import classes from "./UFC.module.css";
 const Page = () => {
   const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
