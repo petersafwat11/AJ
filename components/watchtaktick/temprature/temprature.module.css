@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.15rem;
+  height: 2.44rem;
+  gap: 1rem;
+  color: #fff;
+  text-align: center;
+  font-size: 0.9rem;
+  font-family: "Roboto";
+  font-weight: 700;
+  background: #5f6a73;
+  border-radius: 0.5rem;
+}

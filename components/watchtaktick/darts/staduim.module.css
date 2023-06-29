@@ -1,0 +1,9 @@
+.stadium {
+  width: 25.7rem;
+  height: 1rem;
+  background: url("/svg/watch/darts/pitch.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 0%;
+  position: relative;
+}

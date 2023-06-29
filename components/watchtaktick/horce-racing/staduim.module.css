@@ -1,0 +1,10 @@
+.stadium {
+  width: 38.6rem;
+  height: 15.4rem;
+  background: url("/svg/watch/horse-racing/pitch.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 0%;
+  position: relative;
+  margin-bottom: 1.9rem;
+}

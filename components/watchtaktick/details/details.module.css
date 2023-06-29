@@ -1,0 +1,28 @@
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.33rem;
+}
+.details-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 0.42rem;
+  background: rgb(29, 38, 45, 0.6);
+  height: 2.34rem;
+  width: 19.4rem;
+}
+.item-left {
+  color: #fff;
+  text-align: center;
+  font-size: 1.03rem;
+  font-family: "Roboto";
+  font-weight: 700;
+}
+.item-right {
+  color: #989898;
+  text-align: center;
+  font-size: 1.03;
+  font-family: "Roboto";
+  font-weight: 500;
+}
