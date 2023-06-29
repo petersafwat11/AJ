@@ -66,6 +66,7 @@ const LineupsDetails = ({ matchDetails }) => {
       </div>
 
       <Details matchDetails={matchDetails} />
+      {/* fuck u  */}
     </div>
   );
 };
