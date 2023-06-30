@@ -5,6 +5,8 @@
   height: 5.8125rem;
   background: rgba(13, 19, 23, 99);
   padding-right: 5.15rem;
+  z-index: 10;
+  position: relative;
 }
 .logo-wrapper {
   flex-grow: 1;

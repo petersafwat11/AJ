@@ -132,25 +132,12 @@
   font-size: 0.65rem;
   line-height: 0.75rem;
 }
-.stats {
+.stats-container{
   display: flex;
-  align-items: center;
   flex-direction: column;
-  gap: 0.7rem;
-  width: 90%;
-  margin: auto;
-}
-.stats-option {
-  display: flex;
+  gap: 2rem;
   align-items: center;
-  justify-content: space-between;
-  width: 140%;
-}
-.stats-option p {
-  font-family: RobotoBold;
-  font-weight: 600;
-  font-size: 1.125rem;
-  line-height: 1.31rem;
+  justify-content: center;
 }
 @media (max-width: 56.25rem) {
   .container {

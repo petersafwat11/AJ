@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import Statistics from "./statistics/Statistics";
+import Statistics from "../statistics/Statistics";
+import LiveUpdates from "./liveUpdates/LiveUpdates";
 import classes from "./tikticksBasketBall.module.css";
 const Takticks = () => {
   const players = [
@@ -100,8 +101,20 @@ const Takticks = () => {
           </div>
         </div>
       ) : (
-        <div className={classes["takticks"]}>
-          <Statistics />
+        <div className={classes["stats-container"]}>
+          <Statistics
+            optionsOne={[
+              "FIELD GOALS",
+              "3 POINTERS %",
+              "FREE THROWS %",
+              "TOTAL REBOUNDS",
+              "OFFENSIVE REBOUNDS",
+            ]}
+            optionsTwo={["ASSISTS", "BLOCKS", "STEALS", "TURNOVERS", "FOULS"]}
+          />
+          <div>
+            <LiveUpdates />
+          </div>
         </div>
       )}
     </div>
