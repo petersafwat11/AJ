@@ -171,13 +171,13 @@
 
   .result,
   .vs {
-    gap: 0.3rem;
-    line-height: 0.8rem;
-    font-size: 0.7rem;
+    gap: 2px;
+    line-height: 0.7rem;
+    font-size: 0.75rem;
   }
 
   .vs {
-    font-size: 0.562rem;
+    font-size: 0.42rem;
   }
 
   .first-team-name,

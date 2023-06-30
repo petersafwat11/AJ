@@ -1,7 +1,8 @@
 .fixure {
-  border-radius: 1.12;
+  border-radius: 1.12rem;
   background: #0d1317;
   width: 100%;
+
   overflow: hidden;
 }
 @media (max-width: 56.25rem) {

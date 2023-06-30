@@ -16,9 +16,9 @@ const Formation = () => {
             <div key={item} className={classes["player"]}>
               <Image
                 alt="car"
-                src="/svg/watch/tennis/player-1.svg"
-                width="20"
-                height="24"
+                src="/svg/watch/f1/car.svg"
+                width="30"
+                height="48"
               />
               <p className={classes["player-name"]}>L. Hamilton</p>
               <p className={classes["order"]}>1</p>
@@ -31,9 +31,9 @@ const Formation = () => {
             <div key={item} className={classes["player"]}>
               <Image
                 alt="car"
-                src="/svg/watch/tennis/player-1.svg"
-                width="20"
-                height="24"
+                src="/svg/watch/f1/car.svg"
+                width="30"
+                height="48"
               />
               <p className={classes["player-name"]}>L. Hamilton</p>
               <p className={classes["order"]}>1</p>

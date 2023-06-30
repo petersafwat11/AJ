@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 23.8rem;
+  margin-left: 31.9rem;
 }
 .right {
   display: flex;
@@ -26,7 +26,7 @@
 .top-header-item {
   color: #fff;
   font-size: 0.85rem;
-  font-family: "Roboto";
+  font-family: RobotoRegular;
   font-weight: 500;
   line-height: normal;
   cursor: pointer;
@@ -34,4 +34,12 @@
 .user-wrapper {
   margin-left: 1.45rem;
   margin-right: 1.96rem;
+  width: 2.53rem;
+  height: 2.53rem;
+  border-radius: 50%;
+  background-color: #00c4fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }

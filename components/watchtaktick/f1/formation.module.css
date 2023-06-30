@@ -12,6 +12,12 @@
   justify-content: center;
   gap: 1.64rem;
 }
+.left {
+  margin-top: 1.4rem;
+}
+.right {
+  margin-top: 5rem;
+}
 .center {
   width: 5.25rem;
   height: 27.8rem;
