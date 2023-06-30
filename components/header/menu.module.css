@@ -5,7 +5,7 @@
   justify-content: space-between;
   padding: 1.73rem 0 1.54rem;
   background: url("/svg/header/background.svg");
-  background-size: 100%;
+  background-size: 102%;
   background-repeat: no-repeat;
   background-position: top;
   margin: -10.5px auto 0;
@@ -13,7 +13,7 @@
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 1.4rem;
+  gap: 1.48rem;
   justify-content: center;
   margin: auto;
 }
