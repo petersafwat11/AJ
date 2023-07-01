@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.temp {
+  margin-top: 3.1rem;
+  margin-bottom: 1.17rem;
+}
+.details {
+  margin-top: 0.98rem;
+}

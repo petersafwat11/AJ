@@ -2,8 +2,5 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-.temp {
-  margin-top: .98rem;
-  margin-bottom: 1.96rem;
+  gap: 4.9rem;
 }

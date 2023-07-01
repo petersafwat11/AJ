@@ -7,3 +7,98 @@
   background-position: 0%;
   position: relative;
 }
+.one,
+.two,
+.three,
+.four,
+.five,
+.six,
+.seven,
+.eight,
+.nine,
+.ten,
+.eleven,
+.twelve {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.one {
+  position: absolute;
+  top: 10%;
+  left: 40%;
+}
+.two {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+}
+
+.three {
+  position: absolute;
+  top: 15%;
+  left: 64%;
+}
+.four {
+  position: absolute;
+  top: 38%;
+  left: 7%;
+}
+.five {
+  position: absolute;
+  top: 38%;
+  left: 40%;
+}
+.six {
+  position: absolute;
+  top: 38%;
+  left: 70%;
+}
+.seven {
+  position: absolute;
+  bottom: 10%;
+  left: 40%;
+}
+.eight {
+  position: absolute;
+  bottom: 15%;
+  left: 15%;
+}
+.nine {
+  position: absolute;
+  bottom: 15%;
+  left: 64%;
+}
+.ten {
+  position: absolute;
+  bottom: 38%;
+  left: 7%;
+}
+.eleven {
+  position: absolute;
+  bottom: 38%;
+  left: 40%;
+}
+.twelve {
+  position: absolute;
+  bottom: 38%;
+  left: 70%;
+}
+.thirteen {
+  position: absolute;
+  bottom: 38%;
+  left: 70%;
+}
+.fourteen {
+  position: absolute;
+  bottom: 38%;
+  left: 70%;
+}
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5.53rem;
+}

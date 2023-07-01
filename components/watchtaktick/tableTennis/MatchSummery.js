@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import GlobalHeader from "../globalHeader/GlobalHeader";
+import Summery from "../summary/Summery";
 import Lineups from "./Lineups";
 import classes from "./matchSummery.module.css";
 const MatchSummery = () => {
@@ -13,9 +14,9 @@ const MatchSummery = () => {
       <GlobalHeader
         category={category}
         changeCategory={changeCategory}
-        categories={["LINEUPS", "STATISTICS"]}
+        categories={["LINEUPS", "SUMMARY"]}
       />
-      {category === "LINEUPS" ? <Lineups /> : ""}
+      {category === "LINEUPS" ? <Lineups /> : <Summery />}
     </div>
   );
 };

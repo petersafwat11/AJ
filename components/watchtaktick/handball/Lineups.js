@@ -7,17 +7,7 @@ const Lineups = () => {
   return (
     <div className={classes["container"]}>
       <Staduim />
-      <div className={classes["temp"]}>
-        <Temprature />
-      </div>
-
-      <Details
-        matchDetails={[
-          { left: "VENUE", right: "O2 Arena" },
-          { left: "LOCATION", right: "New Delhi, India" },
-          { left: "TEAM", right: "Pakistan" },
-        ]}
-      />
+      <Details matchDetails={[{ left: "VENUE", right: "O2 Arena" }]} />
     </div>
   );
 };

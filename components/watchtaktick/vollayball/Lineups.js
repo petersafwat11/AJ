@@ -13,23 +13,6 @@ const Lineups = () => {
   return (
     <div className={classes["container"]}>
       <Staduim />
-      {/* <div className={classes["temp"]}>
-        <Temprature />
-      </div>
-      <div className={classes["details-options"]}>
-        <MatchDots
-          options={[1, 2]}
-          selectedOption={option}
-          changeOptions={changeCategory}
-        />
-      </div>
-      <Details
-        matchDetails={[
-          { left: "VENUE", right: "O2 Arena" },
-          { left: "LOCATION", right: "New Delhi, India" },
-          { left: "TEAM", right: "Pakistan" },
-        ]}
-      /> */}
     </div>
   );
 };

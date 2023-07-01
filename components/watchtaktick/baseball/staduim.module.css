@@ -1,6 +1,6 @@
 .stadium {
-  height: 38.8rem;
-  width: 32.9rem;
+  width: 37.2rem;
+  height: 31.26rem;
   background: url("/svg/watch/baseball/pitch.svg");
   background-size: 100%;
   background-repeat: no-repeat;
@@ -18,52 +18,47 @@
   align-items: center;
   flex-direction: column;
   gap: 0.375rem;
-  position: absolute;
-  top: 12%;
-  left: 28%;
 }
-
-/* .one {
+.player-name {
+  color: #405b3b;
+  font-size: 0.75rem;
+  font-family: "Roboto";
+  font-weight: 600;
+  line-height: normal;
+}
+.one {
   position: absolute;
-  top: 12%;
-  left: 28%;
+  top: 6%;
+  left: 46%;
 }
 .two {
   position: absolute;
-  top: 12%;
-  left: 61%;
+  top: 29%;
+  left: 13%;
 }
 
 .three {
   position: absolute;
   top: 29%;
-  left: 28%;
+  left: 81%;
 }
 .four {
   position: absolute;
-  top: 29%;
-  left: 61%;
+  top: 32%;
+  left: 46%;
 }
 .five {
   position: absolute;
-  bottom: 12%;
+  bottom: 30%;
   left: 28%;
 }
 .six {
   position: absolute;
-  bottom: 12%;
-  left: 61%;
+  bottom: 30%;
+  left: 65%;
 }
 .seven {
   position: absolute;
-  bottom: 29%;
-  left: 28%;
+  top: 80%;
+  left: 46%;
 }
-.player-name {
-  color: #274122;
-  text-align: center;
-  font-size: 0.75rem;
-  font-family: "Roboto";
-  font-weight: 600;
-  line-height: normal;
-} */

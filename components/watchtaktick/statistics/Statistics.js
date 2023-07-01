@@ -1,5 +1,4 @@
 import React from "react";
-import LiveUpdates from "../basketBall/liveUpdates/LiveUpdates";
 import classes from "./statistics.module.css";
 const Statistics = ({ optionsOne, optionsTwo }) => {
   return (
