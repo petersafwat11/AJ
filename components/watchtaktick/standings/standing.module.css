@@ -101,9 +101,14 @@
   height: 2.57rem;
   border-radius: 0.47rem;
   background: rgba(13, 19, 23, 0.6);
+  padding-left: 3.6rem;
   display: flex;
   align-items: center;
-  padding-left: 3.6rem;
+  gap: 1.78rem;
+}
+.footer-element {
+  display: flex;
+  align-items: center;
   gap: 0.47rem;
 }
 .footer p {
@@ -113,9 +118,15 @@
   font-weight: 400;
   line-height: normal;
 }
-.circle {
+.blue-circle,
+.green-circle {
   width: 0.61rem;
   height: 0.61rem;
   border-radius: 0.61rem;
+}
+.blue-circle {
   background: #007fdb;
+}
+.green-circle {
+  background: #00db3d;
 }

@@ -31,7 +31,11 @@ const MatchSummery = () => {
           optionsTwo={["HITS", "PENALTY MINUTES"]}
         />
       ) : (
-        <Standings numOfActiveNunbers={5} items={["PL", "PTS"]} />
+        <Standings
+          numOfActiveNunbers={5}
+          items={["PL", "PTS"]}
+          footerElements={["Playoffs"]}
+        />
       )}
     </div>
   );

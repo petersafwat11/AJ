@@ -1,6 +1,11 @@
 import React from "react";
 import classes from "./standing.module.css";
-const Standings = ({ numOfActiveNunbers, borderHeader, items }) => {
+const Standings = ({
+  numOfActiveNunbers,
+  borderHeader,
+  items,
+  footerElements,
+}) => {
   return (
     <div className={classes["container"]}>
       <div
@@ -45,8 +50,20 @@ const Standings = ({ numOfActiveNunbers, borderHeader, items }) => {
       <span className={classes["devider"]}></span>
 
       <div className={classes["footer"]}>
-        <span className={classes["circle"]}></span>
-        <p>Playoffs</p>
+        {footerElements.map((item) => (
+          <div key={item} className={classes["footer-element"]}>
+            {
+              <span
+                className={
+                  item === "Qualification Playoffs"
+                    ? classes["green-circle"]
+                    : classes["blue-circle"]
+                }
+              ></span>
+            }
+            <p>{item}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

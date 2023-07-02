@@ -7,4 +7,26 @@
   background-position: 0%;
   position: relative;
   margin-bottom: 1.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.players {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.45rem;
+  margin-top: 2.2rem;
+}
+.player {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.03rem;
+}
+.player-name {
+  color: #394122;
+  font-size: 0.8rem;
+  font-family: RobotoSemiBold;
+  font-weight: 600;
 }

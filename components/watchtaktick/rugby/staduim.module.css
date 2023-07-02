@@ -1,0 +1,175 @@
+.stadium {
+  height: 38.5rem;
+  width: 22.83rem;
+  background: url("/svg/watch/rugby/pitch.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 0%;
+  position: relative;
+}
+.one,
+.two,
+.three,
+.four,
+.five,
+.six,
+.seven,
+.eight,
+.nine,
+.ten,
+.eleven,
+.twelve,
+.thirteen,
+.fourteen,
+.fivteen,
+.sixteen,
+.seventeen,
+.eighteen,
+.ninteen,
+.twenty,
+.twenty-one,
+.twenty-two,
+.twenty-three,
+.twenty-four,
+.twenty-five,
+.twenty-six {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  bottom: 6%;
+  left: 45.5%;
+}
+
+.one {
+  position: absolute;
+  top: 13%;
+  left: 11.5%;
+}
+.two {
+  position: absolute;
+  top: 13%;
+  left: 26%;
+}
+
+.three {
+  position: absolute;
+  top: 13%;
+  left: 39%;
+}
+.four {
+  position: absolute;
+  top: 15%;
+  left: 53%;
+}
+.five {
+  position: absolute;
+  top: 13%;
+  left: 69%;
+}
+.six {
+  position: absolute;
+  top: 13%;
+  left: 83%;
+}
+.seven {
+  position: absolute;
+  top: 22%;
+  left: 62%;
+}
+.eight {
+  position: absolute;
+  top: 28%;
+  left: 65%;
+}
+.nine {
+  position: absolute;
+  top: 34%;
+  left: 52%;
+}
+.ten {
+  position: absolute;
+  top: 34%;
+  left: 78%;
+}
+.eleven {
+  position: absolute;
+  top: 40%;
+  left: 42%;
+}
+.twelve {
+  position: absolute;
+  top: 40%;
+  left: 65%;
+}
+.thirteen {
+  position: absolute;
+  top: 40%;
+  left: 87%;
+}
+.fourteen {
+  position: absolute;
+  bottom: 13%;
+  left: 11.5%;
+}
+.fivteen {
+  position: absolute;
+  bottom: 13%;
+  left: 26%;
+}
+
+.sixteen {
+  position: absolute;
+  bottom: 13%;
+  left: 39%;
+}
+.seventeen {
+  position: absolute;
+  bottom: 15%;
+  left: 53%;
+}
+.eighteen {
+  position: absolute;
+  bottom: 13%;
+  left: 69%;
+}
+.ninteen {
+  position: absolute;
+  bottom: 13%;
+  left: 83%;
+}
+.twenty {
+  position: absolute;
+  bottom: 22%;
+  left: 62%;
+}
+.twenty-one {
+  position: absolute;
+  bottom: 28%;
+  left: 65%;
+}
+.twenty-two {
+  position: absolute;
+  bottom: 34%;
+  left: 52%;
+}
+.twenty-three {
+  position: absolute;
+  bottom: 34%;
+  left: 78%;
+}
+.twenty-four {
+  position: absolute;
+  bottom: 40%;
+  left: 42%;
+}
+.twenty-five {
+  position: absolute;
+  bottom: 40%;
+  left: 65%;
+}
+.twenty-six {
+  position: absolute;
+  bottom: 40%;
+  left: 87%;
+}

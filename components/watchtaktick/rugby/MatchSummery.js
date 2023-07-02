@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import GlobalHeader from "../globalHeader/GlobalHeader";
 import Standings from "../standings/Standings";
+import Statistics from "../statistics/Statistics";
 import Lineups from "./Lineups";
 import classes from "./matchSummery.module.css";
 const MatchSummery = () => {
@@ -21,11 +22,20 @@ const MatchSummery = () => {
       ) : category === "STANDINGS" ? (
         <Standings
           numOfActiveNunbers={2}
-          items={["PL", "W-L", "PTS"]}
-          footerElements={["League Title"]}
+          items={["PL", "PTS"]}
+          footerElements={["Playoffs", "Qualification Playoffs"]}
         />
       ) : (
-        ""
+        <Statistics
+          optionsOne={[
+            "POSSESSION",
+            "TRIES",
+            "CONVERSIONS",
+            "PENALTY GOALS",
+            "SCRUMS",
+          ]}
+          optionsTwo={["TURNOVERS"]}
+        />
       )}
     </div>
   );

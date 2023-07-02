@@ -3,9 +3,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.73rem 0 1.54rem;
+  padding: 1.23rem 0 1.64rem;
   background: url("/svg/header/background.svg");
-  background-size: 102%;
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: top;
   margin: -10.5px auto 0;
@@ -24,7 +24,7 @@
   font-family: RobotoSemiBold;
   font-weight: 600;
   border-radius: 0.33rem;
-  padding: 0.22rem 0.42rem;
+  padding: 0.22rem 0.5rem;
   transition: 0.3s all ease-out;
   cursor: pointer;
 }

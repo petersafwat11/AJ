@@ -7,3 +7,102 @@
   background-position: 0%;
   position: relative;
 }
+.one,
+.two,
+.three,
+.four,
+.five,
+.six,
+.seven,
+.eight,
+.nine,
+.ten,
+.eleven,
+.twelve,
+.thirteen,
+.fourteen {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.one {
+  position: absolute;
+  top: 8%;
+  left: 46%;
+}
+.two {
+  position: absolute;
+  top: 8%;
+  left: 13%;
+}
+
+.three {
+  position: absolute;
+  top: 8%;
+  left: 78%;
+}
+.four {
+  position: absolute;
+  top: 27%;
+  left: 13%;
+}
+.five {
+  position: absolute;
+  top: 23%;
+  left: 46%;
+}
+.six {
+  position: absolute;
+  top: 27%;
+  left: 78%;
+}
+.seven {
+  position: absolute;
+  top: 40%;
+  left: 46%;
+}
+.eight {
+  position: absolute;
+  bottom: 8%;
+  left: 46%;
+}
+.nine {
+  position: absolute;
+  bottom: 8%;
+  left: 13%;
+}
+
+.ten {
+  position: absolute;
+  bottom: 8%;
+  left: 78%;
+}
+.eleven {
+  position: absolute;
+  bottom: 27%;
+  left: 13%;
+}
+.twelve {
+  position: absolute;
+  bottom: 23%;
+  left: 46%;
+}
+.thirteen {
+  position: absolute;
+  bottom: 27%;
+  left: 78%;
+}
+.fourteen {
+  position: absolute;
+  bottom: 40%;
+  left: 46%;
+}
+.player-name {
+  color: #4d616f;
+  font-size: 0.75rem;
+  font-family: RobotoSemiBold;
+  font-weight: 600;
+  line-height: normal;
+}

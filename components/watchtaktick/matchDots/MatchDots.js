@@ -1,8 +1,8 @@
 import React from "react";
 import classes from "./matchDots.module.css";
-const MatchDots = ({ options, selectedOption, changeOptions }) => {
+const MatchDots = ({ options, selectedOption, changeOptions, vertical }) => {
   return (
-    <div className={classes["dots"]}>
+    <div className={vertical? classes["vertical-dots"]: classes["dots"]}>
       {options.map((item, index) => (
         <div
           key={item}

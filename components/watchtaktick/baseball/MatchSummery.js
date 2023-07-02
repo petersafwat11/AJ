@@ -35,6 +35,7 @@ const MatchSummery = () => {
           numOfActiveNunbers={9}
           borderHeader={true}
           items={["PL", "W-L", "PTS"]}
+          footerElements={["Playoffs"]}
         />
       )}
     </div>

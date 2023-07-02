@@ -1,7 +1,10 @@
-.dots{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vertical-dots {
+  flex-direction: column;
 }
 .small-dot,
 .meduim-dot,

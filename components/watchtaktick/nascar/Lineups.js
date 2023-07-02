@@ -18,7 +18,6 @@ const Lineups = () => {
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((car, index) =>
           index == 1 || index == 5 || index == 7 || index == 11 ? (
             <Image
-            
               key={index}
               src="/svg/watch/nascar/orange-car.svg"
               alt="car"
@@ -58,7 +57,6 @@ const Lineups = () => {
         matchDetails={[
           { left: "VENUE", right: "O2 Arena" },
           { left: "LOCATION", right: "New Delhi, India" },
-          { left: "TEAM", right: "Pakistan" },
         ]}
       />
     </div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import GlobalHeader from "../globalHeader/GlobalHeader";
+import Statistics from "../statistics/Statistics";
 import Lineups from "./Lineups";
 import classes from "./matchSummery.module.css";
 const MatchSummery = () => {
@@ -15,7 +16,20 @@ const MatchSummery = () => {
         changeCategory={changeCategory}
         categories={["LINEUPS", "STATISTICS"]}
       />
-      {category === "LINEUPS" ? <Lineups /> : ""}
+      {category === "LINEUPS" ? (
+        <Lineups />
+      ) : (
+        <Statistics
+          optionsOne={[
+            "SHOOTING EFFICIENCY",
+            "WING GOALS",
+            "FAST BREAK GOALS",
+            "7 METRES",
+            "GOAL STREAKS",
+          ]}
+          optionsTwo={[]}
+        />
+      )}
     </div>
   );
 };
