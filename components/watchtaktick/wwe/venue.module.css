@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.players {
+  margin-top: 2.625rem;
+  margin-bottom: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 2.9rem;
+  grid-row-gap: 2.2rem;
+}
+.player {
+  color: #9b9b9b;
+  font-size: 0.75rem;
+  font-family: RobotoSemiBold;
+  font-weight: 600;
+  line-height: normal;
+}
+.details {
+  margin-top: 1.875rem;
+}

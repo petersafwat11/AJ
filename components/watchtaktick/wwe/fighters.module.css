@@ -1,8 +1,12 @@
 .fighters {
-  width: 26.8rem;
+  width: 27.4rem;
 }
-.fighters .title,
-.title-2 {
+.logo {
+  display: flex;
+  margin: auto;
+}
+.title {
+  margin-top: 0.85rem;
   color: #656565;
   text-align: center;
   font-size: 1.125rem;
@@ -11,16 +15,13 @@
   padding-bottom: 0.28rem;
   border-bottom: 1px solid #2f2f2f;
 }
-.title-2 {
-  margin-top: 2.38rem;
-}
 .players-stats-container {
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 100%;
-  gap: 0.23rem;
-  margin-top: 0.515rem;
+  gap: 0.89rem;
+  margin-top: 0.61rem;
 }
 .item {
   display: flex;
