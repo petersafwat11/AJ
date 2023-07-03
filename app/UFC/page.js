@@ -17,6 +17,7 @@ import TopLayout from "../../components/topLayout/TopLayout";
 // import VideoJs from "../../components/video/VideoJs";
 import ExtendButton from "../../components/extendButton/ExtendButton";
 import Marque from "../../components/marque/Marque";
+import MatchSummery from "../../components/watchtaktick/UFC/MatchSummery";
 import classes from "./UFC.module.css";
 const Page = () => {
   const [showChat, setShowChat] = useState(false);
@@ -141,9 +142,9 @@ const Page = () => {
               <div className={classes["buy-vpn"]}>
                 <ProtonVpn />
               </div>
-              {/* <div className={classes["takticks"]}>
-            <Takticks />
-          </div> */}
+              <div className={classes["takticks"]}>
+                <MatchSummery />
+              </div>
               <div className={classes["who-will-win"]}>
                 <WhoWillWin />
               </div>
