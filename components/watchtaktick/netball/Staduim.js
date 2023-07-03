@@ -1,6 +1,6 @@
+import Image from "next/image";
 import React from "react";
 import classes from "./staduim.module.css";
-import Image from "next/image";
 
 const Staduim = () => {
   return (
@@ -25,6 +25,7 @@ const Staduim = () => {
         <div key={index} className={classes[item]}>
           {index < 8 ? (
             <Image
+              className={classes["team-shirt"]}
               src="/svg/watch/netball/red-player.svg"
               alt="helmet"
               width="37"
@@ -32,6 +33,7 @@ const Staduim = () => {
             />
           ) : (
             <Image
+              className={classes["team-shirt"]}
               src="/svg/watch/netball/blue-player.svg"
               alt="helmet"
               width="37"

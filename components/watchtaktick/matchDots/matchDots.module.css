@@ -43,3 +43,30 @@
 .dot-selected {
   background-color: rgba(80, 139, 164, 0.12);
 }
+@media (max-width: 56.25rem) {
+  .dots,
+  .vertical-dots {
+    gap: 0.15rem;
+  }
+
+  .small-dot,
+  .small-dot-selected {
+    width: 5px;
+    height: 5px;
+  }
+  .meduim-dot,
+  .meduim-dot-selected {
+    width: 11px;
+    height: 11px;
+  }
+  .meduim-dot-selected {
+    border: 2px solid #00c4fb;
+  }
+
+  .dot,
+  .dot-selected {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+}

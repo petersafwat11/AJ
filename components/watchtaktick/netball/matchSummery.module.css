@@ -4,3 +4,8 @@
   flex-direction: column;
   gap: 4.73rem;
 }
+@media (max-width: 56.25rem) {
+  .container {
+    gap: 2.94rem;
+  }
+}

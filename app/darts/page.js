@@ -17,7 +17,7 @@ import Popup from "../../components/popupWrapper/Popup";
 import ProtonVpn from "../../components/protonVpn/ProtonVpn";
 import TopLayout from "../../components/topLayout/TopLayout";
 import PlayerContainer from "../../components/video/VideoJs";
-import MatchSummery from "../../components/watchtaktick/netball/MatchSummery";
+import MatchSummery from "../../components/watchtaktick/darts/MatchSummery";
 import classes from "./darts.module.css";
 
 const Page = () => {

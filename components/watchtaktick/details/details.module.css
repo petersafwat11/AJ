@@ -16,13 +16,29 @@
   color: #fff;
   text-align: center;
   font-size: 1.03rem;
-  font-family: "Roboto";
+  font-family: RobotoBold;
   font-weight: 700;
 }
 .item-right {
   color: #989898;
   text-align: center;
   font-size: 1.03;
-  font-family: "Roboto";
+  font-family: RobotoRegular;
   font-weight: 500;
+}
+@media (max-width: 56.25rem) {
+  .details {
+    gap: 0.25rem;
+  }
+  .details-item {
+    border-radius: 0.25rem;
+    height: 1.56rem;
+    width: 12.875rem;
+  }
+  .item-left {
+    font-size: 0.75rem;
+  }
+  .item-right {
+    font-size: 0.75rem;
+  }
 }

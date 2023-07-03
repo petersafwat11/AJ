@@ -30,3 +30,24 @@
   font-family: RobotoSemiBold;
   font-weight: 600;
 }
+@media (max-width: 56.25rem) {
+  .stadium {
+    width: 23.4rem;
+    height: 8.93rem;
+    margin-bottom: 1rem;
+  }
+  .players {
+    gap: 0.812rem;
+    margin-top: 1.5rem;
+  }
+  .player {
+    gap: 0.45rem;
+  }
+  .hourse-icon {
+    width: 30px;
+    height: 32px;
+  }
+  .player-name {
+    font-size: 0.75rem;
+  }
+}

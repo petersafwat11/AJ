@@ -106,3 +106,29 @@
   font-weight: 600;
   line-height: normal;
 }
+@media (max-width: 56.25rem) {
+  .stadium {
+    width: 16rem;
+    height: 27.06rem;
+  }
+  .team-shirt {
+    width: 23px;
+    height: 32px;
+  }
+  .one,
+  .two,
+  .three,
+  .four,
+  .five,
+  .six,
+  .seven,
+  .eight,
+  .nine,
+  .ten,
+  .eleven,
+  .twelve,
+  .thirteen,
+  .fourteen {
+    gap: 0.25rem;
+  }
+}

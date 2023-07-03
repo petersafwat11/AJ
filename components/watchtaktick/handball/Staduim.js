@@ -65,6 +65,7 @@ const Staduim = () => {
           <div key={index} className={classes[item]}>
             {index < 8 ? (
               <Image
+                className={classes["team-shirt"]}
                 src="/svg/watch/handball/red-player.svg"
                 alt="helmet"
                 width="37"
@@ -72,6 +73,7 @@ const Staduim = () => {
               />
             ) : (
               <Image
+                className={classes["team-shirt"]}
                 src="/svg/watch/handball/yellow-player.svg"
                 alt="helmet"
                 width="37"

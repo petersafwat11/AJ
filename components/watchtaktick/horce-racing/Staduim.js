@@ -10,6 +10,7 @@ const Staduim = () => {
           <div key={horse} className={classes["player"]}>
             {horse === 1 || horse == 4 ? (
               <Image
+                className={classes["hourse-icon"]}
                 src="/svg/watch/horse-racing/brown-horse.svg"
                 alt="helmet"
                 width="45"
@@ -17,6 +18,7 @@ const Staduim = () => {
               />
             ) : horse === 2 || horse === 5 ? (
               <Image
+                className={classes["hourse-icon"]}
                 src="/svg/watch/horse-racing/white-horse.svg"
                 alt="helmet"
                 width="45"
@@ -24,6 +26,7 @@ const Staduim = () => {
               />
             ) : (
               <Image
+                className={classes["hourse-icon"]}
                 src="/svg/watch/horse-racing/yellow-horse.svg"
                 alt="helmet"
                 width="45"

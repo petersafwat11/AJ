@@ -21,3 +21,17 @@
 .details {
   margin-top: 1.875rem;
 }
+@media (max-width: 56.25rem) {
+  .players {
+    margin-top: 26px;
+    margin-bottom: 25px;
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 1.2rem;
+  }
+  .player {
+    font-size: 0.75rem;
+  }
+  .details {
+    margin-top: 1.5rem;
+  }
+}

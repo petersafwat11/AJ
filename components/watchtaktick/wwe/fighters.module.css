@@ -42,12 +42,39 @@
   color: #bababa;
   text-align: center;
   font-size: 1.125rem;
-  font-family: "Roboto";
+  font-family: RobotoSemiBold;
   font-weight: 600;
 }
 .player-item p {
   color: #989898;
   text-align: center;
   font-size: 1.03rem;
-  font-family: "Roboto";
+}
+@media (max-width: 56.25rem) {
+  .fighters {
+    width: min(20rem, 95%);
+  }
+
+  .logo {
+    width: 37px;
+    height: 36px;
+  }
+  .title {
+    margin-top: 0.625rem;
+    font-size: 0.75rem;
+    padding-bottom: 0.19rem;
+  }
+  .players-stats-container {
+    gap: 0.687rem;
+    margin-top: 0.43rem;
+  }
+  .player-item {
+    gap: 0.19rem;
+  }
+  .player-item h4 {
+    font-size: 0.75rem;
+  }
+  .player-item p {
+    font-size: 0.75rem;
+  }
 }

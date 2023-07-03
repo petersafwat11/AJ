@@ -2,5 +2,10 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2.44rem;
+}
+@media (max-width: 56.25rem) {
+  .container {
+    gap: 2.125rem;
+  }
 }

@@ -136,3 +136,50 @@
   font-weight: 600;
   line-height: normal;
 }
+@media (max-width: 56.25rem) {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4.8rem;
+  }
+  .left,
+  .right {
+    display: flex;
+    align-items: center;
+    gap: 2.15rem;
+  }
+  .alternative-players {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 3.75px;
+  }
+  .alternative-player {
+    display: flex;
+    align-items: center;
+    gap: 1.08rem;
+  }
+
+  .stadium {
+    width: 22.2rem;
+    height: 40.17rem;
+    background: url("/svg/watch/handball/pitch.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    position: relative;
+  }
+  .stadium > * {
+    gap: 0.2rem;
+  }
+
+  .player-name,
+  .alternative-player-name {
+    color: #4d616f;
+    font-size: 0.75rem;
+    font-family: RobotoSemiBold;
+    font-weight: 600;
+    line-height: normal;
+  }
+}
