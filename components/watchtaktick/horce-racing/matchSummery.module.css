@@ -6,6 +6,16 @@
 }
 @media (max-width: 56.25rem) {
   .container {
-    gap: 2.125rem;
+    gap: 1.56rem;
+  }
+}
+@media (max-width: 56.25rem) {
+  .container {
+    gap: 1.4rem;
+  }
+}
+@media (max-width: 56.25rem) {
+  .container {
+    gap: 1.35rem;
   }
 }

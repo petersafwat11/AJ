@@ -18,6 +18,7 @@ const Staduim = () => {
       ].map((item) => (
         <div key={item} className={classes[item]}>
           <Image
+          className={classes['player-icon']}
             src="/svg/watch/cricket/player.svg"
             alt="player-icon"
             width="45"

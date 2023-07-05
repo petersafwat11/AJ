@@ -65,16 +65,36 @@
     padding-bottom: 0.19rem;
   }
   .players-stats-container {
-    gap: 0.687rem;
-    margin-top: 0.43rem;
+    gap: 4px;
+    margin-top: 0.44rem;
   }
   .player-item {
-    gap: 0.19rem;
+    gap: 2px;
   }
   .player-item h4 {
     font-size: 0.75rem;
   }
   .player-item p {
     font-size: 0.75rem;
+  }
+}
+@media (max-width: 25rem) {
+  .fighters {
+    width: min(19.5rem, 95%);
+  }
+
+  .logo {
+    width: 36px;
+    height: 35px;
+  }
+  .title {
+    font-size: 11.5px;
+    padding-bottom: 0.15rem;
+  }
+  .player-item h4 {
+    font-size: 11.5px;
+  }
+  .player-item p {
+    font-size: 11.5px;
   }
 }

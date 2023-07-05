@@ -7,6 +7,7 @@ const Staduim = () => {
     <div className={classes["stadium"]}>
       <div className={classes["palyer-1"]}>
         <Image
+          className={classes["player-icon"]}
           src="/svg/watch/table-tennis/tennis-racket.svg"
           alt="tennis-racket"
           width="63"
@@ -16,6 +17,7 @@ const Staduim = () => {
       </div>
       <div className={classes["palyer-2"]}>
         <Image
+          className={classes["player-icon"]}
           src="/svg/watch/table-tennis/tennis-racket.svg"
           alt="tennis-racket"
           width="63"

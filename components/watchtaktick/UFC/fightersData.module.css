@@ -13,7 +13,13 @@
   font-family: "Roboto";
   font-weight: 700;
   padding-bottom: 0.28rem;
-  border-bottom: 1px solid #2f2f2f;
+}
+.devider {
+  display: block;
+  width: 95%;
+  height: 1px;
+  background: #2f2f2f;
+  margin: auto;
 }
 .title-2 {
   margin-top: 2.38rem;
@@ -31,7 +37,16 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  height: 3.42rem;
+  border-radius: 9.75px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  padding: 0 0.8rem;
 }
+.item:hover {
+  background: #1a2023;
+}
+
 .player-item {
   display: flex;
   align-items: start;

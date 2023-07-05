@@ -27,7 +27,59 @@
 .player-name {
   color: #394122;
   font-size: 0.75rem;
-  font-family: "Roboto";
+  font-family: RobotoSemiBold;
   font-weight: 600;
   line-height: normal;
+}
+@media (max-width: 56.25rem) {
+  .stadium {
+    height: 29.25rem;
+    width: 16.8rem;
+    background: url("/svg/watch/tennis/pitch-424.svg");
+  }
+  .palyer-1,
+  .palyer-2 {
+    gap: 0.25rem;
+  }
+  .player-name {
+    font-size: 0.75rem;
+  }
+  .player-icon{
+    width: 30px;
+    height: 47px;
+  }
+}
+@media (max-width: 25rem) {
+  .stadium {
+    height: 28.75rem;
+    width: 16.5rem;
+    background: url("/svg/watch/tennis/pitch-400.svg");
+  }
+  .palyer-1,
+  .palyer-2 {
+    gap: 0.25rem;
+  }
+  .player-name {
+    font-size: 11.5px;
+  }
+  .player-icon{
+    width: 29px;
+    height: 46px;
+  }
+
+}
+@media (max-width: 23.125rem) {
+  .stadium {
+    height: 28.25rem;
+    width: 16.2rem;
+    /* background: url("/svg/watch/tennis/pitch-424.svg"); */
+  }
+  .player-name {
+    font-size: 11.5px;
+  }
+  .player-icon{
+    width: 28px;
+    height: 45px;
+  }
+
 }

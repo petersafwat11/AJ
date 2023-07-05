@@ -9,6 +9,7 @@ const Staduim = () => {
         (item, index) => (
           <div key={item} className={classes[item]}>
             <Image
+            className={classes['player-icon']}
               src="/svg/watch/baseball/player.svg"
               alt="player-icon"
               width="41"

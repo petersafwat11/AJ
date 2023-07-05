@@ -22,7 +22,7 @@
 .player-name {
   color: #405b3b;
   font-size: 0.75rem;
-  font-family: "Roboto";
+  font-family: RobotoSemiBold;
   font-weight: 600;
   line-height: normal;
 }
@@ -61,4 +61,63 @@
   position: absolute;
   top: 80%;
   left: 46%;
+}
+@media (max-width: 56.25rem) {
+  .stadium {
+    width: 24.43rem;
+    height: 20.625rem;
+  }
+  .player-icon {
+    width: 24px;
+    height: 26px;
+  }
+  .one,
+  .two,
+  .three,
+  .four,
+  .five,
+  .six,
+  .seven {
+    gap: 0.187rem;
+  }
+  .player-name {
+    font-size: 0.75rem;
+  }
+}
+@media (max-width: 25rem) {
+  .stadium {
+    width: 22rem;
+    height: 18.625rem;
+  }
+  .player-icon {
+    width: 22px;
+    height: 26px;
+  }
+
+  .one,
+  .two,
+  .three,
+  .four,
+  .five,
+  .six,
+  .seven {
+    gap: 0.312rem;
+  }
+  .player-name {
+    font-size: 0.72rem;
+  }
+}
+@media (max-width: 23.75rem) {
+  .stadium {
+    width: 21.125rem;
+    height: 18rem;
+  }
+  .player-icon {
+    width: 21px;
+    height: 24px;
+  }
+
+  .player-name {
+    font-size: 0.687rem;
+  }
 }

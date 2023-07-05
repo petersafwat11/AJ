@@ -5,3 +5,18 @@
   gap: 2.06rem;
   width: 100%;
 }
+@media (max-width: 56.25rem) {
+  .container {
+    gap: 2.82rem;
+  }
+}
+@media (max-width: 25rem) {
+  .container {
+    gap: 2.75rem;
+  }
+}
+@media (max-width: 23.125rem) {
+  .container {
+    gap: 2.5rem;
+  }
+}

@@ -34,14 +34,19 @@
 }
 .item-top * {
   font-size: 0.9rem;
-  font-family: "Roboto";
   font-weight: 700;
 }
 .item-top .first {
   color: #01bcf1;
+  font-family: "Roboto";
 }
+.item-top .middle {
+  font-family: RobotoBold;
+}
+
 .item-top .last {
   color: #ff4747;
+  font-family: "Roboto";
 }
 .stats-item-zero-state .first,
 .stats-item-zero-state .last {
@@ -72,3 +77,64 @@
 .progress-bar-zero span {
   background: #414141;
 }
+@media (max-width: 56.25rem) {
+  .container {
+    width: 22.8125rem;
+  }
+  .stats-item,
+  .stats-item-zero-state {
+    gap: 0.625rem;
+    height: 3.625rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    padding: 0 0.875rem;
+  }
+  .item-top .first,
+  .stats-item .last {
+    font-size: 0.875rem;
+  }
+  .item-top .middle {
+    font-size: 1rem;
+  }
+  .progress-bar,
+  .progress-bar-zero {
+    height: 6px;
+    border-radius: 10px;
+  }
+}
+@media (max-width: 25rem) {
+  .container {
+    width: 21.56rem;
+  }
+  .stats-item,
+  .stats-item-zero-state {
+    gap: 0.45rem;
+    height: 3.3rem;
+    border-radius: 0.375rem;
+    padding: 0 0.625rem;
+  }
+  .item-top .first,
+  .stats-item .last {
+    font-size: 13.5px;
+  }
+  .item-top .middle {
+    font-size: 15.5px;
+  }
+}
+/* @media (max-width: 23.125rem) {
+  .container {
+    width: 21.4375rem;
+  }
+  .stats-item,
+  .stats-item-zero-state {
+    gap: 0.45rem;
+    border-radius: 0.375rem;
+  }
+  .item-top .first,
+  .stats-item .last {
+    font-size: 0.812rem;
+  }
+  .item-top .middle {
+    font-size: 0.935rem;
+  }
+} */

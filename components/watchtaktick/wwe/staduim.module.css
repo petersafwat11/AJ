@@ -15,15 +15,17 @@
   position: relative;
 }
 @media (max-width: 56.25rem) {
+  .stadium {
+    height: 12.25rem;
+    width: 11.875rem;
+    background: url("/svg/watch/wwe/pitch-424.svg");
+  }
+
   .container {
     gap: 0.875rem;
   }
   .logo {
     width: 28px;
     height: 26px;
-  }
-  .stadium {
-    height: 12.25rem;
-    width: 11.875rem;
   }
 }

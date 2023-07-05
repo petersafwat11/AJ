@@ -36,6 +36,7 @@ const Staduim = () => {
         <div key={item} className={classes[item]}>
           {index < 13 ? (
             <Image
+              className={classes["player-icon"]}
               src="/svg/watch/rugby/red-circle.svg"
               alt="player-icon"
               width="21"
@@ -43,12 +44,14 @@ const Staduim = () => {
             />
           ) : (
             <Image
+              className={classes["player-icon"]}
               src="/svg/watch/rugby/blue-circle.svg"
               alt="player-icon"
               width="21"
               height="21"
             />
           )}
+          <p className={classes["player-name"]}>lorem</p>
         </div>
       ))}
     </div>
