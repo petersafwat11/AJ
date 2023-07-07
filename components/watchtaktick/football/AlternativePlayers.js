@@ -15,9 +15,9 @@ const AlternativePlayers = () => {
             <div key={player} className={classes["player"]}>
               <Image
                 className={classes["team-shirt"]}
-                src="/svg/watch/basketball/player-icon-1.svg"
+                src="/svg/watch/football/player-icon-1.svg"
                 alt="helmet"
-                width="16"
+                width="22"
                 height="17"
               />
               <p className={classes["player-name"]}>C. Ronaldo</p>

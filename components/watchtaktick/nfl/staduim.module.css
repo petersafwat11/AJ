@@ -31,28 +31,7 @@
   background-position: 0%;
   position: relative;
 }
-.one,
-.two,
-.three,
-.four,
-.five,
-.six,
-.seven,
-.eight,
-.nine,
-.ten,
-.eleven,
-.twelve,
-.thirteen,
-.fourteen,
-.fivteen,
-.sixteen,
-.seventeen,
-.eighteen,
-.nineteen,
-.twenty,
-.twenty-one,
-.twenty-two {
+.stadium > div {
   display: flex;
   align-items: center;
   flex-direction: column;
