@@ -7,7 +7,6 @@ import Dropdown from "../../components/dropdown/Dropdown";
 import Report from "../../components/report/Report";
 import ShareLinks from "../../components/shareLinks/ShareLinks";
 import WatchDetails from "../../components/watch-details/WatchDetailsFootball";
-import Takticks from "../../components/watchtaktick/takticksFootball";
 import SocialIcons from "../../components/whatchShare/SocialIcons";
 import WhoWillWin from "../../components/whoWillWin/WhoWillWin";
 
@@ -18,6 +17,7 @@ import Popup from "../../components/popupWrapper/Popup";
 import ProtonVpn from "../../components/protonVpn/ProtonVpn";
 import TopLayout from "../../components/topLayout/TopLayout";
 import PlayerContainer from "../../components/video/VideoJs";
+import MatchSummery from "../../components/watchtaktick/football/MatchSummery";
 import classes from "./football.module.css";
 
 const Page = () => {
@@ -149,7 +149,7 @@ const Page = () => {
                 <ProtonVpn />
               </div>
               <div className={classes["takticks"]}>
-                <Takticks />
+                <MatchSummery />
               </div>
               <div className={classes["casino"]}>
                 <Casino />

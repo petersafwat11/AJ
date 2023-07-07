@@ -98,3 +98,56 @@
   flex-direction: column;
   gap: 5.53rem;
 }
+@media (max-width: 56.25rem) {
+  .stadium {
+    width: 15.25rem;
+    height: 28.8rem;
+    background: url("/svg/watch/hockey/pitch-424.svg");
+  }
+  .player-name {
+    font-size: 0.75rem;
+  }
+  .player-icon {
+    width: 32px;
+    height: 31px;
+  }
+
+  .stadium > div {
+    gap: 2px;
+  }
+  .container {
+    gap: 0;
+  }
+}
+@media (max-width: 25rem) {
+  .stadium {
+    width: 14.68rem;
+    height: 28.06rem;
+    background: url("/svg/watch/hockey/pitch-400.svg");
+  }
+  .player-name {
+    font-size: 11.5px;
+  }
+  .player-icon {
+    width: 32px;
+    height: 30.5px;
+  }
+
+  .stadium > div {
+    gap: 2px;
+  }
+}
+@media (max-width: 23.125rem) {
+  .stadium {
+    width: 14.7rem;
+    height: 27.8rem;
+    background: url("/svg/watch/hockey/pitch-380.svg");
+  }
+  .player-icon {
+    width: 31px;
+    height: 29px;
+  }
+  .player-name {
+    font-size: 11px;
+  }
+}

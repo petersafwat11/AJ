@@ -17,8 +17,8 @@ import TopLayout from "../../components/topLayout/TopLayout";
 // import VideoJs from "../../components/video/VideoJs";
 import ExtendButton from "../../components/extendButton/ExtendButton";
 import Marque from "../../components/marque/Marque";
+import MatchSummery from "../../components/watchtaktick/basketBall/MatchSummery";
 import classes from "./basketball.module.css";
-import Takticks from "../../components/watchtaktick/basketBall/Takticks";
 const Page = () => {
   const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
@@ -142,7 +142,7 @@ const Page = () => {
                 <ProtonVpn />
               </div>
               <div className={classes["takticks"]}>
-                <Takticks />
+                <MatchSummery />
               </div>
               <div className={classes["casino"]}>
                 <Casino />

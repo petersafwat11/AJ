@@ -22,6 +22,7 @@ const Staduim = () => {
         <div key={index} className={classes[item]}>
           {index < 7 ? (
             <Image
+              className={classes["player-icon"]}
               src="/svg/watch/hockey/pink-helmet.svg"
               alt="helmet"
               width="37"
@@ -29,6 +30,7 @@ const Staduim = () => {
             />
           ) : (
             <Image
+              className={classes["player-icon"]}
               src="/svg/watch/hockey/blue-helmet.svg"
               alt="helmet"
               width="37"

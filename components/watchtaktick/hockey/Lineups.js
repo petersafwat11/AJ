@@ -1,5 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
+import MatchDots from "../matchDots/MatchDots";
+import AlternativePlayers from "./AlternativePlayers";
 import Staduim from "./Staduim";
 import classes from "./lineups.module.css";
 const Lineups = () => {
@@ -7,6 +9,11 @@ const Lineups = () => {
     firstTeam: "first",
     secondTeam: "first",
   });
+  const [option, setOption] = useState(1);
+  const changeCategory = (option) => {
+    setOption(option);
+  };
+
   return (
     <div className={classes["container"]}>
       <div className={classes["right"]}>
@@ -184,6 +191,14 @@ const Lineups = () => {
           </div>
         </div>
       </div>
+      <div className={classes["alternative-players"]}>
+        <AlternativePlayers />
+      </div>
+      <MatchDots
+        options={[1, 2]}
+        selectedOption={option}
+        changeOptions={changeCategory}
+      />
     </div>
   );
 };

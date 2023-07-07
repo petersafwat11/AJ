@@ -13,7 +13,7 @@ import Report from "../../components/report/Report";
 import ShareLinks from "../../components/shareLinks/ShareLinks";
 import TopLayout from "../../components/topLayout/TopLayout";
 import WatchDetails from "../../components/watch-details/WatchDetailsFootball";
-import Takticks from "../../components/watchtaktick/takticksNfl";
+import MatchSummery from "../../components/watchtaktick/nfl/MatchSummery";
 import SocialIcons from "../../components/whatchShare/SocialIcons";
 import WhoWillWin from "../../components/whoWillWin/WhoWillWin";
 import classes from "./nfl.module.css";
@@ -142,7 +142,7 @@ const Page = () => {
                 <ProtonVpn />
               </div>
               <div className={classes["takticks"]}>
-                <Takticks />
+                <MatchSummery />
               </div>
               <div className={classes["casino"]}>
                 <Casino />
