@@ -15,11 +15,13 @@ const Lineups = () => {
       <div className={classes["alternative-players"]}>
         <AlternativePlayers />
       </div>
-      <MatchDots
-        options={[1, 2]}
-        selectedOption={option}
-        changeOptions={changeCategory}
-      />
+      <div className={classes["match-details-option-controller"]}>
+        <MatchDots
+          options={[1, 2]}
+          selectedOption={option}
+          changeOptions={changeCategory}
+        />
+      </div>
     </div>
   );
 };
