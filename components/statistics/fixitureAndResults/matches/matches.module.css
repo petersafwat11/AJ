@@ -38,6 +38,9 @@
   font-weight: 300;
   align-self: center;
 }
+.match-date-mobile {
+  display: none;
+}
 
 .first-team,
 .second-team {
@@ -131,27 +134,33 @@
 }
 @media (max-width: 43.75rem) {
   .matches {
-    padding: 0.64rem 0 1.612rem;
-    gap: 1.52rem;
+    padding: 1.05rem 0 2rem;
+    gap: 1.5rem;
   }
 
   .match {
-    grid-template-columns: 17.5% auto 20% 1fr;
-
-    padding: 0.64rem 0 0.68rem;
+    grid-template-columns: 15% 25% 20% 25%;
+    padding: 0.66rem;
   }
 
-  .match:hover {
-    border-radius: 3px;
+  .match-date,
+  .match-date-small-mobile {
+    display: none;
   }
-
-  .match-date {
-    font-size: 0.656rem;
+  .match-date-mobile {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    color: #fff;
+    font-size: 10.5px;
+    font-weight: 300;
+    line-height: normal;
   }
-
   .first-team,
   .second-team {
-    width: 6.93rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
   .first-team-image {
     width: 25px;
@@ -162,7 +171,7 @@
     height: 28px;
   }
   .center {
-    gap: 0.25rem;
+    gap: 0.14rem;
   }
 
   .staduim {
@@ -177,12 +186,34 @@
   }
 
   .vs {
-    font-size: 0.42rem;
+    font-size: 0.55rem;
   }
 
   .first-team-name,
   .second-team-name {
     font-size: 1.125rem;
     line-height: 1.3rem;
+  }
+}
+@media (max-width: 28rem) {
+  .match-date-mobile {
+    display: none;
+  }
+  .match-date-small-mobile {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    color: #fff;
+    font-size: 10.5px;
+    font-weight: 300;
+    line-height: normal;
+  }
+  .match {
+    grid-template-columns: 38% 24% 38%;
+  }
+  .first-team,
+  .second-team {
+    gap: 1.35rem;
+    justify-content: center;
   }
 }

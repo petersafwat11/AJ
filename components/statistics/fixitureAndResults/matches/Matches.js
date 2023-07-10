@@ -17,6 +17,7 @@ export const Match = ({ type }) => {
   return (
     <div className={classes["match"]}>
       <div className={classes["match-date"]}>Aug 30 - 15:00</div>
+      <div className={classes["match-date-mobile"]}>17:30</div>
 
       <div className={classes["first-team"]}>
         <p className={classes["first-team-name"]}>Man Utd</p>
@@ -30,6 +31,8 @@ export const Match = ({ type }) => {
         />
       </div>
       <div className={classes["center"]}>
+        <div className={classes["match-date-small-mobile"]}>17:30</div>
+
         <p className={classes["staduim"]}>Etihad Stadium</p>
         {type === "result" ? (
           <div className={classes["result"]}>
