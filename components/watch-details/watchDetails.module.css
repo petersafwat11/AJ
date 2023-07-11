@@ -126,25 +126,17 @@
     margin: 0.7rem auto 0;
     max-width: min(27rem, 90vw);
   }
-  /* .team-image {
-    height: 52px;
-    width: 54px;
-  } */
 
   .watch-details-first {
     gap: 0.7rem;
   }
-  /* .sport-image-first {
-    width: 78px;
-    height: 33.6px;
-  } */
   .date-and-place {
     gap: 0.5rem;
   }
   .date,
   .place {
-    font-size: 0.73rem;
-    line-height: 0.8rem;
+    font-size: 0.8rem;
+    line-height: 0.95rem;
   }
   .watch-details-second {
     margin-top: 0.9rem;
@@ -155,8 +147,8 @@
   }
   .first-team-name,
   .second-team-name {
-    font-size: 1.165rem;
-    line-height: 1.25rem;
+    font-size: 1.365rem;
+    line-height: 1.45rem;
     font-family: RobotoSemiBold;
   }
   .vs {
@@ -170,7 +162,7 @@
   }
   .half {
     font-family: RobotoSemiBold;
-    font-size: 0.645rem;
-    line-height: 0.75rem;
+    font-size: 0.8rem;
+    line-height: 0.95rem;
   }
 }

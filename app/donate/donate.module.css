@@ -286,22 +286,22 @@
 
 @media (max-width: 56.25rem) {
   .paypal img {
-    width: 22.5px;
-    height: 26px;
+    width: 27.5px;
+    height: 31px;
   }
 
   .bitcoin img {
-    width: 21px;
-    height: 26px;
+    width: 26px;
+    height: 31px;
   }
 
   .stripe img {
-    width: 66px;
-    height: 27px;
+    width: 71px;
+    height: 31px;
   }
 
   .share img {
-    width: 18px;
-    height: 30.5px;
+    width: 23px;
+    height: 35.5px;
   }
 }

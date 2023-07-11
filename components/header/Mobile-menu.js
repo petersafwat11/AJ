@@ -44,17 +44,27 @@ export const MenuMobile = () => {
       </div>
       {showMenu && (
         <div className={classes["side-menu"]}>
-          <Image
-            onClick={() => {
-              setShowMenu(!showMenu);
-            }}
-            className={classes["exit"]}
-            src="/svg/mobile-menu/exit.svg"
-            alt="donate"
-            width="17"
-            height="17"
-          />
-
+          <div className={classes["nav-top"]}>
+            <Image
+              onClick={() => {
+                setShowMenu(!showMenu);
+              }}
+              className={classes["exit"]}
+              src="/svg/mobile-menu/exit.svg"
+              alt="donate"
+              width="17"
+              height="17"
+            />
+            <div className={classes["logo-wrapper"]}>
+              <Image
+                className={classes["logo"]}
+                src="/svg/mobile-menu/logo.svg"
+                alt="logo"
+                width="69"
+                height="63"
+              />
+            </div>
+          </div>
           <div className={classes["menu-mobile-lang"]}>
             <p className={classes["arabic"]}>العربية</p>
             <p className={classes["menu-mobile-lang-english"]}>English </p>
@@ -115,6 +125,17 @@ export const MenuMobile = () => {
                 className={classes["menu-mobile-page-link"]}
               >
                 CONTACT
+              </p>
+            </div>
+            <span className={classes["devider"]}> </span>
+            <div>
+              <p
+                onClick={() => {
+                  router.push("/pricing");
+                }}
+                className={classes["menu-mobile-page-link"]}
+              >
+                PRICING
               </p>
             </div>
           </div>

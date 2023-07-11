@@ -161,7 +161,7 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 2.2rem 2rem 2.937rem;
+    padding: 2.4rem 1.8rem 2.937rem;
     max-width: auto;
   }
   .news-letter-first {
@@ -170,7 +170,7 @@
     text-align: center;
   }
   .title {
-    font-size: 1.38rem;
+    font-size: 1.415rem;
     line-height: 1.75rem;
     align-self: center;
   }
