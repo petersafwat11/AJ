@@ -14,7 +14,7 @@
 }
 
 .pricing {
-  max-width: min(85%, 54.5rem);
+  max-width: min(85%, 63rem);
   margin: 0 auto;
   padding-bottom: 2.5rem;
 }
@@ -45,7 +45,7 @@
   /* Drop Shadow/High */
   box-shadow: 0px 20px 50px 0px rgba(18, 17, 39, 0.08);
   padding: 4.45rem 4.03rem 3.6rem 4.125rem;
-  margin-top: 1.78rem;
+  margin: 1.78rem auto 0;
 }
 .notify-me .container {
   display: flex;

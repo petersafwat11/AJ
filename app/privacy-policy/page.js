@@ -5,9 +5,9 @@ import TopLayout from "../../components/topLayout/TopLayout";
 import classes from "./privacy.module.css";
 const Page = () => {
   return (
-    <div className={classes["wrapper"]}>
+    <div className={classes["top-wrapper"]}>
       <TopLayout />
-      <div className={classes["wrapper-2"]}>
+      <div className={classes["top-wrapper-2"]}>
         <Marque />
 
         <div style={{ width: "100%" }}>

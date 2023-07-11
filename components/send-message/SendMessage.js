@@ -2,7 +2,10 @@
 import Image from "next/image";
 import React from "react";
 import classes from "./sendMessage.module.css";
-const SendMessage = ({ toggleSendMessageComponent }) => {
+const SendMessage = ({
+  toggleSendMessageComponent,
+  toggleMessageSentComponent,
+}) => {
   return (
     <div className={classes["send-message"]}>
       <div className={classes["send-message-top"]}>
@@ -25,7 +28,12 @@ const SendMessage = ({ toggleSendMessageComponent }) => {
           We care about your feedback and aim to adhere to your needs
           immediately.
         </p>
-        <button className={classes["send-button"]}>Send</button>
+        <button
+          onClick={toggleMessageSentComponent}
+          className={classes["send-button"]}
+        >
+          Send
+        </button>
       </div>
     </div>
   );

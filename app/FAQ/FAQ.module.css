@@ -51,7 +51,7 @@
   justify-content: center;
 }
 .container-heading-title {
-  font-size: 2.15rem;
+  font-size: 2rem;
   line-height: 3rem;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
@@ -61,7 +61,7 @@
   font-weight: 500;
   font-family: "Poppins", sans-serif;
 
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 2rem;
 }
 
@@ -85,14 +85,14 @@
   border-radius: 0.75rem;
 }
 .question-wrapper-question {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   line-height: 1.6rem;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
 .question-wrapper-answer {
   color: rgba(255, 255, 255, 0.56);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1.5rem;
   font-weight: 400;
   font-family: "Poppins", sans-serif;
@@ -108,10 +108,11 @@
 }
 .uesr-feedback-heading {
   font-size: 1.625rem;
-  line-height: 1.56rem;
-  font-family: RobotoBold;
+  line-height: 1.4rem;
+  font-family: "Poppins";
 }
 .uesr-feedback-para {
+  font-family: "Poppins";
   font-size: 0.75rem;
   line-height: 1.06rem;
   font-weight: 400;

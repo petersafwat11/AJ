@@ -1,4 +1,4 @@
-.wrapper {
+.top-wrapper {
   padding: 0;
   margin: 0;
   background-image: linear-gradient(
@@ -19,7 +19,7 @@
   padding-bottom: 7rem;
 }
 .privacy-policy * {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 0.9rem;
   line-height: 1.22rem;
@@ -80,7 +80,7 @@
 .wrapper h3 {
   color: white;
   font-weight: 600;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-bottom: 0.1rem;
   font-size: 1rem;
 }
@@ -95,22 +95,22 @@
   gap: 0.25rem;
 }
 @media (max-width: 56.25rem) {
-  .wrapper-2 {
+  .top-wrapper-2 {
     padding: env(safe-area-inset-top) env(safe-area-inset-right)
       env(safe-area-inset-bottom) env(safe-area-inset-left);
     margin: 0;
     background-image: linear-gradient(
-      to right bottom,
-      rgba(16, 23, 26, 0.95),
-      rgba(21, 26, 31, 0.938)
-    ),
+        to right bottom,
+        rgba(16, 23, 26, 0.95),
+        rgba(21, 26, 31, 0.938)
+      ),
       url(../../public/wallpaper/main.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
     /* overscroll-behavior: none; */
   }
-  .wrapper {
+  .top-wrapper {
     padding: 0;
     margin: 0;
     background-image: none;

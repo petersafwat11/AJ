@@ -53,7 +53,7 @@
   background-color: #00c4fb;
 }
 .give-away-wrapper {
-  height: 54rem;
+  height: 61rem;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 9% 1fr 40%;
@@ -151,9 +151,6 @@
   padding: 0.9rem 1.75rem;
   background-color: #182228;
   border-radius: 0.625rem;
-  font-size: 0.99rem;
-  line-height: 0.9375rem;
-  font-weight: 400;
   cursor: pointer;
   transition: all 0.3s ease-out;
 }
@@ -161,6 +158,10 @@
   background-color: rgba(24, 34, 40, 0.25);
 }
 .follow-us-method-para {
+  font-size: 1.05rem;
+  line-height: 0.9375rem;
+  font-weight: 400;
+
   margin-left: 10.6%;
   margin-right: auto;
 }
@@ -188,10 +189,10 @@
     padding: 0;
     margin: 0;
     background-image: linear-gradient(
-      to right bottom,
-      rgba(16, 23, 26, 0.95),
-      rgba(21, 26, 31, 0.938)
-    ),
+        to right bottom,
+        rgba(16, 23, 26, 0.95),
+        rgba(21, 26, 31, 0.938)
+      ),
       url(../../public/wallpaper/main.jpg);
     background-repeat: no-repeat;
     background-size: cover;

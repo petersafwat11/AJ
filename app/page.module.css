@@ -73,10 +73,10 @@
       env(safe-area-inset-bottom) env(safe-area-inset-left);
     margin: 0;
     background-image: linear-gradient(
-      to right bottom,
-      rgba(16, 23, 26, 0.95),
-      rgba(21, 26, 31, 0.938)
-    ),
+        to right bottom,
+        rgba(16, 23, 26, 0.95),
+        rgba(21, 26, 31, 0.938)
+      ),
       url(../public/wallpaper/main.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -153,7 +153,7 @@
     justify-content: center;
     margin: 1.3rem auto 0;
     padding-right: 0.65rem;
-    max-width: 97%;
+    max-width: 92%;
     height: 4.18rem;
     background-color: rgba(12, 18, 21);
     border-radius: 0.55rem;
@@ -185,6 +185,15 @@
     margin-bottom: 0.2rem;
     margin-top: 1.75rem;
   }
+  .other-matches-title-and-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3.25rem;
+  }
+  .title:last-of-type {
+    margin-top: 0;
+  }
 
   .other-matches {
     margin-top: 2rem;
@@ -195,9 +204,8 @@
     gap: 6px;
   }
   .show-more-button {
-margin-top: 13px; 
- }
-   
+    margin-top: 13px;
+  }
 }
 @media (max-width: 50rem) {
   .matches {

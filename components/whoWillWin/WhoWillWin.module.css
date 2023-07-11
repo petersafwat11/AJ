@@ -86,7 +86,7 @@
   gap: 0.65rem;
   font-family: "Poppins";
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   line-height: 1rem;
   letter-spacing: 0.02em;
   color: #f8f8f8;
@@ -107,17 +107,8 @@
   line-height: 0.9rem;
   letter-spacing: 0.02em;
   color: #f8f8f8;
+  margin-right: 8px;
 }
-/* .all-votes {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 0.625rem;
-  line-height: 0.93rem;
-  letter-spacing: 0.02em;
-  color: #f8f8f8;
-  margin-top: 0.4rem;
-} */
 @media (max-width: 56.25rem) {
   .who-will-win {
     max-width: 100%;

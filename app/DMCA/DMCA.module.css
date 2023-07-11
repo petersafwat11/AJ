@@ -38,70 +38,65 @@
   font-family: RobotoRegular;
 }
 .container {
-  width: 100%;
   margin-top: 1.15rem;
   background-color: #0d1317;
   border-radius: 1.125rem;
   padding-bottom: 2.625rem;
-  /* padding: 2.4375rem 2.34rem 2.8125rem; */
   overflow: hidden;
 }
 .disclaimer {
-  padding: 1.92rem 4.22rem 3rem;
+  padding: 2.4rem 4.125rem 2.9rem;
   display: flex;
   align-items: start;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 .disclaimer-heading {
   align-self: center;
   font-weight: 700;
-  font-family: RobotoBold;
-
+  font-family: "Poppins";
   font-size: 1.687rem;
-  line-height: 1.97rem;
+  line-height: normal;
 }
 .disclaimer-para {
   display: flex;
   align-items: start;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 2.76rem;
+}
+.disclaimer-para p {
+  font-weight: 600;
+  font-size: 0.94rem;
+  line-height: 1.22rem;
   color: rgba(255, 255, 255, 0.75);
   font-family: "Poppins", sans-serif;
-
-  font-weight: 600;
-  font-size: 0.9rem;
-  line-height: 1.22rem;
 }
 .second-part {
   background: #131d23;
-  width: 86%;
+  width: 88%;
   margin: auto;
-  padding: 3rem 3.75rem;
+  padding: 2.86rem 3.5rem 3.2rem;
   border-radius: 0.85rem;
 }
 
 .companies-logoes {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-row-gap: 5.2rem;
+  grid-row-gap: 5.8rem;
   /* margin-bottom: 3.6rem; */
 }
-/* .contact-us-button {
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 7.7rem;
-  height: 2.67rem;
-  font-family: RobotoBold;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  color: white;
-  background: #00b1ff;
-  border-radius: 0.42rem;
-  cursor: pointer;
-} */
+.companies-logoes-mobile {
+  display: none;
+}
+.netflix-icon,
+.google-icon {
+  justify-self: start;
+}
+.dailymotion-icon,
+.youtube-icon {
+  justify-self: end;
+}
+
 @media (max-width: 56.25rem) {
   .wrapper-2 {
     padding: env(safe-area-inset-top) env(safe-area-inset-right)
@@ -136,86 +131,36 @@
     padding-right: 0.75rem;
   }
 }
-.top-heading-title {
-  font-size: 1.2rem;
-  line-height: 1.4rem;
-}
-.container {
-  margin-top: 0.5rem;
-  border-radius: 0.75rem;
-  background-color: #0d1317;
-  padding-bottom: 1.75rem;
-}
-.disclaimer {
-  padding: 1.375rem 2.75rem 3.75rem;
-  gap: 0.8rem;
-}
-.disclaimer-heading {
-  font-size: 1.6rem;
-  line-height: 1.5rem;
-}
-.disclaimer-para {
-  gap: 2rem;
-  font-size: 0.825rem;
-  line-height: 0.875rem;
-}
-.second-part {
-  background: #172026;
-  width: 86.7%;
-  margin: auto;
-  padding: 1.4375rem 1.816rem;
-  border-radius: 0.5rem;
-}
-.companies-logoes {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-row-gap: 3.125rem;
-  justify-items: center;
-}
-.companies-logoes-mobile {
-  display: none;
-}
-.netflix-icon,
-.google-icon {
-  justify-self: start;
-}
-.dailymotion-icon,
-.youtube-icon {
-  justify-self: end;
-}
-.netflix-icon {
-  width: 77px;
-  height: 23px;
-}
-.vimeo-icon {
-  width: 66.7px;
-  height: 18.4px;
-}
-.dailymotion-icon {
-  width: 110px;
-  height: 20.7px;
-}
-.google-icon {
-  width: 75px;
-  height: 24.15px;
-}
-.twitch-icon {
-  width: 65.5px;
-  height: 21.85px;
-}
-.youtube-icon {
-  width: 87.4px;
-  height: 19.55px;
-}
-
-/* .contact-us-button {
-    width: 6.2rem;
-    height: 2.15rem;
-    font-size: 0.6rem;
-    line-height: 0.8rem;
-  } */
 
 @media (max-width: 700px) {
+  .disclaimer {
+    padding: 2.4rem 4.125rem 2.9rem;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .disclaimer-heading {
+    align-self: center;
+    font-weight: 700;
+    font-family: "Poppins";
+    font-size: 1.687rem;
+    line-height: normal;
+  }
+  .disclaimer-para {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 2.76rem;
+  }
+  .disclaimer-para p {
+    font-weight: 600;
+    font-size: 0.94rem;
+    line-height: 1.22rem;
+    color: rgba(255, 255, 255, 0.75);
+    font-family: "Poppins", sans-serif;
+  }
+
   .second-part {
     background: inherit;
     width: 86.7%;

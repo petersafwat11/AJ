@@ -4,6 +4,7 @@ import Header from "../header/Header";
 // import Marque from "../components/marque/marque";
 import Image from "next/image";
 import Popup from "../popupWrapper/Popup";
+import MessageSent from "../send-message/MessageSent";
 import SendMessage, { SendMessageButton } from "../send-message/SendMessage";
 import styles from "./TopLayout.module.css";
 
@@ -12,11 +13,17 @@ const TopLayout = () => {
   const hidePopup = () => {
     setShowPopup(false);
   };
+
   const [showSendMessage, setShowSendMessage] = useState(false);
+  const [messageSent, setMessageSent] = useState(false);
+
   const toggleSendMessageComponent = () => {
     setShowSendMessage(!showSendMessage);
-    console.log("clicked", showSendMessage);
   };
+  const toggleMessageSentComponent = () => {
+    setMessageSent(!messageSent);
+  };
+
   const [showScrollTopIcon, setShowScrollTopIcon] = useState(false);
   const updateDimensions = () => {
     if (window.scrollY > 350) {
@@ -30,6 +37,14 @@ const TopLayout = () => {
     window.addEventListener("scroll", updateDimensions);
     return () => window.removeEventListener("resize", updateDimensions);
   }, []);
+  useEffect(() => {
+    if (messageSent) {
+      setShowSendMessage(false);
+      setTimeout(() => {
+        setMessageSent(false);
+      }, [5000]);
+    }
+  }, [messageSent]);
   const scrollToTopPage = () => {
     window.scrollTo({
       top: 0,
@@ -43,10 +58,18 @@ const TopLayout = () => {
       <SendMessageButton
         toggleSendMessageComponent={toggleSendMessageComponent}
       />
-      {showSendMessage && (
+      {showSendMessage && !messageSent && (
         <Popup>
           <SendMessage
             toggleSendMessageComponent={toggleSendMessageComponent}
+            toggleMessageSentComponent={toggleMessageSentComponent}
+          />
+        </Popup>
+      )}
+      {messageSent && (
+        <Popup>
+          <MessageSent
+            toggleMessageSentComponent={toggleMessageSentComponent}
           />
         </Popup>
       )}

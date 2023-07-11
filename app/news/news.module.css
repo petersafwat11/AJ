@@ -113,6 +113,8 @@
 }
 .paginations-option {
   font-size: 1rem;
+  font-family: RobotoSemiBold;
+
   line-height: 1.22rem;
 }
 .previous > p,
@@ -241,8 +243,8 @@
   }
   .news-item-para {
     font-weight: 500;
-    font-size: 0.75rem;
-    line-height: 0.8rem;
+    font-size: 0.55rem;
+    line-height: 0.6rem;
   }
 }
 @media (max-width: 600px) {

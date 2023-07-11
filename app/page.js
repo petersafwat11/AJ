@@ -45,9 +45,11 @@ const Page = () => {
               </div>
             </section>
             <section className={classes["other-matches"]}>
-              <h2 className={classes["title"]}>OTHER MATCHES</h2>
-              <div className={classes["search-desktop"]}>
-                <HomeSearch />
+              <div className={classes["other-matches-title-and-search"]}>
+                <h2 className={classes["title"]}>OTHER MATCHES</h2>
+                <div className={classes["search-desktop"]}>
+                  <HomeSearch />
+                </div>
               </div>
               <div className={classes["time-zone"]}>
                 <TimezoneDropdown />

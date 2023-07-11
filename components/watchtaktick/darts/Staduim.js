@@ -6,6 +6,7 @@ const Staduim = () => {
   return (
     <div className={classes["container"]}>
       <Image
+      className={classes['logo']}
         src="/svg/watch/darts/pitch.svg"
         alt="pitch"
         width="195"

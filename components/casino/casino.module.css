@@ -4,7 +4,7 @@
   justify-content: center;
   flex-direction: column;
   gap: 0.5rem;
-  background: url("/svg/casino/background-desktop.svg");
+  background: url("/svg/casino/background.svg");
   border-radius: 0.75rem;
   overflow: hidden;
   min-width: 34rem;

@@ -7,14 +7,18 @@ const Dropdown = ({ name, options, selectOption, selectedOption }) => {
   return (
     <div className={classes["dropdown"]}>
       <div
-        style={{
-          fontFamily: name === "العربية" ? "Noto Sans Arabic" : "",
-        }}
         className={
           name !== selectedOption.name ? classes["name"] : classes["name-2"]
         }
       >
-        <p className={classes["lang-name"]}>{name}</p>
+        <p
+          style={{
+            fontFamily: name === "العربية" ? "Noto Sans Arabic" : "",
+          }}
+          className={classes["lang-name"]}
+        >
+          {name}
+        </p>
         <IoIosArrowUp className={classes["drop-icon"]} />
       </div>
       <div className={classes["options"]}>

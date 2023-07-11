@@ -38,7 +38,8 @@
   font-weight: 300;
   align-self: center;
 }
-.match-date-mobile {
+.match-date-mobile,
+.match-date-small-mobile {
   display: none;
 }
 

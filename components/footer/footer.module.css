@@ -33,7 +33,6 @@
   line-height: 1.65rem;
 }
 .footer-container-disclaimer > p {
-  font-family: "Poppins";
   font-size: 0.95rem;
   line-height: 1rem;
   font-weight: 400;
@@ -80,7 +79,7 @@
   grid-template-columns: 12rem 1fr;
   grid-column-gap: 6%;
   max-width: 88%;
-  margin-top: 0.7rem;
+  margin-top: 0.25rem;
 }
 .footer-actions {
   display: flex;
@@ -229,7 +228,6 @@
     grid-template-columns: 9.5rem 1fr;
     grid-column-gap: 3.8%;
     max-width: 88%;
-    margin-top: 0.7rem;
   }
 
   .copy-write {

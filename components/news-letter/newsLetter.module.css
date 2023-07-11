@@ -69,7 +69,8 @@
   cursor: pointer;
   height: 2.925rem;
 }
-.news-letter-second-para {
+.news-letter-second-para,
+.news-letter-second-para span {
   font-weight: 300;
   font-size: 0.675rem;
   line-height: 1.23rem;

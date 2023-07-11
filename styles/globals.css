@@ -63,6 +63,7 @@ body * {
 }
 body *::selection {
   background-color: #03a1cd;
+  color: #0e0e0e;
 }
 
 .skin-tone-button .skin-tone:after {

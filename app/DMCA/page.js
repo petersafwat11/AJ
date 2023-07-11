@@ -44,8 +44,8 @@ const Page = () => {
                     className={classes["netflix-icon"]}
                     src="/svg/DMCA/netflix.svg"
                     alt="netflix"
-                    width="114"
-                    height="30"
+                    width="130"
+                    height="36"
                   />
                 </div>
                 <div className={classes["icon-wrapper"]}>
@@ -53,7 +53,7 @@ const Page = () => {
                     className={classes["vimeo-icon"]}
                     src="/svg/DMCA/vimeo.svg"
                     alt="vimeo"
-                    width="105"
+                    width="100"
                     height="29"
                   />
                 </div>
@@ -62,8 +62,8 @@ const Page = () => {
                     className={classes["dailymotion-icon"]}
                     src="/svg/DMCA/dailymotion.svg"
                     alt="dailymotion"
-                    width="165"
-                    height="30"
+                    width="181"
+                    height="33"
                   />
                 </div>
                 <div className={classes["icon-wrapper"]}>
@@ -71,8 +71,8 @@ const Page = () => {
                     className={classes["google-icon"]}
                     src="/svg/DMCA/google.svg"
                     alt="google"
-                    width="110"
-                    height="36"
+                    width="125"
+                    height="40"
                   />
                 </div>
                 <div className={classes["icon-wrapper"]}>
@@ -89,8 +89,8 @@ const Page = () => {
                     className={classes["youtube-icon"]}
                     src="/svg/DMCA/youtube.svg"
                     alt="youtube"
-                    width="127"
-                    height="27"
+                    width="144"
+                    height="32"
                   />
                 </div>
               </div>

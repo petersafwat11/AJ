@@ -136,7 +136,7 @@
   .instagram,
   .reddit,
   .wrapper > * {
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
   .instagram,
   .reddit {
@@ -149,7 +149,7 @@
   }
 
   .watch-video-share-text {
-    font-size: 0.67rem;
+    font-size: 0.8rem;
     line-height: 0.75rem;
     margin-bottom: -1.5px;
   }
