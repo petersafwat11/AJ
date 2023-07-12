@@ -112,12 +112,12 @@
   }
   .message-username,
   .my-message-username {
-    font-size: 0.45rem;
+    font-size: 0.49rem;
     line-height: 0.625rem;
   }
   .my-message-time,
   .message-time {
-    font-size: 0.375rem;
+    font-size: 0.42rem;
     line-height: 0.567rem;
   }
   .user-avatar {
@@ -133,22 +133,17 @@
   .message-content,
   .my-message-content {
     border-radius: 0.375rem;
-    font-size: 0.5rem;
+    font-size: 0.65rem;
     line-height: 0.75rem;
-    padding: 0.3525rem 0.575rem;
+    padding: 0.3925rem 0.575rem;
   }
-  /* .mention-icon {
-        width: 8px;
-        height: 8px;
-      } */
   .mention-icon {
-    font-size: 0.7rem;
+    font-size: 1.7rem;
     min-width: 0.7rem;
     margin-left: 3px;
   }
-
   .my-message-content {
-    max-width: 10.43rem;
+    max-width: 13.43rem;
   }
   .my-message-details {
     margin-left: 0;

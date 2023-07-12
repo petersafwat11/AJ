@@ -40,8 +40,18 @@
 @media (max-width: 56.25rem) {
   .chat {
     margin: 0 13px 0 auto;
-    width: min(18.812rem, 95%);
-    height: 24.5rem;
+    width: 25rem;
+    height: 30.6rem;
+    border-radius: 0.475rem;
+    /* width: 18.8rem;
+    height: 24.5rem; */
+  }
+}
+@media (max-width: 27rem) {
+  .chat {
+    margin: 0;
+    width: 100%;
+    height: 29.5rem;
     border-radius: 0.475rem;
   }
 }

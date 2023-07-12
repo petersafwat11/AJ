@@ -90,24 +90,23 @@
     padding: 0.3rem;
   }
   .chat-top-extend {
-    width: 17.2px;
-    height: 12.2px;
+    width: 20.2px;
+    height: 15.2px;
   }
   .chat-top-exit {
-    width: 20.2px;
-    height: 13.2px;
+    width: 23.2px;
+    height: 16.2px;
   }
 
   .chat-top-text {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     line-height: 0.8rem;
     gap: 0.25rem;
   }
   .chat-rooms {
-    margin-left: -3.15rem;
-    padding: 4px;
-
-    width: 6.3rem;
+    margin-left: -4rem;
+    padding: 6px;
+    width: 7.3rem;
     top: 128%;
   }
   .chat-room,
@@ -115,7 +114,7 @@
     height: 1.4rem;
     padding-left: 0.52rem;
     /* padding: 4px; */
-    font-size: 0.5rem;
+    font-size: 0.56rem;
     line-height: 0.72rem;
   }
 }
