@@ -1,5 +1,6 @@
 .proton-vpn {
-  background: linear-gradient(#003a71, #002f59);
+  /* background: linear-gradient(#003a71, #002f59); */
+  background-image: url("/svg/vpn/background.svg");
   background-origin: top left;
   width: 34rem;
   height: 7.78rem;
@@ -12,12 +13,14 @@
   position: absolute;
   top: 16.5px;
   left: 21px;
+  z-index: 0;
 }
 .map {
   position: absolute;
   top: 0;
   right: 0;
   height: 100%;
+  z-index: 0;
 }
 .map-mobile {
   display: none;
@@ -71,14 +74,15 @@
   cursor: pointer;
   transition: all 0.3s ease-out;
 }
-.right-arrow {
-  font-size: 0.75rem;
-}
-
 .button:hover {
   background: #042c4e;
   color: white;
 }
+
+.right-arrow {
+  font-size: 0.75rem;
+}
+
 @media (max-width: 56.25rem) {
   .proton-vpn {
     width: min(93vw, 28rem);

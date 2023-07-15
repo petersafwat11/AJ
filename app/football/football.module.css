@@ -11,8 +11,19 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
-  /* overscroll-behavior: none; */
+  overscroll-behavior: none;
 }
+/* .wrapper video {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+} */
 .chat-icon {
   position: fixed;
   bottom: 5vh;
@@ -101,10 +112,10 @@
       env(safe-area-inset-bottom) env(safe-area-inset-left);
     margin: 0;
     background-image: linear-gradient(
-      to right bottom,
-      rgba(16, 23, 26, 0.95),
-      rgba(21, 26, 31, 0.938)
-    ),
+        to right bottom,
+        rgba(16, 23, 26, 0.95),
+        rgba(21, 26, 31, 0.938)
+      ),
       url(../../public/wallpaper/main.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -131,8 +142,8 @@
   }
   .chat {
     position: fixed;
-    bottom: 5vh;
-    right: 0.7vw;
+    bottom: 0;
+    right: 0;
     z-index: 100;
   }
 
