@@ -1,9 +1,11 @@
 import Image from "next/image";
 import React from "react";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import classes from "./plans.module.css";
 const Plans = () => {
   return (
     <section className={classes["plans"]}>
+      <IoIosArrowBack />
       <div className={classes["freebie"]}>
         <div className={classes["plan-header"]}>
           <h4 className={classes["header-title"]}>Freebie</h4>
@@ -136,6 +138,7 @@ const Plans = () => {
           ))}
         </div>
       </div>
+      <IoIosArrowForward />
     </section>
   );
 };

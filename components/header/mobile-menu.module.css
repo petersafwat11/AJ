@@ -40,7 +40,7 @@
 .nav-top {
   display: flex;
   align-items: center;
-  margin: 7px 23px 2px;
+  margin: 7px 23px;
 }
 .logo-wrapper {
   display: flex;
@@ -255,10 +255,10 @@
   .logo-wrapper {
     margin-right: 11.4px;
   }
-  .logo {
+  /* .logo {
     width: 63px;
     height: 58px;
-  }
+  } */
   .menu-mobile-lang {
     gap: 23.8px;
   }
@@ -342,11 +342,11 @@
   .logo-wrapper {
     margin-right: 10.7px;
   }
-  .logo {
+  /* .logo {
     width: 55px;
     height: 51px;
   }
-
+ */
   .menu-mobile-lang {
     gap: 22px;
   }

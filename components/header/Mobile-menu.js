@@ -11,29 +11,16 @@ export const MenuMobile = () => {
   return (
     <div>
       <div className={classes["menu-mobile"]}>
-        {showMenu ? (
-          <Image
-            onClick={() => {
-              setShowMenu(!showMenu);
-            }}
-            className={classes["menu-mobile-icon"]}
-            src="/svg/menu-icon.svg"
-            alt="menu"
-            width="28"
-            height="15"
-          />
-        ) : (
-          <Image
-            onClick={() => {
-              setShowMenu(!showMenu);
-            }}
-            className={classes["menu-mobile-icon"]}
-            src="/svg/menu-icon.svg"
-            alt="menu"
-            width="28"
-            height="15"
-          />
-        )}
+        <Image
+          onClick={() => {
+            setShowMenu(!showMenu);
+          }}
+          className={classes["menu-mobile-icon"]}
+          src="/svg/menu-icon.svg"
+          alt="menu"
+          width="28"
+          height="15"
+        />
         <Image
           className={classes["menu-mobile-logo"]}
           src="/logo-mobile.svg"
@@ -58,10 +45,10 @@ export const MenuMobile = () => {
             <div className={classes["logo-wrapper"]}>
               <Image
                 className={classes["logo"]}
-                src="/svg/mobile-menu/logo.svg"
+                src="/logo-mobile.svg"
                 alt="logo"
-                width="69"
-                height="63"
+                width="76"
+                height="59"
               />
             </div>
           </div>

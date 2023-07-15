@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   gap: 0.642rem;
-  margin-top: 2.9rem;
 }
 
 .label {
@@ -41,4 +40,30 @@
   font-size: 0.75rem;
   font-family: "Poppins";
   cursor: pointer;
+}
+@media (max-width: 75rem) {
+  .notify-me-group {
+    gap: 0.5457rem;
+  }
+
+  .label {
+    font-size: 0.7225rem;
+    letter-spacing: 0.153px;
+  }
+  .input-group {
+    gap: 0.238rem;
+  }
+  .notify-input {
+    width: 12.0325rem;
+    height: 2.06855rem;
+    padding: 0.238rem 0.6375rem 0.221rem;
+    border-radius: 0.31875rem;
+    font-size: 0.5576rem;
+    line-height: 153%;
+  }
+  .notify-button {
+    padding: 0.5576rem 1.275rem;
+    border-radius: 0.31875rem;
+    font-size: 0.6375rem;
+  }
 }

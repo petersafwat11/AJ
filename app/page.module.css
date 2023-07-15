@@ -101,7 +101,7 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    width: 97%;
+    width: 92%;
     max-width: 30rem;
     margin: 1.5rem auto 0;
     color: rgb(24, 34, 40);
@@ -153,7 +153,7 @@
     justify-content: center;
     margin: 1.3rem auto 0;
     padding-right: 0.65rem;
-    max-width: 92%;
+    max-width: 94%;
     height: 4.18rem;
     background-color: rgba(12, 18, 21);
     border-radius: 0.55rem;
@@ -191,7 +191,7 @@
     justify-content: space-between;
     margin-top: 3.25rem;
   }
-  .title:last-of-type {
+  .other-matches .title {
     margin-top: 0;
   }
 
