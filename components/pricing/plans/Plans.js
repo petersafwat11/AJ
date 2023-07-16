@@ -100,7 +100,7 @@ const Plans = () => {
       </div>
       <div className={classes["monthly"]}>
         <div className={classes["plan-header"]}>
-          <h4 className={classes["header-title"]}>Yearly</h4>
+          <h4 className={classes["header-title"]}>Monthly</h4>
           <p className={classes["header-description"]}>
             Ideal for individuals who want advanced features and quality on a
             monthly basis.

@@ -62,7 +62,9 @@
 .monthly .header-description {
   color: #8a8a8a;
 }
-.monthly .price {
+
+.monthly .price,
+.monthly .header-title {
   color: #191d23;
 }
 
