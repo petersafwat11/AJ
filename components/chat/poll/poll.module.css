@@ -10,6 +10,7 @@
   padding: 0.6rem 0.6rem 0.67rem 0.97rem;
   display: flex;
   flex-direction: column;
+  border-bottom: 9px solid #03a1cd;
 }
 .top {
   display: flex;

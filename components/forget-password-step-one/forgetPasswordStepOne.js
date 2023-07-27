@@ -1,6 +1,7 @@
 "use client";
 import classes from "./forgetPasswordStepOne.module.css";
 import React, { useState } from "react";
+
 const ForgetPasswordStepOne = () => {
   const [email, setEmail] = useState("");
   return (
@@ -19,7 +20,7 @@ const ForgetPasswordStepOne = () => {
         />
       </div>
       <button className={classes["next-button"]}>Next</button>
-      <p className={classes["login-para"]}> log in</p>
+      <p  className={classes["login-para"]}> log in</p>
     </div>
   );
 };
