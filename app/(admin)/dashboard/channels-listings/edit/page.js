@@ -1,8 +1,8 @@
 import React from "react";
-import ActionsButtons from "../../../../components/dashboard/actionsButtons/ActionsButtons";
-import ChannelName from "../../../../components/dashboard/channelsListings/channelName/ChannelName";
-import Mode from "../../../../components/dashboard/channelsListings/mode/Mode";
-import StreamLinks from "../../../../components/dashboard/channelsListings/streamLinks/StreamLinks";
+import ActionsButtons from "../../../../../components/dashboard/actionsButtons/ActionsButtons";
+import ChannelName from "../../../../../components/dashboard/channelsListings/channelName/ChannelName";
+import Mode from "../../../../../components/dashboard/channelsListings/mode/Mode";
+import StreamLinks from "../../../../../components/dashboard/channelsListings/streamLinks/StreamLinks";
 import classes from "./pages.module.css";
 const page = () => {
   return (

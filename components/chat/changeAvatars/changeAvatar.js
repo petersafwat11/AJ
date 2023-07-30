@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
-import Popup from "../../../popupWrapper/Popup";
+import Popup from "../../popupWrapper/Popup";
 import ImageUploader from "./../imageUpload/ImageUpload";
 import RightPart from "./RightPart";
 import { Actions, TopPart } from "./TopAndBottom";
