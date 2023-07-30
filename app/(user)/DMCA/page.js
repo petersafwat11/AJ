@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import Marque from "../../../../components/marque/Marque";
-import TopLayout from "../../../../components/topLayout/TopLayout";
+import Marque from "../../../components/marque/Marque";
+import TopLayout from "../../../components/topLayout/TopLayout";
 import classes from "./DMCA.module.css";
 const Page = () => {
   return (

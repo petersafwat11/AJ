@@ -2,22 +2,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import Chat from "../../../../components/chat/Chat";
-import Dropdown from "../../../../components/dropdown/Dropdown";
-import Report from "../../../../components/report/Report";
-import ShareLinks from "../../../../components/shareLinks/ShareLinks";
-import WatchDetails from "../../../../components/watch-details/WatchDetailsFootball";
-import SocialIcons from "../../../../components/whatchShare/SocialIcons";
-import WhoWillWin from "../../../../components/whoWillWin/WhoWillWin";
+import Chat from "../../../components/chat/Chat";
+import Dropdown from "../../../components/dropdown/Dropdown";
+import Report from "../../../components/report/Report";
+import ShareLinks from "../../../components/shareLinks/ShareLinks";
+import WatchDetails from "../../../components/watch-details/WatchDetailsFootball";
+import SocialIcons from "../../../components/whatchShare/SocialIcons";
+import WhoWillWin from "../../../components/whoWillWin/WhoWillWin";
 
-import Casino from "../../../../components/casino/Casino";
-import Popup from "../../../../components/popupWrapper/Popup";
-import ProtonVpn from "../../../../components/protonVpn/ProtonVpn";
-import TopLayout from "../../../../components/topLayout/TopLayout";
+import Casino from "../../../components/casino/Casino";
+import Popup from "../../../components/popupWrapper/Popup";
+import ProtonVpn from "../../../components/protonVpn/ProtonVpn";
+import TopLayout from "../../../components/topLayout/TopLayout";
 // import VideoJs from "../../../../components/video/VideoJs";
-import ExtendButton from "../../../../components/extendButton/ExtendButton";
-import Marque from "../../../../components/marque/Marque";
-import MatchSummery from "../../../../components/watchtaktick/UFC/MatchSummery";
+import ExtendButton from "../../../components/extendButton/ExtendButton";
+import Marque from "../../../components/marque/Marque";
+import MatchSummery from "../../../components/watchtaktick/UFC/MatchSummery";
 import classes from "./UFC.module.css";
 const Page = () => {
   const [showChat, setShowChat] = useState(false);
