@@ -1,6 +1,6 @@
 import React from "react";
-import ActionsButtons from "../../../../../components/dashboard/actionsButtons/ActionsButtons";
-import Table from "../../../../../components/dashboard/channelsListings/table/Table";
+import ActionsButtons from "../../../../components/dashboard/actionsButtons/ActionsButtons";
+import Table from "../../../../components/dashboard/channelsListings/table/Table";
 import classes from "./page.module.css";
 const page = () => {
   return (

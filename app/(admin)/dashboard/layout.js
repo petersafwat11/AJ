@@ -1,5 +1,5 @@
 import React from "react";
-import Navigation from "../../components/dashboard/navigation/Navigation";
+import Navigation from "../../../components/dashboard/navigation/Navigation";
 import classes from './layout.module.css'
 export default function DashboardLayout({
   children

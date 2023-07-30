@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import ForgetPasswordStepOne from "../../../components/forget-password-step-one/forgetPasswordStepOne";
+import ForgetPasswordStepOne from "../../../../components/forget-password-step-one/forgetPasswordStepOne";
 import classes from "./page.module.css";
 const page = () => {
   return (
