@@ -2,22 +2,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import Chat from "../../../../components/chat/Chat";
-import Dropdown from "../../../../components/dropdown/Dropdown";
-import Report from "../../../../components/report/Report";
-import ShareLinks from "../../../../components/shareLinks/ShareLinks";
-import WatchDetails from "../../../../components/watch-details/WatchDetailsFootball";
-import SocialIcons from "../../../../components/whatchShare/SocialIcons";
-import WhoWillWin from "../../../../components/whoWillWin/WhoWillWin";
+import Chat from "../../../components/chat/Chat";
+import Dropdown from "../../../components/dropdown/Dropdown";
+import Report from "../../../components/report/Report";
+import ShareLinks from "../../../components/shareLinks/ShareLinks";
+import WatchDetails from "../../../components/watch-details/WatchDetailsFootball";
+import SocialIcons from "../../../components/whatchShare/SocialIcons";
+import WhoWillWin from "../../../components/whoWillWin/WhoWillWin";
 
-import Casino from "../../../../components/casino/Casino";
-import ExtendButton from "../../../../components/extendButton/ExtendButton";
-import Marque from "../../../../components/marque/Marque";
-import Popup from "../../../../components/popupWrapper/Popup";
-import ProtonVpn from "../../../../components/protonVpn/ProtonVpn";
-import TopLayout from "../../../../components/topLayout/TopLayout";
-import PlayerContainer from "../../../../components/video/VideoJs";
-import MatchSummery from "../../../../components/watchtaktick/netball/MatchSummery";
+import Casino from "../../../components/casino/Casino";
+import ExtendButton from "../../../components/extendButton/ExtendButton";
+import Marque from "../../../components/marque/Marque";
+import Popup from "../../../components/popupWrapper/Popup";
+import ProtonVpn from "../../../components/protonVpn/ProtonVpn";
+import TopLayout from "../../../components/topLayout/TopLayout";
+import PlayerContainer from "../../../components/video/VideoJs";
+import MatchSummery from "../../../components/watchtaktick/netball/MatchSummery";
 import classes from "./netball.module.css";
 
 const Page = () => {

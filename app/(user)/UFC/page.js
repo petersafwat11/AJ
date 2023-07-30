@@ -14,7 +14,7 @@ import Casino from "../../../components/casino/Casino";
 import Popup from "../../../components/popupWrapper/Popup";
 import ProtonVpn from "../../../components/protonVpn/ProtonVpn";
 import TopLayout from "../../../components/topLayout/TopLayout";
-// import VideoJs from "../../../../components/video/VideoJs";
+// import VideoJs from "../../../components/video/VideoJs";
 import ExtendButton from "../../../components/extendButton/ExtendButton";
 import Marque from "../../../components/marque/Marque";
 import MatchSummery from "../../../components/watchtaktick/UFC/MatchSummery";

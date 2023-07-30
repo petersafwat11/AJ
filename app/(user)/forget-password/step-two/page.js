@@ -1,5 +1,5 @@
 import React from "react";
-import ForgetPassword from "../../../../components/forget-password/forgetPassword";
+import ForgetPassword from "../../../components/forget-password/forgetPassword";
 import classes from "./page.module.css";
 const page = () => {
   return (
