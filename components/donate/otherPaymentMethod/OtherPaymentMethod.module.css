@@ -7,7 +7,7 @@
 }
 .top {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
 }
 .heading {
   font-family: "Poppins";

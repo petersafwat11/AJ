@@ -1,7 +1,7 @@
+import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
 import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
-import connectToDatabase from "../../../mongodb";
-import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
+import connectToDatabase from "../../../../mongodb";
 
 export default NextAuth({
   providers: [

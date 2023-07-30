@@ -3,13 +3,13 @@
   border-radius: 1.92rem;
   padding: 1.97rem 1.97rem 1.7rem 1.74rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   width: 31.5rem;
 }
 .share-links-top {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: space-between;
   width: 100%;
 }

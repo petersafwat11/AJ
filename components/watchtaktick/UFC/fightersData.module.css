@@ -49,12 +49,12 @@
 
 .player-item {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 0.24rem;
 }
 .player-item:nth-child(2) {
-  align-items: end;
+  align-items: flex-end;
 }
 .player-item h4 {
   color: #bababa;

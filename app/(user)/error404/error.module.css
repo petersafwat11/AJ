@@ -1,0 +1,189 @@
+.wrapper {
+  padding: 0;
+  margin: 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(16, 23, 26, 0.95),
+      rgba(21, 26, 31, 0.938)
+    ),
+    url(../../../public/wallpaper/main.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  overscroll-behavior: none;
+  padding-bottom: 7rem;
+}
+
+.error {
+  background: #0d1317;
+  border-radius: 0.85rem;
+  overflow: hidden;
+  max-width: 44.5rem;
+  margin: 5.85rem auto 0;
+}
+.first-section {
+  padding: 3.46rem 4rem 2.8rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.875rem;
+  /* height: 17.4375rem; */
+}
+.title {
+  font-family: "Poppins";
+
+  font-weight: 700;
+  font-size: 2.3rem;
+  line-height: 2.76rem;
+}
+.error-message {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.92rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 72%;
+}
+.second-section {
+  background: #172026;
+  padding: 3.5rem 7rem 2.81rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin: 0 2.25rem 2rem;
+  border-radius: 1.125rem;
+}
+.return-para {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.92rem;
+}
+
+.return-para > span {
+  color: #00b1ff;
+  border-bottom: 2px solid #00b1ff;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+}
+.button {
+  background: #00b1ff;
+  border-radius: 0.37rem;
+  width: 7.6rem;
+  height: 2.67rem;
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 1.03rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+@media (max-width: 56.25rem) {
+  .wrapper-2 {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right)
+      env(safe-area-inset-bottom) env(safe-area-inset-left);
+    margin: 0;
+    padding-bottom: 3.5rem;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(16, 23, 26, 0.95),
+        rgba(21, 26, 31, 0.938)
+      ),
+      url(../../../public/wallpaper/main.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    /* overscroll-behavior: none; */
+  }
+  .wrapper {
+    padding: 0;
+    margin: 0;
+    background-image: none;
+    /* overscroll-behavior: none; */
+  }
+
+  .error {
+    border-radius: 0.63rem;
+    max-width: min(35rem, 95%);
+    margin: 2.9rem auto 0;
+  }
+  .first-section {
+    padding: 2.8rem 9% 2.1rem;
+    gap: 2.1rem;
+  }
+  .title {
+    font-size: 2.2rem;
+    text-align: center;
+    line-height: normal;
+  }
+  .error-message {
+    font-size: 1.2rem;
+    max-width: 85%;
+  }
+  .second-section {
+    padding: 2.5rem 3rem;
+    gap: 1.7rem;
+  }
+  .return-para {
+    font-size: 1.5rem;
+    white-space: normal;
+    line-height: 136.5%;
+    max-width: 18rem;
+    text-align: center;
+  }
+  .button {
+    border-radius: 0.45rem;
+    width: 8.5rem;
+    height: 2.85rem;
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 33.75rem) {
+  .error-message {
+    max-width: 88%;
+  }
+}
+@media (max-width: 31.25rem) {
+  .error {
+    border-radius: 0.63rem;
+    max-width: min(35rem, 97vw);
+    margin: 2.5rem auto;
+    padding-bottom: 0;
+  }
+  .first-section {
+    padding: 2.5rem 6% 1.875rem;
+    gap: 1.07rem;
+  }
+
+  .error-message {
+    font-size: 1.07rem;
+    line-height: 136.5%;
+    max-width: 21rem;
+    width: auto;
+  }
+  .second-section {
+    background: #172026;
+    padding: 1.875rem 2.875rem 1.75rem;
+    max-width: 100%;
+    margin: 0 27px 30px;
+    border-radius: 0.75rem;
+    gap: 1.85rem;
+  }
+  .return-para {
+    font-size: 1.375rem;
+    line-height: 136.5%;
+    text-align: center;
+  }
+  .button {
+    border-radius: 0.3rem;
+    width: 7.82rem;
+    height: 2.625rem;
+    font-size: 0.95rem;
+  }
+}

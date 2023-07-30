@@ -4,7 +4,7 @@
   width: 25.68rem;
   padding: 1.32rem 0.99rem 1.36rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 1.21rem;
 }

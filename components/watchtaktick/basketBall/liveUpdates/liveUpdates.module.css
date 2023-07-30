@@ -20,7 +20,7 @@
 .bottom {
   padding: 0 2.85rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 1.125rem;
 }

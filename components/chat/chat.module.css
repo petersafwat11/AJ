@@ -22,7 +22,7 @@
   background: #0d1318;
   border-radius: 0.475rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   overflow: hidden;
   position: relative;

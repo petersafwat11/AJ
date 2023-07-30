@@ -1,6 +1,6 @@
 .change-avatar-text {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 0.18rem;
 }
@@ -107,7 +107,7 @@
     font-size: 0.65rem;
     line-height: 0.6rem;
   }
-  .upload-icon{
+  .upload-icon {
     width: 17px;
     height: 19.42px;
   }

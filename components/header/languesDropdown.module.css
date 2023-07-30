@@ -17,5 +17,5 @@
 .lang-options {
   display: none;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 }

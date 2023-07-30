@@ -42,7 +42,7 @@
 }
 .rules {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 1rem;
   margin-top: 3.63rem;

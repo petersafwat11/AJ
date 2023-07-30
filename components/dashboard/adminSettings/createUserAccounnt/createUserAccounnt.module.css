@@ -4,7 +4,7 @@
   width: 35.42rem;
   padding: 0.99rem 3.0136rem 1.1rem 1.54rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   gap: 2.91rem;
 }
 
@@ -23,7 +23,7 @@
 .details {
   margin-top: 0.99rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 0.66rem;
   width: 100%;
@@ -37,7 +37,7 @@
 
 .input-group {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 2.64px;
   width: 100%;

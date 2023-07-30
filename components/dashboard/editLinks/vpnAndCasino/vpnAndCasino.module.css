@@ -7,7 +7,7 @@
 
 .details {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 1.5996rem;
   width: 100%;
@@ -15,7 +15,7 @@
 
 .input-group {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 1.21rem;
   width: 100%;

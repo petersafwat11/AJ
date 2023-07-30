@@ -1,7 +1,7 @@
 .sports {
   margin-top: 1.31rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   gap: 1.875rem;
   justify-content: center;
 }
@@ -26,7 +26,7 @@
     margin-top: 0;
     padding-top: 0.7rem;
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     gap: 1.75rem;
     justify-content: start;
     cursor: grabbing;

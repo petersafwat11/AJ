@@ -3,7 +3,7 @@
   width: 100%;
   padding: 0.65rem 0.98rem 0 1.26rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 0.85rem;
   position: relative;

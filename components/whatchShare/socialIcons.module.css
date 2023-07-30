@@ -131,7 +131,7 @@
     gap: 0.5rem;
   }
   .watch-video-share {
-    align-items: end;
+    align-items: flex-end;
   }
   .instagram,
   .reddit,

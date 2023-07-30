@@ -137,7 +137,7 @@
 }
 .different-leagues {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 0.25rem;
   margin-top: 1.9rem;

@@ -32,7 +32,7 @@
 .matches {
   margin-top: 0.5rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 1.22rem;
 }

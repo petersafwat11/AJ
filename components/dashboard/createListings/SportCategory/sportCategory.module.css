@@ -16,7 +16,7 @@
 
 .categories {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 1.43rem;
   margin-top: 1.144rem;

@@ -16,7 +16,7 @@
 
 .details {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 0.66rem;
   margin-top: 1.04rem;

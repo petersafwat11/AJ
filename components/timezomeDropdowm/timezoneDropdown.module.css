@@ -89,7 +89,7 @@
 .options {
   height: 12.72rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 2px;
   overflow-y: scroll;
@@ -110,13 +110,13 @@
   justify-content: start;
   padding: 0 0.468rem;
   transition: all 0.1s ease-in-out;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
 }
 .option:hover {
   background-color: #008cb2;
   color: rgba(255, 255, 255, 0.99);
 }
-@media(max-width: 56.25rem){
+@media (max-width: 56.25rem) {
   .container {
     gap: 0.25rem;
   }
@@ -127,7 +127,7 @@
   .arrow {
     width: 15px;
     height: 15px;
-}
+  }
   .space {
     height: 3px;
   }
@@ -139,14 +139,12 @@
   .options::-webkit-scrollbar {
     width: 2.5px;
   }
-  
-  
+
   /* Handle */
   .options::-webkit-scrollbar-thumb {
     border-radius: 4px;
   }
-  
-  
+
   .dropdown {
     height: 18.93rem;
     border-radius: 0.875rem;
@@ -164,8 +162,8 @@
     top: 5px;
     right: 6px;
     width: 10px;
-    height: 10px;  
-}
+    height: 10px;
+  }
   .options {
     height: 12.72rem;
   }
@@ -176,5 +174,4 @@
     height: 1.5rem;
     padding: 0 0.5rem;
   }
-  
 }

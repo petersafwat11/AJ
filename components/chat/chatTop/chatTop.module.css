@@ -20,7 +20,7 @@
 }
 .chat-top-text:hover > .chat-rooms {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 3px;
 }

@@ -15,14 +15,14 @@
 .details {
   margin-top: 0.99rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 23.76px;
   width: 100%;
 }
 .input-group {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 0.99rem;
   width: 100%;

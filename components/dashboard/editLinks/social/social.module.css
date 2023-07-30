@@ -4,7 +4,7 @@
   width: 50.6rem;
   padding: 1.21rem 7.304rem 1.76rem 1.32rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 1.65rem;
 }
@@ -20,7 +20,7 @@
 
 .input-group {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 0.99rem;
 }

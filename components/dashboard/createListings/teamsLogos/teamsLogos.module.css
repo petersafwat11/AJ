@@ -16,7 +16,7 @@
 .details {
   margin-top: 0.66rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 0.88rem;
   width: 100%;
@@ -24,7 +24,7 @@
 
 .input-group {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: start;
   flex-direction: column;
   gap: 0.44rem;

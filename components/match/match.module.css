@@ -19,7 +19,7 @@
 
 .match-details {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 0.25rem;
   font-size: 0.75rem;

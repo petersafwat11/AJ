@@ -9,7 +9,7 @@
 }
 .input-group {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   gap: 0.625rem;

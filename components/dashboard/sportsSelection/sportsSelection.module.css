@@ -19,7 +19,7 @@
 }
 .options {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 0.22rem;
   border: 1px solid black;

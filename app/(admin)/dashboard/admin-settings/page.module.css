@@ -1,0 +1,36 @@
+.container {
+  background: #f2f3f5;
+  padding: 7.304rem 11.22rem 10.56rem 9.33rem;
+}
+
+.title {
+  color: #000000;
+  font-size: 1.98rem;
+  line-height: 1.32rem;
+  font-weight: 700;
+  font-family: "Public Sans";
+  margin-bottom: 0.7224rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 2.2rem;
+}
+
+.details {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.144rem;
+  margin-top: 2.2rem;
+}
+
+.sub-heading {
+  color: #000000;
+  font-size: 1.65rem;
+  line-height: 1.32rem;
+  font-weight: 500;
+  font-family: "Public Sans";
+  margin-bottom: 1.1rem;
+}

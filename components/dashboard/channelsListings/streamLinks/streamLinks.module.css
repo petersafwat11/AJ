@@ -29,7 +29,7 @@
 
 .search-options {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   border-radius: 0.44rem;
   width: 20.68rem;

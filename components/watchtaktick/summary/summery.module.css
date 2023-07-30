@@ -1,12 +1,12 @@
 .container {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   gap: 1.35rem;
 }
 .left {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   gap: 1.17rem;
   height: 4.68rem;
@@ -53,7 +53,7 @@
   background: rgba(27, 38, 46, 0.8);
   padding: 0.1rem 2rem 0.187rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   width: 100%;
 }
