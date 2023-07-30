@@ -1,8 +1,8 @@
 import React from "react";
-import LeagueMenu from "../../../../components/leage/League";
-import Marque from "../../../../components/marque/Marque";
-import Header from "../../../../components/statistics/header/Header";
-import TopLayout from "../../../../components/topLayout/TopLayout";
+import LeagueMenu from "../../../components/leage/League";
+import Marque from "../../../components/marque/Marque";
+import Header from "../../../components/statistics/header/Header";
+import TopLayout from "../../../components/topLayout/TopLayout";
 import classes from "./statistics.module.css";
 
 const Statistics = () => {
