@@ -8,8 +8,8 @@ export default function RootLayout({ children }) {
       <head />
       <body className={styles.wrapper}>
         {children}
-        <NewsLetter />
-        <Footer />
+        {/* <NewsLetter />
+        <Footer /> */}
       </body>
     </html>
   );
