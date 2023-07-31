@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Linechart from "../lineChart/LineChart";
 import SvgPieChart from "../svgPieChart/SvgPieChart";
 import classes from "./chartsWrapper.module.css";
 const ChartsWrapper = () => {
@@ -31,6 +32,11 @@ const ChartsWrapper = () => {
             monitors={"0"}
           />
         </div>
+      </div>
+      <span className={classes['devider']}></span>
+      <div className={classes["right"]}>
+        <p className={classes['chart-title']}>Website Users</p>
+        <Linechart />
       </div>
     </div>
   );

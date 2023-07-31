@@ -1,8 +1,8 @@
 import React from "react";
-import ActionsButtons from "../../../../components/dashboard/actionsButtons/ActionsButtons";
-import Description from "../../../../components/dashboard/createNews/description/Description";
-import ThumbnailImage from "../../../../components/dashboard/createNews/thumbnailImage/ThumbnailImage";
-import Title from "../../../../components/dashboard/createNews/title/Title";
+import ActionsButtons from "../../../../../components/dashboard/actionsButtons/ActionsButtons";
+import Description from "../../../../../components/dashboard/createNews/description/Description";
+import ThumbnailImage from "../../../../../components/dashboard/createNews/thumbnailImage/ThumbnailImage";
+import Title from "../../../../../components/dashboard/createNews/title/Title";
 import classes from "./page.module.css";
 const page = () => {
   return (

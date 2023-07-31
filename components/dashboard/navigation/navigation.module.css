@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: start;
   flex-direction: column;
-  gap: 4.224rem;
+  gap: 3rem;
   position: absolute;
   top: 8.8px;
   left: 0;
@@ -15,14 +15,15 @@
   border-top-left-radius: 0;
 }
 
-.nav * {
+.nav >* {
   color: gray;
   font-size: 1.1rem;
   cursor: pointer;
+  transition: all .3s ease-in-out;
 }
 
-.nav *:hover {
-  color: rgba(46, 46, 46, 0.5);
+.nav >*:hover {
+  color: rgba(0, 0, 0, 1);
 }
 
 .logo-wrapper {
