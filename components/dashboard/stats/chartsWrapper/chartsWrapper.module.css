@@ -1,0 +1,32 @@
+.left {
+  display: flex;
+  align-items: start;
+  gap: 2.3rem;
+}
+.chart-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: .25rem;
+}
+.name {
+  display: flex;
+  gap: 1.05rem;
+  align-items: center;
+}
+.up-span,
+.down-span {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: rgba(52, 181, 58, 1);
+}
+.down-span {
+  background-color: rgba(255, 58, 41, 1);
+}
+.name h3 {
+  color: #000;
+  font-family: "DM Sans";
+  font-size: 1.32rem;
+  font-weight: 500;
+}
