@@ -28,7 +28,7 @@
     display: flex;
     align-items: flex-start;
     gap: 1.75rem;
-    justify-content: start;
+    justify-content: flex-start;
     cursor: grabbing;
     overflow-x: scroll;
     scroll-behavior: smooth;

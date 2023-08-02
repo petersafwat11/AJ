@@ -25,7 +25,7 @@
 .input-group {
   display: flex;
   align-items: flex-start;
-  justify-content: start;
+  justify-content: flex-start;
   flex-direction: column;
   gap: 0.44rem;
   width: 100%;

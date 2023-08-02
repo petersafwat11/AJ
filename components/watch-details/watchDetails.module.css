@@ -33,7 +33,7 @@
   overflow: hidden;
 }
 .first-team {
-  justify-content: start;
+  justify-content: flex-start;
 }
 .second-team {
   justify-content: end;

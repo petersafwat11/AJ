@@ -1,7 +1,7 @@
 .nav {
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   flex-direction: column;
   gap: 3rem;
   position: absolute;
@@ -15,14 +15,14 @@
   border-top-left-radius: 0;
 }
 
-.nav >* {
+.nav > * {
   color: gray;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-.nav >*:hover {
+.nav > *:hover {
   color: rgba(0, 0, 0, 1);
 }
 

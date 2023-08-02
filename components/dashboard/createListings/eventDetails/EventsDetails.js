@@ -1,14 +1,33 @@
 "use client";
-import React, { useState } from "react";
+import React, { useReducer } from "react";
 import classes from "./eventsDetails.module.css";
+const eventsDetailsReducer = (state, action) => {
+  if (action.type === "DATE") {
+    return { ...state, date: action.value };
+  }
+  if (action.type === "DATE-TEXT") {
+    return { ...state, dateText: action.value };
+  }
+  if (action.type === "LEAGUE") {
+    return { ...state, league: action.value };
+  }
+  if (action.type === "TIME") {
+    return { ...state, time: action.value };
+  }
+  if (action.type === "STADIUM") {
+    return { ...state, stadium: action.value };
+  }
+};
+
 const EventsDetails = () => {
-  const [eventsDetails, setEventDetails] = useState({
+  const [eventsDetails, dispatchDetail] = useReducer(eventsDetailsReducer, {
     date: "",
     dateText: "",
     league: "",
     time: "",
     stadium: "",
   });
+  console.log("red", eventsDetails);
   return (
     <div className={classes["container"]}>
       <h2 className={classes["title"]}>Event details</h2>
@@ -22,10 +41,7 @@ const EventsDetails = () => {
               value={eventsDetails.date}
               id="date"
               onChange={(e) => {
-                eventsDetails({
-                  ...EventsDetails,
-                  date: e.target.value,
-                });
+                dispatchDetail({ type: "DATE", value: e.target.value });
               }}
               placeholder="date"
               className={classes["input"]}
@@ -39,10 +55,7 @@ const EventsDetails = () => {
               value={eventsDetails.dateText}
               id="date-text"
               onChange={(e) => {
-                eventsDetails({
-                  ...EventsDetails,
-                  dateText: e.target.value,
-                });
+                dispatchDetail({ type: "DATE-TEXT", value: e.target.value });
               }}
               placeholder="date text"
               className={classes["input"]}
@@ -51,16 +64,13 @@ const EventsDetails = () => {
         </div>
         <div className={classes["input-group"]}>
           <label htmlFor="league" className={classes["label"]}>
-            Date Text
+          League 
           </label>
           <input
             value={eventsDetails.league}
             id="league"
             onChange={(e) => {
-              eventsDetails({
-                ...EventsDetails,
-                league: e.target.value,
-              });
+              dispatchDetail({ type: "LEAGUE", value: e.target.value });
             }}
             placeholder="leugue"
             className={classes["input"]}
@@ -76,10 +86,7 @@ const EventsDetails = () => {
             value={eventsDetails.time}
             id="time"
             onChange={(e) => {
-              eventsDetails({
-                ...EventsDetails,
-                time: e.target.value,
-              });
+              dispatchDetail({ type: "TIME", value: e.target.value });
             }}
             placeholder="time"
             className={classes["input"]}
@@ -93,10 +100,7 @@ const EventsDetails = () => {
             value={eventsDetails.stadium}
             id="stadium"
             onChange={(e) => {
-              eventsDetails({
-                ...EventsDetails,
-                stadium: e.target.value,
-              });
+              dispatchDetail({ type: "STADIUM", value: e.target.value });
             }}
             placeholder="stadium"
             className={classes["input"]}

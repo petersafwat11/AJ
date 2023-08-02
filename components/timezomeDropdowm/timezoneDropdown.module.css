@@ -107,7 +107,7 @@
   min-height: 1.3125rem;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   padding: 0 0.468rem;
   transition: all 0.1s ease-in-out;
   border-radius: 0.25rem;

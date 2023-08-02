@@ -20,7 +20,7 @@
 .my-message-details {
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 0.7rem;
   margin-left: 3.5rem;
   margin-bottom: 1px;
@@ -74,7 +74,7 @@
   justify-content: end;
 }
 .my-message-details {
-  justify-content: start;
+  justify-content: flex-start;
   margin-left: 0;
 }
 .my-message-username {

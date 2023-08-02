@@ -14,7 +14,6 @@ import classes from "./navigation.module.css";
 const Navigation = () => {
   const pathname = usePathname();
   const router = useRouter();
-  console.log(pathname);
   return (
     <div className={classes["nav"]}>
       <div className={classes["logo-wrapper"]}>

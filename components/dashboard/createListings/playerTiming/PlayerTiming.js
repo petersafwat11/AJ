@@ -1,8 +1,21 @@
 "use client";
-import React, { useState } from "react";
+import React, { useReducer } from "react";
 import classes from "./playerTiming.module.css";
+
+const dateReducer = (state, action) => {
+  if (action.type === "DATE") {
+    return { date: action.value, time: state.time };
+  }
+  if (action.type === "TIME") {
+    return { time: action.value, date: state.date };
+  }
+};
 const PlayerTiming = ({ title, width }) => {
-  const [dateAndTime, setDateAndTime] = useState({ date: "", time: "" });
+  const [dateAndTime, dispatchDate] = useReducer(dateReducer, {
+    date: "",
+    time: "",
+  });
+
   return (
     <div style={{ width: width ? width : "" }} className={classes["container"]}>
       <h2 className={classes["title"]}>{title} </h2>
@@ -15,10 +28,7 @@ const PlayerTiming = ({ title, width }) => {
             value={dateAndTime.date}
             id="date"
             onChange={(e) => {
-              setDateAndTime({
-                date: e.target.value,
-                time: dateAndTime.time,
-              });
+              dispatchDate({ type: "DATE", value: e.target.value });
             }}
             placeholder="enter the date"
             className={classes["input"]}
@@ -29,13 +39,10 @@ const PlayerTiming = ({ title, width }) => {
             Time
           </label>
           <input
-            value={dateAndTime.date}
+            value={dateAndTime.time}
             id="time"
             onChange={(e) => {
-              setDateAndTime({
-                time: e.target.value,
-                date: dateAndTime.date,
-              });
+              dispatchDate({ type: "TIME", value: e.target.value });
             }}
             placeholder="enter the time"
             className={classes["input"]}

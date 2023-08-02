@@ -2,7 +2,8 @@
   width: 13.86rem;
   background: white;
   border-radius: 13.2px;
-  padding: 1.21rem 4.49rem 1.43rem 1.7rem;
+  padding: 1.21rem 1.49rem 1.43rem 1.7rem;
+  height: 100%;
 }
 
 .title {
@@ -13,6 +14,25 @@
   line-height: 1.32rem;
   color: #000000;
 }
+.categories::-webkit-scrollbar {
+  width: 4.5px;
+}
+
+/* Track */
+.categories::-webkit-scrollbar-track {
+  background: inherit;
+}
+
+/* Handle */
+.categories::-webkit-scrollbar-thumb {
+  background: rgba(217, 217, 217, 0.6);
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+.categories::-webkit-scrollbar-thumb:hover {
+  background: #515151;
+}
 
 .categories {
   display: flex;
@@ -20,6 +40,10 @@
   flex-direction: column;
   gap: 1.43rem;
   margin-top: 1.144rem;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  height: 11.4rem;
+  width: 100%;
 }
 
 .category {
@@ -32,6 +56,7 @@
   line-height: 1.1rem;
   color: #000000;
   width: 100%;
+  padding-right: 2rem;
   cursor: pointer;
 }
 

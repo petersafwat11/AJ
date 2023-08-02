@@ -1,11 +1,22 @@
 "use client";
-import React, { useState } from "react";
+import React, { useReducer } from "react";
 import classes from "./teamsNames.module.css";
+
+const dateReducer = (state, action) => {
+  if (action.type === "FIRST-TEAM") {
+    return { ...state, firstTeam: action.value };
+  }
+  if (action.type === "SECOND-TEAM") {
+    return { ...state, secondTeam: action.value };
+  }
+};
+
 const TeamsNames = () => {
-  const [teamsNames, setTeamsNames] = useState({
+  const [teamsNames, dispatchTeamName] = useReducer(dateReducer, {
     firstTeam: "",
     secondTeam: "",
   });
+
   return (
     <div className={classes["container"]}>
       <h2 className={classes["title"]}>Event team names</h2>
@@ -18,10 +29,7 @@ const TeamsNames = () => {
             value={teamsNames.firstTeam}
             id="first-team"
             onChange={(e) => {
-              setTeamsNames({
-                firstTeam: e.target.value,
-                secondTeam: teamsNames.secondTeam,
-              });
+              dispatchTeamName({ type: "FIRST-TEAM", value: e.target.value });
             }}
             placeholder="team 1"
             className={classes["input-1"]}
@@ -35,10 +43,7 @@ const TeamsNames = () => {
             value={teamsNames.secondTeam}
             id="second-team"
             onChange={(e) => {
-              setTeamsNames({
-                secondTeam: e.target.value,
-                firstTeam: teamsNames.firstTeam,
-              });
+              dispatchTeamName({ type: "SECOND-TEAM", value: e.target.value });
             }}
             placeholder="team 2"
             className={classes["input-2"]}

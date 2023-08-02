@@ -48,7 +48,7 @@
 .sports {
   width: 7rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   gap: 0.2rem;
   margin-top: 2rem;

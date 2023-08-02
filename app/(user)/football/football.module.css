@@ -85,7 +85,7 @@
 .dropdowns {
   display: flex;
   align-items: flex-start;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 0.56rem;
 }
 

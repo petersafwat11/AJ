@@ -39,7 +39,7 @@
 .sub-category {
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   flex-direction: column;
   gap: 0.3rem;
   font-family: RobotoRegular;
