@@ -34,11 +34,12 @@
 .table-header,
 .table-row {
   display: grid;
-  grid-template-columns: 8.8rem 1fr 11.44rem 11.44rem;
-  justify-items: start;
+  grid-template-columns: 3rem 7rem 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
   align-items: center;
   padding: 1.32rem 1.76rem 1.32rem 3.08rem;
 }
+
 .table-header {
   background-color: #2a3042;
   color: white;
