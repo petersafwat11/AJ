@@ -1,5 +1,8 @@
 "use client";
 import Image from "next/image";
+import Footer from "../components/footer/Footer";
+import NewsLetter from "../components/news-letter/NewsLetter";
+
 import React from "react";
 import HomeSearch from "../components/homeSearch/HomeSearch";
 import Marque from "../components/marque/Marque";
@@ -67,6 +70,8 @@ const Page = () => {
             <ShowMore />
           </div>
         </div>
+        <NewsLetter />
+        <Footer />
       </div>
     </div>
   );
