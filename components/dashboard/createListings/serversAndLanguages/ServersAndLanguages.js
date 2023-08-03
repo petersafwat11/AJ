@@ -35,7 +35,6 @@ const serversReducer = (state, action) => {
         name: action.value.name,
         serverValue: action.value.serverValue,
       });
-      console.log(newServers);
 
       return {
         ...state,
@@ -123,7 +122,6 @@ const serversReducer = (state, action) => {
 };
 const otherServersReducer = (state, action) => {
   if (action.type === "CHECKBOX") {
-    console.log("other-langs", action.value);
 
     return {
       checked: action.value,
@@ -137,7 +135,6 @@ const otherServersReducer = (state, action) => {
       num: null,
       channels: [],
     }));
-    console.log("other-langs", otherLangs, action.value);
     return {
       ...state,
       num: action.value,
@@ -153,7 +150,6 @@ const otherServersReducer = (state, action) => {
     );
     changedLang = { ...changedLang, name: action.value.name };
     newLangs.push(changedLang);
-    console.log(newLangs, changedLang, "name");
     return {
       ...state,
       otherLangs: newLangs,
@@ -176,7 +172,6 @@ const otherServersReducer = (state, action) => {
       name: changedLang.name,
     };
     newLangs.push(changedLang);
-    console.log(changedLang, newLangs, "ss");
 
     return {
       ...state,
@@ -196,19 +191,11 @@ const otherServersReducer = (state, action) => {
     let changedChannel = changedLang.channels.find(
       (server) => server.name == action.value.name
     );
-    console.log(
-      newLangs,
-      newLangChannels,
-      action.value.name,
-      changedChannel,
-      "channel-1"
-    );
 
     changedChannel = { ...changedChannel, value: action.value.serverValue };
     newLangChannels.push(changedChannel);
     changedLang.channels = newLangChannels;
     newLangs.push(changedLang);
-    console.log(newLangs, newLangChannels, changedChannel, "channel");
     return {
       ...state,
       otherLangs: newLangs,

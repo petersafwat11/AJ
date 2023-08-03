@@ -44,7 +44,7 @@ const Page = () => {
                   {topics.slice(0, 3).map((item, index) => (
                     <p
                       style={{
-                        backgroundColor: topic === item ? "#03a1cd" : "",
+                        backgroundColor: topic === item ? "#03a1cd" : "inherit",
                       }}
                       onClick={() => {
                         setTopic(item);
@@ -60,7 +60,7 @@ const Page = () => {
                   {topics.slice(3, 6).map((item, index) => (
                     <p
                       style={{
-                        backgroundColor: topic === item ? "#03a1cd" : "",
+                        backgroundColor: topic === item ? "#03a1cd" : "inherit",
                       }}
                       onClick={() => {
                         setTopic(item);
@@ -76,7 +76,7 @@ const Page = () => {
                   {topics.slice(6, 8).map((item, index) => (
                     <p
                       style={{
-                        backgroundColor: topic === item ? "#03a1cd" : "",
+                        backgroundColor: topic === item ? "#03a1cd" : "inherit",
                       }}
                       onClick={() => {
                         if (topic !== item) {
@@ -97,7 +97,7 @@ const Page = () => {
                   {topics.slice(0, 8).map((item, index) => (
                     <p
                       style={{
-                        backgroundColor: topic === item ? "#03a1cd" : "",
+                        backgroundColor: topic === item ? "#03a1cd" : "inherit",
                       }}
                       onClick={() => {
                         if (topic !== item) {

@@ -3,7 +3,6 @@ import React from "react";
 import { IoIosArrowUp } from "react-icons/io";
 import classes from "./Dropdown.module.css";
 const Dropdown = ({ name, options, selectOption, selectedOption }) => {
-  console.log(name, "name");
   return (
     <div className={classes["dropdown"]}>
       <div
@@ -12,10 +11,7 @@ const Dropdown = ({ name, options, selectOption, selectedOption }) => {
         }
       >
         <p
-          style={{
-            fontFamily: name === "العربية" ? "Noto Sans Arabic" : "",
-          }}
-          className={classes["lang-name"]}
+          className={classes[name === "العربية" ? "lang-name" : "arabic-lang"]}
         >
           {name}
         </p>

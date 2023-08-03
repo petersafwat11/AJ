@@ -31,19 +31,13 @@ const SportCategory = () => {
           <div
             onClick={() => {
               setSelectedCategory(item);
-              console.log(selectedCategory);
             }}
             key={index}
             className={classes["category"]}
           >
             <p>{item}</p>
             <span
-              style={{
-                background: selectedCategory == item ? "#007BFF" : "",
-                outline: selectedCategory == item ? "2px solid #007BFF" : "",
-                outlineOffset: selectedCategory == item ? "3px" : "",
-              }}
-              className={classes["check"]}
+              className={classes[selectedCategory == item ? "not-checked": 'checked']}
             ></span>
           </div>
         ))}

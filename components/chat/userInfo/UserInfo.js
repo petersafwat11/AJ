@@ -22,7 +22,7 @@ const UserInfo = ({ toggleChangeAvatar, selectedAvatar, toggleUserInf }) => {
         <p className={classes["user-info-para"]}>Your Display Name</p>
         <div className={classes["user-data"]}>
           <input
-            style={{ border: notValid ? "2px solid rgba(255, 0, 0, 0.7)" : "" }}
+            style={{ border: notValid ? "2px solid rgba(255, 0, 0, 0.7)" : "2px solid transparent" }}
             className={classes["user-data-input"]}
             type="text"
             placeholder="Enter username...."

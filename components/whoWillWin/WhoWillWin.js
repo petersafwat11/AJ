@@ -17,7 +17,7 @@ const WhoWillWin = () => {
             setSelectedValue("first-wins");
           }}
           style={{
-            border: selectedValue === "first-wins" ? "1px solid #005174" : "",
+            border: selectedValue === "second-wins" ? "1px solid #005174" : "1px solid transparent",
           }}
           className={classes["option"]}
         >
@@ -51,7 +51,7 @@ const WhoWillWin = () => {
             setSelectedValue("draw");
           }}
           style={{
-            border: selectedValue === "draw" ? "1px solid #005174" : "",
+            border: selectedValue === "second-wins" ? "1px solid #005174" : "1px solid transparent",
           }}
           className={classes["option"]}
         >
@@ -86,7 +86,7 @@ const WhoWillWin = () => {
             setSelectedValue("second-wins");
           }}
           style={{
-            border: selectedValue === "second-wins" ? "1px solid #005174" : "",
+            border: selectedValue === "second-wins" ? "1px solid #005174" : "1px solid transparent",
           }}
           className={classes["option"]}
         >

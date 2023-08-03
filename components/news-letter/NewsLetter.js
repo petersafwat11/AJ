@@ -24,7 +24,6 @@ const NewsLetter = () => {
               // onChange={(e) => {
               //   setEmail(e.target.value);
               // }}
-              // style={{ color: email ? "rgba(18, 17, 39, 1)" : "" }}
               className={classes["notify-input"]}
               type="text"
               placeholder="Enter email address"

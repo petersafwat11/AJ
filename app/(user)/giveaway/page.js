@@ -21,7 +21,6 @@ const GiveAway = () => {
   const joinUsOnWebsite = (value) => {
     setJoinWebsiteGroup(value);
     setShowSteps({ ...showSteps, stepOne: true });
-    console.log(value);
   };
   return (
     <div className={classes["wrapper"]}>

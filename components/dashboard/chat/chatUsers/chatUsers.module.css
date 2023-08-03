@@ -20,7 +20,7 @@
 .members {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   gap: 0.6rem;
 }
 .members > * {
@@ -32,6 +32,11 @@
   cursor: pointer;
   padding-bottom: 4.4px;
   border-bottom: 1px solid transparent;
+}
+
+.selected-members {
+  color: "#f9f9f9";
+  border-bottom: "1px solid white";
 }
 .search-wrapper {
   position: relative;
@@ -66,7 +71,7 @@
   font-size: 0.66rem;
   line-height: 1.32rem;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   color: #b4b4b4;
 }
 .active-users {

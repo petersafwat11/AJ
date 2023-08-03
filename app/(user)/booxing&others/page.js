@@ -31,7 +31,6 @@ const Page = () => {
     setShowChat(!showChat);
   };
   const toggleShareLinks = () => {
-    console.log("clicked", showShareLinks);
     setShowShareLinks(!showShareLinks);
   };
   const toggleReport = () => {

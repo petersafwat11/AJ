@@ -12,7 +12,7 @@ const ForgetPassword = ({ para, paddingTop, paddingBottom, maxWidth }) => {
         style={{
           paddingBottom: paddingBottom,
           paddingTop: paddingTop,
-          maxWidth: maxWidth ? maxWidth : "",
+          maxWidth: maxWidth ? maxWidth : "auto",
         }}
       >
         {para}

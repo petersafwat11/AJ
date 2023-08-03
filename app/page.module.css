@@ -19,7 +19,7 @@
   margin-bottom: 0.375rem;
   margin-left: auto;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .matches-container {
   max-width: 51.2rem;
@@ -54,7 +54,7 @@
 .search-desktop {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   margin-bottom: 0.75rem;
 }
 .show-more-button {

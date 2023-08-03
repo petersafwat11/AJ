@@ -17,7 +17,7 @@ const PlayerTiming = ({ title, width }) => {
   });
 
   return (
-    <div style={{ width: width ? width : "" }} className={classes["container"]}>
+    <div style={{ width: width ? width : "21.12rem" }} className={classes["container"]}>
       <h2 className={classes["title"]}>{title} </h2>
       <div className={classes["details"]}>
         <div className={classes["input-group"]}>

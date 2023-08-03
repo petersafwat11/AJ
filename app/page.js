@@ -40,10 +40,8 @@ const Page = () => {
                 <TimezoneDropdown />
               </div>
               <div className={classes["matches"]}>
-                {[1, 2, 3].map((i) => (
-                  <>
-                    <Match live={true} />
-                  </>
+                {[1, 2, 3].map((item, index) => (
+                  <Match key={index} live={true} />
                 ))}
               </div>
             </section>
@@ -58,10 +56,8 @@ const Page = () => {
                 <TimezoneDropdown />
               </div>
               <div className={classes["matches"]}>
-                {[1, 2, 3, 4].map((i) => (
-                  <>
-                    <Match live={false} />
-                  </>
+              {[1, 2, 3].map((item, index) => (
+                  <Match key={index} live={true} />
                 ))}
               </div>
             </section>

@@ -13,8 +13,8 @@ const Header = () => {
         <p
           style={{
             borderBottom:
-              statisticsType === "fixtures" ? "2px solid #03a1cd" : "",
-            color: statisticsType === "fixtures" ? "#03a1cd" : "",
+              statisticsType === "fixtures" ? "2px solid #03a1cd" : "2px solid transparent",
+            color: statisticsType === "fixtures" ? "#03a1cd" : "inherit",
           }}
           onClick={() => {
             setStatisticsType("fixtures");
@@ -30,8 +30,8 @@ const Header = () => {
           className={classes["statistics-type"]}
           style={{
             borderBottom:
-              statisticsType === "standings" ? "2px solid #03a1cd" : "",
-            color: statisticsType === "standings" ? "#03a1cd" : "",
+              statisticsType === "fixtures" ? "2px solid #03a1cd" : "2px solid transparent",
+            color: statisticsType === "fixtures" ? "#03a1cd" : "inherit",
           }}
         >
           STANDINGS
@@ -43,8 +43,8 @@ const Header = () => {
           }}
           style={{
             borderBottom:
-              statisticsType === "results" ? "2px solid #03a1cd" : "",
-            color: statisticsType === "results" ? "#03a1cd" : "",
+              statisticsType === "fixtures" ? "2px solid #03a1cd" : "2px solid transparent",
+            color: statisticsType === "fixtures" ? "#03a1cd" : "inherit",
           }}
           className={classes["statistics-type"]}
         >

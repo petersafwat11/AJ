@@ -71,7 +71,7 @@
   color: #03a1cd;
 }
 .my-message {
-  justify-content: end;
+  justify-content: flex-end;
 }
 .my-message-details {
   justify-content: flex-start;

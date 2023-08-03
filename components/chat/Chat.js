@@ -63,7 +63,6 @@ const Chat = ({ toggleChat }) => {
   let search;
   if (document && showEmojiesAndGifs) {
     search = document.getElementsByClassName("relative flex-grow");
-    console.log(search, "search");
   }
   const displayEmojisAndGifs = () => {
     setShowEmojiesAndGifs(!showEmojiesAndGifs);

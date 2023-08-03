@@ -36,7 +36,7 @@
   justify-content: flex-start;
 }
 .second-team {
-  justify-content: end;
+  justify-content: flex-end;
 }
 .first-team-name,
 .second-team-name {

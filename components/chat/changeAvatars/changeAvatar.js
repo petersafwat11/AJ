@@ -40,7 +40,7 @@ const ChangeAvatar = ({
         <div className={classes["avatars-categories"]}>
           {avatarCategories.map((i, index) => (
             <div
-              style={{ backgroundColor: avatarCategory === i ? "#2195f1" : "" }}
+              style={{ backgroundColor: avatarCategory === i ? "#2195f1" : "#182228" }}
               key={index}
               onClick={() => {
                 setSubCategory(null);
@@ -69,7 +69,6 @@ const ChangeAvatar = ({
                           "/" +
                           Number(Number(index) + 1)
                       );
-                      // console.log(newSelectedAvatar);
                     }}
                     className={
                       newSelectedAvatar ==
@@ -125,7 +124,6 @@ const ChangeAvatar = ({
                           "/" +
                           Number(index + 1)
                       );
-                      console.log(newSelectedAvatar, "//");
                     }}
                     className={
                       newSelectedAvatar ==
@@ -190,7 +188,6 @@ const ChangeAvatar = ({
                     setNewSElectedAvatar(
                       avatarCategory + "/" + Number(Number(index) + 1)
                     );
-                    console.log(newSelectedAvatar);
                   }}
                   className={
                     newSelectedAvatar ==
@@ -223,7 +220,6 @@ const ChangeAvatar = ({
                   key={index}
                   onClick={() => {
                     setSubCategory(i);
-                    console.log(i);
                   }}
                   className={classes["sub-category"]}
                 >

@@ -2,7 +2,7 @@ export default function Head() {
   return (
     <>
       <title>AJSport</title>
-      <meta charset="UTF-8" />
+      <meta charSet="UTF-8" />
       <meta name="description" content="website for all kids of sports" />
 
       <meta

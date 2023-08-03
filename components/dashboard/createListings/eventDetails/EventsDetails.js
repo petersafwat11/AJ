@@ -27,7 +27,6 @@ const EventsDetails = () => {
     time: "",
     stadium: "",
   });
-  console.log("red", eventsDetails);
   return (
     <div className={classes["container"]}>
       <h2 className={classes["title"]}>Event details</h2>

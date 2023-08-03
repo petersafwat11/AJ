@@ -11,7 +11,6 @@ const ShareLinks = ({ toggleShareLinks }) => {
   // const [clicks, setClicks] = useState(0);
   // const maxClicks = 2;
   // useEffect(() => {
-  //   console.log("position", position);
   //   if (clicks <= maxClicks) {
   //     manipaletePosition.current.style.left = -position + "px";
   //   }

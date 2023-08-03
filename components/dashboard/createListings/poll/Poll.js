@@ -28,7 +28,6 @@ const Poll = () => {
             <input
               onChange={() => {
                 setChecked(!checked);
-                console.log(checked);
               }}
               className={classes["toggle-checkbox"]}
               type="checkbox"

@@ -43,7 +43,8 @@
   gap: 0.5rem;
   margin: 1.4rem auto 0.25rem;
 }
-.emojies-gifs-top p {
+.option,
+.option-selected {
   font-weight: 600;
   font-family: "Poppins";
   font-size: 0.9rem;
@@ -55,6 +56,9 @@
   padding: 0 0.98rem;
   border-radius: 0.46rem;
   cursor: pointer;
+}
+.option-selected {
+  background: "#03A1CD";
 }
 
 @media (max-width: 56.25rem) {
@@ -78,7 +82,8 @@
     gap: 0.4rem;
     margin: 1.23rem auto 0.125rem;
   }
-  .emojies-gifs-top p {
+  .option,
+  .option-selected {
     font-size: 0.75rem;
     height: 1.68rem;
     padding: 0 0.84rem;

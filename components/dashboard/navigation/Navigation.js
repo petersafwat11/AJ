@@ -23,7 +23,7 @@ const Navigation = () => {
         onClick={() => {
           router.push("/dashboard");
         }}
-        style={{ color: pathname === "/dashboard" ? "black" : "" }}
+        style={{ color: pathname === "/dashboard" ? "black" : "gray" }}
       />
       <TbArrowsRightLeft
         onClick={() => {
@@ -32,7 +32,7 @@ const Navigation = () => {
         style={{
           color: pathname.startsWith("/dashboard/sports-listings")
             ? "black"
-            : "",
+            : "gray",
         }}
       />
       <HiComputerDesktop
@@ -42,7 +42,7 @@ const Navigation = () => {
         style={{
           color: pathname.startsWith("/dashboard/channels-listings")
             ? "black"
-            : "",
+            : "gray",
         }}
       />
       <BsChatLeftDots
@@ -50,7 +50,7 @@ const Navigation = () => {
           router.push("/dashboard/chat-settings");
         }}
         style={{
-          color: pathname === "/dashboard/chat-settings" ? "black" : "",
+          color: pathname === "/dashboard/chat-settings" ? "black" : "gray",
         }}
       />
       <AiOutlineWarning
@@ -60,7 +60,7 @@ const Navigation = () => {
         style={{
           color: pathname.startsWith("/dashboard/reported-links")
             ? "black"
-            : "",
+            : "gray",
         }}
       />
       <RxQuestionMarkCircled
@@ -68,7 +68,7 @@ const Navigation = () => {
           router.push("/dashboard/feedback");
         }}
         style={{
-          color: pathname.startsWith("/dashboard/feedback") ? "black" : "",
+          color: pathname.startsWith("/dashboard/feedback") ? "black" : "gray",
         }}
       />
       <FiGift
@@ -78,7 +78,7 @@ const Navigation = () => {
         style={{
           color: pathname.startsWith("/dashboard/giveaway-settings")
             ? "black"
-            : "",
+            : "gray",
         }}
       />
       <AiOutlineLink
@@ -88,7 +88,7 @@ const Navigation = () => {
         style={{
           color: pathname.startsWith("/dashboard/stream-links-listings")
             ? "black"
-            : "",
+            : "gray",
         }}
       />
       <BiNews
@@ -96,7 +96,7 @@ const Navigation = () => {
           router.push("/dashboard/news");
         }}
         style={{
-          color: pathname == "/dashboard/news" ? "black" : "",
+          color: pathname == "/dashboard/news" ? "black" : "gray",
         }}
       />
       <FiMail
@@ -104,7 +104,7 @@ const Navigation = () => {
           router.push("/dashboard/newsLetter");
         }}
         style={{
-          color: pathname.startsWith("/dashboard/newsLetter") ? "black" : "",
+          color: pathname.startsWith("/dashboard/newsLetter") ? "black" : "gray",
         }}
       />
 
@@ -113,7 +113,7 @@ const Navigation = () => {
           router.push("/dashboard/edit-links");
         }}
         style={{
-          color: pathname.startsWith("/dashboard/edit-links") ? "black" : "",
+          color: pathname.startsWith("/dashboard/edit-links") ? "black" : "gray",
         }}
       />
 
@@ -124,7 +124,7 @@ const Navigation = () => {
         style={{
           color: pathname.startsWith("/dashboard/admin-settings")
             ? "black"
-            : "",
+            : "gray",
         }}
       />
     </div>

@@ -70,7 +70,6 @@ const Page = () => {
 export default Page;
 export const NewsItem = ({ src, alt, heading, para, index }) => {
   const router = useRouter();
-  console.log(index);
   return (
     <div
       style={{ background: (index + 1) % 2 == 0 ? "#182228" : "inherit" }}

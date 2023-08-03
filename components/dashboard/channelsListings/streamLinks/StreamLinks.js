@@ -21,11 +21,10 @@ const StreamLinks = () => {
           {[1, 2, 3, 4].map((i, index) => (
             <p
               style={{
-                background: index % 2 === 0 ? "" : "#F5F5F5",
-                border: selectedOption == i ? "3px solid #AC9FF0" : "",
+                background: index % 2 === 0 ? "inherit" : "#F5F5F5",
               }}
               key={index}
-              className={classes["option"]}
+              className={classes[selectedOption == i ?"option": 'selected-option']}
             >
               BT Sport 1
             </p>

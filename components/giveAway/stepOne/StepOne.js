@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 import classes from "./stepOne.module.css";
 const StepOne = ({ controlDisplaySteps, joinWebsiteGroup }) => {
-  console.log(joinWebsiteGroup);
   return (
     <div className={classes["step-one"]}>
       <div className={classes["top"]}>

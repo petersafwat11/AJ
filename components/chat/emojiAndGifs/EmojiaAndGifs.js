@@ -1,5 +1,5 @@
-import data from '@emoji-mart/data'
-import Picker from '@emoji-mart/react'
+import data from "@emoji-mart/data";
+import Picker from "@emoji-mart/react";
 import GifPicker from "gif-picker-react";
 import React, { useEffect, useState } from "react";
 import classes from "./emogiAndGifs.module.css";
@@ -46,9 +46,9 @@ const EmojiaAndGifs = ({
       />
       <div className={classes["emojies-gifs-top"]}>
         <p
-          style={{
-            background: emojyOrGifs == "emojy" ? "#03A1CD" : "",
-          }}
+          className={
+            classes[emojyOrGifs == "emojy" ? "option" : "option-selected"]
+          }
           onClick={() => {
             chooseGifOrEmojies("emojy");
           }}
@@ -56,7 +56,9 @@ const EmojiaAndGifs = ({
           Emojis
         </p>
         <p
-          style={{ background: emojyOrGifs == "gifs" ? "#03A1CD" : "" }}
+          className={
+            classes[emojyOrGifs == "gifs" ? "option" : "option-selected"]
+          }
           onClick={() => {
             chooseGifOrEmojies("gifs");
           }}
@@ -73,7 +75,6 @@ const EmojiaAndGifs = ({
           previewPosition="none"
           perLine={windowDimensions.width < 900 ? 6 : 9}
           onEmojiSelect={(e) => {
-            console.log("clicked");
             setInputMessage(message + e.native);
           }}
         />

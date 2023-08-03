@@ -14,11 +14,13 @@ const ChatUsers = () => {
           onClick={() => {
             setmembers("active-members");
           }}
-          style={{
-            color: members === "active-members" ? "#f9f9f9" : "",
-            borderBottom: members === "active-members" ? "1px solid white" : "",
-          }}
-          className={classes["active-members"]}
+          className={
+            classes[
+              members === "active-members"
+                ? "active-members"
+                : "selected-members"
+            ]
+          }
         >
           Active Members
         </p>
@@ -26,11 +28,13 @@ const ChatUsers = () => {
           onClick={() => {
             setmembers("banned-members");
           }}
-          style={{
-            color: members === "banned-members" ? "#f9f9f9" : "",
-            borderBottom: members === "banned-members" ? "1px solid white" : "",
-          }}
-          className={classes["banned-members"]}
+          className={
+            classes[
+              members === "banned-members"
+                ? "banned-members"
+                : "selected-members"
+            ]
+          }
         >
           Banned Members
         </p>

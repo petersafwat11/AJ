@@ -9,7 +9,7 @@
 .exit {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   width: 100%;
 }
 .exit-icon {
@@ -76,7 +76,7 @@
   }
   .success-message {
     font-size: 0.625rem;
-    line-height: .875rem;
+    line-height: 0.875rem;
     margin-top: 0.3rem;
     margin-bottom: 1rem;
     max-width: 95%;

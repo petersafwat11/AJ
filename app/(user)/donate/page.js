@@ -19,7 +19,6 @@ const Donate = () => {
   const [showSendMessage, setShowSendMessage] = useState(false);
   const toggleSendMessageComponent = () => {
     setShowSendMessage(!showSendMessage);
-    console.log("clicked", showSendMessage);
   };
 
   return (
@@ -112,7 +111,7 @@ const Donate = () => {
                   value={donationValue}
                   placeholder="$"
                   type="text"
-                  style={{ paddingLeft: donationValue !== null ? "3rem" : "" }}
+                  // style={{ paddingLeft: donationValue !== null ? "3rem" : "" }}
                   className={classes["donate-input"]}
                 />
               </div>

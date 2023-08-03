@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import classes from "./match.module.css";
 
-export const Match = ({ live }) => {
+export const Match = ({ live, keyProp }) => {
   const router = useRouter();
   return (
     <div className={classes["match"]}>

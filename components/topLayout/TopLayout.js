@@ -31,7 +31,6 @@ const TopLayout = () => {
     } else {
       setShowScrollTopIcon(false);
     }
-    console.log(window.scrollY, "scroll");
   };
   useEffect(() => {
     window.addEventListener("scroll", updateDimensions);
