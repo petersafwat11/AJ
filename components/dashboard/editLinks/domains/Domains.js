@@ -1,16 +1,18 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import classes from "./domains.module.css";
-const Domains = () => {
-  const [domain, setDomain] = useState("");
+const Domains = ({ dispachNewLinks, data }) => {
   return (
     <div className={classes["container"]}>
       <h2 className={classes["title"]}>Domains</h2>
       <input
-        value={domain}
+        value={data || ""}
         onChange={(e) => {
-          setDomain(e.target.value);
+          dispachNewLinks({
+            type: "DOMAINS",
+            value: e.target.value,
+          });
         }}
         placeholder="domain"
         className={classes["input"]}

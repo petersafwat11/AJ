@@ -51,7 +51,7 @@
 .table-header,
 .table-row {
   display: grid;
-  grid-template-columns: 3.08rem 10.56rem 0.88fr 0.88fr 10.56rem;
+  grid-template-columns: 3.08rem 10.56rem 0.88fr 0.88fr 1fr 10.56rem;
   justify-items: start;
   align-items: center;
   padding: 1.32rem 1.76rem 1.32rem;
@@ -85,4 +85,11 @@
   border-radius: 3.52px;
   border: 0.88px solid #0832de;
   justify-self: start;
+}
+.date-and-time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.25rem;
 }

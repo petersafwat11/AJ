@@ -1,7 +1,13 @@
+"use client";
 import React from "react";
 import { BiSearch } from "react-icons/bi";
+
+import EditButton from "../../editButton/EditButton";
+import NoContent from "../../noContent/NoContent";
+import Paginations from "../../paginations/Paginations";
 import classes from "./table.module.css";
-const Table = ({ status }) => {
+
+const Table = ({ channels, selectElement, paginations, dispatchDetail }) => {
   return (
     <div className={classes["table"]}>
       <div className={classes["search-wrapper"]}>
@@ -12,18 +18,33 @@ const Table = ({ status }) => {
         <span className={classes["square"]}></span>
         <p className={classes["table-cell"]}>ID</p>
         <p className={classes["table-cell"]}>Channel Name</p>
-        <p className={classes["status"]}>{status ? status : "Status"}</p>
+        <p className={classes["table-cell"]}>Status</p>
         <p className={classes["table-cell"]}>Action </p>
       </div>
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, index) => (
-        <div key={index} className={classes["table-row"]}>
-          <span className={classes["square"]}></span>
-          <p className={classes["table-cell"]}>ID</p>
-          <p className={classes["table-cell"]}>Sky Sports Main Event 4k</p>
-          <p className={classes["status"]}>{status ? "Yes" : "Visible"}</p>
-          <button className={classes["edit-button"]}>Edit </button>
-        </div>
-      ))}
+      {channels.length > 0 ? (
+        channels.map((item, index) => (
+          <div key={item._id} className={classes["table-row"]}>
+            <input
+              onClick={() => {
+                selectElement(item._id);
+              }}
+              type="checkbox"
+              className={classes["checkbox"]}
+            />
+            <p className={classes["table-cell"]}>{index}</p>
+            <p className={classes["table-cell"]}>{item.channelName}</p>
+            <p className={classes["table-cell"]}>{item.mode}</p>
+            <EditButton id={item._id} />
+          </div>
+        ))
+      ) : (
+        <NoContent />
+      )}
+      <Paginations
+        rowsPerPage={paginations.rowsPerPage}
+        results={paginations.results}
+        dispatchDetail={dispatchDetail}
+      />
     </div>
   );
 };

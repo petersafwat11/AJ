@@ -39,14 +39,14 @@
   padding: 1.32rem 2.2rem 1.32rem 1.76rem;
 }
 .table-header .table-cell:last-of-type {
-  margin-right: 1.45rem;
-  justify-self: end;
+  justify-self: center;
 }
 .table-cell:first-of-type {
   justify-self: center;
 }
 .table-header {
   color: white;
+  background: #2a3042;
 }
 .table-cell {
   font-family: "Poppins";
@@ -69,15 +69,4 @@
   border-radius: 3.52px;
   border: 0.88px solid #0832de;
   justify-self: start;
-}
-.edit-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-self: end;
-  width: 5.98rem;
-  height: 1.81rem;
-  border-radius: 1.92rem;
-  color: white;
-  cursor: pointer;
 }

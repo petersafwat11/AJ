@@ -38,20 +38,18 @@
 .table-header,
 .table-row {
   display: grid;
-  grid-template-columns: 2.64rem 4.4rem 2.64fr 3.52fr 8.8rem;
-  justify-items: center;
+  grid-template-columns: 4.64rem 10.4rem 4.64fr 3.52fr 8.8rem;
+  justify-items: start;
   align-items: center;
   padding: 1.32rem 1.76rem 1.32rem;
-}
-
-.status {
-  justify-self: start;
-  padding-left: 1.76rem;
 }
 
 .table-header {
   background-color: #2a3042;
   color: white;
+}
+.table-header .table-cell:last-child {
+  justify-self: center;
 }
 
 .table-cell,
@@ -63,9 +61,8 @@
   line-height: 1.408rem;
 }
 
-.table-header .table-cell,
-.table-header .status {
-  font-weight: 528;
+.table-header .table-cell {
+  font-weight: 500;
 }
 
 .table-row {
@@ -75,21 +72,8 @@
   border-bottom: 0.88px solid #e1e0e2;
 }
 
-.date-and-time {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 0.22rem;
-}
-
-.flag {
-  color: #e1e1e1;
-  font-size: 1.32rem;
-  cursor: pointer;
-}
-
-.square {
+.square,
+.checkbox {
   width: 19.36px;
   height: 17.6px;
   border-radius: 3.52px;
@@ -97,14 +81,3 @@
   justify-self: start;
 }
 
-.edit-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 5.984rem;
-  height: 1.808rem;
-  border-radius: 1.92rem;
-  background: #007bff;
-  color: white;
-  cursor: pointer;
-}

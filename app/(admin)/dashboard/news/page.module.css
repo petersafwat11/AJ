@@ -10,10 +10,3 @@
   font-family: "Public Sans";
   margin-bottom: 0.77rem;
 }
-.actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin-right: 2.2rem;
-  margin-bottom: 1.76rem;
-}

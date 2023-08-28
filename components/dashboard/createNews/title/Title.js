@@ -1,15 +1,13 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import classes from "./title.module.css";
-const Title = () => {
-  const [title, setTitle] = useState("");
+const Title = ({ data, dispatchDetail }) => {
   return (
     <div className={classes["container"]}>
       <h2 className={classes["title"]}>Title</h2>
       <input
-        value={title}
+        value={data || ""}
         onChange={(e) => {
-          setTitle(e.target.value);
+          dispatchDetail({ type: "TITLE", value: e.target.value });
         }}
         placeholder="Title"
         className={classes["input"]}

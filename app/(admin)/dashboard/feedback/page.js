@@ -1,13 +1,13 @@
 import React from "react";
-import SocialSelection from "../../../../components/dashboard/facebook/social/SocialSelection";
-import Table from "../../../../components/dashboard/facebook/table/Table";
+import Wrapper from "../../../../components/dashboard/feedback/wrapper/Wrapper";
+import { getData } from "../../../../utils/dashboardTablePagesFunctions";
 import classes from "./page.module.css";
-const page = () => {
+const page = async () => {
+  const feedbacksFetched = await getData("feedback");
   return (
     <div className={classes["container"]}>
       <h1 className={classes["title"]}>Feedback</h1>
-      <SocialSelection />
-      <Table />
+      <Wrapper feedbacksFetched={feedbacksFetched.data} />
     </div>
   );
 };

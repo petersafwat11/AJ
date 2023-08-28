@@ -1,222 +1,15 @@
 "use client";
 
-import React, { useReducer, useState } from "react";
+import React from "react";
 import { BsArrowRight } from "react-icons/bs";
+import { generateArray } from "../../../../utils/generateArrayOfNumbers";
 import classes from "./serversAndLanguages.module.css";
-function generateArray(num) {
-  return Array.from(Array(num), (_, index) => index + 1);
-}
-
-const serversReducer = (state, action) => {
-  if (action.lang === "ENGLISH") {
-    if (action.type === "CHECKBOX") {
-      return {
-        ...state,
-        english: { checked: action.value, channels: [], num: 0 },
-      };
-    } else if (action.type === "NUM") {
-      let serversNames = generateArray(action.value)
-        .map((num) => `server-${num}`)
-        .map((name) => ({ name: name, serverValue: "" }));
-
-      return {
-        ...state,
-        english: {
-          ...state.english,
-          channels: serversNames,
-          num: action.value,
-        },
-      };
-    } else {
-      let newServers = state.english.channels.filter(
-        (server) => server.name !== action.value.name
-      );
-      newServers.push({
-        name: action.value.name,
-        serverValue: action.value.serverValue,
-      });
-
-      return {
-        ...state,
-        english: {
-          ...state.english,
-          channels: newServers,
-        },
-      };
-    }
-  } else if (action.lang === "ARABIC") {
-    if (action.type === "CHECKBOX") {
-      return {
-        ...state,
-        arabic: { checked: action.value, channels: [], num: 0 },
-      };
-    } else if (action.type === "NUM") {
-      let serversNames = generateArray(action.value)
-        .map((num) => `server-${num}`)
-        .map((name) => ({ name: name, serverValue: "" }));
-
-      return {
-        ...state,
-        arabic: {
-          ...state.arabic,
-          channels: serversNames,
-          num: action.value,
-        },
-      };
-    } else {
-      let newServers = state.arabic.channels.filter(
-        (server) => server.name !== action.value.name
-      );
-      newServers.push({
-        name: action.value.name,
-        serverValue: action.value.serverValue,
-      });
-
-      return {
-        ...state,
-        arabic: {
-          ...state.arabic,
-          channels: newServers,
-        },
-      };
-    }
-  } else if (action.lang === "SPANISH") {
-    if (action.type === "CHECKBOX") {
-      return {
-        ...state,
-        spanish: { checked: action.value, channels: [], num: 0 },
-      };
-    } else if (action.type === "NUM") {
-      let serversNames = generateArray(action.value)
-        .map((num) => `server-${num}`)
-        .map((name) => ({ name: name, serverValue: "" }));
-
-      return {
-        ...state,
-        spanish: {
-          ...state.spanish,
-          channels: serversNames,
-          num: action.value,
-        },
-      };
-    } else {
-      let newServers = state.spanish.channels.filter(
-        (server) => server.name !== action.value.name
-      );
-      newServers.push({
-        name: action.value.name,
-        serverValue: action.value.serverValue,
-      });
-
-      return {
-        ...state,
-        spanish: {
-          ...state.spanish,
-          channels: newServers,
-        },
-      };
-    }
-  } else {
-    return { ...state };
-  }
-};
-const otherServersReducer = (state, action) => {
-  if (action.type === "CHECKBOX") {
-
-    return {
-      checked: action.value,
-      num: 0,
-      otherLangs: [],
-    };
-  } else if (action.type == "NUM") {
-    let otherLangs = generateArray(action.value).map((lang, index) => ({
-      index: index + 1,
-      name: "",
-      num: null,
-      channels: [],
-    }));
-    return {
-      ...state,
-      num: action.value,
-      otherLangs: otherLangs,
-    };
-  } else if (action.type == "SERVER-NAME") {
-    let newLangs = state.otherLangs.filter(
-      (server) => server.index !== action.value.index
-    );
-
-    let changedLang = state.otherLangs.find(
-      (item) => item.index == action.value.index
-    );
-    changedLang = { ...changedLang, name: action.value.name };
-    newLangs.push(changedLang);
-    return {
-      ...state,
-      otherLangs: newLangs,
-    };
-  } else if (action.type == "SERVER-NUM") {
-    let newLangs = state.otherLangs.filter(
-      (server) => server.index !== action.value.index
-    );
-
-    let changedLangChannels = generateArray(action.value.num)
-      .map((num) => `server-${num}`)
-      .map((name) => ({ name: name, value: "" }));
-    let changedLang = state.otherLangs.find(
-      (server) => server.index == action.value.index
-    );
-    changedLang = {
-      num: action.value.num,
-      index: action.value.index,
-      channels: changedLangChannels,
-      name: changedLang.name,
-    };
-    newLangs.push(changedLang);
-
-    return {
-      ...state,
-      otherLangs: newLangs,
-    };
-  } else if (action.type == "SERVER-CHANNELS") {
-    let newLangs = state.otherLangs.filter(
-      (server) => server.index !== action.value.index
-    );
-    let changedLang = state.otherLangs.find(
-      (item) => item.index == action.value.index
-    );
-
-    let newLangChannels = changedLang.channels.filter(
-      (server) => server.name != action.value.name
-    );
-    let changedChannel = changedLang.channels.find(
-      (server) => server.name == action.value.name
-    );
-
-    changedChannel = { ...changedChannel, value: action.value.serverValue };
-    newLangChannels.push(changedChannel);
-    changedLang.channels = newLangChannels;
-    newLangs.push(changedLang);
-    return {
-      ...state,
-      otherLangs: newLangs,
-    };
-  } else {
-    return { ...state };
-  }
-};
-const ServersAndLanguages = () => {
-  const [checked, setChecked] = useState(false);
-  const [servers, dispatchServer] = useReducer(serversReducer, {
-    english: { checked: false, num: null, channels: [] },
-    arabic: { checked: false, num: null, channels: [] },
-    spanish: { checked: false, num: null, channels: [] },
-  });
-  const [otherServers, dispatchOtherServer] = useReducer(otherServersReducer, {
-    checked: false,
-    num: null,
-    otherLangs: [],
-  });
-
+const ServersAndLanguages = ({
+  servers,
+  dispatchServer,
+  otherServers,
+  dispatchOtherServer,
+}) => {
   return (
     <div className={classes["container"]}>
       <h3 className={classes["title"]}>Servers & Languages</h3>
@@ -227,6 +20,7 @@ const ServersAndLanguages = () => {
             <div className={classes["toggler-wrapper"]}>
               <label className={classes["toggle"]}>
                 <input
+                  checked={servers[lang.toLocaleLowerCase()].checked}
                   onChange={(e) => {
                     dispatchServer({
                       type: "CHECKBOX",
@@ -245,6 +39,7 @@ const ServersAndLanguages = () => {
               type="number"
               min={0}
               max={5}
+              value={servers[lang.toLocaleLowerCase()].num}
               onChange={(e) => {
                 dispatchServer({
                   type: "NUM",
@@ -297,6 +92,7 @@ const ServersAndLanguages = () => {
         <div className={classes["toggler-wrapper"]}>
           <label className={classes["toggle"]}>
             <input
+              checked={otherServers.checked}
               onChange={(e) => {
                 dispatchOtherServer({
                   type: "CHECKBOX",
@@ -311,6 +107,7 @@ const ServersAndLanguages = () => {
         </div>
         <p className={classes["servers-para"]}>buttons:</p>
         <input
+          value={otherServers.num}
           type="number"
           min={0}
           max={5}
@@ -349,7 +146,10 @@ const ServersAndLanguages = () => {
               type="number"
               min={0}
               max={5}
-              value={((lang) => lang.index == index + 1).num}
+              value={
+                otherServers.otherLangs.find((lang) => lang.index == index + 1)
+                  .num
+              }
               onChange={(e) => {
                 dispatchOtherServer({
                   type: "SERVER-NUM",

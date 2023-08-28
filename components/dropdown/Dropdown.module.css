@@ -73,7 +73,7 @@
 .drop-icon {
   font-size: 0.8rem;
   color: inherit;
-
+  min-width: 0.8rem;
   transition: all 0.25s ease-out;
 }
 .dropdown:hover .drop-icon {
@@ -124,7 +124,8 @@
     padding: 0 0.4rem 0 1rem;
     justify-content: space-between;
   }
-  .lang-name , .arabic-lang{
+  .lang-name,
+  .arabic-lang {
     font-size: 0.66rem;
   }
   .drop-icon {

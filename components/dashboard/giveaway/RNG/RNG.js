@@ -1,13 +1,25 @@
 "use client";
+import axios from "axios";
 import React, { useState } from "react";
 import classes from "./RNG.module.css";
 const RNG = () => {
-  const generateWinner = () => {};
+  const generateWinner = async () => {
+    try {
+      const winner = await axios.get(
+        `${process.env.BACKEND_SERVER}/giveaway/winner`
+      );
+      console.log("winner", winner);
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
   const [winner, setWinner] = useState({ fullName: "", email: "" });
 
   return (
     <div className={classes["container"]}>
-      <button className={classes["generate"]}>Generate</button>
+      <button onClick={generateWinner} className={classes["generate"]}>
+        Generate
+      </button>
       <div className={classes["form"]}>
         <div className={classes["input-group"]}>
           <label className={classes["label"]} htmlFor="username">
@@ -18,9 +30,7 @@ const RNG = () => {
             id="username"
             className={classes["input"]}
             value={winner.fullName}
-            onChange={(e) => {
-              setWinner({ fullName: e.target.value, email: winner.email });
-            }}
+            readOnly
           />
         </div>
         <div className={classes["input-group"]}>
@@ -32,9 +42,7 @@ const RNG = () => {
             id="email"
             className={classes["input"]}
             value={winner.email}
-            onChange={(e) => {
-              setWinner({ email: e.target.value, fullName: winner.fullName });
-            }}
+            readOnly
           />
         </div>
       </div>

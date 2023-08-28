@@ -5,7 +5,7 @@ export default function DashboardLayout({
   children
 }) {
   return (
-    <section>
+    <section className={classes['layout']}>
       <Navigation />
       <button className={classes["sign-out"]}>Sign Out</button>
       {children}

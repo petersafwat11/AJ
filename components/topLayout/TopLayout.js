@@ -52,7 +52,7 @@ const TopLayout = () => {
   };
 
   return (
-    <div>
+    <section>
       <Header />
       <SendMessageButton
         toggleSendMessageComponent={toggleSendMessageComponent}
@@ -96,7 +96,7 @@ const TopLayout = () => {
           height="30"
         />
       </a>
-    </div>
+    </section>
   );
 };
 

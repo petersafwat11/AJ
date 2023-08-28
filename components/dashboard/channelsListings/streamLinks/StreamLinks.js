@@ -1,32 +1,37 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import classes from "./streamLinks.module.css";
-const StreamLinks = () => {
-  const [search, setSearch] = useState("1");
-  const [selectedOption, setSelectedOption] = useState("1");
+const StreamLinks = ({
+  streamLinkName,
+  dispatchDetail,
+  streamLinksAvaiable,
+}) => {
   return (
     <div className={classes["container"]}>
       <h2 className={classes["title"]}>Stream Link</h2>
       <input
-        value={search}
-        onChange={(e) => {
-          setSearch(e.target.value);
-        }}
+        readOnly
+        value={streamLinkName}
         type="text "
         placeholder="Search for channel..."
         className={classes["input"]}
       />
-      {search.length > 0 && (
+      {streamLinksAvaiable?.length > 0 && (
         <div className={classes["search-options"]}>
-          {[1, 2, 3, 4].map((i, index) => (
+          {streamLinksAvaiable.map((item, index) => (
             <p
+              onClick={() => {
+                dispatchDetail({ type: "STREAM-LINK-NAME", value: item });
+              }}
               style={{
                 background: index % 2 === 0 ? "inherit" : "#F5F5F5",
               }}
-              key={index}
-              className={classes[selectedOption == i ?"option": 'selected-option']}
+              key={`${item}-${index}`}
+              className={
+                classes[streamLinkName === item ? "option" : "selected-option"]
+              }
             >
-              BT Sport 1
+              {item}
             </p>
           ))}
         </div>

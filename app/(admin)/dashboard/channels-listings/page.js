@@ -1,15 +1,14 @@
 import React from "react";
-import ActionsButtons from "../../../../components/dashboard/actionsButtons/ActionsButtons";
-import Table from "../../../../components/dashboard/channelsListings/table/Table";
+import { getData } from "../../../../utils/dashboardTablePagesFunctions";
+import Wrapper from "./Wrapper";
 import classes from "./page.module.css";
-const page = () => {
+const page = async () => {
+  const dataFetched = await getData("channels");
+
   return (
     <div className={classes["container"]}>
       <h1 className={classes["title"]}>Channels Listings</h1>
-      <div className={classes["actions"]}>
-        <ActionsButtons first={"Save"} second={"Delete"} />
-      </div>
-      <Table />
+      <Wrapper dataFetched={dataFetched} />
     </div>
   );
 };

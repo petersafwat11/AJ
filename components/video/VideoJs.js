@@ -1,15 +1,15 @@
-import "jwplayer-video-element";
 import React from "react";
+import MyIframe from "./VideoPlayer";
 import classes from "./video.module.css";
-import Image from "next/image";
 
 const VideoJs = () => {
   return (
     <div className={classes["wrapper"]}>
-      <jwplayer-video
+      {/* <MyPlyrVideo /> */}
+      {/* <jwplayer-video
         className={classes["video-player"]}
         controls
-        src="https://cdn.jwplayer.com/players/C8YE48zj-IxzuqJ4M.html"
+        src="https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
       >
         <Image
           className={classes["logo"]}
@@ -18,7 +18,8 @@ const VideoJs = () => {
           width="94"
           height="73"
         />
-      </jwplayer-video>
+      </jwplayer-video> */}
+      {/* <VideoJS options={videoJsOptions} onReady={handlePlayerReady} /> */}
     </div>
   );
 };

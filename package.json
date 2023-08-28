@@ -15,9 +15,11 @@
     "@jwplayer/jwplayer-react": "^1.1.1",
     "@next-auth/mongodb-adapter": "^1.1.3",
     "autoprefixer": "^10.4.13",
+    "axios": "^1.4.0",
     "d3": "^7.8.4",
     "emoji-mart": "^5.5.2",
     "gif-picker-react": "^1.1.0",
+    "hls.js": "^1.4.10",
     "html2canvas": "^1.4.1",
     "i": "^0.3.7",
     "jwplayer-video-element": "^1.0.5",
@@ -25,6 +27,7 @@
     "next": "13.1.6",
     "next-auth": "^4.22.1",
     "npm": "^9.5.1",
+    "plyr-react": "^5.3.0",
     "react": "18.2.0",
     "react-avatar-editor": "^13.0.0",
     "react-dom": "18.2.0",
@@ -34,12 +37,15 @@
     "react-image-crop": "^10.0.9",
     "react-jwplayer": "^0.3.2",
     "react-marquee-slider": "^1.1.5",
+    "react-player": "^2.12.0",
+    "react-toastify": "^9.1.3",
     "recharts": "^2.7.2",
     "victory": "^36.6.11"
   },
   "devDependencies": {
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
-    "prettier": "^2.8.4"
+    "prettier": "^2.8.4",
+    "video.js": "^8.5.2"
   }
 }

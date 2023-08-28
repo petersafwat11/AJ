@@ -1,8 +1,6 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import classes from "./streamLink.module.css";
-const StreamLink = () => {
-  const [streamLink, setStreamLink] = useState({ URL: "", RMTPKey: "" });
+const StreamLink = ({ data, dispatchDetail }) => {
   return (
     <div className={classes["container"]}>
       <h2 className={classes["title"]}>Stream Link</h2>
@@ -12,13 +10,10 @@ const StreamLink = () => {
             URL
           </label>
           <input
-            value={streamLink.URL}
+            value={data.URL}
             id="url"
             onChange={(e) => {
-              setStreamLink({
-                URL: e.target.value,
-                RMTPKey: streamLink.RMTPKey,
-              });
+              dispatchDetail({ type: "URL", value: e.target.value });
             }}
             placeholder="URL"
             className={classes["input"]}
@@ -29,13 +24,10 @@ const StreamLink = () => {
             RMTP Key
           </label>
           <input
-            value={streamLink.RMTPKey}
+            value={data.RMTPKey}
             id="RMTPKey"
             onChange={(e) => {
-              setStreamLink({
-                RMTPKey: e.target.value,
-                URL: streamLink.URL,
-              });
+              dispatchDetail({ type: "RMTPKEY", value: e.target.value });
             }}
             className={classes["input"]}
             placeholder="RMTP Key"

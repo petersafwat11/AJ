@@ -33,7 +33,7 @@
 .table-header,
 .table-row {
   display: grid;
-  grid-template-columns: 10.56rem 0.88fr 9.68rem 9.68rem;
+  grid-template-columns: 15.56rem 1fr 10.68rem 10.68rem;
   justify-items: center;
   align-items: center;
   padding: 1.32rem 1.76rem 1.32rem 3.08rem;

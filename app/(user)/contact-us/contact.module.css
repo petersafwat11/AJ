@@ -1,0 +1,74 @@
+.wrapper {
+  padding: 0;
+  margin: 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(16, 23, 26, 0.95),
+      rgba(21, 26, 31, 0.938)
+    ),
+    url(../../../public/wallpaper/main.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  overscroll-behavior: none;
+}
+
+.contact {
+  max-width: 45rem;
+  margin: 0 auto;
+  padding-bottom: 7rem;
+}
+.heading {
+  margin: 3.75rem auto 1.54rem;
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 2.625rem;
+  text-align: center;
+  font-family: RobotoBold;
+}
+
+@media (max-width: 56.25rem) {
+  .wrapper-2 {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right)
+      env(safe-area-inset-bottom) env(safe-area-inset-left);
+    margin: 0;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(16, 23, 26, 0.95),
+        rgba(21, 26, 31, 0.938)
+      ),
+      url(../../../public/wallpaper/main.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    /* overscroll-behavior: none; */
+  }
+  .wrapper {
+    padding: 0;
+    margin: 0;
+    background-image: none;
+    /* overscroll-behavior: none; */
+  }
+
+  .contact {
+    max-width: min(35rem, 95%);
+    margin: 0 auto;
+    padding-bottom: 4rem;
+  }
+
+  .heading {
+    margin: 2.18rem auto 0.5rem;
+    font-size: 1.25rem;
+    line-height: 2.25rem;
+  }
+}
+@media (max-width: 500px) {
+  .contact {
+    max-width: 100%;
+    margin: 0 3px;
+    padding-bottom: 3rem;
+  }
+  /* .input-group-textarea {
+    display: none;
+  } */
+}

@@ -1,37 +1,31 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import classes from "./changePassword.module.css";
-const ChangePassword = () => {
-  const [teamsNames, setTeamsNames] = useState({
-    firstTeam: "",
-    secondTeam: "",
-  });
+const ChangePassword = ({ data, changePassword }) => {
   return (
     <div className={classes["container"]}>
-      <h2 className={classes["title"]}>Event team names</h2>
+      <h2 className={classes["title"]}>Change Password</h2>
       <div className={classes["details"]}>
         <input
-          value={teamsNames.firstTeam}
-          id="first-team"
+          value={data.password}
           onChange={(e) => {
-            setTeamsNames({
-              firstTeam: e.target.value,
-              secondTeam: teamsNames.secondTeam,
+            changePassword({
+              confirmPassword: data.confirmPassword,
+              password: e.target.value,
             });
           }}
-          placeholder="team 1"
+          placeholder="Enter password...."
           className={classes["input"]}
         />
         <input
-          value={teamsNames.secondTeam}
-          id="second-team"
+          value={data.confirmPassword}
           onChange={(e) => {
-            setTeamsNames({
-              secondTeam: e.target.value,
-              firstTeam: teamsNames.firstTeam,
+            changePassword({
+              password: data.confirmPassword,
+              confirmPassword: e.target.value,
             });
           }}
-          placeholder="team 2"
+          placeholder="Re-enter password...."
           className={classes["input"]}
         />
       </div>

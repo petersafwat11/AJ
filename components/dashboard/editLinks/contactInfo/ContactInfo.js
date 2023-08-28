@@ -1,44 +1,48 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
+import InputGroup from "../inputGroup/InputGroup";
 import classes from "./contactInfo.module.css";
-const ContactInfo = () => {
-  const [contactInfo, setContactInfo] = useState({
-    Email: "",
-    Telephone: "",
-    Address: "",
-  });
+const ContactInfo = ({ dispachNewLinks, data }) => {
   return (
     <div className={classes["container"]}>
       <div className={classes["details"]}>
-        <div className={classes["input-group"]}>
-          <label htmlFor="Email" className={classes["label"]}>
-            Email
-          </label>
-          <input
-            value={contactInfo.Email}
-            id="Email"
-            onChange={(e) => {
-              setContactInfo({ ...contactInfo, Email: e.target.value });
-            }}
-            placeholder="Email"
-            className={classes["input"]}
-          />
-        </div>
-        <div className={classes["input-group"]}>
-          <label htmlFor="Telephone" className={classes["label"]}>
-            Telephone
-          </label>
-          <input
-            value={contactInfo.Telephone}
-            id="Telephone"
-            onChange={(e) => {
-              setContactInfo({ ...contactInfo, Telephone: e.target.value });
-            }}
-            placeholder="Telephone"
-            className={classes["input"]}
-          />
-        </div>
-        <div className={classes["input-group"]}>
+        <InputGroup
+          width={"100%"}
+          onChange={(value) => {
+            dispachNewLinks({
+              type: "CONTACT-US",
+              value: { ...data, email: value },
+            });
+          }}
+          label={"Email"}
+          value={data?.email}
+        />
+
+        <InputGroup
+          width={"100%"}
+          onChange={(value) => {
+            dispachNewLinks({
+              type: "CONTACT-US",
+              value: { ...data, telephone: value },
+            });
+          }}
+          label={"Telephone"}
+          value={data?.telephone}
+        />
+
+        <InputGroup
+          width={"100%"}
+          onChange={(value) => {
+            dispachNewLinks({
+              type: "CONTACT-US",
+              value: { ...data, address: value },
+            });
+          }}
+          label={"Address"}
+          value={data?.address}
+        />
+
+        {/* <div className={classes["input-group"]}>
           <label htmlFor="Address" className={classes["label"]}>
             Address
           </label>
@@ -51,7 +55,7 @@ const ContactInfo = () => {
             placeholder="Address"
             className={classes["input"]}
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

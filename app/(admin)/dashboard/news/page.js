@@ -1,16 +1,16 @@
 import React from "react";
-import ActionsButtons from "../../../../components/dashboard/actionsButtons/ActionsButtons";
 // import SportCategory from "../../../../components/dashboard/createListings/sportCategory/SportCategory";
-import Table from "../../../../components/dashboard/news/table/Table";
+import Wrapper from "../../../../components/dashboard/news/Wrapper/Wrapper";
+import { getData } from "../../../../utils/dashboardTablePagesFunctions";
+
 import classes from "./page.module.css";
-const page = () => {
+const page = async () => {
+  const news = await getData("news");
+
   return (
     <div className={classes["container"]}>
       <h1 className={classes["title"]}>News </h1>
-      <div className={classes["actions"]}>
-        <ActionsButtons first={"Create Listing"} second={"Delete"} />
-      </div>
-      <Table />
+      <Wrapper dataFetched={news} />
     </div>
   );
 };

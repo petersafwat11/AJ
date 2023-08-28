@@ -1,7 +1,11 @@
 import React from "react";
 import { BiSearch } from "react-icons/bi";
+import { convertDate } from "../../../../utils/convertDateFormat";
+import NoContent from "../../noContent/NoContent";
+import Paginations from "../../paginations/Paginations";
+import ViewListingsBtn from "../viewListingsBtn/ViewListingsBtn";
 import classes from "./table.module.css";
-const Table = () => {
+const Table = ({ reportedLinks, paginations, dispatchDetail }) => {
   return (
     <div className={classes["table"]}>
       <div className={classes["search-wrapper"]}>
@@ -16,19 +20,28 @@ const Table = () => {
         <p className={classes["table-cell"]}>Date/Time</p>
         <p className={classes["table-cell"]}>Action </p>
       </div>
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, index) => (
-        <div key={index} className={classes["table-row"]}>
-          <p className={classes["table-cell"]}>{index + 1}</p>
-          <p className={classes["table-cell"]}>Man Utd vs Liverpool</p>
-          <p className={classes["table-cell"]}>English 1</p>
-          <p className={classes["table-cell"]}>Wrong Match</p>
-          <div className={classes["date-and-time"]}>
-            <p>12/07/23</p>
-            <p>23:12</p>
+      {reportedLinks.length > 0 ? (
+        reportedLinks.map((item, index) => (
+          <div key={item._id} className={classes["table-row"]}>
+            <p className={classes["table-cell"]}>{index + 1}</p>
+            <p className={classes["table-cell"]}>{item.event}</p>
+            <p className={classes["table-cell"]}>{item.server}</p>
+            <p className={classes["table-cell"]}>{item.reason}</p>
+            <div className={classes["date-and-time"]}>
+              <p> {convertDate(item.createdAt).formattedDate}</p>
+              <p> {convertDate(item.createdAt).formattedTime}</p>
+            </div>
+            <ViewListingsBtn eventLink={item.eventLink} />
           </div>
-          <button className={classes["edit-button"]}>Edit </button>
-        </div>
-      ))}
+        ))
+      ) : (
+        <NoContent />
+      )}
+      <Paginations
+        rowsPerPage={paginations.rowsPerPage}
+        results={paginations.results}
+        dispatchDetail={dispatchDetail}
+      />
     </div>
   );
 };

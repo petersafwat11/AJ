@@ -1,24 +1,21 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import classes from "./description.module.css";
-const Description = () => {
-  const [description, setDescription] = useState(
-    "Enter the giveaway for a chance to win ..."
-  );
+const Description = ({ data, dispatchPrizeDetail }) => {
   return (
     <div className={classes["container"]}>
       <h2 className={classes["title"]}> Description</h2>
       <div className={classes["input-group"]}>
         <label className={classes["label"]} htmlFor="description">
-          mESSAGE
+          MESSAGE
         </label>
         <input
           type="text"
           id="description"
           className={classes["input"]}
-          value={description}
+          value={data}
           onChange={(e) => {
-            setDescription(e.target.value);
+            dispatchPrizeDetail({ type: "DESCRIPTION", value: e.target.value });
           }}
         />
       </div>

@@ -1,8 +1,17 @@
+"use client";
 import React from "react";
 import { BiSearch } from "react-icons/bi";
 import { BsFlagFill } from "react-icons/bs";
+import { convertDate } from "../../../../utils/convertDateFormat";
 import classes from "./table.module.css";
-const ContactTable = () => {
+import Paginations from "../../paginations/Paginations";
+import Flag from "../../flag/Flag";
+const ContactTable = ({
+  tableData,
+  paginations,
+  dispatchDetail,
+  reverseFlagProp
+}) => {
   return (
     <div className={classes["table"]}>
       <div className={classes["search-wrapper"]}>
@@ -15,25 +24,26 @@ const ContactTable = () => {
         <p className={classes["table-cell"]}>Flag</p>
         <p className={classes["table-cell"]}>Date/Time</p>
       </div>
-      {[1, 2, 3, 4, 5].map((item, index) => (
+      {tableData.map((item, index) => (
         <div key={index} className={classes["table-row"]}>
-          <p className={classes["table-cell"]}>example@exam</p>
-          <p className={classes["table-cell"]}>
-            Our planet is in danger. The food system is depleting our soils,
-            changing our climate and driving biodiversity loss. Poorer
-            communities at home and in the Global South are bearing the brunt of
-            the destruction wreaked by agribusiness corporations. But it
-            doesn&#39; t have to be like this.
-          </p>
-          <div className={classes["flag"]}>
-            <BsFlagFill />
-          </div>
+          <p className={classes["table-cell"]}>{item.email}</p>
+          <p className={classes["table-cell"]}>{item.message}</p>
+          <Flag
+            reverseFlagProp={reverseFlagProp}
+            id={item._id}
+            flagged={item.flagged}
+          />
           <div className={classes["date-and-time"]}>
-            <p>12/07/23</p>
-            <p>23:12</p>
+            <p> {convertDate(item.createdAt).formattedDate}</p>
+            <p> {convertDate(item.createdAt).formattedTime}</p>
           </div>
         </div>
       ))}
+      <Paginations
+        rowsPerPage={paginations.rowsPerPage}
+        results={paginations.results}
+        dispatchDetail={dispatchDetail}
+      />
     </div>
   );
 };

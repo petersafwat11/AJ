@@ -1,8 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import classes from "./date.module.css";
-const Date = () => {
-  const [date, setDate] = useState({ start: "", end: "" });
+const Date = ({ data, dispatchPrizeDetail }) => {
   return (
     <div className={classes["container"]}>
       <h2 className={classes["title"]}> Time</h2>
@@ -15,9 +14,12 @@ const Date = () => {
             type="text"
             id="start"
             className={classes["input"]}
-            value={date.start}
+            value={data.startTime}
             onChange={(e) => {
-              setDate({ start: e.target.value, end: date.end });
+              dispatchPrizeDetail({
+                type: "START-TIME",
+                value: e.target.value,
+              });
             }}
           />
         </div>
@@ -29,9 +31,9 @@ const Date = () => {
             type="text"
             id="end"
             className={classes["input"]}
-            value={date.start}
+            value={data.endTime}
             onChange={(e) => {
-              setDate({ end: e.target.value, start: date.start });
+              dispatchPrizeDetail({ type: "END-TIME", value: e.target.value });
             }}
           />
         </div>

@@ -1,24 +1,29 @@
-"use client";
-import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 import classes from "./actionsButtons.module.css";
-const ActionsButtons = ({ first, second }) => {
-  const router = useRouter();
-  const pathname = usePathname();
-
+const ActionsButtons = ({
+  firstButtonFunction,
+  secondButtonFunction,
+  first,
+  second,
+}) => {
   return (
     <div className={classes["actions"]}>
       {first && (
         <button
-          onClick={() => {
-            first === "Create Listing" ? router.push(`/${pathname}/edit`) : "";
-          }}
+          onClick={firstButtonFunction}
           className={classes["first-button"]}
         >
           {first}
         </button>
       )}
-      {second && <button className={classes["second-button"]}>{second}</button>}
+      {second && (
+        <button
+          onClick={secondButtonFunction}
+          className={classes["second-button"]}
+        >
+          {second}
+        </button>
+      )}
     </div>
   );
 };

@@ -69,5 +69,5 @@
 }
 .input:focus-visible {
   outline: none;
-  border: 1px solid white;
+  border: 1px solid #084e9a;
 }

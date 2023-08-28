@@ -1,17 +1,18 @@
+"use client";
 import Image from "next/image";
 import React from "react";
+import TopIndecator from "../topIndecators/TopIndecator";
 import classes from "./stepOne.module.css";
-const StepOne = ({ controlDisplaySteps, joinWebsiteGroup }) => {
+const StepOne = ({ indicatorsNum, dispatchAction, userInfo }) => {
   return (
     <div className={classes["step-one"]}>
       <div className={classes["top"]}>
-        <h2 className={classes["heading"]}>Step 1:</h2>
+        <TopIndecator indicatorsNum={indicatorsNum} curState={1} />
         <Image
           onClick={() => {
-            controlDisplaySteps({
-              stepOne: false,
-              stepTwo: false,
-              stepThree: false,
+            dispatchAction({
+              type: "STEPS",
+              value: null,
             });
           }}
           className={classes["exit"]}
@@ -27,6 +28,13 @@ const StepOne = ({ controlDisplaySteps, joinWebsiteGroup }) => {
             Full name
           </label>
           <input
+            value={userInfo.fullName}
+            onChange={(e) => {
+              dispatchAction({
+                type: "USER-INFO",
+                value: { ...userInfo, fullName: e.target.value },
+              });
+            }}
             id="full-name"
             type="text"
             placeholder="Enter your name..."
@@ -38,6 +46,13 @@ const StepOne = ({ controlDisplaySteps, joinWebsiteGroup }) => {
             Email Address
           </label>
           <input
+            value={userInfo.email}
+            onChange={(e) => {
+              dispatchAction({
+                type: "USER-INFO",
+                value: { ...userInfo, email: e.target.value },
+              });
+            }}
             id="email"
             type="email"
             placeholder="Enter your email..."
@@ -52,22 +67,10 @@ const StepOne = ({ controlDisplaySteps, joinWebsiteGroup }) => {
         </p>
         <button
           onClick={() => {
-            if (
-              joinWebsiteGroup.text === "Twitter" ||
-              joinWebsiteGroup.text === "Retweet" ||
-              joinWebsiteGroup.text === "Telegram"
-            ) {
-              controlDisplaySteps({
-                stepOne: false,
-                stepTwo: true,
-                stepThree: false,
-              });
+            if (indicatorsNum === 3) {
+              dispatchAction({ type: "STEPS", value: 2 });
             } else {
-              controlDisplaySteps({
-                stepOne: false,
-                stepTwo: false,
-                stepThree: true,
-              });
+              dispatchAction({ type: "STEPS", value: 3 });
             }
           }}
           className={classes["next-button"]}

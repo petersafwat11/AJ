@@ -2,9 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-    experimental: {
+  experimental: {
     appDir: true,
   },
-}
+  env: {
+    BACKEND_SERVER: "http://localhost:8000/api",
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

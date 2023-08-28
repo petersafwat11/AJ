@@ -11,7 +11,7 @@ const Dropdown = ({ name, options, selectOption, selectedOption }) => {
         }
       >
         <p
-          className={classes[name === "العربية" ? "lang-name" : "arabic-lang"]}
+          className={classes[name === "العربية" ? "arabic-lang" : "lang-name"]}
         >
           {name}
         </p>
@@ -24,9 +24,6 @@ const Dropdown = ({ name, options, selectOption, selectedOption }) => {
             onClick={() => {
               selectOption({ index: index, name: name });
             }}
-            // style={{
-
-            // }}
             className={
               selectedOption.index == index && selectedOption.name == name
                 ? classes["option-2"]

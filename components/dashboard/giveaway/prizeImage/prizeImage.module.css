@@ -31,3 +31,18 @@
   font-family: "Inter";
   cursor: pointer;
 }
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.image-name {
+  background: rgb(177, 174, 174);
+  padding: 0.125rem 0.4rem;
+  color: white;
+  border-radius: 3rem;
+  font-size: 0.65rem;
+  cursor: pointer;
+}

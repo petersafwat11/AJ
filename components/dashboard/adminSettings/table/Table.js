@@ -1,13 +1,25 @@
 import React from "react";
 import { BiSearch } from "react-icons/bi";
+import Checkbox from "../../checkbox/Checkbox";
+import NoContent from "../../noContent/NoContent";
+import Paginations from "../../paginations/Paginations";
 import classes from "./table.module.css";
-const Table = () => {
+const Table = ({
+  toggleDeleteAlert,
+  administrators,
+  selectElement,
+  paginations,
+  dispatchDetail,
+  editToggler,
+}) => {
   return (
     <div className={classes["table"]}>
       <div className={classes["search-wrapper"]}>
         <input className={classes["search"]} type="text" placeholder="Search" />
         <BiSearch className={classes["search-icon"]} />
-        <div className={classes["delete-button"]}>Delete</div>
+        <div onClick={toggleDeleteAlert} className={classes["delete-button"]}>
+          Delete
+        </div>
       </div>
 
       <div className={classes["table-header"]}>
@@ -16,22 +28,30 @@ const Table = () => {
         <p className={classes["table-cell"]}>Email</p>
         <p className={classes["status"]}>Display Name</p>
         <p className={classes["table-cell"]}>Role </p>
-
         <p className={classes["table-cell"]}>Action </p>
       </div>
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, index) => (
-        <div key={index} className={classes["table-row"]}>
-          <span className={classes["square"]}></span>
-          <p className={classes["table-cell"]}>1</p>
-          <p className={classes["table-cell"]}>
-            thedefaultmermaidgirl@protonmail.com
-          </p>
-          <p className={classes["status"]}>AJ Sports Admin (Adam)</p>
-          <p className={classes["table-cell"]}>Admin</p>
+      {administrators.length > 0 ? (
+        administrators.map((item, index) => (
+          <div key={item._id} className={classes["table-row"]}>
+            <Checkbox selectElement={selectElement} id={item._id} />
+            <p className={classes["table-cell"]}>{index + 1}</p>
+            <p className={classes["table-cell"]}>{item.email}</p>
+            <p className={classes["table-cell"]}>{item.name}</p>
+            <p className={classes["table-cell"]}>{item.role}</p>
+            <button onClick={() => {editToggler(item)}} className={classes["edit-button"]}>
+              Edit
+            </button>
+          </div>
+        ))
+      ) : (
+        <NoContent />
+      )}
 
-          <button className={classes["edit-button"]}>Edit </button>
-        </div>
-      ))}
+      <Paginations
+        rowsPerPage={paginations.rowsPerPage}
+        results={paginations.results}
+        dispatchDetail={dispatchDetail}
+      />
     </div>
   );
 };

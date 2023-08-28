@@ -19,7 +19,8 @@
   align-items: center;
   gap: 1.54rem;
   margin-top: 1.32rem;
-  margin-bottom: 18.48px;
+  margin-bottom: 1.125rem;
+  width: 100%;
 }
 
 .details-second {
@@ -30,7 +31,7 @@
   width: 100%;
 }
 
-.details-second .input-group {
+.input-group {
   flex-grow: 1;
 }
 

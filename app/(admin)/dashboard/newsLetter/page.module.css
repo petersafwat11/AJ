@@ -10,15 +10,3 @@
   font-family: "Public Sans";
   margin-bottom: 5.5rem;
 }
-.subheading {
-  color: #000000;
-  font-size: 1.65rem;
-  line-height: 1.32rem;
-  font-weight: 600;
-  font-family: "Public Sans";
-  margin-bottom: 1.1rem;
-}
-.subheading:last-of-type {
-  margin-top: 7.26rem;
-  margin-bottom: 2.09rem;
-}
