@@ -1,10 +1,16 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 
 export const getData = async (route, dispatchDetail, endpoint) => {
   try {
     const response = await axios.get(
       `${process.env.BACKEND_SERVER}/${endpoint}/${route}
-        `
+        `,
+      {
+        headers: {
+          Authorization: `Bearer ${Cookies.get("token")}`,
+        },
+      }
     );
 
     dispatchDetail({ type: "UPDATE-ALL", value: response.data.data.data });
@@ -18,7 +24,12 @@ export const deleteItem = async (pathname, router, endpoint) => {
     try {
       const response = await axios.delete(
         `${process.env.BACKEND_SERVER}/${endpoint}/${pathname.split("/")[3]}
-        `
+        `,
+        {
+          headers: {
+            Authorization: `Bearer ${Cookies.get("token")}`,
+          },
+        }
       );
       console.log("success", response);
       router.push(`${pathname.slice(0, pathname.lastIndexOf("/"))}`);
@@ -43,13 +54,23 @@ export const saveItem = async (
     request = axios.patch(
       `${process.env.BACKEND_SERVER}/${endpoint}/${pathname.split("/")[3]}
       `,
-      data
+      data,
+      {
+        headers: {
+          Authorization: `Bearer ${Cookies.get("token")}`,
+        },
+      }
     );
   } else {
     request = axios.post(
       `${process.env.BACKEND_SERVER}/${endpoint}
 `,
-      data
+      data,
+      {
+        headers: {
+          Authorization: `Bearer ${Cookies.get("token")}`,
+        },
+      }
     );
   }
   try {
@@ -85,7 +106,7 @@ export const flagItem = async (
       JSON.stringify({ flagged: !item.flagged }),
       {
         headers: {
-          "Content-Type": "application/json",
+          Authorization: `Bearer ${Cookies.get("token")}`,
         },
       }
     );
@@ -120,13 +141,23 @@ export const saveServer = async (
     request = axios.patch(
       `${process.env.BACKEND_SERVER}/${endpoint}/${serversId}
       `,
-      data
+      data,
+      {
+        headers: {
+          Authorization: `Bearer ${Cookies.get("token")}`,
+        },
+      }
     );
   } else {
     request = axios.post(
       `${process.env.BACKEND_SERVER}/${endpoint}
 `,
-      data
+      data,
+      {
+        headers: {
+          Authorization: `Bearer ${Cookies.get("token")}`,
+        },
+      }
     );
   }
   try {

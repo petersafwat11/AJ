@@ -11,7 +11,9 @@ const Administrator = ({
   return (
     <div className={classes["container"]}>
       <div className={classes["first"]}>
-        <h2 className={classes["title"]}>Create User Accounnt</h2>
+        <h2 className={classes["title"]}>
+          {edit ? `Edit User account` : `Create User account`}
+        </h2>
         <div className={classes["details"]}>
           <div className={classes["details-wrapper"]}>
             <div className={classes["input-group"]}>
@@ -49,16 +51,27 @@ const Administrator = ({
             <label htmlFor="email" className={classes["label"]}>
               email
             </label>
-            <input
-              id="email"
-              className={classes["input"]}
-              onChange={(e) => {
-                dispatchAction({ type: "EMAIL", value: e.target.value });
-              }}
-              value={Administrator.email}
-              type="email"
-              placeholder="email"
-            />
+            {edit ? (
+              <input
+                id="email"
+                className={classes["input"]}
+                value={Administrator.email}
+                type="email"
+                placeholder="email"
+                readOnly
+              />
+            ) : (
+              <input
+                id="email"
+                className={classes["input"]}
+                onChange={(e) => {
+                  dispatchAction({ type: "EMAIL", value: e.target.value });
+                }}
+                value={Administrator.email}
+                type="email"
+                placeholder="email"
+              />
+            )}
           </div>
           {edit ? (
             <div className={classes["actions"]}>

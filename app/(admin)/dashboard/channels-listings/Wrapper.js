@@ -16,7 +16,7 @@ import { paginationsReducer } from "../../../../utils/paginationsReducer";
 import classes from "./wrapper.module.css";
 const Wrapper = ({ dataFetched }) => {
   const notify = (message, type) => toast[type](message);
-
+  console.log("dataFetched", dataFetched);
   const router = useRouter();
   const pathname = usePathname();
   const [channels, setChannels] = useState(dataFetched?.data?.data || []);
@@ -50,7 +50,7 @@ const Wrapper = ({ dataFetched }) => {
   const [paginations, dispatchDetail] = useReducer(paginationsReducer, {
     rowsPerPage: 10,
     currentPage: 1,
-    results: dataFetched.results,
+    results: dataFetched?.results,
   });
   useEffect(() => {
     const fetchNewData = async () => {

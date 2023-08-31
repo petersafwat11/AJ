@@ -1,15 +1,12 @@
-import React from "react";
+import React from 'react';
 
-function MyIframe() {
+const VideoPlayer = () => {
   return (
-    <iframe
-      src="https://catchystream.com/iframe/e5.php"
-      width="560"
-      height="315"
-      frameBorder="0"
-      allowFullScreen
-    ></iframe>
+    <video width="320" height="240" controls>
+      <source src="https://s1.sportshub808.com/espn.php" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   );
-}
+};
 
-export default MyIframe;
+export default VideoPlayer;

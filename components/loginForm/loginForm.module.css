@@ -58,3 +58,11 @@
   margin-top: 3.75rem;
   cursor: pointer;
 }
+.not-authorized {
+  width: 90%;
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

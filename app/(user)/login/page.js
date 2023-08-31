@@ -2,7 +2,9 @@ import Image from "next/image";
 import React from "react";
 import LoginForm from "../../../components/loginForm/LoginForm";
 import classes from "./login.module.css";
-const Login = () => {
+
+const Login = async() => {
+  
   return (
     <div className={classes["login"]}>
       <div className={classes["login-top"]}>

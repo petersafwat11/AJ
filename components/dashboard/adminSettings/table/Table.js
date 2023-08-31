@@ -30,7 +30,7 @@ const Table = ({
         <p className={classes["table-cell"]}>Role </p>
         <p className={classes["table-cell"]}>Action </p>
       </div>
-      {administrators.length > 0 ? (
+      {administrators?.length > 0 ? (
         administrators.map((item, index) => (
           <div key={item._id} className={classes["table-row"]}>
             <Checkbox selectElement={selectElement} id={item._id} />

@@ -2,9 +2,9 @@
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useReducer, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import ActionsButtons from "../../../../components/dashboard/actionsButtons/ActionsButtons";
 import DeleteAlert from "../../../../components/dashboard/deleteAlert/DeleteAlert";
-import "react-toastify/dist/ReactToastify.css";
 
 import Table from "../../../../components/dashboard/streamLink/table/Table";
 import Popup from "../../../../components/popupWrapper/Popup";
@@ -52,7 +52,7 @@ const Wrapper = ({ dataFetched }) => {
   const [paginations, dispatchDetail] = useReducer(paginationsReducer, {
     rowsPerPage: 10,
     currentPage: 1,
-    results: dataFetched.results,
+    results: dataFetched?.results,
   });
   // const fetchNewData = useCallback( , [paginations, setStreamLinks, dispatchDetail]);
   useEffect(() => {

@@ -1,10 +1,11 @@
 import React from "react";
-import MyIframe from "./VideoPlayer";
+import VideoPlayer from "./VideoPlayer";
 import classes from "./video.module.css";
 
 const VideoJs = () => {
   return (
     <div className={classes["wrapper"]}>
+      <VideoPlayer />
       {/* <MyPlyrVideo /> */}
       {/* <jwplayer-video
         className={classes["video-player"]}

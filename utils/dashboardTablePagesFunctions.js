@@ -1,4 +1,5 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 
 export const createItem = (pathname, router) => {
   router.push(`${pathname}/create`);
@@ -18,21 +19,18 @@ export const deleteItem = async (
   setSelectedItems,
   endpoint
 ) => {
-  const remainingStreamLinks = allItems.filter(function (item) {
+  const remainingItems = allItems.filter(function (item) {
     return !selectedItems.includes(item._id);
   });
   try {
-    const newStreamLinks = await axios.delete(
-      `${process.env.BACKEND_SERVER}/${endpoint}`,
-      {
-        data: selectedItems,
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    await axios.delete(`${process.env.BACKEND_SERVER}/${endpoint}`, {
+      data: selectedItems,
+      headers: {
+        Authorization: `Bearer ${Cookies.get("token")}`,
+      },
+    });
 
-    setAllItems(remainingStreamLinks);
+    setAllItems(remainingItems);
     setSelectedItems([]);
   } catch (error) {
     console.log("error", error);
@@ -50,11 +48,11 @@ export const getData = async (endpoint, query) => {
       `${process.env.BACKEND_SERVER}/${endpoint}`,
       {
         params: query || defaultQuery,
+        headers: {
+          Authorization: `Bearer ${Cookies.get("token")}`,
+        },
       }
     );
-    console.dir(newData.data.data.data);
-    console.log("data");
-
     return newData.data;
   } catch (err) {
     console.log("err", err);

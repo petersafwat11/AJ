@@ -15,6 +15,7 @@ import {
   getData,
 } from "../../../../utils/dashboardTablePagesFunctions";
 
+import Cookies from "js-cookie";
 import { paginationsReducer } from "../../../../utils/paginationsReducer";
 import classes from "./page.module.css";
 
@@ -38,8 +39,9 @@ const AdministratorReducer = (state, action) => {
 const Page = () => {
   const notify = (message, type) => toast[type](message);
   const [password, setPassword] = useState({
+    passwordCurrent: "",
     password: "",
-    confirmPassword: "",
+    passwordConfirm: "",
   });
   const [deleteAlert, setDeleteAlert] = useState(false);
   const [editPopup, setEditPopup] = useState(false);
@@ -50,9 +52,6 @@ const Page = () => {
     checkboxClicked(elemID, selectedAdministrators, setSelectedAdministrators);
   };
 
-  const saveNewPassword = () => {
-    // createItem(pathname, router);
-  };
   const [administratorAddition, dispatchAddition] = useReducer(
     AdministratorReducer,
     userIntialValue
@@ -73,8 +72,8 @@ const Page = () => {
         limit: paginations.rowsPerPage,
       };
       const newData = await getData("users", query);
-      setAdministrators(newData.data.data);
-      dispatchDetail({ type: "RESULTS", value: newData.results });
+      setAdministrators(newData?.data?.data);
+      dispatchDetail({ type: "RESULTS", value: newData?.results });
     };
     fetchNewData();
   }, [
@@ -83,7 +82,7 @@ const Page = () => {
     setAdministrators,
     dispatchDetail,
   ]);
-  const deleteSport = () => {
+  const deleteAdministrator = () => {
     deleteItem(
       administrators,
       selectedAdministrators,
@@ -103,9 +102,21 @@ const Page = () => {
   const saveAdministrator = async (type, data, dispatchAction) => {
     let request;
     if (type === "edit") {
-      axios.patch(`${process.env.BACKEND_SERVER}/users`, data);
+      request = axios.patch(
+        `${process.env.BACKEND_SERVER}/users/${data._id}`,
+        data,
+        {
+          headers: {
+            Authorization: `Bearer ${Cookies.get("token")}`,
+          },
+        }
+      );
     } else {
-      axios.post(`${process.env.BACKEND_SERVER}/users`, data);
+      request = axios.post(`${process.env.BACKEND_SERVER}/users`, data, {
+        headers: {
+          Authorization: `Bearer ${Cookies.get("token")}`,
+        },
+      });
     }
     try {
       const NewAdministrator = await request;
@@ -125,9 +136,11 @@ const Page = () => {
   };
   const makeNewAdministrator = async () => {
     await saveAdministrator("create", administratorAddition, dispatchAddition);
+    setEditPopup(!editPopup);
   };
   const updateAdministrator = async () => {
     await saveAdministrator("edit", administratorEditing, dispatchEditing);
+    setEditPopup(!editPopup);
   };
   const editToggler = (administrator) => {
     dispatchEditing({ type: "UPDATE-ALL", value: administrator });
@@ -140,16 +153,36 @@ const Page = () => {
   const handleChangePassword = (password) => {
     setPassword(password);
   };
-const updatePassword = async()=>{
-  
-}
+  const changePasswordHandler = async () => {
+    try {
+      const response = await axios.patch(
+        `${process.env.BACKEND_SERVER}/users/updateMyPassword`,
+        password,
+        {
+          headers: {
+            Authorization: `Bearer ${Cookies.get("token")}`,
+          },
+        }
+      );
+      console.log(response);
+      setPassword({
+        passwordCurrent: "",
+        password: "",
+        passwordConfirm: "",
+      });
+      notify("password updated successfully.", "success");
+    } catch (error) {
+      console.log("err", error);
+      notify(error.response.data.message, "error");
+    }
+  };
   return (
     <div className={classes["container"]}>
       {deleteAlert && (
         <Popup>
           <DeleteAlert
             cancelFunc={toggleDeleteAlert}
-            deleteFunc={deleteSport}
+            deleteFunc={deleteAdministrator}
           />
         </Popup>
       )}
@@ -183,7 +216,11 @@ const updatePassword = async()=>{
         <ActionsButtons first={"Save"} />
       </div>
       <div className={classes["details"]}>
-        <ChangePassword data={password} changePassword={handleChangePassword} />
+        <ChangePassword
+          data={password}
+          changePassword={handleChangePassword}
+          changePasswordHandler={changePasswordHandler}
+        />
         <Administrator
           saveActions={makeNewAdministrator}
           Administrator={administratorAddition}
