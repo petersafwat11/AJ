@@ -3,7 +3,7 @@ import React from "react";
 import { getData } from "../../../../utils/dashboardTablePagesFunctions";
 
 import classes from "./page.module.css";
-import Wrapper from "../../../../components/dashboard/news/Wrapper/Wrapper";
+import Wrapper from "../../../../components/dashboard/news/wrapper/Wrapper";
 const page = async () => {
   const news = await getData("news");
 

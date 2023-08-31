@@ -4,7 +4,7 @@ import React, { useEffect, useReducer } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import classes from "./contactForm.module.css";
-import Topics from "../topics/topics";
+import Topics from "../topics/Topics";
 
 const intialValue = {
   email: "",
