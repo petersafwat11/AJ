@@ -7,7 +7,7 @@ const page = async () => {
   return (
     <div className={classes["container"]}>
       <h1 className={classes["title"]}>Feedback</h1>
-      <Wrapper feedbacksFetched={feedbacksFetched.data} />
+      <Wrapper feedbacksFetched={feedbacksFetched?.data} />
     </div>
   );
 };

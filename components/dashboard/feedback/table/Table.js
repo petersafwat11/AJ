@@ -2,6 +2,7 @@ import React from "react";
 import { BiSearch } from "react-icons/bi";
 import { convertDate } from "../../../../utils/convertDateFormat";
 import Flag from "../../flag/Flag";
+import NoContent from "../../noContent/NoContent";
 import Paginations from "../../paginations/Paginations";
 import classes from "./table.module.css";
 
@@ -18,22 +19,27 @@ const Table = ({ feedbacks, paginations, dispatchDetail, reverseFlagProp }) => {
         <p className={classes["table-cell"]}>Flag</p>
         <p className={classes["table-cell"]}>Date/Time</p>
       </div>
-      {feedbacks.map((item, index) => (
-        <div key={index} className={classes["table-row"]}>
-          <p className={classes["table-cell"]}>{item.num}</p>
-          <p className={classes["table-cell"]}>{item.message}</p>
-          <Flag
-            reverseFlagProp={reverseFlagProp}
-            id={item._id}
-            flagged={item.flagged}
-          />
 
-          <div className={classes["date-and-time"]}>
-            <p> {convertDate(item.createdAt).formattedDate}</p>
-            <p> {convertDate(item.createdAt).formattedTime}</p>
+      {feedbacks?.length > 0 ? (
+        feedbacks?.map((item, index) => (
+          <div key={index} className={classes["table-row"]}>
+            <p className={classes["table-cell"]}>{item.num}</p>
+            <p className={classes["table-cell"]}>{item.message}</p>
+            <Flag
+              reverseFlagProp={reverseFlagProp}
+              id={item._id}
+              flagged={item.flagged}
+            />
+
+            <div className={classes["date-and-time"]}>
+              <p> {convertDate(item.createdAt).formattedDate}</p>
+              <p> {convertDate(item.createdAt).formattedTime}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      ) : (
+        <NoContent />
+      )}
       <Paginations
         rowsPerPage={paginations.rowsPerPage}
         results={paginations.results}

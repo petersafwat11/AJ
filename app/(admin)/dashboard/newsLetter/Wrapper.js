@@ -16,7 +16,7 @@ const Wrapper = ({ peopleContactedUs }) => {
   const notify = (message, type) => toast[type](message);
 
   const [usersContactedUs, setUsersContactedUs] = useState(
-    peopleContactedUs.data.data
+    peopleContactedUs?.data?.data
   );
   const [selectedItems, setSelectedItems] = useState([]);
   const selectElement = (elemID) => {
@@ -26,7 +26,7 @@ const Wrapper = ({ peopleContactedUs }) => {
   const [paginations, dispatchDetail] = useReducer(paginationsReducer, {
     rowsPerPage: 10,
     currentPage: 1,
-    results: peopleContactedUs.results,
+    results: peopleContactedUs?.results,
   });
   useEffect(() => {
     const fetchNewData = async () => {
