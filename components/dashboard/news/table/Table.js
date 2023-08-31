@@ -21,7 +21,7 @@ const Table = ({ news, selectElement, paginations, dispatchDetail }) => {
         <p className={classes["table-cell"]}>Date</p>
         <p className={classes["table-cell"]}>Action </p>
       </div>
-      {news.length > 0 ? (
+      {news?.length > 0 ? (
         news.map((item, index) => (
           <div key={item._id} className={classes["table-row"]}>
             <Checkbox selectElement={selectElement} id={item._id} />

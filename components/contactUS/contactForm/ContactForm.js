@@ -3,8 +3,8 @@ import axios from "axios";
 import React, { useEffect, useReducer } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import classes from "./contactForm.module.css";
 import Topics from "../topics/Topics";
+import classes from "./contactForm.module.css";
 
 const intialValue = {
   email: "",
@@ -44,7 +44,7 @@ const ContactForm = () => {
     event.preventDefault();
 
     let modifiedData = { ...contactUs };
-    if (contactUs.somethingElse.length > 0) {
+    if (contactUs.somethingElse?.length > 0) {
       modifiedData = { ...modifiedData, topic: modifiedData.somethingElse };
     }
     delete modifiedData.somethingElse;

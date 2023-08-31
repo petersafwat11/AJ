@@ -15,9 +15,9 @@ import {
 } from "../../../../utils/dashboardTablePagesFunctions";
 
 import Cookies from "js-cookie";
+import Administrator from "../../../../components/dashboard/adminSettings/administrator/Administrator";
 import { paginationsReducer } from "../../../../utils/paginationsReducer";
 import classes from "./page.module.css";
-import Administrator from "../../../../components/dashboard/adminSettings/administrator/Administrator";
 
 const userIntialValue = {
   name: "",
@@ -93,7 +93,7 @@ const Page = () => {
     toggleDeleteAlert();
   };
   const toggleDeleteAlert = () => {
-    if (selectedAdministrators.length > 0) {
+    if (selectedAdministrators?.length > 0) {
       setDeleteAlert(!deleteAlert);
     } else {
       notify("you have not selected any item to delete", "warning");

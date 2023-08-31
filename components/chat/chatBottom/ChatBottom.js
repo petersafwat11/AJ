@@ -48,11 +48,11 @@ const ChatBottom = ({
           }
         }}
         onChange={(e) => {
-          if (e.target.value.charAt(e.target.value.length - 1)) {
+          if (e.target.value.charAt(e.target.value?.length - 1)) {
             setDisplayTagUSer(false);
           }
           setInputMessage(e.target.value);
-          if (e.target.value.length < 1) {
+          if (e.target.value?.length < 1) {
             setMentionSomeone("");
           }
         }}

@@ -5,12 +5,7 @@ import Checkbox from "../../checkbox/Checkbox";
 import NoContent from "../../noContent/NoContent";
 import Paginations from "../../paginations/Paginations";
 import classes from "./table.module.css";
-const Table = ({
-  followers,
-  selectElement,
-  paginations,
-  dispatchDetail,
-}) => {
+const Table = ({ followers, selectElement, paginations, dispatchDetail }) => {
   return (
     <div className={classes["table"]}>
       <div className={classes["search-wrapper"]}>
@@ -26,7 +21,7 @@ const Table = ({
         <p className={classes["status"]}>Method</p>
         <p className={classes["table-cell"]}>Date </p>
       </div>
-      {followers.length > 0 ? (
+      {followers?.length > 0 ? (
         followers.map((item, index) => (
           <div key={item._id} className={classes["table-row"]}>
             <Checkbox selectElement={selectElement} id={item._id} />

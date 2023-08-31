@@ -38,7 +38,12 @@ const Table = ({
             <p className={classes["table-cell"]}>{item.email}</p>
             <p className={classes["table-cell"]}>{item.name}</p>
             <p className={classes["table-cell"]}>{item.role}</p>
-            <button onClick={() => {editToggler(item)}} className={classes["edit-button"]}>
+            <button
+              onClick={() => {
+                editToggler(item);
+              }}
+              className={classes["edit-button"]}
+            >
               Edit
             </button>
           </div>

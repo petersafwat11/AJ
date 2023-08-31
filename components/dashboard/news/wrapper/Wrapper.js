@@ -40,7 +40,7 @@ const Wrapper = ({ dataFetched }) => {
     toggleDeleteAlert();
   };
   const toggleDeleteAlert = () => {
-    if (selectedNews.length > 0) {
+    if (selectedNews?.length > 0) {
       setDeleteAlert(!deleteAlert);
     } else {
       notify("you have not selected any item to delete", "warning");

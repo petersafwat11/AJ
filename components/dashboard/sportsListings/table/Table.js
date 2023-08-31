@@ -34,9 +34,9 @@ const Table = ({
         <p className={classes["table-cell"]}>Sport</p>
         <p className={classes["table-cell"]}>Hot Match</p>
         <p className={classes["table-cell"]}>Action </p>
-        {sports.length > 0 && <p>servers</p>}
+        {sports?.length > 0 && <p>servers</p>}
       </div>
-      {sports.length > 0 ? (
+      {sports?.length > 0 ? (
         sports.map((item, index) => (
           <div key={item._id} className={classes["table-row"]}>
             <Checkbox selectElement={selectElement} id={item._id} />
@@ -64,7 +64,6 @@ const Table = ({
             >
               servers{" "}
             </p>
-
           </div>
         ))
       ) : (

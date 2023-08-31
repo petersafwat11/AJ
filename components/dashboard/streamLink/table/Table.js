@@ -21,7 +21,7 @@ const Table = ({ streamLinks, selectElement, paginations, dispatchDetail }) => {
         <p className={classes["table-cell"]}>Linked</p>
         <p className={classes["table-cell"]}>Action </p>
       </div>
-      {streamLinks.length > 0 ? (
+      {streamLinks?.length > 0 ? (
         streamLinks.map((item, index) => (
           <div key={item._id} className={classes["table-row"]}>
             <input

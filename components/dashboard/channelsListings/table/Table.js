@@ -21,7 +21,7 @@ const Table = ({ channels, selectElement, paginations, dispatchDetail }) => {
         <p className={classes["table-cell"]}>Status</p>
         <p className={classes["table-cell"]}>Action </p>
       </div>
-      {channels.length > 0 ? (
+      {channels?.length > 0 ? (
         channels.map((item, index) => (
           <div key={item._id} className={classes["table-row"]}>
             <input

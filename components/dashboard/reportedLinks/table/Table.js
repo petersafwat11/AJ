@@ -20,7 +20,7 @@ const Table = ({ reportedLinks, paginations, dispatchDetail }) => {
         <p className={classes["table-cell"]}>Date/Time</p>
         <p className={classes["table-cell"]}>Action </p>
       </div>
-      {reportedLinks.length > 0 ? (
+      {reportedLinks?.length > 0 ? (
         reportedLinks.map((item, index) => (
           <div key={item._id} className={classes["table-row"]}>
             <p className={classes["table-cell"]}>{index + 1}</p>

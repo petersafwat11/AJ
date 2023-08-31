@@ -45,7 +45,7 @@ const Wrapper = ({ dataFetched }) => {
     toggleDeleteAlert();
   };
   const toggleDeleteAlert = () => {
-    if (selectedSports.length > 0) {
+    if (selectedSports?.length > 0) {
       setDeleteAlert(!deleteAlert);
     } else {
       notify("you have not selected any item to delete", "warning");

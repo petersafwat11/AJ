@@ -76,8 +76,8 @@ const Page = () => {
         limit: paginations.rowsPerPage,
       };
       const newData = await getData("giveaway/folllower", query);
-      setFollowers(newData.data.data);
-      dispatchDetail({ type: "RESULTS", value: newData.results });
+      setFollowers(newData?.data?.data);
+      dispatchDetail({ type: "RESULTS", value: newData?.results });
     };
     fetchNewData();
   }, [
