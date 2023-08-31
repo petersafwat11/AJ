@@ -1,9 +1,9 @@
 import React from "react";
 // import SportCategory from "../../../../components/dashboard/createListings/sportCategory/SportCategory";
-import Wrapper from "../../../../components/dashboard/news/Wrapper/Wrapper";
 import { getData } from "../../../../utils/dashboardTablePagesFunctions";
 
 import classes from "./page.module.css";
+import Wrapper from "../../../../components/dashboard/news/Wrapper/Wrapper";
 const page = async () => {
   const news = await getData("news");
 

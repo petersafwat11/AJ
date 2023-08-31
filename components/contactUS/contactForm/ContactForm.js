@@ -3,8 +3,8 @@ import axios from "axios";
 import React, { useEffect, useReducer } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Topics from "../topics/topics";
 import classes from "./contactForm.module.css";
+import Topics from "../topics/topics";
 
 const intialValue = {
   email: "",

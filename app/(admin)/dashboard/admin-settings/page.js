@@ -4,7 +4,6 @@ import React, { useEffect, useReducer, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ActionsButtons from "../../../../components/dashboard/actionsButtons/ActionsButtons";
-import Administrator from "../../../../components/dashboard/adminSettings/Administrator/Administrator";
 import ChangePassword from "../../../../components/dashboard/adminSettings/changePassword/ChangePassword";
 import Table from "../../../../components/dashboard/adminSettings/table/Table";
 import DeleteAlert from "../../../../components/dashboard/deleteAlert/DeleteAlert";
@@ -18,6 +17,7 @@ import {
 import Cookies from "js-cookie";
 import { paginationsReducer } from "../../../../utils/paginationsReducer";
 import classes from "./page.module.css";
+import Administrator from "../../../../components/dashboard/adminSettings/administrator/Administrator";
 
 const userIntialValue = {
   name: "",
