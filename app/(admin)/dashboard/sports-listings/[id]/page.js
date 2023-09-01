@@ -36,30 +36,6 @@ const intialValue = {
   showsPoll: false,
   firstTeamPoll: "",
   secondTeamPoll: "",
-  // serversAndLanguages: {
-  //   mainLanguages: {
-  //     english: {
-  //       shows: false,
-  //       numOfServers: null,
-  //       servers: [],
-  //     },
-  //     arabic: {
-  //       shows: false,
-  //       numOfServers: null,
-  //       servers: [],
-  //     },
-  //     spanish: {
-  //       shows: false,
-  //       numOfServers: null,
-  //       servers: [],
-  //     },
-  //   },
-  //   moreLanguages: {
-  //     shows: false,
-  //     numOfServers: null,
-  //     langs: [],
-  //   },
-  // },
 };
 const matchReducer = (state, action) => {
   console.log("state", state);
@@ -162,10 +138,11 @@ const Page = () => {
 
   const [match, dispatchDetail] = useReducer(matchReducer, intialValue);
   const saveChanges = async () => {
-    const formData = new FormData();
+    let formData = new FormData();
     for (const [key, value] of Object.entries(match)) {
       formData.append(key, value);
     }
+    delete formData.servers;
 
     saveItem(
       pathname,

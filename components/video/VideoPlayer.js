@@ -1,11 +1,15 @@
-import React from 'react';
+import React from "react";
+import ReactHlsPlayer from "react-hls-player";
 
 const VideoPlayer = () => {
   return (
-    <video width="320" height="240" controls>
-      <source src="https://s1.sportshub808.com/espn.php" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <ReactHlsPlayer
+      src="https://s1.sportshub808.com:8443/hls/btsport1.m3u8"
+      autoPlay={false}
+      controls={true}
+      width="100%"
+      height="auto"
+    />
   );
 };
 

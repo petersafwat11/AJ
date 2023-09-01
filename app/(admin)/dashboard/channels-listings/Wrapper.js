@@ -61,7 +61,7 @@ const Wrapper = ({ dataFetched }) => {
 
       const newData = await getData("channels", query);
       setChannels(newData.data.data);
-      dispatchDetail({ type: "RESULTS", value: newData.results });
+      dispatchDetail({ type: "RESULTS", value: newData?.results });
     };
     fetchNewData();
   }, [

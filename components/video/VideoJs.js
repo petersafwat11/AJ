@@ -6,7 +6,6 @@ const VideoJs = () => {
   return (
     <div className={classes["wrapper"]}>
       <VideoPlayer />
-      {/* <MyPlyrVideo /> */}
       {/* <jwplayer-video
         className={classes["video-player"]}
         controls

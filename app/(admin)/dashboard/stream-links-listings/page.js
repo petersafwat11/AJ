@@ -9,7 +9,7 @@ const Page = async () => {
   const dataFetched = await getData("streamLink");
   return (
     <div className={classes["container"]}>
-      <h1 className={classes["title"]}>Channels Listings</h1>
+      <h1 className={classes["title"]}>Stream Links</h1>
       <Wrapper dataFetched={dataFetched} />
     </div>
   );
