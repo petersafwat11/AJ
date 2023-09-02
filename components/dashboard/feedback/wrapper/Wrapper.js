@@ -16,7 +16,7 @@ const Wrapper = ({ feedbacksFetched }) => {
   const [paginations, dispatchDetail] = useReducer(paginationsReducer, {
     rowsPerPage: 10,
     currentPage: 1,
-    results: feedbacksFetched.results,
+    results: feedbacksFetched?.results,
   });
   const [feebackType, setFeedbackType] = useState("All Feedback");
   const changeFeedbackType = (val) => {
