@@ -1,25 +1,40 @@
 import React from "react";
-import VideoPlayer from "./VideoPlayer";
+import videojs from "video.js";
+import { VideoJS } from "./VideoPlayer";
 import classes from "./video.module.css";
 
 const VideoJs = () => {
+  const playerRef = React.useRef(null);
+
+  const videoJsOptions = {
+    autoplay: true,
+    controls: true,
+    responsive: true,
+    fluid: true,
+    sources: [
+      {
+        src: "https://s1.sportshub808.com:8443/hls/btsport1.m3u8",
+        type: "application/x-mpegURL",
+      },
+    ],
+  };
+
+  const handlePlayerReady = (player) => {
+    playerRef.current = player;
+
+    // You can handle player events here, for example:
+    player.on("waiting", () => {
+      videojs.log("player is waiting");
+    });
+
+    player.on("dispose", () => {
+      videojs.log("player will dispose");
+    });
+  };
+
   return (
     <div className={classes["wrapper"]}>
-      <VideoPlayer />
-      {/* <jwplayer-video
-        className={classes["video-player"]}
-        controls
-        src="https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
-      >
-        <Image
-          className={classes["logo"]}
-          src="/LOGO.svg"
-          alt="logo"
-          width="94"
-          height="73"
-        />
-      </jwplayer-video> */}
-      {/* <VideoJS options={videoJsOptions} onReady={handlePlayerReady} /> */}
+      <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
     </div>
   );
 };
