@@ -1,0 +1,24 @@
+.navigate {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 3.3rem;
+  margin-top: 1rem;
+}
+.navigate > * {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.937rem;
+  line-height: 1.07rem;
+}
+@media (max-width: 56.25rem) {
+  .navigate {
+    gap: 0.3rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .navigate > * {
+    font-size: 0.625rem;
+    line-height: 0.75rem;
+  }
+}

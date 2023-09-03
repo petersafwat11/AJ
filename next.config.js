@@ -6,9 +6,9 @@ const nextConfig = {
     appDir: true,
   },
   env: {
-    BACKEND_SERVER: "https://long-cummerbund-slug.cyclic.app/api",
+    // BACKEND_SERVER: "https://long-cummerbund-slug.cyclic.app/api",
 
-    // BACKEND_SERVER: "http://localhost:8000/api",
+    BACKEND_SERVER: "http://localhost:8000/api",
   },
 };
 

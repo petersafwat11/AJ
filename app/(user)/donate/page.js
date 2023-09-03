@@ -1,10 +1,8 @@
 "use client";
-import Image from "next/image";
 import React, { useState } from "react";
-import OtherPaymentMethod from "../../../components/donate/otherPaymentMethod/OtherPaymentMethod";
 import Marque from "../../../components/marque/Marque";
-import Popup from "../../../components/popupWrapper/Popup";
 import TopLayout from "../../../components/topLayout/TopLayout";
+import UnderDevelopment from "../../../components/underDevelopment/page/underDevelopment";
 import classes from "./donate.module.css";
 const Donate = () => {
   const [ethereumPopup, setEthereumPopup] = useState(false);
@@ -27,7 +25,7 @@ const Donate = () => {
       <div className={classes["wrapper-2"]}>
         <Marque />
 
-        <main className={classes["donate"]}>
+        {/* <main className={classes["donate"]}>
           {ethereumPopup && (
             <Popup>
               <OtherPaymentMethod
@@ -158,7 +156,10 @@ const Donate = () => {
               into our platform to provide a greater service to the fans
             </p>
           </div>
-        </main>
+        </main> */}
+        <div className="center">
+          <UnderDevelopment />
+        </div>
       </div>
     </div>
   );

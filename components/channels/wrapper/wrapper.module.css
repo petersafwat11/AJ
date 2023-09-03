@@ -1,0 +1,208 @@
+.chat-icon {
+  position: fixed;
+  bottom: 5vh;
+  right: 10vw;
+  z-index: 10;
+  cursor: pointer;
+}
+.chat {
+  position: fixed;
+  bottom: 10vh;
+  right: 1vw;
+  z-index: 100;
+}
+.container {
+  max-width: 95%;
+  margin: auto;
+  padding-bottom: 7rem;
+}
+.top-heading {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.heading-span {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.9375rem;
+  line-height: 1.2rem;
+  font-family: RobotoSemiBold;
+}
+.heading-title {
+  font-family: RobotoSemiBold;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin-bottom: 1rem;
+  margin-top: 0.35rem;
+}
+.watch-video-wrapper {
+  margin: 1.3rem auto 0;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  /* min-height: 40.6rem; */
+  max-width: 59rem;
+}
+.watch-video {
+  margin-top: 0.4rem;
+  width: 100%;
+  height: 32.3rem;
+  border-radius: 1.25rem;
+  background: #0d1316;
+  overflow: hidden;
+}
+.social-icons {
+  display: flex;
+  justify-content: flex-end;
+  width: 98%;
+  margin-top: 1rem;
+}
+.watch-video-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 97.5%;
+  margin: 0.55rem auto 0;
+}
+.watch-video-options-server-name {
+  border-radius: 1.3125rem;
+  padding: 0.45rem 1.3rem;
+  font-size: 0.843rem;
+  line-height: 1rem;
+  font-family: RobotoSemiBold;
+  background: var(--btn-background);
+}
+
+.watch-video-options > * {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vpn {
+  margin: auto;
+}
+.watch-video-servers {
+  margin-top: 1.26rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 0.4rem;
+  grid-column-gap: 0.45rem;
+}
+.watch-video-servers-button {
+  background: var(--btn-background);
+  cursor: pointer;
+  height: 2.6rem;
+  border-radius: 0.35rem;
+  color: white;
+  font-size: 0.9375rem;
+  line-height: 1.125rem;
+  font-family: RobotoRegular;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.watch-video-servers-button:hover {
+  background-color: #d32727;
+}
+@media (max-width: 56.25rem) {
+  .container {
+    padding-bottom: 3.5rem;
+  }
+  .chat-icon {
+    bottom: 3vh;
+    right: 8%;
+    width: 73px;
+    height: 73px;
+  }
+  .chat {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+  }
+  .container {
+    max-width: 95%;
+  }
+  .heading-span {
+    font-size: 0.725rem;
+    line-height: 0.75rem;
+  }
+  .heading-title {
+    font-size: 1.5rem;
+    line-height: 1.375rem;
+    margin-bottom: 0.95rem;
+    margin-top: 0.57rem;
+  }
+  .watch-video-wrapper {
+    margin: 0;
+    min-height: 40.6rem;
+    max-width: 55rem;
+  }
+  .watch-video {
+    width: 100%;
+    height: min(60vh, 23rem);
+    border-radius: 0.625rem;
+    background: #0c1115;
+    overflow: hidden;
+  }
+  .watch-video-options {
+    padding-left: 0.75;
+    margin-top: 0.3rem;
+  }
+  .vpn {
+    margin: 0.875rem auto 0;
+    margin-top: 0.68rem;
+  }
+  .watch-video-options-server-name {
+    padding: auto;
+    font-size: 0.77rem;
+    line-height: 0.68rem;
+    font-family: RobotoSemiBold;
+    width: 4.9125rem;
+    height: 1.625rem;
+    border-radius: 1.875rem;
+    white-space: nowrap;
+  }
+  /* .watch-video-options-extend-button {
+        border-radius: 1.75rem;
+        padding: 0.4rem 0.9rem;
+        height: 1.125rem;
+        width: 2.68rem;
+        font-size: 0.55rem;
+        line-height: 0.5rem;
+        font-weight: 600;
+        font-family: RobotoSemiBold;
+      } */
+  .watch-video-servers {
+    margin: 0.93rem auto 0;
+    width: 97.5%;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 0.25rem;
+    grid-column-gap: 0.25rem;
+  }
+  .watch-video-servers-button {
+    background: var(--btn-background);
+    cursor: pointer;
+    height: 2.125rem;
+    border-radius: 0.25rem;
+    color: white;
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+    font-family: RobotoSemiBold;
+  }
+  .watch-video-servers-button:hover {
+    background-color: #d32727;
+  }
+}
+@media (max-width: 600px) {
+  .watch-video {
+    height: 14.5rem;
+  }
+  .container {
+    max-width: 100%;
+    margin: 0 3px;
+    padding-bottom: 3rem;
+  }
+}

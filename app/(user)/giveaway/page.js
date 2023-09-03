@@ -1,7 +1,7 @@
 import React from "react";
-import Wrapper from "../../../components/giveAway/wrapper/Wrapper";
 import Marque from "../../../components/marque/Marque";
 import TopLayout from "../../../components/topLayout/TopLayout";
+import UnderDevelopment from "../../../components/underDevelopment/page/underDevelopment";
 import { getData } from "../../../utils/dashboardTablePagesFunctions";
 import classes from "./page.module.css";
 const GiveAway = async () => {
@@ -11,7 +11,11 @@ const GiveAway = async () => {
       <TopLayout />
       <div className={classes["wrapper-2"]}>
         <Marque />
-        <Wrapper socialLinks={socialLinks.data.data[0].social}/>
+        <div className="center">
+          <UnderDevelopment />
+        </div>
+
+        {/* <Wrapper socialLinks={socialLinks.data.data[0].social}/> */}
       </div>
     </div>
   );

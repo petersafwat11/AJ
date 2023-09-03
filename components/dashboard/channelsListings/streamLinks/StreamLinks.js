@@ -21,17 +21,21 @@ const StreamLinks = ({
           {streamLinksAvaiable.map((item, index) => (
             <p
               onClick={() => {
-                dispatchDetail({ type: "STREAM-LINK-NAME", value: item });
+                dispatchDetail({
+                  type: "STREAM-LINK",
+                  streamLinkName: item.streamLinkName,
+                  streamLinkUrl: item.streamLinkUrl,
+                });
               }}
               style={{
                 background: index % 2 === 0 ? "inherit" : "#F5F5F5",
               }}
-              key={`${item}-${index}`}
+              key={`${item.streamLinkUrl}-${index}`}
               className={
                 classes[streamLinkName === item ? "option" : "selected-option"]
               }
             >
-              {item}
+              {item.streamLinkName}
             </p>
           ))}
         </div>

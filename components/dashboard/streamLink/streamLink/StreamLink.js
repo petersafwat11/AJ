@@ -19,7 +19,7 @@ const StreamLink = ({ data, dispatchDetail }) => {
             className={classes["input"]}
           />
         </div>
-        <div className={classes["input-group"]}>
+        {/* <div className={classes["input-group"]}>
           <label htmlFor="RMTPKey" className={classes["label"]}>
             RMTP Key
           </label>
@@ -32,7 +32,7 @@ const StreamLink = ({ data, dispatchDetail }) => {
             className={classes["input"]}
             placeholder="RMTP Key"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

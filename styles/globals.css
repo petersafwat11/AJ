@@ -190,3 +190,17 @@ button {
     width: 11px;
   }
 }
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 3rem;
+  padding-bottom: 5rem;
+}
+@media (max-width: 56.25rem) {
+  .center {
+    margin-top: 1.5rem;
+    padding-bottom: 3rem;
+  }
+}

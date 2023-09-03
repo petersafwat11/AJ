@@ -19,10 +19,12 @@ const reducerIntialValue = {
   channelName: "",
   mode: null,
   streamLinkName: "",
+  streamLinkUrl: "",
   error: "",
   streamLinksAvaiable: [],
 };
 const channelReducer = (state, action) => {
+  console.log("state", state);
   if (action.type === "CLEAR-ALL") {
     return reducerIntialValue;
   } else if (action.type === "NOT-FOUND") {
@@ -38,10 +40,11 @@ const channelReducer = (state, action) => {
       return { ...state, mode: null };
     }
     return { ...state, mode: action.value };
-  } else if (action.type === "STREAM-LINK-NAME") {
+  } else if (action.type === "STREAM-LINK") {
     return {
       ...state,
-      streamLinkName: action.value,
+      streamLinkName: action.streamLinkName,
+      streamLinkUrl: action.streamLinkUrl,
     };
   } else {
     return {
@@ -77,9 +80,16 @@ const Page = () => {
         page: 1,
         limit: undefined,
       });
+      console.log(
+        StreamLinks.data.data.map((item) => {
+          return { streamLinkName: item.channelName, streamLinkUrl: item.URL };
+        })
+      );
       dispatchDetail({
         type: "STREAM-LINKS-AVAILABLE",
-        value: StreamLinks.data.data.map((item) => item.channelName),
+        value: StreamLinks.data.data.map((item) => {
+          return { streamLinkName: item.channelName, streamLinkUrl: item.URL };
+        }),
       });
     };
     getStreamData();

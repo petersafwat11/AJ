@@ -3,7 +3,8 @@ import videojs from "video.js";
 import { VideoJS } from "./VideoPlayer";
 import classes from "./video.module.css";
 
-const VideoJs = () => {
+// eslint-disable-next-line react/display-name
+const VideoJs = React.memo(({ url, handleStarting }) => {
   const playerRef = React.useRef(null);
 
   const videoJsOptions = {
@@ -13,7 +14,7 @@ const VideoJs = () => {
     fluid: true,
     sources: [
       {
-        src: "https://s1.sportshub808.com:8443/hls/btsport1.m3u8",
+        src: url || "https://s1.sportshub808.com:8443/hls/btsport3.m3u8",
         type: "application/x-mpegURL",
       },
     ],
@@ -28,6 +29,7 @@ const VideoJs = () => {
     });
 
     player.on("dispose", () => {
+      handleStarting();
       videojs.log("player will dispose");
     });
   };
@@ -37,7 +39,7 @@ const VideoJs = () => {
       <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
     </div>
   );
-};
+})
 
 export default VideoJs;
 

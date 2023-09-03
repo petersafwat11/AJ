@@ -1,0 +1,41 @@
+.search-div {
+  margin-top: 1.26rem;
+  position: relative;
+}
+.channel-search {
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+  width: 11.1rem;
+  height: 1.875rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.25rem;
+  font-weight: 400;
+  font-size: 0.703rem;
+  line-height: 0.937rem;
+  color: rgba(216, 216, 216, 0.4);
+}
+.search-icon {
+  position: absolute;
+  top: 10.5px;
+  left: 12px;
+}
+@media (max-width: 56.25rem) {
+  .search-div {
+    margin-top: 1.75rem;
+    position: relative;
+  }
+  .channel-search {
+    padding-left: 1.75rem;
+    width: 9.9rem;
+    height: 1.8rem;
+    border-radius: 0.65rem;
+    font-size: 0.55rem;
+    margin-left: 4px;
+    line-height: 1.25rem;
+  }
+  .search-icon {
+    top: 9px;
+    left: 14px;
+  }
+}

@@ -1,12 +1,9 @@
 // "use client";
-import Image from "next/image";
 import React from "react";
 import Marque from "../../../components/marque/Marque";
-import InputGroup from "../../../components/pricing/inputGroup/InputGroup";
-import Plans from "../../../components/pricing/plans/Plans";
-import Social from "../../../components/pricing/social/Social";
 import TopLayout from "../../../components/topLayout/TopLayout";
 import classes from "./pricing.module.css";
+import UnderDevelopment from "../../../components/underDevelopment/page/underDevelopment";
 
 const page = () => {
   return (
@@ -15,7 +12,7 @@ const page = () => {
       <div className={classes["wrapper-2"]}>
         <Marque />
 
-        <main className={classes["pricing"]}>
+        {/* <main className={classes["pricing"]}>
           <div className={classes["top-heading"]}>
             <h2 className={classes["heading"]}>PRICING</h2>
             <span></span>
@@ -58,7 +55,10 @@ const page = () => {
           <h3 className={classes["comming-soon"]}>
             Coming <span>Soon!</span>
           </h3>
-        </main>
+        </main> */}
+        <div className="center">
+          <UnderDevelopment />
+        </div>
       </div>
     </div>
   );

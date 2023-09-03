@@ -18,7 +18,7 @@ import classes from "./page.module.css";
 const reducerIntialValue = {
   channelName: "",
   URL: "",
-  RMTPKey: "",
+  // RMTPKey: "",
   error: "",
 };
 const streamLinkReducer = (state, action) => {
@@ -35,11 +35,14 @@ const streamLinkReducer = (state, action) => {
   } else if (action.type === "URL") {
     return { ...state, URL: action.value };
   } else {
-    return {
-      ...state,
-      RMTPKey: action.value,
-    };
+    return state;
   }
+  // else {
+  //   return {
+  //     ...state,
+  //     RMTPKey: action.value,
+  //   };
+  // }
 };
 
 const Page = () => {
@@ -103,10 +106,10 @@ const Page = () => {
             />
             <div className={classes["details-wrapper"]}>
               <StreamLink
-                data={{ URL: streamLink.URL, RMTPKey: streamLink.RMTPKey }}
+                data={{ URL: streamLink.URL }}
                 dispatchDetail={dispatchDetail}
               />
-              <Preview />
+              <Preview url={streamLink.URL} />
             </div>
           </div>
         </div>
