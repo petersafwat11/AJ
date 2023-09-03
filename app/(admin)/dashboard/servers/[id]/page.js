@@ -19,6 +19,7 @@ const Page = () => {
   const router = useRouter();
   const [existMatch, setExistedMatch] = useState(null);
   const [existServers, setExistedServers] = useState(null);
+  const [streamLinksAvaiable, setStreamLinksAvaiable] = useState([]);
   const [servers, dispatchServer] = useReducer(mainserversReducers, {
     english: { checked: false, num: 0, channels: [] },
     arabic: { checked: false, num: 0, channels: [] },
@@ -71,10 +72,24 @@ const Page = () => {
     };
     getServersData();
   }, [pathname, setExistedMatch, setExistedServers]);
+  useEffect(() => {
+    const getStreamData = async () => {
+      const StreamLinks = await getData("streamLink", {
+        page: 1,
+        limit: undefined,
+      });
+      const streamLinksAvaiable = StreamLinks.data.data.map((item) => {
+        return { streamLinkName: item.channelName, streamLinkUrl: item.URL };
+      });
+      setStreamLinksAvaiable(streamLinksAvaiable);
+    };
+    getStreamData();
+  }, []);
+
   return (
     <div className={classes["container"]}>
       {existMatch ? (
-        <div className="wrapper">
+        <div className={classes["wrapper"]}>
           <ToastContainer
             position="top-center"
             autoClose={5000}
@@ -94,6 +109,7 @@ const Page = () => {
 
           <div className={classes["servers-and-langs"]}>
             <ServersAndLanguages
+            streamLinksAvaiable={streamLinksAvaiable}
               servers={servers}
               dispatchServer={dispatchServer}
               otherServers={otherServers}

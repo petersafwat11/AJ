@@ -80,11 +80,6 @@ const Page = () => {
         page: 1,
         limit: undefined,
       });
-      console.log(
-        StreamLinks.data.data.map((item) => {
-          return { streamLinkName: item.channelName, streamLinkUrl: item.URL };
-        })
-      );
       dispatchDetail({
         type: "STREAM-LINKS-AVAILABLE",
         value: StreamLinks.data.data.map((item) => {

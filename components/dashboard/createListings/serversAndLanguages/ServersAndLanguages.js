@@ -5,6 +5,7 @@ import { BsArrowRight } from "react-icons/bs";
 import { generateArray } from "../../../../utils/generateArrayOfNumbers";
 import classes from "./serversAndLanguages.module.css";
 const ServersAndLanguages = ({
+  streamLinksAvaiable,
   servers,
   dispatchServer,
   otherServers,
@@ -64,19 +65,61 @@ const ServersAndLanguages = ({
                             (server) => server.name == "server-" + serverNum
                           ).serverValue
                         }
-                        onChange={(e) => {
-                          dispatchServer({
-                            type: "SERVER",
-                            lang: lang.toLocaleUpperCase(),
-                            value: {
-                              name: "server-" + serverNum,
-                              serverValue: e.target.value,
-                            },
-                          });
-                        }}
+                        // onChange={(e) => {
+                        //   dispatchServer({
+                        //     type: "SERVER",
+                        //     lang: lang.toLocaleUpperCase(),
+                        //     value: {
+                        //       name: "server-" + serverNum,
+                        //       serverValue: e.target.value,
+                        //     },
+                        //   });
+                        // }}
+                        readOnly
                         placeholder={`server-${serverNum}`}
                         className={classes["input"]}
                       />
+                      {streamLinksAvaiable?.length > 0 && (
+                        <div className={classes["search-options"]}>
+                          {streamLinksAvaiable.map((item, index) => (
+                            <p
+                              onClick={() => {
+                                dispatchServer({
+                                  type: "SERVER",
+                                  lang: lang.toLocaleUpperCase(),
+                                  value: {
+                                    name: "server-" + serverNum,
+                                    streamLinkName: item.streamLinkName,
+                                    streamLinkUrl: item.streamLinkUrl,
+  
+                                    // serverValue: e.target.value,
+                                  },
+                                });
+      
+                                // dispatchDetail({
+                                //   type: "STREAM-LINK",
+                                //   streamLinkName: item.streamLinkName,
+                                //   streamLinkUrl: item.streamLinkUrl,
+                                // });
+                              }}
+                              style={{
+                                background:
+                                  index % 2 === 0 ? "inherit" : "#F5F5F5",
+                              }}
+                              key={`${item.streamLinkUrl}-${index}`}
+                              className={
+                                classes[
+                                  streamLinkName === item
+                                    ? "option"
+                                    : "selected-option"
+                                ]
+                              }
+                            >
+                              {item.streamLinkName}
+                            </p>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   )
                 )}
