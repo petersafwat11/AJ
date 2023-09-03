@@ -107,13 +107,13 @@ const ServersAndLanguages = ({
                                   index % 2 === 0 ? "inherit" : "#F5F5F5",
                               }}
                               key={`${item.streamLinkUrl}-${index}`}
-                              className={
-                                classes[
-                                  streamLinkName === item
-                                    ? "option"
-                                    : "selected-option"
-                                ]
-                              }
+                              // className={
+                              //   classes[
+                              //     streamLinkName === item
+                              //       ? "option"
+                              //       : "selected-option"
+                              //   ]
+                              // }
                             >
                               {item.streamLinkName}
                             </p>
