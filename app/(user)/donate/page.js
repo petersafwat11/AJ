@@ -2,8 +2,7 @@
 import React, { useState } from "react";
 import Marque from "../../../components/marque/Marque";
 import TopLayout from "../../../components/topLayout/TopLayout";
-import UnderDevelopment from "../../../components/underDevelopment/page/underDevelopment";
-import classes from "./donate.module.css";
+import UnderDevelopment from "../../../components/underDevelopment/page/UnderDevelopment";
 const Donate = () => {
   const [ethereumPopup, setEthereumPopup] = useState(false);
   const [bitcoinPopup, setBitcoinPopup] = useState(false);
@@ -20,9 +19,9 @@ const Donate = () => {
   };
 
   return (
-    <div className={classes["wrapper"]}>
+    <div className="wrapper">
       <TopLayout />
-      <div className={classes["wrapper-2"]}>
+      <div className="wrapper-2">
         <Marque />
 
         {/* <main className={classes["donate"]}>

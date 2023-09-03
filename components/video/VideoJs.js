@@ -1,7 +1,6 @@
 import React from "react";
 import videojs from "video.js";
 import { VideoJS } from "./VideoPlayer";
-import classes from "./video.module.css";
 
 // eslint-disable-next-line react/display-name
 const VideoJs = React.memo(({ url, handleStarting }) => {
@@ -35,11 +34,11 @@ const VideoJs = React.memo(({ url, handleStarting }) => {
   };
 
   return (
-    <div className={classes["wrapper"]}>
+    <div className="wrapper">
       <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
     </div>
   );
-})
+});
 
 export default VideoJs;
 

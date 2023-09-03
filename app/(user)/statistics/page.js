@@ -7,9 +7,9 @@ import classes from "./statistics.module.css";
 
 const Statistics = () => {
   return (
-    <div className={classes["wrapper"]}>
+    <div className="wrapper">
       <TopLayout />
-      <div className={classes["wrapper-2"]}>
+      <div className="wrapper-2">
         <Marque />
 
         <div className={classes["statistics"]}>

@@ -9,7 +9,7 @@ const NewsContent = ({ data, dispatchDetail }) => {
     removeFile(dispatchDetail, "SUBNEWS-IMAGE", index);
   };
   return (
-    <div className={classes["wrapper"]}>
+    <div className="wrapper">
       <div className={classes["container"]}>
         <div className={classes["top"]}>
           <h2 className={classes["title"]}>

@@ -8,9 +8,9 @@ import classes from "./contact.module.css";
 
 const Page = () => {
   return (
-    <div className={classes["wrapper"]}>
+    <div className="wrapper">
       <TopLayout />
-      <div className={classes["wrapper-2"]}>
+      <div className="wrapper-2">
         <Marque />
 
         <section className={classes["contact"]}>

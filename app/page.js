@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import Footer from "../components/footer/Footer";
 import NewsLetter from "../components/news-letter/NewsLetter";
@@ -11,12 +10,14 @@ import ShowMore from "../components/showMore/ShowMore";
 import Sports from "../components/sports/Sports";
 import TimezoneDropdown from "../components/timezomeDropdowm/TimezoneDropdown";
 import TopLayout from "../components/topLayout/TopLayout";
+import { getData } from "../utils/dashboardTablePagesFunctions";
 import classes from "./page.module.css";
-const Page = () => {
+const Page = async () => {
+  const currentEvents = await getData("sports/currentEvents");
   return (
-    <div className={classes["wrapper"]}>
+    <div className="wrapper">
       <TopLayout />
-      <div className={classes["wrapper-2"]}>
+      <div className="wrapper-2">
         <Marque />
         <div className={classes["container"]}>
           <div className={classes["search-mobile"]}>
@@ -56,7 +57,7 @@ const Page = () => {
                 <TimezoneDropdown />
               </div>
               <div className={classes["matches"]}>
-              {[1, 2, 3].map((item, index) => (
+                {[1, 2, 3].map((item, index) => (
                   <Match key={index} live={true} />
                 ))}
               </div>

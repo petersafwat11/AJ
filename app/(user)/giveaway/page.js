@@ -1,15 +1,14 @@
 import React from "react";
 import Marque from "../../../components/marque/Marque";
 import TopLayout from "../../../components/topLayout/TopLayout";
-import UnderDevelopment from "../../../components/underDevelopment/page/underDevelopment";
+import UnderDevelopment from "../../../components/underDevelopment/page/UnderDevelopment";
 import { getData } from "../../../utils/dashboardTablePagesFunctions";
-import classes from "./page.module.css";
 const GiveAway = async () => {
   const socialLinks = await getData("links", { fields: "social" });
   return (
-    <div className={classes["wrapper"]}>
+    <div className="wrapper">
       <TopLayout />
-      <div className={classes["wrapper-2"]}>
+      <div className="wrapper-2">
         <Marque />
         <div className="center">
           <UnderDevelopment />

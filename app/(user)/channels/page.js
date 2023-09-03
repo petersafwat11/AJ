@@ -11,9 +11,9 @@ const Page = async () => {
   });
   console.log(channelsServer.data.data);
   return (
-    <div className={classes["wrapper"]}>
+    <div className="wrapper">
       <TopLayout />
-      <div className={classes["wrapper-2"]}>
+      <div className="wrapper-2">
         <Marque />
         <ChannelsWrapper channelsServer={channelsServer.data.data} />
       </div>

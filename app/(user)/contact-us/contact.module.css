@@ -1,18 +1,3 @@
-.wrapper {
-  padding: 0;
-  margin: 0;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(16, 23, 26, 0.95),
-      rgba(21, 26, 31, 0.938)
-    ),
-    url(../../../public/wallpaper/main.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top;
-  overscroll-behavior: none;
-}
-
 .contact {
   max-width: 45rem;
   margin: 0 auto;
@@ -28,28 +13,6 @@
 }
 
 @media (max-width: 56.25rem) {
-  .wrapper-2 {
-    padding: env(safe-area-inset-top) env(safe-area-inset-right)
-      env(safe-area-inset-bottom) env(safe-area-inset-left);
-    margin: 0;
-    background-image: linear-gradient(
-        to right bottom,
-        rgba(16, 23, 26, 0.95),
-        rgba(21, 26, 31, 0.938)
-      ),
-      url(../../../public/wallpaper/main.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-    /* overscroll-behavior: none; */
-  }
-  .wrapper {
-    padding: 0;
-    margin: 0;
-    background-image: none;
-    /* overscroll-behavior: none; */
-  }
-
   .contact {
     max-width: min(35rem, 95%);
     margin: 0 auto;

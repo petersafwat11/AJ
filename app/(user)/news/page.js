@@ -11,9 +11,9 @@ const Page = () => {
   const [showSendMessage, setShowSendMessage] = useState(false);
 
   return (
-    <div className={classes["wrapper"]}>
+    <div className="wrapper">
       <TopLayout />
-      <div className={classes["wrapper-2"]}>
+      <div className="wrapper-2">
         <Marque />
 
         <main className={classes["news"]}>
@@ -21,7 +21,7 @@ const Page = () => {
             <h2 className={classes["heading"]}>NEWS</h2>
             <span></span>
           </div>
-          <div className={classes["wrapper"]}>
+          <div className="wrapper">
             <div className={classes["send-message"]}>
               {/* <SendMessage /> */}
             </div>

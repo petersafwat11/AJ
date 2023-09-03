@@ -2,14 +2,13 @@
 import React from "react";
 import Marque from "../../../components/marque/Marque";
 import TopLayout from "../../../components/topLayout/TopLayout";
-import classes from "./pricing.module.css";
-import UnderDevelopment from "../../../components/underDevelopment/page/underDevelopment";
+import UnderDevelopment from "../../../components/underDevelopment/page/UnderDevelopment";
 
 const page = () => {
   return (
-    <div className={classes["wrapper"]}>
+    <div className="wrapper">
       <TopLayout />
-      <div className={classes["wrapper-2"]}>
+      <div className="wrapper-2">
         <Marque />
 
         {/* <main className={classes["pricing"]}>

@@ -11,7 +11,7 @@ const page = () => {
   return (
     <div className={classes["container"]}>
       <h1 className={classes["title"]}>Chat Settings</h1>
-      <div className={classes["wrapper"]}>
+      <div className="wrapper">
         <div className={classes["first"]}>
           <Settings />
           <AutoMod />

@@ -10,9 +10,9 @@ const Page = () => {
   const router = useRouter();
   const [showSendMessage, setShowSendMessage] = useState(false);
   return (
-    <div className={classes["wrapper"]}>
+    <div className="wrapper">
       <TopLayout />
-      <div className={classes["wrapper-2"]}>
+      <div className="wrapper-2">
         <Marque />
 
         <div className={classes["news-article"]}>

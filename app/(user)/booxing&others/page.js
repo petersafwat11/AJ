@@ -42,9 +42,9 @@ const Page = () => {
   };
 
   return (
-    <div className={classes["wrapper"]}>
+    <div className="wrapper">
       <TopLayout />
-      <div className={classes["wrapper-2"]}>
+      <div className="wrapper-2">
         <Marque />
 
         <section className={classes["watch"]}>
@@ -104,7 +104,7 @@ const Page = () => {
               place={"Old Trafford"}
               half={"2nd Half: 47’"}
             />
-            <div className={classes["watch-video-wrapper"]}>
+            <div className="watch-video-wrapper">
               <div className={classes["social-icons"]}>
                 <SocialIcons
                   toggleShareLinks={toggleShareLinks}
@@ -112,7 +112,7 @@ const Page = () => {
                 />
               </div>
 
-              <div className={classes["watch-video"]}>{/* <VideoJs /> */}</div>
+              <div className="watch-video">{/* <VideoJs /> */}</div>
               <div className={classes["watch-video-wrapper-bottom"]}>
                 <div className={classes["dropdowns"]}>
                   {[

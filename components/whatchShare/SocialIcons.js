@@ -10,15 +10,15 @@ import classes from "./socialIcons.module.css";
 const SocialIcons = ({ toggleShareLinks, toggleReport }) => {
   return (
     <div className={classes["watch-video-share"]}>
-      <div className={classes["wrapper"]}>
+      <div className="wrapper">
         <BsTwitter className={classes["twitter-icon"]} />
         <span className={classes["tooltip"]}>Share on Twitter</span>
       </div>
-      <div className={classes["wrapper"]}>
+      <div className="wrapper">
         <MdFacebook className={classes["facebook-icon"]} />
         <span className={classes["tooltip"]}>Share on Facebook</span>
       </div>
-      <div className={classes["wrapper"]}>
+      <div className="wrapper">
         <IoLogoWhatsapp className={classes["whatsapp-icon"]} />
         <span className={classes["tooltip"]}>Share on Whatsapp</span>
       </div>
@@ -30,11 +30,11 @@ const SocialIcons = ({ toggleShareLinks, toggleReport }) => {
         <GrReddit className={classes["reddit-icon"]} />
         <span className={classes["tooltip"]}>Share on Reddit</span>
       </div>
-      <div className={classes["wrapper"]}>
+      <div className="wrapper">
         <FaTelegramPlane className={classes["telegram-icon"]} />
         <span className={classes["tooltip"]}>Share on Telegram</span>
       </div>
-      <div className={classes["wrapper"]}>
+      <div className="wrapper">
         <FaShareAlt
           onClick={toggleShareLinks}
           className={classes["share-icon"]}

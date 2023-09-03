@@ -74,7 +74,7 @@ const Page = () => {
   return (
     <div className={classes["container"]}>
       {existMatch ? (
-        <div className={classes["wrapper"]}>
+        <div className="wrapper">
           <ToastContainer
             position="top-center"
             autoClose={5000}

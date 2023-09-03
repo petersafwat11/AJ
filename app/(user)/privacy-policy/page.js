@@ -21,7 +21,7 @@ const Page = () => {
                 <p>Privacy Policy</p>
                 <p>Last Updated: 01/03/2023 </p>
               </div>
-              <div className={classes["wrapper"]}>
+              <div className="wrapper">
                 <h3>1. Your Acceptance </h3>
                 <p>
                   BY USING AND/OR VISITING THIS WEBSITE (collectively, including
@@ -43,7 +43,7 @@ const Page = () => {
                   the Terms and Conditions of using this website.
                 </p>
               </div>
-              <div className={classes["wrapper"]}>
+              <div className="wrapper">
                 <h3>2. AJSPORTS Website</h3>
                 <p>
                   These Terms of Service apply to all users of the AJ Sports.ch
@@ -59,7 +59,7 @@ const Page = () => {
                   privacy policy of each other website that you visit.
                 </p>
               </div>
-              <div className={classes["wrapper"]}>
+              <div className="wrapper">
                 <h3> 3. Website Access</h3>
                 <ul>
                   <li>
@@ -113,8 +113,8 @@ const Page = () => {
                   </li>
                 </ul>
               </div>
-              <div className={classes["wrapper-2"]}>
-                <div className={classes["wrapper"]}>
+              <div className="wrapper-2">
+                <div className="wrapper">
                   <h3>4. Intellectual Property Rights</h3>
                   <p>
                     The content on the AJ Sports.ch Website, except third party
@@ -148,7 +148,7 @@ const Page = () => {
                     the Content therein.
                   </p>
                 </div>
-                <div className={classes["wrapper"]}>
+                <div className="wrapper">
                   <h3> 5. User Submissions</h3>
                   <ul>
                     <li>
@@ -324,7 +324,7 @@ const Page = () => {
                   </ul>
                 </div>
               </div>
-              <div className={classes["wrapper"]}>
+              <div className="wrapper">
                 <h3>6. Warranty Disclaimer </h3>
                 <p>
                   YOU AGREE THAT YOUR USE OF THE AJ Sports.ch WEBSITE SHALL BE
@@ -360,7 +360,7 @@ const Page = () => {
                   APPROPRIATE.
                 </p>
               </div>
-              <div className={classes["wrapper"]}>
+              <div className="wrapper">
                 <h3> 7. Limitation of Liability</h3>
                 <p>
                   {" "}
@@ -397,7 +397,7 @@ const Page = () => {
                   local law.
                 </p>
               </div>
-              <div className={classes["wrapper"]}>
+              <div className="wrapper">
                 <h3> 8. Indemnity </h3>
                 <p>
                   You agree to defend, indemnify and hold harmless AJ Sports.ch,
@@ -415,7 +415,7 @@ const Page = () => {
                   the AJ Sports.ch Website.
                 </p>
               </div>
-              <div className={classes["wrapper"]}>
+              <div className="wrapper">
                 <h3> 9. Ability to Accept Terms of Service</h3>
                 <p>
                   You affirm that you are either more than 18 years of age, or
@@ -432,7 +432,7 @@ const Page = () => {
                   you.
                 </p>
               </div>
-              <div className={classes["wrapper"]}>
+              <div className="wrapper">
                 <h3>10. Assignment</h3>
                 <p>
                   These Terms of Use, and any rights and licenses granted
@@ -440,7 +440,7 @@ const Page = () => {
                   be assigned by AJ Sports.ch without restriction.{" "}
                 </p>
               </div>
-              <div className={classes["wrapper"]}>
+              <div className="wrapper">
                 <h3> 11. General</h3>
                 <p>
                   You agree that: (i) the AJ Sports.ch Website shall be deemed
@@ -478,7 +478,7 @@ const Page = () => {
                   ACTION IS PERMANENTLY BARRED.
                 </p>
               </div>
-              <div className={classes["wrapper"]}>
+              <div className="wrapper">
                 <h3>Privacy Policy</h3>
                 <h3>Introduction.</h3>
                 <p>
@@ -492,7 +492,7 @@ const Page = () => {
                   Terms of Use.
                 </p>
               </div>
-              <div className={classes["wrapper"]}>
+              <div className="wrapper">
                 <h3> 1. Collection of Data.</h3>
                 <p>
                   Our registration process requires only a valid e-mail address
@@ -508,7 +508,7 @@ const Page = () => {
                   is set forth below.
                 </p>
               </div>
-              <div className={classes["wrapper"]}>
+              <div className="wrapper">
                 <h3>2. Use of Data.</h3>
                 <p>
                   We may use Data to customize and improve your user experience
@@ -530,7 +530,7 @@ const Page = () => {
                   to read the privacy policies that appear on those sites.{" "}
                 </p>
               </div>
-              <div className={classes["wrapper"]}>
+              <div className="wrapper">
                 <h3> 3. Cookies.</h3>
                 <p>
                   Like many web sites, we set and use cookies to enhance your
@@ -547,7 +547,7 @@ const Page = () => {
                   that may serve advertising on our site.
                 </p>
               </div>
-              <div className={classes["wrapper"]}>
+              <div className="wrapper">
                 <h3>4. Children.</h3>
                 <p>
                   We do not allow persons who are ages thirteen or younger to
@@ -555,7 +555,7 @@ const Page = () => {
                   contact our webmaster.{" "}
                 </p>
               </div>
-              <div className={classes["wrapper"]}>
+              <div className="wrapper">
                 <h3>5. Editing or Deleting </h3>
                 <p>
                   Your Account Information. We provide you with the ability to
@@ -570,7 +570,7 @@ const Page = () => {
                   see our Terms of Use for more information.
                 </p>
               </div>
-              <div className={classes["wrapper"]}>
+              <div className="wrapper">
                 <h3>6. Changes to this Privacy Policy.</h3>
                 <p>
                   {" "}
@@ -581,7 +581,7 @@ const Page = () => {
                   is contained within your user settings.
                 </p>
               </div>
-              <div className={classes["wrapper"]}>
+              <div className="wrapper">
                 <h3>7. NO GUARANTEES.</h3>
                 <p>
                   While this Privacy Policy states our standards for maintenance
@@ -592,14 +592,14 @@ const Page = () => {
                   relating to maintenance or nondisclosure of Data.
                 </p>
               </div>
-              <div className={classes["wrapper"]}>
+              <div className="wrapper">
                 <h3> 8. Contact Information.</h3>
                 <p>
                   If you have any questions about this Policy or our web site,
                   please feel free to contact our webmaster.
                 </p>
               </div>
-              <div className={classes["wrapper"]}>
+              <div className="wrapper">
                 <h3> 9. Third Party Ads</h3>
                 <p>
                   We use third-party advertising companies to serve ads when you

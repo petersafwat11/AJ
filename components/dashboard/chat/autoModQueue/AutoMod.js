@@ -35,7 +35,7 @@ const AutoMod = () => {
         </div>
       </div>
       {messages.map((message, index) => (
-        <div key={index} className={classes["wrapper"]}>
+        <div key={index} className="wrapper">
           <div className={classes["my-message-wrapper"]}>
             <div className={classes["message-details"]}>
               <p className={classes["message-username"]}>{message.usename}</p>

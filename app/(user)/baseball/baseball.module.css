@@ -26,11 +26,6 @@
   right: 1vw;
   z-index: 100;
 }
-.watch-football {
-  max-width: 95%;
-  margin: 0 auto;
-  padding-bottom: 7.2rem;
-}
 .navigate {
   display: flex;
   align-items: center;
@@ -47,21 +42,6 @@
   display: flex;
   justify-content: flex-end;
   width: 98%;
-}
-.watch-video-wrapper {
-  margin: 1.3rem auto 0;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  max-width: 59rem;
-}
-.watch-video {
-  margin-top: 0.4rem;
-  width: 98%;
-  height: 32.3rem;
-  border-radius: 1.25rem;
-  background: #0d1316;
-  overflow: hidden;
 }
 .watch-video-wrapper-bottom {
   display: flex;
@@ -96,33 +76,6 @@
 }
 
 @media (max-width: 56.25rem) {
-  .wrapper-2 {
-    padding: env(safe-area-inset-top) env(safe-area-inset-right)
-      env(safe-area-inset-bottom) env(safe-area-inset-left);
-    margin: 0;
-    background-image: linear-gradient(
-        to right bottom,
-        rgba(16, 23, 26, 0.95),
-        rgba(21, 26, 31, 0.938)
-      ),
-      url(../../../public/wallpaper/main.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-    /* overscroll-behavior: none; */
-  }
-  .wrapper {
-    padding: 0;
-    margin: 0;
-    background-image: none;
-    /* overscroll-behavior: none; */
-  }
-
-  .watch-football {
-    margin: 0 auto;
-    padding-bottom: 3rem;
-    max-width: min(38rem, 98%);
-  }
   .chat-icon {
     bottom: 3vh;
     right: 8%;
@@ -134,14 +87,6 @@
     bottom: 0;
     right: 0;
     z-index: 100;
-  }
-
-  .watch-video {
-    width: 100%;
-    height: min(60vh, 23rem);
-    border-radius: 0.625rem;
-    background: #0c1115;
-    overflow: hidden;
   }
 
   .navigate {
@@ -164,15 +109,5 @@
   }
   .who-will-win {
     width: min(95.5%, 27rem);
-  }
-}
-@media (max-width: 600px) {
-  .watch-video {
-    height: 14.5rem;
-  }
-  .watch-football {
-    max-width: 100%;
-    margin: 0 3px;
-    padding-bottom: 3rem;
   }
 }

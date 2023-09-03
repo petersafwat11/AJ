@@ -46,10 +46,10 @@ const Page = () => {
     setshowVideo(true);
   }, []);
   return (
-    <div className={classes["wrapper"]}>
+    <div className="wrapper">
       <TopLayout />
 
-      <div className={classes["wrapper-2"]}>
+      <div className="wrapper-2">
         <Marque />
 
         <section className={classes["watch-football"]}>
@@ -109,7 +109,7 @@ const Page = () => {
               place={"Old Trafford"}
               half={"2nd Half: 47’"}
             />
-            <div className={classes["watch-video-wrapper"]}>
+            <div className="watch-video-wrapper">
               <div className={classes["social-icons"]}>
                 <SocialIcons
                   toggleShareLinks={toggleShareLinks}
@@ -117,7 +117,7 @@ const Page = () => {
                 />
               </div>
 
-              <div id="my-root-div" className={classes["watch-video"]}>
+              <div id="my-root-div" className="watch-video">
                 <PlayerContainer />
               </div>
               <div className={classes["watch-video-wrapper-bottom"]}>

@@ -24,6 +24,10 @@ const ChannelsWrapper = ({ channelsServer }) => {
     channelsServers[0]?.streamLinkUrl
   );
 
+  const [playingServerName, setPlayingServerName] = useState(
+    channelsServers[0]?.channelName
+  );
+
   const [seacrhValue, setSearchValue] = useState("");
   const handleSearch = async (e) => {
     setSearchValue(e.target.value);
@@ -87,10 +91,11 @@ const ChannelsWrapper = ({ channelsServer }) => {
         <WatchNavigation page={"channels"} />
         <div className={classes["top-heading"]}>
           <span className={classes["heading-span"]}> Now Playing </span>
-          <h3 className={classes["heading-title"]}>Sky Sports</h3>
+          <h3 className={classes["heading-title"]}>{playingServerName}</h3>
           <LiveBtn text={"LIVE"} />
         </div>
-        <div className={classes["watch-video-wrapper"]}>
+        
+        <div className="watch-video-wrapper">
           <div className={classes["social-icons"]}>
             <SocialIcons
               toggleShareLinks={toggleShareLinks}
@@ -98,11 +103,9 @@ const ChannelsWrapper = ({ channelsServer }) => {
             />
           </div>
 
-          {starting ? (
-            <div className={classes["watch-video"]}></div>
-          ) : (
+          <div className="watch-video">
             <VideoJs handleStarting={handleStarting} url={playingServer} />
-          )}
+          </div>
           <div className={classes["watch-video-options"]}>
             <button className={classes["watch-video-options-server-name"]}>
               Server 1
@@ -118,6 +121,7 @@ const ChannelsWrapper = ({ channelsServer }) => {
               channelsServers.map((channel, index) => (
                 <button
                   onClick={() => {
+                    setPlayingServerName(channel.channelName);
                     setPlayingServer(channel.streamLinkUrl);
                   }}
                   key={index}

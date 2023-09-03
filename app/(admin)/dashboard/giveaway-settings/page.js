@@ -89,7 +89,7 @@ const Page = () => {
 
   return (
     <div className={classes["container"]}>
-            <ToastContainer
+      <ToastContainer
         position="top-center"
         autoClose={5000}
         hideProgressBar={false}
@@ -109,7 +109,7 @@ const Page = () => {
           first={"Save"}
         />
       </div>
-      <div className={classes["wrapper"]}>
+      <div className="wrapper">
         <Title
           data={giveawayPrize.title}
           dispatchPrizeDetail={dispatchPrizeDetail}
