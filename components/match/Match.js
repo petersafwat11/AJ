@@ -83,7 +83,7 @@ export const Match = ({ matchData }) => {
         <div className={classes["action-button"]}>
           <button
             onClick={() => {
-              router.push("/watch");
+              router.push(`/watch/${matchData._id}`);
             }}
             className={classes["watch-button"]}
           >

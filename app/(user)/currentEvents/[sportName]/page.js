@@ -90,11 +90,11 @@ const Page = () => {
               </div>
             </section>
           </div>
-          {otherMatches.total > 3 && (
+          {/* {otherMatches.total > 3 && (
             <div className={classes["show-more-button"]}>
               <ShowMore />
             </div>
-          )}
+          )} */}
         </div>
         {/* <NewsLetter />
         <Footer /> */}

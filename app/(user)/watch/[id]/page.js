@@ -2,23 +2,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import Chat from "../../../components/chat/Chat";
-import Dropdown from "../../../components/dropdown/Dropdown";
-import Report from "../../../components/report/Report";
-import ShareLinks from "../../../components/shareLinks/ShareLinks";
-import WatchDetails from "../../../components/watch-details/WatchDetailsFootball";
-import SocialIcons from "../../../components/whatchShare/SocialIcons";
-import WhoWillWin from "../../../components/whoWillWin/WhoWillWin";
+import Chat from "../../../../components/chat/Chat";
+import Dropdown from "../../../../components/dropdown/Dropdown";
+import Report from "../../../../components/report/Report";
+import ShareLinks from "../../../../components/shareLinks/ShareLinks";
+import WatchDetails from "../../../../components/watch-details/WatchDetailsFootball";
+import SocialIcons from "../../../../components/whatchShare/SocialIcons";
 
-import Casino from "../../../components/casino/Casino";
-import EventCountDown from "../../../components/eventCoutdown/EventCountDown";
-import ExtendButton from "../../../components/extendButton/ExtendButton";
-import Marque from "../../../components/marque/Marque";
-import Popup from "../../../components/popupWrapper/Popup";
-import ProtonVpn from "../../../components/protonVpn/ProtonVpn";
-import TopLayout from "../../../components/topLayout/TopLayout";
-import MatchSummery from "../../../components/watchtaktick/football/MatchSummery";
-import classes from "./football.module.css";
+import EventCountDown from "../../../../components/eventCoutdown/EventCountDown";
+import Marque from "../../../../components/marque/Marque";
+import Popup from "../../../../components/popupWrapper/Popup";
+import TopLayout from "../../../../components/topLayout/TopLayout";
+import UnderDevelopment from "../../../../components/underDevelopment/component/underDevelopment";
+import classes from "./page.module.css";
 
 const Page = () => {
   const [showChat, setShowChat] = useState(false);
@@ -144,10 +140,13 @@ const Page = () => {
                     />
                   ))}
                 </div>
-                <ExtendButton />
+                {/* <ExtendButton /> */}
               </div>
             </div>
-            <div className={classes["bottom"]}>
+            <div className="center">
+              <UnderDevelopment />
+            </div>
+            {/* <div className={classes["bottom"]}>
               <div className={classes["buy-vpn"]}>
                 <ProtonVpn />
               </div>
@@ -160,7 +159,7 @@ const Page = () => {
               <div className={classes["who-will-win"]}>
                 <WhoWillWin />
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
       </div>
