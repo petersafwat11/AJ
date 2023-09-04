@@ -208,6 +208,9 @@ button {
   max-width: 59rem;
 }
 .watch-video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 0.4rem;
   width: 100%;
   height: 32.3rem;

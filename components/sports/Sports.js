@@ -9,7 +9,7 @@ const Sports = () => {
     <section className={classes["sports"]}>
       <div
         onClick={() => {
-          router.push("/nfl");
+          router.push("/currentEvents/nfl");
         }}
         className={classes["nfl"]}
       >
@@ -24,7 +24,7 @@ const Sports = () => {
       </div>
       <div
         onClick={() => {
-          router.push("/basketball");
+          router.push("/currentEvents/basketball");
         }}
         className={classes["basketball"]}
       >
@@ -39,7 +39,7 @@ const Sports = () => {
       </div>
       <div
         onClick={() => {
-          router.push("/football");
+          router.push("/currentEvents/football");
         }}
         className={classes["football"]}
       >
@@ -54,7 +54,7 @@ const Sports = () => {
       </div>
       <div
         onClick={() => {
-          router.push("/boxing&others");
+          router.push("/currentEvents/boxing");
         }}
         className={classes["boxing"]}
       >
@@ -69,7 +69,7 @@ const Sports = () => {
       </div>
       <div
         onClick={() => {
-          router.push("/boxing&others");
+          router.push("/currentEvents/others");
         }}
         className={classes["other"]}
       >

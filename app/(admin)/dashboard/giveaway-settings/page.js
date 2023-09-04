@@ -109,7 +109,7 @@ const Page = () => {
           first={"Save"}
         />
       </div>
-      <div className="wrapper">
+      <div className={classes["wrapper"]}>
         <Title
           data={giveawayPrize.title}
           dispatchPrizeDetail={dispatchPrizeDetail}

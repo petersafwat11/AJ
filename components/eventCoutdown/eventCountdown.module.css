@@ -1,0 +1,48 @@
+.container {
+  width: 25.8rem;
+  border-radius: 0.85rem;
+  background: #161f24;
+  padding: 1.7rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.07rem;
+}
+.text-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+.text {
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: normal;
+}
+.remaining-time {
+  color: #fff;
+  font-family: RobotoBold;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: normal;
+}
+@media (max-width: 56.25rem) {
+  .logo {
+    display: none;
+  }
+  .container {
+    max-width: 15.8rem;
+    border-radius: 0.55rem;
+    padding: 1.065rem 2.125rem;
+  }
+  .text-wrapper {
+    gap: .75rem;
+  }
+  .text {
+    font-size: .77rem;
+  }
+  .remaining-time {
+    font-size: .77rem;
+  }
+}

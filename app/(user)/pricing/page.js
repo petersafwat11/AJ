@@ -10,7 +10,7 @@ const page = () => {
       <TopLayout />
       <div className="wrapper-2">
         <Marque />
-
+    
         {/* <main className={classes["pricing"]}>
           <div className={classes["top-heading"]}>
             <h2 className={classes["heading"]}>PRICING</h2>

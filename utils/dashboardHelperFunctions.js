@@ -103,7 +103,7 @@ export const flagItem = async (
     const updatedItem = await axios.patch(
       `${process.env.BACKEND_SERVER}/${endpoint}/${itemID}
         `,
-      JSON.stringify({ flagged: !item.flagged }),
+      { flagged: !item.flagged },
       {
         headers: {
           Authorization: `Bearer ${Cookies.get("token")}`,
@@ -113,6 +113,7 @@ export const flagItem = async (
     item = { ...item, flagged: !item.flagged };
     newItemsArray[foundIndex] = item;
     setItemsArray(newItemsArray);
+    console.log(item);
     notify("item updated successfully.", "success");
   } catch (error) {
     notify(

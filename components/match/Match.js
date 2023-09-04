@@ -1,27 +1,41 @@
 "use client";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
+import { calcRemainingTime, getMatchDate } from "../../utils/convertDateFormat";
 import classes from "./match.module.css";
-
-export const Match = ({ live, keyProp }) => {
+export const Match = ({ matchData }) => {
+  console.log(
+    `${process.env.STATIC_SERVER}/img/matches/${matchData?.firstTeamLogo}`
+  );
   const router = useRouter();
+  const callRemainingTime = useCallback(
+    () => calcRemainingTime(matchData?.eventDate),
+    [matchData?.eventDate]
+  );
+  const [remaingTime, setRemainingTime] = useState(true);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRemainingTime(callRemainingTime());
+    }, 1000);
+  }, [setRemainingTime, callRemainingTime]);
   return (
     <div className={classes["match"]}>
       <div className={classes["match-first"]}>
-        <p className={classes["date"]}>Aug 18 - 15:00</p>
-        {live ? (
-          <div className={classes["status-mobile"]}>2nd Half: 47’</div>
-        ) : (
-          <div className={classes["remaining-time-mobile"]}>15h 20m 15s</div>
+        <p className={classes["date"]}>{getMatchDate(matchData?.eventDate)}</p>
+        {remaingTime && (
+          <div className={classes["remaining-time-mobile"]}>{remaingTime}</div>
         )}
-        <p className={classes["leage"]}>Premeir League</p>
+        <p className={classes["leage"]}>{matchData?.eventLeague}</p>
       </div>
       <div className={classes["match-second"]}>
         <div className={classes["match-details"]}>
-          <p className={classes["date"]}>Aug 18 - 15:00</p>
-          <p className={classes["leage"]}>Premeir League</p>
+          <p className={classes["date"]}>
+            {getMatchDate(matchData?.eventDate)}
+          </p>
+          <p className={classes["leage"]}>{matchData?.eventLeague}</p>
         </div>
-        {live ? (
+        {!remaingTime ? (
           <div className="live-button-div">
             <div className={classes["live-button"]}>
               <div className={classes["dot-wrapper"]}>
@@ -34,30 +48,37 @@ export const Match = ({ live, keyProp }) => {
           <div className={classes["not-live"]}>LIVE</div>
         )}
         <div className={classes["first-team"]}>
-          <img
+          <Image
+            crossOrigin="anonymous"
             className={classes["first-team-image"]}
-            src="/svg/teams/man-united.svg"
-            alt="nfl"
-            // width="31"
-            height="34"
+            src={`${process.env.STATIC_SERVER}/img/matches/${matchData?.firstTeamLogo}`}
+            alt="team-logo"
+            height={34}
+            width={34}
           />
-          <p className={classes["first-team-name"]}>Man Utd</p>
+          <p className={classes["first-team-name"]}>
+            {matchData?.firstTeamName}
+          </p>
         </div>
         <div className={classes["match-vs"]}>vs</div>
         <div className={classes["second-team"]}>
-          <p className={classes["second-team-name"]}>Liverpool</p>
-
-          <img
+          <p className={classes["second-team-name"]}>
+            {matchData?.secondTeamName}
+          </p>
+          <Image
+            crossOrigin="anonymous"
             className={classes["second-team-image"]}
-            src="/svg/teams/liverpool.svg"
-            alt="liverpool"
-            height="34"
+            src={`${process.env.STATIC_SERVER}/img/matches/${matchData?.secondTeamLogo}`}
+            alt="team-logo"
+            height={34}
+            width={34}
           />
         </div>
-        {live ? (
+        {/* {!true ? (
           <div className={classes["status"]}>2nd Half: 47’</div>
-        ) : (
-          <div className={classes["remaining-time"]}>15h 20m 15s</div>
+        ) : ( */}
+        {remaingTime && (
+          <div className={classes["remaining-time"]}>{remaingTime}</div>
         )}
         <div className={classes["action-button"]}>
           <button
