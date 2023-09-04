@@ -14,11 +14,11 @@ import { getData } from "../utils/dashboardTablePagesFunctions";
 import classes from "./page.module.css";
 const Page = async () => {
   const currentEvents = await getData("sports/currentEvents");
-  const hotMatches = currentEvents.data.filter((item) => item.flagged === true);
+  const hotMatches = currentEvents?.data.filter((item) => item.flagged === true);
 
   const otherMatches = {
-    total: currentEvents.totalOtherMatches,
-    matches: currentEvents.data.filter((item) => item.flagged === false),
+    total: currentEvents?.totalOtherMatches,
+    matches: currentEvents?.data.filter((item) => item.flagged === false),
   };
 
   return (
@@ -48,8 +48,8 @@ const Page = async () => {
                 <TimezoneDropdown />
               </div>
               <div className={classes["matches"]}>
-                {hotMatches.map((matchData) => (
-                  <Match matchData={matchData} key={matchData._id} />
+                {hotMatches?.map((matchData) => (
+                  <Match matchData={matchData} key={matchData?._id} />
                 ))}
               </div>
             </section>
@@ -64,8 +64,8 @@ const Page = async () => {
                 <TimezoneDropdown />
               </div>
               <div className={classes["matches"]}>
-                {otherMatches.matches.map((matchData) => (
-                  <Match matchData={matchData} key={matchData._id} />
+                {otherMatches?.matches.map((matchData) => (
+                  <Match matchData={matchData} key={matchData?._id} />
                 ))}
               </div>
             </section>
