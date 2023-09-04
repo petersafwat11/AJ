@@ -65,6 +65,19 @@
   line-height: 1.125rem;
   color: #4ae96d;
 }
+.not-live {
+  padding: 0.28rem 1.12rem;
+  border: 0.9px solid #7b7b7b;
+  border-radius: 0.23rem;
+  font-family: RobotoSemibold;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+  color: #929292;
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 56.25rem) {
   .watch-details {
     margin: 1.25rem auto 0;
@@ -118,6 +131,14 @@
     font-family: RobotoSemiBold;
     font-size: 0.75rem;
     line-height: 0.85rem;
+  }
+  .not-live {
+    padding: 0.25rem 0.4rem;
+    width: 3.25rem;
+    height: 1.31rem;
+    display: flex;
+    align-items: center;
+    margin-top: 0;
   }
 }
 

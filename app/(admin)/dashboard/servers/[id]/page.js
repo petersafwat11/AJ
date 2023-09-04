@@ -109,7 +109,7 @@ const Page = () => {
 
           <div className={classes["servers-and-langs"]}>
             <ServersAndLanguages
-            streamLinksAvaiable={streamLinksAvaiable}
+              streamLinksAvaiable={streamLinksAvaiable}
               servers={servers}
               dispatchServer={dispatchServer}
               otherServers={otherServers}

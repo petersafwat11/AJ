@@ -1,22 +1,49 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import Chat from "../../../../components/chat/Chat";
-import Dropdown from "../../../../components/dropdown/Dropdown";
 import Report from "../../../../components/report/Report";
 import ShareLinks from "../../../../components/shareLinks/ShareLinks";
 import WatchDetails from "../../../../components/watch-details/WatchDetailsFootball";
 import SocialIcons from "../../../../components/whatchShare/SocialIcons";
 
+import { usePathname } from "next/navigation";
 import EventCountDown from "../../../../components/eventCoutdown/EventCountDown";
 import Marque from "../../../../components/marque/Marque";
 import Popup from "../../../../components/popupWrapper/Popup";
+import ServersButtons from "../../../../components/serverButtons/ServersButtons";
 import TopLayout from "../../../../components/topLayout/TopLayout";
 import UnderDevelopment from "../../../../components/underDevelopment/component/underDevelopment";
+import WatchNavigation from "../../../../components/watchNavigation/WatchNavigation";
+import { getMatchDate } from "../../../../utils/convertDateFormat";
+import { getData } from "../../../../utils/dashboardTablePagesFunctions";
 import classes from "./page.module.css";
-
 const Page = () => {
+  const [loading, setLoading] = useState(true);
+  const pathname = usePathname();
+  const [matchData, setMatchData] = useState({});
+  // const [otherMatches, setOtherMatches] = useState({});
+  const [error, setError] = useState(false);
+  useEffect(() => {
+    const matchId = pathname.slice(pathname.lastIndexOf("/") + 1);
+    const pageData = async () => {
+      try {
+        const eventData = await getData(`sports/${matchId}`);
+        console.log(eventData);
+        setMatchData(eventData.data);
+        //   setOtherMatches({
+        //     total: currentEvents.totalOtherMatches,
+        //     matches: currentEvents.data.filter((item) => item.flagged === false),
+        //   });
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+        setLoading(false);
+        setError(true);
+      }
+    };
+    pageData();
+  }, [setError, pathname]);
+
   const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
   const [showReport, setShowReport] = useState(false);
@@ -24,9 +51,9 @@ const Page = () => {
     index: 0,
     name: "english",
   });
-  const toggleChat = () => {
-    setShowChat(!showChat);
-  };
+  // const toggleChat = () => {
+  //   setShowChat(!showChat);
+  // };
   const toggleShareLinks = () => {
     setShowShareLinks(!showShareLinks);
   };
@@ -57,14 +84,12 @@ const Page = () => {
               <ShareLinks toggleShareLinks={toggleShareLinks} />
             </Popup>
           )}
-
           {showReport && (
             <Popup>
               <Report toggleReport={toggleReport} />
             </Popup>
           )}
-
-          {!showChat && (
+          {/* {!showChat && (
             <Image
               onClick={toggleChat}
               className={classes["chat-icon"]}
@@ -73,21 +98,24 @@ const Page = () => {
               width="120"
               height="120"
             />
-          )}
-          {showChat && (
+          )} */}
+          {/* {showChat && (
             <div className={classes["chat"]}>
               <Chat toggleChat={toggleChat} />
             </div>
-          )}
+          )} */}
+          {/* <div className={classes["navigate"]}>
+            <Link href="/">Home</Link>
+            <span> &gt; </span>
+            <Link href="/channels">Watch</Link>
+          </div> */}
+          <WatchNavigation page={"Watch"} />
+          {/* {loading ? (
+            <p className="center"> loading</p>
+          ) : ( */}
           <div className={classes["container"]}>
-            <div className={classes["navigate"]}>
-              <Link href="/">Home</Link>
-              <span> &gt; </span>
-              <Link href="/channels">Watch</Link>
-            </div>
-
             <WatchDetails
-              lieageImage={"/svg/watch/primier-liage.svg"}
+              lieageImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.leagueLogo}`}
               lieageImageDimetions={{
                 width: { desktop: "120", tablet: "84", mobile: "35" },
                 height: { desktop: "51", tablet: "36", mobile: "35" },
@@ -100,13 +128,13 @@ const Page = () => {
                 width: { desktop: "80", tablet: "56", mobile: "50" },
                 height: { desktop: "110", tablet: "78", mobile: "54" },
               }}
-              firstTeamImage={"/svg/watch/man-united.svg"}
-              firstTeamName={"Man united"}
-              seconteamImage={"/svg/watch/liverpool.svg"}
-              seconteamName={"Liverpool"}
-              date={"Aug 18 15:00"}
-              place={"Old Trafford"}
-              half={"2nd Half: 47’"}
+              firstTeamImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.firstTeamLogo}`}
+              firstTeamName={matchData?.firstTeamName}
+              seconteamImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.secondTeamLogo}`}
+              seconteamName={matchData?.secondTeamName}
+              date={getMatchDate(matchData?.eventDate)}
+              place={matchData.eventStadium}
+              // half={"2nd Half: 47’"}
             />
             <div className="watch-video-wrapper">
               <div className={classes["social-icons"]}>
@@ -117,11 +145,11 @@ const Page = () => {
               </div>
 
               <div id="my-root-div" className="watch-video">
-                <EventCountDown eventStartDate={"2023-09-04T07:30:50.000Z"} />
+                <EventCountDown eventStartDate={matchData?.eventDate} />
                 {/* <PlayerContainer /> */}
               </div>
               <div className={classes["watch-video-wrapper-bottom"]}>
-                <div className={classes["dropdowns"]}>
+                {/* <div className={classes["dropdowns"]}>
                   {[
                     { name: "english", options: ["1", "2", "3"] },
                     { name: "العربية", options: ["1", "2", "3"] },
@@ -139,13 +167,36 @@ const Page = () => {
                       options={item.options}
                     />
                   ))}
-                </div>
+                </div> */}
+                <ServersButtons
+                  servers={["ENGLISH", "العربية", "ESPAÑOL", "DUTCH"]}
+                />
                 {/* <ExtendButton /> */}
+                <div className={classes["modes-icons"]}>
+                  <div className={classes["icon-div"]}>
+                    <Image
+                      className={classes["threat-mode-icon"]}
+                      src="/svg/watch/threat-mode.svg"
+                      alt="threat-mode"
+                      height={18}
+                      width={18}
+                    />
+                  </div>
+                  <div className={classes["icon-div"]}>
+                    <Image
+                      className={classes["threat-mode-icon"]}
+                      src="/svg/watch/extend.svg"
+                      alt="extend-mode"
+                      height={15}
+                      width={15}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
             <div className="center">
               <UnderDevelopment />
-            </div>
+            </div>{" "}
             {/* <div className={classes["bottom"]}>
               <div className={classes["buy-vpn"]}>
                 <ProtonVpn />
@@ -161,6 +212,7 @@ const Page = () => {
               </div>
             </div> */}
           </div>
+          {/* )}{" "} */}
         </section>
       </div>
     </div>

@@ -18,7 +18,7 @@ export const mainserversReducers = (state, action) => {
     } else if (action.type === "NUM") {
       let serversNames = generateArray(action.value)
         .map((num) => `server-${num}`)
-        .map((name) => ({ name: name, serverValue: "" }));
+        .map((name) => ({ name: name, serverValue: {} }));
 
       return {
         ...state,
@@ -34,7 +34,7 @@ export const mainserversReducers = (state, action) => {
       );
       newServers.push({
         name: action.value.name,
-        serverValue: action.value.serverValue,
+        serverValue: {name: action.value.streamLinkName, streamLinkUrl:action.value.streamLinkUrl },
       });
 
       return {
@@ -54,7 +54,7 @@ export const mainserversReducers = (state, action) => {
     } else if (action.type === "NUM") {
       let serversNames = generateArray(action.value)
         .map((num) => `server-${num}`)
-        .map((name) => ({ name: name, serverValue: "" }));
+        .map((name) => ({ name: name, serverValue: {} }));
 
       return {
         ...state,
@@ -70,7 +70,7 @@ export const mainserversReducers = (state, action) => {
       );
       newServers.push({
         name: action.value.name,
-        serverValue: action.value.serverValue,
+        serverValue: {name: action.value.streamLinkName, streamLinkUrl:action.value.streamLinkUrl },
       });
 
       return {
@@ -90,7 +90,7 @@ export const mainserversReducers = (state, action) => {
     } else if (action.type === "NUM") {
       let serversNames = generateArray(action.value)
         .map((num) => `server-${num}`)
-        .map((name) => ({ name: name, serverValue: "" }));
+        .map((name) => ({ name: name, serverValue: {} }));
 
       return {
         ...state,
@@ -105,8 +105,8 @@ export const mainserversReducers = (state, action) => {
         (server) => server.name !== action.value.name
       );
       newServers.push({
-        name: action.value.name,
-        serverValue: action.value.serverValue,
+        name: action.value.name,                                    
+        serverValue: {name: action.value.streamLinkName, streamLinkUrl:action.value.streamLinkUrl },
       });
 
       return {

@@ -77,6 +77,7 @@ const WatchDetails = ({
     <div className={classes["watch-details"]}>
       <div className={classes["watch-details-first"]}>
         <img
+          crossOrigin="anonymous"
           className={classes["sport-image-first"]}
           src={lieageImage}
           alt="other"
@@ -91,6 +92,7 @@ const WatchDetails = ({
       <div className={classes["watch-details-second"]}>
         <div className={classes["first-team"]}>
           <img
+            crossOrigin="anonymous"
             className={classes["team-image"]}
             src={firstTeamImage}
             alt="other"
@@ -103,6 +105,7 @@ const WatchDetails = ({
         <div className={classes["second-team"]}>
           <p className={classes["second-team-name"]}>{seconteamName}</p>
           <img
+            crossOrigin="anonymous"
             className={classes["team-image"]}
             src={seconteamImage}
             alt="other"
@@ -112,8 +115,12 @@ const WatchDetails = ({
         </div>
       </div>
       <div className={classes["watch-details-last"]}>
-        <p className={classes["half"]}>{half}</p>
-        <LiveButton text={"LIVE"} />
+        {/* <p className={classes["half"]}>{half}</p> */}
+        {true ? (
+          <div className={classes["not-live"]}>LIVE</div>
+        ) : (
+          <LiveButton text={"LIVE"} />
+        )}
       </div>
     </div>
   );

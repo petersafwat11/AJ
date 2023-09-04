@@ -63,7 +63,7 @@ const ServersAndLanguages = ({
                         value={
                           servers[lang.toLowerCase()].channels.find(
                             (server) => server.name == "server-" + serverNum
-                          ).serverValue
+                          ).serverValue.name
                         }
                         // onChange={(e) => {
                         //   dispatchServer({
@@ -91,29 +91,25 @@ const ServersAndLanguages = ({
                                     name: "server-" + serverNum,
                                     streamLinkName: item.streamLinkName,
                                     streamLinkUrl: item.streamLinkUrl,
-  
-                                    // serverValue: e.target.value,
                                   },
                                 });
-      
-                                // dispatchDetail({
-                                //   type: "STREAM-LINK",
-                                //   streamLinkName: item.streamLinkName,
-                                //   streamLinkUrl: item.streamLinkUrl,
-                                // });
                               }}
                               style={{
                                 background:
                                   index % 2 === 0 ? "inherit" : "#F5F5F5",
                               }}
                               key={`${item.streamLinkUrl}-${index}`}
-                              // className={
-                              //   classes[
-                              //     streamLinkName === item
-                              //       ? "option"
-                              //       : "selected-option"
-                              //   ]
-                              // }
+                              className={
+                                classes[
+                                  item.streamLinkName ===
+                                  servers[lang.toLowerCase()].channels.find(
+                                    (server) =>
+                                      server.name == "server-" + serverNum
+                                  ).serverValue.name
+                                    ? "option"
+                                    : "selected-option"
+                                ]
+                              }
                             >
                               {item.streamLinkName}
                             </p>

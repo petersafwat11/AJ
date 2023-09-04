@@ -1,12 +1,11 @@
 "use client";
 import axios from "axios";
-import { cookies } from "next/headers";
 
+import Cookies from "js-cookie";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import classes from "./loginForm.module.css";
-import Cookies from "js-cookie";
 
 const LoginForm = () => {
   const notify = (message, type) => toast[type](message);
@@ -17,8 +16,7 @@ const LoginForm = () => {
   const searchParams = useSearchParams();
   const protectedPage = searchParams.get("next");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
     try {
       const response = await axios.post(
         `${process.env.BACKEND_SERVER}/users/login`,
@@ -47,7 +45,7 @@ const LoginForm = () => {
     console.log("normal");
     if (event.key === "Enter") {
       // Handle the Enter key press here
-      console.log("Enter key pressed:");
+      handleSubmit();
     }
   };
 
@@ -79,6 +77,7 @@ const LoginForm = () => {
           placeholder="Enter Your Email"
           className={classes["input"]}
           value={email}
+          onKeyDown={handleKeyDown}
           onChange={(e) => {
             setEmail(e.target.value);
           }}
@@ -99,11 +98,7 @@ const LoginForm = () => {
           }}
         />
       </div>
-      <button
-        type="submit"
-        onClick={handleSubmit}
-        className={classes["login-button"]}
-      >
+      <button onClick={handleSubmit} className={classes["login-button"]}>
         Log in
       </button>
       <p

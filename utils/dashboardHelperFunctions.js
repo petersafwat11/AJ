@@ -77,15 +77,10 @@ export const saveItem = async (
     const dataSent = await request;
     dispatchDetail({ type: "CLEAR-ALL" });
     notify("item saved successfully.", "success");
-    console.dir(data);
+    console.dir(dataSent);
     router.push(`${pathname.slice(0, pathname.lastIndexOf("/"))}`);
   } catch (error) {
-    notify(
-      error.response.data.error?.errors
-        ? Object.values(error.response.data.error.errors)[0].message
-        : error.response.data.message,
-      "error"
-    );
+    notify(error.response?.message, "error");
     console.log("err", error);
   }
 };

@@ -62,7 +62,21 @@
   justify-content: flex-start;
   gap: 0.56rem;
 }
-
+.modes-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.56rem;
+}
+.icon-div {
+  width: 2.34rem;
+  height: 2.34rem;
+  border-radius: 50%;
+  background-color: rgba(7, 17, 23, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .bottom {
   display: flex;
   align-items: center;
