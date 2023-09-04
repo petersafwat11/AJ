@@ -116,11 +116,11 @@ const WatchDetails = ({
       </div>
       <div className={classes["watch-details-last"]}>
         {/* <p className={classes["half"]}>{half}</p> */}
-        {true ? (
+        {/* {true ? ( */}
           <div className={classes["not-live"]}>LIVE</div>
-        ) : (
+        {/* ) : (
           <LiveButton text={"LIVE"} />
-        )}
+        )} */}
       </div>
     </div>
   );
