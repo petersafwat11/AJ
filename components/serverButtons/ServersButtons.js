@@ -5,8 +5,7 @@ const ServersButtons = ({ servers }) => {
     <div className={classes["container"]}>
       {servers.map((item, index) => (
         <div key={index} className={classes["lang"]}>
-          {/* {item ==='العربية' ? <p>{item} <p/>: <p>
-            {item}</p>} */}
+          {item === "العربية" ? <p>{item} </p> : <p>{item}</p>}
         </div>
       ))}
     </div>
