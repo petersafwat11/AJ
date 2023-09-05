@@ -12,8 +12,7 @@ export const getData = async (route, dispatchDetail, endpoint) => {
         },
       }
     );
-
-    dispatchDetail({ type: "UPDATE-ALL", value: response.data.data.data });
+    dispatchDetail({ type: "UPDATE-ALL", value: response.data.data });
   } catch (error) {
     dispatchDetail({ type: "NOT-FOUND", value: error.response.data.message });
     console.log("error", error);

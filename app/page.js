@@ -66,7 +66,7 @@ const Page = async () => {
                 <TimezoneDropdown />
               </div>
               <div className={classes["matches"]}>
-                {otherMatches?.matches.map((matchData) => (
+                {otherMatches?.matches?.map((matchData) => (
                   <Match matchData={matchData} key={matchData?._id} />
                 ))}
               </div>

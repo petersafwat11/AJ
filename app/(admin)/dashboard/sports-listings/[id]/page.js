@@ -177,22 +177,22 @@ const Page = () => {
         <p className={classes["label"]}>Listing ID: 28</p>
         <div className={classes["first"]}>
           <SportCategory
-            data={match.sportCategory}
+            data={match?.sportCategory}
             dispatchDetail={dispatchDetail}
           />
           <TeamsNames
             data={{
-              firstTeamName: match.firstTeamName,
-              secondTeamName: match.secondTeamName,
+              firstTeamName: match?.firstTeamName,
+              secondTeamName: match?.secondTeamName,
             }}
             dispatchDetail={dispatchDetail}
           />
           <EventsDetails
             data={{
-              matchId: match.matchId,
-              eventDate: match.eventDate,
-              eventLeague: match.eventLeague,
-              eventStadium: match.eventStadium,
+              matchId: match?.matchId,
+              eventDate: match?.eventDate,
+              eventLeague: match?.eventLeague,
+              eventStadium: match?.eventStadium,
             }}
             dispatchDetail={dispatchDetail}
           />
@@ -200,38 +200,38 @@ const Page = () => {
         <div className={classes["second"]}>
           <TeamsLogos
             data={{
-              backgroundLogo: match.backgroundLogo,
-              leagueLogo: match.leagueLogo,
-              firstTeamLogo: match.firstTeamLogo,
-              secondTeamLogo: match.secondTeamLogo,
+              backgroundLogo: match?.backgroundLogo,
+              leagueLogo: match?.leagueLogo,
+              firstTeamLogo: match?.firstTeamLogo,
+              secondTeamLogo: match?.secondTeamLogo,
             }}
             dispatchDetail={dispatchDetail}
           />
 
           <PlayerTiming
             dispatchActionType={"PLAY-STREAM"}
-            data={match.playStream}
+            data={match?.playStream}
             dispatchDetail={dispatchDetail}
             width={"13.8rem"}
             title={"When to allow stream to play"}
           />
           <PlayerTiming
             dispatchActionType={"REMOVE-STREAM"}
-            data={match.removeStream}
+            data={match?.removeStream}
             dispatchDetail={dispatchDetail}
             title={"When to delete page & listing"}
           />
           <PlayerTiming
             dispatchActionType={"REMOVE-COUNTDOWN"}
-            data={match.removeCountdown}
+            data={match?.removeCountdown}
             dispatchDetail={dispatchDetail}
             title={"When to show LIVE & remove countdown"}
           />
           <Poll
             data={{
-              showsPoll: match.showsPoll,
-              firstTeamPoll: match.firstTeamPoll,
-              secondTeamPoll: match.secondTeamPoll,
+              showsPoll: match?.showsPoll,
+              firstTeamPoll: match?.firstTeamPoll,
+              secondTeamPoll: match?.secondTeamPoll,
             }}
             dispatchDetail={dispatchDetail}
           />
