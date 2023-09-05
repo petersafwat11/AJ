@@ -28,7 +28,11 @@ const Page = () => {
     const pageData = async () => {
       try {
         const eventData = await getData(`sports/${matchId}`);
-        console.log(eventData);
+        console.log(
+          eventData?.data?.servers[0]?.mainLanguages?.filter(
+            (lang) => lang.checked === true
+          )
+        );
         setMatchData(eventData.data);
         //   setOtherMatches({
         //     total: currentEvents.totalOtherMatches,

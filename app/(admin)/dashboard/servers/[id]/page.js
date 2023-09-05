@@ -64,11 +64,13 @@ const Page = () => {
     const getServersData = async () => {
       const response = await getData(`sports/${id}`);
       const servers = await getData(`servers/${id}`);
-      const match = response?.data?.data;
+      const match = response?.data;
       const existServers = servers?.data?.data[0];
+      console.log(match, existServers);
+
       setExistedMatch(match);
       setExistedServers(existServers);
-      console.log("data fetched", existServers, match);
+      console.log("data fetched", response, servers);
     };
     getServersData();
   }, [pathname, setExistedMatch, setExistedServers]);

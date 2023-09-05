@@ -6,7 +6,6 @@ import React from "react";
 import HomeSearch from "../components/homeSearch/HomeSearch";
 import Marque from "../components/marque/Marque";
 import Match from "../components/match/Match";
-import ShowMore from "../components/showMore/ShowMore";
 import Sports from "../components/sports/Sports";
 import TimezoneDropdown from "../components/timezomeDropdowm/TimezoneDropdown";
 import TopLayout from "../components/topLayout/TopLayout";
@@ -14,7 +13,10 @@ import { getData } from "../utils/dashboardTablePagesFunctions";
 import classes from "./page.module.css";
 const Page = async () => {
   const currentEvents = await getData("sports/currentEvents");
-  const hotMatches = currentEvents?.data.filter((item) => item.flagged === true);
+  console.log(currentEvents);
+  const hotMatches = currentEvents?.data.filter(
+    (item) => item.flagged === true
+  );
 
   const otherMatches = {
     total: currentEvents?.totalOtherMatches,

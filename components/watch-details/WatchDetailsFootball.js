@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import LiveButton from "../live-button/LiveButton";
 
+import Image from "next/image";
 import classes from "./watchDetails.module.css";
 const WatchDetails = ({
   lieageImage,
@@ -91,7 +91,7 @@ const WatchDetails = ({
       </div>
       <div className={classes["watch-details-second"]}>
         <div className={classes["first-team"]}>
-          <img
+          <Image
             crossOrigin="anonymous"
             className={classes["team-image"]}
             src={firstTeamImage}
@@ -104,7 +104,7 @@ const WatchDetails = ({
         <span className={classes["vs"]}>VS</span>
         <div className={classes["second-team"]}>
           <p className={classes["second-team-name"]}>{seconteamName}</p>
-          <img
+          <Image
             crossOrigin="anonymous"
             className={classes["team-image"]}
             src={seconteamImage}
@@ -117,7 +117,7 @@ const WatchDetails = ({
       <div className={classes["watch-details-last"]}>
         {/* <p className={classes["half"]}>{half}</p> */}
         {/* {true ? ( */}
-          <div className={classes["not-live"]}>LIVE</div>
+        <div className={classes["not-live"]}>LIVE</div>
         {/* ) : (
           <LiveButton text={"LIVE"} />
         )} */}
