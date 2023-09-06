@@ -310,3 +310,12 @@ button {
 .slick-arrow.slick-next {
   display: none !important;
 }
+@media (max-width: 56.25rem) {
+  .slick-track {
+    gap: 0.3rem !important;
+  }
+  .slick-slide {
+    width: 6.2rem !important;
+    height: 2rem !important;
+  }
+}

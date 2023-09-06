@@ -27,41 +27,37 @@
 }
 @media (max-width: 56.25rem) {
   .container {
-    width: 37rem;
-    padding: 2.4rem 1.5rem 3.3rem;
-    border-radius: 0.8rem;
-  }
-  .clock-img {
-    width: 170px;
-    height: 170px;
+    width: 26.3rem;
+    padding: 1.7rem 2.2rem 1.9rem;
+    border-radius: 0.9rem;
   }
   .title {
-    font-size: 1.7rem;
-    line-height: 127.5%;
-    margin: 1.15rem auto 1.35rem;
+    font-size: 1.3rem;
+    margin: 0.9rem auto 0.7rem;
   }
   .thanks-message {
-    font-size: 0.85rem;
-    line-height: 180%;
+    font-size: 0.6rem;
+  }
+  .clock-img {
+    width: 90px;
+    height: 90px;
   }
 }
 @media (max-width: 31.25rem) {
   .container {
-    max-width: 100%;
-    padding: 2.2rem 1.3rem 3rem;
-    border-radius: 0.8rem;
-  }
-  .clock-img {
-    width: 145px;
-    height: 145px;
+    width: 26.3rem;
+    padding: 1.7rem 2.2rem 1.9rem;
+    border-radius: 0.9rem;
   }
   .title {
-    font-size: 1.35rem;
-    line-height: 127.5%;
-    margin: 0.9rem auto 1.2rem;
+    font-size: 1.3rem;
+    margin: 0.9rem auto 0.7rem;
   }
   .thanks-message {
-    font-size: 0.8rem;
-    line-height: 180%;
+    font-size: 0.6rem;
+  }
+  .clock-img {
+    width: 90px;
+    height: 90px;
   }
 }

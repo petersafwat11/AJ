@@ -21,3 +21,9 @@
 .next-wrapper {
   right: -2rem;
 }
+@media (max-width: 56.25rem) {
+  .prev-wrapper,
+  .next-wrapper {
+    display: none;
+  }
+}

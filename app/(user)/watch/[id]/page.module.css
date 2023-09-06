@@ -121,6 +121,36 @@
     background: #0c1115;
     overflow: hidden;
   }
+  .watch-video-wrapper-bottom {
+    margin: 1rem auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    width: 25.125rem;
+    height: 3.125rem;
+    flex-shrink: 0;
+    border-radius: 1.56rem;
+    background: #0d1317;
+    padding: 0;
+  }
+  .modes-icons {
+    gap: 0.5rem;
+    width: 5.25rem;
+    height: 2.75rem;
+    border-radius: 1.875rem;
+    background: rgba(12, 27, 37, 0.7);
+  }
+  .icon-div {
+    width: 2.03rem;
+    height: 2.03rem;
+    border-radius: 50%;
+    background-color: rgba(7, 17, 23, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
 
   .navigate {
     gap: 0.25rem;
@@ -152,5 +182,10 @@
     max-width: 100%;
     margin: 0 3px;
     padding-bottom: 3rem;
+  }
+}
+@media (max-width: 400px) {
+  .watch-video-wrapper-bottom {
+    width: 21.125rem;
   }
 }

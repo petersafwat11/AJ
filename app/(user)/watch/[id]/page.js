@@ -7,7 +7,7 @@ import WatchDetails from "../../../../components/watch-details/WatchDetailsFootb
 import SocialIcons from "../../../../components/whatchShare/SocialIcons";
 
 import { usePathname } from "next/navigation";
-import EventCountDown from "../../../../components/eventCoutdown/EventCountDown";
+import HlcPlayer from "../../../../components/hlcPlayer/HlcPlayer";
 import Marque from "../../../../components/marque/Marque";
 import Popup from "../../../../components/popupWrapper/Popup";
 import ServersButtons from "../../../../components/serverButtons/ServersButtons";
@@ -149,7 +149,10 @@ const Page = () => {
               </div>
 
               <div id="my-root-div" className="watch-video">
-                <EventCountDown eventStartDate={matchData?.eventDate} />
+                {/* <EventCountDown eventStartDate={matchData?.eventDate} /> */}
+                <HlcPlayer
+                  url={matchData?.servers?.mainLanguages?.english?.channels[0]}
+                />
                 {/* <PlayerContainer /> */}
               </div>
               <div className={classes["watch-video-wrapper-bottom"]}>

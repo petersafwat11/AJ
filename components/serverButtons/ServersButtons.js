@@ -11,10 +11,26 @@ const ServersButtons = ({ servers }) => {
 
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
     nextArrow: currentSlide === 2 ? null : <NextArrow />,
     // prevArrow: <PrevArrow />,
     prevArrow: currentSlide === 0 ? null : <PrevArrow />,
