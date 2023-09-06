@@ -8,7 +8,9 @@ import Match from "../../match/Match";
 import Sports from "../../sports/Sports";
 import TimezoneDropdown from "../../timezomeDropdowm/TimezoneDropdown";
 import classes from "./wrapper.module.css";
-const Wrapper = ({ hotMatches, otherMatches }) => {
+const Wrapper = ({ hot, other }) => {
+  const [hotMatches, setHotMatches] = useState(hotMatches);
+  const [otherMatches, setOtherHotMAtches] = useState(otherMatches);
   const [sportCategory, setSportCategory] = useState("Football");
   const changeSportCategory = (cat) => {
     setSportCategory(cat);
@@ -21,11 +23,18 @@ const Wrapper = ({ hotMatches, otherMatches }) => {
         limit: undefined,
         sportCategory: sportCategory,
       });
+      setHotMatches(
+        response?.data?.data?.filter((item) => item.flagged === true)
+      );
+      setOtherHotMAtches({
+        total: response?.data?.totalOtherMatches,
+        matches: response?.data?.data?.filter((item) => item.flagged === false),
+      });
       console.log(response);
     } catch (err) {
       console.log(err);
     }
-  }, []);
+  }, [sportCategory]);
   useEffect(() => {
     fetchNewData();
   }, [sportCategory, fetchNewData]);

@@ -27,8 +27,7 @@ const Page = async () => {
       <TopLayout />
       <div className="wrapper-2">
         <Marque />
-        <Wrapper hotMatches={hotMatches} otherMatches={otherMatches} />
-
+        <Wrapper hot={hotMatches} other={otherMatches} />
         <NewsLetter />
         <Footer />
       </div>
