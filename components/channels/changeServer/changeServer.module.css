@@ -1,0 +1,40 @@
+.container,
+.servers,
+.server,
+.selected-server {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  gap: 3.14rem;
+  flex-direction: column;
+}
+.servers {
+  gap: 1.45rem;
+  flex-direction: column;
+}
+.server,
+.selected-server {
+  width: 15.8rem;
+  height: 3.75rem;
+  border-radius: 2.9rem;
+  text-align: center;
+  font-family: RobotoSemiBold;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  cursor: pointer;
+}
+.server {
+  background: #fe4747;
+  color: #fff;
+}
+.selected-server {
+  background: #171c20;
+  color: #505050;
+}
+.close {
+  cursor: pointer;
+}

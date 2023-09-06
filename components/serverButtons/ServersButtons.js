@@ -1,22 +1,40 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import "react-multi-carousel/lib/styles.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import { NextArrow, PrevArrow } from "./Arrows";
 import classes from "./serverButtons.module.css";
 const ServersButtons = ({ servers }) => {
-  return (
-    <div className={classes["container"]}>
-      <div className={classes["langs"]}>
-        {servers.map((item, index) => (
-          <div key={index} className={classes["lang"]}>
-            {/* {item === "العربية" ? ( */}
-              <p className={classes["lang-text"]}>{item} </p>
-            {/* ) : (
-              <p className={classes["other-lang"]}>{item}</p>
-            )} */}
-          </div>
-        ))}
-      </div>
-      {/* <div className={classes['arrow']}>
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-      </div> */}
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    nextArrow: currentSlide === 2 ? null : <NextArrow />,
+    // prevArrow: <PrevArrow />,
+    prevArrow: currentSlide === 0 ? null : <PrevArrow />,
+    afterChange: (current) => {
+      console.log(current);
+      setCurrentSlide(current);
+    },
+  };
+
+  return (
+    <div className={classes["wrapper"]}>
+      <div className={classes["container"]}>
+        <Slider {...settings}>
+          {servers.map((item, index) => (
+            <div key={`${index}-${item}`} className={classes["lang"]}>
+              <p className={classes["lang-text"]}>{item}</p>
+            </div>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };

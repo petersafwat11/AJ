@@ -1,5 +1,4 @@
 .search-div {
-  margin-top: 1.26rem;
   position: relative;
 }
 .channel-search {
@@ -24,6 +23,8 @@
   .search-div {
     margin-top: 1.75rem;
     position: relative;
+    width: 100%;
+    flex-grow: 1;
   }
   .channel-search {
     padding-left: 1.75rem;

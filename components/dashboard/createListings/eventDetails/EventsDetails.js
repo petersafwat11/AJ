@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import DatePickerr from "../dateAndTimePickers/DateAndTimePickers";
 import classes from "./eventsDetails.module.css";
 
 const EventsDetails = ({ data, dispatchDetail }) => {
@@ -8,22 +9,23 @@ const EventsDetails = ({ data, dispatchDetail }) => {
       <h2 className={classes["title"]}>Event details</h2>
       <div className={classes["details-first"]}>
         <div className={classes["input-group"]}>
-          <label htmlFor="date" className={classes["label"]}>
-            Date
+          <label htmlFor="league" className={classes["label"]}>
+            League
           </label>
           <input
-            value={data.eventDate}
-            id="date"
+            value={data.eventLeague}
+            id="league"
             onChange={(e) => {
               dispatchDetail({
-                type: "EVENT-DATE",
+                type: "EVENT-LEAGUE",
                 value: e.target.value,
               });
             }}
-            placeholder="date"
+            placeholder="leugue"
             className={classes["input"]}
           />
         </div>
+
         <div className={classes["input-group"]}>
           <label htmlFor="match-id" className={classes["label"]}>
             Match ID
@@ -43,38 +45,32 @@ const EventsDetails = ({ data, dispatchDetail }) => {
         </div>
       </div>
       <div className={classes["details-second"]}>
-        {/* <div className={classes["input-group"]}>
+        <div className={classes["input-group"]}>
           <label htmlFor="time" className={classes["label"]}>
             Time
           </label>
           <input
-            value={data.time}
+            value={data.eventTime}
             id="time"
             onChange={(e) => {
               dispatchDetail({
-                type: "EVENT-DETAILS",
-                value: { ...data, time: e.target.value },
-              });
-            }}
-            placeholder="time"
-            className={classes["input"]}
-          />
-        </div> */}
-        <div className={classes["input-group"]}>
-          <label htmlFor="league" className={classes["label"]}>
-            League
-          </label>
-          <input
-            value={data.eventLeague}
-            id="league"
-            onChange={(e) => {
-              dispatchDetail({
-                type: "EVENT-LEAGUE",
+                type: "EVENT-TIME",
                 value: e.target.value,
               });
+              console.log({ ...data, eventTime: e.target.value });
             }}
-            placeholder="leugue"
+            placeholder="hh:mm 24h format"
             className={classes["input"]}
+          />
+        </div>
+        <div className={classes["input-group"]}>
+          <label htmlFor="date" className={classes["label"]}>
+            Date
+          </label>
+          <DatePickerr
+            data={data.eventDate}
+            dispatchDetail={dispatchDetail}
+            type={"EVENT-DATE"}
           />
         </div>
 

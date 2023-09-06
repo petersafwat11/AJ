@@ -153,27 +153,15 @@ const Page = () => {
                 {/* <PlayerContainer /> */}
               </div>
               <div className={classes["watch-video-wrapper-bottom"]}>
-                {/* <div className={classes["dropdowns"]}>
-                  {[
-                    { name: "english", options: ["1", "2", "3"] },
-                    { name: "العربية", options: ["1", "2", "3"] },
-                    { name: "espanol", options: ["1", "2", "3"] },
-                    {
-                      name: "more",
-                      options: ["FRENCH", "TURKISH", "PORTUGUE.."],
-                    },
-                  ].map((item, index) => (
-                    <Dropdown
-                      key={index}
-                      selectOption={selectOption}
-                      selectedOption={selectedOption}
-                      name={item.name}
-                      options={item.options}
-                    />
-                  ))}
-                </div> */}
                 <ServersButtons
-                  servers={["ENGLISH", "العربية", "ESPAÑOL", "DUTCH"]}
+                  servers={[
+                    "ENGLISH",
+                    "العربية",
+                    "ESPAÑOL",
+                    "ESPAÑOL",
+                    "ESPAÑOL",
+                    "DUTCH",
+                  ]}
                 />
                 {/* <ExtendButton /> */}
                 <div className={classes["modes-icons"]}>

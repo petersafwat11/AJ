@@ -1,4 +1,5 @@
 import React from "react";
+import DatePickerr from "../dateAndTimePickers/DateAndTimePickers";
 import classes from "./playerTiming.module.css";
 
 const PlayerTiming = ({
@@ -13,10 +14,8 @@ const PlayerTiming = ({
       <h2 className={classes["title"]}>{title} </h2>
       <div className={classes["details"]}>
         <div className={classes["input-group"]}>
-          <label htmlFor="date" className={classes["label"]}>
-            Date
-          </label>
-          <input
+          <label className={classes["label"]}>Date</label>
+          {/* <input
             value={data}
             id="date"
             onChange={(e) => {
@@ -27,9 +26,16 @@ const PlayerTiming = ({
             }}
             placeholder="enter the date"
             className={classes["input"]}
+          /> */}
+          <DatePickerr
+            data={data}
+            dispatchDetail={dispatchDetail}
+            type={dispatchActionType}
+            dateAndTime={true}
           />
         </div>
-        {/* <div className={classes["input-group"]}>
+
+        <div className={classes["input-group"]}>
           <label htmlFor="time" className={classes["label"]}>
             Time
           </label>
@@ -42,10 +48,10 @@ const PlayerTiming = ({
                 value: { ...data, time: e.target.value },
               });
             }}
-            placeholder="enter the time"
+            placeholder="hh:mm 24h format"
             className={classes["input"]}
           />
-        </div> */}
+        </div>
       </div>
     </div>
   );

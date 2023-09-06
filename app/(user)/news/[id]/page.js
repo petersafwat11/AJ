@@ -1,11 +1,9 @@
 "use client";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import Marque from "../../../../components/marque/Marque";
 import TopLayout from "../../../../components/topLayout/TopLayout";
-import classes from "./news-article.module.css";
+import UnderDevelopment from "../../../../components/underDevelopment/page/UnderDevelopment";
 const Page = () => {
   const router = useRouter();
   const [showSendMessage, setShowSendMessage] = useState(false);
@@ -15,7 +13,7 @@ const Page = () => {
       <div className="wrapper-2">
         <Marque />
 
-        <div className={classes["news-article"]}>
+        {/* <div className={classes["news-article"]}>
           <div className={classes["top-heading"]}>
             <h2 className={classes["top-heading-title"]}>NEWS</h2>
             <span></span>
@@ -28,13 +26,6 @@ const Page = () => {
                 }}
                 className={classes["arrow-back"]}
               />
-              {/* <Image
-            className={classes["article-top-icon"]}
-            src="/svg/arrow-circle-left.svg"
-            alt="arrow"
-            width="25"
-            height="25"
-          /> */}
               <div className={classes["top-text"]}>
                 <h2 className={classes["news-article-heading"]}>
                   2022-2023 Serie A Week 2: Match Highlights
@@ -83,6 +74,9 @@ const Page = () => {
               </div>
             ))}
           </div>
+        </div> */}
+        <div className="center">
+          <UnderDevelopment />
         </div>
       </div>
     </div>

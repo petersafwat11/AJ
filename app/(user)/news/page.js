@@ -2,10 +2,9 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { MdKeyboardArrowLeft } from "react-icons/md";
-import { RiArrowRightSLine } from "react-icons/ri";
 import Marque from "../../../components/marque/Marque";
 import TopLayout from "../../../components/topLayout/TopLayout";
+import UnderDevelopment from "../../../components/underDevelopment/page/UnderDevelopment";
 import classes from "./news.module.css";
 const Page = () => {
   const [showSendMessage, setShowSendMessage] = useState(false);
@@ -21,10 +20,7 @@ const Page = () => {
             <h2 className={classes["heading"]}>NEWS</h2>
             <span></span>
           </div>
-          <div className="wrapper">
-            <div className={classes["send-message"]}>
-              {/* <SendMessage /> */}
-            </div>
+          {/* <div className="wrapper">
             <div className={classes["container"]}>
               <div className={classes["news-items"]}>
                 {[1, 2, 3, 4, 5].map((i, index) => (
@@ -60,6 +56,10 @@ const Page = () => {
                 <RiArrowRightSLine className={classes["arrow"]} />
               </div>
             </div>
+          
+          </div> */}
+          <div className="center">
+            <UnderDevelopment />
           </div>
         </main>
       </div>

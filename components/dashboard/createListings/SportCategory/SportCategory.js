@@ -19,6 +19,7 @@ const SportCategory = ({ data, dispatchDetail }) => {
     "Rugby",
     "Tabletennis",
   ];
+  console.log(data);
   return (
     <div className={classes["sport-category"]}>
       <h2 className={classes["title"]}>Sport Category</h2>
@@ -26,7 +27,10 @@ const SportCategory = ({ data, dispatchDetail }) => {
         {categories.map((item, index) => (
           <div
             onClick={() => {
-              dispatchDetail({type: 'SPORT-CATEGORY', value: item})
+              dispatchDetail({
+                type: "SPORT-CATEGORY",
+                value: item.toLocaleLowerCase(),
+              });
             }}
             key={index}
             className={classes["category"]}
@@ -34,7 +38,9 @@ const SportCategory = ({ data, dispatchDetail }) => {
             <p>{item}</p>
             <span
               className={
-                classes[data == item ? "checked" : "not-checked"]
+                classes[
+                  data == item.toLocaleLowerCase() ? "checked" : "not-checked"
+                ]
               }
             ></span>
           </div>

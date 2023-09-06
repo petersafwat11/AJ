@@ -2,7 +2,6 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import Chat from "../../chat/Chat";
-import ExtendButton from "../../extendButton/ExtendButton";
 import LiveBtn from "../../live-button/LiveButton";
 import Popup from "../../popupWrapper/Popup";
 import ProtonVpn from "../../protonVpn/ProtonVpn";
@@ -11,12 +10,15 @@ import ShareLinks from "../../shareLinks/ShareLinks";
 import VideoJs from "../../video/VideoJs";
 import WatchNavigation from "../../watchNavigation/WatchNavigation";
 import SocialIcons from "../../whatchShare/SocialIcons";
+import ChangeServer from "../changeServer/ChangeServer";
+import Filter from "../filter/Filter";
 import Search from "../search/Search";
 import classes from "./wrapper.module.css";
 const ChannelsWrapper = ({ channelsServer }) => {
   const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
   const [showReport, setShowReport] = useState(false);
+  const [showOtherServers, setShowOtherServers] = useState(false);
   const [changeAvatar, setChangeAvatar] = useState(false);
   const [selectedAvatar, setSelectedAvatar] = useState("/svg/chat/5.svg");
   const [channelsServers, setChannelsServers] = useState(channelsServer);
@@ -45,6 +47,9 @@ const ChannelsWrapper = ({ channelsServer }) => {
   const toggleReport = () => {
     setShowReport(!showReport);
   };
+  const toggleServers = () => {
+    setShowOtherServers(!showOtherServers);
+  };
   const toggleChangeAvatar = () => {
     setChangeAvatar(!changeAvatar);
   };
@@ -61,6 +66,11 @@ const ChannelsWrapper = ({ channelsServer }) => {
       {showReport && (
         <Popup>
           <Report toggleReport={toggleReport} />
+        </Popup>
+      )}
+      {showOtherServers && (
+        <Popup>
+          <ChangeServer toggleServers={toggleServers} />
         </Popup>
       )}
       {!showChat && (
@@ -94,7 +104,7 @@ const ChannelsWrapper = ({ channelsServer }) => {
           <h3 className={classes["heading-title"]}>{playingServerName}</h3>
           <LiveBtn text={"LIVE"} />
         </div>
-        
+
         <div className="watch-video-wrapper">
           <div className={classes["social-icons"]}>
             <SocialIcons
@@ -107,15 +117,43 @@ const ChannelsWrapper = ({ channelsServer }) => {
             <VideoJs handleStarting={handleStarting} url={playingServer} />
           </div>
           <div className={classes["watch-video-options"]}>
-            <button className={classes["watch-video-options-server-name"]}>
-              Server 1
-            </button>
-            <ExtendButton />
+            <div className={classes["server-btn-wrapper"]}>
+              <button
+                onClick={toggleServers}
+                className={classes["server-name-btn"]}
+              >
+                Server 1
+              </button>
+            </div>
+
+            <div className={classes["modes-icons"]}>
+              <div className={classes["icon-div"]}>
+                <Image
+                  className={classes["threat-mode-icon"]}
+                  src="/svg/watch/threat-mode.svg"
+                  alt="threat-mode"
+                  height={18}
+                  width={18}
+                />
+              </div>
+              <div className={classes["icon-div"]}>
+                <Image
+                  className={classes["threat-mode-icon"]}
+                  src="/svg/watch/extend.svg"
+                  alt="extend-mode"
+                  height={15}
+                  width={15}
+                />
+              </div>
+            </div>
           </div>
           <div className={classes["vpn"]}>
             <ProtonVpn />
           </div>
-          <Search seacrhValue={seacrhValue} handleSearch={handleSearch} />
+          <div className={classes["sort-search-wrapper"]}>
+            <Search seacrhValue={seacrhValue} handleSearch={handleSearch} />
+            <Filter />
+          </div>
           <div className={classes["watch-video-servers"]}>
             {channelsServers.length > 0 ? (
               channelsServers.map((channel, index) => (

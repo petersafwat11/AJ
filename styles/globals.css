@@ -267,3 +267,46 @@ button {
     /* overscroll-behavior: none; */
   }
 }
+/* customize the date picker  */
+.react-date-picker {
+  width: 11.3rem !important;
+  height: 2.2rem !important;
+}
+.react-date-picker__wrapper {
+  border: thin solid #beb7b7 !important;
+  border-radius: 0.35rem !important;
+  padding: 3px 8px !important;
+}
+.react-calendar__tile--now {
+  background-color: #c3d7dc !important;
+}
+.react-date-picker__inputGroup__input {
+  color: #3e4a4a !important;
+}
+.react-date-picker__inputGroup__divider,
+.react-date-picker__inputGroup__leadingZero {
+  color: black !important;
+}
+.react-multi-carousel-item.react-multi-carousel-item--active {
+  width: 7.125rem;
+  height: 2.25rem;
+  border-radius: 1.4rem;
+  background: #171c20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.slick-slider {
+  width: 100% !important;
+}
+.slick-track {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem !important;
+}
+.slick-arrow.slick-prev,
+.slick-arrow.slick-next {
+  display: none !important;
+}

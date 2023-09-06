@@ -1,6 +1,6 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
-import React, { useEffect, useReducer } from "react";
+import React, { useCallback, useEffect, useReducer } from "react";
 import ActionsButtons from "../../../../../components/dashboard/actionsButtons/ActionsButtons";
 // import SportCategory from "../../../../components/dashboard/createListings/sportCategory/SportCategory";
 import { toast } from "react-toastify";
@@ -12,10 +12,14 @@ import TeamsLogos from "../../../../../components/dashboard/createListings/teams
 import TeamsNames from "../../../../../components/dashboard/createListings/teamsNames/TeamsNames";
 
 import {
+  combineDateAndTime,
+  extarctDateAndTime,
+} from "../../../../../utils/combineDate";
+import {
   deleteItem,
-  getData,
   saveItem,
 } from "../../../../../utils/dashboardHelperFunctions";
+import { getData } from "../../../../../utils/dashboardTablePagesFunctions";
 import classes from "./page.module.css";
 
 const intialValue = {
@@ -23,6 +27,7 @@ const intialValue = {
   firstTeamName: "",
   secondTeamName: "",
   eventDate: "",
+  eventTime: "",
   matchId: "",
   eventLeague: "",
   eventStadium: "",
@@ -30,9 +35,9 @@ const intialValue = {
   leagueLogo: null,
   firstTeamLogo: null,
   secondTeamLogo: null,
-  playStream: "",
-  removeStream: "",
-  removeCountdown: "",
+  playStream: { date: "", time: "" },
+  removeStream: { date: "", time: "" },
+  removeCountdown: { date: "", time: "" },
   showsPoll: false,
   firstTeamPoll: "",
   secondTeamPoll: "",
@@ -63,6 +68,11 @@ const matchReducer = (state, action) => {
     return {
       ...state,
       eventDate: action.value,
+    };
+  } else if (action.type === "EVENT-TIME") {
+    return {
+      ...state,
+      eventTime: action.value,
     };
   } else if (action.type === "MATCH-ID") {
     return {
@@ -138,8 +148,28 @@ const Page = () => {
 
   const [match, dispatchDetail] = useReducer(matchReducer, intialValue);
   const saveChanges = async () => {
+    const playStream = combineDateAndTime(
+      match.playStream.date,
+      match.playStream.time
+    );
+    const removeStream = combineDateAndTime(
+      match.removeStream.date,
+      match.removeStream.time
+    );
+    const removeCountdown = combineDateAndTime(
+      match.removeCountdown.date,
+      match.removeCountdown.time
+    );
+    const eventDate = combineDateAndTime(match.eventDate, match.eventTime);
+    let data = { ...match };
+    data.playStream = playStream;
+    data.removeStream = removeStream;
+    data.removeCountdown = removeCountdown;
+    delete data.eventDate;
+    delete data.eventTime;
+    data.eventDate = eventDate;
     let formData = new FormData();
-    for (const [key, value] of Object.entries(match)) {
+    for (const [key, value] of Object.entries(data)) {
       formData.append(key, value);
     }
     delete formData.servers;
@@ -157,11 +187,29 @@ const Page = () => {
   const deleteMatch = async () => {
     deleteItem(pathname, router, "sports");
   };
+  const requestData = useCallback(async () => {
+    try {
+      const response = await getData(`sports/${pathname.split("/")[3]}`);
+      const playStream = extarctDateAndTime(response.data.playStream);
+      const removeStream = extarctDateAndTime(response.data.removeStream);
+      const removeCountdown = extarctDateAndTime(response.data.removeStream);
+
+      const eventDate = extarctDateAndTime(response.data.removeStream).date;
+      const eventTime = extarctDateAndTime(response.data.removeStream).time;
+      let data = { ...response.data };
+      data.playStream = playStream;
+      data.removeStream = removeStream;
+      data.removeCountdown = removeCountdown;
+      data.eventDat = eventDate;
+      data.eventTime = eventTime;
+      dispatchDetail({ type: "UPDATE-ALL", value: data });
+    } catch (err) {
+      console.log(err);
+    }
+  }, [pathname]);
   useEffect(() => {
-    pathname.split("/")[3] !== "create"
-      ? getData(pathname.split("/")[3], dispatchDetail, "sports")
-      : "";
-  }, [pathname, router]);
+    pathname.split("/")[3] !== "create" ? requestData() : "";
+  }, [pathname, requestData]);
   return (
     <div className={classes["create-listing"]}>
       <h1 className={classes["title"]}>Create New Listing</h1>
