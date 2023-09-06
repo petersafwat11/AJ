@@ -1,34 +1,22 @@
-import ReactHlsPlayer from "react-hls-player";
-import classes from "./hlcPlayer.module.css";
+import Hls from "hls.js";
+import React, { useEffect, useRef } from "react";
 
-const HlcPlayer = ({ url }) => {
-  console.log(url);
-  const playerConfig = {
-    // Enable/disable automatic recovery on media errors
-    autoStartLoad: true,
-    // Set the initial bitrate level to start with
-    startLevel: -1,
-    // Set the maximum buffer length in seconds
-    maxBufferLength: 30,
-    // Set the maximum buffer hole in seconds
-    maxBufferHole: 0.5,
-    // Set the maximum back buffer length in seconds
-    maxMaxBufferLength: 600,
-  };
+const MyPlayer = ({ url }) => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(url);
+      hls.attachMedia(videoRef.current);
+    } else if (videoRef.current.canPlayType("application/vnd.apple.mpegurl")) {
+      videoRef.current.src = url;
+    }
+  }, [url]);
+
   return (
-    <div className={classes["container"]}>
-      <ReactHlsPlayer
-        src={url || "https://s1.sportshub808.com:8443/hls/btsport1.m3u8"}
-        autoPlay={false}
-        controls={true}
-        width={"100%"}
-        height={"100%"}
-        playerConfig={{
-          playerConfig,
-        }}
-      />
-    </div>
+    <video ref={videoRef} width={'100%'} height={'100%'} controls={true} />
   );
 };
 
-export default HlcPlayer;
+export default MyPlayer;
