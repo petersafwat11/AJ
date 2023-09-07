@@ -11,42 +11,10 @@
   right: 1vw;
   z-index: 100;
 }
-.watch-football {
-  max-width: 95%;
-  margin: 0 auto;
-  padding-bottom: 7.2rem;
-}
-.navigate {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  justify-content: center;
-}
-.navigate > * {
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 0.937rem;
-  line-height: 1.07rem;
-  margin-top: 1rem;
-}
 .social-icons {
   display: flex;
   justify-content: flex-end;
   width: 98%;
-}
-.watch-video-wrapper {
-  margin: 1.3rem auto 0;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  max-width: 59rem;
-}
-.watch-video {
-  margin-top: 0.4rem;
-  width: 68.43rem;
-  height: 41.25rem;
-  border-radius: 1.25rem;
-  background: #0d1316;
-  overflow: hidden;
 }
 .watch-video-wrapper-bottom {
   display: flex;

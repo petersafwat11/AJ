@@ -1,0 +1,43 @@
+.video-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* audio::-webkit-media-controls-timeline, */
+.video::-webkit-media-controls-timeline {
+  display: none;
+}
+.video {
+  cursor: pointer;
+}
+.video::-webkit-media-controls-time-remaining-display,
+.video::-webkit-media-controls-current-time-display {
+  display: none !important;
+}
+.play-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 80px;
+
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style the play icon */
+.play-icon:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: url("/svg/watch/play-video.svg"); /* Change this to your custom image */
+  background-size: cover;
+}
+.playing {
+  display: none;
+}

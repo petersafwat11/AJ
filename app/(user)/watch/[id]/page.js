@@ -137,7 +137,7 @@ const Page = () => {
               seconteamImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.secondTeamLogo}`}
               seconteamName={matchData?.secondTeamName}
               date={getMatchDate(matchData?.eventDate)}
-              place={matchData.eventStadium}
+              place={matchData?.eventStadium}
               // half={"2nd Half: 47’"}
             />
             <div className="watch-video-wrapper">
