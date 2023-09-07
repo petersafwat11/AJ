@@ -28,11 +28,11 @@ const Page = () => {
           limit: undefined,
         });
         setHotMAtches(
-          currentEvents.data.filter((item) => item.flagged === true)
+          currentEvents?.data?.filter((item) => item.flagged === true)
         );
         setOtherMatches({
-          total: currentEvents.totalOtherMatches,
-          matches: currentEvents.data.filter((item) => item.flagged === false),
+          total: currentEvents?.totalOtherMatches,
+          matches: currentEvents?.data?.filter((item) => item.flagged === false),
         });
       } catch (error) {
         console.log(error);
