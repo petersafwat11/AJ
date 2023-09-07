@@ -69,7 +69,7 @@ const Page = () => {
               </div>
               <div className={classes["matches"]}>
                 {hotMatches.map((matchData) => (
-                  <Match matchData={matchData} key={matchData._id} />
+                  <Match matchData={matchData} key={matchData?._id} />
                 ))}
               </div>
             </section>
@@ -85,7 +85,7 @@ const Page = () => {
               </div>
               <div className={classes["matches"]}>
                 {otherMatches?.matches?.map((matchData) => (
-                  <Match matchData={matchData} key={matchData._id} />
+                  <Match matchData={matchData} key={matchData?._id} />
                 ))}
               </div>
             </section>

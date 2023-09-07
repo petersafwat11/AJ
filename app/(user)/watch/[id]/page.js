@@ -33,7 +33,7 @@ const Page = () => {
             (lang) => lang.checked === true
           )
         );
-        setMatchData(eventData.data);
+        setMatchData(eventData?.data);
         //   setOtherMatches({
         //     total: currentEvents.totalOtherMatches,
         //     matches: currentEvents.data.filter((item) => item.flagged === false),
