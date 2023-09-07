@@ -13,7 +13,7 @@ const Page = async () => {
     sportCategory: "football",
   });
   console.log(currentEvents);
-  const hotMatches = currentEvents?.data.filter(
+  const hotMatches = currentEvents?.data?.filter(
     (item) => item.flagged === true
   );
 
