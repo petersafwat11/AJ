@@ -151,7 +151,7 @@ const Page = () => {
               <div id="my-root-div" className="watch-video">
                 {/* <EventCountDown eventStartDate={matchData?.eventDate} /> */}
                 <HlcPlayer
-                  url={matchData?.servers?.mainLanguages?.english?.channels[0]}
+                  url={"https://s1.sportshub808.com:8443/hls/btsport4.m3u8"}
                 />
                 {/* <PlayerContainer /> */}
               </div>
