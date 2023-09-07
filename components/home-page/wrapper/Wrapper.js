@@ -8,9 +8,18 @@ import Match from "../../match/Match";
 import Sports from "../../sports/Sports";
 import TimezoneDropdown from "../../timezomeDropdowm/TimezoneDropdown";
 import classes from "./wrapper.module.css";
-const Wrapper = ({ hot, other }) => {
-  const [hotMatches, setHotMatches] = useState(hotMatches);
-  const [otherMatches, setOtherHotMAtches] = useState(otherMatches);
+const Wrapper = ({ data }) => {
+  // const hotMatches = 
+
+  // const otherMatches = ;
+
+  const [hotMatches, setHotMatches] = useState(data?.data?.filter(
+    (item) => item.flagged === true
+  ));
+  const [otherMatches, setOtherHotMAtches] = useState({
+    total: data?.totalOtherMatches,
+    matches: data?.data.filter((item) => item.flagged === false),
+  });
   const [sportCategory, setSportCategory] = useState("Football");
   const changeSportCategory = (cat) => {
     setSportCategory(cat);

@@ -12,22 +12,13 @@ const Page = async () => {
     limit: undefined,
     sportCategory: "football",
   });
-  console.log(currentEvents);
-  const hotMatches = currentEvents?.data?.filter(
-    (item) => item.flagged === true
-  );
-
-  const otherMatches = {
-    total: currentEvents?.totalOtherMatches,
-    matches: currentEvents?.data.filter((item) => item.flagged === false),
-  };
 
   return (
     <div className="wrapper">
       <TopLayout />
       <div className="wrapper-2">
         <Marque />
-        <Wrapper hot={hotMatches} other={otherMatches} />
+        <Wrapper data={currentEvents} />
         <NewsLetter />
         <Footer />
       </div>
