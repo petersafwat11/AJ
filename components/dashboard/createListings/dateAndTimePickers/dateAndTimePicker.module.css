@@ -21,3 +21,6 @@
 .timePicker .react-time-picker__inputGroup__input {
   border: none;
 } */
+.date-wrapper {
+  width: 100%;
+}

@@ -1,5 +1,6 @@
-import React from "react";
-import DatePickerr from "../dateAndTimePickers/DateAndTimePickers";
+import React, { useEffect } from "react";
+import { formatTime } from "../../../../utils/convertDateFormat";
+import DatePicker from "../dateAndTimePickers/DateAndTimePickers";
 import classes from "./playerTiming.module.css";
 
 const PlayerTiming = ({
@@ -10,24 +11,15 @@ const PlayerTiming = ({
   dispatchActionType,
 }) => {
   return (
-    <div style={{ width: width ? width : "" }} className={classes["container"]}>
+    <div
+      style={{ width: width ? width : "14.7rem" }}
+      className={classes["container"]}
+    >
       <h2 className={classes["title"]}>{title} </h2>
       <div className={classes["details"]}>
         <div className={classes["input-group"]}>
           <label className={classes["label"]}>Date</label>
-          {/* <input
-            value={data}
-            id="date"
-            onChange={(e) => {
-              dispatchDetail({
-                type: dispatchActionType,
-                value: e.target.value,
-              });
-            }}
-            placeholder="enter the date"
-            className={classes["input"]}
-          /> */}
-          <DatePickerr
+          <DatePicker
             data={data}
             dispatchDetail={dispatchDetail}
             type={dispatchActionType}
@@ -40,12 +32,26 @@ const PlayerTiming = ({
             Time
           </label>
           <input
+            onKeyUp={(event) => {
+              if (event.key === "Backspace" && data.time.length === 3) {
+                dispatchDetail({
+                  type: dispatchActionType,
+                  value: {
+                    ...data,
+                    time: data.time.slice(0, -1),
+                  },
+                });
+              }
+            }}
             value={data.time}
             id="time"
             onChange={(e) => {
               dispatchDetail({
                 type: dispatchActionType,
-                value: { ...data, time: e.target.value },
+                value: {
+                  ...data,
+                  time: formatTime(e.target.value),
+                },
               });
             }}
             placeholder="hh:mm 24h format"

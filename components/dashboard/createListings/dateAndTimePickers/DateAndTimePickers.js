@@ -5,12 +5,12 @@ import DatePicker from "react-date-picker";
 import "react-date-picker/dist/DatePicker.css";
 import "react-time-picker/dist/TimePicker.css";
 // import DatePicker  from "react-datepicker";
-
+import classes from './dateAndTimePicker.module.css'
 import "react-datepicker/dist/react-datepicker.css";
 
 const DatePickerr = ({ data, dispatchDetail, type, dateAndTime }) => {
   return (
-    <div>
+    <div className={classes['date-wrapper']}>
       {dateAndTime ? (
         <DatePicker
           onChange={(date) =>

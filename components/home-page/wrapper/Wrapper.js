@@ -5,17 +5,17 @@ import { getData } from "../../../utils/dashboardTablePagesFunctions";
 import Filter from "../../home-page/filter/Filter";
 import HomeSearch from "../../homeSearch/HomeSearch";
 import Match from "../../match/Match";
-import Sports from "../../sports/Sports";
 import TimezoneDropdown from "../../timezomeDropdowm/TimezoneDropdown";
 import classes from "./wrapper.module.css";
+import Sports from "../sports/Sports";
 const Wrapper = ({ data }) => {
-  // const hotMatches = 
+  // const hotMatches =
 
   // const otherMatches = ;
 
-  const [hotMatches, setHotMatches] = useState(data?.data?.filter(
-    (item) => item.flagged === true
-  ));
+  const [hotMatches, setHotMatches] = useState(
+    data?.data?.filter((item) => item.flagged === true)
+  );
   const [otherMatches, setOtherHotMAtches] = useState({
     total: data?.totalOtherMatches,
     matches: data?.data.filter((item) => item.flagged === false),
@@ -26,8 +26,7 @@ const Wrapper = ({ data }) => {
   };
   const fetchNewData = useCallback(async () => {
     try {
-      console.log(sportCategory, "sportCategory");
-      const response = await getData("sports", {
+      const response = await getData("sports/currentEvents", {
         page: 1,
         limit: undefined,
         sportCategory: sportCategory,

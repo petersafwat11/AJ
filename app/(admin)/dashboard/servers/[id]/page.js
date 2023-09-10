@@ -36,7 +36,8 @@ const Page = () => {
       mainLanguages: { ...servers },
       moreLanguages: { ...otherServers },
     };
-    let requestType = existServers ? "POST" : "Patch";
+    let requestType = existServers ? "PATCH" : "POST";
+    console.log("existServers", existServers);
     await saveServer(
       pathname,
       data,

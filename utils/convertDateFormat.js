@@ -10,7 +10,7 @@ export const convertDate = (dateStr) => {
 
   return { formattedDate, formattedTime };
 };
-export const getMatchDate = (dateString) => {
+export const getMatchDate = (dateString, dateText) => {
   const date = new Date(dateString);
 
   var monthNames = [
@@ -32,6 +32,10 @@ export const getMatchDate = (dateString) => {
   const hours = date.getUTCHours();
   const minutes = date.getUTCMinutes();
   const MatchDateFormat = month + " " + day + " - " + hours + ":" + minutes;
+  const dateTextFormat = month + " " + day;
+  if (dateText) {
+    return dateTextFormat;
+  }
   return MatchDateFormat;
 };
 export const calcRemainingTime = (dateString) => {
@@ -42,7 +46,6 @@ export const calcRemainingTime = (dateString) => {
   let diff = targetDate.getTime() - now.getTime();
   if (diff < 0) {
     return false;
-    
   }
   // Convert the difference to hours, minutes, and seconds
   const hours = Math.floor(diff / (1000 * 60 * 60));
@@ -56,4 +59,12 @@ export const calcRemainingTime = (dateString) => {
   // Format the remaining time as desired
   const formattedRemainingTime = hours + "h " + mins + "m " + secs + "s";
   return formattedRemainingTime;
+};
+export const formatTime = (input) => {
+  let formattedTime = input.replace(/\D/g, "").slice(0, 4);
+  if (formattedTime.length >= 2) {
+    formattedTime = formattedTime.replace(/(\d{2})/, "$1:");
+  }
+
+  return formattedTime;
 };

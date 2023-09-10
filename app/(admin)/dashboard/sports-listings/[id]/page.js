@@ -11,10 +11,12 @@ import Poll from "../../../../../components/dashboard/createListings/poll/Poll";
 import TeamsLogos from "../../../../../components/dashboard/createListings/teamsLogos/TeamsLogos";
 import TeamsNames from "../../../../../components/dashboard/createListings/teamsNames/TeamsNames";
 
+import EventId from "../../../../../components/dashboard/createListings/EventId/EventId";
 import {
   combineDateAndTime,
   extarctDateAndTime,
 } from "../../../../../utils/combineDate";
+import { getMatchDate } from "../../../../../utils/convertDateFormat";
 import {
   deleteItem,
   saveItem,
@@ -27,6 +29,7 @@ const intialValue = {
   firstTeamName: "",
   secondTeamName: "",
   eventDate: "",
+  eventDateText: "",
   eventTime: "",
   matchId: "",
   eventLeague: "",
@@ -68,6 +71,11 @@ const matchReducer = (state, action) => {
     return {
       ...state,
       eventDate: action.value,
+    };
+  } else if (action.type === "EVENT-DATE-TEXT") {
+    return {
+      ...state,
+      eventDateText: action.value,
     };
   } else if (action.type === "EVENT-TIME") {
     return {
@@ -192,16 +200,19 @@ const Page = () => {
       const response = await getData(`sports/${pathname.split("/")[3]}`);
       const playStream = extarctDateAndTime(response.data.playStream);
       const removeStream = extarctDateAndTime(response.data.removeStream);
-      const removeCountdown = extarctDateAndTime(response.data.removeStream);
+      const removeCountdown = extarctDateAndTime(response.data.removeCountdown);
 
-      const eventDate = extarctDateAndTime(response.data.removeStream).date;
-      const eventTime = extarctDateAndTime(response.data.removeStream).time;
+      const eventDate = extarctDateAndTime(response.data.eventDate).date;
+      const eventTime = extarctDateAndTime(response.data.eventDate).time;
+
+      const dateText = getMatchDate(response.data.eventDate, true);
       let data = { ...response.data };
       data.playStream = playStream;
       data.removeStream = removeStream;
       data.removeCountdown = removeCountdown;
-      data.eventDat = eventDate;
+      data.eventDate = eventDate;
       data.eventTime = eventTime;
+      data.eventDateText = dateText;
       dispatchDetail({ type: "UPDATE-ALL", value: data });
     } catch (err) {
       console.log(err);
@@ -237,10 +248,11 @@ const Page = () => {
           />
           <EventsDetails
             data={{
-              matchId: match?.matchId,
               eventDate: match?.eventDate,
               eventLeague: match?.eventLeague,
               eventStadium: match?.eventStadium,
+              eventTime: match?.eventTime,
+              eventDateText: match?.eventDateText,
             }}
             dispatchDetail={dispatchDetail}
           />
@@ -283,6 +295,9 @@ const Page = () => {
             }}
             dispatchDetail={dispatchDetail}
           />
+        </div>
+        <div className={classes["third"]}>
+          <EventId data={match?.matchId} dispatchDetail={dispatchDetail} />
         </div>
       </div>
       {/* <div className={classes["servers-and-langs"]}>

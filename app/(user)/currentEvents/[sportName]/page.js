@@ -6,12 +6,11 @@ import React, { useEffect, useState } from "react";
 import HomeSearch from "../../../../components/homeSearch/HomeSearch";
 import Marque from "../../../../components/marque/Marque";
 import Match from "../../../../components/match/Match";
-import ShowMore from "../../../../components/showMore/ShowMore";
-import Sports from "../../../../components/sports/Sports";
 import TimezoneDropdown from "../../../../components/timezomeDropdowm/TimezoneDropdown";
 import TopLayout from "../../../../components/topLayout/TopLayout";
 import { getData } from "../../../../utils/dashboardTablePagesFunctions";
 import classes from "./page.module.css";
+import Sports from "../../../../components/home-page/sports/Sports";
 
 const Page = () => {
   const pathname = usePathname();
@@ -32,7 +31,9 @@ const Page = () => {
         );
         setOtherMatches({
           total: currentEvents?.totalOtherMatches,
-          matches: currentEvents?.data?.filter((item) => item.flagged === false),
+          matches: currentEvents?.data?.filter(
+            (item) => item.flagged === false
+          ),
         });
       } catch (error) {
         console.log(error);
