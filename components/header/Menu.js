@@ -29,7 +29,7 @@ export const Menu = () => {
           </Link>
         </li>
         <li>
-          <Link className={classes["list-item"]} href="/contact">
+          <Link className={classes["list-item"]} href="/contact-us">
             CONTACT
           </Link>
         </li>

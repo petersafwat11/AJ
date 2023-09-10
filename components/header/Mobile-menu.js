@@ -107,7 +107,7 @@ export const MenuMobile = () => {
             <div>
               <p
                 onClick={() => {
-                  router.push("/contact");
+                  router.push("/contact-us");
                 }}
                 className={classes["menu-mobile-page-link"]}
               >
