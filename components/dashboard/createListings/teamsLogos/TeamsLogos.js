@@ -93,6 +93,29 @@ const TeamsLogos = ({ dispatchDetail }) => {
             Upload
           </span>
         </div>
+        <div className="or-wrapper">
+          <span>Or</span>
+        </div>
+        <div className={classes["input-group"]}>
+          <label className={classes["label"]}>Flag Logo</label>
+          <input
+            onChange={(e) => {
+              inputClick(e.target.files[0], "FLAG-LOGO");
+            }}
+            accept="image/*"
+            className={classes["input"]}
+            type="file"
+            hidden
+          />
+          <span
+            onClick={(e) => {
+              e.target.previousElementSibling.click();
+            }}
+            className={classes["upload"]}
+          >
+            Upload
+          </span>
+        </div>
       </div>
     </div>
   );

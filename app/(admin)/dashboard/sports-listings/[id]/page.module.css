@@ -31,15 +31,11 @@
 .first,
 .second {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
   width: max-content;
   gap: 18.48px;
 }
-.first {
-  height: 16.56rem;
-}
-
 .second {
   margin-top: 3.52rem;
 }

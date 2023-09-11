@@ -11,7 +11,7 @@ const Wrapper = ({ data }) => {
   // const hotMatches =
 
   // const otherMatches = ;
-
+  console.log("data", data);
   const [hotMatches, setHotMatches] = useState(
     data?.data?.filter((item) => item.flagged === true)
   );
@@ -33,7 +33,7 @@ const Wrapper = ({ data }) => {
       setHotMatches(response?.data?.filter((item) => item.flagged === true));
       setOtherMAtches({
         total: response?.totalMatches,
-        matches: response?.data
+        matches: response?.data,
       });
       console.log(response);
     } catch (err) {

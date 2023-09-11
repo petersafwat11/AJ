@@ -28,6 +28,7 @@ const intialValue = {
   sportCategory: "",
   firstTeamName: "",
   secondTeamName: "",
+  teamsTitle: "",
   eventDate: "",
   eventDateText: "",
   eventTime: "",
@@ -38,6 +39,7 @@ const intialValue = {
   leagueLogo: null,
   firstTeamLogo: null,
   secondTeamLogo: null,
+  flagLogo: null,
   playStream: { date: "", time: "" },
   removeStream: { date: "", time: "" },
   removeCountdown: { date: "", time: "" },
@@ -62,10 +64,16 @@ const matchReducer = (state, action) => {
       ...state,
       firstTeamName: action.value,
     };
-  } else if (action.type === "SECOND-TEAM-NAME") {
+  }
+  else if (action.type === "SECOND-TEAM-NAME") {
     return {
       ...state,
       secondTeamName: action.value,
+    };
+  } else if (action.type === "TEAMS-TITLE") {
+    return {
+      ...state,
+      teamsTitle: action.value,
     };
   } else if (action.type === "EVENT-DATE") {
     return {
@@ -116,6 +124,11 @@ const matchReducer = (state, action) => {
     return {
       ...state,
       secondTeamLogo: action.value,
+    };
+  } else if (action.type === "FLAG-LOGO") {
+    return {
+      ...state,
+      flagLogo: action.value,
     };
   } else if (action.type === "PLAY-STREAM") {
     return {
@@ -241,6 +254,7 @@ const Page = () => {
           />
           <TeamsNames
             data={{
+              teamsTitle: match?.teamsTitle,
               firstTeamName: match?.firstTeamName,
               secondTeamName: match?.secondTeamName,
             }}
@@ -264,6 +278,7 @@ const Page = () => {
               leagueLogo: match?.leagueLogo,
               firstTeamLogo: match?.firstTeamLogo,
               secondTeamLogo: match?.secondTeamLogo,
+              flagLogo: match?.flagLogo,            
             }}
             dispatchDetail={dispatchDetail}
           />

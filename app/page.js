@@ -13,6 +13,7 @@ const Page = async () => {
     sportCategory: "football",
   });
 
+  console.log(currentEvents);
   return (
     <div className="wrapper">
       <TopLayout />
