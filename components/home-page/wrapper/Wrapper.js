@@ -53,7 +53,7 @@ const Wrapper = ({ data }) => {
         />
         <button className={classes["search-mobile-button"]}>SEARCH</button>
       </div>
-      <div className="center">
+      <div className="center-under-dev">
         <Filter
           sportCategory={sportCategory}
           changeSportCategory={changeSportCategory}

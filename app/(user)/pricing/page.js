@@ -10,7 +10,7 @@ const page = () => {
       <TopLayout />
       <div className="wrapper-2">
         <Marque />
-    
+
         {/* <main className={classes["pricing"]}>
           <div className={classes["top-heading"]}>
             <h2 className={classes["heading"]}>PRICING</h2>
@@ -55,7 +55,7 @@ const page = () => {
             Coming <span>Soon!</span>
           </h3>
         </main> */}
-        <div className="center">
+        <div className="center-under-dev">
           <UnderDevelopment />
         </div>
       </div>

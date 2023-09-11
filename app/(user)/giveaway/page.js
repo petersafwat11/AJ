@@ -10,7 +10,7 @@ const GiveAway = async () => {
       <TopLayout />
       <div className="wrapper-2">
         <Marque />
-        <div className="center">
+        <div className="center-under-dev">
           <UnderDevelopment />
         </div>
 

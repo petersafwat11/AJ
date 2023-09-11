@@ -156,7 +156,7 @@ const Donate = () => {
             </p>
           </div>
         </main> */}
-        <div className="center">
+        <div className="center-under-dev">
           <UnderDevelopment />
         </div>
       </div>

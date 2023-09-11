@@ -8,6 +8,7 @@ import SocialIcons from "../../../../components/whatchShare/SocialIcons";
 
 import { usePathname } from "next/navigation";
 import HlcPlayer from "../../../../components/hlcPlayer/HlcPlayer";
+import ChangeServer from "../../../../components/home-page/changeServer/ChangeServer";
 import Marque from "../../../../components/marque/Marque";
 import Popup from "../../../../components/popupWrapper/Popup";
 import ServersButtons from "../../../../components/serverButtons/ServersButtons";
@@ -34,10 +35,6 @@ const Page = () => {
           )
         );
         setMatchData(eventData?.data);
-        //   setOtherMatches({
-        //     total: currentEvents.totalMatches,
-        //     matches: currentEvents.data.filter((item) => item.flagged === false),
-        //   });
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -72,6 +69,9 @@ const Page = () => {
   useEffect(() => {
     setshowVideo(true);
   }, []);
+  const toggleServers = () => {
+    console.log("toggle server");
+  };
   return (
     <div className="wrapper">
       <TopLayout />
@@ -93,6 +93,12 @@ const Page = () => {
               <Report toggleReport={toggleReport} />
             </Popup>
           )}
+          {false && (
+            <Popup>
+              <ChangeServer toggleServers={toggleServers} />
+            </Popup>
+          )}
+
           {/* {!showChat && (
             <Image
               onClick={toggleChat}
@@ -115,7 +121,7 @@ const Page = () => {
           </div> */}
           <WatchNavigation page={"Watch"} />
           {/* {loading ? (
-            <p className="center"> loading</p>
+            <p className="center-under-dev"> loading</p>
           ) : ( */}
           <div className={classes["container"]}>
             <WatchDetails
@@ -189,7 +195,7 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="center">
+            <div className="center-under-dev">
               <UnderDevelopment />
             </div>{" "}
             {/* <div className={classes["bottom"]}>

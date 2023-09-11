@@ -1,34 +1,32 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import Chat from "../../chat/Chat";
+import HlcPlayer from "../../hlcPlayer/HlcPlayer";
 import LiveBtn from "../../live-button/LiveButton";
 import Popup from "../../popupWrapper/Popup";
 import ProtonVpn from "../../protonVpn/ProtonVpn";
 import Report from "../../report/Report";
 import ShareLinks from "../../shareLinks/ShareLinks";
-import VideoJs from "../../video/VideoJs";
+import ShowMore from "../../showMore/ShowMore";
 import WatchNavigation from "../../watchNavigation/WatchNavigation";
 import SocialIcons from "../../whatchShare/SocialIcons";
-import ChangeServer from "../changeServer/ChangeServer";
+import BottomSocial from "../bottomSocial/BottomSocial";
 import Filter from "../filter/Filter";
 import Search from "../search/Search";
 import classes from "./wrapper.module.css";
 const ChannelsWrapper = ({ channelsServer }) => {
-  const [showChat, setShowChat] = useState(false);
+  // const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
   const [showReport, setShowReport] = useState(false);
-  const [showOtherServers, setShowOtherServers] = useState(false);
-  const [changeAvatar, setChangeAvatar] = useState(false);
-  const [selectedAvatar, setSelectedAvatar] = useState("/svg/chat/5.svg");
-  const [channelsServers, setChannelsServers] = useState(channelsServer);
-  const [playingServer, setPlayingServer] = useState(
-    channelsServers[0]?.streamLinkUrl
-  );
+  // const [changeAvatar, setChangeAvatar] = useState(false);
+  // const [selectedAvatar, setSelectedAvatar] = useState("/svg/chat/5.svg");
 
-  const [playingServerName, setPlayingServerName] = useState(
-    channelsServers[0]?.channelName
-  );
+  const [channelsServers, setChannelsServers] = useState(channelsServer);
+  const [playingServer, setPlayingServer] = useState();
+  // channelsServers[0]?.streamLinkUrl
+
+  const [playingServerName, setPlayingServerName] = useState();
+  // channelsServers[0]?.channelName
 
   const [seacrhValue, setSearchValue] = useState("");
   const handleSearch = async (e) => {
@@ -38,28 +36,28 @@ const ChannelsWrapper = ({ channelsServer }) => {
     );
     setChannelsServers(matchedServers);
   };
-  const toggleChat = () => {
-    setShowChat(!showChat);
-  };
+  // const toggleChat = () => {
+  //   setShowChat(!showChat);
+  // };
   const toggleShareLinks = () => {
     setShowShareLinks(!showShareLinks);
   };
   const toggleReport = () => {
     setShowReport(!showReport);
   };
-  const toggleServers = () => {
-    setShowOtherServers(!showOtherServers);
-  };
-  const toggleChangeAvatar = () => {
-    setChangeAvatar(!changeAvatar);
-  };
-  const selectAvatar = (avatar) => {
-    setSelectedAvatar(avatar);
-  };
+  // const toggleChangeAvatar = () => {
+  //   setChangeAvatar(!changeAvatar);
+  // };
+  // const selectAvatar = (avatar) => {
+  //   setSelectedAvatar(avatar);
+  // };
   const [starting, setStarting] = useState(false);
   const handleStarting = () => {
     console.log("startting");
     setStarting(!starting);
+  };
+  const showMoreHandeler = () => {
+    console.log("clicked show more");
   };
   return (
     <div className={classes["channels"]}>
@@ -68,12 +66,7 @@ const ChannelsWrapper = ({ channelsServer }) => {
           <Report toggleReport={toggleReport} />
         </Popup>
       )}
-      {showOtherServers && (
-        <Popup>
-          <ChangeServer toggleServers={toggleServers} />
-        </Popup>
-      )}
-      {!showChat && (
+      {/* {!showChat && (
         <Image
           onClick={toggleChat}
           className={classes["chat-icon"]}
@@ -91,7 +84,7 @@ const ChannelsWrapper = ({ channelsServer }) => {
             toggleChat={toggleChat}
           />
         </div>
-      )}
+      )} */}
       {showShareLinks && (
         <Popup>
           <ShareLinks toggleShareLinks={toggleShareLinks} />
@@ -114,16 +107,14 @@ const ChannelsWrapper = ({ channelsServer }) => {
           </div>
 
           <div className="watch-video">
-            <VideoJs handleStarting={handleStarting} url={playingServer} />
+            <HlcPlayer
+              url={"https://s1.sportshub808.com:8443/hls/btsport2.m3u8"}
+            />
           </div>
           <div className={classes["watch-video-options"]}>
+            <BottomSocial />
             <div className={classes["server-btn-wrapper"]}>
-              <button
-                onClick={toggleServers}
-                className={classes["server-name-btn"]}
-              >
-                Server 1
-              </button>
+              <button className={classes["server-name-btn"]}>Server 1</button>
             </div>
 
             <div className={classes["modes-icons"]}>
@@ -155,8 +146,8 @@ const ChannelsWrapper = ({ channelsServer }) => {
             <Filter />
           </div>
           <div className={classes["watch-video-servers"]}>
-            {channelsServers.length > 0 ? (
-              channelsServers.map((channel, index) => (
+            {channelsServers?.channels?.length > 0 ? (
+              channelsServers?.channels.map((channel, index) => (
                 <button
                   onClick={() => {
                     setPlayingServerName(channel.channelName);
@@ -172,6 +163,11 @@ const ChannelsWrapper = ({ channelsServer }) => {
               <p>{`there isn't channels avaialbe now`}</p>
             )}
           </div>
+          {channelsServers?.totalResults > 3 && (
+            <div className="show-more-wrapper">
+              <ShowMore onClick={showMoreHandeler} />
+            </div>
+          )}
         </div>
       </div>
     </div>

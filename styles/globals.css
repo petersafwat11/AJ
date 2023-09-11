@@ -191,13 +191,20 @@ button {
   padding-bottom: 7.2rem;
 }
 
-.center {
+.center-under-dev-under-dev {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   margin-top: 3rem;
   padding-bottom: 5rem;
+}
+.show-more-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1.3rem;
 }
 .watch-video-wrapper {
   margin: 1.3rem auto 0;
@@ -226,7 +233,7 @@ button {
   .gpr-category-list::-webkit-scrollbar {
     width: 11px;
   }
-  .center {
+  .center-under-dev-under-dev-under-dev {
     margin-top: 1.5rem;
     padding-bottom: 3rem;
   }

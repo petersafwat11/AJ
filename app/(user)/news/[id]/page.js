@@ -75,7 +75,7 @@ const Page = () => {
             ))}
           </div>
         </div> */}
-        <div className="center">
+        <div className="center-under-dev">
           <UnderDevelopment />
         </div>
       </div>

@@ -23,3 +23,21 @@
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.4);
 }
+@media (max-width: 56.25rem) {
+  .container {
+    align-self: flex-end;
+    width: 4.88rem;
+    height: 1.7rem;
+    flex-shrink: 0;
+    border-radius: 0.25rem;
+    background: #4d545a;
+    padding-left: 1.6rem;
+    padding-right: 0.94rem;
+  }
+  .item {
+    font-size: 0.75rem;
+  }
+  .arrow {
+    font-size: 0.75rem;
+  }
+}

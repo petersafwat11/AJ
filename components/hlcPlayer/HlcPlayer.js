@@ -1,7 +1,7 @@
 import Hls from "hls.js";
 import React, { useEffect, useRef, useState } from "react";
 import classes from "./hlcPlayer.module.css";
-const MyPlayer = ({ url }) => {
+const HlcPlayer = ({ url }) => {
   const videoRef = useRef(null);
   const videoIConRef = useRef(null);
   const [palying, setPlaying] = useState(false);
@@ -18,13 +18,11 @@ const MyPlayer = ({ url }) => {
   // Add a play event listener to the video
   const handlePlaying = function () {
     setPlaying(!palying);
-    // videoIConRef.current.classList.add("playing");
   };
 
   // Add a pause event listener to the video
   const handlePausing = function () {
     setPlaying(!palying);
-    // videoIConRef.current.classList.remove("playing");
   };
 
   useEffect(() => {
@@ -40,6 +38,8 @@ const MyPlayer = ({ url }) => {
   return (
     <div className={classes["video-container"]}>
       <video
+        poster="/wallpaper/main.jpg"
+        controlsList="noplaybackrate"
         className={classes["video"]}
         ref={videoRef}
         width={"100%"}
@@ -67,4 +67,4 @@ const MyPlayer = ({ url }) => {
   );
 };
 
-export default MyPlayer;
+export default HlcPlayer;
