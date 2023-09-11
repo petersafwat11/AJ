@@ -1,17 +1,24 @@
 "use client";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 import classes from "./sports.module.css";
+
 const Sports = () => {
+  const pathname = usePathname();
   const router = useRouter();
+  console.log("path", pathname);
   return (
     <section className={classes["sports"]}>
       <div
         onClick={() => {
           router.push("/currentEvents/nfl");
         }}
-        className={classes["nfl"]}
+        className={
+          pathname === "/currentEvents/nfl"
+            ? classes["selected"]
+            : classes["nfl"]
+        }
       >
         <Image
           className={classes["sport-image"]}
@@ -26,7 +33,11 @@ const Sports = () => {
         onClick={() => {
           router.push("/currentEvents/basketball");
         }}
-        className={classes["basketball"]}
+        className={
+          pathname === "/currentEvents/basketball"
+            ? classes["selected"]
+            : classes["basketball"]
+        }
       >
         <Image
           className={classes["sport-image"]}
@@ -41,7 +52,11 @@ const Sports = () => {
         onClick={() => {
           router.push("/currentEvents/football");
         }}
-        className={classes["football"]}
+        className={
+          pathname === "/currentEvents/football" || pathname === "/"
+            ? classes["selected"]
+            : classes["football"]
+        }
       >
         <Image
           className={classes["sport-image"]}
@@ -56,7 +71,11 @@ const Sports = () => {
         onClick={() => {
           router.push("/currentEvents/boxing");
         }}
-        className={classes["boxing"]}
+        className={
+          pathname === "/currentEvents/boxing"
+            ? classes["selected"]
+            : classes["boxing"]
+        }
       >
         <Image
           className={classes["sport-image"]}
@@ -71,7 +90,11 @@ const Sports = () => {
         onClick={() => {
           router.push("/currentEvents/others");
         }}
-        className={classes["other"]}
+        className={
+          pathname === "/currentEvents/others"
+            ? classes["selected"]
+            : classes["other"]
+        }
       >
         <Image
           className={classes["sport-image"]}

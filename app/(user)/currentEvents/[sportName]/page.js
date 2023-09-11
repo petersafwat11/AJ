@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import Sports from "../../../../components/home-page/sports/Sports";
 import HomeSearch from "../../../../components/homeSearch/HomeSearch";
 import Marque from "../../../../components/marque/Marque";
 import Match from "../../../../components/match/Match";
@@ -10,7 +11,6 @@ import TimezoneDropdown from "../../../../components/timezomeDropdowm/TimezoneDr
 import TopLayout from "../../../../components/topLayout/TopLayout";
 import { getData } from "../../../../utils/dashboardTablePagesFunctions";
 import classes from "./page.module.css";
-import Sports from "../../../../components/home-page/sports/Sports";
 
 const Page = () => {
   const pathname = usePathname();
@@ -30,10 +30,8 @@ const Page = () => {
           currentEvents?.data?.filter((item) => item.flagged === true)
         );
         setOtherMatches({
-          total: currentEvents?.totalOtherMatches,
-          matches: currentEvents?.data?.filter(
-            (item) => item.flagged === false
-          ),
+          total: currentEvents?.totalMatches,
+          matches: currentEvents?.data
         });
       } catch (error) {
         console.log(error);

@@ -5,9 +5,8 @@ import { getData } from "../../../utils/dashboardTablePagesFunctions";
 import Filter from "../../home-page/filter/Filter";
 import HomeSearch from "../../homeSearch/HomeSearch";
 import Match from "../../match/Match";
-import TimezoneDropdown from "../../timezomeDropdowm/TimezoneDropdown";
-import classes from "./wrapper.module.css";
 import Sports from "../sports/Sports";
+import classes from "./wrapper.module.css";
 const Wrapper = ({ data }) => {
   // const hotMatches =
 
@@ -16,9 +15,9 @@ const Wrapper = ({ data }) => {
   const [hotMatches, setHotMatches] = useState(
     data?.data?.filter((item) => item.flagged === true)
   );
-  const [otherMatches, setOtherHotMAtches] = useState({
-    total: data?.totalOtherMatches,
-    matches: data?.data.filter((item) => item.flagged === false),
+  const [otherMatches, setOtherMAtches] = useState({
+    total: data?.totalMatches,
+    matches: data?.data,
   });
   const [sportCategory, setSportCategory] = useState("Football");
   const changeSportCategory = (cat) => {
@@ -31,12 +30,10 @@ const Wrapper = ({ data }) => {
         limit: undefined,
         sportCategory: sportCategory,
       });
-      setHotMatches(
-        response?.data?.data?.filter((item) => item.flagged === true)
-      );
-      setOtherHotMAtches({
-        total: response?.data?.totalOtherMatches,
-        matches: response?.data?.data?.filter((item) => item.flagged === false),
+      setHotMatches(response?.data?.filter((item) => item.flagged === true));
+      setOtherMAtches({
+        total: response?.totalMatches,
+        matches: response?.data
       });
       console.log(response);
     } catch (err) {
@@ -71,9 +68,9 @@ const Wrapper = ({ data }) => {
       <div className={classes["matches-container"]}>
         <section className={classes["hot-matches"]}>
           <h2 className={classes["title"]}>HOT MATCHES</h2>
-          <div className={classes["time-zone"]}>
+          {/* <div className={classes["time-zone"]}>
             <TimezoneDropdown />
-          </div>
+          </div> */}
           <div className={classes["matches"]}>
             {hotMatches?.map((matchData) => (
               <Match matchData={matchData} key={matchData?._id} />
@@ -87,9 +84,9 @@ const Wrapper = ({ data }) => {
               <HomeSearch />
             </div>
           </div>
-          <div className={classes["time-zone"]}>
+          {/* <div className={classes["time-zone"]}>
             <TimezoneDropdown />
-          </div>
+          </div> */}
           <div className={classes["matches"]}>
             {otherMatches?.matches?.map((matchData) => (
               <Match matchData={matchData} key={matchData?._id} />

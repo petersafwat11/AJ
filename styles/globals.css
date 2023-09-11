@@ -205,7 +205,7 @@ button {
   align-items: flex-start;
   flex-direction: column;
   /* min-height: 40.6rem; */
-  max-width: 73.7vw;
+  max-width: min(73vw, 63.3vw);
 }
 .watch-video {
   display: flex;
@@ -217,7 +217,11 @@ button {
   background: #0d1316;
   overflow: hidden;
 }
-
+@media (max-width: 75rem) {
+  .watch-video-wrapper {
+    max-width: 51rem;
+  }
+}
 @media (max-width: 56.25rem) {
   .gpr-category-list::-webkit-scrollbar {
     width: 11px;

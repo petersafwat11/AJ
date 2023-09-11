@@ -45,8 +45,8 @@ const Table = ({
             <p className={classes["table-cell"]}>{item.secondTeamName}</p>
             <p className={classes["table-cell"]}>{item.eventLeague}</p>
             <div className={classes["date-and-time"]}>
-              <p> {convertDate(item.removeCountdown).formattedDate}</p>
-              <p> {convertDate(item.removeCountdown).formattedTime}</p>
+              <p> {convertDate(item.eventDate).formattedDate}</p>
+              <p> {convertDate(item.eventDate).formattedTime}</p>
             </div>
             <p className={classes["table-cell"]}>{item.sportCategory}</p>
             <Flag
@@ -62,7 +62,7 @@ const Table = ({
               }}
               className={classes["severs"]}
             >
-              servers{" "}
+              servers
             </p>
           </div>
         ))

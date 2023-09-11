@@ -35,7 +35,7 @@ const Page = () => {
         );
         setMatchData(eventData?.data);
         //   setOtherMatches({
-        //     total: currentEvents.totalOtherMatches,
+        //     total: currentEvents.totalMatches,
         //     matches: currentEvents.data.filter((item) => item.flagged === false),
         //   });
         setLoading(false);
