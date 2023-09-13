@@ -33,6 +33,7 @@ const HlcPlayer = ({ url }) => {
     } else if (videoRef.current.canPlayType("application/vnd.apple.mpegurl")) {
       videoRef.current.src = url;
     }
+    setPlaying(false);
   }, [url]);
 
   return (
