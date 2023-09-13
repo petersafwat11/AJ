@@ -1,31 +1,34 @@
 "use client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React, { useCallback, useEffect, useState } from "react";
-import { calcRemainingTime, getMatchDate } from "../../utils/convertDateFormat";
+import React from "react";
+import { getMatchDate } from "../../utils/convertDateFormat";
+import RemainingTime from "./RemainingTime";
+import WatchBtn from "./WatchBtn";
+import LiveBtn from "./liveBtn";
 import classes from "./match.module.css";
 export const Match = ({ matchData }) => {
   console.log(
     `${process.env.STATIC_SERVER}/img/matches/${matchData?.firstTeamLogo}`
   );
   const router = useRouter();
-  const callRemainingTime = useCallback(
-    () => calcRemainingTime(matchData?.eventDate),
-    [matchData?.eventDate]
-  );
-  const [remaingTime, setRemainingTime] = useState(true);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setRemainingTime(callRemainingTime());
-    }, 1000);
-  }, [setRemainingTime, callRemainingTime]);
+  // const callRemainingTime = useCallback(
+  //   () => calcRemainingTime(matchData?.eventDate),
+  //   [matchData?.eventDate]
+  // );
+  // const [remaingTime, setRemainingTime] = useState(true);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setRemainingTime(callRemainingTime());
+  //   }, 1000);
+  // }, [setRemainingTime, callRemainingTime]);
   return (
     <div className={classes["match"]}>
       <div className={classes["match-first"]}>
         <p className={classes["date"]}>{getMatchDate(matchData?.eventDate)}</p>
-        {remaingTime && (
+        {/* {remaingTime && (
           <div className={classes["remaining-time-mobile"]}>{remaingTime}</div>
-        )}
+        )} */}
         <p className={classes["leage"]}>{matchData?.eventLeague}</p>
       </div>
       <div className={classes["match-second"]}>
@@ -35,7 +38,7 @@ export const Match = ({ matchData }) => {
           </p>
           <p className={classes["leage"]}>{matchData?.eventLeague}</p>
         </div>
-        {!remaingTime ? (
+        {/* {!true ? (
           <div className="live-button-div">
             <div className={classes["live-button"]}>
               <div className={classes["dot-wrapper"]}>
@@ -46,7 +49,8 @@ export const Match = ({ matchData }) => {
           </div>
         ) : (
           <div className={classes["not-live"]}>LIVE</div>
-        )}
+        )} */}
+        <LiveBtn />
         <div className={classes["first-team"]}>
           <Image
             crossOrigin="anonymous"
@@ -77,20 +81,13 @@ export const Match = ({ matchData }) => {
         {/* {!true ? (
           <div className={classes["status"]}>2nd Half: 47’</div>
         ) : ( */}
-        {remaingTime && (
+        {/* {remaingTime ? (
           <div className={classes["remaining-time"]}>{remaingTime}</div>
-        )}
-        <div className={classes["action-button"]}>
-          <button
-            onClick={() => {
-              router.push(`/watch/${matchData._id}`);
-            }}
-            className={classes["watch-button"]}
-          >
-            {/* 72 28 */}
-            WATCH
-          </button>
-        </div>
+        ) : (
+          <div className={classes["white-space"]}></div>
+        )} */}
+        <RemainingTime date={matchData?.eventDate} />
+        <WatchBtn id={matchData._id} />
       </div>
     </div>
   );

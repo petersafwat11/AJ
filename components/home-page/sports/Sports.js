@@ -4,7 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 import classes from "./sports.module.css";
 
-const Sports = () => {
+const Sports = ({ sportCategory }) => {
   const pathname = usePathname();
   const router = useRouter();
   console.log("path", pathname);
@@ -15,7 +15,7 @@ const Sports = () => {
           router.push("/currentEvents/nfl");
         }}
         className={
-          pathname === "/currentEvents/nfl"
+          pathname === "/currentEvents/nfl" || sportCategory === "NFL"
             ? classes["selected"]
             : classes["nfl"]
         }
@@ -34,7 +34,8 @@ const Sports = () => {
           router.push("/currentEvents/basketball");
         }}
         className={
-          pathname === "/currentEvents/basketball"
+          pathname === "/currentEvents/basketball" ||
+          sportCategory === "Basketball"
             ? classes["selected"]
             : classes["basketball"]
         }
@@ -53,7 +54,7 @@ const Sports = () => {
           router.push("/currentEvents/football");
         }}
         className={
-          pathname === "/currentEvents/football" || pathname === "/"
+          pathname === "/currentEvents/football" || sportCategory === "Football"
             ? classes["selected"]
             : classes["football"]
         }
@@ -72,7 +73,7 @@ const Sports = () => {
           router.push("/currentEvents/boxing");
         }}
         className={
-          pathname === "/currentEvents/boxing"
+          pathname === "/currentEvents/boxing" || sportCategory === "Boxing"
             ? classes["selected"]
             : classes["boxing"]
         }
@@ -91,7 +92,11 @@ const Sports = () => {
           router.push("/currentEvents/others");
         }}
         className={
-          pathname === "/currentEvents/others"
+          pathname === "/currentEvents/others" ||
+          (sportCategory !== "Football" &&
+            sportCategory !== "Basketball" &&
+            sportCategory !== "NFL" &&
+            sportCategory !== "Boxing")
             ? classes["selected"]
             : classes["other"]
         }

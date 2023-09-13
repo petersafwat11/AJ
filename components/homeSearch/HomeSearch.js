@@ -2,15 +2,14 @@
 import React, { useState } from "react";
 import { GoSearch } from "react-icons/go";
 import classes from "./homesearch.module.css";
-const HomeSearch = () => {
-  const [searchValue, setSearchValue] = useState("");
+const HomeSearch = ({ seacrhValue, handleSearch }) => {
 
   return (
     <div className={classes["search-div"]}>
       <input
-        value={searchValue}
+        value={seacrhValue}
         onChange={(e) => {
-          setSearchValue(e.target.value);
+          handleSearch(e.target.value);
         }}
         className={classes["search"]}
         type="text"

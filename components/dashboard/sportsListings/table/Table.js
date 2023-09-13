@@ -2,13 +2,13 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 
-import { BiSearch } from "react-icons/bi";
 import { convertDate } from "../../../../utils/convertDateFormat";
 import Checkbox from "../../checkbox/Checkbox";
 import EditButton from "../../editButton/EditButton";
 import Flag from "../../flag/Flag";
 import NoContent from "../../noContent/NoContent";
 import Paginations from "../../paginations/Paginations";
+import Search from "../../search/Search";
 import classes from "./table.module.css";
 const Table = ({
   reverseFlagProp,
@@ -16,13 +16,14 @@ const Table = ({
   selectElement,
   paginations,
   dispatchDetail,
+  seacrhValue,
+  handleSearch,
 }) => {
   const router = useRouter();
   return (
     <div className={classes["table"]}>
-      <div className={classes["search-wrapper"]}>
-        <input className={classes["search"]} type="text" placeholder="Search" />
-        <BiSearch className={classes["search-icon"]} />
+      <div className="search-div">
+        <Search seacrhValue={seacrhValue} handleSearch={handleSearch} />
       </div>
       <div className={classes["table-header"]}>
         <span className={classes["square"]}></span>

@@ -1,18 +1,23 @@
 "use client";
 import React from "react";
-import { BiSearch } from "react-icons/bi";
 
 import EditButton from "../../editButton/EditButton";
 import NoContent from "../../noContent/NoContent";
 import Paginations from "../../paginations/Paginations";
+import Search from "../../search/Search";
 import classes from "./table.module.css";
-
-const Table = ({ channels, selectElement, paginations, dispatchDetail }) => {
+const Table = ({
+  channels,
+  selectElement,
+  paginations,
+  dispatchDetail,
+  seacrhValue,
+  handleSearch,
+}) => {
   return (
     <div className={classes["table"]}>
-      <div className={classes["search-wrapper"]}>
-        <input className={classes["search"]} type="text" placeholder="Search" />
-        <BiSearch className={classes["search-icon"]} />
+      <div className="search-div">
+        <Search seacrhValue={seacrhValue} handleSearch={handleSearch} />
       </div>
       <div className={classes["table-header"]}>
         <span className={classes["square"]}></span>

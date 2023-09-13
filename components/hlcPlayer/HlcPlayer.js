@@ -38,7 +38,7 @@ const HlcPlayer = ({ url }) => {
   return (
     <div className={classes["video-container"]}>
       <video
-        poster="/wallpaper/main.jpg"
+        // poster="/wallpaper/main.jpg"
         controlsList="noplaybackrate"
         className={classes["video"]}
         ref={videoRef}

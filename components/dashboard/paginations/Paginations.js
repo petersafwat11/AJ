@@ -34,7 +34,7 @@ const Paginations = ({ rowsPerPage, results, dispatchDetail }) => {
           : results < rowsPerPage
           ? results
           : 10}
-        of {results || 276}
+        of {results || 0}
       </p>
       <div className={classes["controllers"]}>
         <IoIosArrowBack

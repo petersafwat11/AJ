@@ -36,18 +36,28 @@
 }
 .title:last-of-type {
   margin-bottom: 0;
+  margin-top: 0;
+}
+.other-matches-title-and-search {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  min-height: 2.875rem;
+  margin-bottom: 0.75rem;
+  /* margin-bottom: 0.7rem; */
 }
 .search-desktop {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-bottom: 0.75rem;
+  align-self: flex-end;
 }
 .show-more-button {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 @media (max-width: 80rem) {
   .matches-container {
     width: 90%;
@@ -149,6 +159,12 @@
     margin-bottom: 0.2rem;
     margin-top: 1.75rem;
   }
+
+  .other-matches {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+
   .other-matches-title-and-search {
     display: flex;
     align-items: center;
@@ -157,11 +173,6 @@
   }
   .other-matches .title {
     margin-top: 0;
-  }
-
-  .other-matches {
-    margin-top: 2rem;
-    margin-bottom: 0;
   }
   .matches {
     margin-top: 0;

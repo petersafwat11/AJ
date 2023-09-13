@@ -1,6 +1,6 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
-import React, { useEffect, useReducer, useState } from "react";
+import React, { useCallback, useEffect, useReducer, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ActionsButtons from "../../../../components/dashboard/actionsButtons/ActionsButtons";
@@ -54,12 +54,17 @@ const Wrapper = ({ dataFetched }) => {
     currentPage: 1,
     results: dataFetched?.results,
   });
+  const [seacrhValue, setSearchValue] = useState("");
+
   // const fetchNewData = useCallback( , [paginations, setStreamLinks, dispatchDetail]);
   useEffect(() => {
     const fetchNewData = async () => {
       const query = {
         page: paginations.currentPage,
         limit: paginations.rowsPerPage,
+        searchValue: seacrhValue,
+        or: ["channelName"],
+
       };
 
       const newData = await getData("streamLink", query);
@@ -72,7 +77,35 @@ const Wrapper = ({ dataFetched }) => {
     paginations.rowsPerPage,
     setStreamLinks,
     dispatchDetail,
+    seacrhValue
   ]);
+  const handleSearch = (val) => {
+    setSearchValue(val);
+  };
+
+  const getSearchedData = useCallback(async () => {
+    try {
+      const newData = await getData("streamLink", {
+        page: 1,
+        limit: paginations.rowsPerPage,
+        searchValue: seacrhValue,
+        or: ["channelName"],
+      });
+      dispatchDetail({
+        type: "SEARCH-RESULTS",
+        currentPage: 1,
+        results: newData.results,
+      });
+      setStreamLinks(newData.data.data);
+      console.log("response", newData);
+    } catch (error) {
+      console.log("error", error);
+    }
+  }, [seacrhValue, paginations.rowsPerPage]);
+  useEffect(() => {
+    getSearchedData();
+    console.log("search", seacrhValue);
+  }, [seacrhValue, getSearchedData]);
 
   return (
     <div>
@@ -106,6 +139,8 @@ const Wrapper = ({ dataFetched }) => {
         />
       </div>
       <Table
+        seacrhValue={seacrhValue}
+        handleSearch={handleSearch}
         streamLinks={streamLinks}
         selectElement={selectElement}
         selectedStreamLinks={selectedStreamLinks}

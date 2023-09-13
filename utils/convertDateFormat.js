@@ -47,7 +47,11 @@ export const calcRemainingTime = (dateString) => {
   if (diff < 0) {
     return false;
   }
-  // Convert the difference to hours, minutes, and seconds
+
+  // Convert the difference to days, hours, minutes, and seconds
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  diff -= days * (1000 * 60 * 60 * 24);
+
   const hours = Math.floor(diff / (1000 * 60 * 60));
   diff -= hours * (1000 * 60 * 60);
 
@@ -57,7 +61,15 @@ export const calcRemainingTime = (dateString) => {
   const secs = Math.floor(diff / 1000);
 
   // Format the remaining time as desired
-  const formattedRemainingTime = hours + "h " + mins + "m " + secs + "s";
+  let formattedRemainingTime;
+
+  if (days >= 1) {
+    formattedRemainingTime =
+      days + "d " + hours + "h " + mins + "m " + secs + "s";
+    return formattedRemainingTime;
+  }
+
+  formattedRemainingTime = hours + "h " + mins + "m " + secs + "s";
   return formattedRemainingTime;
 };
 export const formatTime = (input) => {

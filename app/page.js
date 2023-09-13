@@ -7,7 +7,7 @@ import Marque from "../components/marque/Marque";
 import TopLayout from "../components/topLayout/TopLayout";
 import { getData } from "../utils/dashboardTablePagesFunctions";
 const Page = async () => {
-  const currentEvents = await getData("sports/currentEvents", {
+  const currentEvents = await getData("sports", {
     page: 1,
     limit: undefined,
     sportCategory: "football",

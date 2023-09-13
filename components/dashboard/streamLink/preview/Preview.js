@@ -1,5 +1,5 @@
 import React from "react";
-import VideoJs from "../../../video/VideoJs";
+import HlcPlayer from "../../../hlcPlayer/HlcPlayer";
 import classes from "./preview.module.css";
 const Preview = ({ url }) => {
   console.log(url);
@@ -9,7 +9,7 @@ const Preview = ({ url }) => {
       {!url ? (
         <div className={classes["preview"]}></div>
       ) : (
-        <VideoJs url={url} />
+        <HlcPlayer url={url} />
       )}
     </div>
   );

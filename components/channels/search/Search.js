@@ -7,7 +7,9 @@ const Search = ({ seacrhValue, handleSearch }) => {
       <div className={classes["search-div"]}>
         <input
           value={seacrhValue}
-          onChange={handleSearch}
+          onChange={(e) => {
+            handleSearch(e.target.value);
+          }}
           className={classes["channel-search"]}
           type="text"
           placeholder="Search for channel..."

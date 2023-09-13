@@ -4,8 +4,8 @@ import React, { useEffect, useReducer } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ActionsButtons from "../../../../../components/dashboard/actionsButtons/ActionsButtons";
-import ChannelName from "../../../../../components/dashboard/channelsListings/channelName/ChannelName";
 import Mode from "../../../../../components/dashboard/channelsListings/mode/Mode";
+import OneFeildInput from "../../../../../components/dashboard/channelsListings/oneFeildInput/oneFeildInput";
 import StreamLinks from "../../../../../components/dashboard/channelsListings/streamLinks/StreamLinks";
 import {
   deleteItem,
@@ -17,7 +17,8 @@ import classes from "./pages.module.css";
 
 const reducerIntialValue = {
   channelName: "",
-  mode: null,
+  mode: "",
+  language: "",
   streamLinkName: "",
   streamLinkUrl: "",
   error: "",
@@ -29,17 +30,17 @@ const channelReducer = (state, action) => {
     return reducerIntialValue;
   } else if (action.type === "NOT-FOUND") {
     return { ...state, error: action.value };
-  }
-  if (action.type === "UPDATE-ALL") {
+  } else if (action.type === "UPDATE-ALL") {
     return action.value;
-  }
-  if (action.type === "CHANNEL-NAME") {
+  } else if (action.type === "CHANNEL-NAME") {
     return { ...state, channelName: action.value };
   } else if (action.type === "MODE") {
     if (state.mode === action.value) {
       return { ...state, mode: null };
     }
     return { ...state, mode: action.value };
+  } else if (action.type === "LANGUAGE") {
+    return { ...state, language: action.value };
   } else if (action.type === "STREAM-LINK") {
     return {
       ...state,
@@ -104,15 +105,23 @@ const Page = () => {
 
       <div className={classes["details"]}>
         <div className={classes["details-wrapper"]}>
-          <ChannelName
-            data={channel.channelName}
+          <OneFeildInput
+            title={"Channel Name"}
+            dispatchType={"CHANNEL-NAME"}
+            data={channel?.channelName}
             dispatchDetail={dispatchDetail}
           />
-          <Mode data={channel.mode} dispatchDetail={dispatchDetail} />
+          <Mode data={channel?.mode} dispatchDetail={dispatchDetail} />
+          <OneFeildInput
+            title={"Language"}
+            dispatchType={"LANGUAGE"}
+            data={channel?.language}
+            dispatchDetail={dispatchDetail}
+          />
         </div>
         <StreamLinks
-          streamLinksAvaiable={channel.streamLinksAvaiable}
-          streamLinkName={channel.streamLinkName}
+          streamLinksAvaiable={channel?.streamLinksAvaiable}
+          streamLinkName={channel?.streamLinkName}
           dispatchDetail={dispatchDetail}
         />
       </div>

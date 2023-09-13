@@ -21,7 +21,7 @@ const Page = () => {
     const sportCategory = pathname.slice(pathname.lastIndexOf("/") + 1);
     const pageData = async () => {
       try {
-        const currentEvents = await getData("sports/currentEvents", {
+        const currentEvents = await getData("sports", {
           sportCategory: sportCategory,
           page: 1,
           limit: undefined,
@@ -31,7 +31,7 @@ const Page = () => {
         );
         setOtherMatches({
           total: currentEvents?.totalMatches,
-          matches: currentEvents?.data
+          matches: currentEvents?.data,
         });
       } catch (error) {
         console.log(error);

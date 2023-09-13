@@ -4,15 +4,12 @@ import Marque from "../../../components/marque/Marque";
 import TopLayout from "../../../components/topLayout/TopLayout";
 import { getData } from "../../../utils/dashboardTablePagesFunctions";
 const Page = async () => {
-  const channelsServer = await getData("channels", {
+  const response = await getData("channels", {
     page: 1,
-    limit: undefined,
+    limit: 8,
+    mode: "Visible",
   });
   // delete channelsServer.status;
-  console.log({
-    channels: channelsServer.data.data,
-    totalResults: channelsServer.results,
-  });
   return (
     <div className="wrapper">
       <TopLayout />
@@ -20,9 +17,10 @@ const Page = async () => {
         <Marque />
         <ChannelsWrapper
           channelsServer={{
-            channels: channelsServer.data.data,
-            totalResults: channelsServer.results,
+            channels: response?.data?.data,
+            totalResults: response?.results,
           }}
+          allLanguages={response?.allLanguages}
         />
       </div>
     </div>

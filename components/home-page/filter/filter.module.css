@@ -63,7 +63,7 @@
   z-index: 5;
   width: 100%;
   gap: 0.2rem;
-  height: 7.8rem;
+  max-height: 7.8rem;
   overflow-y: scroll;
   background-color: rgba(25, 30, 34, 1);
   padding: 0.47rem 0.2rem;

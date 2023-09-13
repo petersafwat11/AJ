@@ -1,6 +1,6 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
-import React, { useEffect, useReducer, useState } from "react";
+import React, { useCallback, useEffect, useReducer, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import ActionsButtons from "../../../../components/dashboard/actionsButtons/ActionsButtons";
 import Table from "../../../../components/dashboard/channelsListings/table/Table";
@@ -16,7 +16,6 @@ import { paginationsReducer } from "../../../../utils/paginationsReducer";
 import classes from "./wrapper.module.css";
 const Wrapper = ({ dataFetched }) => {
   const notify = (message, type) => toast[type](message);
-  console.log("dataFetched", dataFetched);
   const router = useRouter();
   const pathname = usePathname();
   const [channels, setChannels] = useState(dataFetched?.data?.data || []);
@@ -52,11 +51,15 @@ const Wrapper = ({ dataFetched }) => {
     currentPage: 1,
     results: dataFetched?.results,
   });
+  const [seacrhValue, setSearchValue] = useState("");
+
   useEffect(() => {
     const fetchNewData = async () => {
       const query = {
         page: paginations.currentPage,
         limit: paginations.rowsPerPage,
+        searchValue: seacrhValue,
+        or: ["channelName"],
       };
 
       const newData = await getData("channels", query);
@@ -69,7 +72,36 @@ const Wrapper = ({ dataFetched }) => {
     paginations.rowsPerPage,
     setChannels,
     dispatchDetail,
+    seacrhValue,
   ]);
+  const handleSearch = (val) => {
+    setSearchValue(val);
+  };
+
+  const getSearchedData = useCallback(async () => {
+    try {
+      const newData = await getData("channels", {
+        page: 1,
+        limit: paginations.rowsPerPage,
+        searchValue: seacrhValue,
+        or: ["channelName"],
+      });
+      dispatchDetail({
+        type: "SEARCH-RESULTS",
+        currentPage: 1,
+        results: newData.results,
+      });
+      setChannels(newData.data.data);
+      console.log("response", newData);
+    } catch (error) {
+      console.log("error", error);
+    }
+  }, [seacrhValue, paginations.rowsPerPage]);
+  useEffect(() => {
+    getSearchedData();
+    console.log("search", seacrhValue);
+  }, [seacrhValue, getSearchedData]);
+
   return (
     <div>
       <ToastContainer
@@ -103,6 +135,8 @@ const Wrapper = ({ dataFetched }) => {
         />
       </div>
       <Table
+        seacrhValue={seacrhValue}
+        handleSearch={handleSearch}
         channels={channels}
         selectElement={selectElement}
         selectedChannels={selectedChannels}

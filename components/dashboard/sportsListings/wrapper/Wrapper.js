@@ -1,7 +1,7 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
 
-import React, { useEffect, useReducer, useState } from "react";
+import React, { useCallback, useEffect, useReducer, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { flagItem } from "../../../../utils/dashboardHelperFunctions";
@@ -30,6 +30,8 @@ const Wrapper = ({ dataFetched }) => {
   const [sportsType, setSportsType] = useState("Football");
   const changeSportsType = (val) => {
     setSportsType(val);
+    setSearchValue("");
+    dispatchDetail({ type: "CURRENT-PAGE", value: 1 });
   };
 
   const selectElement = (elemID) => {
@@ -56,12 +58,22 @@ const Wrapper = ({ dataFetched }) => {
     currentPage: 1,
     results: dataFetched?.results,
   });
+  const [seacrhValue, setSearchValue] = useState("");
+
   useEffect(() => {
     const fetchNewData = async () => {
       const query = {
         page: paginations.currentPage,
         limit: paginations.rowsPerPage,
         sportCategory: sportsType,
+        searchValue: seacrhValue,
+        or: [
+          "teamsTitle",
+          "firstTeamName",
+          "secondTeamName",
+          "eventLeague",
+          "eventStadium",
+        ],
       };
       const newData = await getData("sports", query);
       setSports(newData.data.data);
@@ -74,10 +86,45 @@ const Wrapper = ({ dataFetched }) => {
     setSports,
     dispatchDetail,
     sportsType,
+    seacrhValue,
   ]);
   const reverseFlagProp = async (itemID) => {
     flagItem(itemID, sports, setSports, "sports", notify);
   };
+  const handleSearch = (val) => {
+    setSearchValue(val);
+  };
+
+  const getSearchedData = useCallback(async () => {
+    try {
+      const newData = await getData("sports", {
+        page: 1,
+        limit: paginations.rowsPerPage,
+        sportCategory: sportsType,
+        searchValue: seacrhValue,
+        or: [
+          "teamsTitle",
+          "firstTeamName",
+          "secondTeamName",
+          "eventLeague",
+          "eventStadium",
+        ],
+      });
+      dispatchDetail({
+        type: "SEARCH-RESULTS",
+        currentPage: 1,
+        results: newData.results,
+      });
+      setSports(newData.data.data);
+      console.log("response", newData);
+    } catch (error) {
+      console.log("error", error);
+    }
+  }, [seacrhValue, paginations.rowsPerPage, sportsType]);
+  useEffect(() => {
+    getSearchedData();
+    console.log("search", seacrhValue);
+  }, [seacrhValue, getSearchedData]);
 
   return (
     <div className={classes["container"]}>
@@ -116,6 +163,8 @@ const Wrapper = ({ dataFetched }) => {
         />
       </div>
       <Table
+        seacrhValue={seacrhValue}
+        handleSearch={handleSearch}
         reverseFlagProp={reverseFlagProp}
         sports={sports}
         selectElement={selectElement}

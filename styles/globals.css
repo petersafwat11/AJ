@@ -346,3 +346,6 @@ button {
   line-height: 0.88rem; /* 133.333% */
   text-transform: uppercase;
 }
+.search-div {
+  margin: 1.1rem 2.552rem 1.1rem 0.5808rem;
+}

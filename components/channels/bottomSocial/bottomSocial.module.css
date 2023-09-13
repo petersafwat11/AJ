@@ -31,7 +31,12 @@
   justify-content: center;
   gap: 0.7rem;
 }
-.icons * {
+.link {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+}
+.link * {
   font-size: 1.04rem;
   /* width: 16px;
   height: auto; */
@@ -39,7 +44,7 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-.icons *:hover {
+.link *:hover {
   color: white;
 }
 @media (max-width: 56.25rem) {

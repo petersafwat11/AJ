@@ -1,7 +1,9 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import { getData } from "../../../utils/dashboardTablePagesFunctions";
 import HlcPlayer from "../../hlcPlayer/HlcPlayer";
+import Filter from "../../home-page/filter/Filter";
 import LiveBtn from "../../live-button/LiveButton";
 import Popup from "../../popupWrapper/Popup";
 import ProtonVpn from "../../protonVpn/ProtonVpn";
@@ -11,10 +13,9 @@ import ShowMore from "../../showMore/ShowMore";
 import WatchNavigation from "../../watchNavigation/WatchNavigation";
 import SocialIcons from "../../whatchShare/SocialIcons";
 import BottomSocial from "../bottomSocial/BottomSocial";
-import Filter from "../filter/Filter";
 import Search from "../search/Search";
 import classes from "./wrapper.module.css";
-const ChannelsWrapper = ({ channelsServer }) => {
+const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
   // const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
   const [showReport, setShowReport] = useState(false);
@@ -22,20 +23,21 @@ const ChannelsWrapper = ({ channelsServer }) => {
   // const [selectedAvatar, setSelectedAvatar] = useState("/svg/chat/5.svg");
 
   const [channelsServers, setChannelsServers] = useState(channelsServer);
-  const [playingServer, setPlayingServer] = useState();
-  // channelsServers[0]?.streamLinkUrl
 
-  const [playingServerName, setPlayingServerName] = useState();
-  // channelsServers[0]?.channelName
+  console.log("channel", channelsServers);
+  const [playingServer, setPlayingServer] = useState(
+    channelsServers?.channels[0]?.streamLinkUrl
+  );
+
+  const [playingServerName, setPlayingServerName] = useState(
+    channelsServers?.channels[0]?.channelName
+  );
 
   const [seacrhValue, setSearchValue] = useState("");
-  const handleSearch = async (e) => {
-    setSearchValue(e.target.value);
-    const matchedServers = channelsServer.filter((item) =>
-      item.streamLinkUrl.includes(e.target.value)
-    );
-    setChannelsServers(matchedServers);
-  };
+  const [filterValue, setFilterValue] = useState("All");
+  const [paginationNum, setPaginationNum] = useState(1);
+  const channelsRef = useRef();
+
   // const toggleChat = () => {
   //   setShowChat(!showChat);
   // };
@@ -51,14 +53,83 @@ const ChannelsWrapper = ({ channelsServer }) => {
   // const selectAvatar = (avatar) => {
   //   setSelectedAvatar(avatar);
   // };
-  const [starting, setStarting] = useState(false);
-  const handleStarting = () => {
-    console.log("startting");
-    setStarting(!starting);
+  const fetchNewData = useCallback(async (query, cause) => {
+    try {
+      const response = await getData("channels", query);
+      console.log("response", response);
+      cause === "filter"
+        ? setSearchValue("")
+        : cause === "search"
+        ? setFilterValue("All")
+        : "";
+
+      cause !== "showMore"
+        ? setChannelsServers({
+            channels: response?.data?.data,
+            totalResults: response?.results,
+          })
+        : setChannelsServers({
+            // eslint-disable-next-line no-unsafe-optional-chaining
+            channels: [...channelsRef.current, ...response?.data?.data],
+            totalResults: response?.results,
+          });
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
+
+  const showMoreHandeler = async () => {
+    console.log("show-more");
+    const num = paginationNum;
+    await fetchNewData(
+      {
+        limit: 4,
+        skip: 8 + (num - 1) * 4,
+        mode: "Visible",
+        language: filterValue === "All" ? undefined : filterValue,
+        searchValue: seacrhValue,
+        or: ["channelName"],
+      },
+      "showMore"
+    );
+    setPaginationNum(paginationNum + 1);
   };
-  const showMoreHandeler = () => {
-    console.log("clicked show more");
+  const handleSearch = async (val) => {
+    setSearchValue(val);
   };
+
+  useEffect(() => {
+    channelsRef.current = channelsServers.channels;
+  }, [channelsServers]);
+
+  useEffect(() => {
+    fetchNewData(
+      {
+        page: 1,
+        limit: 8,
+        mode: "Visible",
+        searchValue: seacrhValue,
+        or: ["channelName"],
+      },
+      "search"
+    );
+  }, [seacrhValue, fetchNewData]);
+  const handleFilter = async (val) => {
+    setFilterValue(val);
+    console.log(val);
+  };
+  useEffect(() => {
+    fetchNewData(
+      {
+        page: 1,
+        limit: 8,
+        mode: "Visible",
+        language: filterValue === "All" ? undefined : filterValue,
+      },
+      "filter"
+    );
+  }, [filterValue, fetchNewData]);
+  console.log(playingServer, playingServer);
   return (
     <div className={classes["channels"]}>
       {showReport && (
@@ -107,9 +178,7 @@ const ChannelsWrapper = ({ channelsServer }) => {
           </div>
 
           <div className="watch-video">
-            <HlcPlayer
-              url={"https://s1.sportshub808.com:8443/hls/btsport2.m3u8"}
-            />
+            <HlcPlayer url={playingServer} />
           </div>
           <div className={classes["watch-video-options"]}>
             <BottomSocial />
@@ -143,7 +212,12 @@ const ChannelsWrapper = ({ channelsServer }) => {
           </div>
           <div className={classes["sort-search-wrapper"]}>
             <Search seacrhValue={seacrhValue} handleSearch={handleSearch} />
-            <Filter />
+            <Filter
+              channels={true}
+              options={["All", ...allLanguages]}
+              handleFilter={handleFilter}
+              filterValue={filterValue}
+            />
           </div>
           <div className={classes["watch-video-servers"]}>
             {channelsServers?.channels?.length > 0 ? (
@@ -163,9 +237,10 @@ const ChannelsWrapper = ({ channelsServer }) => {
               <p>{`there isn't channels avaialbe now`}</p>
             )}
           </div>
-          {channelsServers?.totalResults > 3 && (
+          {channelsServers?.totalResults >
+            channelsServers?.channels?.length && (
             <div className="show-more-wrapper">
-              <ShowMore onClick={showMoreHandeler} />
+              <ShowMore showMoreHandeler={showMoreHandeler} />
             </div>
           )}
         </div>

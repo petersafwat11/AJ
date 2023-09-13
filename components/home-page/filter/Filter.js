@@ -1,43 +1,29 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import classes from "./filter.module.css";
-const Filter = ({ sportCategory, changeSportCategory }) => {
-  const categories = [
-    "Football",
-    "Basketball",
-    "NFL",
-    "Boxing",
-    "Netball",
-    "Volleyball",
-    "Tennis",
-    "WWE",
-    "F1",
-    "Baseball",
-    "Nascar",
-    "Darts",
-    "Cricket",
-    "Hockey",
-    "HorseRacing",
-    "Rugby",
-    "Tabletennis",
-  ];
-
+const Filter = ({ options, handleFilter, filterValue, channels }) => {
+  const router = useRouter();
   return (
     <div className={classes["container"]}>
       <div className={classes["selected"]}>
-        <p className={classes["selected-sport"]}>{sportCategory}</p>
+        <p className={classes["selected-sport"]}>{filterValue}</p>
         <MdOutlineKeyboardArrowDown className={classes["arrow"]} />
       </div>
       <div className={classes["other-sports"]}>
-        {categories.map((item, index) => (
+        {options.map((item, index) => (
           <p
             onClick={() => {
-              changeSportCategory(item);
+              if (channels) {
+                handleFilter(item);
+              } else {
+                router.push(`/currentEvents/${item.toLowerCase()}`);
+              }
             }}
             key={index}
             className={
-              item === sportCategory
+              item === filterValue
                 ? classes["sport-list-selected"]
                 : classes["sport"]
             }
