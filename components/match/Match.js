@@ -5,7 +5,7 @@ import React from "react";
 import { getMatchDate } from "../../utils/convertDateFormat";
 import RemainingTime from "./RemainingTime";
 import WatchBtn from "./WatchBtn";
-import LiveBtn from "./liveBtn";
+import LiveBtn from "./LiveBtn";
 import classes from "./match.module.css";
 export const Match = ({ matchData }) => {
   console.log(

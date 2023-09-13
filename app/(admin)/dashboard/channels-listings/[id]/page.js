@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ActionsButtons from "../../../../../components/dashboard/actionsButtons/ActionsButtons";
 import Mode from "../../../../../components/dashboard/channelsListings/mode/Mode";
-import OneFeildInput from "../../../../../components/dashboard/channelsListings/oneFeildInput/oneFeildInput";
+import OneFeildInput from "../../../../../components/dashboard/channelsListings/oneFeildInput/OneFeildInput";
 import StreamLinks from "../../../../../components/dashboard/channelsListings/streamLinks/StreamLinks";
 import {
   deleteItem,
