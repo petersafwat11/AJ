@@ -14,6 +14,7 @@ const WatchBtn = ({ id }) => {
 
   const timer = useSelector((state) => state.timer);
   const router = useRouter();
+
   return (
     <div className={classes["action-button"]}>
       <button

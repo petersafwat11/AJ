@@ -21,12 +21,12 @@ const ServersAndLanguages = ({
             <div className={classes["toggler-wrapper"]}>
               <label className={classes["toggle"]}>
                 <input
-                  checked={servers[lang.toLocaleLowerCase()].checked}
+                  checked={servers[lang.toLocaleLowerCase()]?.checked}
                   onChange={(e) => {
                     dispatchServer({
                       type: "CHECKBOX",
-                      lang: lang.toLocaleUpperCase(),
-                      value: !servers[lang.toLowerCase()].checked,
+                      lang: lang?.toLocaleUpperCase(),
+                      value: !servers[lang.toLowerCase()]?.checked,
                     });
                   }}
                   className={classes["toggle-checkbox"]}
@@ -40,20 +40,20 @@ const ServersAndLanguages = ({
               type="number"
               min={0}
               max={5}
-              value={servers[lang.toLocaleLowerCase()].num}
+              value={servers[lang.toLocaleLowerCase()]?.num}
               onChange={(e) => {
                 dispatchServer({
                   type: "NUM",
-                  lang: lang.toLocaleUpperCase(),
+                  lang: lang?.toLocaleUpperCase(),
                   value: Number(e.target.value),
                 });
               }}
               className={classes["servers-num-input"]}
             />
             <BsArrowRight className={classes["arrow"]} />
-            {servers[lang.toLowerCase()].checked ? (
+            {servers[lang.toLowerCase()]?.checked ? (
               <div className={classes["servers"]}>
-                {generateArray(servers[lang.toLocaleLowerCase()].num).map(
+                {generateArray(servers[lang.toLocaleLowerCase()]?.num).map(
                   (serverNum) => (
                     <div key={serverNum} className={classes["input-group"]}>
                       <label htmlFor="first-team" className={classes["label"]}>
@@ -61,9 +61,9 @@ const ServersAndLanguages = ({
                       </label>
                       <input
                         value={
-                          servers[lang.toLowerCase()].channels.find(
+                          servers[lang.toLowerCase()]?.channels?.find(
                             (server) => server.name == "server-" + serverNum
-                          ).serverValue.name
+                          ).serverValue?.name
                         }
                         // onChange={(e) => {
                         //   dispatchServer({
@@ -81,7 +81,7 @@ const ServersAndLanguages = ({
                       />
                       {streamLinksAvaiable?.length > 0 && (
                         <div className={classes["search-options"]}>
-                          {streamLinksAvaiable.map((item, index) => (
+                          {streamLinksAvaiable?.map((item, index) => (
                             <p
                               onClick={() => {
                                 dispatchServer({
@@ -89,8 +89,8 @@ const ServersAndLanguages = ({
                                   lang: lang.toLocaleUpperCase(),
                                   value: {
                                     name: "server-" + serverNum,
-                                    streamLinkName: item.streamLinkName,
-                                    streamLinkUrl: item.streamLinkUrl,
+                                    streamLinkName: item?.streamLinkName,
+                                    streamLinkUrl: item?.streamLinkUrl,
                                   },
                                 });
                               }}
@@ -98,20 +98,20 @@ const ServersAndLanguages = ({
                                 background:
                                   index % 2 === 0 ? "inherit" : "#F5F5F5",
                               }}
-                              key={`${item.streamLinkUrl}-${index}`}
+                              key={`${item?.streamLinkUrl}-${index}`}
                               className={
                                 classes[
                                   item.streamLinkName ===
                                   servers[lang.toLowerCase()].channels.find(
                                     (server) =>
                                       server.name == "server-" + serverNum
-                                  ).serverValue.name
+                                  ).serverValue?.name
                                     ? "option"
                                     : "selected-option"
                                 ]
                               }
                             >
-                              {item.streamLinkName}
+                              {item?.streamLinkName}
                             </p>
                           ))}
                         </div>

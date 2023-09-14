@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { decrement } from "../../store/timerSlice";
 import { calcRemainingTime } from "../../utils/convertDateFormat";
@@ -9,17 +9,16 @@ const RemainingTime = ({ date }) => {
   const timer = useSelector((state) => state.timer);
   const dispatch = useDispatch();
 
-  const [remaingTime, setRemainingTime] = useState(true);
+  // const [remaingTime, setRemainingTime] = useState(true);
   const callRemainingTime = useCallback(() => calcRemainingTime(date), [date]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      // setRemainingTime(callRemainingTime());
+    setInterval(() => {
       dispatch(decrement(callRemainingTime()));
     }, 1000);
-  }, [setRemainingTime, callRemainingTime, dispatch]);
+  }, [callRemainingTime, dispatch]);
 
-  return remaingTime ? (
+  return timer ? (
     <p className={classes["remaining-time"]}>{timer}</p>
   ) : (
     <div className={classes["white-space"]}></div>
