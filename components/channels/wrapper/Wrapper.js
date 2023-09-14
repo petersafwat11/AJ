@@ -110,6 +110,7 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
         page: 1,
         limit: 8,
         mode: "Visible",
+        language: filterValue === "All" ? undefined : filterValue,
         searchValue: seacrhValue,
         or: ["channelName"],
       },
