@@ -83,6 +83,7 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
   const showMoreHandeler = async () => {
     console.log("show-more");
     const num = paginationNum;
+    setPaginationNum(paginationNum + 1);
     await fetchNewData(
       {
         limit: 4,
@@ -94,7 +95,6 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
       },
       "showMore"
     );
-    setPaginationNum(paginationNum + 1);
   };
   const handleSearch = async (val) => {
     setSearchValue(val);
@@ -116,10 +116,9 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
       },
       "search"
     );
-  }, [seacrhValue, fetchNewData]);
+  }, [seacrhValue, fetchNewData, filterValue]);
   const handleFilter = async (val) => {
     setFilterValue(val);
-    console.log(val);
   };
   useEffect(() => {
     fetchNewData(
@@ -132,7 +131,6 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
       "filter"
     );
   }, [filterValue, fetchNewData]);
-  console.log(playingServer, playingServer);
   return (
     <div className={classes["channels"]}>
       {showReport && (
