@@ -58,10 +58,10 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
       const response = await getData("channels", query);
       console.log("response", response);
       if (cause === "filter") {
-        setSearchValue("");
+        // setSearchValue("");
         setPaginationNum(1);
       } else if (cause === "search") {
-        setFilterValue("All");
+        // setFilterValue("All");
         setPaginationNum(1);
       }
 
