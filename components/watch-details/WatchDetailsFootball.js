@@ -1,7 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
-import Image from "next/image";
 import classes from "./watchDetails.module.css";
 const WatchDetails = ({
   lieageImage,
@@ -28,7 +27,7 @@ const WatchDetails = ({
     seconteamImageWidth: secondTeamImageDimentions.width.tablet,
     seconteamImageHeight: secondTeamImageDimentions.height.tablet,
   });
-  const handleResize = () => {
+  const handleResize = useCallback(() => {
     setWindowDimensions({
       width: window.screen.width,
       height: window.screen.height,
@@ -66,12 +65,31 @@ const WatchDetails = ({
       });
       return;
     }
-  };
+  }, [
+    lieageImageDimetions.width.mobile,
+    lieageImageDimetions.height.mobile,
+    firstTeamImageDimentions.width.mobile,
+    firstTeamImageDimentions.height.mobile,
+    secondTeamImageDimentions.width.mobile,
+    secondTeamImageDimentions.height.mobile,
+    lieageImageDimetions.width.tablet,
+    lieageImageDimetions.height.tablet,
+    firstTeamImageDimentions.width.tablet,
+    firstTeamImageDimentions.height.tablet,
+    secondTeamImageDimentions.width.tablet,
+    secondTeamImageDimentions.height.tablet,
+    lieageImageDimetions.width.desktop,
+    lieageImageDimetions.height.desktop,
+    firstTeamImageDimentions.width.desktop,
+    firstTeamImageDimentions.height.desktop,
+    secondTeamImageDimentions.width.desktop,
+    secondTeamImageDimentions.height.desktop,
+  ]);
   useEffect(() => {
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [handleResize]);
 
   return (
     <div className={classes["watch-details"]}>
@@ -82,7 +100,7 @@ const WatchDetails = ({
           src={lieageImage}
           alt="other"
           width={imagesDimentions.lieageImageWidth}
-          height={imagesDimentions.lieageImageHeigth}
+          // height={imagesDimentions.lieageImageHeigth}
         />
         <div className={classes["date-and-place"]}>
           <p className={classes["date"]}>{date}</p>
@@ -91,12 +109,12 @@ const WatchDetails = ({
       </div>
       <div className={classes["watch-details-second"]}>
         <div className={classes["first-team"]}>
-          <Image
+          <img
             crossOrigin="anonymous"
             className={classes["team-image"]}
             src={firstTeamImage}
             alt="other"
-            height={imagesDimentions.firstTeamImageHeight}
+            // height={imagesDimentions.firstTeamImageHeight}
             width={imagesDimentions.firstTeamImageWidth}
           />
           <p className={classes["first-team-name"]}>{firstTeamName}</p>
@@ -104,12 +122,12 @@ const WatchDetails = ({
         <span className={classes["vs"]}>VS</span>
         <div className={classes["second-team"]}>
           <p className={classes["second-team-name"]}>{seconteamName}</p>
-          <Image
+          <img
             crossOrigin="anonymous"
             className={classes["team-image"]}
             src={seconteamImage}
             alt="other"
-            height={imagesDimentions.seconteamImageHeight}
+            // height={imagesDimentions.seconteamImageHeight}
             width={imagesDimentions.seconteamImageWidth}
           />
         </div>

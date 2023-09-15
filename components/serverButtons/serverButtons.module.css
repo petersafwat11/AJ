@@ -1,6 +1,5 @@
 .wrapper {
   flex-grow: 1;
-  margin-left: 84px;
   width: 31.4rem;
   display: flex;
   align-items: center;
@@ -41,12 +40,15 @@
   background: #fe4747;
 }
 .lang-text {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.2);
   text-align: center;
   font-family: RobotoSemiBold;
   font-size: 0.94rem;
   font-weight: 600;
   line-height: normal;
+}
+.text-selected{
+  color: #fff;
 }
 
 @media (max-width: 56.25rem) {

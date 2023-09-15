@@ -4,6 +4,7 @@
   padding: 1.2rem 1.7rem 4rem;
   background-color: white;
   border-radius: 0.85rem;
+  gap: 1rem;
 }
 .title {
   color: #000;
@@ -123,7 +124,8 @@
   gap: 1.375rem;
   margin-top: -1.4rem;
 }
-.input-group {
+.input-group,
+.input-group-2 {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -205,8 +207,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
 .other-lange {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
+}
+.input-group-2 {
+  margin-top: -1.5rem;
 }

@@ -1,6 +1,7 @@
 import { generateArray } from "../generateArrayOfNumbers";
 
 export const otherServersReducer = (state, action) => {
+  console.log("action", state, action);
   if (action.type === "UPDATE-ALL") {
     return action.value;
   } else if (action.type === "CLEAR-ALL") {
@@ -48,7 +49,7 @@ export const otherServersReducer = (state, action) => {
 
     let changedLangChannels = generateArray(action.value.num)
       .map((num) => `server-${num}`)
-      .map((name) => ({ name: name, value: "" }));
+      .map((name) => ({ name: name, streamLinkName: "", streamLinkUrl: "" }));
     let changedLang = state.otherLangs.find(
       (server) => server.index == action.value.index
     );
@@ -79,7 +80,13 @@ export const otherServersReducer = (state, action) => {
       (server) => server.name == action.value.name
     );
 
-    changedChannel = { ...changedChannel, value: action.value.serverValue };
+    // changedChannel = { ...changedChannel, value: action.value.serverValue };
+    changedChannel = {
+      ...changedChannel,
+      streamLinkName: action.value.streamLinkName,
+      streamLinkUrl: action.value.streamLinkUrl,
+    };
+
     newLangChannels.push(changedChannel);
     changedLang.channels = newLangChannels;
     newLangs.push(changedLang);

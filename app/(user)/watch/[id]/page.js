@@ -7,14 +7,17 @@ import WatchDetails from "../../../../components/watch-details/WatchDetailsFootb
 import SocialIcons from "../../../../components/whatchShare/SocialIcons";
 
 import { usePathname } from "next/navigation";
+import BottomSocial from "../../../../components/bottomSocial/BottomSocial";
+import ChangeServer from "../../../../components/changeServer/ChangeServer";
 import HlcPlayer from "../../../../components/hlcPlayer/HlcPlayer";
-import ChangeServer from "../../../../components/home-page/changeServer/ChangeServer";
 import Marque from "../../../../components/marque/Marque";
 import Popup from "../../../../components/popupWrapper/Popup";
 import ServersButtons from "../../../../components/serverButtons/ServersButtons";
+import ServersButtonsMobile from "../../../../components/serverButtons/serversButtonsMobile/ServersButtonsMobile";
 import TopLayout from "../../../../components/topLayout/TopLayout";
 import UnderDevelopment from "../../../../components/underDevelopment/component/underDevelopment";
 import WatchNavigation from "../../../../components/watchNavigation/WatchNavigation";
+import { changeServersFormat } from "../../../../utils/changeServersFormat";
 import { getMatchDate } from "../../../../utils/convertDateFormat";
 import { getData } from "../../../../utils/dashboardTablePagesFunctions";
 import classes from "./page.module.css";
@@ -22,19 +25,25 @@ const Page = () => {
   const [loading, setLoading] = useState(true);
   const pathname = usePathname();
   const [matchData, setMatchData] = useState({});
-  // const [otherMatches, setOtherMatches] = useState({});
+
+  const [playingServer, setPlayingServer] = useState(null);
+  const [langOtherServersAvailable, setlangOtherServersAvailable] = useState(
+    []
+  );
+  const [playingServerLang, setPlayingServerLang] = useState("");
   const [error, setError] = useState(false);
+  const [showChangeServer, setShowChangeServer] = useState(false);
   useEffect(() => {
     const matchId = pathname.slice(pathname.lastIndexOf("/") + 1);
     const pageData = async () => {
       try {
-        const eventData = await getData(`sports/${matchId}`);
-        console.log(
-          eventData?.data?.servers[0]?.mainLanguages?.filter(
-            (lang) => lang.checked === true
-          )
-        );
-        setMatchData(eventData?.data);
+        const response = await getData(`sports/${matchId}`);
+        const data = { ...response?.data };
+        const servers = changeServersFormat(response?.data?.servers);
+        data.servers = servers;
+        setPlayingServer(data?.servers[0][Object.keys(data?.servers[0])][0]);
+        setPlayingServerLang(Object.keys(data?.servers[0])[0]);
+        setMatchData(data);
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -48,10 +57,6 @@ const Page = () => {
   const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
   const [showReport, setShowReport] = useState(false);
-  const [selectedOption, setSelectedOption] = useState({
-    index: 0,
-    name: "english",
-  });
   // const toggleChat = () => {
   //   setShowChat(!showChat);
   // };
@@ -61,24 +66,25 @@ const Page = () => {
   const toggleReport = () => {
     setShowReport(!showReport);
   };
-
-  const selectOption = (option) => {
-    setSelectedOption(option);
-  };
-  const [showVideo, setshowVideo] = useState(false);
-  useEffect(() => {
-    setshowVideo(true);
-  }, []);
   const toggleServers = () => {
-    console.log("toggle server");
+    setShowChangeServer(!showChangeServer);
+  };
+  const handleServerClicks = (val, lang) => {
+    console.log(val);
+    toggleServers();
+    setlangOtherServersAvailable({ servers: val[Object.keys(val)[0]], lang });
+    console.log(val[Object.keys(val)[0]]);
+  };
+  const handleChangeServers = (val, lang) => {
+    console.log("change server");
+    toggleServers();
+    setPlayingServerLang(lang)
+    console.log(val);
+    setPlayingServer(val);
   };
   return (
     <div className="wrapper">
       <TopLayout />
-      {/* <video autoPlay loop muted>
-        <source src="/video-background/1.mp4" type="video/mp4" />
-      </video>
- */}
       <div className="wrapper-2">
         <Marque />
 
@@ -93,9 +99,14 @@ const Page = () => {
               <Report toggleReport={toggleReport} />
             </Popup>
           )}
-          {false && (
+          {showChangeServer && (
             <Popup>
-              <ChangeServer toggleServers={toggleServers} />
+              <ChangeServer
+                langOtherServersAvailable={langOtherServersAvailable?.servers}
+                lang={langOtherServersAvailable?.lang}
+                handleChangeServers={handleChangeServers}
+                toggleServers={toggleServers}
+              />
             </Popup>
           )}
 
@@ -114,20 +125,12 @@ const Page = () => {
               <Chat toggleChat={toggleChat} />
             </div>
           )} */}
-          {/* <div className={classes["navigate"]}>
-            <Link href="/">Home</Link>
-            <span> &gt; </span>
-            <Link href="/channels">Watch</Link>
-          </div> */}
           <WatchNavigation page={"Watch"} />
-          {/* {loading ? (
-            <p className="center-under-dev"> loading</p>
-          ) : ( */}
           <div className={classes["container"]}>
             <WatchDetails
               lieageImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.leagueLogo}`}
               lieageImageDimetions={{
-                width: { desktop: "120", tablet: "84", mobile: "35" },
+                width: { desktop: "120", tablet: "84", mobile: "78" },
                 height: { desktop: "51", tablet: "36", mobile: "35" },
               }}
               firstTeamImageDimentions={{
@@ -156,23 +159,17 @@ const Page = () => {
 
               <div id="my-root-div" className="watch-video">
                 {/* <EventCountDown eventStartDate={matchData?.eventDate} /> */}
-                <HlcPlayer
-                  url={"https://s1.sportshub808.com:8443/hls/btsport4.m3u8"}
-                />
+                <HlcPlayer url={playingServer?.streamLinkUrl} />
                 {/* <PlayerContainer /> */}
               </div>
               <div className={classes["watch-video-wrapper-bottom"]}>
-                <ServersButtons
-                  servers={[
-                    "ENGLISH",
-                    "العربية",
-                    "ESPAÑOL",
-                    "ESPAÑOL",
-                    "ESPAÑOL",
-                    "DUTCH",
-                  ]}
+                <BottomSocial />
+                <ServersButtonsMobile
+                  playingServerLang={playingServerLang}
+                  handleServerClicks={handleServerClicks}
+                  servers={matchData?.servers}
                 />
-                {/* <ExtendButton /> */}
+
                 <div className={classes["modes-icons"]}>
                   <div className={classes["icon-div"]}>
                     <Image
@@ -193,6 +190,13 @@ const Page = () => {
                     />
                   </div>
                 </div>
+              </div>
+              <div className={classes["servers"]}>
+                <ServersButtons
+                  playingServerLang={playingServerLang}
+                  handleServerClicks={handleServerClicks}
+                  servers={matchData?.servers}
+                />
               </div>
             </div>
             <div className="center-under-dev">

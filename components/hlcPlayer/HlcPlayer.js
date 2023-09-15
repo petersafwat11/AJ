@@ -26,7 +26,8 @@ const HlcPlayer = ({ url }) => {
   };
 
   useEffect(() => {
-    if (Hls.isSupported()) {
+    console.log(url);
+    if (Hls.isSupported() && url) {
       const hls = new Hls();
       hls.loadSource(url);
       hls.attachMedia(videoRef.current);

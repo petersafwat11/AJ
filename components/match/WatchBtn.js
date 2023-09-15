@@ -19,9 +19,9 @@ const WatchBtn = ({ id }) => {
     <div className={classes["action-button"]}>
       <button
         onClick={() => {
-          if (!timer && !loading) {
-            router.push(`/watch/${id}`);
-          }
+          // if (!timer && !loading) {
+          router.push(`/watch/${id}`);
+          // }
         }}
         className={timer ? classes["disabled"] : classes["watch-button"]}
       >

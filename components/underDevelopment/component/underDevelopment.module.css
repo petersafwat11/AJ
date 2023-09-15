@@ -27,16 +27,16 @@
 }
 @media (max-width: 56.25rem) {
   .container {
-    width: 26.3rem;
+    max-width: 26.3rem;
     padding: 1.7rem 2.2rem 1.9rem;
     border-radius: 0.9rem;
   }
   .title {
-    font-size: 1.3rem;
-    margin: 0.9rem auto 0.7rem;
+    font-size: 1.35rem;
+    margin: 1.5rem auto 1rem;
   }
   .thanks-message {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
   .clock-img {
     width: 90px;
@@ -45,19 +45,20 @@
 }
 @media (max-width: 31.25rem) {
   .container {
-    width: 26.3rem;
-    padding: 1.7rem 2.2rem 1.9rem;
+    width: auto;
+    max-width: 22rem;
+    padding: 1.75rem 2.125rem ;
     border-radius: 0.9rem;
   }
   .title {
-    font-size: 1.3rem;
-    margin: 0.9rem auto 0.7rem;
+    font-size: 1.25rem;
+    margin: 1.3rem auto 0.875rem;
   }
   .thanks-message {
-    font-size: 0.6rem;
+    font-size: 0.75rem;
   }
   .clock-img {
-    width: 90px;
-    height: 90px;
+    width: 79px;
+    height: 79px;
   }
 }

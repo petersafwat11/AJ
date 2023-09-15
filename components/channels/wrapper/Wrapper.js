@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { getData } from "../../../utils/dashboardTablePagesFunctions";
+import BottomSocial from "../../bottomSocial/BottomSocial";
 import HlcPlayer from "../../hlcPlayer/HlcPlayer";
 import Filter from "../../home-page/filter/Filter";
 import LiveBtn from "../../live-button/LiveButton";
@@ -12,7 +13,6 @@ import ShareLinks from "../../shareLinks/ShareLinks";
 import ShowMore from "../../showMore/ShowMore";
 import WatchNavigation from "../../watchNavigation/WatchNavigation";
 import SocialIcons from "../../whatchShare/SocialIcons";
-import BottomSocial from "../bottomSocial/BottomSocial";
 import Search from "../search/Search";
 import classes from "./wrapper.module.css";
 const ChannelsWrapper = ({ channelsServer, allLanguages }) => {

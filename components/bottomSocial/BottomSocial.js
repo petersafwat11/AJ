@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { FaDiscord, FaTelegramPlane } from "react-icons/fa";
 import { TfiTwitterAlt } from "react-icons/tfi";
-import { getData } from "../../../utils/dashboardTablePagesFunctions";
+import { getData } from "../../utils/dashboardTablePagesFunctions";
 import classes from "./bottomSocial.module.css";
 const BottomSocial = () => {
   const [social, setSocial] = useState({

@@ -65,16 +65,6 @@ const ServersAndLanguages = ({
                             (server) => server.name == "server-" + serverNum
                           ).serverValue?.name
                         }
-                        // onChange={(e) => {
-                        //   dispatchServer({
-                        //     type: "SERVER",
-                        //     lang: lang.toLocaleUpperCase(),
-                        //     value: {
-                        //       name: "server-" + serverNum,
-                        //       serverValue: e.target.value,
-                        //     },
-                        //   });
-                        // }}
                         readOnly
                         placeholder={`server-${serverNum}`}
                         className={classes["input"]}
@@ -161,20 +151,20 @@ const ServersAndLanguages = ({
       </div>
       {otherServers.checked &&
         otherServers.num > 0 &&
-        otherServers.otherLangs.map((lang, index) => (
-          <div key={index} className={classes["other-lange"]}>
-            <div className={classes["input-group"]}>
+        otherServers.otherLangs.map((lang, indexx) => (
+          <div key={indexx} className={classes["other-lange"]}>
+            <div className={classes["input-group-2"]}>
               <label className={classes["label"]}>Lang Name</label>
               <input
                 value={
                   otherServers.otherLangs.find(
-                    (lang) => lang.index == index + 1
+                    (lang) => lang.index == indexx + 1
                   ).name
                 }
                 onChange={(e) => {
                   dispatchOtherServer({
                     type: "SERVER-NAME",
-                    value: { name: e.target.value, index: index + 1 },
+                    value: { name: e.target.value, index: indexx + 1 },
                   });
                 }}
                 type="text"
@@ -186,24 +176,24 @@ const ServersAndLanguages = ({
               min={0}
               max={5}
               value={
-                otherServers.otherLangs.find((lang) => lang.index == index + 1)
+                otherServers.otherLangs.find((lang) => lang.index == indexx + 1)
                   .num
               }
               onChange={(e) => {
                 dispatchOtherServer({
                   type: "SERVER-NUM",
-                  value: { num: Number(e.target.value), index: index + 1 },
+                  value: { num: Number(e.target.value), index: indexx + 1 },
                 });
               }}
               className={classes["other-servers-num-input"]}
             />
             <BsArrowRight className={classes["arrow"]} />
-            {otherServers.otherLangs.find((lang) => lang.index == index + 1)
+            {otherServers.otherLangs.find((lang) => lang.index == indexx + 1)
               .num > 0 ? (
               <div className={classes["servers"]}>
                 {generateArray(
                   otherServers.otherLangs.find(
-                    (lang) => lang.index == index + 1
+                    (lang) => lang.index == indexx + 1
                   ).num
                 ).map((serverNum) => (
                   <div key={serverNum} className={classes["input-group"]}>
@@ -213,24 +203,63 @@ const ServersAndLanguages = ({
                     <input
                       value={
                         otherServers.otherLangs
-                          .find((lang) => lang.index == index + 1)
+                          .find((lang) => lang.index == indexx + 1)
                           .channels.find(
                             (server) => server.name == "server-" + serverNum
-                          ).value
+                          ).streamLinkName || ""
                       }
-                      onChange={(e) => {
-                        dispatchOtherServer({
-                          type: "SERVER-CHANNELS",
-                          value: {
-                            name: `server-${serverNum}`,
-                            index: index + 1,
-                            serverValue: e.target.value,
-                          },
-                        });
-                      }}
+                      // onChange={(e) => {
+                      //   dispatchOtherServer({
+                      //     type: "SERVER-CHANNELS",
+                      //     value: {
+                      //       name: `server-${serverNum}`,
+                      //       index: index + 1,
+                      //       serverValue: e.target.value,
+                      //     },
+                      //   });
+                      // }}
+                      readOnly
                       placeholder={`server-${serverNum}`}
                       className={classes["input"]}
                     />
+                    {streamLinksAvaiable?.length > 0 && (
+                      <div className={classes["search-options"]}>
+                        {streamLinksAvaiable?.map((item, index) => (
+                          <p
+                            onClick={() => {
+                              dispatchOtherServer({
+                                type: "SERVER-CHANNELS",
+                                value: {
+                                  index: indexx + 1,
+                                  name: `server-${serverNum}`,
+                                  streamLinkName: item?.streamLinkName,
+                                  streamLinkUrl: item?.streamLinkUrl,
+                                },
+                              });
+                            }}
+                            style={{
+                              background:
+                                index % 2 === 0 ? "inherit" : "#F5F5F5",
+                            }}
+                            key={`${item?.streamLinkUrl}-${index}`}
+                            className={
+                              classes[
+                                // item.streamLinkName ===
+                                // servers[lang.toLowerCase()].channels.find(
+                                //   (server) =>
+                                //     server.name == "server-" + serverNum
+                                // ).serverValue?.name
+                                //   ? "option"
+                                //   :
+                                "selected-option"
+                              ]
+                            }
+                          >
+                            {item?.streamLinkName}
+                          </p>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>

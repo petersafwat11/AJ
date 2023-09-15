@@ -2,24 +2,28 @@ import Image from "next/image";
 import React from "react";
 import classes from "./changeServer.module.css";
 
-const ChangeServer = ({ toggleServers }) => {
+const ChangeServer = ({
+  lang,
+  langOtherServersAvailable,
+  handleChangeServers,
+  toggleServers,
+}) => {
+  console.log("langOtherServersAvailable", langOtherServersAvailable);
   let selected = "Sky Sports Premier League";
   return (
     <div className={classes["container"]}>
       <div className={classes["servers"]}>
-        {[
-          "Sky Sports Premier League",
-          "SuperSport Football",
-          "BT Sports 1",
-        ].map((item, index) => (
+        {langOtherServersAvailable?.map((item, index) => (
           <p
-            onClick={toggleServers}
+            onClick={() => {
+              handleChangeServers(item, lang);
+            }}
             key={index}
             className={
               item === selected ? classes["selected-server"] : classes["server"]
             }
           >
-            {item}
+            {item.streamLinkName}
           </p>
         ))}
       </div>
