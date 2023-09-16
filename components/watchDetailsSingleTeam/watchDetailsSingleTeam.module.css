@@ -1,0 +1,56 @@
+.watch-details {
+  margin: 1.3rem auto 0;
+  max-width: 52.5rem;
+}
+.watch-details-first {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-direction: column;
+}
+.date-and-place {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.date,
+.place {
+  font-size: 0.93rem;
+  line-height: 1.54rem;
+}
+.teams-title {
+  color: #fff;
+  text-align: center;
+  font-family: RobotoSemiBold;
+  font-size: 2.1rem;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 1.25rem;
+  margin-bottom: 2.1rem;
+}
+.watch-details-last {
+  margin-top: 0.3rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.half {
+  font-family: RobotoSemiBold;
+  font-size: 0.9375rem;
+  line-height: 1.125rem;
+  color: #4ae96d;
+}
+.not-live {
+  padding: 0.28rem 1.12rem;
+  border: 0.9px solid #7b7b7b;
+  border-radius: 0.23rem;
+  font-family: RobotoSemibold;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+  color: #929292;
+  display: flex;
+  justify-content: center;
+}

@@ -51,7 +51,6 @@ const Page = () => {
     );
   };
   useEffect(() => {
-    console.dir(existServers);
     if (existServers?.moreLanguages && existServers?.mainLanguages) {
       dispatchServer({ type: "UPDATE-ALL", value: existServers.mainLanguages });
       dispatchOtherServer({
@@ -64,7 +63,7 @@ const Page = () => {
     const id = pathname.slice(pathname.lastIndexOf("/") + 1);
     const getServersData = async () => {
       const response = await getData(`sports/${id}`);
-      const servers = await getData(`servers/${id}`);
+      const servers = await getData(`servers/${id}`, {page: undefined, limit: undefined});
       const match = response?.data;
       const existServers = servers?.data?.data[0];
       console.log(match, existServers);

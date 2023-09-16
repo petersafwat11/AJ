@@ -80,3 +80,20 @@ export const formatTime = (input) => {
 
   return formattedTime;
 };
+
+export const convertDateHomePage = (dateString) => {
+  const date = new Date(dateString);
+  const options = {
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    timeZoneName: "short"
+  };
+  const MatchDateFormat = date.toLocaleString(undefined, options);
+  // const dateTextFormat = date.toLocaleString(undefined, { month: "short", day: "numeric" });
+  // if (dateText) {
+  //   return dateTextFormat;
+  // }
+  return MatchDateFormat;
+};

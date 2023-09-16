@@ -16,6 +16,7 @@ import ServersButtons from "../../../../components/serverButtons/ServersButtons"
 import ServersButtonsMobile from "../../../../components/serverButtons/serversButtonsMobile/ServersButtonsMobile";
 import TopLayout from "../../../../components/topLayout/TopLayout";
 import UnderDevelopment from "../../../../components/underDevelopment/component/underDevelopment";
+import WatchDetailsSingleTeam from "../../../../components/watchDetailsSingleTeam/watchDetailsSingleTeam";
 import WatchNavigation from "../../../../components/watchNavigation/WatchNavigation";
 import { changeServersFormat } from "../../../../utils/changeServersFormat";
 import { getMatchDate } from "../../../../utils/convertDateFormat";
@@ -78,7 +79,7 @@ const Page = () => {
   const handleChangeServers = (val, lang) => {
     console.log("change server");
     toggleServers();
-    setPlayingServerLang(lang)
+    setPlayingServerLang(lang);
     console.log(val);
     setPlayingServer(val);
   };
@@ -127,28 +128,37 @@ const Page = () => {
           )} */}
           <WatchNavigation page={"Watch"} />
           <div className={classes["container"]}>
-            <WatchDetails
-              lieageImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.leagueLogo}`}
-              lieageImageDimetions={{
-                width: { desktop: "120", tablet: "84", mobile: "78" },
-                height: { desktop: "51", tablet: "36", mobile: "35" },
-              }}
-              firstTeamImageDimentions={{
-                width: { desktop: "106", tablet: "75", mobile: "54" },
-                height: { desktop: "108", tablet: "76", mobile: "52" },
-              }}
-              secondTeamImageDimentions={{
-                width: { desktop: "80", tablet: "56", mobile: "50" },
-                height: { desktop: "110", tablet: "78", mobile: "54" },
-              }}
-              firstTeamImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.firstTeamLogo}`}
-              firstTeamName={matchData?.firstTeamName}
-              seconteamImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.secondTeamLogo}`}
-              seconteamName={matchData?.secondTeamName}
-              date={getMatchDate(matchData?.eventDate)}
-              place={matchData?.eventStadium}
-              // half={"2nd Half: 47’"}
-            />
+            {matchData?.firstTeamName ? (
+              <WatchDetails
+                lieageImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.leagueLogo}`}
+                lieageImageDimetions={{
+                  width: { desktop: "120", tablet: "84", mobile: "78" },
+                  height: { desktop: "51", tablet: "36", mobile: "35" },
+                }}
+                firstTeamImageDimentions={{
+                  width: { desktop: "106", tablet: "75", mobile: "54" },
+                  height: { desktop: "108", tablet: "76", mobile: "52" },
+                }}
+                secondTeamImageDimentions={{
+                  width: { desktop: "106", tablet: "75", mobile: "54" },
+                  height: { desktop: "110", tablet: "78", mobile: "54" },
+                }}
+                firstTeamImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.firstTeamLogo}`}
+                firstTeamName={matchData?.firstTeamName}
+                seconteamImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.secondTeamLogo}`}
+                seconteamName={matchData?.secondTeamName}
+                date={getMatchDate(matchData?.eventDate)}
+                place={matchData?.eventStadium}
+                // half={"2nd Half: 47’"}
+              />
+            ) : (
+              <WatchDetailsSingleTeam
+                date={getMatchDate(matchData?.eventDate)}
+                place={matchData?.eventStadium}
+                width={60}
+                imageScr={`${process.env.STATIC_SERVER}/img/matches/${matchData?.flagLogo}`}
+              />
+            )}
             <div className="watch-video-wrapper">
               <div className={classes["social-icons"]}>
                 <SocialIcons
