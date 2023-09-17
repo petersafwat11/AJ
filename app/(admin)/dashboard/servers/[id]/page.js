@@ -63,7 +63,7 @@ const Page = () => {
     const id = pathname.slice(pathname.lastIndexOf("/") + 1);
     const getServersData = async () => {
       const response = await getData(`sports/${id}`);
-      const servers = await getData(`servers/${id}`, {page: undefined, limit: undefined});
+      const servers = await getData(`servers/${id}`);
       const match = response?.data;
       const existServers = servers?.data?.data[0];
       console.log(match, existServers);
@@ -78,8 +78,9 @@ const Page = () => {
     const getStreamData = async () => {
       const StreamLinks = await getData("streamLink", {
         page: 1,
-        limit: undefined,
+        limit: 0,
       });
+      console.log("StreamLinks", StreamLinks);
       const streamLinksAvaiable = StreamLinks.data.data.map((item) => {
         return { streamLinkName: item.channelName, streamLinkUrl: item.URL };
       });

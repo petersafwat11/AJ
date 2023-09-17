@@ -1,6 +1,5 @@
 import axios from "axios";
 import Cookies from "js-cookie";
-import { useCallback } from "react";
 
 export const createItem = (pathname, router) => {
   router.push(`${pathname}/create`);
@@ -43,7 +42,7 @@ export const getData = async (endpoint, query) => {
     page: 1,
     limit: 10,
   };
-  console.log(endpoint);
+  console.log("query", query);
   try {
     const newData = await axios.get(
       `${process.env.BACKEND_SERVER}/${endpoint}`,
@@ -59,4 +58,3 @@ export const getData = async (endpoint, query) => {
     console.log("err", err);
   }
 };
-

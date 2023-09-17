@@ -42,7 +42,7 @@ const HlcPlayer = ({ url }) => {
       <video
         // poster="/wallpaper/main.jpg"
         controlsList="noplaybackrate"
-        className={classes["video"]}
+        className={palying ? classes["video-play"] : classes["video-pause"]}
         ref={videoRef}
         width={"100%"}
         height={"100%"}

@@ -16,7 +16,6 @@ import ServersButtons from "../../../../components/serverButtons/ServersButtons"
 import ServersButtonsMobile from "../../../../components/serverButtons/serversButtonsMobile/ServersButtonsMobile";
 import TopLayout from "../../../../components/topLayout/TopLayout";
 import UnderDevelopment from "../../../../components/underDevelopment/component/underDevelopment";
-import WatchDetailsSingleTeam from "../../../../components/watchDetailsSingleTeam/watchDetailsSingleTeam";
 import WatchNavigation from "../../../../components/watchNavigation/WatchNavigation";
 import { changeServersFormat } from "../../../../utils/changeServersFormat";
 import { getMatchDate } from "../../../../utils/convertDateFormat";
@@ -31,7 +30,6 @@ const Page = () => {
   const [langOtherServersAvailable, setlangOtherServersAvailable] = useState(
     []
   );
-  const [playingServerLang, setPlayingServerLang] = useState("");
   const [error, setError] = useState(false);
   const [showChangeServer, setShowChangeServer] = useState(false);
   useEffect(() => {
@@ -42,8 +40,11 @@ const Page = () => {
         const data = { ...response?.data };
         const servers = changeServersFormat(response?.data?.servers);
         data.servers = servers;
-        setPlayingServer(data?.servers[0][Object.keys(data?.servers[0])][0]);
-        setPlayingServerLang(Object.keys(data?.servers[0])[0]);
+        setPlayingServer({
+          server: data?.servers[0][Object.keys(data?.servers[0])][0],
+          lang: Object.keys(data?.servers[0])[0],
+        });
+        // setPlayingServerLang(Object.keys(data?.servers[0])[0]);
         setMatchData(data);
         setLoading(false);
       } catch (error) {
@@ -79,9 +80,8 @@ const Page = () => {
   const handleChangeServers = (val, lang) => {
     console.log("change server");
     toggleServers();
-    setPlayingServerLang(lang);
-    console.log(val);
-    setPlayingServer(val);
+    // setPlayingServerLang(lang);
+    setPlayingServer({server : val, lang});
   };
   return (
     <div className="wrapper">
@@ -103,6 +103,7 @@ const Page = () => {
           {showChangeServer && (
             <Popup>
               <ChangeServer
+                playingServer={playingServer}
                 langOtherServersAvailable={langOtherServersAvailable?.servers}
                 lang={langOtherServersAvailable?.lang}
                 handleChangeServers={handleChangeServers}
@@ -128,37 +129,28 @@ const Page = () => {
           )} */}
           <WatchNavigation page={"Watch"} />
           <div className={classes["container"]}>
-            {matchData?.firstTeamName ? (
-              <WatchDetails
-                lieageImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.leagueLogo}`}
-                lieageImageDimetions={{
-                  width: { desktop: "120", tablet: "84", mobile: "78" },
-                  height: { desktop: "51", tablet: "36", mobile: "35" },
-                }}
-                firstTeamImageDimentions={{
-                  width: { desktop: "106", tablet: "75", mobile: "54" },
-                  height: { desktop: "108", tablet: "76", mobile: "52" },
-                }}
-                secondTeamImageDimentions={{
-                  width: { desktop: "106", tablet: "75", mobile: "54" },
-                  height: { desktop: "110", tablet: "78", mobile: "54" },
-                }}
-                firstTeamImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.firstTeamLogo}`}
-                firstTeamName={matchData?.firstTeamName}
-                seconteamImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.secondTeamLogo}`}
-                seconteamName={matchData?.secondTeamName}
-                date={getMatchDate(matchData?.eventDate)}
-                place={matchData?.eventStadium}
-                // half={"2nd Half: 47’"}
-              />
-            ) : (
-              <WatchDetailsSingleTeam
-                date={getMatchDate(matchData?.eventDate)}
-                place={matchData?.eventStadium}
-                width={60}
-                imageScr={`${process.env.STATIC_SERVER}/img/matches/${matchData?.flagLogo}`}
-              />
-            )}
+            <WatchDetails
+              lieageImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.leagueLogo}`}
+              lieageImageDimetions={{
+                width: { desktop: "120", tablet: "84", mobile: "78" },
+                height: { desktop: "51", tablet: "36", mobile: "35" },
+              }}
+              firstTeamImageDimentions={{
+                width: { desktop: "106", tablet: "75", mobile: "54" },
+                height: { desktop: "108", tablet: "76", mobile: "52" },
+              }}
+              secondTeamImageDimentions={{
+                width: { desktop: "106", tablet: "75", mobile: "54" },
+                height: { desktop: "110", tablet: "78", mobile: "54" },
+              }}
+              firstTeamImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.firstTeamLogo}`}
+              firstTeamName={matchData?.firstTeamName}
+              seconteamImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.secondTeamLogo}`}
+              seconteamName={matchData?.secondTeamName}
+              date={getMatchDate(matchData?.eventDate)}
+              place={matchData?.eventStadium}
+              // half={"2nd Half: 47’"}
+            />
             <div className="watch-video-wrapper">
               <div className={classes["social-icons"]}>
                 <SocialIcons
@@ -169,13 +161,13 @@ const Page = () => {
 
               <div id="my-root-div" className="watch-video">
                 {/* <EventCountDown eventStartDate={matchData?.eventDate} /> */}
-                <HlcPlayer url={playingServer?.streamLinkUrl} />
+                <HlcPlayer url={playingServer?.server?.streamLinkUrl} />
                 {/* <PlayerContainer /> */}
               </div>
               <div className={classes["watch-video-wrapper-bottom"]}>
                 <BottomSocial />
                 <ServersButtonsMobile
-                  playingServerLang={playingServerLang}
+                  playingServerLang={playingServer?.lang}
                   handleServerClicks={handleServerClicks}
                   servers={matchData?.servers}
                 />
@@ -203,7 +195,7 @@ const Page = () => {
               </div>
               <div className={classes["servers"]}>
                 <ServersButtons
-                  playingServerLang={playingServerLang}
+                  playingServerLang={playingServer?.lang}
                   handleServerClicks={handleServerClicks}
                   servers={matchData?.servers}
                 />

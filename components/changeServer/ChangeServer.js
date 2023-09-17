@@ -3,6 +3,7 @@ import React from "react";
 import classes from "./changeServer.module.css";
 
 const ChangeServer = ({
+  playingServer,
   lang,
   langOtherServersAvailable,
   handleChangeServers,
@@ -20,7 +21,10 @@ const ChangeServer = ({
             }}
             key={index}
             className={
-              item === selected ? classes["selected-server"] : classes["server"]
+              item?.streamLinkName === playingServer?.server?.streamLinkName &&
+              lang === playingServer.lang
+                ? classes["selected-server"]
+                : classes["server"]
             }
           >
             {item.streamLinkName}

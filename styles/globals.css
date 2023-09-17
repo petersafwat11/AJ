@@ -245,10 +245,11 @@ button {
   .watch-video {
     width: 100%;
     height: min(60vh, 23rem);
-    border-radius: 0.625rem;
+    border-radius: 0;
     background: #0c1115;
     overflow: hidden;
     aspect-ratio: 16/9;
+    
   }
   .wrapper-2 {
     padding: env(safe-area-inset-top) env(safe-area-inset-right)
