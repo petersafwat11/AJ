@@ -20,11 +20,11 @@ const WatchDetailsSingleTeam = ({ width, imageScr, date, place }) => {
       </div>
       <h3 className={classes["team-title"]}>Grand Prix: Islamabad</h3>
       <div className={classes["watch-details-last"]}>
-        {true ? (
+        {/* {true ? (
           <div className={classes["not-live"]}>LIVE</div>
-        ) : (
+        ) : ( */}
           <LiveBtn text={"LIVE"} />
-        )}
+        {/* )} */}
       </div>
     </div>
   );
