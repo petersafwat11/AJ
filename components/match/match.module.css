@@ -50,8 +50,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 .match-vs {
   font-family: RobotoBold;
@@ -66,9 +65,6 @@
   margin-top: 2px;
 
   color: #4ae96d;
-}
-.white-space {
-  width: 4.8125rem;
 }
 @media (max-width: 56.25rem) {
   .match {
@@ -102,16 +98,6 @@
     font-size: 0.72rem;
     line-height: 0.82rem;
     color: #4ae96d;
-  }
-  .remaining-time {
-    display: none;
-  }
-  .remaining-time-mobile {
-    font-weight: 600;
-    font-family: RobotoSemiBold;
-    font-size: 0.72rem;
-    line-height: 0.82rem;
-    color: #a1a1a1;
   }
   .leage {
     font-weight: 400;
@@ -184,13 +170,6 @@
     font-size: 12.5px;
     line-height: 14px;
   }
-  .status-mobile,
-  .remaining-time-mobile {
-    font-size: 11.5px;
-    line-height: 13.48px;
-    font-weight: 400;
-    font-family: "Roboto Condensed";
-  }
   .leage {
     font-size: 11px;
     line-height: 13px;
@@ -229,13 +208,6 @@
     font-size: 12.5px;
     line-height: 14.65px;
   }
-  .status-mobile,
-  .remaining-time-mobile {
-    font-size: 11.5px;
-    line-height: 13.48px;
-    font-weight: 400;
-    font-family: "Roboto Condensed";
-  }
   .leage {
     font-size: 11.5px;
     line-height: 13.5px;
@@ -270,11 +242,6 @@
   .match-first .date {
     font-size: 12px;
     line-height: 14px;
-  }
-  .status-mobile,
-  .remaining-time-mobile {
-    font-size: 11px;
-    line-height: 13px;
   }
   .leage {
     font-size: 11px;
@@ -315,11 +282,6 @@
   .match-first .date {
     font-size: 10.5px;
     line-height: 12.3px;
-  }
-  .status-mobile,
-  .remaining-time-mobile {
-    font-size: 10px;
-    line-height: 11.72px;
   }
   .leage {
     font-size: 10px;

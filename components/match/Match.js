@@ -7,7 +7,7 @@ import {
   getMatchDate,
 } from "../../utils/convertDateFormat";
 import LiveBtn from "./LiveBtn";
-import RemainingTime from "./RemainingTime";
+import RemainingTime, { RemainingTimeMobile } from "./RemainingTime";
 import WatchBtn from "./WatchBtn";
 import classes from "./match.module.css";
 
@@ -45,6 +45,8 @@ export const Match = ({ matchData }) => {
         {/* {remaingTime && (
           <div className={classes["remaining-time-mobile"]}>{remaingTime}</div>
         )} */}
+        <RemainingTimeMobile timer={remainingTime} live={live} />
+
         <p className={classes["leage"]}>{matchData?.eventLeague}</p>
       </div>
       <div className={classes["match-second"]}>
