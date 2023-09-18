@@ -6,14 +6,14 @@ const nextConfig = {
     appDir: true,
   },
   env: {
-    BACKEND_SERVER: "https://long-cummerbund-slug.cyclic.app/api",
-    STATIC_SERVER: "https://long-cummerbund-slug.cyclic.app",
+    BACKEND_SERVER: "https://jealous-cow-jewelry.cyclic.cloud/api",
+    STATIC_SERVER: "https://jealous-cow-jewelry.cyclic.cloud",
 
     // BACKEND_SERVER: "http://localhost:8000/api",
     // STATIC_SERVER: "http://localhost:8000",
   },
   images: {
-    domains: ["long-cummerbund-slug.cyclic.app", "localhost"],
+    domains: ["jealous-cow-jewelry.cyclic.cloud", "localhost"],
   },
 };
 
