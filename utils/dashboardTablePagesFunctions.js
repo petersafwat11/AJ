@@ -42,7 +42,6 @@ export const getData = async (endpoint, query) => {
     page: 1,
     limit: 10,
   };
-  console.log("query", query);
   try {
     const newData = await axios.get(
       `${process.env.BACKEND_SERVER}/${endpoint}`,

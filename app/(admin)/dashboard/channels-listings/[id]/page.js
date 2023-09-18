@@ -79,7 +79,7 @@ const Page = () => {
     const getStreamData = async () => {
       const StreamLinks = await getStreamLinks("streamLink", {
         page: 1,
-        limit: undefined,
+        limit: 0,
       });
       dispatchDetail({
         type: "STREAM-LINKS-AVAILABLE",

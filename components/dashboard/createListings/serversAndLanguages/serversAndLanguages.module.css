@@ -22,7 +22,7 @@
 }
 .lang {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
 }
 .lang-name {
   color: #000;

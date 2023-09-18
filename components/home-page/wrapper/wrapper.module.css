@@ -40,7 +40,7 @@
 }
 .other-matches-title-and-search {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: space-between;
   min-height: 2.875rem;
   margin-bottom: 0.75rem;

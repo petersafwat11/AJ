@@ -13,9 +13,6 @@ import Sports from "../sports/Sports";
 import classes from "./wrapper.module.css";
 
 const Wrapper = ({ data }) => {
-  // const hotMatches =
-
-  // const otherMatches = ;
   const hotMatchesRef = useRef();
   const otherMatchesRef = useRef();
 

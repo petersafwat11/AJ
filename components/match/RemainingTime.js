@@ -5,23 +5,23 @@ import { decrement } from "../../store/timerSlice";
 import { calcRemainingTime } from "../../utils/convertDateFormat";
 import classes from "./remainingTime.module.css";
 
-const RemainingTime = ({ date }) => {
-  const timer = useSelector((state) => state.timer);
-  const dispatch = useDispatch();
+const RemainingTime = ({ live , timer}) => {
+  // const timer = useSelector((state) => state.timer);
+  // const dispatch = useDispatch();
 
-  // const [remaingTime, setRemainingTime] = useState(true);
-  const callRemainingTime = useCallback(() => calcRemainingTime(date), [date]);
+  // // const [remaingTime, setRemainingTime] = useState(true);
+  // const callRemainingTime = useCallback(() => calcRemainingTime(date), [date]);
 
-  useEffect(() => {
-    setInterval(() => {
-      dispatch(decrement(callRemainingTime()));
-    }, 1000);
-  }, [callRemainingTime, dispatch]);
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     dispatch(decrement(callRemainingTime()));
+  //   }, 1000);
+  // }, [callRemainingTime, dispatch, live]);
 
-  return timer ? (
-    <p className={classes["remaining-time"]}>{timer}</p>
-  ) : (
+  return live ? (
     <div className={classes["white-space"]}></div>
+  ) : (
+    <p className={classes["remaining-time"]}>{timer}</p>
   );
 };
 

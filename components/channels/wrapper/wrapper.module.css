@@ -90,7 +90,7 @@
 
 .sort-search-wrapper {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: space-between;
   width: 100%;
   margin-top: 1.26rem;

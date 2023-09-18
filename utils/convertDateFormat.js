@@ -1,3 +1,4 @@
+"use client";
 export const convertDate = (dateStr) => {
   const date = new Date(dateStr);
   const year = date.getFullYear();
@@ -88,7 +89,7 @@ export const convertDateHomePage = (dateString) => {
     day: "numeric",
     hour: "numeric",
     minute: "numeric",
-    timeZoneName: "short"
+    timeZoneName: "short",
   };
   const MatchDateFormat = date.toLocaleString(undefined, options);
   // const dateTextFormat = date.toLocaleString(undefined, { month: "short", day: "numeric" });
@@ -96,4 +97,15 @@ export const convertDateHomePage = (dateString) => {
   //   return dateTextFormat;
   // }
   return MatchDateFormat;
+};
+
+export const determineLive = (dateString) => {
+  // Convert the input date string to a Date object
+  const date = new Date(dateString);
+
+  // Get the current date and time in the user's timezone
+  const now = new Date();
+
+  // Compare the two dates
+  return now.getTime() >= date.getTime();
 };

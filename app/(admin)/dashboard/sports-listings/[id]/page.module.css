@@ -31,7 +31,7 @@
 .first,
 .second {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: space-between;
   width: max-content;
   gap: 18.48px;
