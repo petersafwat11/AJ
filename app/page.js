@@ -9,7 +9,7 @@ import { getData } from "../utils/dashboardTablePagesFunctions";
 const Page = async () => {
   const currentEvents = await getData("sports", {
     page: 1,
-    limit: undefined,
+    limit: 20,
     sportCategory: "football",
   });
 

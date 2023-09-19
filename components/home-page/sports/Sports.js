@@ -15,7 +15,7 @@ const Sports = ({ sportCategory }) => {
           router.push("/currentEvents/nfl");
         }}
         className={
-          pathname === "/currentEvents/nfl" || sportCategory === "NFL"
+          pathname === "/currentEvents/nfl"
             ? classes["selected"]
             : classes["nfl"]
         }
@@ -34,8 +34,7 @@ const Sports = ({ sportCategory }) => {
           router.push("/currentEvents/basketball");
         }}
         className={
-          pathname === "/currentEvents/basketball" ||
-          sportCategory === "Basketball"
+          pathname === "/currentEvents/basketball"
             ? classes["selected"]
             : classes["basketball"]
         }
@@ -54,7 +53,7 @@ const Sports = ({ sportCategory }) => {
           router.push("/currentEvents/football");
         }}
         className={
-          pathname === "/currentEvents/football" || sportCategory === "Football"
+          pathname === "/currentEvents/football" || pathname === "/"
             ? classes["selected"]
             : classes["football"]
         }
@@ -73,7 +72,7 @@ const Sports = ({ sportCategory }) => {
           router.push("/currentEvents/boxing");
         }}
         className={
-          pathname === "/currentEvents/boxing" || sportCategory === "Boxing"
+          pathname === "/currentEvents/boxing"
             ? classes["selected"]
             : classes["boxing"]
         }
@@ -93,10 +92,11 @@ const Sports = ({ sportCategory }) => {
         }}
         className={
           pathname === "/currentEvents/others" ||
-          (sportCategory !== "Football" &&
-            sportCategory !== "Basketball" &&
-            sportCategory !== "NFL" &&
-            sportCategory !== "Boxing")
+          (pathname !== "/currentEvents/football" &&
+            pathname !== "/currentEvents/basketball" &&
+            pathname !== "/currentEvents/nfl" &&
+            pathname !== "/currentEvents/boxing" &&
+            pathname !== "/")
             ? classes["selected"]
             : classes["other"]
         }

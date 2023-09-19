@@ -4,7 +4,6 @@ import classes from "./watchBtn.module.css";
 
 const WatchBtn = ({ id, watch }) => {
   const router = useRouter();
-  console.log("live", watch);
 
   return (
     <div className={classes["action-button"]}>

@@ -50,7 +50,9 @@ const intialValue = {
 const matchReducer = (state, action) => {
   console.log("state", state);
   if (action.type === "UPDATE-ALL") {
-    return action.value;
+    const val = { ...action.value };
+    delete val._id;
+    return val;
   }
   if (action.type === "CLEAR-ALL") {
     return intialValue;
@@ -64,8 +66,7 @@ const matchReducer = (state, action) => {
       ...state,
       firstTeamName: action.value,
     };
-  }
-  else if (action.type === "SECOND-TEAM-NAME") {
+  } else if (action.type === "SECOND-TEAM-NAME") {
     return {
       ...state,
       secondTeamName: action.value,
@@ -194,7 +195,6 @@ const Page = () => {
       formData.append(key, value);
     }
     delete formData.servers;
-
     saveItem(
       pathname,
       formData,
@@ -278,7 +278,7 @@ const Page = () => {
               leagueLogo: match?.leagueLogo,
               firstTeamLogo: match?.firstTeamLogo,
               secondTeamLogo: match?.secondTeamLogo,
-              flagLogo: match?.flagLogo,            
+              flagLogo: match?.flagLogo,
             }}
             dispatchDetail={dispatchDetail}
           />

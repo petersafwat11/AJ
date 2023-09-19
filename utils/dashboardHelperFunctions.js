@@ -45,10 +45,13 @@ export const saveItem = async (
   dispatchDetail,
   notify,
   router,
-  endpoint,
-  dataType
+  endpoint
 ) => {
   let request;
+  for (const pair of data.entries()) {
+    console.log(pair[0], pair[1]);
+  }
+
   if (!pathname.endsWith("create")) {
     request = axios.patch(
       `${process.env.BACKEND_SERVER}/${endpoint}/${pathname.split("/")[3]}

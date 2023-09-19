@@ -23,7 +23,7 @@ const Filter = ({ options, handleFilter, filterValue, channels }) => {
             }}
             key={index}
             className={
-              item === filterValue
+              item.toLowerCase() === filterValue.toLowerCase()
                 ? classes["sport-list-selected"]
                 : classes["sport"]
             }

@@ -24,7 +24,6 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
 
   const [channelsServers, setChannelsServers] = useState(channelsServer);
 
-  console.log("channel", channelsServers);
   const [playingServer, setPlayingServer] = useState(
     channelsServers?.channels[0]?.streamLinkUrl
   );
@@ -56,7 +55,6 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
   const fetchNewData = useCallback(async (query, cause) => {
     try {
       const response = await getData("channels", query);
-      console.log("response", response);
       if (cause === "filter") {
         // setSearchValue("");
         setPaginationNum(1);
@@ -65,16 +63,20 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
         setPaginationNum(1);
       }
 
-      cause !== "showMore"
-        ? setChannelsServers({
+      if (cause !== "showMore"){
+         setChannelsServers({
             channels: response?.data?.data,
             totalResults: response?.results,
           })
-        : setChannelsServers({
-            // eslint-disable-next-line no-unsafe-optional-chaining
-            channels: [...channelsRef.current, ...response?.data?.data],
+        } else {
+          let other = [];
+          other = response?.data?.data;
+  
+          setChannelsServers({
+            channels: [...channelsRef.current, ...other],
             totalResults: response?.results,
-          });
+          })}
+
     } catch (err) {
       console.log(err);
     }
@@ -101,7 +103,7 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
   };
 
   useEffect(() => {
-    channelsRef.current = channelsServers.channels;
+    channelsRef.current = channelsServers?.channels;
   }, [channelsServers]);
 
   useEffect(() => {
@@ -225,13 +227,13 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
               channelsServers?.channels.map((channel, index) => (
                 <button
                   onClick={() => {
-                    setPlayingServerName(channel.channelName);
-                    setPlayingServer(channel.streamLinkUrl);
+                    setPlayingServerName(channel?.channelName);
+                    setPlayingServer(channel?.streamLinkUrl);
                   }}
                   key={index}
                   className={classes["watch-video-servers-button"]}
                 >
-                  {channel.channelName}
+                  {channel?.channelName}
                 </button>
               ))
             ) : (
