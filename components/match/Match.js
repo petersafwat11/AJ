@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import {
   calcRemainingTime,
   determineLive,
-  getMatchDate,
+  convertDateHomePage
 } from "../../utils/convertDateFormat";
 import LiveBtn from "./LiveBtn";
 import RemainingTime, { RemainingTimeMobile } from "./RemainingTime";
@@ -41,7 +41,7 @@ export const Match = ({ matchData }) => {
   return (
     <div className={classes["match"]}>
       <div className={classes["match-first"]}>
-        <p className={classes["date"]}>{getMatchDate(matchData?.eventDate)}</p>
+        <p className={classes["date"]}>{convertDateHomePage(matchData?.eventDate)}</p>
         {/* {remaingTime && (
           <div className={classes["remaining-time-mobile"]}>{remaingTime}</div>
         )} */}
@@ -52,7 +52,7 @@ export const Match = ({ matchData }) => {
       <div className={classes["match-second"]}>
         <div className={classes["match-details"]}>
           <p className={classes["date"]}>
-            {getMatchDate(matchData?.eventDate)}
+            {convertDateHomePage(matchData?.eventDate)}
           </p>
           <p className={classes["leage"]}>{matchData?.eventLeague}</p>
         </div>
