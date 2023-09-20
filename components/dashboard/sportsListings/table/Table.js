@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 
-import { convertDate } from "../../../../utils/convertDateFormat";
+import { extarctDateAndTime } from "../../../../utils/combineDate";
 import Checkbox from "../../checkbox/Checkbox";
 import EditButton from "../../editButton/EditButton";
 import Flag from "../../flag/Flag";
@@ -46,8 +46,8 @@ const Table = ({
             <p className={classes["table-cell"]}>{item.secondTeamName}</p>
             <p className={classes["table-cell"]}>{item.eventLeague}</p>
             <div className={classes["date-and-time"]}>
-              <p> {convertDate(item.eventDate).formattedDate}</p>
-              <p> {convertDate(item.eventDate).formattedTime}</p>
+              <p> {extarctDateAndTime(item.eventDate).date}</p>
+              <p> {extarctDateAndTime(item.eventDate).time}</p>
             </div>
             <p className={classes["table-cell"]}>{item.sportCategory}</p>
             <Flag

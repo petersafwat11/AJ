@@ -3,23 +3,21 @@ export const combineDateAndTime = (date, time) => {
     date: new Date(date),
     time: time,
   };
+  console.log("combinedDateTime", time, dateTime.date);
 
   const [hours, minutes] = dateTime.time.split(":");
-  const combinedDateTime = new Date(dateTime.date);
-  combinedDateTime.setHours(hours, minutes);
+  const combinedDateTime = new Date(
+    dateTime.date.toLocaleString("en-US", { timeZone: "UTC" })
+  );
+  console.log("combinedDateTime", combinedDateTime);
+  combinedDateTime.setUTCHours(hours, minutes);
+  console.log("combinedDateTime", combinedDateTime);
 
   const isoString = combinedDateTime.toISOString();
+  console.log("combinedDateTime", isoString);
+
   return isoString;
 };
-// export const extarctDateAndTime = (isoString) => {
-//   const dateObject = new Date(isoString);
-//   const date = dateObject.toDateString();
-//   const hours = dateObject.getHours().toString().padStart(2, "0");
-//   const minutes = dateObject.getMinutes().toString().padStart(2, "0");
-//   const time = `${hours}:${minutes}`;
-
-//   return { date, time };
-// };
 export const extarctDateAndTime = (isoString) => {
   const dateObject = new Date(isoString);
   const utcString = dateObject.toISOString();
