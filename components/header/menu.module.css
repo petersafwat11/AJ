@@ -17,7 +17,8 @@
   justify-content: center;
   margin: auto;
 }
-.list-item {
+.list-item,
+.list-item-active {
   color: #fff;
   text-align: center;
   font-size: 1.25rem;
@@ -27,6 +28,9 @@
   padding: 0.22rem 0.5rem;
   transition: 0.3s all ease-out;
   cursor: pointer;
+}
+.list-item-active {
+  background: rgba(0, 196, 251, 0.8);
 }
 .list-item:hover {
   background: rgba(0, 196, 251, 0.8);

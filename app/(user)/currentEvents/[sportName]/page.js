@@ -155,7 +155,12 @@ const Page = () => {
                   <div className={classes["time-zone"]}>
                     <Filter
                       options={[...categories]}
-                      filterValue={sportCategory}
+                      filterValue={
+                        sportCategory === "others" ||
+                        sportCategory === "all%20others"
+                          ? "ALL OTHERS"
+                          : sportCategory
+                      }
                       handleFilter={changeSportCategory}
                     />
                   </div>

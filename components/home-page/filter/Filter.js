@@ -18,7 +18,11 @@ const Filter = ({ options, handleFilter, filterValue, channels }) => {
               if (channels) {
                 handleFilter(item);
               } else {
-                router.push(`/currentEvents/${item.toLowerCase()}`);
+                filterValue !== item && item === "ALL OTHERS"
+                  ? router.push(`/currentEvents/others`)
+                  : filterValue !== item
+                  ? router.push(`/currentEvents/${item.toLowerCase()}`)
+                  : "";
               }
             }}
             key={index}

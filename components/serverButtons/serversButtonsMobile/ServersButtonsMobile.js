@@ -21,12 +21,19 @@ const ServersButtonsMobile = ({
         >
           <p
             className={
+              Object.keys(item)[0] == "arabic" &&
               playingServerLang === Object.keys(item)[0]
+                ? classes["arabic-selected"]
+                : Object.keys(item)[0] === "arabic"
+                ? classes["arabic-lang"]
+                : playingServerLang === Object.keys(item)[0]
                 ? classes["text-selected"]
                 : classes["lang-text"]
             }
           >
-            {Object.keys(item)[0]}
+            {Object.keys(item)[0] == "arabic"
+              ? "العربيه"
+              : Object.keys(item)[0]}
           </p>
         </div>
       ))}

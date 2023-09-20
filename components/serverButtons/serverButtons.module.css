@@ -39,7 +39,11 @@
 .lang-selected {
   background: #fe4747;
 }
-.lang-text {
+.lang-text,
+.text-selected,
+.arabic-lang,
+.arabic-selected {
+  text-transform: uppercase;
   color: rgba(255, 255, 255, 0.2);
   text-align: center;
   font-family: RobotoSemiBold;
@@ -47,41 +51,10 @@
   font-weight: 600;
   line-height: normal;
 }
-.text-selected{
+.text-selected,
+.arabic-selected {
   color: #fff;
 }
-
-@media (max-width: 56.25rem) {
-  .wrapper {
-    flex-grow: 0;
-    margin-left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  .container {
-    height: 100%;
-    border-radius: 0;
-    background: inherit;
-    position: relative;
-    padding-left: 0;
-    padding-right: 0;
-    width: 20rem;
-  }
-
-  .lang {
-    width: 6.2rem !important;
-    height: 2rem !important;
-    border-radius: 1.875rem;
-  }
-  .lang-text {
-    font-size: 0.75rem;
-  }
-}
-@media (max-width: 400px) {
-  .wrapper {
-    width: min-content;
-  }
-  .container {
-    width: 13rem;
-  }
+.arabic-lang {
+  font-family: "Noto Sans Arabic", sans-serif;
 }

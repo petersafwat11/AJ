@@ -23,6 +23,8 @@
   font-size: 0.515rem;
   font-weight: 500;
   line-height: normal;
+  text-transform: capitalize;
+  white-space: nowrap;
 }
 .arrow {
   font-size: 0.8rem;

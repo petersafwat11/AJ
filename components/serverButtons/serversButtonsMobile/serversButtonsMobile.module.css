@@ -29,15 +29,21 @@
     background: #fe4747;
   }
   .lang-text,
-  .text-selected {
+  .text-selected,
+  .arabic-lang,
+  .arabic-selected {
     font-size: 0.71rem;
     color: rgba(255, 255, 255, 0.2);
     font-family: "Roboto";
     font-style: normal;
     font-weight: 500;
   }
-  .text-selected {
+  .text-selected,
+  .arabic-selected {
     color: #fff;
+  }
+  .arabic-lang {
+    font-family: "Noto Sans Arabic", sans-serif;
   }
 }
 @media (max-width: 400px) {
