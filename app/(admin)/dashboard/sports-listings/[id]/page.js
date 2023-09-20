@@ -12,11 +12,11 @@ import TeamsLogos from "../../../../../components/dashboard/createListings/teams
 import TeamsNames from "../../../../../components/dashboard/createListings/teamsNames/TeamsNames";
 
 import EventId from "../../../../../components/dashboard/createListings/EventId/EventId";
+import { combineDateAndTime } from "../../../../../utils/combineDate";
 import {
-  combineDateAndTime,
-  extarctDateAndTime,
-} from "../../../../../utils/combineDate";
-import { convertDate, getMatchDate } from "../../../../../utils/convertDateFormat";
+  convertDate,
+  getMatchDate,
+} from "../../../../../utils/convertDateFormat";
 import {
   deleteItem,
   saveItem,
@@ -215,8 +215,8 @@ const Page = () => {
       const removeStream = convertDate(response.data.removeStream);
       const removeCountdown = convertDate(response.data.removeCountdown);
 
-      const eventDate = convertDate(response.data.eventDate).formattedDate;
-      const eventTime = convertDate(response.data.eventDate).formattedTime;
+      const eventDate = convertDate(response.data.eventDate).date;
+      const eventTime = convertDate(response.data.eventDate).time;
 
       const dateText = getMatchDate(response.data.eventDate, true);
       let data = { ...response.data };

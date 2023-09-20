@@ -30,8 +30,8 @@ const Table = ({ followers, selectElement, paginations, dispatchDetail }) => {
             <p className={classes["table-cell"]}>{item.email}</p>
             <p className={classes["table-cell"]}>{item.method}</p>
             <div className={classes["date-and-time"]}>
-              <p> {convertDate(item.createdAt).formattedDate}</p>
-              {/* <p> {convertDate(item.createdAt).formattedTime}</p> */}
+              <p> {convertDate(item.createdAt).date}</p>
+              {/* <p> {convertDate(item.createdAt).time}</p> */}
             </div>
           </div>
         ))

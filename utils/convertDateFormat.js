@@ -1,15 +1,15 @@
 "use client";
 export const convertDate = (dateStr) => {
-  const date = new Date(dateStr);
-  const year = date.getFullYear();
-  const month = (date.getMonth() + 1).toString().padStart(2, "0");
-  const day = date.getDate().toString().padStart(2, "0");
-  const hours = date.getHours().toString().padStart(2, "0");
-  const minutes = date.getMinutes().toString().padStart(2, "0");
-  let formattedDate = `${year}-${month}-${day}` || 1;
-  let formattedTime = `${hours}:${minutes}` || 2;
+  const dateOj = new Date(dateStr);
+  const year = dateOj.getFullYear();
+  const month = (dateOj.getMonth() + 1).toString().padStart(2, "0");
+  const day = dateOj.getDate().toString().padStart(2, "0");
+  const hours = dateOj.getHours().toString().padStart(2, "0");
+  const minutes = dateOj.getMinutes().toString().padStart(2, "0");
+  let date = `${year}-${month}-${day}` || 1;
+  let time = `${hours}:${minutes}` || 2;
 
-  return { formattedDate, formattedTime };
+  return { date, time };
 };
 export const getMatchDate = (dateString, dateText) => {
   const date = new Date(dateString);

@@ -28,8 +28,8 @@ const Table = ({ reportedLinks, paginations, dispatchDetail }) => {
             <p className={classes["table-cell"]}>{item.server}</p>
             <p className={classes["table-cell"]}>{item.reason}</p>
             <div className={classes["date-and-time"]}>
-              <p> {convertDate(item.createdAt).formattedDate}</p>
-              <p> {convertDate(item.createdAt).formattedTime}</p>
+              <p> {convertDate(item.createdAt).date}</p>
+              <p> {convertDate(item.createdAt).time}</p>
             </div>
             <ViewListingsBtn eventLink={item.eventLink} />
           </div>

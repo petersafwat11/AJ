@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 
-import { extarctDateAndTime } from "../../../../utils/combineDate";
+import { convertDate } from "../../../../utils/convertDateFormat";
 import Checkbox from "../../checkbox/Checkbox";
 import EditButton from "../../editButton/EditButton";
 import Flag from "../../flag/Flag";
@@ -10,7 +10,6 @@ import NoContent from "../../noContent/NoContent";
 import Paginations from "../../paginations/Paginations";
 import Search from "../../search/Search";
 import classes from "./table.module.css";
-import { convertDate } from "../../../../utils/convertDateFormat";
 const Table = ({
   reverseFlagProp,
   sports,
@@ -47,8 +46,8 @@ const Table = ({
             <p className={classes["table-cell"]}>{item.secondTeamName}</p>
             <p className={classes["table-cell"]}>{item.eventLeague}</p>
             <div className={classes["date-and-time"]}>
-              <p> {convertDate(item.eventDate).formattedDate}</p>
-              <p> {convertDate(item.eventDate).formattedTime}</p>
+              <p> {convertDate(item.eventDate).date}</p>
+              <p> {convertDate(item.eventDate).time}</p>
             </div>
             <p className={classes["table-cell"]}>{item.sportCategory}</p>
             <Flag
