@@ -10,6 +10,7 @@ import NoContent from "../../noContent/NoContent";
 import Paginations from "../../paginations/Paginations";
 import Search from "../../search/Search";
 import classes from "./table.module.css";
+import { convertDate } from "../../../../utils/convertDateFormat";
 const Table = ({
   reverseFlagProp,
   sports,
@@ -46,8 +47,8 @@ const Table = ({
             <p className={classes["table-cell"]}>{item.secondTeamName}</p>
             <p className={classes["table-cell"]}>{item.eventLeague}</p>
             <div className={classes["date-and-time"]}>
-              <p> {extarctDateAndTime(item.eventDate).date}</p>
-              <p> {extarctDateAndTime(item.eventDate).time}</p>
+              <p> {convertDate(item.eventDate).formattedDate}</p>
+              <p> {convertDate(item.eventDate).formattedTime}</p>
             </div>
             <p className={classes["table-cell"]}>{item.sportCategory}</p>
             <Flag

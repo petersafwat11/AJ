@@ -10,7 +10,7 @@ export const combineDateAndTime = (date, time) => {
     dateTime.date.toLocaleString("en-US", { timeZone: "UTC" })
   );
   console.log("combinedDateTime", combinedDateTime);
-  combinedDateTime.setUTCHours(hours, minutes);
+  combinedDateTime.setHours(hours, minutes);
   console.log("combinedDateTime", combinedDateTime);
 
   const isoString = combinedDateTime.toISOString();

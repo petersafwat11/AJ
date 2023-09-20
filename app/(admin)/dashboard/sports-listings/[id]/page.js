@@ -16,7 +16,7 @@ import {
   combineDateAndTime,
   extarctDateAndTime,
 } from "../../../../../utils/combineDate";
-import { getMatchDate } from "../../../../../utils/convertDateFormat";
+import { convertDate, getMatchDate } from "../../../../../utils/convertDateFormat";
 import {
   deleteItem,
   saveItem,
@@ -211,12 +211,12 @@ const Page = () => {
   const requestData = useCallback(async () => {
     try {
       const response = await getData(`sports/${pathname.split("/")[3]}`);
-      const playStream = extarctDateAndTime(response.data.playStream);
-      const removeStream = extarctDateAndTime(response.data.removeStream);
-      const removeCountdown = extarctDateAndTime(response.data.removeCountdown);
+      const playStream = convertDate(response.data.playStream);
+      const removeStream = convertDate(response.data.removeStream);
+      const removeCountdown = convertDate(response.data.removeCountdown);
 
-      const eventDate = extarctDateAndTime(response.data.eventDate).date;
-      const eventTime = extarctDateAndTime(response.data.eventDate).time;
+      const eventDate = convertDate(response.data.eventDate).formattedDate;
+      const eventTime = convertDate(response.data.eventDate).formattedTime;
 
       const dateText = getMatchDate(response.data.eventDate, true);
       let data = { ...response.data };
