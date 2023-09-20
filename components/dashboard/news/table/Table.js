@@ -28,8 +28,8 @@ const Table = ({ news, selectElement, paginations, dispatchDetail }) => {
             <p className={classes["table-cell"]}>{index + 1}</p>
             <p className={classes["table-cell"]}>{item.title}</p>
             <div className={classes["date-and-time"]}>
-              <p> {convertDate(item.removeCountdown).formattedDate}</p>
-              <p> {convertDate(item.removeCountdown).formattedTime}</p>
+              <p> {convertDate(item.createdAt).formattedDate}</p>
+              <p> {convertDate(item.createdAt).formattedTime}</p>
             </div>
             <EditButton id={item._id} />
           </div>

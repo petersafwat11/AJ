@@ -2,7 +2,7 @@
 import axios from "axios";
 import { usePathname, useRouter } from "next/navigation";
 
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ActionsButtons from "../../../../../components/dashboard/actionsButtons/ActionsButtons";
@@ -12,7 +12,8 @@ import ThumbnailImage from "../../../../../components/dashboard/createNews/thumb
 import Title from "../../../../../components/dashboard/createNews/title/Title";
 import {
   deleteItem,
-  saveItem,
+  getData,
+  saveItem
 } from "../../../../../utils/dashboardHelperFunctions";
 import classes from "./page.module.css";
 
@@ -25,10 +26,12 @@ const intialValue = {
   subNews: [{ index: 1, title: "", description: "", image: null, file: null }],
 };
 const newsReducer = (state, action) => {
+  console.log("state", state);
   if (action.type === "CLEAR-ALL") {
     return intialValue;
   }
   if (action.type === "UPDATE-ALL") {
+    console.log(action.value, "action.value");
     return action.value;
   }
   if (action.type === "TITLE") {
@@ -142,11 +145,30 @@ const Page = () => {
     }
   };
   const saveChanges = () => {
-    saveItem(pathname, news, dispatchDetail, notify, router, "news");
+    let data = news;
+    data.coverImage = data.coverFile;
+
+    const formData = new FormData();
+    formData.append("title", data?.title);
+    formData.append("description", data?.description);
+    formData.append("coverImage", data?.coverImage);
+    formData.append("numOfSubnews", data?.numOfSubnews);
+
+    data?.subNews.forEach((subNew, index) => {
+      formData.append(`subNews-${index + 1}-title`, subNew.title);
+      formData.append(`subNews-${index + 1}-description`, subNew.description);
+      formData.append(`subNews-${index + 1}-image`, subNew.file);
+    });
+    saveItem(pathname, formData, dispatchDetail, notify, router, "news");
   };
   const deleteNews = async () => {
     deleteItem(pathname, router, "news");
   };
+  useEffect(() => {
+    !pathname.endsWith("create")
+      ? getData(pathname.split("/")[3], dispatchDetail, "news")
+      : "";
+  }, [pathname, router]);
 
   return (
     <div className={classes["container"]}>

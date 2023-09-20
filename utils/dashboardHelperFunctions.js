@@ -1,10 +1,10 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
-export const getData = async (route, dispatchDetail, endpoint) => {
+export const getData = async (id, dispatchDetail, endpoint) => {
   try {
     const response = await axios.get(
-      `${process.env.BACKEND_SERVER}/${endpoint}/${route}
+      `${process.env.BACKEND_SERVER}/${endpoint}/${id}
         `,
       {
         headers: {
@@ -12,6 +12,7 @@ export const getData = async (route, dispatchDetail, endpoint) => {
         },
       }
     );
+    console.log("response", response);
     dispatchDetail({ type: "UPDATE-ALL", value: response.data.data.data });
   } catch (error) {
     dispatchDetail({ type: "NOT-FOUND", value: error.response.data.message });
@@ -45,13 +46,10 @@ export const saveItem = async (
   dispatchDetail,
   notify,
   router,
-  endpoint
+  endpoint,
+  dataType
 ) => {
   let request;
-  for (const pair of data.entries()) {
-    console.log(pair[0], pair[1]);
-  }
-
   if (!pathname.endsWith("create")) {
     request = axios.patch(
       `${process.env.BACKEND_SERVER}/${endpoint}/${pathname.split("/")[3]}
@@ -79,7 +77,7 @@ export const saveItem = async (
     const dataSent = await request;
     dispatchDetail({ type: "CLEAR-ALL" });
     notify("item saved successfully.", "success");
-    console.dir(dataSent);
+    console.log(dataSent);
     router.push(`${pathname.slice(0, pathname.lastIndexOf("/"))}`);
   } catch (error) {
     notify(error.response?.message, "error");
@@ -133,7 +131,6 @@ export const saveServer = async (
   serversId,
   requestType
 ) => {
-  console.log("dataaaa", data);
   let request;
   if (requestType === "PATCH") {
     request = axios.patch(
