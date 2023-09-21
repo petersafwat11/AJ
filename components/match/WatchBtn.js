@@ -10,7 +10,7 @@ const WatchBtn = ({ id, watch }) => {
       <button
         onClick={() => {
           if (watch) {
-            router.push(`/watch/${id}`);
+            router.push(`/watch/${id}`, { scroll: true });
           }
         }}
         className={!watch ? classes["disabled"] : classes["watch-button"]}

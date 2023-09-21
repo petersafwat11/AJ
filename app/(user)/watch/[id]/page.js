@@ -17,20 +17,19 @@ import ServersButtonsMobile from "../../../../components/serverButtons/serversBu
 import TopLayout from "../../../../components/topLayout/TopLayout";
 import UnderDevelopment from "../../../../components/underDevelopment/component/underDevelopment";
 import WatchNavigation from "../../../../components/watchNavigation/WatchNavigation";
+import { changeServersFormat } from "../../../../utils/changeServersFormat";
 import { getMatchDate } from "../../../../utils/convertDateFormat";
 import { getData } from "../../../../utils/dashboardTablePagesFunctions";
 import classes from "./page.module.css";
-import { changeServersFormat } from "../../../../utils/changeServersFormat";
 const Page = () => {
   const pathname = usePathname();
   const shareUrl = `${process.env.FRONTEND_SERVER}${pathname}`;
   const quote = "Check out this awesome content!";
   const parseTeamNames = (str) => {
     const decodedStr = decodeURIComponent(str.replace(/-/g, "%20"));
-    console.log('decodedStr', decodedStr)
-    const [firstTeamName, secondTeamName] =
-      decodedStr.split(/VS|vs|Vs|vS/);
-      console.log('firstTeamNameee', firstTeamName, secondTeamName)
+    console.log("decodedStr", decodedStr);
+    const [firstTeamName, secondTeamName] = decodedStr.split(/VS|vs|Vs|vS/);
+    console.log("firstTeamNameee", firstTeamName, secondTeamName);
 
     return { firstTeamName, secondTeamName };
   };
@@ -56,10 +55,10 @@ const Page = () => {
           secondTeamName,
         });
         console.log("response", response);
-        const data = response?.data?.data ;
+        const data = response?.data?.data;
         console.log("response", data);
 
-         data.servers = changeServersFormat(data?.servers);
+        data.servers = changeServersFormat(data?.servers);
         setPlayingServer({
           server: data?.servers[0][Object.keys(data?.servers[0])][0],
           lang: Object.keys(data?.servers[0])[0],
@@ -102,8 +101,11 @@ const Page = () => {
     // setPlayingServerLang(lang);
     setPlayingServer({ server: val, lang });
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
-    <div className="wrapper">
+    <div id="wrapper" className="wrapper">
       <TopLayout />
       <div className="wrapper-2">
         <Marque />

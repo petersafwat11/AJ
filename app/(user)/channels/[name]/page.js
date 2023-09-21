@@ -147,6 +147,7 @@ const Page = () => {
   useEffect(() => {
     const channelURL = pathname.slice(pathname.lastIndexOf("/") + 1);
     const channelName = channelURL.replace(/%20|-/g, " ");
+    window.scrollTo(0, 0);
     fetchDataOnLoad({
       mode: "Visible",
       channelName: channelName,

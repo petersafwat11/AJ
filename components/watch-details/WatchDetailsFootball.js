@@ -2,6 +2,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 
 import classes from "./watchDetails.module.css";
+import LiveBtn from "../live-button/LiveButton";
 const WatchDetails = ({
   lieageImage,
   lieageImageDimetions,
@@ -135,7 +136,9 @@ const WatchDetails = ({
       <div className={classes["watch-details-last"]}>
         {/* <p className={classes["half"]}>{half}</p> */}
         {/* {true ? ( */}
-        <div className={classes["not-live"]}>LIVE</div>
+        {/* <div className={classes["not-live"]}>LIVE</div> */}
+        <LiveBtn text={"LIVE"} />
+
         {/* ) : (
           <LiveButton text={"LIVE"} />
         )} */}

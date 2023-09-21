@@ -4,6 +4,7 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     appDir: true,
+    scrollRestoration: false,
   },
   env: {
     BACKEND_SERVER: "https://jealous-cow-jewelry.cyclic.cloud/api",
