@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React, { useCallback, useEffect, useRef, useState } from "react";
+
 import { getData } from "../../../utils/dashboardTablePagesFunctions";
 import BottomSocial from "../../bottomSocial/BottomSocial";
 import HlcPlayer from "../../hlcPlayer/HlcPlayer";
@@ -16,6 +18,7 @@ import SocialIcons from "../../whatchShare/SocialIcons";
 import Search from "../search/Search";
 import classes from "./wrapper.module.css";
 const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
+  const router = useRouter();
   // const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
   const [showReport, setShowReport] = useState(false);
@@ -55,6 +58,7 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
   const fetchNewData = useCallback(async (query, cause) => {
     try {
       const response = await getData("channels", query);
+
       if (cause === "filter") {
         // setSearchValue("");
         setPaginationNum(1);
@@ -62,21 +66,20 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
         // setFilterValue("All");
         setPaginationNum(1);
       }
+      if (cause !== "showMore") {
+        setChannelsServers({
+          channels: response?.data?.data,
+          totalResults: response?.results,
+        });
+      } else {
+        let other = [];
+        other = response?.data?.data;
 
-      if (cause !== "showMore"){
-         setChannelsServers({
-            channels: response?.data?.data,
-            totalResults: response?.results,
-          })
-        } else {
-          let other = [];
-          other = response?.data?.data;
-  
-          setChannelsServers({
-            channels: [...channelsRef.current, ...other],
-            totalResults: response?.results,
-          })}
-
+        setChannelsServers({
+          channels: [...channelsRef.current, ...other],
+          totalResults: response?.results,
+        });
+      }
     } catch (err) {
       console.log(err);
     }
@@ -91,6 +94,7 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
         limit: 4,
         skip: 8 + (num - 1) * 4,
         mode: "Visible",
+        channelName: "Visible",
         language: filterValue === "All" ? undefined : filterValue,
         searchValue: seacrhValue,
         or: ["channelName"],
@@ -227,8 +231,11 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
               channelsServers?.channels.map((channel, index) => (
                 <button
                   onClick={() => {
-                    setPlayingServerName(channel?.channelName);
-                    setPlayingServer(channel?.streamLinkUrl);
+                    // setPlayingServerName(channel?.channelName);
+                    // setPlayingServer(channel?.streamLinkUrl);
+                    router.push(
+                      `/channels/${channel?.channelName?.replace(/ /g, "-")}`
+                    );
                   }}
                   key={index}
                   className={classes["watch-video-servers-button"]}

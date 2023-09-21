@@ -17,14 +17,23 @@ import ServersButtonsMobile from "../../../../components/serverButtons/serversBu
 import TopLayout from "../../../../components/topLayout/TopLayout";
 import UnderDevelopment from "../../../../components/underDevelopment/component/underDevelopment";
 import WatchNavigation from "../../../../components/watchNavigation/WatchNavigation";
-import { changeServersFormat } from "../../../../utils/changeServersFormat";
 import { getMatchDate } from "../../../../utils/convertDateFormat";
 import { getData } from "../../../../utils/dashboardTablePagesFunctions";
 import classes from "./page.module.css";
+import { changeServersFormat } from "../../../../utils/changeServersFormat";
 const Page = () => {
   const pathname = usePathname();
   const shareUrl = `${process.env.FRONTEND_SERVER}${pathname}`;
   const quote = "Check out this awesome content!";
+  const parseTeamNames = (str) => {
+    const decodedStr = decodeURIComponent(str.replace(/-/g, "%20"));
+    console.log('decodedStr', decodedStr)
+    const [firstTeamName, secondTeamName] =
+      decodedStr.split(/VS|vs|Vs|vS/);
+      console.log('firstTeamNameee', firstTeamName, secondTeamName)
+
+    return { firstTeamName, secondTeamName };
+  };
 
   const [loading, setLoading] = useState(true);
   const [matchData, setMatchData] = useState({});
@@ -36,18 +45,25 @@ const Page = () => {
   const [error, setError] = useState(false);
   const [showChangeServer, setShowChangeServer] = useState(false);
   useEffect(() => {
-    const matchId = pathname.slice(pathname.lastIndexOf("/") + 1);
+    // const matchId = pathname.slice(pathname.lastIndexOf("/") + 1);
+    const { firstTeamName, secondTeamName } = parseTeamNames(
+      pathname.slice(pathname.lastIndexOf("/") + 1)
+    );
     const pageData = async () => {
       try {
-        const response = await getData(`sports/${matchId}`);
-        const data = { ...response?.data };
-        const servers = changeServersFormat(response?.data?.servers);
-        data.servers = servers;
+        const response = await getData(`sports/teamNames`, {
+          firstTeamName,
+          secondTeamName,
+        });
+        console.log("response", response);
+        const data = response?.data?.data ;
+        console.log("response", data);
+
+         data.servers = changeServersFormat(data?.servers);
         setPlayingServer({
           server: data?.servers[0][Object.keys(data?.servers[0])][0],
           lang: Object.keys(data?.servers[0])[0],
         });
-        // setPlayingServerLang(Object.keys(data?.servers[0])[0]);
         setMatchData(data);
         setLoading(false);
       } catch (error) {

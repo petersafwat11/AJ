@@ -3,8 +3,8 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import {
   calcRemainingTime,
+  convertDateHomePage,
   determineLive,
-  convertDateHomePage
 } from "../../utils/convertDateFormat";
 import LiveBtn from "./LiveBtn";
 import RemainingTime, { RemainingTimeMobile } from "./RemainingTime";
@@ -41,7 +41,9 @@ export const Match = ({ matchData }) => {
   return (
     <div className={classes["match"]}>
       <div className={classes["match-first"]}>
-        <p className={classes["date"]}>{convertDateHomePage(matchData?.eventDate)}</p>
+        <p className={classes["date"]}>
+          {convertDateHomePage(matchData?.eventDate)}
+        </p>
         {/* {remaingTime && (
           <div className={classes["remaining-time-mobile"]}>{remaingTime}</div>
         )} */}
@@ -93,7 +95,13 @@ export const Match = ({ matchData }) => {
           <div className={classes["white-space"]}></div>
         )} */}
         <RemainingTime timer={remainingTime} live={live} />
-        <WatchBtn id={matchData._id} watch={watch} />
+        <WatchBtn
+          id={`${matchData?.firstTeamName.replace(
+            / /g,
+            "-"
+          )}-VS-${matchData?.secondTeamName.replace(/ /g, "-")}`}
+          watch={watch}
+        />
       </div>
     </div>
   );

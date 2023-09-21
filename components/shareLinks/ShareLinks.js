@@ -1,16 +1,18 @@
 "use client";
 import React from "react";
-import { BsSkype } from "react-icons/bs";
+import { BsLine } from "react-icons/bs";
 import { FaPinterestP, FaRegCopy } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { RxCross1 } from "react-icons/rx";
+import { SiOdnoklassniki, SiWorkplace } from "react-icons/si";
+import { SlSocialVkontakte } from "react-icons/sl";
 import {
   EmailShareButton,
-  FacebookMessengerShareButton,
-  LinkedinShareButton,
+  LineShareButton,
   OKShareButton,
   PinterestShareButton,
   VKShareButton,
+  WorkplaceShareButton,
 } from "react-share";
 import { ToastContainer, toast } from "react-toastify";
 import classes from "./shareLinks.module.css";
@@ -66,12 +68,6 @@ const ShareLinks = ({ toggleShareLinks, shareUrl, quote }) => {
 
             <p>Pinterest</p>
           </div>
-          {/* <div className={classes["share-links-website"]}>
-            <div className={classes["share-links-website-logo"]}>
-              <BsYoutube className={classes["youtube-icon"]} />
-            </div>
-            <p>Youtube</p>
-          </div>{" "} */}
           <div className={classes["share-links-website"]}>
             <EmailShareButton
               url={shareUrl}
@@ -90,18 +86,19 @@ const ShareLinks = ({ toggleShareLinks, shareUrl, quote }) => {
           </div>
 
           <div className={classes["share-links-website"]}>
-            <LinkedinShareButton url={shareUrl} title={quote}>
+            <LineShareButton url={shareUrl} title={quote}>
               <div className={classes["share-links-website-logo"]}>
-                <BsSkype className={classes["skype-icon"]} />
+                <BsLine className={classes["skype-icon"]} />
               </div>
-            </LinkedinShareButton>
+            </LineShareButton>
+
             {/* LinkedinShareButton.js */}
-            <p>Linked in</p>
+            <p>Line</p>
           </div>
           <div className={classes["share-links-website"]}>
             <VKShareButton url={shareUrl} title={quote}>
               <div className={classes["share-links-website-logo"]}>
-                <BsSkype className={classes["skype-icon"]} />
+                <SlSocialVkontakte className={classes["skype-icon"]} />
               </div>
             </VKShareButton>
             {/* LinkedinShareButton.js */}
@@ -110,18 +107,18 @@ const ShareLinks = ({ toggleShareLinks, shareUrl, quote }) => {
           <div className={classes["share-links-website"]}>
             <OKShareButton url={shareUrl} title={quote}>
               <div className={classes["share-links-website-logo"]}>
-                <BsSkype className={classes["skype-icon"]} />
+                <SiOdnoklassniki className={classes["skype-icon"]} />
               </div>
             </OKShareButton>
             <p>OK</p>
           </div>
           <div className={classes["share-links-website"]}>
-            <FacebookMessengerShareButton url={shareUrl}>
+            <WorkplaceShareButton url={shareUrl}>
               <div className={classes["share-links-website-logo"]}>
-                <BsSkype className={classes["skype-icon"]} />
+                <SiWorkplace className={classes["skype-icon"]} />
               </div>
-            </FacebookMessengerShareButton>
-            <p>Messenger</p>
+            </WorkplaceShareButton>
+            <p>Workplace</p>
           </div>
         </div>
       </div>
