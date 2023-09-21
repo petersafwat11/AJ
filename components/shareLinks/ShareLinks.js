@@ -1,23 +1,47 @@
 "use client";
 import React from "react";
-import { BsSkype, BsSnapchat, BsYoutube } from "react-icons/bs";
-import { FaDiscord, FaPinterestP, FaRegCopy } from "react-icons/fa";
+import { BsSkype } from "react-icons/bs";
+import { FaPinterestP, FaRegCopy } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { RxCross1 } from "react-icons/rx";
+import {
+  EmailShareButton,
+  FacebookMessengerShareButton,
+  LinkedinShareButton,
+  OKShareButton,
+  PinterestShareButton,
+  VKShareButton,
+} from "react-share";
+import { ToastContainer, toast } from "react-toastify";
 import classes from "./shareLinks.module.css";
-const ShareLinks = ({ toggleShareLinks }) => {
-  // const manipaletePosition = useRef(null);
-  // const [position, setPosition] = useState(0);
-  // const [clicks, setClicks] = useState(0);
-  // const maxClicks = 2;
-  // useEffect(() => {
-  //   if (clicks <= maxClicks) {
-  //     manipaletePosition.current.style.left = -position + "px";
-  //   }
-  // }, [position, setPosition, clicks]);
+
+const ShareLinks = ({ toggleShareLinks, shareUrl, quote }) => {
+  const notify = (message, type) => toast[type](message);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      notify("Text copied to clipboard", "success");
+    } catch (error) {
+      console.error("Failed to copy text: ", error);
+    }
+  };
 
   return (
     <div className={classes["share-links"]}>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={true}
+        draggable={true}
+        pauseOnHover={true}
+        theme="dark"
+      />
+
       <div className={classes["share-links-top"]}>
         <h3 className={classes["share-links-title"]}>Share a link</h3>
         <RxCross1 onClick={toggleShareLinks} className={classes["exit"]} />
@@ -28,48 +52,82 @@ const ShareLinks = ({ toggleShareLinks }) => {
           className={classes["share-links-websites"]}
         >
           <div className={classes["share-links-website"]}>
-            <div className={classes["share-links-website-logo"]}>
-              <div className={classes["pinterest"]}>
-                <FaPinterestP className={classes["pinterest-icon"]} />
+            <PinterestShareButton
+              url={shareUrl}
+              media={"https://example.com/image.jpg"}
+              description={quote}
+            >
+              <div className={classes["share-links-website-logo"]}>
+                <div className={classes["pinterest"]}>
+                  <FaPinterestP className={classes["pinterest-icon"]} />
+                </div>
               </div>
-            </div>
+            </PinterestShareButton>
+
             <p>Pinterest</p>
           </div>
-          <div className={classes["share-links-website"]}>
+          {/* <div className={classes["share-links-website"]}>
             <div className={classes["share-links-website-logo"]}>
               <BsYoutube className={classes["youtube-icon"]} />
             </div>
             <p>Youtube</p>
-          </div>{" "}
+          </div>{" "} */}
           <div className={classes["share-links-website"]}>
-            <div className={classes["share-links-website-logo"]}>
-              <BsSnapchat className={classes["spantube-icon"]} />
-            </div>
-            <p>Snapchat</p>
-          </div>{" "}
-          <div className={classes["share-links-website"]}>
-            <div className={classes["share-links-website-logo"]}>
-              <FaDiscord className={classes["discord-icon"]} />
-            </div>
-            <p>Discord</p>
-          </div>
-          <div className={classes["share-links-website"]}>
-            <div className={classes["share-links-website-logo"]}>
-              <MdEmail className={classes["email-icon"]} />
-            </div>
+            <EmailShareButton
+              url={shareUrl}
+              subject={"Check out this awesome content!"}
+              body={
+                "Hi,\n\nI wanted to share this awesome content with you:\n\n" +
+                shareUrl
+              }
+            >
+              <div className={classes["share-links-website-logo"]}>
+                <MdEmail className={classes["email-icon"]} />
+              </div>
+            </EmailShareButton>
+
             <p>Email</p>
           </div>
+
           <div className={classes["share-links-website"]}>
-            <div className={classes["share-links-website-logo"]}>
-              <BsSkype className={classes["skype-icon"]} />
-            </div>
-            <p>Skype</p>
+            <LinkedinShareButton url={shareUrl} title={quote}>
+              <div className={classes["share-links-website-logo"]}>
+                <BsSkype className={classes["skype-icon"]} />
+              </div>
+            </LinkedinShareButton>
+            {/* LinkedinShareButton.js */}
+            <p>Linked in</p>
+          </div>
+          <div className={classes["share-links-website"]}>
+            <VKShareButton url={shareUrl} title={quote}>
+              <div className={classes["share-links-website-logo"]}>
+                <BsSkype className={classes["skype-icon"]} />
+              </div>
+            </VKShareButton>
+            {/* LinkedinShareButton.js */}
+            <p>VK</p>
+          </div>
+          <div className={classes["share-links-website"]}>
+            <OKShareButton url={shareUrl} title={quote}>
+              <div className={classes["share-links-website-logo"]}>
+                <BsSkype className={classes["skype-icon"]} />
+              </div>
+            </OKShareButton>
+            <p>OK</p>
+          </div>
+          <div className={classes["share-links-website"]}>
+            <FacebookMessengerShareButton url={shareUrl}>
+              <div className={classes["share-links-website-logo"]}>
+                <BsSkype className={classes["skype-icon"]} />
+              </div>
+            </FacebookMessengerShareButton>
+            <p>Messenger</p>
           </div>
         </div>
       </div>
       <div className={classes["share-links-bottom"]}>
-        https://www.ajsports.ch/watch/manutdvsliverpool/Share...
-        <FaRegCopy className={classes["copy-icon"]} />
+        {shareUrl}
+        <FaRegCopy onClick={handleCopy} className={classes["copy-icon"]} />
         {/* <div className={classes["share-links-copy"]}>
           <Image
             src="/svg/share-links/copy.svg"

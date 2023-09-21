@@ -22,8 +22,11 @@ import { getMatchDate } from "../../../../utils/convertDateFormat";
 import { getData } from "../../../../utils/dashboardTablePagesFunctions";
 import classes from "./page.module.css";
 const Page = () => {
-  const [loading, setLoading] = useState(true);
   const pathname = usePathname();
+  const shareUrl = `${process.env.FRONTEND_SERVER}${pathname}`;
+  const quote = "Check out this awesome content!";
+
+  const [loading, setLoading] = useState(true);
   const [matchData, setMatchData] = useState({});
 
   const [playingServer, setPlayingServer] = useState(null);
@@ -81,7 +84,7 @@ const Page = () => {
     console.log("change server");
     toggleServers();
     // setPlayingServerLang(lang);
-    setPlayingServer({server : val, lang});
+    setPlayingServer({ server: val, lang });
   };
   return (
     <div className="wrapper">
@@ -92,7 +95,11 @@ const Page = () => {
         <section className={classes["watch-football"]}>
           {showShareLinks && (
             <Popup>
-              <ShareLinks toggleShareLinks={toggleShareLinks} />
+              <ShareLinks
+                shareUrl={shareUrl}
+                quote={quote}
+                toggleShareLinks={toggleShareLinks}
+              />
             </Popup>
           )}
           {showReport && (
@@ -154,6 +161,8 @@ const Page = () => {
             <div className="watch-video-wrapper">
               <div className={classes["social-icons"]}>
                 <SocialIcons
+                  shareUrl={shareUrl}
+                  quote={quote}
                   toggleShareLinks={toggleShareLinks}
                   toggleReport={toggleReport}
                 />
