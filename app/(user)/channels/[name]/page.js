@@ -81,10 +81,11 @@ const Page = () => {
   const fetchDataOnLoad = useCallback(async (query) => {
     try {
       const response = await getData("channels/channelName", query);
-      setAllLanguages(response?.allLanguages);
-      setPlayingServer(response?.data?.data?.streamLinkUrl);
 
-      setPlayingServerName(response?.data?.data?.channelName);
+      // setAllLanguages(response?.allLanguages);
+      // setPlayingServer(response?.data?.data?.streamLinkUrl);
+
+      // setPlayingServerName(response?.data?.data?.channelName);
       console.log("response-one", response);
     } catch (err) {
       console.log(err);
