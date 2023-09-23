@@ -16,6 +16,7 @@ import ServersButtons from "../../../../components/serverButtons/ServersButtons"
 import ServersButtonsMobile from "../../../../components/serverButtons/serversButtonsMobile/ServersButtonsMobile";
 import TopLayout from "../../../../components/topLayout/TopLayout";
 import UnderDevelopment from "../../../../components/underDevelopment/component/underDevelopment";
+import WatchDetailsSingleTeam from "../../../../components/watchDetailsSingleTeam/WatchDetailsSingleTeam";
 import WatchNavigation from "../../../../components/watchNavigation/WatchNavigation";
 import { changeServersFormat } from "../../../../utils/changeServersFormat";
 import { getMatchDate } from "../../../../utils/convertDateFormat";
@@ -48,12 +49,21 @@ const Page = () => {
     const { firstTeamName, secondTeamName } = parseTeamNames(
       pathname.slice(pathname.lastIndexOf("/") + 1)
     );
+    console.log("pathname", pathname.slice(pathname.lastIndexOf("/") + 1));
+    let query;
+    if (firstTeamName && secondTeamName) {
+      query = {
+        firstTeamName,
+        secondTeamName,
+      };
+    } else {
+      query = {
+        teamsTitle: firstTeamName,
+      };
+    }
     const pageData = async () => {
       try {
-        const response = await getData(`sports/teamNames`, {
-          firstTeamName,
-          secondTeamName,
-        });
+        const response = await getData(`sports/teamNames`, query);
         console.log("response", response);
         const data = response?.data?.data;
         console.log("response", data);
@@ -154,28 +164,39 @@ const Page = () => {
           )} */}
           <WatchNavigation page={"Watch"} />
           <div className={classes["container"]}>
-            <WatchDetails
-              lieageImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.leagueLogo}`}
-              lieageImageDimetions={{
-                width: { desktop: "120", tablet: "84", mobile: "78" },
-                height: { desktop: "51", tablet: "36", mobile: "35" },
-              }}
-              firstTeamImageDimentions={{
-                width: { desktop: "106", tablet: "75", mobile: "54" },
-                height: { desktop: "108", tablet: "76", mobile: "52" },
-              }}
-              secondTeamImageDimentions={{
-                width: { desktop: "106", tablet: "75", mobile: "54" },
-                height: { desktop: "110", tablet: "78", mobile: "54" },
-              }}
-              firstTeamImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.firstTeamLogo}`}
-              firstTeamName={matchData?.firstTeamName}
-              seconteamImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.secondTeamLogo}`}
-              seconteamName={matchData?.secondTeamName}
-              date={getMatchDate(matchData?.eventDate)}
-              place={matchData?.eventStadium}
-              // half={"2nd Half: 47’"}
-            />
+            {matchData?.firstTeamName && matchData?.secondTeamName ? (
+              <WatchDetails
+                lieageImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.leagueLogo}`}
+                lieageImageDimetions={{
+                  width: { desktop: "120", tablet: "84", mobile: "78" },
+                  height: { desktop: "51", tablet: "36", mobile: "35" },
+                }}
+                firstTeamImageDimentions={{
+                  width: { desktop: "106", tablet: "75", mobile: "54" },
+                  height: { desktop: "108", tablet: "76", mobile: "52" },
+                }}
+                secondTeamImageDimentions={{
+                  width: { desktop: "106", tablet: "75", mobile: "54" },
+                  height: { desktop: "110", tablet: "78", mobile: "54" },
+                }}
+                firstTeamImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.firstTeamLogo}`}
+                firstTeamName={matchData?.firstTeamName}
+                seconteamImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.secondTeamLogo}`}
+                seconteamName={matchData?.secondTeamName}
+                date={getMatchDate(matchData?.eventDate)}
+                place={matchData?.eventStadium}
+                // half={"2nd Half: 47’"}
+              />
+            ) : (
+              <WatchDetailsSingleTeam
+                width={"100"}
+                leagueLogo={`${process.env.STATIC_SERVER}/img/matches/${matchData?.leagueLogo}`}
+                flagLogo={`${process.env.STATIC_SERVER}/img/matches/${matchData?.flagLogo}`}
+                date={getMatchDate(matchData?.eventDate)}
+                place={matchData?.eventStadium}
+                teamName={matchData?.teamsTitle}
+              />
+            )}
             <div className="watch-video-wrapper">
               <div className={classes["social-icons"]}>
                 <SocialIcons

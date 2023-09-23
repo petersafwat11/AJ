@@ -16,7 +16,6 @@ const BottomSocial = () => {
       delete Allsocial.facebook;
       delete Allsocial.tiktok;
       setSocial(Allsocial);
-      console.log("response links", response.data?.data[0]?.social);
     } catch (err) {
       console.log(err);
     }

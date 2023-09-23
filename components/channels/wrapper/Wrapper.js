@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import { getData } from "../../../utils/dashboardTablePagesFunctions";
@@ -19,6 +19,10 @@ import Search from "../search/Search";
 import classes from "./wrapper.module.css";
 const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
   const router = useRouter();
+  const pathname = usePathname();
+  const shareUrl = `${process.env.FRONTEND_SERVER}${pathname}`;
+  const quote = "Check out this awesome content!";
+
   // const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
   const [showReport, setShowReport] = useState(false);
@@ -39,7 +43,6 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
   const [filterValue, setFilterValue] = useState("All");
   const [paginationNum, setPaginationNum] = useState(1);
   const channelsRef = useRef();
-
   // const toggleChat = () => {
   //   setShowChat(!showChat);
   // };
@@ -58,15 +61,9 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
   const fetchNewData = useCallback(async (query, cause) => {
     try {
       const response = await getData("channels", query);
-
-      if (cause === "filter") {
-        // setSearchValue("");
+      console.log(response);
+      if (cause === "filter" || cause === "search") {
         setPaginationNum(1);
-      } else if (cause === "search") {
-        // setFilterValue("All");
-        setPaginationNum(1);
-      }
-      if (cause !== "showMore") {
         setChannelsServers({
           channels: response?.data?.data,
           totalResults: response?.results,
@@ -89,12 +86,12 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
     console.log("show-more");
     const num = paginationNum;
     setPaginationNum(paginationNum + 1);
+    console.log("num", num, paginationNum);
     await fetchNewData(
       {
-        limit: 4,
-        skip: 8 + (num - 1) * 4,
+        limit: 20,
+        skip: 8 + (num - 1) * 20,
         mode: "Visible",
-        channelName: "Visible",
         language: filterValue === "All" ? undefined : filterValue,
         searchValue: seacrhValue,
         or: ["channelName"],
@@ -165,7 +162,11 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
       )} */}
       {showShareLinks && (
         <Popup>
-          <ShareLinks toggleShareLinks={toggleShareLinks} />
+          <ShareLinks
+            shareUrl={shareUrl}
+            quote={quote}
+            toggleShareLinks={toggleShareLinks}
+          />
         </Popup>
       )}
       <div className={classes["container"]}>
@@ -179,6 +180,8 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
         <div className="watch-video-wrapper">
           <div className={classes["social-icons"]}>
             <SocialIcons
+              shareUrl={shareUrl}
+              quote={quote}
               toggleShareLinks={toggleShareLinks}
               toggleReport={toggleReport}
             />

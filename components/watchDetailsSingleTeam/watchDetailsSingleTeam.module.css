@@ -1,40 +1,53 @@
 .watch-details {
-  margin: 1.3rem auto 0;
+  margin: -2.3rem auto 0;
   max-width: 52.5rem;
 }
 .watch-details-first {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1.78rem;
   flex-direction: column;
 }
 .date-and-place {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 0.7rem;
 }
 .date,
 .place {
   font-size: 0.93rem;
   line-height: 1.54rem;
 }
-.teams-title {
+.place {
+  width: 11rem;
+  text-align: center;
+}
+.team {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.team-title {
   color: #fff;
   text-align: center;
   font-family: RobotoSemiBold;
   font-size: 2.1rem;
   font-weight: 600;
   line-height: normal;
-  margin-top: 1.25rem;
-  margin-bottom: 2.1rem;
+}
+.team-logo {
+  width: 23px;
+}
+.league-logo {
+  width: 105px;
 }
 .watch-details-last {
-  margin-top: 0.3rem;
+  margin-top: 1rem;
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 1.5rem;
 }
 .half {
   font-family: RobotoSemiBold;

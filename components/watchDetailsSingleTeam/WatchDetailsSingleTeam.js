@@ -1,29 +1,50 @@
 import React from "react";
-import LiveBtn from "../match/LiveBtn";
+import LiveBtn from "../live-button/LiveButton";
 import classes from "./watchDetailsSingleTeam.module.css";
-const WatchDetailsSingleTeam = ({ width, imageScr, date, place }) => {
+const WatchDetailsSingleTeam = ({
+  leagueLogo,
+  flagLogo,
+  width,
+  date,
+  place,
+  teamName,
+}) => {
   return (
     <div className={classes["watch-details"]}>
       <div className={classes["watch-details-first"]}>
         <img
+          className={classes["league-logo"]}
           crossOrigin="anonymous"
-          className={classes["sport-image-first"]}
-          src={imageScr}
+          src={leagueLogo}
           alt="other"
-          width={width}
+          // width={width}
           // height={imagesDimentions.lieageImageHeigth}
         />
         <div className={classes["date-and-place"]}>
           <p className={classes["date"]}>{date}</p>
-          <p className={classes["place"]}>{place}</p>
+          <p className={classes["place"]}>
+            {place}
+            {/* UAE, Abu Dhabi International Circuit */}
+          </p>
         </div>
       </div>
-      <h3 className={classes["team-title"]}>Grand Prix: Islamabad</h3>
       <div className={classes["watch-details-last"]}>
+        <div className={classes["team"]}>
+          <h3 className={classes["team-title"]}>
+            {teamName}</h3>
+          <img
+            className={classes["team-logo"]}
+            crossOrigin="anonymous"
+            src={flagLogo}
+            alt="other"
+            width={width}
+            // height={imagesDimentions.lieageImageHeigth}
+          />
+        </div>
         {/* {true ? (
           <div className={classes["not-live"]}>LIVE</div>
         ) : ( */}
-          <LiveBtn text={"LIVE"} />
+        <LiveBtn text={"LIVE"} />
         {/* )} */}
       </div>
     </div>

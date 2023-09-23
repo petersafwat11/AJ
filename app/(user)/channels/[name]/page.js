@@ -21,6 +21,8 @@ import { getData } from "../../../../utils/dashboardTablePagesFunctions";
 import classes from "./page.module.css";
 const Page = () => {
   const pathname = usePathname();
+  const shareUrl = `${process.env.FRONTEND_SERVER}${pathname}`;
+  const quote = "Check out this awesome content!";
   const router = useRouter();
   // delete channelsServer.status;
   // const [showChat, setShowChat] = useState(false);
@@ -98,8 +100,8 @@ const Page = () => {
     setPaginationNum(paginationNum + 1);
     await fetchNewData(
       {
-        limit: 4,
-        skip: 8 + (num - 1) * 4,
+        limit: 20,
+        skip: 8 + (num - 1) * 20,
         mode: "Visible",
         language: filterValue === "All" ? undefined : filterValue,
         searchValue: seacrhValue,
@@ -133,17 +135,6 @@ const Page = () => {
       "searchOrFilter"
     );
   }, [seacrhValue, fetchNewData, filterValue]);
-  //   useEffect(() => {
-  //     fetchNewData(
-  //       {
-  //         page: 1,
-  //         limit: 8,
-  //         mode: "Visible",
-  //         language: filterValue === "All" ? undefined : filterValue,
-  //       },
-  //       "filter"
-  //     );
-  //   }, [filterValue, fetchNewData]);
   useEffect(() => {
     const channelURL = pathname.slice(pathname.lastIndexOf("/") + 1);
     const channelName = channelURL.replace(/%20|-/g, " ");
@@ -185,7 +176,11 @@ const Page = () => {
       )} */}
           {showShareLinks && (
             <Popup>
-              <ShareLinks toggleShareLinks={toggleShareLinks} />
+              <ShareLinks
+                shareUrl={shareUrl}
+                quote={quote}
+                toggleShareLinks={toggleShareLinks}
+              />
             </Popup>
           )}
           <div className={classes["container"]}>
@@ -199,6 +194,8 @@ const Page = () => {
             <div className="watch-video-wrapper">
               <div className={classes["social-icons"]}>
                 <SocialIcons
+                  shareUrl={shareUrl}
+                  quote={quote}
                   toggleShareLinks={toggleShareLinks}
                   toggleReport={toggleReport}
                 />

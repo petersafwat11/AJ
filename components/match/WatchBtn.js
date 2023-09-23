@@ -2,18 +2,16 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import classes from "./watchBtn.module.css";
 
-const WatchBtn = ({ id, watch }) => {
+const WatchBtn = ({ id }) => {
   const router = useRouter();
 
   return (
     <div className={classes["action-button"]}>
       <button
         onClick={() => {
-          if (watch) {
-            router.push(`/watch/${id}`, { scroll: true });
-          }
+          router.push(`/watch/${id}`, { scroll: true });
         }}
-        className={!watch ? classes["disabled"] : classes["watch-button"]}
+        className={classes["watch-button"]}
       >
         WATCH
       </button>

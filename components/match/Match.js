@@ -3,8 +3,8 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import {
   calcRemainingTime,
-  convertDateHomePage,
   determineLive,
+  getMatchDate,
 } from "../../utils/convertDateFormat";
 import LiveBtn from "./LiveBtn";
 import RemainingTime, { RemainingTimeMobile } from "./RemainingTime";
@@ -41,9 +41,7 @@ export const Match = ({ matchData }) => {
   return (
     <div className={classes["match"]}>
       <div className={classes["match-first"]}>
-        <p className={classes["date"]}>
-          {convertDateHomePage(matchData?.eventDate)}
-        </p>
+        <p className={classes["date"]}>{getMatchDate(matchData?.eventDate)}</p>
         {/* {remaingTime && (
           <div className={classes["remaining-time-mobile"]}>{remaingTime}</div>
         )} */}
@@ -54,38 +52,44 @@ export const Match = ({ matchData }) => {
       <div className={classes["match-second"]}>
         <div className={classes["match-details"]}>
           <p className={classes["date"]}>
-            {convertDateHomePage(matchData?.eventDate)}
+            {getMatchDate(matchData?.eventDate)}
           </p>
           <p className={classes["leage"]}>{matchData?.eventLeague}</p>
         </div>
         <LiveBtn live={live} />
-        <div className={classes["first-team"]}>
-          <Image
-            crossOrigin="anonymous"
-            className={classes["first-team-image"]}
-            src={`${process.env.STATIC_SERVER}/img/matches/${matchData?.firstTeamLogo}`}
-            alt="team-logo"
-            height={34}
-            width={34}
-          />
-          <p className={classes["first-team-name"]}>
-            {matchData?.firstTeamName}
-          </p>
-        </div>
-        <div className={classes["match-vs"]}>vs</div>
-        <div className={classes["second-team"]}>
-          <p className={classes["second-team-name"]}>
-            {matchData?.secondTeamName}
-          </p>
-          <Image
-            crossOrigin="anonymous"
-            className={classes["second-team-image"]}
-            src={`${process.env.STATIC_SERVER}/img/matches/${matchData?.secondTeamLogo}`}
-            alt="team-logo"
-            height={34}
-            width={34}
-          />
-        </div>
+        {matchData?.firstTeamName && matchData?.secondTeamName ? (
+          <>
+            <div className={classes["first-team"]}>
+              <Image
+                crossOrigin="anonymous"
+                className={classes["first-team-image"]}
+                src={`${process.env.STATIC_SERVER}/img/matches/${matchData?.firstTeamLogo}`}
+                alt="logo"
+                height={34}
+                width={34}
+              />
+              <p className={classes["first-team-name"]}>
+                {matchData?.firstTeamName}
+              </p>
+            </div>
+            <div className={classes["match-vs"]}>vs</div>
+            <div className={classes["second-team"]}>
+              <p className={classes["second-team-name"]}>
+                {matchData?.secondTeamName}
+              </p>
+              <Image
+                crossOrigin="anonymous"
+                className={classes["second-team-image"]}
+                src={`${process.env.STATIC_SERVER}/img/matches/${matchData?.secondTeamLogo}`}
+                alt="logo"
+                height={34}
+                width={34}
+              />
+            </div>
+          </>
+        ) : (
+          <div className={classes["teams-title"]}>{matchData?.teamsTitle}</div>
+        )}
         {/* {!true ? (
           <div className={classes["status"]}>2nd Half: 47’</div>
         ) : ( */}
@@ -96,10 +100,14 @@ export const Match = ({ matchData }) => {
         )} */}
         <RemainingTime timer={remainingTime} live={live} />
         <WatchBtn
-          id={`${matchData?.firstTeamName.replace(
-            / /g,
-            "-"
-          )}-VS-${matchData?.secondTeamName.replace(/ /g, "-")}`}
+          id={
+            matchData?.firstTeamName && matchData?.secondTeamName
+              ? `${matchData?.firstTeamName.replace(
+                  / /g,
+                  "-"
+                )}-VS-${matchData?.secondTeamName.replace(/ /g, "-")}`
+              : `${matchData?.teamsTitle.replace(/ /g, "-")}`
+          }
           watch={watch}
         />
       </div>

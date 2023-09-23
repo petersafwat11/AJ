@@ -15,6 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 25px;
 }
 
 .match-details {
@@ -41,7 +42,8 @@
   width: 10rem;
 }
 .first-team-name,
-.second-team-name {
+.second-team-name,
+.teams-title {
   font-size: 1.125rem;
   line-height: 1.25rem;
   font-family: RobotoSemiBold;
@@ -57,6 +59,12 @@
   font-size: 1rem;
   line-height: 1rem;
   margin-top: 2px;
+}
+.teams-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
 }
 .status {
   font-family: RobotoSemiBold;
@@ -109,6 +117,7 @@
   .match-second {
     padding-top: 0.7rem;
     width: 100%;
+    gap: 0;
   }
 
   .match-details {
@@ -127,7 +136,8 @@
     /* height: 1.8rem; */
   }
   .first-team-name,
-  .second-team-name {
+  .second-team-name,
+  .teams-title {
     font-family: RobotoSemiBold;
     font-size: 1.06rem;
     line-height: 1.25rem;
@@ -260,7 +270,8 @@
   }
 
   .first-team-name,
-  .second-team-name {
+  .second-team-name,
+  .teams-title {
     font-size: 16px;
     line-height: 18.7px;
   }
@@ -294,7 +305,8 @@
   }
 
   .first-team-name,
-  .second-team-name {
+  .second-team-name,
+  .teams-title {
     font-size: 15px;
     line-height: 17.6px;
   }
