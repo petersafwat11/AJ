@@ -15,7 +15,7 @@
   .navigate {
     gap: 0.3rem;
     margin-bottom: 1.5rem;
-    margin-top: 1.5rem;
+    margin-top: 0.75rem;
   }
   .navigate > * {
     font-size: 0.625rem;

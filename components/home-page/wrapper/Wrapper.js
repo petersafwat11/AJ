@@ -13,9 +13,7 @@ import classes from "./wrapper.module.css";
 const Wrapper = ({ data }) => {
   const hotMatchesRef = useRef();
   const otherMatchesRef = useRef();
-  const [hotMatches, setHotMatches] = useState(
-    data?.data?.data?.filter((item) => item.flagged === true)
-  );
+  const [hotMatches, setHotMatches] = useState(data?.hotMatches);
   const [otherMatches, setOtherMAtches] = useState({
     total: data?.results,
     matches: data?.data?.data,
@@ -140,9 +138,9 @@ const Wrapper = ({ data }) => {
         </section>
       </div>
       {otherMatches?.total > otherMatches?.matches?.length && (
-      <div className={classes["show-more-button"]}>
-        <ShowMore showMoreHandeler={showMoreHandeler} />
-      </div>
+        <div className={classes["show-more-button"]}>
+          <ShowMore showMoreHandeler={showMoreHandeler} />
+        </div>
       )}
     </div>
   );

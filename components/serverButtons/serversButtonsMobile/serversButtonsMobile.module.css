@@ -38,6 +38,10 @@
     font-style: normal;
     font-weight: 500;
   }
+  .lang-text,
+  .text-selected {
+    text-transform: uppercase;
+  }
   .text-selected,
   .arabic-selected {
     color: #fff;

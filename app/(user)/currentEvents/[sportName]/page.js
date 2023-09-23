@@ -39,9 +39,7 @@ const Page = () => {
         });
         setSportCategory(category);
         console.log("currentEvents", currentEvents);
-        setHotMAtches(
-          currentEvents?.data?.data?.filter((item) => item.flagged === true)
-        );
+        setHotMAtches(currentEvents?.hotMatches);
         setOtherMatches({
           total: currentEvents?.results,
           matches: currentEvents?.data?.data,
@@ -86,6 +84,7 @@ const Page = () => {
         limit: 20,
         otherCategory: sportCategory === "others" ? true : false,
         sportCategory: sportCategory === "others" ? undefined : sportCategory,
+        sort: { eventDate: 1 },
         searchValue: seacrhValue,
         or: [
           "teamsTitle",
@@ -107,6 +106,7 @@ const Page = () => {
         skip: 20 + (num - 1) * 10,
         otherCategory: sportCategory === "others" ? true : false,
         sportCategory: sportCategory === "others" ? undefined : sportCategory,
+        sort: { eventDate: 1 },
         searchValue: seacrhValue,
         or: [
           "teamsTitle",

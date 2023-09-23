@@ -39,11 +39,17 @@ const Table = ({
       </div>
       {sports?.length > 0 ? (
         sports.map((item, index) => (
-          <div key={item._id} className={classes["table-row"]}>
+          <div key={item._id} className={item.teamsTitle? classes["table-row-single-team"]: classes["table-row"]}>
             <Checkbox selectElement={selectElement} id={item._id} />
             <p className={classes["table-cell"]}>{index + 1}</p>
-            <p className={classes["table-cell"]}>{item.firstTeamName}</p>
-            <p className={classes["table-cell"]}>{item.secondTeamName}</p>
+            {!item.teamsTitle ? (
+              <>
+                <p className={classes["table-cell"]}>{item.firstTeamName}</p>
+                <p className={classes["table-cell"]}>{item.secondTeamName}</p>
+              </>
+            ) : (
+              <p className={classes["table-cell"]}>{item.teamsTitle}</p>
+            )}
             <p className={classes["table-cell"]}>{item.eventLeague}</p>
             <div className={classes["date-and-time"]}>
               <p> {convertDate(item.eventDate).date}</p>

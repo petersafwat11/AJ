@@ -7,14 +7,17 @@
 }
 
 .table-header,
-.table-row {
+.table-row,
+.table-row-single-team {
   display: grid;
   grid-template-columns: 3rem 7rem 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
   align-items: center;
   padding: 1.32rem 1.76rem 1.32rem 3.08rem;
 }
-
+.table-row-single-team {
+  grid-template-columns: 3rem 7rem 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
 .table-header {
   background-color: #2a3042;
   color: white;
@@ -36,7 +39,8 @@
 .table-header .table-cell {
   font-weight: 600;
 }
-.table-row {
+.table-row,
+.table-row-single-team {
   color: #575757;
   height: auto;
   padding: 1.1rem 1.76rem 1.1rem 3.08rem;
