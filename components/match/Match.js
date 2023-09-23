@@ -13,7 +13,6 @@ import classes from "./match.module.css";
 
 export const Match = ({ matchData }) => {
   const [live, setLive] = useState(determineLive(matchData?.eventDate));
-  const [watch, setWatch] = useState(determineLive(matchData?.playStream));
   const [remainingTime, setRemainingTime] = useState(calcRemainingTime(null));
 
   useEffect(() => {
@@ -23,13 +22,6 @@ export const Match = ({ matchData }) => {
 
     return () => clearInterval(interval);
   }, [matchData?.eventDate]);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setWatch(determineLive(matchData?.playStream));
-    }, 10000);
-
-    return () => clearInterval(interval);
-  }, [matchData?.playStream]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -108,7 +100,6 @@ export const Match = ({ matchData }) => {
                 )}-VS-${matchData?.secondTeamName.replace(/ /g, "-")}`
               : `${matchData?.teamsTitle.replace(/ /g, "-")}`
           }
-          watch={watch}
         />
       </div>
     </div>

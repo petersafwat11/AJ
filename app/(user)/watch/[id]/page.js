@@ -9,6 +9,7 @@ import SocialIcons from "../../../../components/whatchShare/SocialIcons";
 import { usePathname } from "next/navigation";
 import BottomSocial from "../../../../components/bottomSocial/BottomSocial";
 import ChangeServer from "../../../../components/changeServer/ChangeServer";
+import EventCountDown from "../../../../components/eventCoutdown/EventCountDown";
 import HlcPlayer from "../../../../components/hlcPlayer/HlcPlayer";
 import Marque from "../../../../components/marque/Marque";
 import Popup from "../../../../components/popupWrapper/Popup";
@@ -19,7 +20,7 @@ import UnderDevelopment from "../../../../components/underDevelopment/component/
 import WatchDetailsSingleTeam from "../../../../components/watchDetailsSingleTeam/WatchDetailsSingleTeam";
 import WatchNavigation from "../../../../components/watchNavigation/WatchNavigation";
 import { changeServersFormat } from "../../../../utils/changeServersFormat";
-import { getMatchDate } from "../../../../utils/convertDateFormat";
+import { calcRemainingTime, determineLive, getMatchDate } from "../../../../utils/convertDateFormat";
 import { getData } from "../../../../utils/dashboardTablePagesFunctions";
 import classes from "./page.module.css";
 const Page = () => {
@@ -45,7 +46,6 @@ const Page = () => {
   const [error, setError] = useState(false);
   const [showChangeServer, setShowChangeServer] = useState(false);
   useEffect(() => {
-    // const matchId = pathname.slice(pathname.lastIndexOf("/") + 1);
     const { firstTeamName, secondTeamName } = parseTeamNames(
       pathname.slice(pathname.lastIndexOf("/") + 1)
     );
@@ -64,9 +64,7 @@ const Page = () => {
     const pageData = async () => {
       try {
         const response = await getData(`sports/teamNames`, query);
-        console.log("response", response);
         const data = response?.data?.data;
-        console.log("response", data);
 
         data.servers = changeServersFormat(data?.servers);
         setPlayingServer({
@@ -114,6 +112,25 @@ const Page = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+  const [live, setLive] = useState(determineLive(matchData?.eventDate));
+  const [remainingTime, setRemainingTime] = useState(calcRemainingTime(null));
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLive(determineLive(matchData?.eventDate));
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, [matchData?.eventDate]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRemainingTime(calcRemainingTime(matchData?.eventDate));
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [matchData?.eventDate]);
+
   return (
     <div id="wrapper" className="wrapper">
       <TopLayout />
@@ -164,7 +181,17 @@ const Page = () => {
           )} */}
           <WatchNavigation page={"Watch"} />
           <div className={classes["container"]}>
-            {matchData?.firstTeamName && matchData?.secondTeamName ? (
+            {!parseTeamNames(pathname.slice(pathname.lastIndexOf("/") + 1))
+              .secondTeamName ? (
+              <WatchDetailsSingleTeam
+                width={"100"}
+                leagueLogo={`${process.env.STATIC_SERVER}/img/matches/${matchData?.leagueLogo}`}
+                flagLogo={`${process.env.STATIC_SERVER}/img/matches/${matchData?.flagLogo}`}
+                date={getMatchDate(matchData?.eventDate)}
+                place={matchData?.eventStadium}
+                teamName={matchData?.teamsTitle}
+              />
+            ) : (
               <WatchDetails
                 lieageImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.leagueLogo}`}
                 lieageImageDimetions={{
@@ -187,15 +214,6 @@ const Page = () => {
                 place={matchData?.eventStadium}
                 // half={"2nd Half: 47’"}
               />
-            ) : (
-              <WatchDetailsSingleTeam
-                width={"100"}
-                leagueLogo={`${process.env.STATIC_SERVER}/img/matches/${matchData?.leagueLogo}`}
-                flagLogo={`${process.env.STATIC_SERVER}/img/matches/${matchData?.flagLogo}`}
-                date={getMatchDate(matchData?.eventDate)}
-                place={matchData?.eventStadium}
-                teamName={matchData?.teamsTitle}
-              />
             )}
             <div className="watch-video-wrapper">
               <div className={classes["social-icons"]}>
@@ -208,8 +226,13 @@ const Page = () => {
               </div>
 
               <div id="my-root-div" className="watch-video">
-                {/* <EventCountDown eventStartDate={matchData?.eventDate} /> */}
-                <HlcPlayer url={playingServer?.server?.streamLinkUrl} />
+                {!live ? (
+                  <EventCountDown remainingTime={remainingTime} 
+                  // eventStartDate={matchData?.eventDate}
+                   />
+                ) : (
+                  <HlcPlayer url={playingServer?.server?.streamLinkUrl} />
+                )}
                 {/* <PlayerContainer /> */}
               </div>
               <div className={classes["watch-video-wrapper-bottom"]}>

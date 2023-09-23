@@ -1,17 +1,8 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import { calcRemainingTime } from "../../utils/convertDateFormat";
+import React from "react";
 import classes from "./eventCountdown.module.css";
-const EventCountDown = ({ eventStartDate }) => {
-  const callRemainingTime = () => calcRemainingTime(eventStartDate);
-
-  const [remaingTime, setRemainingTime] = useState(true);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setRemainingTime(callRemainingTime());
-    }, 1000);
-  }, [setRemainingTime, callRemainingTime]);
+const EventCountDown = ({ remainingTime }) => {
   return (
     <div className={classes["container"]}>
       <Image
@@ -23,7 +14,7 @@ const EventCountDown = ({ eventStartDate }) => {
       />
       <div className={classes["text-wrapper"]}>
         <p className={classes["text"]}>The event will start in </p>
-        <p className={classes["remaining-time"]}>{remaingTime} </p>
+        <p className={classes["remaining-time"]}>{remainingTime} </p>
       </div>
     </div>
   );
