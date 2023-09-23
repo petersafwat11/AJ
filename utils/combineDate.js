@@ -3,18 +3,14 @@ export const combineDateAndTime = (date, time) => {
     date: new Date(date),
     time: time,
   };
-  console.log("combinedDateTime", time, dateTime.date);
 
   const [hours, minutes] = dateTime.time.split(":");
   const combinedDateTime = new Date(
     dateTime.date.toLocaleString("en-US", { timeZone: "UTC" })
   );
-  console.log("combinedDateTime", combinedDateTime);
   combinedDateTime.setHours(hours, minutes);
-  console.log("combinedDateTime", combinedDateTime);
 
   const isoString = combinedDateTime.toISOString();
-  console.log("combinedDateTime", isoString);
 
   return isoString;
 };

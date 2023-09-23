@@ -190,11 +190,15 @@ const Page = () => {
     delete data.eventDate;
     delete data.eventTime;
     data.eventDate = eventDate;
+    data?.teamsTitle?.length < 1 ? (data.teamsTitle = null) : "";
+    data?.firstTeamName?.length < 1 ? (data.firstTeamName = null) : "";
+    data?.secondTeamName?.length < 1 ? (data.secondTeamName = null) : "";
+    data?.matchId?.length < 1 ? (data.matchId = null) : "";
     let formData = new FormData();
     for (const [key, value] of Object.entries(data)) {
       formData.append(key, value);
     }
-    delete formData.servers;
+    // delete formData.servers;
     saveItem(
       pathname,
       formData,

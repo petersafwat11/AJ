@@ -1,13 +1,8 @@
 import React from "react";
 import classes from "./eventId.module.css";
-const EventId = ({
-    data,
-    dispatchDetail,
-  }) => {
+const EventId = ({ data, dispatchDetail }) => {
   return (
-    <div
-      className={classes["container"]}
-    >
+    <div className={classes["container"]}>
       <h2 className={classes["title"]}>Event ID </h2>
       <div className={classes["details"]}>
         <div className={classes["input-group"]}>
@@ -17,7 +12,7 @@ const EventId = ({
             id="date"
             onChange={(e) => {
               dispatchDetail({
-                type: 'MATCH-ID',
+                type: "MATCH-ID",
                 value: e.target.value,
               });
             }}
