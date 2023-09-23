@@ -184,6 +184,7 @@ const Page = () => {
             {!parseTeamNames(pathname.slice(pathname.lastIndexOf("/") + 1))
               .secondTeamName ? (
               <WatchDetailsSingleTeam
+              live={live}
                 width={"100"}
                 leagueLogo={`${process.env.STATIC_SERVER}/img/matches/${matchData?.leagueLogo}`}
                 flagLogo={`${process.env.STATIC_SERVER}/img/matches/${matchData?.flagLogo}`}
@@ -193,6 +194,7 @@ const Page = () => {
               />
             ) : (
               <WatchDetails
+              live={live}
                 lieageImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.leagueLogo}`}
                 lieageImageDimetions={{
                   width: { desktop: "120", tablet: "84", mobile: "78" },

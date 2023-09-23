@@ -8,6 +8,7 @@ const WatchDetailsSingleTeam = ({
   date,
   place,
   teamName,
+  live,
 }) => {
   return (
     <div className={classes["watch-details"]}>
@@ -30,8 +31,7 @@ const WatchDetailsSingleTeam = ({
       </div>
       <div className={classes["watch-details-last"]}>
         <div className={classes["team"]}>
-          <h3 className={classes["team-title"]}>
-            {teamName}</h3>
+          <h3 className={classes["team-title"]}>{teamName}</h3>
           <img
             className={classes["team-logo"]}
             crossOrigin="anonymous"
@@ -44,7 +44,7 @@ const WatchDetailsSingleTeam = ({
         {/* {true ? (
           <div className={classes["not-live"]}>LIVE</div>
         ) : ( */}
-        <LiveBtn text={"LIVE"} />
+        {live && <LiveBtn text={"LIVE"} />}
         {/* )} */}
       </div>
     </div>

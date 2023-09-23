@@ -1,8 +1,8 @@
 "use client";
 import React, { useCallback, useEffect, useState } from "react";
 
-import classes from "./watchDetails.module.css";
 import LiveBtn from "../live-button/LiveButton";
+import classes from "./watchDetails.module.css";
 const WatchDetails = ({
   lieageImage,
   lieageImageDimetions,
@@ -15,6 +15,7 @@ const WatchDetails = ({
   date,
   place,
   half,
+  live,
 }) => {
   const [windowDimensions, setWindowDimensions] = useState({
     width: "",
@@ -137,7 +138,7 @@ const WatchDetails = ({
         {/* <p className={classes["half"]}>{half}</p> */}
         {/* {true ? ( */}
         {/* <div className={classes["not-live"]}>LIVE</div> */}
-        <LiveBtn text={"LIVE"} />
+        {live && <LiveBtn text={"LIVE"} />}
 
         {/* ) : (
           <LiveButton text={"LIVE"} />
