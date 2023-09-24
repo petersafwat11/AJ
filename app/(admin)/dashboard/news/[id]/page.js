@@ -2,7 +2,7 @@
 import axios from "axios";
 import { usePathname, useRouter } from "next/navigation";
 
-import React, { useEffect, useReducer } from "react";
+import React, { useCallback, useEffect, useReducer } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ActionsButtons from "../../../../../components/dashboard/actionsButtons/ActionsButtons";
@@ -12,9 +12,9 @@ import ThumbnailImage from "../../../../../components/dashboard/createNews/thumb
 import Title from "../../../../../components/dashboard/createNews/title/Title";
 import {
   deleteItem,
-  getData,
-  saveItem
+  saveItem,
 } from "../../../../../utils/dashboardHelperFunctions";
+import { getData } from "../../../../../utils/dashboardTablePagesFunctions";
 import classes from "./page.module.css";
 
 const intialValue = {
@@ -26,12 +26,13 @@ const intialValue = {
   subNews: [{ index: 1, title: "", description: "", image: null, file: null }],
 };
 const newsReducer = (state, action) => {
-  console.log("state", state);
+  // console.log("state", action);
   if (action.type === "CLEAR-ALL") {
     return intialValue;
   }
   if (action.type === "UPDATE-ALL") {
-    console.log(action.value, "action.value");
+    console.log(action.value, "action.value", action.value.coverImage);
+
     return action.value;
   }
   if (action.type === "TITLE") {
@@ -120,38 +121,12 @@ const Page = () => {
   const pathname = usePathname();
   const router = useRouter();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      const formData = new FormData();
-      Object.keys(news).forEach((key) => {
-        if (key === "subNews") {
-          formData.append(key, JSON.stringify(news[key]));
-        } else if (key === "coverFile") {
-          formData.append(key, news[key]);
-        } else {
-          formData.append(key, news[key]);
-        }
-      });
-      news.subNews.forEach((subnews, index) => {
-        formData.append(`file`, subnews.file);
-      });
-      const response = await axios.post("/api/news", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
   const saveChanges = () => {
     let data = news;
-    data.coverImage = data.coverFile;
-
     const formData = new FormData();
     formData.append("title", data?.title);
     formData.append("description", data?.description);
-    formData.append("coverImage", data?.coverImage);
+    formData.append("coverImage", data?.coverFile);
     formData.append("numOfSubnews", data?.numOfSubnews);
 
     data?.subNews.forEach((subNew, index) => {
@@ -164,11 +139,31 @@ const Page = () => {
   const deleteNews = async () => {
     deleteItem(pathname, router, "news");
   };
+  const getNewsData = useCallback(async () => {
+    try {
+      const response = await getData(`news/${pathname.split("/")[3]}`);
+      let newState = { ...response.data.data };
+      delete newState.__v;
+      newState.coverImage = `${process.env.STATIC_SERVER}/img/news/${newState.coverImage}`;
+      newState.subNews = newState.subNews.map((item) => {
+        let newItem = {
+          ...item,
+          image: `${process.env.STATIC_SERVER}/img/news/${item.image}`,
+        };
+        return newItem;
+      });
+
+      console.log("newState", newState);
+
+      dispatchDetail({ type: "UPDATE-ALL", value: newState });
+    } catch (err) {
+      console.log("err", err);
+    }
+  }, [pathname]);
+
   useEffect(() => {
-    !pathname.endsWith("create")
-      ? getData(pathname.split("/")[3], dispatchDetail, "news")
-      : "";
-  }, [pathname, router]);
+    !pathname.endsWith("create") ? getNewsData() : "";
+  }, [pathname, getNewsData]);
 
   return (
     <div className={classes["container"]}>

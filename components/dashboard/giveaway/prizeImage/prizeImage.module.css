@@ -38,11 +38,16 @@
   flex-direction: column;
   gap: 0.25rem;
 }
-.image-name {
+/* .image-name {
   background: rgb(177, 174, 174);
   padding: 0.125rem 0.4rem;
   color: white;
   border-radius: 3rem;
   font-size: 0.65rem;
   cursor: pointer;
+} */
+.uploaded-image {
+  height: 3rem;
+  cursor: pointer;
 }
+

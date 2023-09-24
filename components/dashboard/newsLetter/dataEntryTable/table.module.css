@@ -51,8 +51,8 @@
 .table-header,
 .table-row {
   display: grid;
-  grid-template-columns: 3.08rem 10.56rem 0.88fr 0.88fr 10.56rem;
-  justify-items: start;
+  grid-template-columns: 3.08rem 10.56rem 0.88fr 10.56rem;
+  justify-items: center;
   align-items: center;
   padding: 1.32rem 1.76rem 1.32rem;
 }
@@ -60,10 +60,10 @@
   color: white;
   background-color: #2a3042;
 }
-.table-cell:first-of-type,
+/* .table-cell:first-of-type,
 .table-cell:last-of-type {
   justify-self: center;
-}
+} */
 .table-cell {
   font-family: "Poppins";
   font-weight: 500;

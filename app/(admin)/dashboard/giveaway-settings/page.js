@@ -10,6 +10,7 @@ import Table from "../../../../components/dashboard/giveaway/table/Table";
 import Title from "../../../../components/dashboard/giveaway/title/Title";
 import classes from "./page.module.css";
 
+import axios from "axios";
 import React, { useEffect, useReducer, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -25,12 +26,15 @@ const giveawayPrizeIntialValue = {
   startTime: "",
   endTime: "",
   prizeImage: null,
-  imageName: null,
+  imageSrc: null,
 };
 const prizeReducer = (state, action) => {
   console.log("state", state);
   if (action.type === "RESET-ALL") {
     return giveawayPrizeIntialValue;
+  }
+  if (action.type === "UPDATE-ALL") {
+    return action.value;
   }
   if (action.type === "TITLE") {
     return { ...state, title: action.value };
@@ -41,7 +45,8 @@ const prizeReducer = (state, action) => {
   } else if (action.type === "END-TIME") {
     return { ...state, endTime: action.value };
   } else {
-    return { ...state, prizeImage: action.value, imageName: action.value.name };
+    // coverFile: action.file, coverImage: action.image
+    return { ...state, prizeImage: action.file, imageSrc: action.image };
   }
 };
 const Page = () => {
@@ -52,18 +57,44 @@ const Page = () => {
   const [followers, setFollowers] = useState([]);
   const [selectedFollowers, setSelectedFollowers] = useState([]);
   const [deleteAlert, setDeleteAlert] = useState(false);
+  const [giveawayPrize, dispatchPrizeDetail] = useReducer(
+    prizeReducer,
+    giveawayPrizeIntialValue
+  );
 
   const selectElement = (elemID) => {
     checkboxClicked(elemID, selectedFollowers, setSelectedFollowers);
   };
 
-  const saveGiveawayPrize = () => {
+  const saveGiveawayPrize = async () => {
+    const formData = new FormData();
+    formData.append("title", giveawayPrize?.title);
+    formData.append("description", giveawayPrize?.description);
+    formData.append("startTime", giveawayPrize?.startTime);
+    formData.append("endTime", giveawayPrize?.endTime);
+    formData.append("prizeImage", giveawayPrize?.prizeImage);
+
+    try {
+      const dataSent = await axios.patch(
+        `${process.env.BACKEND_SERVER}/giveaway/event
+`,
+        formData
+        // {
+        //   headers: {
+        //     Authorization: `Bearer ${Cookies.get("token")}`,
+        //   },
+        // }
+      );
+      // dispatchPrizeDetail({ type: "RESET-ALL" });
+      notify("item saved successfully.", "success");
+      console.log(dataSent);
+    } catch (error) {
+      notify(error.response?.message, "error");
+      console.log("err", error);
+    }
+    // saveItem(pathname, formData, dispatchPrizeDetail, notify, router, "news");
     // createItem(pathname, router);
   };
-  const [giveawayPrize, dispatchPrizeDetail] = useReducer(
-    prizeReducer,
-    giveawayPrizeIntialValue
-  );
   const [paginations, dispatchDetail] = useReducer(paginationsReducer, {
     rowsPerPage: 10,
     currentPage: 1,
@@ -76,6 +107,18 @@ const Page = () => {
         limit: paginations.rowsPerPage,
       };
       const newData = await getData("giveaway/folllower", query);
+      const response = await getData("giveaway/event");
+      let eventData = {
+        ...response?.data?.data,
+      };
+      if (response?.data?.data.prizeImage !== null) {
+        eventData.imageSrc = `${process.env.STATIC_SERVER}/img/giveaway/${response.data.data.prizeImage}`;
+      } else {
+        eventData.imageSrc = null;
+      }
+      dispatchPrizeDetail({ type: "UPDATE-ALL", value: eventData });
+      console.log("eventData", eventData);
+
       setFollowers(newData?.data?.data);
       dispatchDetail({ type: "RESULTS", value: newData?.results });
     };
@@ -129,7 +172,7 @@ const Page = () => {
             dispatchPrizeDetail={dispatchPrizeDetail}
           />
           <PrizeImage
-            data={giveawayPrize.imageName}
+            data={giveawayPrize.imageSrc}
             dispatchPrizeDetail={dispatchPrizeDetail}
           />
           <Reset dispatchPrizeDetail={dispatchPrizeDetail} />

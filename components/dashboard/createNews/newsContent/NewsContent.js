@@ -64,6 +64,7 @@ const NewsContent = ({ data, dispatchDetail }) => {
                   {data.subNews.find((item) => item.index === index + 1)
                     .image && (
                     <img
+                      crossOrigin="anonymous"
                       className={classes["uploaded-image"]}
                       onClick={() => {
                         imageClick(index + 1);

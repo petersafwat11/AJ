@@ -3,25 +3,23 @@ import React, { useEffect, useReducer, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ContactTable from "../../../../components/dashboard/newsLetter/contactTable/Table";
-import Table from "../../../../components/dashboard/newsLetter/dataEntryTable/Table";
 import { flagItem } from "../../../../utils/dashboardHelperFunctions";
-import {
-  checkboxClicked,
-  getData,
-} from "../../../../utils/dashboardTablePagesFunctions";
+import { getData } from "../../../../utils/dashboardTablePagesFunctions";
 import { paginationsReducer } from "../../../../utils/paginationsReducer";
+import TableWrapper from "./TableWrapper";
 import classes from "./wrapper.module.css";
 
-const Wrapper = ({ peopleContactedUs }) => {
+const Wrapper = ({ peopleContactedUs, newsLetterFetchedData }) => {
   const notify = (message, type) => toast[type](message);
 
   const [usersContactedUs, setUsersContactedUs] = useState(
     peopleContactedUs?.data?.data
   );
-  const [selectedItems, setSelectedItems] = useState([]);
-  const selectElement = (elemID) => {
-    checkboxClicked(elemID, selectedItems, setSelectedItems);
-  };
+  const [newsLetter, setNewsLetter] = useState(newsLetterFetchedData.data.data);
+  // const [selectedItems, setSelectedItems] = useState([]);
+  // const selectElement = (elemID) => {
+  //   checkboxClicked(elemID, selectedItems, setSelectedItems);
+  // };
 
   const [paginations, dispatchDetail] = useReducer(paginationsReducer, {
     rowsPerPage: 10,
@@ -71,13 +69,7 @@ const Wrapper = ({ peopleContactedUs }) => {
         theme="dark"
       />
       <h2 className={classes["subheading"]}>Entry Data</h2>
-      <Table
-      // streamLinks={streamLinks}
-      // selectElement={selectElement}
-      // selectedStreamLinks={selectedStreamLinks}
-      // paginations={paginations}
-      // dispatchDetail={dispatchDetail}
-      />
+      <TableWrapper newsLetter={newsLetter} />
 
       <h2 className={classes["subheading"]}>Contact</h2>
       <ContactTable

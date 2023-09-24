@@ -7,6 +7,7 @@ import WatchDetails from "../../../../components/watch-details/WatchDetailsFootb
 import SocialIcons from "../../../../components/whatchShare/SocialIcons";
 
 import { usePathname } from "next/navigation";
+import { ToastContainer, toast } from "react-toastify";
 import BottomSocial from "../../../../components/bottomSocial/BottomSocial";
 import ChangeServer from "../../../../components/changeServer/ChangeServer";
 import EventCountDown from "../../../../components/eventCoutdown/EventCountDown";
@@ -20,11 +21,17 @@ import UnderDevelopment from "../../../../components/underDevelopment/component/
 import WatchDetailsSingleTeam from "../../../../components/watchDetailsSingleTeam/WatchDetailsSingleTeam";
 import WatchNavigation from "../../../../components/watchNavigation/WatchNavigation";
 import { changeServersFormat } from "../../../../utils/changeServersFormat";
-import { calcRemainingTime, determineLive, getMatchDate } from "../../../../utils/convertDateFormat";
+import {
+  calcRemainingTime,
+  determineLive,
+  getMatchDate,
+} from "../../../../utils/convertDateFormat";
 import { getData } from "../../../../utils/dashboardTablePagesFunctions";
+import { handleMakingReport } from "../../../../utils/reportFunction";
 import classes from "./page.module.css";
 const Page = () => {
   const pathname = usePathname();
+  const notify = (message, type) => toast[type](message);
   const shareUrl = `${process.env.FRONTEND_SERVER}${pathname}`;
   const quote = "Check out this awesome content!";
   const parseTeamNames = (str) => {
@@ -45,11 +52,57 @@ const Page = () => {
   );
   const [error, setError] = useState(false);
   const [showChangeServer, setShowChangeServer] = useState(false);
+
+  const [showChat, setShowChat] = useState(false);
+  const [showShareLinks, setShowShareLinks] = useState(false);
+  const [showReport, setShowReport] = useState(false);
+  const [live, setLive] = useState(determineLive(matchData?.eventDate));
+  const [remainingTime, setRemainingTime] = useState(calcRemainingTime(null));
+
+  // const toggleChat = () => {
+  //   setShowChat(!showChat);
+  // };
+  const toggleShareLinks = () => {
+    setShowShareLinks(!showShareLinks);
+  };
+  const toggleReport = () => {
+    setShowReport(!showReport);
+  };
+  const toggleServers = () => {
+    setShowChangeServer(!showChangeServer);
+  };
+  const handleServerClicks = (val, lang) => {
+    console.log(val);
+    toggleServers();
+    setlangOtherServersAvailable({ servers: val[Object.keys(val)[0]], lang });
+    console.log(val[Object.keys(val)[0]]);
+  };
+  const handleChangeServers = (val, lang) => {
+    console.log("change server");
+    toggleServers();
+    // setPlayingServerLang(lang);
+    setPlayingServer({ server: val, lang });
+  };
+  const sendReport = async (val) => {
+    const { firstTeamName, secondTeamName } = parseTeamNames(
+      pathname.slice(pathname.lastIndexOf("/") + 1)
+    );
+    const reportData = {
+      event:
+        firstTeamName && secondTeamName
+          ? `${firstTeamName} vs ${secondTeamName}`
+          : firstTeamName,
+      server: playingServer?.lang,
+      reason: val,
+      eventLink: shareUrl,
+    };
+
+    await handleMakingReport(reportData, toggleReport, notify);
+  };
   useEffect(() => {
     const { firstTeamName, secondTeamName } = parseTeamNames(
       pathname.slice(pathname.lastIndexOf("/") + 1)
     );
-    console.log("pathname", pathname.slice(pathname.lastIndexOf("/") + 1));
     let query;
     if (firstTeamName && secondTeamName) {
       query = {
@@ -82,38 +135,9 @@ const Page = () => {
     pageData();
   }, [setError, pathname]);
 
-  const [showChat, setShowChat] = useState(false);
-  const [showShareLinks, setShowShareLinks] = useState(false);
-  const [showReport, setShowReport] = useState(false);
-  // const toggleChat = () => {
-  //   setShowChat(!showChat);
-  // };
-  const toggleShareLinks = () => {
-    setShowShareLinks(!showShareLinks);
-  };
-  const toggleReport = () => {
-    setShowReport(!showReport);
-  };
-  const toggleServers = () => {
-    setShowChangeServer(!showChangeServer);
-  };
-  const handleServerClicks = (val, lang) => {
-    console.log(val);
-    toggleServers();
-    setlangOtherServersAvailable({ servers: val[Object.keys(val)[0]], lang });
-    console.log(val[Object.keys(val)[0]]);
-  };
-  const handleChangeServers = (val, lang) => {
-    console.log("change server");
-    toggleServers();
-    // setPlayingServerLang(lang);
-    setPlayingServer({ server: val, lang });
-  };
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-  const [live, setLive] = useState(determineLive(matchData?.eventDate));
-  const [remainingTime, setRemainingTime] = useState(calcRemainingTime(null));
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -133,6 +157,19 @@ const Page = () => {
 
   return (
     <div id="wrapper" className="wrapper">
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={true}
+        draggable={true}
+        pauseOnHover={true}
+        theme="dark"
+      />
+
       <TopLayout />
       <div className="wrapper-2">
         <Marque />
@@ -149,7 +186,10 @@ const Page = () => {
           )}
           {showReport && (
             <Popup>
-              <Report toggleReport={toggleReport} />
+              <Report
+                handleMakingReport={sendReport}
+                toggleReport={toggleReport}
+              />
             </Popup>
           )}
           {showChangeServer && (
@@ -184,7 +224,7 @@ const Page = () => {
             {!parseTeamNames(pathname.slice(pathname.lastIndexOf("/") + 1))
               .secondTeamName ? (
               <WatchDetailsSingleTeam
-              live={live}
+                live={live}
                 width={"100"}
                 leagueLogo={`${process.env.STATIC_SERVER}/img/matches/${matchData?.leagueLogo}`}
                 flagLogo={`${process.env.STATIC_SERVER}/img/matches/${matchData?.flagLogo}`}
@@ -194,7 +234,7 @@ const Page = () => {
               />
             ) : (
               <WatchDetails
-              live={live}
+                live={live}
                 lieageImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.leagueLogo}`}
                 lieageImageDimetions={{
                   width: { desktop: "120", tablet: "84", mobile: "78" },
@@ -229,9 +269,10 @@ const Page = () => {
 
               <div id="my-root-div" className="watch-video">
                 {!live ? (
-                  <EventCountDown remainingTime={remainingTime} 
-                  // eventStartDate={matchData?.eventDate}
-                   />
+                  <EventCountDown
+                    remainingTime={remainingTime}
+                    // eventStartDate={matchData?.eventDate}
+                  />
                 ) : (
                   <HlcPlayer url={playingServer?.server?.streamLinkUrl} />
                 )}

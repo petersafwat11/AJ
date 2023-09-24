@@ -1,7 +1,16 @@
 import React from "react";
 import { BiSearch } from "react-icons/bi";
+import { convertDate } from "../../../../utils/convertDateFormat";
+import NoContent from "../../noContent/NoContent";
+import Paginations from "../../paginations/Paginations";
 import classes from "./table.module.css";
-const Table = () => {
+import Checkbox from "../../checkbox/Checkbox";
+const Table = ({
+  newsLetter,
+  selectElement,
+  paginations,
+  dispatchDetail,
+}) => {
   return (
     <div className={classes["table"]}>
       <div className={classes["search-wrapper"]}>
@@ -12,19 +21,29 @@ const Table = () => {
       <div className={classes["table-header"]}>
         <span className={classes["square"]}></span>
         <p className={classes["table-cell"]}>ID</p>
-        <p className={classes["table-cell"]}>Full Name</p>
+        {/* <p className={classes["table-cell"]}>Full Name</p> */}
         <p className={classes["status"]}>Email</p>
         <p className={classes["table-cell"]}>Date </p>
       </div>
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, index) => (
-        <div key={index} className={classes["table-row"]}>
-          <span className={classes["square"]}></span>
-          <p className={classes["table-cell"]}>1</p>
-          <p className={classes["table-cell"]}>Humaid Al Balushi</p>
-          <p className={classes["table-cell"]}>humaid123@gmail.com</p>
-          <p className={classes["table-cell"]}>23/04/2023</p>
-        </div>
-      ))}
+      {newsLetter?.length > 0 ? (
+        newsLetter?.map((item, index) => (
+          <div key={index} className={classes["table-row"]}>
+            <Checkbox selectElement={selectElement} id={item._id} />
+            <p className={classes["table-cell"]}>{item.num}</p>
+            <p className={classes["table-cell"]}>{item.email}</p>
+            <p className={classes["table-cell"]}>
+              {convertDate(item.createdAt).date}
+            </p>
+          </div>
+        ))
+      ) : (
+        <NoContent />
+      )}
+      <Paginations
+        rowsPerPage={paginations.rowsPerPage}
+        results={paginations.results}
+        dispatchDetail={dispatchDetail}
+      />
     </div>
   );
 };

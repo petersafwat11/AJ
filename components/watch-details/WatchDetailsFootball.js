@@ -115,7 +115,7 @@ const WatchDetails = ({
             crossOrigin="anonymous"
             className={classes["team-image"]}
             src={firstTeamImage}
-            alt="other"
+            alt="logo"
             // height={imagesDimentions.firstTeamImageHeight}
             width={imagesDimentions.firstTeamImageWidth}
           />
@@ -128,7 +128,7 @@ const WatchDetails = ({
             crossOrigin="anonymous"
             className={classes["team-image"]}
             src={seconteamImage}
-            alt="other"
+            alt="logo"
             // height={imagesDimentions.seconteamImageHeight}
             width={imagesDimentions.seconteamImageWidth}
           />
@@ -136,13 +136,7 @@ const WatchDetails = ({
       </div>
       <div className={classes["watch-details-last"]}>
         {/* <p className={classes["half"]}>{half}</p> */}
-        {/* {true ? ( */}
-        {/* <div className={classes["not-live"]}>LIVE</div> */}
         {live && <LiveBtn text={"LIVE"} />}
-
-        {/* ) : (
-          <LiveButton text={"LIVE"} />
-        )} */}
       </div>
     </div>
   );

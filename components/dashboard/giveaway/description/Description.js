@@ -9,8 +9,7 @@ const Description = ({ data, dispatchPrizeDetail }) => {
         <label className={classes["label"]} htmlFor="description">
           MESSAGE
         </label>
-        <input
-          type="text"
+        <textarea
           id="description"
           className={classes["input"]}
           value={data}
@@ -18,6 +17,15 @@ const Description = ({ data, dispatchPrizeDetail }) => {
             dispatchPrizeDetail({ type: "DESCRIPTION", value: e.target.value });
           }}
         />
+        {/* <input
+          type="text"
+          id="description"
+          className={classes["input"]}
+          value={data}
+          onChange={(e) => {
+            dispatchPrizeDetail({ type: "DESCRIPTION", value: e.target.value });
+          }}
+        /> */}
       </div>
     </div>
   );

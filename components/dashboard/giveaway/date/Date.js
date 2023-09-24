@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import classes from "./date.module.css";
+import DatePickerr from "../../createListings/dateAndTimePickers/DateAndTimePickers";
 const Date = ({ data, dispatchPrizeDetail }) => {
   return (
     <div className={classes["container"]}>
@@ -10,7 +11,13 @@ const Date = ({ data, dispatchPrizeDetail }) => {
           <label className={classes["label"]} htmlFor="start">
             start
           </label>
-          <input
+          <DatePickerr
+            data={data.startTime}
+            dispatchDetail={dispatchPrizeDetail}
+            type={'START-TIME'}
+          />
+
+          {/* <input
             type="text"
             id="start"
             className={classes["input"]}
@@ -21,13 +28,19 @@ const Date = ({ data, dispatchPrizeDetail }) => {
                 value: e.target.value,
               });
             }}
-          />
+          /> */}
         </div>
         <div className={classes["input-group"]}>
           <label className={classes["label"]} htmlFor="end">
             end
           </label>
-          <input
+          <DatePickerr
+            data={data.endTime}
+            dispatchDetail={dispatchPrizeDetail}
+            type={'END-TIME'}
+          />
+
+          {/* <input
             type="text"
             id="end"
             className={classes["input"]}
@@ -35,7 +48,7 @@ const Date = ({ data, dispatchPrizeDetail }) => {
             onChange={(e) => {
               dispatchPrizeDetail({ type: "END-TIME", value: e.target.value });
             }}
-          />
+          /> */}
         </div>
       </div>
     </div>

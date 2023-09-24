@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
 import classes from "./report.module.css";
-const Report = ({ toggleReport }) => {
+const Report = ({ toggleReport, handleMakingReport }) => {
   const causes = ["Stream not working", "Wrong Match", "Lag", "Other"];
   const [cause, setCause] = useState("");
   return (
@@ -14,7 +14,15 @@ const Report = ({ toggleReport }) => {
       </div>
       <div className={classes["causes"]}>
         {causes.map((item, index) => (
-          <div  onClick={()=>{setCause(item)}} key={index} className={cause===item ?classes["selected-cause"] :  classes["cause"]}>
+          <div
+            onClick={() => {
+              setCause(item);
+            }}
+            key={index}
+            className={
+              cause === item ? classes["selected-cause"] : classes["cause"]
+            }
+          >
             <div className={classes["icon-wrapper"]}>
               <Image
                 className={classes["icon"]}
@@ -32,7 +40,14 @@ const Report = ({ toggleReport }) => {
         <p className={classes["try-again-para"]}>
           Please try another server in the meantime!
         </p>
-        <button onClick={toggleReport} className={classes["send-button"]}>Send</button>
+        <button
+          onClick={() => {
+            handleMakingReport(cause);
+          }}
+          className={classes["send-button"]}
+        >
+          Send
+        </button>
       </div>
     </div>
   );

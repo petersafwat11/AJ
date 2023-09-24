@@ -3,6 +3,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
+import { ToastContainer, toast } from "react-toastify";
 import BottomSocial from "../../../../components/bottomSocial/BottomSocial";
 import Search from "../../../../components/channels/search/Search";
 import HlcPlayer from "../../../../components/hlcPlayer/HlcPlayer";
@@ -18,8 +19,10 @@ import TopLayout from "../../../../components/topLayout/TopLayout";
 import WatchNavigation from "../../../../components/watchNavigation/WatchNavigation";
 import SocialIcons from "../../../../components/whatchShare/SocialIcons";
 import { getData } from "../../../../utils/dashboardTablePagesFunctions";
+import { handleMakingReport } from "../../../../utils/reportFunction";
 import classes from "./page.module.css";
 const Page = () => {
+  const notify = (message, type) => toast[type](message);
   const pathname = usePathname();
   const shareUrl = `${process.env.FRONTEND_SERVER}${pathname}`;
   const quote = "Check out this awesome content!";
@@ -117,6 +120,16 @@ const Page = () => {
   const handleFilter = async (val) => {
     setFilterValue(val);
   };
+  const sendReport = async (val) => {
+    const reportData = {
+      event: playingServerName,
+      server: "Server 1",
+      reason: val,
+      eventLink: shareUrl,
+    };
+
+    await handleMakingReport(reportData, toggleReport, notify);
+  };
 
   useEffect(() => {
     channelsRef.current = channelsServers?.channels;
@@ -146,13 +159,26 @@ const Page = () => {
   }, [fetchDataOnLoad, pathname]);
   return (
     <div className="wrapper">
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={true}
+        draggable={true}
+        pauseOnHover={true}
+        theme="dark"
+      />
+
       <TopLayout />
       <div className="wrapper-2">
         <Marque />
         <div className={classes["channels"]}>
           {showReport && (
             <Popup>
-              <Report toggleReport={toggleReport} />
+              <Report handleMakingReport={sendReport} toggleReport={toggleReport} />
             </Popup>
           )}
           {/* {!showChat && (

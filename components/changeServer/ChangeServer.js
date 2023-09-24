@@ -10,7 +10,6 @@ const ChangeServer = ({
   toggleServers,
 }) => {
   console.log("langOtherServersAvailable", langOtherServersAvailable);
-  let selected = "Sky Sports Premier League";
   return (
     <div className={classes["container"]}>
       <div className={classes["servers"]}>

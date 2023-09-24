@@ -3,6 +3,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
+import { ToastContainer, toast } from "react-toastify";
 import { getData } from "../../../utils/dashboardTablePagesFunctions";
 import BottomSocial from "../../bottomSocial/BottomSocial";
 import HlcPlayer from "../../hlcPlayer/HlcPlayer";
@@ -17,9 +18,11 @@ import WatchNavigation from "../../watchNavigation/WatchNavigation";
 import SocialIcons from "../../whatchShare/SocialIcons";
 import Search from "../search/Search";
 import classes from "./wrapper.module.css";
+import { handleMakingReport } from "../../../utils/reportFunction";
 const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
   const router = useRouter();
   const pathname = usePathname();
+  const notify = (message, type) => toast[type](message);
   const shareUrl = `${process.env.FRONTEND_SERVER}${pathname}`;
   const quote = "Check out this awesome content!";
 
@@ -103,6 +106,38 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
     setSearchValue(val);
   };
 
+  // const handleMakingReport = async (val) => {
+  //   const reportData = {
+  //     event: playingServerName,
+  //     server: "Server 1",
+  //     reason: val,
+  //     eventLink: shareUrl,
+  //   };
+  //   try {
+  //     const response = await axios.post(
+  //       `${process.env.BACKEND_SERVER}/reportedLinks`,
+  //       reportData
+  //     );
+  //     console.log("response", response);
+  //     toggleReport();
+  //     notify(
+  //       "Thank you for reporting a problem with our service. We are working hard to fix it quickly. ",
+  //       "success"
+  //     );
+  //   } catch (err) {
+  //     console.log("err", err);
+  //   }
+  // };
+  const sendReport = async (val) => {
+    const reportData = {
+      event: playingServerName,
+      server: "Server 1",
+      reason: val,
+      eventLink: shareUrl,
+    };
+
+    await handleMakingReport(reportData, toggleReport, notify);
+  };
   useEffect(() => {
     channelsRef.current = channelsServers?.channels;
   }, [channelsServers]);
@@ -136,9 +171,25 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
   }, [filterValue, fetchNewData]);
   return (
     <div className={classes["channels"]}>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={true}
+        draggable={true}
+        pauseOnHover={true}
+        theme="dark"
+      />
+
       {showReport && (
         <Popup>
-          <Report toggleReport={toggleReport} />
+          <Report
+            handleMakingReport={sendReport}
+            toggleReport={toggleReport}
+          />
         </Popup>
       )}
       {/* {!showChat && (

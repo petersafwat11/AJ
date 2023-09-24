@@ -33,6 +33,7 @@ const ThumbnailImage = ({ data, dispatchDetail }) => {
       )}
       {data.image && (
         <img
+        crossOrigin="anonymous"
           className={classes["uploaded-image"]}
           onClick={imageClick}
           src={data.image}
