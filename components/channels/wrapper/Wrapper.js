@@ -106,28 +106,6 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
     setSearchValue(val);
   };
 
-  // const handleMakingReport = async (val) => {
-  //   const reportData = {
-  //     event: playingServerName,
-  //     server: "Server 1",
-  //     reason: val,
-  //     eventLink: shareUrl,
-  //   };
-  //   try {
-  //     const response = await axios.post(
-  //       `${process.env.BACKEND_SERVER}/reportedLinks`,
-  //       reportData
-  //     );
-  //     console.log("response", response);
-  //     toggleReport();
-  //     notify(
-  //       "Thank you for reporting a problem with our service. We are working hard to fix it quickly. ",
-  //       "success"
-  //     );
-  //   } catch (err) {
-  //     console.log("err", err);
-  //   }
-  // };
   const sendReport = async (val) => {
     const reportData = {
       event: playingServerName,
