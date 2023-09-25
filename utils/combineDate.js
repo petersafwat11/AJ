@@ -6,7 +6,13 @@ export const combineDateAndTime = (date, time) => {
 
   const [hours, minutes] = dateTime.time.split(":");
   const combinedDateTime = new Date(
-    dateTime.date.toLocaleString("en-US", { timeZone: "UTC" })
+    Date.UTC(
+      dateTime.date.getFullYear(),
+      dateTime.date.getMonth(),
+      dateTime.date.getDate(),
+      hours,
+      minutes
+    )
   );
   combinedDateTime.setHours(hours, minutes);
 
