@@ -4,14 +4,18 @@ function generateArray(num) {
   return Array.from(Array(num), (_, index) => index + 1);
 }
 
-const TopIndecator = ({ indicatorsNum, curState }) => {
+const TopIndecator = ({ indicatorsNum, curState, handleStepChange }) => {
   return (
     <div className={classes["container"]}>
       {generateArray(indicatorsNum).map((item) => (
         <span
+          onClick={() => {
+            handleStepChange(item);
+            console.log("item", item);
+          }}
           key={item * Math.random()}
           className={
-            classes[item === curState ? "indicator" : "cur-state-indicator"]
+            classes[item === curState ? "cur-state-indicator" : "indicator"]
           }
         ></span>
       ))}

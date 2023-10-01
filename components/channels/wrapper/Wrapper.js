@@ -246,9 +246,9 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
               </div>
             </div>
           </div>
-          <div className={classes["vpn"]}>
+          {/* <div className={classes["vpn"]}>
             <ProtonVpn />
-          </div>
+          </div> */}
           <div className={classes["sort-search-wrapper"]}>
             <Search seacrhValue={seacrhValue} handleSearch={handleSearch} />
             <Filter

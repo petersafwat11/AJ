@@ -58,6 +58,7 @@ const Page = () => {
   const [showReport, setShowReport] = useState(false);
   const [live, setLive] = useState(determineLive(matchData?.eventDate));
   const [remainingTime, setRemainingTime] = useState(calcRemainingTime(null));
+  const [liveLoading, setLiveLoading] = useState(true);
 
   // const toggleChat = () => {
   //   setShowChat(!showChat);
@@ -100,6 +101,8 @@ const Page = () => {
     await handleMakingReport(reportData, toggleReport, notify);
   };
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     const { firstTeamName, secondTeamName } = parseTeamNames(
       pathname.slice(pathname.lastIndexOf("/") + 1)
     );
@@ -133,23 +136,21 @@ const Page = () => {
       }
     };
     pageData();
-  }, [setError, pathname]);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
   }, [pathname]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLive(determineLive(matchData?.eventDate));
-    }, 10000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setLive(determineLive(matchData?.eventDate));
+  //   }, 10000);
 
-    return () => clearInterval(interval);
-  }, [matchData?.eventDate]);
+  //   return () => clearInterval(interval);
+  // }, [matchData?.eventDate]);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setRemainingTime(calcRemainingTime(matchData?.eventDate));
+      setLive(determineLive(matchData?.eventDate));
+      setLiveLoading(false);
     }, 1000);
 
     return () => clearInterval(interval);
@@ -268,13 +269,12 @@ const Page = () => {
               </div>
 
               <div id="my-root-div" className="watch-video">
-                {!live ? (
-                  <EventCountDown
-                    remainingTime={remainingTime}
-                    // eventStartDate={matchData?.eventDate}
-                  />
-                ) : (
+                {live && !liveLoading ? (
                   <HlcPlayer url={playingServer?.server?.streamLinkUrl} />
+                ) : !live && !liveLoading ? (
+                  <EventCountDown remainingTime={remainingTime} />
+                ) : (
+                  ""
                 )}
                 {/* <PlayerContainer /> */}
               </div>

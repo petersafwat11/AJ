@@ -1,65 +1,47 @@
 "use client";
 import Image from "next/image";
-import React, { useReducer, useState } from "react";
+import React, { useReducer } from "react";
 import Popup from "../../popupWrapper/Popup";
 import FollowUS from "../followUS/FollowUS";
-import StepOne from "../stepOne/StepOne";
-import StepThree from "../stepThree/StepThree";
-import StepTwo from "../stepTwo/StepTwo";
+import StepsWrapper from "../stepsWrapper/StepsWrapper";
 import classes from "./wrapper.module.css";
 
 const followUsReducer = (state, action) => {
+  console.log("state", state);
   if (action.type === "INTIATOR") {
     return {
       ...state,
-      steps: action.steps,
+      display: true,
       methodData: action.methodData,
       indicatorsNum: action.indicatorsNum,
     };
-  } else if (action.type === "STEPS") {
-    return { ...state, steps: action.value };
   } else if (action.type === "METHOD-DATA") {
     return { ...state, methodData: action.value };
   } else if (action.type === "USER-INFO") {
     return { ...state, indicatorsNum: action.value };
+  } else {
+    return {
+      ...state,
+      display: false,
+    };
   }
 };
 
 const Wrapper = ({ socialLinks }) => {
-  const [joinWebsiteGroup, setJoinWebsiteGroup] = useState(null);
   const [followUs, dispatchAction] = useReducer(followUsReducer, {
-    steps: null,
+    display: false,
     indicatorsNum: null,
     methodData: null,
     userInfo: { fullName: "", email: "" },
   });
   const sendUserData = async (e) => {
     e.preventDefault();
-    
   };
   return (
     <main className={classes["give-away"]}>
-      {followUs.steps && (
+      {followUs.display && (
         <Popup>
-          {followUs.steps === 1 && (
-            <StepOne
-              userInfo={followUs.userInfo}
-              indicatorsNum={followUs.indicatorsNum}
-              dispatchAction={dispatchAction}
-            />
-          )}
-          {followUs.steps === 2 && (
-            <StepTwo
-              indicatorsNum={followUs.indicatorsNum}
-              dispatchAction={dispatchAction}
-            />
-          )}
-          {followUs.steps === 3 && (
-            <StepThree
-              indicatorsNum={followUs.indicatorsNum}
-              dispatchAction={dispatchAction}
-            />
-          )}
+          <StepsWrapper dispatchAction={dispatchAction} followUs={followUs} />
         </Popup>
       )}
 

@@ -10,6 +10,7 @@
   height: 100%;
   width: 2.9rem;
   background-color: #c7d3eb;
+  cursor: pointer;
 }
 .cur-state-indicator {
   background-color: #47b2ff;

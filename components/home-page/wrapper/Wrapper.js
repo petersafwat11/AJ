@@ -14,7 +14,7 @@ const Wrapper = ({ data }) => {
   const hotMatchesRef = useRef();
   const otherMatchesRef = useRef();
   const [hotMatches, setHotMatches] = useState(data?.hotMatches);
-  const [otherMatches, setOtherMAtches] = useState({
+  const [otherMatches, setOtherMatches] = useState({
     total: data?.results,
     matches: data?.data?.data,
   });
@@ -31,7 +31,7 @@ const Wrapper = ({ data }) => {
       const response = await getData("sports", query);
 
       if (cause !== "showMore") {
-        setOtherMAtches({
+        setOtherMatches({
           total: response?.results,
           matches: response?.data?.data,
         });
@@ -39,7 +39,7 @@ const Wrapper = ({ data }) => {
       } else {
         let other = [];
         other = response?.data?.data;
-        setOtherMAtches({
+        setOtherMatches({
           total: response?.results,
           matches: [...otherMatchesRef.current.matches, ...other],
         });

@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: center;
   width: 4.8125rem;
+  white-space: nowrap;
 }
 
 .white-space-1 {

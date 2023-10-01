@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import Beta from "../beta/Beta";
 import LanguesDropdown from "./LanguesDropdown";
 import classes from "./topHeader.module.css";
 const TopHeader = () => {
@@ -8,6 +9,9 @@ const TopHeader = () => {
     <div className={classes["top-header"]}>
       <div className={classes["logo-wrapper"]}>
         <Image src="/svg/header/logo.svg" alt="logo" width="78" height="56" />
+      </div>
+      <div className={classes["beta"]}>
+        <Beta />
       </div>
       <div className={classes["right"]}>
         <div className={classes["top-header-items"]}>

@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  margin-top: 1.07rem;
+  background-color: #0d1317;
+  border-radius: 1.125rem;
+  padding: 0;
+}
+.news-items {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+@media (max-width: 56.25rem) {
+  .container {
+    margin-top: 0.92rem;
+    border-radius: 0.97rem;
+    padding: 0.1rem 0 0.65rem;
+  }
+}
+
+@media (max-width: 40.6rem) {
+  .container {
+    margin-top: 0.5rem;
+    background-color: #0d1317;
+    border-radius: 0.625rem;
+  }
+}

@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { extarctDateAndTime } from "../../utils/combineDate";
 import {
   calcRemainingTime,
   determineLive,
@@ -17,15 +18,8 @@ export const Match = ({ matchData }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setLive(determineLive(matchData?.eventDate));
-    }, 10000);
-
-    return () => clearInterval(interval);
-  }, [matchData?.eventDate]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
       setRemainingTime(calcRemainingTime(matchData?.eventDate));
+      setLive(determineLive(matchData?.eventDate));
     }, 1000);
 
     return () => clearInterval(interval);
@@ -33,10 +27,12 @@ export const Match = ({ matchData }) => {
   return (
     <div className={classes["match"]}>
       <div className={classes["match-first"]}>
-        <p className={classes["date"]}>{getMatchDate(matchData?.eventDate)}</p>
-        {/* {remaingTime && (
-          <div className={classes["remaining-time-mobile"]}>{remaingTime}</div>
-        )} */}
+        <p className={classes["date"]}>
+          {" "}
+          {` ${getMatchDate(matchData?.eventDate, true)}- ${
+            extarctDateAndTime(matchData?.eventDate).time
+          }`}
+        </p>
         <RemainingTimeMobile timer={remainingTime} live={live} />
 
         <p className={classes["leage"]}>{matchData?.eventLeague}</p>
@@ -44,7 +40,9 @@ export const Match = ({ matchData }) => {
       <div className={classes["match-second"]}>
         <div className={classes["match-details"]}>
           <p className={classes["date"]}>
-            {getMatchDate(matchData?.eventDate)}
+            {` ${getMatchDate(matchData?.eventDate, true)}- ${
+              extarctDateAndTime(matchData?.eventDate).time
+            }`}
           </p>
           <p className={classes["leage"]}>{matchData?.eventLeague}</p>
         </div>

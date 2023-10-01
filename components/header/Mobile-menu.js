@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import Beta from "../beta/Beta";
 import classes from "./mobile-menu.module.css";
 
 export const MenuMobile = () => {
@@ -28,6 +29,7 @@ export const MenuMobile = () => {
           width="76"
           height="59"
         />
+        <Beta className={classes["beta"]} />
       </div>
       {showMenu && (
         <div className={classes["side-menu"]}>
@@ -52,11 +54,11 @@ export const MenuMobile = () => {
               />
             </div>
           </div>
-          <div className={classes["menu-mobile-lang"]}>
+          {/* <div className={classes["menu-mobile-lang"]}>
             <p className={classes["arabic"]}>العربية</p>
             <p className={classes["menu-mobile-lang-english"]}>English </p>
             <p>Español</p>
-          </div>
+          </div> */}
           <div className={classes["menu-mobile-pages-links"]}>
             <div>
               <p

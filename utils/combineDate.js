@@ -25,6 +25,6 @@ export const extarctDateAndTime = (isoString) => {
   const utcString = dateObject.toISOString();
   const date = utcString.slice(0, 10); // YYYY-MM-DD
   const time = utcString.slice(11, 16); // HH:mm
-
+  console.log(date, time);
   return { date, time };
 };

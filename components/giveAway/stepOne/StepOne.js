@@ -1,27 +1,9 @@
 "use client";
-import Image from "next/image";
 import React from "react";
-import TopIndecator from "../topIndecators/TopIndecator";
 import classes from "./stepOne.module.css";
 const StepOne = ({ indicatorsNum, dispatchAction, userInfo }) => {
   return (
-    <div className={classes["step-one"]}>
-      <div className={classes["top"]}>
-        <TopIndecator indicatorsNum={indicatorsNum} curState={1} />
-        <Image
-          onClick={() => {
-            dispatchAction({
-              type: "STEPS",
-              value: null,
-            });
-          }}
-          className={classes["exit"]}
-          src="/svg/chat/exit-chat.svg"
-          alt="exit"
-          width="15"
-          height="15"
-        />
-      </div>
+    <div className={classes["container"]}>
       <div className={classes["body"]}>
         <div className={classes["input-group"]}>
           <label htmlFor="full-name" className={classes["label"]}>

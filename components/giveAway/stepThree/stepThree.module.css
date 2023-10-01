@@ -1,69 +1,42 @@
-.step-three {
-  width: 29rem;
-  height: 21.6rem;
-  background: #182228;
-  border-radius: 2.25rem;
-  padding: 1.68rem;
-  padding-left: 1.97rem;
-}
-.exit {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 100%;
-}
-.exit-icon {
-  cursor: pointer;
+.container {
+  padding: 1.5rem 0.4rem 0;
 }
 .success {
   background-color: #10adff;
-  width: 8.76rem;
-  height: 8.76rem;
+  width: 7.78rem;
+  height: 7.7rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0.2rem auto 0.7rem;
+  margin: 0 auto 1.03rem;
 }
 .body {
   text-align: center;
 }
-.success-id {
+.success-id,
+.success-id span {
   font-family: "Poppins";
   font-weight: 700;
   font-size: 0.93rem;
   line-height: 1.69rem;
   color: rgba(255, 255, 255, 0.9);
 }
+.success-id span {
+  color: #01bcf1;
+}
 .success-message {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
-  font-size: 0.75rem;
-  line-height: 1rem;
+  font-size: 0.9rem;
+  line-height: 138%;
   color: rgba(255, 255, 255, 0.6);
-  margin-top: 0.12rem;
-  margin-bottom: 1.3125rem;
-  max-width: 95%;
-}
-.good-luck {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 0.93rem;
-  line-height: 1.68rem;
-  color: rgba(255, 255, 255, 0.9);
+  margin-top: 0.35rem;
 }
 @media (max-width: 56.25rem) {
-  .step-three {
-    max-width: min(90%, 23.375rem);
-    height: auto;
-    border-radius: 2.125rem;
+  .container {
     padding: 1.35rem 1.4rem 1.5rem 1.875rem;
-  }
-  .exit-icon {
-    width: 0.75rem;
-    height: 0.75rem;
   }
   .success {
     width: 7rem;
@@ -78,7 +51,5 @@
     font-size: 0.625rem;
     line-height: 0.875rem;
     margin-top: 0.3rem;
-    margin-bottom: 1rem;
-    max-width: 95%;
   }
 }

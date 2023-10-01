@@ -1,39 +1,9 @@
 import Image from "next/image";
 import React from "react";
 import classes from "./stepTwo.module.css";
-import {BsArrowLeftShort} from 'react-icons/bs'
-const StepTwo = ({ joinWebsiteGroup, controlDisplaySteps }) => {
+const StepTwo = ({ joinWebsiteGroup }) => {
   return (
-    <div className={classes["step-two"]}>
-      <div className={classes["step-two-top"]}>
-        <div className={classes["back-div"]}>
-          <BsArrowLeftShort
-            onClick={() => {
-              controlDisplaySteps({
-                stepOne: true,
-                stepTwo: false,
-                stepThree: false,
-              });
-            }}
-            className={classes["back-icon"]}
-          />
-        </div>
-        <h2 className={classes["heading"]}>Step 2:</h2>
-        <Image
-          onClick={() => {
-            controlDisplaySteps({
-              stepOne: false,
-              stepTwo: false,
-              stepThree: false,
-            });
-          }}
-          className={classes["exit"]}
-          src="/svg/chat/exit-chat.svg"
-          alt="exit"
-          width="15"
-          height="15"
-        />
-      </div>
+    <div className={classes["container"]}>
       <div className={classes["body"]}>
         {joinWebsiteGroup.text === "Telegram" ? (
           <div className={classes["telegram"]}>
@@ -68,16 +38,7 @@ const StepTwo = ({ joinWebsiteGroup, controlDisplaySteps }) => {
         )}
 
         <div className={classes["join"]}>
-          <button
-            onClick={() => {
-              controlDisplaySteps({
-                stepOne: false,
-                stepTwo: false,
-                stepThree: true,
-              });
-            }}
-            className={classes["join-button"]}
-          >
+          <button onClick={() => {}} className={classes["join-button"]}>
             {joinWebsiteGroup.text == "Retweet"
               ? joinWebsiteGroup.text
               : "Join " + joinWebsiteGroup.text}

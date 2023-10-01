@@ -1,0 +1,64 @@
+.paginations {
+  margin-top: 1.36rem;
+}
+.paginations > * {
+  color: white;
+}
+.paginations-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.125rem;
+}
+.next,
+.previous {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.paginations-option:hover,
+.next:hover,
+.previous:hover {
+  color: #01bcf1;
+  cursor: pointer;
+}
+.arrow {
+  font-size: 1.4rem;
+}
+.paginations-option,
+.active {
+  font-size: 1rem;
+  font-family: RobotoSemiBold;
+  line-height: 1.22rem;
+}
+.active {
+  color: #01bcf1;
+  cursor: pointer;
+}
+.previous > p,
+.next > p {
+  font-size: 1rem;
+  line-height: 0.93rem;
+}
+@media (max-width: 56.25rem) {
+  .paginations {
+    margin-top: 1.875rem;
+  }
+  .paginations-options {
+    gap: 0.81rem;
+  }
+  .next,
+  .previous {
+    gap: 0.1rem;
+  }
+  .arrow {
+    font-size: 1rem;
+  }
+  .paginations-option,
+  .previous > p,
+  .next > p {
+    font-size: 0.625rem;
+    line-height: 1.25rem;
+  }
+}
