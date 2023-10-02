@@ -15,22 +15,6 @@ const ServersButtons = ({ playingServerLang, servers, handleServerClicks }) => {
     speed: 500,
     slidesToShow: servers?.length > 4 ? 4 : servers?.length,
     slidesToScroll: 1,
-    // responsive: [
-    //   {
-    //     breakpoint: 900,
-    //     settings: {
-    //       slidesToShow: servers2?.length > 3 ? 3 : servers2?.length,
-    //       slidesToScroll: 1,
-    //     },
-    //   },
-    //   {
-    //     breakpoint: 400,
-    //     settings: {
-    //       slidesToShow: servers2?.length > 2 ? 2 : servers2?.length,
-    //       slidesToScroll: 1,
-    //     },
-    //   },
-    // ],
     nextArrow:
       servers?.length - 4 > 0 && servers?.length - 4 - currentSlide > 0 ? (
         <NextArrow />

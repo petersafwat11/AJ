@@ -5,15 +5,14 @@
   top: 0;
   left: 0;
   height: 74px;
-  background-color: rgba(13, 19, 24);
+  background-color: #0d1317;
   display: flex;
   align-items: center;
   padding: 0 1.4rem;
   justify-content: space-between;
   z-index: 10;
 }
-.beta{
-
+.beta {
 }
 .menu-mobile-icon {
   cursor: pointer;

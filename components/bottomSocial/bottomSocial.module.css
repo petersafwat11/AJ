@@ -29,7 +29,7 @@
 
 .icons {
   justify-content: center;
-  gap: 0.7rem;
+  /* gap: 0.7rem; */
 }
 .link {
   display: flex;
@@ -37,12 +37,12 @@
   justify-self: center;
   cursor: pointer;
   border: 1px solid transparent;
-  padding: 3px;
-  border-radius: 50%;
+  padding: 4.5px;
+  /* border-radius: 50%; */
 }
-.link:hover {
+/* .link:hover {
   border: 1px solid red;
-}
+} */
 .link * {
   font-size: 1.04rem;
   /* width: 16px;
@@ -51,7 +51,7 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-.link *:hover {
+.link:hover * {
   color: white;
 }
 @media (max-width: 56.25rem) {

@@ -13,13 +13,13 @@ const Page = async () => {
     sportCategory: "football",
     sort: { eventDate: 1 },
   });
-  console.log("currentEvents", currentEvents);
+  console.log("currentEvents", currentEvents.data.data);
   return (
     <div className="wrapper">
       <TopLayout />
       <div className="wrapper-2">
         <Marque />
-        <Wrapper data={currentEvents}/>
+        <Wrapper data={currentEvents} />
         <NewsLetter />
         <Footer />
       </div>

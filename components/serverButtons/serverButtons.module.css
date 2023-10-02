@@ -6,7 +6,8 @@
   justify-content: center;
 }
 .container {
-  width: 31.4rem;
+  max-width: 31.4rem;
+  min-width: 9.375rem;
   height: 3.1rem;
   border-radius: 2.3rem;
   background: rgba(13, 19, 23, 0.99);
@@ -27,7 +28,7 @@
 
 .lang,
 .lang-selected {
-  width: 7.125rem;
+  width: 7.125rem !important;
   height: 2.25rem;
   border-radius: 1.4rem;
   background: #171c20;

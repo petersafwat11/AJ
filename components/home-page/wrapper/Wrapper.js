@@ -13,6 +13,7 @@ import classes from "./wrapper.module.css";
 const Wrapper = ({ data }) => {
   const hotMatchesRef = useRef();
   const otherMatchesRef = useRef();
+
   const [hotMatches, setHotMatches] = useState(data?.hotMatches);
   const [otherMatches, setOtherMatches] = useState({
     total: data?.results,
@@ -27,9 +28,9 @@ const Wrapper = ({ data }) => {
 
   const fetchNewData = useCallback(async (query, cause) => {
     try {
-      console.log("query", query);
       const response = await getData("sports", query);
 
+      console.log("query", response?.data?.data);
       if (cause !== "showMore") {
         setOtherMatches({
           total: response?.results,
@@ -55,6 +56,7 @@ const Wrapper = ({ data }) => {
         limit: 20,
         sportCategory: "football",
         searchValue: seacrhValue,
+        sort: { eventDate: 1 },
         or: [
           "teamsTitle",
           "firstTeamName",
@@ -75,6 +77,7 @@ const Wrapper = ({ data }) => {
         skip: 20 + (num - 1) * 10,
         sportCategory: "football",
         searchValue: seacrhValue,
+        sort: { eventDate: 1 },
         or: [
           "teamsTitle",
           "firstTeamName",

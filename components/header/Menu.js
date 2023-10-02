@@ -12,7 +12,8 @@ export const Menu = () => {
         <li>
           <Link
             className={
-              pathname === "/" || pathname.includes("currentEvents")|pathname.startsWith("/watch")
+              pathname === "/" ||
+              pathname.includes("currentEvents") | pathname.startsWith("/watch")
                 ? classes["list-item-active"]
                 : classes["list-item"]
             }
@@ -24,7 +25,7 @@ export const Menu = () => {
         <li>
           <Link
             className={
-              pathname === "/channels"
+              pathname.includes("channels")
                 ? classes["list-item-active"]
                 : classes["list-item"]
             }

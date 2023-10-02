@@ -6,6 +6,10 @@
   background: #203639;
   border-radius: 0.55rem;
   padding: 1.03rem 1.94rem 1.07rem 1.82rem;
+  transition: all 0.3s ease-in-out;
+}
+.match:hover {
+  background-color: #1c2b2e;
 }
 .match-first {
   display: none;
