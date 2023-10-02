@@ -19,11 +19,11 @@ export const Match = ({ matchData }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setRemainingTime(calcRemainingTime(matchData?.eventDate));
-      setLive(determineLive(matchData?.eventDate));
+      setLive(determineLive(matchData?.playStream));
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [matchData?.eventDate]);
+  }, [matchData?.eventDate, matchData?.playStream]);
   return (
     <div className={classes["match"]}>
       <div className={classes["match-first"]}>

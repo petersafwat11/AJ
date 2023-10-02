@@ -43,6 +43,7 @@ const intialValue = {
   playStream: { date: "", time: "" },
   removeStream: { date: "", time: "" },
   removeCountdown: { date: "", time: "" },
+  endedEvent: { date: "", time: "" },
   showsPoll: false,
   firstTeamPoll: "",
   secondTeamPoll: "",
@@ -146,6 +147,11 @@ const matchReducer = (state, action) => {
       ...state,
       removeCountdown: action.value,
     };
+  } else if (action.type === "ENDED-EVENT") {
+    return {
+      ...state,
+      endedEvent: action.value,
+    };
   } else if (action.type === "FIRST-TEAM-POLL") {
     return {
       ...state,
@@ -182,11 +188,16 @@ const Page = () => {
       match.removeCountdown.date,
       match.removeCountdown.time
     );
+    const endedEvent = combineDateAndTime(
+      match.endedEvent.date,
+      match.endedEvent.time
+    );
     const eventDate = combineDateAndTime(match.eventDate, match.eventTime);
     let data = { ...match };
     data.playStream = playStream;
     data.removeStream = removeStream;
     data.removeCountdown = removeCountdown;
+    data.endedEvent = endedEvent;
     delete data.eventDate;
     delete data.eventTime;
     data.eventDate = eventDate;
@@ -218,6 +229,7 @@ const Page = () => {
       const playStream = convertDate(response.data.playStream);
       const removeStream = convertDate(response.data.removeStream);
       const removeCountdown = convertDate(response.data.removeCountdown);
+      const endedEvent = convertDate(response.data.endedEvent);
 
       const eventDate = convertDate(response.data.eventDate).date;
       const eventTime = convertDate(response.data.eventDate).time;
@@ -230,6 +242,7 @@ const Page = () => {
       data.eventDate = eventDate;
       data.eventTime = eventTime;
       data.eventDateText = dateText;
+      data.endedEvent = endedEvent;
       dispatchDetail({ type: "UPDATE-ALL", value: data });
     } catch (err) {
       console.log(err);
@@ -306,6 +319,14 @@ const Page = () => {
             dispatchDetail={dispatchDetail}
             title={"When to show LIVE & remove countdown"}
           />
+          <PlayerTiming
+            dispatchActionType={"ENDED-EVENT"}
+            data={match?.endedEvent}
+            dispatchDetail={dispatchDetail}
+            title={"When to remove LIVE & display ended event"}
+          />
+        </div>
+        <div className={classes["third"]}>
           <Poll
             data={{
               showsPoll: match?.showsPoll,
@@ -314,8 +335,7 @@ const Page = () => {
             }}
             dispatchDetail={dispatchDetail}
           />
-        </div>
-        <div className={classes["third"]}>
+
           <EventId data={match?.matchId} dispatchDetail={dispatchDetail} />
         </div>
       </div>

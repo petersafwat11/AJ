@@ -1,8 +1,9 @@
 import React from "react";
+import LeagueMenu from "../../../components/leage/League";
 import Marque from "../../../components/marque/Marque";
+import Header from "../../../components/statistics/header/Header";
 import TopLayout from "../../../components/topLayout/TopLayout";
-import UnderDevelopment from "../../../components/underDevelopment/page/UnderDevelopment";
-
+import classes from "./statistics.module.css";
 const Statistics = () => {
   return (
     <div className="wrapper">
@@ -10,13 +11,13 @@ const Statistics = () => {
       <div className="wrapper-2">
         <Marque />
 
-        {/* <div className={classes["statistics"]}>
+        <div className={classes["statistics"]}>
           <LeagueMenu />
           <Header />
-        </div> */}
-        <div className="center-under-dev">
-          <UnderDevelopment />
         </div>
+        {/* <div className="center-under-dev">
+          <UnderDevelopment />
+        </div> */}
       </div>
     </div>
   );

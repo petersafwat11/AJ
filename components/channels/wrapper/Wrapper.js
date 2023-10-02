@@ -19,6 +19,7 @@ import SocialIcons from "../../whatchShare/SocialIcons";
 import Search from "../search/Search";
 import classes from "./wrapper.module.css";
 import { handleMakingReport } from "../../../utils/reportFunction";
+import Chat from "../../chat/Chat";
 const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
   const router = useRouter();
   const pathname = usePathname();
@@ -26,11 +27,11 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
   const shareUrl = `${process.env.FRONTEND_SERVER}${pathname}`;
   const quote = "Check out this awesome content!";
 
-  // const [showChat, setShowChat] = useState(false);
+  const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
   const [showReport, setShowReport] = useState(false);
-  // const [changeAvatar, setChangeAvatar] = useState(false);
-  // const [selectedAvatar, setSelectedAvatar] = useState("/svg/chat/5.svg");
+  const [changeAvatar, setChangeAvatar] = useState(false);
+  const [selectedAvatar, setSelectedAvatar] = useState("/svg/chat/5.svg");
 
   const [channelsServers, setChannelsServers] = useState(channelsServer);
 
@@ -46,21 +47,21 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
   const [filterValue, setFilterValue] = useState("All");
   const [paginationNum, setPaginationNum] = useState(1);
   const channelsRef = useRef();
-  // const toggleChat = () => {
-  //   setShowChat(!showChat);
-  // };
+  const toggleChat = () => {
+    setShowChat(!showChat);
+  };
   const toggleShareLinks = () => {
     setShowShareLinks(!showShareLinks);
   };
   const toggleReport = () => {
     setShowReport(!showReport);
   };
-  // const toggleChangeAvatar = () => {
-  //   setChangeAvatar(!changeAvatar);
-  // };
-  // const selectAvatar = (avatar) => {
-  //   setSelectedAvatar(avatar);
-  // };
+  const toggleChangeAvatar = () => {
+    setChangeAvatar(!changeAvatar);
+  };
+  const selectAvatar = (avatar) => {
+    setSelectedAvatar(avatar);
+  };
   const fetchNewData = useCallback(async (query, cause) => {
     try {
       const response = await getData("channels", query);
@@ -170,7 +171,7 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
           />
         </Popup>
       )}
-      {/* {!showChat && (
+      {!showChat && (
         <Image
           onClick={toggleChat}
           className={classes["chat-icon"]}
@@ -188,7 +189,7 @@ const ChannelsWrapper = ({ channelsServer, allLanguages }) => {
             toggleChat={toggleChat}
           />
         </div>
-      )} */}
+      )}
       {showShareLinks && (
         <Popup>
           <ShareLinks
