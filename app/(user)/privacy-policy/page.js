@@ -3,6 +3,7 @@ import React from "react";
 import Marque from "../../../components/marque/Marque";
 import TopLayout from "../../../components/topLayout/TopLayout";
 import classes from "./privacy.module.css";
+import PageTitle from "../../../components/pageTitle/PageTitle";
 const Page = () => {
   return (
     <div className={classes["top-wrapper"]}>
@@ -12,10 +13,8 @@ const Page = () => {
 
         <div style={{ width: "100%" }}>
           <section className={classes["privacy-policy"]}>
-            <div className={classes["top-heading"]}>
-              <h2 className={classes["top-heading-title"]}>Privacy Policy</h2>
-              <span></span>
-            </div>
+            <PageTitle title={"Privacy Policy"} />
+
             <div className={classes["container"]}>
               <div className={classes["headings"]}>
                 <p>Privacy Policy</p>

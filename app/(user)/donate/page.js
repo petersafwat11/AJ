@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import OtherPaymentMethod from "../../../components/donate/otherPaymentMethod/OtherPaymentMethod";
 import Marque from "../../../components/marque/Marque";
+import PageTitle from "../../../components/pageTitle/PageTitle";
 import Popup from "../../../components/popupWrapper/Popup";
 import TopLayout from "../../../components/topLayout/TopLayout";
 import classes from "./donate.module.css";
@@ -54,10 +55,8 @@ const Donate = () => {
             </Popup>
           )}
           <div className={classes["container"]}>
-            <div className={classes["donate-heading"]}>
-              <h2 className={classes["heading"]}>DONATE</h2>
-              <span></span>
-            </div>
+            <PageTitle title={"DONATE"} />
+
             <div className={classes["donate-wrapper"]}>
               <div className={classes["donate-options"]}>
                 <p

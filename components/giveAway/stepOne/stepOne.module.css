@@ -57,6 +57,7 @@
   line-height: 1.35rem;
   text-align: center;
   color: rgba(255, 255, 255, 0.48);
+  max-width: 21rem;
 }
 .next-button {
   width: 7.97rem;

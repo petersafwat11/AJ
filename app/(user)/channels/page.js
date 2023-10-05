@@ -20,7 +20,7 @@ const Page = async () => {
             channels: response?.data?.data,
             totalResults: response?.results,
           }}
-          allLanguages={response?.allLanguages}
+          langs={response?.allLanguages}
         />
       </div>
     </div>

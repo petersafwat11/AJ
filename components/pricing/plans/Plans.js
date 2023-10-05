@@ -59,6 +59,9 @@ const Plans = () => {
         </div>
       </div>
       <div className={classes["yearly"]}>
+        <div className={classes["save-money"]}>
+          Save 50% <p></p>
+        </div>
         <div className={classes["plan-header"]}>
           <h4 className={classes["header-title"]}>Yearly</h4>
           <p className={classes["header-description"]}>
@@ -74,16 +77,17 @@ const Plans = () => {
           {[
             "All Sports & Leagues",
             "2k & 4k Streams",
-            "Up to 20 devices simultaneously ",
-            "700 + FHD Channels",
+            "Up to 10 devices simultaneously",
+            "2500 + 4K Channels",
             "No Buffer/Freezing",
             "Multiple Language Streams",
-            "No Adverts ",
+            "No Adverts",
             "Chat Access",
             "Dedicated Streaming Servers",
             "Request Channels & Leagues",
             "24/7 Customer Support",
-            "Android App",
+            "iOS & Android App",
+            "VOD (Full-match replay)",
           ].map((feature, index) => (
             <div key={index} className={classes["supported-feature"]}>
               <Image
@@ -115,16 +119,17 @@ const Plans = () => {
           {[
             "All Sports & Leagues",
             "2k & 4k Streams",
-            "Up to 20 devices simultaneously ",
-            "700 + FHD Channels",
+            "Up to 10 devices simultaneously",
+            "2500 + 4K Channels",
             "No Buffer/Freezing",
             "Multiple Language Streams",
-            "No Adverts ",
+            "No Adverts",
             "Chat Access",
             "Dedicated Streaming Servers",
             "Request Channels & Leagues",
             "24/7 Customer Support",
-            "Android App",
+            "iOS & Android App",
+            "VOD (Full-match replay)",
           ].map((feature, index) => (
             <div key={index} className={classes["supported-feature"]}>
               <Image

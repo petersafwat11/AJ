@@ -3,24 +3,9 @@
   margin: 0 auto;
   padding-bottom: 2.5rem;
 }
-.top-heading {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  color: #00c4fb;
-  width: 88%;
-  margin: 3.65rem auto 0;
-}
-.heading {
-  font-weight: 500;
-  font-family: RobotoRegular;
-  font-size: 1.5rem;
-  line-height: 1.75rem;
-}
-.top-heading > span {
-  flex-grow: 1;
-  background-color: #00c4fb;
-  height: 1px;
+.div-title {
+  max-width: 53rem;
+  margin: auto;
 }
 .notify-me {
   width: 54.46rem;
@@ -36,13 +21,6 @@
   display: flex;
   align-items: flex-start;
   gap: 1.125rem;
-}
-.remaining-time {
-  color: #eb5757;
-  font-size: 1.21rem;
-  font-family: "Poppins";
-  font-weight: 700;
-  letter-spacing: 0.26px;
 }
 .title {
   color: #e8e8e8;
@@ -82,7 +60,8 @@
   font-weight: 600;
   margin-bottom: 2.25rem;
 }
-.comming-soon {
+.comming-soon,
+.comming-soon span {
   color: #fff;
   text-align: center;
   font-size: 2.25rem;
@@ -100,12 +79,13 @@
     width: 244px;
     height: 249px;
   }
-  .top-heading {
-    max-width: 44.57rem;
-  }
   .pricing {
     max-width: min(93%, 50rem);
   }
+  .div-title {
+    width: 43.5rem;
+  }
+
   .notify-me {
     width: 44.5792rem;
     height: 30.526rem;
@@ -115,10 +95,6 @@
   }
   .notify-me .container {
     gap: 0.9225rem;
-  }
-  .remaining-time {
-    font-size: 0.99122rem;
-    letter-spacing: 0.2132px;
   }
   .title {
     font-size: 2.46rem;
@@ -147,18 +123,16 @@
     font-size: 1.845rem;
   }
 }
-@media (max-width: 56.25rem) {
-}
 
 @media (max-width: 50rem) {
   .rocket-icon {
     width: 196px;
     height: 200px;
   }
-
-  .top-heading {
-    max-width: 37rem;
+  .div-title {
+    width: 36rem;
   }
+
   .notify-me {
     width: 37rem;
     height: 26.5rem;
@@ -168,10 +142,6 @@
   }
   .notify-me .container {
     gap: 0.764075rem;
-  }
-  .remaining-time {
-    font-size: 0.8224186rem;
-    letter-spacing: 0.1765396px;
   }
   .title {
     font-size: 2.04018rem;
@@ -212,6 +182,10 @@
   .top-heading {
     max-width: 100%;
   }
+  .div-title {
+    width: 100%;
+  }
+
   .notify-me {
     width: 100%;
     height: auto;
@@ -224,11 +198,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
-  .remaining-time {
-    text-align: center;
-    font-size: 1.06rem;
-    letter-spacing: 0.17px;
   }
   .title {
     max-width: 27rem;

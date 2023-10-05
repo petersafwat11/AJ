@@ -4,8 +4,8 @@ import Header from "../header/Header";
 // import Marque from "../components/marque/marque";
 import Image from "next/image";
 import Popup from "../popupWrapper/Popup";
-import MessageSent from "../send-message/MessageSent";
 import SendMessage, { SendMessageButton } from "../send-message/SendMessage";
+import ThanksMessage from "../thanksMessage/ThanksMessage";
 import styles from "./TopLayout.module.css";
 
 const TopLayout = () => {
@@ -67,9 +67,10 @@ const TopLayout = () => {
       )}
       {messageSent && (
         <Popup>
-          <MessageSent
+          {/* <MessageSent
             toggleMessageSentComponent={toggleMessageSentComponent}
-          />
+          /> */}
+          <ThanksMessage />
         </Popup>
       )}
       {showScrollTopIcon && (

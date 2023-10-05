@@ -4,6 +4,7 @@ import React from "react";
 import Marque from "../../../components/marque/Marque";
 import TopLayout from "../../../components/topLayout/TopLayout";
 import classes from "./DMCA.module.css";
+import PageTitle from "../../../components/pageTitle/PageTitle";
 const Page = () => {
   return (
     <div className="wrapper">
@@ -12,10 +13,8 @@ const Page = () => {
         <Marque />
 
         <section className={classes["DMCA"]}>
-          <div className={classes["top-heading"]}>
-            <h2 className={classes["top-heading-title"]}>DMCA</h2>
-            <span></span>
-          </div>
+          <PageTitle title={"DMCA"} />
+
           <div className={classes["container"]}>
             <div className={classes["disclaimer"]}>
               <h3 className={classes["disclaimer-heading"]}>Disclaimer</h3>

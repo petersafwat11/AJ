@@ -1,14 +1,15 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Beta from "../beta/Beta";
-import LanguesDropdown from "./LanguesDropdown";
+import RegionalSettings from "./regionalSettings/RegionalSettings";
 import classes from "./topHeader.module.css";
-const TopHeader = () => {
+const TopHeader = ({ toggleSettings }) => {
   return (
     <div className={classes["top-header"]}>
       <div className={classes["logo-wrapper"]}>
-        <Image src="/svg/header/logo.svg" alt="logo" width="78" height="56" />
+        <Image src="/svg/header/logo.svg" alt="logo" width="76" height="54" />
       </div>
       <div className={classes["beta"]}>
         <Beta />
@@ -28,7 +29,8 @@ const TopHeader = () => {
         <div className={classes["user-wrapper"]}>
           <Image src="/svg/header/user.svg" alt="user" width="15" height="15" />
         </div>
-        <LanguesDropdown />
+        <RegionalSettings toggleSettings={toggleSettings} />
+        {/* <LanguesDropdown /> */}
       </div>
     </div>
   );

@@ -49,7 +49,7 @@ export const Menu = () => {
         <li>
           <Link
             className={
-              pathname === "/news"
+              pathname === "/news" || pathname.includes("newsArticle")
                 ? classes["list-item-active"]
                 : classes["list-item"]
             }

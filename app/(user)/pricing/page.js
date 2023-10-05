@@ -2,8 +2,10 @@
 import Image from "next/image";
 import React from "react";
 import Marque from "../../../components/marque/Marque";
+import PageTitle from "../../../components/pageTitle/PageTitle";
 import InputGroup from "../../../components/pricing/inputGroup/InputGroup";
 import Plans from "../../../components/pricing/plans/Plans";
+import RemainingTime from "../../../components/pricing/remainingTime/RemainingTime";
 import Social from "../../../components/pricing/social/Social";
 import TopLayout from "../../../components/topLayout/TopLayout";
 import classes from "./pricing.module.css";
@@ -15,16 +17,14 @@ const page = () => {
         <Marque />
 
         <main className={classes["pricing"]}>
-          <div className={classes["top-heading"]}>
-            <h2 className={classes["heading"]}>PRICING</h2>
-            <span></span>
+          <div className={classes["div-title"]}>
+            <PageTitle title={"PRICING"} />
           </div>
+
           <section className={classes["notify-me"]}>
             <div className={classes[["container"]]}>
               <div className={classes["right"]}>
-                <p className={classes["remaining-time"]}>
-                  75 days : 16 hrs : 23 mins
-                </p>
+                <RemainingTime />
                 <h2 className={classes["title"]}>
                   All Good Things Come to Those who Wait...
                 </h2>

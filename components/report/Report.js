@@ -28,8 +28,8 @@ const Report = ({ toggleReport, handleMakingReport }) => {
                 className={classes["icon"]}
                 alt="icon"
                 src={`/svg/report-link/${index + 1}.svg`}
-                width="23"
-                height="23"
+                width="35"
+                height="35"
               />
             </div>
             <p>{item}</p>

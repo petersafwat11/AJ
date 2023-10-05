@@ -1,8 +1,25 @@
 "use client";
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
+import { getData } from "../../utils/dashboardTablePagesFunctions";
 import classes from "./marque.module.css";
 const Marque = () => {
+  const [domains, setDomains] = useState([]);
+  const fetchNewData = useCallback(async (query) => {
+    try {
+      const response = await getData("links", query);
+      console.log("domains", response?.data?.data[0]?.domains);
+      setDomains(response?.data?.data[0]?.domains?.split(" "));
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchNewData({ fields: "domains" });
+    console.log("will fetch");
+  }, [fetchNewData]);
+
   return (
     <div className={classes["xx"]}>
       <div className={classes["marque-container"]}>
@@ -14,7 +31,8 @@ const Marque = () => {
         >
           <div className={classes["marque-container-tag"]}>
             <span>Alternative Domains -</span>
-            <p>www.ajsports.pro</p>
+            {domains && domains.map((dom, index) => <p key={index}>{dom}</p>)}
+            {/* <p>www.ajsports.pro</p>
             <p>www.ajsports.soccer</p>
             <p>www.ajsports.us</p>
             <p>www.ajsportstv.ch</p>
@@ -32,7 +50,7 @@ const Marque = () => {
             <p>www.ajsports.asia</p>
             <p>www.ajsports.lol</p>
             <p>www.9goaltv.us</p>
-            <p>www.9goal.app</p>
+            <p>www.9goal.app</p> */}
           </div>
         </Marquee>
       </div>

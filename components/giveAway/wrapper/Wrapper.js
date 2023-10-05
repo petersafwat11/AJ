@@ -5,6 +5,7 @@ import Popup from "../../popupWrapper/Popup";
 import FollowUS from "../followUS/FollowUS";
 import StepsWrapper from "../stepsWrapper/StepsWrapper";
 import classes from "./wrapper.module.css";
+import PageTitle from "../../pageTitle/PageTitle";
 
 const followUsReducer = (state, action) => {
   console.log("state", state);
@@ -46,10 +47,8 @@ const Wrapper = ({ socialLinks }) => {
       )}
 
       <div className={classes["container"]}>
-        <div className={classes["give-away-heading"]}>
-          <h2 className={classes["heading"]}>GIVEAWAY</h2>
-          <span></span>
-        </div>
+        <PageTitle title={"GIVEAWAY"} />
+
         <section className={classes["give-away-wrapper"]}>
           <div className={classes["give-away-details"]}>
             <div className={classes["give-away-details-item"]}>

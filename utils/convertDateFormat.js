@@ -39,7 +39,7 @@ export const getMatchDate = (dateString, dateText) => {
   }
   return MatchDateFormat;
 };
-export const calcRemainingTime = (dateString) => {
+export const calcRemainingTime = (dateString, pricingFormat) => {
   const targetDate = new Date(dateString);
   const now = new Date();
 
@@ -63,13 +63,21 @@ export const calcRemainingTime = (dateString) => {
 
   // Format the remaining time as desired
   let formattedRemainingTime;
+  if (pricingFormat && days >= 1) {
+    formattedRemainingTime =
+      days + " days : " + hours + " hrs : " + mins + " mins";
+    return formattedRemainingTime;
+  }
 
   if (days >= 1) {
     formattedRemainingTime =
       days + "d " + hours + "h " + mins + "m " + secs + "s";
     return formattedRemainingTime;
   }
-
+  if (pricingFormat) {
+    formattedRemainingTime = hours + " hrs : " + mins + " mins";
+    return formattedRemainingTime;
+  }
   formattedRemainingTime = hours + "h " + mins + "m " + secs + "s";
   return formattedRemainingTime;
 };

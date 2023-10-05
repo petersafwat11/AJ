@@ -4,7 +4,7 @@ const SportCategory = ({ data, dispatchDetail }) => {
     "Football",
     "Basketball",
     "NFL",
-    "Boxing",
+    "Fights",
     "Netball",
     "Volleyball",
     "Tennis",

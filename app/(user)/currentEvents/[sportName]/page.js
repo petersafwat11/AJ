@@ -5,10 +5,10 @@ import { usePathname } from "next/navigation";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { categories } from "../../../../components/home-page/categoriesOptions";
 import Filter from "../../../../components/home-page/filter/Filter";
+import Match from "../../../../components/home-page/match/Match";
 import Sports from "../../../../components/home-page/sports/Sports";
 import HomeSearch from "../../../../components/homeSearch/HomeSearch";
 import Marque from "../../../../components/marque/Marque";
-import Match from "../../../../components/match/Match";
 import ShowMore from "../../../../components/showMore/ShowMore";
 import TopLayout from "../../../../components/topLayout/TopLayout";
 import { getData } from "../../../../utils/dashboardTablePagesFunctions";
@@ -146,7 +146,15 @@ const Page = () => {
           </div>
           <div className={classes["matches-container"]}>
             <section className={classes["hot-matches"]}>
-              <h2 className={classes["title"]}>HOT MATCHES</h2>
+              <div className={classes["hot-mathes-top"]}>
+                <h2 className={classes["title"]}>HOT MATCHES</h2>
+                <Image
+                  src="/svg/home/hot-matches-icon.svg"
+                  alt="live"
+                  width="31"
+                  height="44"
+                />
+              </div>
               {pathname !== "/currentEvents/football" &&
                 pathname !== "/currentEvents/basketball" &&
                 pathname !== "/currentEvents/nfl" &&
@@ -166,8 +174,14 @@ const Page = () => {
                   </div>
                 )}
               <div className={classes["matches"]}>
-                {hotMatches?.map((matchData) => (
-                  <Match matchData={matchData} key={matchData._id} />
+                {hotMatches?.map((matchData, index) => (
+                  <Match
+                    type={"hot-matches"}
+                    matchData={matchData}
+                    key={matchData._id}
+                    index={index}
+                    length={hotMatches?.length}
+                  />
                 ))}
               </div>
             </section>
@@ -182,8 +196,13 @@ const Page = () => {
                 </div>
               </div>
               <div className={classes["matches"]}>
-                {otherMatches?.matches?.map((matchData) => (
-                  <Match matchData={matchData} key={matchData._id} />
+                {otherMatches?.matches?.map((matchData, index) => (
+                  <Match
+                    matchData={matchData}
+                    key={matchData._id}
+                    index={index}
+                    length={otherMatches?.matches?.length}
+                  />
                 ))}
               </div>
             </section>

@@ -11,10 +11,12 @@
   right: 1vw;
   z-index: 100;
 }
-.social-icons {
+
+.watch-video-top {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   width: 98%;
+  margin: 0 auto 5px;
 }
 .watch-video-wrapper-bottom {
   display: flex;
@@ -102,7 +104,6 @@
     border-radius: 1.56rem;
     background: #0d1317;
     padding: 0;
-    
   }
   .modes-icons {
     gap: 0.5rem;

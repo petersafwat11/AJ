@@ -1,12 +1,10 @@
 "use client";
 import Image from "next/image";
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { Provider } from "react-redux";
-import store from "../../../store/store";
 import { getData } from "../../../utils/dashboardTablePagesFunctions";
 import HomeSearch from "../../homeSearch/HomeSearch";
-import Match from "../../match/Match";
 import ShowMore from "../../showMore/ShowMore";
+import Match from "../match/Match";
 import Sports from "../sports/Sports";
 import classes from "./wrapper.module.css";
 
@@ -29,7 +27,7 @@ const Wrapper = ({ data }) => {
   const fetchNewData = useCallback(async (query, cause) => {
     try {
       const response = await getData("sports", query);
-
+      setHotMatches(response?.hotMatches);
       console.log("query", response?.data?.data);
       if (cause !== "showMore") {
         setOtherMatches({
@@ -112,13 +110,25 @@ const Wrapper = ({ data }) => {
       </div>
       <div className={classes["matches-container"]}>
         <section className={classes["hot-matches"]}>
-          <h2 className={classes["title"]}>HOT MATCHES</h2>
+          <div className={classes["hot-mathes-top"]}>
+            <h2 className={classes["title"]}>HOT MATCHES</h2>
+            <Image
+              src="/svg/home/hot-matches-icon.svg"
+              alt="live"
+              width="31"
+              height="44"
+            />
+          </div>
           <div className={classes["matches"]}>
-            <Provider store={store}>
-              {hotMatches?.map((matchData) => (
-                <Match matchData={matchData} key={matchData?._id} />
-              ))}
-            </Provider>
+            {hotMatches?.map((matchData, index) => (
+              <Match
+                type={"hot-matches"}
+                matchData={matchData}
+                key={matchData?._id}
+                index={index}
+                length={hotMatches.length}
+              />
+            ))}
           </div>
         </section>
         <section className={classes["other-matches"]}>
@@ -132,11 +142,14 @@ const Wrapper = ({ data }) => {
             </div>
           </div>
           <div className={classes["matches"]}>
-            <Provider store={store}>
-              {otherMatches?.matches?.map((matchData) => (
-                <Match matchData={matchData} key={matchData?._id} />
-              ))}
-            </Provider>
+            {otherMatches?.matches?.map((matchData, index) => (
+              <Match
+                matchData={matchData}
+                key={matchData?._id}
+                index={index}
+                length={otherMatches?.matches?.length}
+              />
+            ))}
           </div>
         </section>
       </div>

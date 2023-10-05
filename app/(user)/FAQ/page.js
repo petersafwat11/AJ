@@ -5,6 +5,7 @@ import Popup from "../../../components/popupWrapper/Popup";
 import SendMessage from "../../../components/send-message/SendMessage";
 import TopLayout from "../../../components/topLayout/TopLayout";
 import classes from "./FAQ.module.css";
+import PageTitle from "../../../components/pageTitle/PageTitle";
 const Page = () => {
   const FAQ = [
     {
@@ -81,10 +82,8 @@ const Page = () => {
               />
             </Popup>
           )}
-          <div className={classes["top-heading"]}>
-            <h2 className={classes["top-heading-title"]}>FAQ</h2>
-            <span></span>
-          </div>
+          <PageTitle title={"FAQ"} />
+
           <div className={classes["container"]}>
             {/* <span className={classes['back-icon']}>Back</span> */}
             <div className={classes["container-heading"]}>

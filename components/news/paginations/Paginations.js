@@ -6,6 +6,7 @@ import classes from "./paginations.module.css";
 const Paginations = ({ page, results }) => {
   const totalPages = Math.ceil(results / 10);
   const router = useRouter();
+  console.log('pagggge', page)
   return (
     <div className={classes["paginations"]}>
       <div className={classes["paginations-options"]}>
@@ -17,7 +18,7 @@ const Paginations = ({ page, results }) => {
                 router.push(`/news?page=${page - 1}`);
               }
             }}
-            className={classes["paginations-option"]}
+            className={classes["prev-text"]}
           >
             Previous
           </p>
@@ -113,7 +114,7 @@ const Paginations = ({ page, results }) => {
           }}
           className={classes["next"]}
         >
-          <p className={classes["paginations-option"]}>Next</p>
+          <p className={classes["next-text"]}>Next</p>
           <RiArrowRightSLine className={classes["arrow"]} />
         </div>
       </div>

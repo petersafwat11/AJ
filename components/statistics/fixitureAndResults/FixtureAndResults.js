@@ -5,8 +5,15 @@ import Top from "./top/Top";
 const FixtureAndResults = ({ type }) => {
   return (
     <div className={classes["fixure"]}>
-      <Top />
-      <Matches type={type} />
+      <div className={classes["dates"]}>
+        <Top />
+        <Matches type={type} />
+      </div>
+      <span className={classes["devider"]}></span>
+      <div className={classes["dates"]}>
+        <Top />
+        <Matches type={type} />
+      </div>
     </div>
   );
 };

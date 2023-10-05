@@ -1,7 +1,7 @@
 "use client";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import classes from "./filter.module.css";
 const Filter = ({ options, handleFilter, filterValue, channels }) => {
   const router = useRouter();
@@ -9,7 +9,13 @@ const Filter = ({ options, handleFilter, filterValue, channels }) => {
     <div className={classes["container"]}>
       <div className={classes["selected"]}>
         <p className={classes["selected-sport"]}>{filterValue}</p>
-        <MdOutlineKeyboardArrowDown className={classes["arrow"]} />
+        <Image
+          className={classes["langs-icon"]}
+          src="/svg/channels/langs-icon.svg"
+          alt="chat"
+          width="15"
+          height="13"
+        />
       </div>
       <div className={classes["other-sports"]}>
         {options.map((item, index) => (

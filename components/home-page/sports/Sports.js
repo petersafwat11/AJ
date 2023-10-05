@@ -14,11 +14,7 @@ const Sports = ({ sportCategory }) => {
         onClick={() => {
           router.push("/currentEvents/nfl");
         }}
-        className={
-          pathname === "/currentEvents/nfl"
-            ? classes["selected"]
-            : classes["nfl"]
-        }
+        className={classes["nfl"]}
       >
         <Image
           className={classes["sport-image"]}
@@ -28,16 +24,15 @@ const Sports = ({ sportCategory }) => {
           height="60"
         />
         <p>NFL</p>
+        {pathname === "/currentEvents/nfl" && (
+          <span className={classes["customized-border"]}></span>
+        )}
       </div>
       <div
         onClick={() => {
           router.push("/currentEvents/basketball");
         }}
-        className={
-          pathname === "/currentEvents/basketball"
-            ? classes["selected"]
-            : classes["basketball"]
-        }
+        className={classes["basketball"]}
       >
         <Image
           className={classes["sport-image"]}
@@ -47,16 +42,15 @@ const Sports = ({ sportCategory }) => {
           height="60"
         />
         <p>Basketball</p>
+        {pathname === "/currentEvents/basketball" && (
+          <span className={classes["customized-border"]}></span>
+        )}
       </div>
       <div
         onClick={() => {
           router.push("/currentEvents/football");
         }}
-        className={
-          pathname === "/currentEvents/football" || pathname === "/"
-            ? classes["selected"]
-            : classes["football"]
-        }
+        className={classes["football"]}
       >
         <Image
           className={classes["sport-image"]}
@@ -66,16 +60,16 @@ const Sports = ({ sportCategory }) => {
           height="60"
         />
         <p>Football</p>
+        {pathname === "/currentEvents/football" ||
+          (pathname === "/" && (
+            <span className={classes["customized-border"]}></span>
+          ))}
       </div>
       <div
         onClick={() => {
-          router.push("/currentEvents/boxing");
+          router.push("/currentEvents/fights");
         }}
-        className={
-          pathname === "/currentEvents/boxing"
-            ? classes["selected"]
-            : classes["boxing"]
-        }
+        className={classes["boxing"]}
       >
         <Image
           className={classes["sport-image"]}
@@ -84,22 +78,16 @@ const Sports = ({ sportCategory }) => {
           width="60"
           height="60"
         />
-        <p>Boxing</p>
+        <p>Fights</p>
+        {pathname === "/currentEvents/fights" && (
+          <span className={classes["customized-border"]}></span>
+        )}
       </div>
       <div
         onClick={() => {
           router.push("/currentEvents/others");
         }}
-        className={
-          pathname === "/currentEvents/others" ||
-          (pathname !== "/currentEvents/football" &&
-            pathname !== "/currentEvents/basketball" &&
-            pathname !== "/currentEvents/nfl" &&
-            pathname !== "/currentEvents/boxing" &&
-            pathname !== "/")
-            ? classes["selected"]
-            : classes["other"]
-        }
+        className={classes["other"]}
       >
         <Image
           className={classes["sport-image"]}
@@ -109,6 +97,14 @@ const Sports = ({ sportCategory }) => {
           height="60"
         />
         <p>Others</p>
+        {pathname === "/currentEvents/others" ||
+          (pathname !== "/currentEvents/football" &&
+            pathname !== "/currentEvents/basketball" &&
+            pathname !== "/currentEvents/nfl" &&
+            pathname !== "/currentEvents/fights" &&
+            pathname !== "/" && (
+              <span className={classes["customized-border"]}></span>
+            ))}
       </div>
     </section>
   );

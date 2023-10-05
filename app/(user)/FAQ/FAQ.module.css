@@ -4,24 +4,6 @@
   padding-bottom: 7rem;
 }
 
-.top-heading {
-  margin-top: 3.65rem;
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  color: #00c4fb;
-}
-.top-heading-title {
-  font-size: 1.5rem;
-  line-height: 1.75rem;
-  font-weight: 500;
-  font-family: RobotoRegular;
-}
-.top-heading > span {
-  flex-grow: 1;
-  background-color: #00c4fb;
-  height: 1px;
-}
 .container {
   width: 100%;
   margin-top: 1.15rem;
@@ -36,7 +18,7 @@
   justify-content: center;
 }
 .container-heading-title {
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 3rem;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
@@ -70,14 +52,14 @@
   border-radius: 0.75rem;
 }
 .question-wrapper-question {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   line-height: 1.6rem;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
 .question-wrapper-answer {
   color: rgba(255, 255, 255, 0.56);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   line-height: 1.5rem;
   font-weight: 400;
   font-family: "Poppins", sans-serif;
@@ -89,7 +71,7 @@
   flex-direction: column;
   text-align: center;
   margin: auto;
-  width: 60%;
+  width: 86%;
 }
 .uesr-feedback-heading {
   font-size: 1.625rem;
@@ -125,16 +107,6 @@
     padding-bottom: 3rem;
   }
 
-  .top-heading-title {
-    font-size: 1.2rem;
-    line-height: 1.4rem;
-  }
-
-  .top-heading {
-    margin-top: 1.625rem;
-    padding-left: 0.25rem;
-    padding-right: 0.75rem;
-  }
   .container {
     width: 100%;
     margin-top: 1rem;

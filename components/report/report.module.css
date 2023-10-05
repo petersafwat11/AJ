@@ -1,7 +1,7 @@
 .report {
   background: #0d1317;
   border-radius: 2.86rem;
-  padding: 2.234rem 2.1rem 1.4rem;
+  padding: 2.234rem 2.1rem 1.5rem;
   width: min(95%, 31.4rem);
 }
 .top {
@@ -10,10 +10,10 @@
   justify-content: space-between;
 }
 .title {
-  font-family: RobotoBold;
+  font-family: "Roboto";
   font-weight: 700;
-  font-size: 1.31rem;
-  line-height: 1rem;
+  font-size: 1.4rem;
+  line-height: 0.94rem;
   color: #ffffff;
 }
 .exit {
@@ -32,10 +32,10 @@
 .causes {
   display: flex;
   align-items: flex-start;
-  gap: 2.55rem;
-  margin-top: 1.875rem;
+  gap: 2rem;
+  margin-top: 2.3rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  padding-bottom: 1.73rem;
+  padding-bottom: 1.3rem;
   justify-content: center;
 }
 .cause,
@@ -44,7 +44,7 @@
   flex-direction: column;
   align-items: center;
   gap: 0.8rem;
-  width: 71.6px;
+  width: 73.5px;
   cursor: pointer;
 }
 .selected-cause .icon-wrapper {
@@ -52,31 +52,31 @@
 }
 .icon-wrapper {
   border-radius: 50%;
-  width: 4.28rem;
-  height: 4.26rem;
+  width: 73.5px;
+  height: 73.5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(157, 157, 157, 0.4);
+  background: rgba(157, 157, 157, 0.04);
 }
 .cause:hover .icon-wrapper {
   background-color: rgba(95, 94, 94, 0.4);
 }
 .cause > p,
 .selected-cause > p {
-  font-family: RobotoBold;
-  font-weight: 700;
-  font-size: 0.85rem;
-  line-height: 0.937rem;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 0.94rem;
+  line-height: 0.75rem;
   color: white;
   text-align: center;
 }
 .bottom {
-  margin-top: 0.984rem;
+  margin-top: 1.125rem;
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 1.03rem;
+  gap: 1.26rem;
 }
 .try-again-para {
   font-weight: 400;
@@ -85,18 +85,19 @@
 }
 
 .send-button {
-  width: 5.4rem;
-  height: 1.97rem;
+  width: 6rem;
+  height: 2.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #00b1ff;
-  border-radius: 0.2rem;
+  border-radius: 0.34rem;
   color: white;
   font-weight: 500;
-  font-size: 0.85rem;
-  line-height: 0.984rem;
-  font-family: RobotoRegular;
+  font-size: 0.9rem;
+  line-height: normal;
+  font-family: "Roboto";
+  transition: all 0.3s ease-in-out;
 }
 .send-button:hover {
   background: rgba(0, 179, 255, 0.5);

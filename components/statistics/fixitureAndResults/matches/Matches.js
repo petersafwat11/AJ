@@ -16,7 +16,7 @@ export default Matches;
 export const Match = ({ type }) => {
   return (
     <div className={classes["match"]}>
-      <div className={classes["match-date"]}>Aug 30 - 15:00</div>
+      <div className={classes["match-date"]}> 15:00</div>
       <div className={classes["match-date-mobile"]}>17:30</div>
 
       <div className={classes["first-team"]}>

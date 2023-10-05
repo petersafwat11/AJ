@@ -27,8 +27,8 @@ const StepsWrapper = ({ followUs, toggleSteps, dispatchAction }) => {
           className={classes["exit"]}
           src="/svg/chat/exit-chat.svg"
           alt="exit"
-          width="15"
-          height="15"
+          width="18"
+          height="18"
         />
       </div>
       {currentStep === 1 && (

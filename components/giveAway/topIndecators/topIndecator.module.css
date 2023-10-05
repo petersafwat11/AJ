@@ -11,6 +11,7 @@
   width: 2.9rem;
   background-color: #c7d3eb;
   cursor: pointer;
+  border-radius: 0.375rem;
 }
 .cur-state-indicator {
   background-color: #47b2ff;

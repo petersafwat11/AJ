@@ -1,5 +1,5 @@
 .container {
-  padding: 1.4rem 0 0.85rem;
+  padding: 1.55rem 0 0.9rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,7 +8,7 @@
   width: 95%;
 }
 .place {
-  color: #f4f4f4;
+  color: rgba(244, 244, 244, 0.7);
   text-align: center;
   font-size: 0.75rem;
   font-family: "Roboto";
@@ -37,9 +37,9 @@
     letter-spacing: 0.512px;
   }
 }
-@media (max-width:43.75 ) {
+@media (max-width: 43.75) {
   .container {
-    padding: 1.1255rem 0 .687rem;
+    padding: 1.1255rem 0 0.687rem;
   }
 
   .place {

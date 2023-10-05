@@ -6,6 +6,7 @@ import ArticleContent from "../../../../components/news/articleContent/ArticleCo
 import TopLayout from "../../../../components/topLayout/TopLayout";
 import { getData } from "../../../../utils/dashboardTablePagesFunctions";
 import classes from "./news-article.module.css";
+import PageTitle from "../../../../components/pageTitle/PageTitle";
 const Page = () => {
   const pathname = usePathname();
   const router = useRouter();
@@ -36,10 +37,8 @@ const Page = () => {
         <Marque />
 
         <div className={classes["news-article"]}>
-          <div className={classes["top-heading"]}>
-            <h2 className={classes["top-heading-title"]}>NEWS</h2>
-            <span></span>
-          </div>
+          <PageTitle title={"NEWS"} />
+
           <ArticleContent title={title} subNews={subNews} />
         </div>
         {/* <div className="center-under-dev">

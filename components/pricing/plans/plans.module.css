@@ -24,6 +24,7 @@
   padding: 3.1rem 2.43rem 2.4rem 2.06rem;
   background: #0099ca;
   z-index: 2;
+  position: relative;
 }
 .monthly {
   width: 21.4rem;
@@ -116,6 +117,37 @@
 .yearly .features {
   gap: 0.56rem;
 }
+.save-money {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -1.1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 9rem;
+  height: 2.2rem;
+  border-radius: 1.17rem;
+  background: #eb5757;
+  color: #fff;
+  font-family: "Poppins";
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.save-money p {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid #eb5757;
+}
+
 .supported-feature,
 .not-supported-feature {
   color: #fff;
@@ -136,82 +168,6 @@
 .not-supported-feature {
   color: #a0abbb;
 }
-/* @media (max-width: 75rem) {
-  .plans > * {
-    border-radius: 0.7rem;
-    box-shadow: 0px 4px 23px 0px rgba(0, 0, 0, 0.5);
-  }
-  .freebie {
-    padding: 1.78rem 1.83rem 1.875rem 1.78rem;
-    min-width: 21.23rem;
-    height: 47.15rem;
-    gap: 1.875rem;
-    margin-right: -1.4rem;
-    margin-top: 29.25px;
-  }
-  .yearly {
-    width: 22.26rem;
-    height: 50.6rem;
-    padding: 3.1rem 2.43rem 2.4rem 2.06rem;
-  }
-  .monthly {
-    width: 21.4rem;
-    height: 47.15rem;
-    padding: 1.73rem 2.43rem 1.875rem 1.78rem;
-    margin-left: -0.656rem;
-    margin-top: 32.25px;
-  }
-
-  .plan-header {
-    gap: 0.51rem;
-    margin-bottom: 0.937rem;
-  }
-  .monthly .plan-header {
-    margin-bottom: 0.798rem;
-  }
-  .header-title {
-    font-size: 1.4rem;
-  }
-  .header-description {
-    font-size: 1.03rem;
-  }
-  .price {
-    font-size: 2.7rem;
-    font-weight: 700;
-  }
-  .price .time {
-    font-size: 0.85rem;
-  }
-  .comming-soon {
-    width: 17.7rem;
-    height: 2.5rem;
-    padding: 0.28rem 0.56rem;
-    gap: 0.187rem;
-    border-radius: 0.187rem;
-    font-size: 0.93rem;
-    margin: 1.125rem 0 1.875rem;
-  }
-  .monthly .comming-soon {
-    margin: 0.98rem 0 1.7rem;
-  }
-  .features {
-    gap: 0.609rem;
-  }
-  .yearly .features {
-    gap: 0.56rem;
-  }
-  .supported-feature,
-  .not-supported-feature {
-    font-size: 1.125rem;
-    gap: 0.8rem;
-  }
-  .yearly .supported-feature {
-    font-size: 1.03rem;
-  }
-  .monthly .supported-feature {
-    font-size: 1.03rem;
-  }
-} */
 @media (max-width: 75rem) {
   .plans > * {
     border-radius: 0.525rem;
@@ -220,19 +176,19 @@
   .freebie {
     padding: 1.335rem 1.3725rem 1.40625rem 1.335rem;
     min-width: 15.9225rem;
-    height: 37.625rem;
+    height: 39.625rem;
     gap: 1.40625rem;
     margin-right: -1.05rem;
     margin-top: 21.9375px;
   }
   .yearly {
     width: 16.695rem;
-    height: 41.5rem;
+    height: 43.5rem;
     padding: 2.325rem 1.8225rem 1.8rem 1.545rem;
   }
   .monthly {
     width: 16.05rem;
-    height: 38.3625rem;
+    height: 40.3625rem;
     padding: 1.2975rem 1.8225rem 1.40625rem 1.335rem;
     margin-left: -0.492rem;
     margin-top: 24.1875px;
@@ -296,19 +252,19 @@
   .freebie {
     padding: 1.11rem 1.14rem 1.17rem 1.11rem;
     min-width: 13.22rem;
-    height: 35.19rem;
+    height: 37.19rem;
     gap: 1.17rem;
     margin-right: -0.87rem;
     margin-top: 18.17px;
   }
   .yearly {
     width: 13.86rem;
-    height: 38.45rem;
+    height: 40.45rem;
     padding: 1.93rem 1.51rem 1.49rem 1.28rem;
   }
   .monthly {
     width: 13.33rem;
-    height: 35.78rem;
+    height: 37.78rem;
     padding: 1.08rem 1.51rem 1.17rem 1.11rem;
     margin-left: -0.41rem;
     margin-top: 20.05px;

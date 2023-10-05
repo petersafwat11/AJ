@@ -29,7 +29,7 @@
   line-height: 0%;
   background-color: #2b3134;
   border-radius: 0.25rem;
-  padding: 0.67rem 0.71rem;
+  padding: 0.67rem 0.71rem 0.6rem;
   white-space: nowrap;
   display: flex;
   align-items: center;
@@ -54,28 +54,6 @@
 }
 .share-icon {
   font-size: 1.2rem;
-}
-/* .wrapper:hover > .twitter-icon {
-  color: #1c96e8;
-}
-.wrapper:hover > .facebook-icon {
-  color: #0094ff;
-}
-.wrapper:hover > .whatsapp-icon {
-  color: #53c960;
-} */
-.instagram {
-  height: 20px;
-  border-radius: 0.5rem;
-}
-/* .instagram:hover {
-  background: linear-gradient(to right bottom, #5442d6, #d7246e, #fec053);
-} */
-.instagram:hover > * {
-  color: white;
-  /* background:linear-gradient(#5442d6, #d7246e, #fec053); */
-  /* -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
 }
 .reddit {
   height: 19px;
@@ -103,14 +81,6 @@
   color: #1d2226;
   transition: all 0.2 ease-out;
 }
-/* .wrapper:hover > .telegram-icon {
-  color: #0088cc;
-  color: #0088cc;
-} */
-/* .wrapper:hover > .share-icon {
-  color: rgb(252, 252, 252, 0.8);
-}
- */
 .watch-video-share-icon:hover {
   opacity: 1;
 }
@@ -120,11 +90,11 @@
 }
 .watch-video-share-text {
   color: #ff4b4b;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   line-height: 0.9rem;
   font-family: RobotoSemiBold;
   align-self: flex-end;
-  margin-bottom: -2px;
+  margin-bottom: -1px;
 }
 @media (max-width: 56.25rem) {
   .watch-video-share {

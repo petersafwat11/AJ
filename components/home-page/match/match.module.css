@@ -1,4 +1,5 @@
-.match {
+.hot-match,
+.other-match {
   width: 100%;
   display: flex;
   align-items: center;
@@ -8,6 +9,13 @@
   padding: 1.03rem 1.94rem 1.07rem 1.82rem;
   transition: all 0.3s ease-in-out;
 }
+.hot-match {
+  border-bottom: 2px solid #fbbf00;
+}
+.other-match {
+  border-bottom: 2px solid #03a1cd;
+}
+
 .match:hover {
   background-color: #1c2b2e;
 }
@@ -79,8 +87,23 @@
 
   color: #4ae96d;
 }
+.hot-matches-devider,
+.other-matches-devider {
+  display: block;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.58rem;
+  height: 1.4rem;
+  background: #fbbf00;
+}
+.other-matches-devider {
+  background: transparent;
+}
 @media (max-width: 56.25rem) {
-  .match {
+  .hot-match,
+  .other-match {
     padding: 0.687rem 0.85rem;
     display: flex;
     flex-direction: column;
@@ -175,7 +198,8 @@
   }
 }
 @media (max-width: 25rem) {
-  .match {
+  .hot-match,
+  .other-match {
     padding: 14px;
   }
   .match-first {
@@ -216,7 +240,8 @@
   }
 }
 @media (max-width: 390px) {
-  .match {
+  .hot-match,
+  .other-match {
     padding: 12px 14px;
   }
   .match-first .date {
@@ -251,7 +276,8 @@
   }
 }
 @media (max-width: 370px) {
-  .match {
+  .hot-match,
+  .other-match {
     padding: 11px 13px 10.23px;
   }
   .match-first .date {
@@ -286,7 +312,8 @@
   }
 }
 @media (max-width: 340px) {
-  .match {
+  .hot-match,
+  .other-match {
     padding: 9px 12px 11px 13px;
   }
   .match-first {

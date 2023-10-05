@@ -8,7 +8,7 @@ import classes from "./wrapper.module.css";
 const Wrapper = ({ data }) => {
   const searchParams = useSearchParams();
   const page = searchParams.get("page");
-  const newsData = !page ? data?.data?.data : [];
+  const newsData = !page || page === 1 ? data?.data?.data : [];
   const [news, setNews] = useState(newsData);
   const fetchNewData = useCallback(async (query) => {
     try {
@@ -29,7 +29,7 @@ const Wrapper = ({ data }) => {
   }, [fetchNewData, page]);
 
   return (
-    <div className="wrapper">
+    <div className={classes["wrapper"]}>
       <div className={classes["container"]}>
         <div className={classes["news-items"]}>
           {news.length > 0 &&
@@ -46,9 +46,9 @@ const Wrapper = ({ data }) => {
         </div>
       </div>
       <Paginations
-        results={data?.results}
+        results={30}
         page={
-          Number(page) <= data?.results
+          page && Number(page) <= data?.results
             ? Number(page)
             : Number(page) >= data?.results && page
             ? null

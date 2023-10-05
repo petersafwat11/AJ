@@ -17,9 +17,9 @@
   gap: 0.5rem;
 }
 
-.paginations-option:hover,
-.next:hover,
-.previous:hover {
+/* .paginations-option:hover, */
+.next:hover *,
+.previous:hover * {
   color: #01bcf1;
   cursor: pointer;
 }
@@ -27,14 +27,28 @@
   font-size: 1.4rem;
 }
 .paginations-option,
-.active {
+.active,
+.prev-text,
+.next-text {
   font-size: 1rem;
   font-family: RobotoSemiBold;
   line-height: 1.22rem;
+  cursor: pointer;
+}
+.paginations-option,
+.active {
+  width: 1.64rem;
+  height: 1.64rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .active {
-  color: #01bcf1;
-  cursor: pointer;
+  background-color: #007fdb;
+}
+.paginations-option:hover {
+  background-color: #090f14;
 }
 .previous > p,
 .next > p {

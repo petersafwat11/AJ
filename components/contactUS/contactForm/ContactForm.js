@@ -1,8 +1,10 @@
 "use client";
 import axios from "axios";
-import React, { useEffect, useReducer } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Popup from "../../popupWrapper/Popup";
+import ThanksMessage from "../../thanksMessage/ThanksMessage";
 import Topics from "../topics/Topics";
 import classes from "./contactForm.module.css";
 
@@ -39,7 +41,13 @@ const contactUsReducer = (state, action) => {
 };
 const ContactForm = () => {
   const notify = (message, type) => toast[type](message);
-  //   const [toast, setToast] = useState("");
+  const [contactUs, dispatchData] = useReducer(contactUsReducer, intialValue);
+  const [showThanksMessage, setShowThanksMessage] = useState(false);
+
+  const toggleThanksMessage = () => {
+    setShowThanksMessage(!showThanksMessage);
+  };
+
   const sendForm = async (event) => {
     event.preventDefault();
 
@@ -59,10 +67,11 @@ const ContactForm = () => {
         }
       );
       dispatchData({ type: "RESET" });
-      notify(
-        "Thank you for contacting us! We will get back to you soon.",
-        "success"
-      );
+      toggleThanksMessage();
+      // notify(
+      //   "Thank you for contacting us! We will get back to you soon.",
+      //   "success"
+      // );
 
       console.log("response", response);
     } catch (error) {
@@ -74,13 +83,20 @@ const ContactForm = () => {
       console.log("error-here", error);
     }
   };
-  const [contactUs, dispatchData] = useReducer(contactUsReducer, intialValue);
   const selectedTopic = contactUs.topic;
   useEffect(() => {
     selectedTopic !== "Something else"
       ? dispatchData({ type: "TOPIC-SOMETHING-ELSE", value: "" })
       : "";
   }, [selectedTopic]);
+  useEffect(() => {
+    if (showThanksMessage) {
+      setTimeout(() => {
+        setShowThanksMessage(false);
+      }, [5000]);
+    }
+  }, [showThanksMessage]);
+
   return (
     <div className={classes["container"]}>
       <ToastContainer
@@ -95,6 +111,11 @@ const ContactForm = () => {
         pauseOnHover={true}
         theme="dark"
       />
+      {showThanksMessage && (
+        <Popup>
+          <ThanksMessage />
+        </Popup>
+      )}
 
       <div className={classes["input-group"]}>
         <label className={classes["label"]} htmlFor="email">

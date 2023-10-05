@@ -16,6 +16,7 @@ import Marque from "../../../../components/marque/Marque";
 import Popup from "../../../../components/popupWrapper/Popup";
 import ServersButtons from "../../../../components/serverButtons/ServersButtons";
 import ServersButtonsMobile from "../../../../components/serverButtons/serversButtonsMobile/ServersButtonsMobile";
+import ThanksMessage from "../../../../components/thanksMessage/ThanksMessage";
 import TopLayout from "../../../../components/topLayout/TopLayout";
 import UnderDevelopment from "../../../../components/underDevelopment/component/underDevelopment";
 import WatchDetailsSingleTeam from "../../../../components/watchDetailsSingleTeam/WatchDetailsSingleTeam";
@@ -38,8 +39,6 @@ const Page = () => {
     const decodedStr = decodeURIComponent(str.replace(/-/g, "%20"));
     console.log("decodedStr", decodedStr);
     const [firstTeamName, secondTeamName] = decodedStr.split(/VS|vs|Vs|vS/);
-    console.log("firstTeamNameee", firstTeamName, secondTeamName);
-
     return { firstTeamName, secondTeamName };
   };
 
@@ -56,6 +55,7 @@ const Page = () => {
   const [showChat, setShowChat] = useState(false);
   const [showShareLinks, setShowShareLinks] = useState(false);
   const [showReport, setShowReport] = useState(false);
+  const [showThanksMessage, setShowThanksMessage] = useState(false);
   const [live, setLive] = useState(determineLive(matchData?.eventDate));
   const [remainingTime, setRemainingTime] = useState(calcRemainingTime(null));
   const [liveLoading, setLiveLoading] = useState(true);
@@ -69,6 +69,10 @@ const Page = () => {
   const toggleReport = () => {
     setShowReport(!showReport);
   };
+  const toggleThanksMessage = () => {
+    setShowThanksMessage(!showThanksMessage);
+  };
+
   const toggleServers = () => {
     setShowChangeServer(!showChangeServer);
   };
@@ -98,7 +102,7 @@ const Page = () => {
       eventLink: shareUrl,
     };
 
-    await handleMakingReport(reportData, toggleReport, notify);
+    await handleMakingReport(reportData, toggleReport, toggleThanksMessage);
   };
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -138,14 +142,6 @@ const Page = () => {
     pageData();
   }, [pathname]);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setLive(determineLive(matchData?.eventDate));
-  //   }, 10000);
-
-  //   return () => clearInterval(interval);
-  // }, [matchData?.eventDate]);
-
   useEffect(() => {
     const interval = setInterval(() => {
       setRemainingTime(calcRemainingTime(matchData?.eventDate));
@@ -155,6 +151,13 @@ const Page = () => {
 
     return () => clearInterval(interval);
   }, [matchData?.eventDate]);
+  useEffect(() => {
+    if (showThanksMessage) {
+      setTimeout(() => {
+        setShowThanksMessage(false);
+      }, [5000]);
+    }
+  }, [showThanksMessage]);
 
   return (
     <div id="wrapper" className="wrapper">
@@ -193,6 +196,12 @@ const Page = () => {
               />
             </Popup>
           )}
+          {showThanksMessage && (
+            <Popup>
+              <ThanksMessage />
+            </Popup>
+          )}
+
           {showChangeServer && (
             <Popup>
               <ChangeServer
@@ -220,7 +229,7 @@ const Page = () => {
               <Chat toggleChat={toggleChat} />
             </div>
           )} */}
-          <WatchNavigation page={"Watch"} />
+          {/* <WatchNavigation page={"Watch"} /> */}
           <div className={classes["container"]}>
             {!parseTeamNames(pathname.slice(pathname.lastIndexOf("/") + 1))
               .secondTeamName ? (
@@ -249,9 +258,17 @@ const Page = () => {
                   width: { desktop: "106", tablet: "75", mobile: "54" },
                   height: { desktop: "110", tablet: "78", mobile: "54" },
                 }}
-                firstTeamImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.firstTeamLogo}`}
+                firstTeamImage={
+                  matchData?.firstTeamLogo !== null
+                    ? `${process.env.STATIC_SERVER}/img/matches/${matchData?.firstTeamLogo}`
+                    : "/svg/home/default-team-icon.svg"
+                }
                 firstTeamName={matchData?.firstTeamName}
-                seconteamImage={`${process.env.STATIC_SERVER}/img/matches/${matchData?.secondTeamLogo}`}
+                seconteamImage={
+                  matchData?.secondTeamLogo !== null
+                    ? `${process.env.STATIC_SERVER}/img/matches/${matchData?.secondTeamLogo}`
+                    : "/svg/home/default-team-icon.svg"
+                }
                 seconteamName={matchData?.secondTeamName}
                 date={getMatchDate(matchData?.eventDate)}
                 place={matchData?.eventStadium}
@@ -259,7 +276,8 @@ const Page = () => {
               />
             )}
             <div className="watch-video-wrapper">
-              <div className={classes["social-icons"]}>
+              <div className={classes["watch-video-top"]}>
+                <WatchNavigation page={"channels"} />
                 <SocialIcons
                   shareUrl={shareUrl}
                   quote={quote}
