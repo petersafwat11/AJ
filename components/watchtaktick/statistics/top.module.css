@@ -1,0 +1,46 @@
+.contianer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 29.4rem;
+  height: 2.9rem;
+  border-radius: 0.45rem;
+  background: rgba(13, 19, 23, 0.99);
+  padding: 0 2.4rem;
+}
+.team-first,
+.team-last {
+  display: flex;
+  align-items: center;
+  gap: 0.656rem;
+}
+.team-first-name,
+.team-last-name {
+  color: #727272;
+  text-align: center;
+  font-family: RobotoBold;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.team-first span,
+.team-last span {
+  width: 0.56rem;
+  height: 0.56rem;
+  border-radius: 50%;
+}
+.team-first span {
+  background-color: #47b2ff;
+}
+.team-last span {
+  background-color: #ffe923;
+}
+.middle {
+  color: #727272;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 0.94rem;
+  font-weight: 700;
+  line-height: normal;
+}

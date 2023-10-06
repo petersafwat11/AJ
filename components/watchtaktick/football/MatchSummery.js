@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import GlobalHeader from "../globalHeader/GlobalHeader";
 import Statistics from "../statistics/Statistics";
 import Lineups from "./Lineups";
-import Subsitutes from "./Subsitutes";
+import Events from "./events/Events";
 import classes from "./matchSummery.module.css";
 const MatchSummery = () => {
   const [category, setCategory] = useState("LINEUPS");
@@ -15,22 +15,24 @@ const MatchSummery = () => {
       <GlobalHeader
         category={category}
         changeCategory={changeCategory}
-        categories={["LINEUPS", "STATS", "SUBSITUTES"]}
+        categories={["LINEUPS", "STATS", "EVENTS"]}
       />
       {category === "LINEUPS" ? (
         <Lineups />
-      ) : category === "SUBSITUTES" ? (
-        <Subsitutes />
+      ) : category === "EVENTS" ? (
+        <Events />
       ) : (
         <Statistics
           optionsOne={[
-            "SHOTS",
-            "SHOTS ON TARGET",
-            "POSSESSION",
-            "PASSES",
+            "FIELD GOALS",
+            "3 POINTERS %",
+            "FREE THROWS%",
+            "TOTAL REBOUNDS",
+            "ASSISTS",
+            "BLOCKS",
+            "STEALS",
+            "TURNOVERS",
             "FOULS",
-            "OFFSIDE",
-            "CORNER",
           ]}
           optionsTwo={[]}
         />

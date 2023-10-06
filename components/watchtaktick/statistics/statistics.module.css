@@ -1,139 +1,27 @@
 .container {
   width: 27.9rem;
 }
-.stats {
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 2px;
+.body {
+  width: 28.8rem;
+  border-radius: 0.45rem;
+  background: rgba(28, 38, 46, 0.95);
+  padding: 1.6rem 1.6rem 2.06rem;
 }
-.stats-item,
-.stats-item-zero-state {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 0.703rem;
-  height: 4.6rem;
-  width: 100%;
-  border-radius: 0.56rem;
-  padding: 0 1.125rem;
-  transition: all 0.3s ease-in-out;
-}
-.stats-item:hover,
-.stats-item-zero-state:hover {
-  background: #222627;
-}
-.item-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-.item-top * {
-  font-size: 0.9rem;
-  font-weight: 700;
-}
-.item-top .first {
-  color: #01bcf1;
-  font-family: "Roboto";
-}
-.item-top .middle {
-  font-family: RobotoBold;
+.devider {
+  display: block;
+  margin: auto;
+  width: 2.3rem;
+  height: 1.26rem;
+  background-color: #03a1cd;
 }
 
-.item-top .last {
-  color: #ff4747;
-  font-family: "Roboto";
-}
-.stats-item-zero-state .first,
-.stats-item-zero-state .last {
-  color: #414141;
-}
-
-.progress-bar,
-.progress-bar-zero {
-  width: 100%;
-  height: 7.5px;
-  border-radius: 7.5px;
-  background: #ff4747;
-  position: relative;
-}
-.progress-bar span {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  border-radius: 7.5px;
-  z-index: 2;
-  background: #01bcf1;
-}
-.progress-bar-zero {
-  background: #414141;
-}
-.progress-bar-zero span {
-  background: #414141;
-}
 @media (max-width: 56.25rem) {
   .container {
     width: 22.8125rem;
-  }
-  .stats-item,
-  .stats-item-zero-state {
-    gap: 0.625rem;
-    height: 3.625rem;
-    width: 100%;
-    border-radius: 0.5rem;
-  }
-  .item-top .first,
-  .stats-item .last {
-    font-size: 0.745rem;
-  }
-  .item-top .middle {
-    font-size: 0.88rem;
-  }
-  .progress-bar,
-  .progress-bar-zero {
-    height: 6px;
-    border-radius: 10px;
   }
 }
 @media (max-width: 25rem) {
   .container {
     width: 21.56rem;
   }
-  .stats-item,
-  .stats-item-zero-state {
-    gap: 0.45rem;
-    height: 3.3rem;
-    border-radius: 0.375rem;
-    padding: 0 1rem;
-  }
-  .item-top .first,
-  .stats-item .last {
-    font-size: 13.5px;
-  }
-  .item-top .middle {
-    font-size: 15.5px;
-  }
 }
-/* @media (max-width: 23.125rem) {
-  .container {
-    width: 21.4375rem;
-  }
-  .stats-item,
-  .stats-item-zero-state {
-    gap: 0.45rem;
-    border-radius: 0.375rem;
-  }
-  .item-top .first,
-  .stats-item .last {
-    font-size: 0.812rem;
-  }
-  .item-top .middle {
-    font-size: 0.935rem;
-  }
-} */

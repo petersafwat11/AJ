@@ -46,7 +46,7 @@ const Wrapper = ({ data }) => {
         </div>
       </div>
       <Paginations
-        results={30}
+        results={data?.results}
         page={
           page && Number(page) <= data?.results
             ? Number(page)
