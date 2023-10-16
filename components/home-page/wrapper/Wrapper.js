@@ -1,4 +1,5 @@
 "use client";
+import { getProviders } from "next-auth/react";
 import Image from "next/image";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { getData } from "../../../utils/dashboardTablePagesFunctions";
@@ -29,6 +30,9 @@ const Wrapper = ({ data }) => {
       const response = await getData("sports", query);
       setHotMatches(response?.hotMatches);
       console.log("query", response?.data?.data);
+      const providers = await getProviders();
+      console.log("Providers", providers);
+
       if (cause !== "showMore") {
         setOtherMatches({
           total: response?.results,
@@ -69,6 +73,7 @@ const Wrapper = ({ data }) => {
   const showMoreHandeler = async () => {
     const num = paginationNum;
     setPaginationNum(paginationNum + 1);
+
     await fetchNewData(
       {
         limit: 10,

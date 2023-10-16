@@ -1,11 +1,12 @@
 "use client";
 import Image from "next/image";
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer, useState } from "react";
+import { getDateDifference } from "../../../utils/convertDateFormat";
+import PageTitle from "../../pageTitle/PageTitle";
 import Popup from "../../popupWrapper/Popup";
 import FollowUS from "../followUS/FollowUS";
 import StepsWrapper from "../stepsWrapper/StepsWrapper";
 import classes from "./wrapper.module.css";
-import PageTitle from "../../pageTitle/PageTitle";
 
 const followUsReducer = (state, action) => {
   console.log("state", state);
@@ -19,7 +20,7 @@ const followUsReducer = (state, action) => {
   } else if (action.type === "METHOD-DATA") {
     return { ...state, methodData: action.value };
   } else if (action.type === "USER-INFO") {
-    return { ...state, indicatorsNum: action.value };
+    return { ...state, userInfo: action.value };
   } else {
     return {
       ...state,
@@ -28,16 +29,20 @@ const followUsReducer = (state, action) => {
   }
 };
 
-const Wrapper = ({ socialLinks }) => {
+const Wrapper = ({ entries, eventData }) => {
+  console.log(entries);
   const [followUs, dispatchAction] = useReducer(followUsReducer, {
     display: false,
     indicatorsNum: null,
     methodData: null,
     userInfo: { fullName: "", email: "" },
   });
-  const sendUserData = async (e) => {
-    e.preventDefault();
-  };
+  const [timeLeft, setTimeLeft] = useState({ num: 0, unit: "Days" });
+  const { endTime } = eventData;
+  useEffect(() => {
+    const timeLeft = getDateDifference(endTime);
+    setTimeLeft(timeLeft);
+  }, [endTime]);
   return (
     <main className={classes["give-away"]}>
       {followUs.display && (
@@ -48,26 +53,26 @@ const Wrapper = ({ socialLinks }) => {
 
       <div className={classes["container"]}>
         <PageTitle title={"GIVEAWAY"} />
-
         <section className={classes["give-away-wrapper"]}>
           <div className={classes["give-away-details"]}>
             <div className={classes["give-away-details-item"]}>
-              <p>0</p>
+              <p>{entries?.userEntry}</p>
               <p>Your Entries</p>
             </div>
             <div className={classes["give-away-details-item"]}>
-              <p>5402 </p>
+              <p>{entries?.totalEntries} </p>
               <p>Total Entries</p>
             </div>
             <div className={classes["give-away-details-item"]}>
-              <p>30 </p>
-              <p>Days Left</p>
+              <p>{timeLeft?.num} </p>
+              <p>{timeLeft?.unit} Left</p>
             </div>
           </div>
           <div className={classes["give-away-compition"]}>
             <span className={classes["devider"]}></span>
             <h2 className={classes["give-away-heading-2"]}>
-              WIN A <span>FREE</span> PLAY STATION 5 DIGITAL EDITION
+              {/* WIN A <span>FREE</span> PLAY STATION 5 DIGITAL EDITION */}
+              {eventData?.title}
             </h2>
 
             <div
@@ -76,20 +81,22 @@ const Wrapper = ({ socialLinks }) => {
             >
               <Image
                 className={classes["give-away-center-image"]}
-                src="/svg/give-away/playStation.svg"
+                src={`${process.env.STATIC_SERVER}/img/giveaway/${eventData?.prizeImage}`}
+                crossOrigin="anonymous"
                 alt="playstation"
                 width={160}
                 height={190}
               />
               <p className={classes["give-away-para"]}>
-                Enter using the below methods for a chance to win a brand new
-                <span>PlayStation </span> 5
+                {/* Enter using the below methods for a chance to win a brand new
+                <span>PlayStation </span> 5 */}
+                {eventData?.description}
               </p>
             </div>
           </div>
           <div className={classes["follow-us"]}>
             <FollowUS
-              //   joinUsOnWebsite={joinUsOnWebsite}
+              categoryEntries={entries?.categoryEntries}
               dispatchAction={dispatchAction}
               src={"/svg/give-away/id-badge.svg"}
               alt={"Id-Badge"}
@@ -97,10 +104,9 @@ const Wrapper = ({ socialLinks }) => {
               height={28}
               indicatorsNum={2}
               para={"Full name and email"}
-              num={"+1"}
             />
             <FollowUS
-              //   joinUsOnWebsite={joinUsOnWebsite}
+              categoryEntries={entries.categoryEntries}
               dispatchAction={dispatchAction}
               src={"/svg/give-away/mail.svg"}
               alt={"Mail"}
@@ -108,10 +114,9 @@ const Wrapper = ({ socialLinks }) => {
               height={28}
               indicatorsNum={2}
               para={"Join an Email Newsletter"}
-              num={"+1"}
             />
             <FollowUS
-              //   joinUsOnWebsite={joinUsOnWebsite}
+              categoryEntries={entries.categoryEntries}
               dispatchAction={dispatchAction}
               src={"/svg/give-away/telegram.svg"}
               alt={"Telegram"}
@@ -119,10 +124,9 @@ const Wrapper = ({ socialLinks }) => {
               width={28}
               height={28}
               para={"Join our Telegram Channel"}
-              num={"+3"}
             />
             <FollowUS
-              //   joinUsOnWebsite={joinUsOnWebsite}
+              categoryEntries={entries.categoryEntries}
               dispatchAction={dispatchAction}
               src={"/svg/give-away/twitter.svg"}
               alt={"Twitter"}
@@ -130,10 +134,9 @@ const Wrapper = ({ socialLinks }) => {
               width={28}
               height={28}
               para={"Follow us on Twitter"}
-              num={"+4"}
             />
             <FollowUS
-              //   joinUsOnWebsite={joinUsOnWebsite}
+              categoryEntries={entries.categoryEntries}
               dispatchAction={dispatchAction}
               src={"/svg/give-away/retweet.svg"}
               alt={"Retweet"}
@@ -141,7 +144,6 @@ const Wrapper = ({ socialLinks }) => {
               width={28}
               height={28}
               para={"Retweet us on Twitter"}
-              num={"+3"}
             />
           </div>
         </section>

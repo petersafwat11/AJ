@@ -29,7 +29,7 @@ const ChatTop = ({ contollChatRoom, toggleChat, chatRoomSelection }) => {
                 key={index}
                 className={classes[i == "العربية" ? "arabic" : "chat-room"]}
                 style={{
-                  background: chatRoomSelection === i ? "#0085aa" : "inherit",
+                  background: chatRoomSelection === i ? "#03A1CD" : "inherit",
                 }}
               >
                 {i}

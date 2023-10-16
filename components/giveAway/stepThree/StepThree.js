@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import classes from "./stepThree.module.css";
-const StepThree = () => {
+const StepThree = ({id}) => {
   return (
     <div className={classes["container"]}>
       <div className={classes["success"]}>
@@ -15,7 +15,7 @@ const StepThree = () => {
       </div>
       <div className={classes["body"]}>
         <h3 className={classes["success-id"]}>
-          Entry Ticket ID: <span>19112835 </span>{" "}
+          Entry Ticket ID: <span>{id} </span>{" "}
         </h3>
         <p className={classes["success-message"]}>
           You have successfully entered the giveaway! We will send you an email

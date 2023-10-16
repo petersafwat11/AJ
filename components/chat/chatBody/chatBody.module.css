@@ -1,151 +1,123 @@
 .chat-body {
   flex-grow: 1;
   width: 100%;
-  padding: 0.65rem 0.98rem 0 1.26rem;
+  padding: 1.78rem 0 1.26rem;
+}
+.messages {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 0.52rem;
+}
+
+.message {
   position: relative;
-}
-.message,
-.my-message {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.98rem;
   width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 1.5px;
-}
-.message-details,
-.my-message-details {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.7rem;
-  margin-left: 3.5rem;
-  margin-bottom: 1px;
-}
-.message-username,
-.my-message-username {
-  font-family: "Poppins";
-  font-weight: 500;
-  font-size: 0.75rem;
-  line-height: 1.25rem;
-}
-.my-message-time,
-.message-time {
-  font-family: "Poppins";
-  font-weight: 500;
-  font-size: 0.55rem;
-  line-height: 0.75rem;
-  color: rgba(255, 255, 255, 0.4);
-}
-.my-mention-user,
-.mention-user {
-  color: #03a1cd;
-  font-weight: 700;
-  font-family: "Poppins";
-  font-size: 0.75rem;
-  line-height: 1.125rem;
+  padding: 0.28rem 1.875rem 0.28rem 1.4rem;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
-.message-content,
-.my-message-content {
-  background: #292929;
-  border-radius: 0.28rem;
-  font-family: "Poppins";
-  font-weight: 400;
-  font-size: 0.75rem;
-  line-height: 1.125rem;
-  padding: 0.5rem 1rem;
-  display: inline;
+.message:hover {
+  background: #1c2730;
 }
-.mention-icon {
-  cursor: pointer;
-  color: rgba(255, 255, 255, 0.2);
-  font-size: 1rem;
-  transition: all 0.2s ease-out;
-  min-width: 1rem;
-}
-.mention-icon:hover {
-  color: #03a1cd;
-}
-.my-message {
-  justify-content: flex-end;
-}
-.my-message-details {
-  justify-content: flex-start;
-  margin-left: 0;
-}
-.my-message-username {
-  color: #ffffff;
-}
-.my-mention-user {
-  color: #e4e900;
-}
-.my-message-content {
-  background: #03a1cd;
-  color: white;
-  max-width: 15.6rem;
-}
-.my-message-wrapper {
+.user-image {
   display: flex;
   flex-direction: column;
-  margin-left: auto;
+  gap: 0.18rem;
+  align-items: center;
 }
-@media (max-width: 56.25rem) {
-  .chat-body {
-    flex-grow: 1;
-    padding: 0.17rem 0.7rem 0;
-    gap: 0.5rem;
-  }
+.you-text {
+  color: #03a1cd;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: normal;
+}
+.username {
+  color: #bf43aa;
+  font-family: "Poppins";
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: normal;
+}
+.message-data {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.28rem;
+}
+.message-text {
+  color: #fff;
+  font-family: "Poppins";
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.mentioned {
+  color: #e4e900;
+  font-family: "Poppins";
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: normal;
+  margin-right: 3px;
+}
+.replay-wrapper {
+  display: none;
+}
+.message:hover .replay-wrapper {
+  display: flex;
+  position: absolute;
+  top: -50%;
+  right: 1.65rem;
+  cursor: pointer;
+}
+.replay-icon-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.68rem;
+  height: 1.68rem;
+  background-color: #0f151b;
+  border-radius: 0.24rem;
+}
 
-  .message,
-  .my-message {
-    gap: 0.47rem;
-  }
-  .message-details,
-  .my-message-details {
-    gap: 0.3rem;
-    margin-left: 2.27rem;
-    margin-bottom: 1.5px;
-  }
-  .message-username,
-  .my-message-username {
-    font-size: 0.49rem;
-    line-height: 0.625rem;
-  }
-  .my-message-time,
-  .message-time {
-    font-size: 0.42rem;
-    line-height: 0.567rem;
-  }
-  .user-avatar {
-    height: 29px;
-    width: auto;
-  }
-
-  .my-mention-user,
-  .mention-user {
-    font-size: 0.5rem;
-    line-height: 0.75rem;
-  }
-  .message-content,
-  .my-message-content {
-    border-radius: 0.375rem;
-    font-size: 0.65rem;
-    line-height: 0.75rem;
-    padding: 0.3925rem 0.575rem;
-  }
-  .mention-icon {
-    font-size: 1.7rem;
-    min-width: 0.7rem;
-    margin-left: 3px;
-  }
-  .my-message-content {
-    max-width: 13.43rem;
-  }
-  .my-message-details {
-    margin-left: 0;
-  }
+.tooltip {
+  display: none;
+}
+.replay-wrapper:hover > .tooltip {
+  display: inline;
+  position: absolute;
+  top: -1.8rem;
+  left: -1.8rem;
+  z-index: 10;
+  color: #fff;
+  font-family: RobotoBold;
+  font-size: 0.63rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 0; /* 177.778% */
+  letter-spacing: 0.5px;
+  width: 5.2rem;
+  height: 1.4rem;
+  border-radius: 0.28rem;
+  background: #2b3134;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -8px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: #2b3134 transparent transparent transparent;
 }

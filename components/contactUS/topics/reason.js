@@ -4,7 +4,7 @@ const Topic = ({ topic, selectTopic, selectedTopic }) => {
   return (
     <p
       style={{
-        backgroundColor: selectedTopic === topic ? "#03a1cd" : "inherit",
+        backgroundColor: selectedTopic === topic ? "#03a1cd" : "",
       }}
       onClick={() => {
         selectTopic(topic);

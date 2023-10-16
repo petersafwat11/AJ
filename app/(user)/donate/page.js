@@ -1,7 +1,9 @@
 "use client";
-import Image from "next/image";
 import React, { useState } from "react";
+import Method from "../../../components/donate/Method/Method";
+import Input from "../../../components/donate/input/Input";
 import OtherPaymentMethod from "../../../components/donate/otherPaymentMethod/OtherPaymentMethod";
+import Top from "../../../components/donate/top/Top";
 import Marque from "../../../components/marque/Marque";
 import PageTitle from "../../../components/pageTitle/PageTitle";
 import Popup from "../../../components/popupWrapper/Popup";
@@ -57,110 +59,34 @@ const Donate = () => {
           <div className={classes["container"]}>
             <PageTitle title={"DONATE"} />
 
-            <div className={classes["donate-wrapper"]}>
-              <div className={classes["donate-options"]}>
-                <p
-                  onClick={() => {
-                    setDonationValue(1);
-                  }}
-                  className={classes["donate-option"]}
-                >
-                  $1
-                </p>
-                <p
-                  onClick={() => {
-                    setDonationValue(2);
-                  }}
-                  className={classes["donate-option"]}
-                >
-                  $2
-                </p>
-                <p
-                  onClick={() => {
-                    setDonationValue(3);
-                  }}
-                  className={classes["donate-option"]}
-                >
-                  $3
-                </p>
-                <p
-                  onClick={() => {
-                    setDonationValue(5);
-                  }}
-                  className={classes["donate-option"]}
-                >
-                  $5
-                </p>
-                <p
-                  onClick={() => {
-                    setDonationValue(10);
-                  }}
-                  className={classes["donate-option"]}
-                >
-                  $10
-                </p>
-                <p className={classes["donate-option"]}>Other Amount</p>
-              </div>
-              <div className={classes["input-wrapper"]}>
-                {donationValue && <span>$</span>}
-                <input
-                  onChange={(e) => {
-                    setDonationValue(e.target.value);
-                  }}
-                  value={donationValue}
-                  placeholder="$"
-                  type="text"
-                  // style={{ paddingLeft: donationValue !== null ? "3rem" : "" }}
-                  className={classes["donate-input"]}
-                />
-              </div>
+            <div className={classes["donate-wrapper-first"]}>
+              <Top />
+              <Input />
+              <p className={classes["paragraph"]}>
+                We highly appreciate any donations and invest the funds into our{" "}
+                <br /> platform to provide a greater service to the fans
+              </p>
 
-              <div className={classes["pay-by-card"]}>PAY BY CARD</div>
-              <div className={classes["or"]}>OR</div>
-              <div className={classes["donation-methods"]}>
-                <div className={classes["paypal"]}>
-                  <Image
-                    src="/svg/donate/paypal.svg"
-                    alt="paypall"
-                    width="36"
-                    height="42"
-                  />
-                </div>
-                <div onClick={toggleBitcoin} className={classes["bitcoin"]}>
-                  <Image
-                    src="/svg/donate/bitcoin.svg"
-                    alt="bitcoin"
-                    width="29"
-                    height="36"
-                  />
-                </div>
-                <div className={classes["stripe"]}>
-                  <Image
-                    src="/svg/donate/stripe.svg"
-                    alt="stripe"
-                    width="87"
-                    height="39"
-                  />
-                </div>
-                <div onClick={toggleEthereum} className={classes["share"]}>
-                  <Image
-                    src="/svg/donate/ethereum.svg"
-                    alt="share"
-                    width="25"
-                    height="38"
-                  />
-                </div>
+              <div className={classes["donation-methods-first"]}>
+                <div className={classes["pay-by-card"]}>PAY BY CARD</div>
+                <div className={classes["or"]}>OR</div>
+
+                <Method name={"paypal"} width={28} height={32}/>
+                <Method name={"bitcoin"} width={23} height={30}/>
+                <Method name={"stripe"} width={72} height={30}/>
+                <Method name={"share"} width={20} height={34}/>
               </div>
             </div>
-            <p className={classes["paragraph"]}>
-              We highly appreciate any donations and invest the <br /> funds
-              into our platform to provide a greater service to the fans
-            </p>
+            <span className={classes["devider"]}></span>
+
+            <div className={classes["donate-wrapper-second"]}>
+              <div className={classes["donation-methods-second"]}>
+                <Method name={"goggle-pay"} width={32} height={32} />
+                <Method name={"apple-pay"} width={32} height={38}/>
+              </div>
+            </div>
           </div>
         </main>
-        {/* <div className="center-under-dev">
-          <UnderDevelopment />
-        </div> */}
       </div>
     </div>
   );

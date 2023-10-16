@@ -1,68 +1,75 @@
+import Image from "next/image";
 import React from "react";
-import { GoMention } from "react-icons/go";
-import TagUsers from "../tagUsers/TagUsers";
 import classes from "./chatBody.module.css";
-
 const ChatBody = ({ messages, getSubString, setMentionSomeone }) => {
   return (
     <div className={classes["chat-body"]}>
-      {messages.map((message, index) =>
-        message.usename.split(" ")[0] === "You" ? (
-          <div className={classes["my-message-wrapper"]} key={index}>
-            <div className={classes["my-message-details"]}>
-              <p className={classes["my-message-username"]}>
-                {message.usename}
-              </p>
-              <p className={classes["my-message-time"]}>{message.time}</p>
-            </div>
-            <div className={classes["my-message"]}>
-              <div className={classes["my-message-content"]}>
-                {message.message.charAt(0) === "@" && (
-                  <span className={classes["my-mention-user"]}>
-                    {message.message.split(" ")[0]}
-                  </span>
-                )}
-                {getSubString(message.message)}
-              </div>
-              <img
-                className={classes["user-avatar"]}
-                src={message.avatarSrc}
-                alt="user-avatar"
-                width="45"
-              />
-            </div>
+      <div className={classes["messages"]}>
+        <div className={classes["message"]}>
+          <div className={classes["user-image"]}>
+            <Image
+              className={classes["user-icon"]}
+              src="/svg/chat/user-avatar.svg"
+              alt="avatar"
+              width="26"
+              height="26"
+            />
           </div>
-        ) : (
-          <div className={classes["my-message-wrapper"]} key={index}>
-            <div className={classes["message-details"]}>
-              <p className={classes["message-username"]}>{message.usename}</p>
-              <p className={classes["message-time"]}>{message.time}</p>
-            </div>
-            <div className={classes["message"]}>
-              <img
-                className={classes["user-avatar"]}
-                src={message.avatarSrc}
-                alt="user-avatar"
-                width="45"
-              />
-              <div className={classes["message-content"]}>
-                {message.message.charAt(0) === "@" && (
-                  <span className={classes["mention-user"]}>
-                    {message.message.split(" ")[0]}
-                  </span>
-                )}
-                {getSubString(message.message)}
-              </div>
-              <GoMention
-                onClick={() => {
-                  setMentionSomeone("@" + message.usename + " ");
-                }}
-                className={classes["mention-icon"]}
-              />
-            </div>
+          <div className={classes["message-data"]}>
+            <h3 className={classes["username"]}>messiog10</h3>
+            <p className={classes["message-text"]}>
+              <span className={classes["mentioned"]}></span>
+              Really excited for the match !!!!!
+            </p>
           </div>
-        )
-      )}
+          <div className={classes["replay-wrapper"]}>
+            <div className={classes["replay-icon-div"]}>
+              <Image
+                className={classes["replay-icon"]}
+                src="/svg/chat/replay.svg"
+                alt="replay"
+                width="12"
+                height="12"
+              />
+            </div>
+
+            <span className={classes["tooltip"]}>Reply to user</span>
+          </div>
+        </div>
+        <div className={classes["message"]}>
+          <div className={classes["user-image"]}>
+            <Image
+              className={classes["user-icon"]}
+              src="/svg/chat/user-avatar.svg"
+              alt="avatar"
+              width="26"
+              height="26"
+            />
+            <p className={classes["you-text"]}>You</p>
+          </div>
+
+          <div className={classes["message-data"]}>
+            {/* <h3 className={classes["username"]}>messiog10</h3> */}
+            <p className={classes["message-text"]}>
+              <span className={classes["mentioned"]}> @messiog10</span>
+              Really excited for the match !!!!!
+            </p>
+          </div>
+          <div className={classes["replay-wrapper"]}>
+            <div className={classes["replay-icon-div"]}>
+              <Image
+                className={classes["replay-icon"]}
+                src="/svg/chat/replay.svg"
+                alt="replay"
+                width="12"
+                height="12"
+              />
+            </div>
+
+            <span className={classes["tooltip"]}>Reply to user</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

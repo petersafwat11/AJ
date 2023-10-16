@@ -54,7 +54,7 @@ const Bottom = () => {
         <div className={classes["sec-row"]}>
           <div className={classes["elem"]}>
             <Image
-              className={classes["arrow-up"]}
+              className={classes["goal"]}
               src="/svg/watch/football/goal.svg"
               alt="arrow-up"
               width="22"
@@ -65,7 +65,7 @@ const Bottom = () => {
           </div>
           <div className={classes["elem"]}>
             <Image
-              className={classes["arrow-up"]}
+              className={classes["penalty"]}
               src="/svg/watch/football/penalty.svg"
               alt="arrow-up"
               width="22"
@@ -76,9 +76,9 @@ const Bottom = () => {
           </div>
           <div className={classes["elem"]}>
             <Image
-              className={classes["arrow-up"]}
+              className={classes["own-goal"]}
               src="/svg/watch/football/own-goal.svg"
-              alt="arrow-up"
+              alt="own goal"
               width="22"
               height="22"
             />

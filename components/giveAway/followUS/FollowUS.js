@@ -7,10 +7,11 @@ const FollowUS = ({
   width,
   height,
   para,
-  num,
   dispatchAction,
   indicatorsNum,
+  categoryEntries,
 }) => {
+  const num = categoryEntries?.find((item) => item._id === alt)?.num;
   return (
     <div
       onClick={() => {
@@ -34,7 +35,7 @@ const FollowUS = ({
         height={height}
       />
       <p className={classes["follow-us-method-para"]}>{para}</p>
-      <p className={classes["follow-us-method-num"]}>{num}</p>
+      <p className={classes["follow-us-method-num"]}> {num ? `+${num}` : 0}</p>
     </div>
   );
 };

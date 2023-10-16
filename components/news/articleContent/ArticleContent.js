@@ -20,8 +20,8 @@ const ArticleContent = ({ title, subNews }) => {
           <span>Posted by AJ Sports Admin</span>
         </div>
       </div>
-      {subNews.length > 0 &&
-        subNews.map((item, index) => (
+      {subNews?.length > 0 &&
+        subNews?.map((item, index) => (
           <div
             style={{
               background: (index + 1) % 2 == 0 ? "#182228" : "inherit",

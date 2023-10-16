@@ -28,12 +28,6 @@ const Topics = ({ topic, dispatchData }) => {
               selectTopic={selectTopic}
             />
 
-            // <p
-            //   key={index}
-            //   className={classes["topic-option"]}
-            // >
-            //   {item}
-            // </p>
           ))}
         </div>
         <div className={classes["topics-options-second"]}>

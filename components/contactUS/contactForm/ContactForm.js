@@ -68,10 +68,6 @@ const ContactForm = () => {
       );
       dispatchData({ type: "RESET" });
       toggleThanksMessage();
-      // notify(
-      //   "Thank you for contacting us! We will get back to you soon.",
-      //   "success"
-      // );
 
       console.log("response", response);
     } catch (error) {
@@ -79,7 +75,6 @@ const ContactForm = () => {
         Object.values(error.response.data.error.errors)[0].message,
         "error"
       );
-
       console.log("error-here", error);
     }
   };

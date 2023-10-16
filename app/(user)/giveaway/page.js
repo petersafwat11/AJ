@@ -1,11 +1,15 @@
 import React from "react";
+import Wrapper from "../../../components/giveAway/wrapper/Wrapper";
 import Marque from "../../../components/marque/Marque";
 import TopLayout from "../../../components/topLayout/TopLayout";
-import UnderDevelopment from "../../../components/underDevelopment/page/UnderDevelopment";
 import { getData } from "../../../utils/dashboardTablePagesFunctions";
-import Wrapper from "../../../components/giveAway/wrapper/Wrapper";
 const GiveAway = async () => {
-  const socialLinks = await getData("links", { fields: "social" });
+  const response = await getData("giveaway/event");
+  const entries = await getData("giveaway/eventEntries", {
+    email: "psafwat16@gmail.com",
+  });
+  console.log(entries?.data);
+
   return (
     <div className="wrapper">
       <TopLayout />
@@ -15,7 +19,7 @@ const GiveAway = async () => {
           <UnderDevelopment />
         </div>
  */}
-        <Wrapper socialLinks={socialLinks.data.data[0].social}/>
+        <Wrapper eventData={response?.data?.data} entries={entries?.data} />
       </div>
     </div>
   );

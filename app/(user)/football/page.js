@@ -48,10 +48,6 @@ const Page = () => {
   return (
     <div className="wrapper">
       <TopLayout />
-      {/* <video autoPlay loop muted>
-        <source src="/video-background/1.mp4" type="video/mp4" />
-      </video>
- */}
       <div className="wrapper-2">
         <Marque />
 

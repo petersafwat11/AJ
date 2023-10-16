@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import classes from "./body.module.css";
+import Event from "./event/Event";
 const Body = () => {
   return (
     <div className={classes["container"]}>
@@ -28,6 +29,7 @@ const Body = () => {
           <p>Stamford Bridge</p>
         </div>
       </div>
+      <span className={classes["seperator"]}> </span>
       <div className={classes["content"]}>
         <Image
           className={classes["watch-icon"]}
@@ -37,12 +39,28 @@ const Body = () => {
           height="30"
         />
         <span className={classes["devider"]}></span>
+        <div className={classes["events"]}>
+          <Event eventType={"goal"} team={"first team"} />
+          <Event eventType={"red card"} team={"first team"} />
+          <Event eventType={"yellow card"} team={"second team"} />
+          <Event eventType={"substitute"} team={"second team"} />
+          <Event eventType={"penalty"} team={"second team"} />
+          <Event eventType={"var"} team={"second team"} />
+          <Event eventType={"own goal"} team={"second team"} />
+          <Event eventType={"goal"} team={"first team"} />
+          <Event eventType={"red card"} team={"first team"} />
+          <Event eventType={"yellow card"} team={"second team"} />
+          <Event eventType={"substitute"} team={"second team"} />
+          <Event eventType={"penalty"} team={"second team"} />
+          <Event eventType={"var"} team={"second team"} />
+          <Event eventType={"own goal"} team={"second team"} />
+        </div>
         <Image
           className={classes["whistle-icon"]}
           src="/svg/watch/football/whistle.svg"
           alt="whistle"
-          width="32"
-          height="32"
+          width="40"
+          height="40"
         />
       </div>
     </div>

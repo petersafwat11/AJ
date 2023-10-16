@@ -19,9 +19,14 @@
   .container {
     width: 22.8125rem;
   }
+  .body {
+    width: 100%;
+    border-radius: 0.45rem;
+    padding: 1.06rem 1.06rem 1.5rem;
+  }
 }
 @media (max-width: 25rem) {
   .container {
-    width: 21.56rem;
+    width: 21.8rem;
   }
 }

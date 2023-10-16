@@ -1,7 +1,12 @@
 "use client";
 import React from "react";
 import classes from "./stepOne.module.css";
-const StepOne = ({ indicatorsNum, dispatchAction, userInfo }) => {
+const StepOne = ({
+  errMessage,
+  handleStepChange,
+  dispatchAction,
+  userInfo,
+}) => {
   return (
     <div className={classes["container"]}>
       <div className={classes["body"]}>
@@ -47,13 +52,12 @@ const StepOne = ({ indicatorsNum, dispatchAction, userInfo }) => {
           Please enter the details accurately as the winner will be contacted
           via email.
         </p>
+        {errMessage.length > 0 && (
+          <p className={classes["err-message"]}>{errMessage} </p>
+        )}
         <button
           onClick={() => {
-            if (indicatorsNum === 3) {
-              dispatchAction({ type: "STEPS", value: 2 });
-            } else {
-              dispatchAction({ type: "STEPS", value: 3 });
-            }
+            handleStepChange(2);
           }}
           className={classes["next-button"]}
         >

@@ -11,7 +11,6 @@ const TopIndecator = ({ indicatorsNum, curState, handleStepChange }) => {
         <span
           onClick={() => {
             handleStepChange(item);
-            console.log("item", item);
           }}
           key={item * Math.random()}
           className={

@@ -117,3 +117,15 @@ export const determineLive = (dateString) => {
   // Compare the two dates
   return now.getTime() >= date.getTime();
 };
+export const getDateDifference = (dateString) => {
+  const date = new Date(dateString);
+  const now = new Date();
+  const timeDifference = now.getTime() - date.getTime();
+  const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+  if (daysDifference > 0) {
+    return { num: daysDifference, unit: "Days" };
+  } else {
+    const hoursDifference = Math.floor(timeDifference / (1000 * 60 * 60));
+    return { num: hoursDifference, unit: "Hours" };
+  }
+};

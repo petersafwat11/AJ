@@ -14,10 +14,13 @@ const TagUsers = ({ setMentionSomeone, controlShowingUsers }) => {
             "championsleague208",
             "championslue208",
             "championsleague20jsjsjjjj8",
+            "championsleague208",
+            "championslue208",
+            "championsleague20jsjsjjjj8",
           ].map((user, index) => (
             <p
               onClick={(e) => {
-                setMentionSomeone( user + " ");
+                setMentionSomeone(user + " ");
                 controlShowingUsers();
               }}
               key={index}

@@ -9,7 +9,6 @@ const Page = async () => {
     limit: 8,
     mode: "Visible",
   });
-  // delete channelsServer.status;
   return (
     <div className="wrapper">
       <TopLayout />

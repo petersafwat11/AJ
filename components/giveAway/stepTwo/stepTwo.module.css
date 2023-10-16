@@ -74,6 +74,8 @@
   color: white;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+
+  
 }
 .join-button:hover {
   background: rgba(1, 189, 241, 0.3);

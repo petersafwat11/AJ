@@ -1,7 +1,19 @@
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import React from "react";
+
+import { TwitterShareButton } from "react-share";
 import classes from "./stepTwo.module.css";
-const StepTwo = ({ joinWebsiteGroup }) => {
+const StepTwo = ({ joinWebsiteGroup, allSocial, sendUserData }) => {
+  const relatedLink =
+    joinWebsiteGroup.text === "Telegram"
+      ? allSocial?.telegram
+      : allSocial?.twitter;
+  console.log("related link", relatedLink, joinWebsiteGroup.text, allSocial);
+  const pathname = usePathname();
+  const shareUrl = `${process.env.FRONTEND_SERVER}${pathname}`;
+  const quote = "Check out this awesome content!";
+
   return (
     <div className={classes["container"]}>
       <div className={classes["body"]}>
@@ -38,11 +50,32 @@ const StepTwo = ({ joinWebsiteGroup }) => {
         )}
 
         <div className={classes["join"]}>
-          <button onClick={() => {}} className={classes["join-button"]}>
-            {joinWebsiteGroup.text == "Retweet"
-              ? joinWebsiteGroup.text
-              : "Join " + joinWebsiteGroup.text}
-          </button>
+          {joinWebsiteGroup.text === "Retweet" ? (
+            <TwitterShareButton url={shareUrl} title={quote}>
+              <p
+                className={classes["join-button"]}
+                onClick={() => {
+                  sendUserData(3);
+                }}
+              >
+                {" "}
+                Retweet
+              </p>
+            </TwitterShareButton>
+          ) : (
+            <a
+              onClick={() => {
+                sendUserData(3);
+              }}
+              href={relatedLink}
+              target="_blank"
+              className={classes["join-button"]}
+              rel="noreferrer"
+            >
+              Join {joinWebsiteGroup.text}
+            </a>
+          )}
+
           <span className={classes["loading"]}>
             <span></span>
           </span>

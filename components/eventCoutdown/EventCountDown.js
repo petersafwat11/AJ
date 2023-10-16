@@ -9,8 +9,8 @@ const EventCountDown = ({ remainingTime }) => {
         className={classes["logo"]}
         src="/svg/watch/event-will-start/logo.svg"
         alt="logo"
-        width="78"
-        height="56"
+        width="111"
+        height="67"
       />
       <div className={classes["text-wrapper"]}>
         <p className={classes["text"]}>The event will start in </p>

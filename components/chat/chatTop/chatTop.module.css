@@ -6,7 +6,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
 }
 
 .chat-top-text {
@@ -15,8 +14,21 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.35rem;
+  font-family: RobotoSemiBold;
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: normal;
   position: relative;
+  width: 7.875rem;
+  padding: 3px;
+  border-top-right-radius: 4.5px;
+  border-top-left-radius: 4.5px;
+}
+
+.chat-top-text:hover {
+  background: #1182a1;
 }
 .chat-top-text:hover > .chat-rooms {
   display: flex;
@@ -34,9 +46,9 @@
   display: none;
   position: absolute;
   top: 100%;
-  left: 50%;
-  margin-left: -3.97rem;
-  background-color: #03a1cd;
+  left: 0;
+  /* margin-left: -3.97rem; */
+  background: #1182a1;
   width: 7.875rem;
   z-index: 10;
   border-radius: 4.5px;
@@ -60,11 +72,12 @@
   height: 1.78rem;
   display: flex;
   align-items: center;
-  padding-left: 0.65rem;
-  font-family: "Poppins";
+  padding: 0 0.65rem;
+  color: #fff;
+  font-family: RobotoRegular;
+  font-size: 0.75rem;
   font-weight: 500;
-  font-size: 0.73rem;
-  line-height: 0.9rem;
+  line-height: normal;
   cursor: pointer;
   border-radius: 3px;
 }
@@ -73,7 +86,7 @@
 }
 .chat-room:hover,
 .arabic:hover {
-  background-color: #4bb7d4;
+  background: #03a1cd !important;
 }
 
 .chat-top-extend,

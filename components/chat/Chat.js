@@ -60,10 +60,6 @@ const Chat = ({ toggleChat }) => {
   const rulesVisability = () => {
     setShowRules(false);
   };
-  let search;
-  if (document && showEmojiesAndGifs) {
-    search = document.getElementsByClassName("relative flex-grow");
-  }
   const displayEmojisAndGifs = () => {
     setShowEmojiesAndGifs(!showEmojiesAndGifs);
   };
@@ -81,7 +77,7 @@ const Chat = ({ toggleChat }) => {
   };
   return (
     <div className={classes["chat"]}>
-      {true && <Poll />}
+      {/* {true && <Poll />} */}
       {showRules && <ChatRules rulesVisability={rulesVisability} />}
       {showUserInfo && (
         <div className={classes["chat-info"]}>

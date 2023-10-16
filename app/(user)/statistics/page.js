@@ -1,10 +1,11 @@
+import axios from "axios";
 import React from "react";
-import LeagueMenu from "../../../components/leage/League";
 import Marque from "../../../components/marque/Marque";
 import Header from "../../../components/statistics/header/Header";
+import LeagueMenu from "../../../components/statistics/leage/League";
 import TopLayout from "../../../components/topLayout/TopLayout";
 import classes from "./statistics.module.css";
-const Statistics = () => {
+const Statistics = async () => {
   return (
     <div className="wrapper">
       <TopLayout />
