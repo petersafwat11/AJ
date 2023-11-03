@@ -29,6 +29,7 @@
 
 .chat-top-text:hover {
   background: #1182a1;
+  color: rgba(255, 255, 255, 0.4);
 }
 .chat-top-text:hover > .chat-rooms {
   display: flex;
@@ -115,12 +116,13 @@
     font-size: 0.8rem;
     line-height: 0.8rem;
     gap: 0.25rem;
+    width: 7.3rem;
   }
   .chat-rooms {
-    margin-left: -4rem;
+    /* margin-left: -4rem; */
     padding: 6px;
     width: 7.3rem;
-    top: 128%;
+    top: 103%;
   }
   .chat-room,
   .arabic {

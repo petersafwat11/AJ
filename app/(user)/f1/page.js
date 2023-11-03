@@ -17,7 +17,7 @@ import Popup from "../../../components/popupWrapper/Popup";
 import ProtonVpn from "../../../components/protonVpn/ProtonVpn";
 import TopLayout from "../../../components/topLayout/TopLayout";
 import PlayerContainer from "../../../components/video/VideoJs";
-import MatchSummery from "../../../components/watchtaktick/f1/MatchSummery";
+import MatchSummery from "../../../components/watchtaktick/football/MatchSummery";
 import classes from "./f1.module.css";
 
 const Page = () => {

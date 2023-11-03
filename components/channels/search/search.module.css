@@ -19,7 +19,8 @@
 }
 .search-icon {
   position: absolute;
-  top: 10.5px;
+  top: 50%;
+  transform: translateY(-50%);
   left: 12px;
 }
 @media (max-width: 56.25rem) {
@@ -37,14 +38,13 @@
     padding-left: 1.75rem;
     width: min(26rem, 95vw);
 
-    height: 1.8rem;
-    border-radius: 0.65rem;
-    font-size: 0.55rem;
+    height: 2.8rem;
+    border-radius: 0.35rem;
+    font-size: 0.95rem;
     margin-left: 4px;
     line-height: 1.25rem;
   }
   .search-icon {
-    top: 9px;
     left: 14px;
   }
 }

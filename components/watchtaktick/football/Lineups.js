@@ -3,6 +3,7 @@ import MatchDots from "../matchDots/MatchDots";
 import AlternativePlayers from "./AlternativePlayers";
 import Staduim from "./Staduim";
 import classes from "./lineups.module.css";
+import Plan from "./lineups/plan/Plan";
 const Lineups = () => {
   const [option, setOption] = useState(1);
   const changeCategory = (option) => {
@@ -11,7 +12,14 @@ const Lineups = () => {
 
   return (
     <div className={classes["container"]}>
-      <Staduim />
+      <div className={classes["stad"]}>
+        <Plan top={true} />
+        <span className={classes["devider"]}></span>
+        <Staduim />
+        <span className={classes["devider"]}></span>
+
+        <Plan />
+      </div>
       <div className={classes["alternative-players"]}>
         <AlternativePlayers />
       </div>

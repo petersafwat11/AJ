@@ -7,7 +7,6 @@ import "slick-carousel/slick/slick.css";
 import { NextArrow, PrevArrow } from "./Arrows";
 import classes from "./serverButtons.module.css";
 const ServersButtons = ({ playingServerLang, servers, handleServerClicks }) => {
-  console.log(servers, "server buttons");
   const [currentSlide, setCurrentSlide] = useState(0);
   const settings = {
     dots: true,

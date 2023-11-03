@@ -43,7 +43,16 @@
   display: flex;
   align-items: center;
   margin: 7px 23px;
+  position: sticky;
+  top: 0px;
+  background: linear-gradient(
+    to right bottom,
+    rgba(13, 19, 23),
+    rgba(13, 19, 23)
+  );
+  z-index: 10;
 }
+
 .logo-wrapper {
   display: flex;
   justify-content: center;
@@ -75,8 +84,27 @@
 .menu-mobile-lang-english > *:hover {
   color: #03a1cd;
 }
+.user-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  margin: 1.5rem auto 0.25rem;
+}
+.user-icon {
+  border-radius: 0.56rem;
+}
+.settings-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 51px;
+  height: 41px;
+  border-radius: 0.56rem;
+  background: #182128;
+}
 .menu-mobile-pages-links {
-  padding-top: 0.5rem;
+  padding: 1rem 0;
 }
 
 .menu-mobile-page-link {
@@ -89,7 +117,7 @@
   margin: 0 auto;
   padding: 14.5px 10px;
   border-radius: 6px;
-  width: 91%;
+  width: 89%;
 }
 .menu-mobile-page-link:hover {
   background: #131b20;
@@ -97,7 +125,7 @@
 .devider {
   display: block;
   width: 91%;
-  height: 0.8px;
+  height: 0.2px;
   margin: 5px auto;
   background-color: #475254;
 }
@@ -115,6 +143,18 @@
   padding: 0.44rem 4.19rem;
   background-color: #131b20;
   border-radius: 1.21rem;
+  position: relative;
+}
+.buttons-active {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  height: 2px;
+  background: #03a1cd;
+  border-radius: 100px 100px 0px 0px;
 }
 .social {
   display: flex;
@@ -142,7 +182,7 @@
   align-items: flex-start;
   flex-direction: column;
   gap: 0.25rem;
-  margin-top: 1.9rem;
+  margin-top: 2.9rem;
   width: calc(100% - 2.7rem);
 }
 
@@ -150,7 +190,7 @@
   display: flex;
   align-items: center;
   gap: 1.125rem;
-  margin: 0 1.25rem;
+  margin: 0 1.2rem;
   padding: 0.5rem;
   border-radius: 6px;
   width: 100%;

@@ -1,18 +1,18 @@
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
 
-const connection = {};
+// const connection = {};
 
-const dbConnect = async () => {
-  if (connection.isConnected) {
-    return;
-  }
+// const dbConnect = async () => {
+//   if (connection.isConnected) {
+//     return;
+//   }
 
-  const db = await mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+//   const db = await mongoose.connect(process.env.MONGODB_URI, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   });
 
-  connection.isConnected = db.connections[0].readyState;
-};
+//   connection.isConnected = db.connections[0].readyState;
+// };
 
-export default dbConnect;
+// export default dbConnect;

@@ -13,7 +13,6 @@ const Page = async () => {
     sportCategory: "football",
     sort: { eventDate: 1 },
   });
-  console.log("currentEvents", currentEvents.data.data);
   return (
     <div className="wrapper">
       <TopLayout />

@@ -171,12 +171,12 @@
     text-align: center;
   }
   .title {
-    font-size: 1.415rem;
+    font-size: 1.62rem;
     line-height: 1.75rem;
     align-self: center;
   }
   .para {
-    font-size: 0.687rem;
+    font-size: 0.75rem;
     line-height: 1.25rem;
     max-width: 90%;
     margin: auto;
@@ -193,25 +193,25 @@
     justify-content: center;
   }
   .notify-input {
-    height: 40px;
+    height: 43px;
     padding: 0.4rem 1rem;
     font-size: 0.68rem;
-    width: 10.5rem;
+    width: 12.5rem;
   }
   .notify-button {
     margin-left: -13px;
     border-radius: 0.5rem;
     padding: 0;
-    font-size: 0.625rem;
-    height: 40px;
-    width: 71px;
+    font-size: 0.825rem;
+    height: 43px;
+    width: 87px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .news-letter-second-para {
     padding-left: 0;
-    font-size: 0.5rem;
+    font-size: 0.6rem;
     line-height: 0.85rem;
     text-align: center;
     width: 14.125rem;

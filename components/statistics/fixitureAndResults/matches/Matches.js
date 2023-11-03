@@ -16,14 +16,20 @@ export default Matches;
 export const Match = ({ type }) => {
   return (
     <div className={classes["match"]}>
-      <div className={classes["match-date"]}> 15:00</div>
-      <div className={classes["match-date-mobile"]}>17:30</div>
+      {type !== "result" ? (
+        <div className={classes["match-date"]}> 15:00</div>
+      ) : (
+        <div></div>
+      )}
+      {type !== "result" && (
+        <div className={classes["match-date-mobile"]}>17:30</div>
+      )}
 
       <div className={classes["first-team"]}>
         <p className={classes["first-team-name"]}>Man Utd</p>
 
         <Image
-          className={classes["first-team-image"]}
+          className={classes["team-image"]}
           src="/svg/teams/man-united.svg"
           alt="man-united"
           width="34"
@@ -46,7 +52,7 @@ export const Match = ({ type }) => {
       </div>
       <div className={classes["second-team"]}>
         <Image
-          className={classes["second-team-image"]}
+          className={classes["team-image"]}
           src="/svg/teams/liverpool.svg"
           alt="liverpool"
           width="27"

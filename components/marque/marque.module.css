@@ -16,6 +16,7 @@
 }
 .marque-container-tag > span {
   color: #00c4fb;
+  font-family: "Poppins";
   margin-left: 1.125rem;
   font-weight: bold;
   font-size: 1.125rem;
@@ -23,6 +24,7 @@
 .marque-container-tag > p {
   font-weight: 300;
   font-size: 1rem;
+  font-family: "Poppins";
   color: white;
   margin-left: 1.125rem;
 }

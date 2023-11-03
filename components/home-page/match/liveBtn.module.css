@@ -73,7 +73,7 @@
   .not-live {
     padding: 0.25rem 0.4rem;
     width: 3.25rem;
-    height: 1.31rem;
+    height: 1.51rem;
     display: flex;
     align-items: center;
     margin-top: 0;
@@ -88,7 +88,7 @@
 
   .live-button > p,
   .not-live {
-    font-size: 0.625rem;
+    font-size: 0.675rem;
     font-family: RobotoRegular;
     font-weight: 500;
   }

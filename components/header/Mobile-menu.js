@@ -1,14 +1,13 @@
 "use client";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React, { useState } from "react";
 import Beta from "../beta/Beta";
 import classes from "./mobile-menu.module.css";
-
 export const MenuMobile = () => {
   const [showMenu, setShowMenu] = useState(false);
   const router = useRouter();
-
+  const pathname = usePathname();
   return (
     <div>
       <div className={classes["menu-mobile"]}>
@@ -51,6 +50,24 @@ export const MenuMobile = () => {
                 alt="logo"
                 width="76"
                 height="59"
+              />
+            </div>
+          </div>
+          <div className={classes["user-details"]}>
+            <Image
+              className={classes["user-icon"]}
+              src="/svg/default-user-icon.svg"
+              alt="user icon"
+              width="51"
+              height="40"
+            />
+            <div className={classes["settings-icon-wrapper"]}>
+              <Image
+                className={classes["settings-icon"]}
+                src="/svg/home/world.svg"
+                alt="settings"
+                width="21"
+                height="21"
               />
             </div>
           </div>
@@ -143,6 +160,10 @@ export const MenuMobile = () => {
                   width="22"
                   height="22"
                 />
+
+                {pathname.includes("giveaway") && (
+                  <span className={classes["buttons-active"]}></span>
+                )}
               </button>
               <button
                 onClick={() => {
@@ -157,6 +178,9 @@ export const MenuMobile = () => {
                   width="19"
                   height="19"
                 />
+                {pathname.includes("donate") && (
+                  <span className={classes["buttons-active"]}></span>
+                )}
               </button>
             </div>
           </div>

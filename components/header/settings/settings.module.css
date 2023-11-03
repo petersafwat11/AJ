@@ -96,3 +96,49 @@
 .options {
   display: none;
 }
+@media (max-width: 56.25rem) {
+  .container {
+    padding: 1.875rem 1.25rem 1.625rem 1.75rem;
+    width: min(23.75rem, 95%);
+    height: 24.687rem;
+    border-radius: 0.5rem;
+  }
+  .top {
+    width: 100%;
+  }
+  .title {
+    margin-top: 0.25rem;
+    font-size: 1.125rem;
+    line-height: 1.25rem; /* 76.923% */
+  }
+  .body {
+    width: calc(100% - 0.8rem);
+  }
+  .settings-options {
+    gap: 1.5rem;
+    margin-top: 1.81rem;
+  }
+  .setting-option {
+    gap: 0.2rem;
+    width: 100%;
+  }
+  .label {
+    font-size: 0.8rem;
+    line-height: 1.25rem; /* 111.111% */
+  }
+  .selector {
+    height: 2.2rem;
+    padding: 0.235rem 0.75rem;
+    border-radius: 0.45rem;
+  }
+  .selector p {
+    font-size: 0.8rem;
+    letter-spacing: 0.1px;
+  }
+  .save-btn {
+    height: 2.375rem;
+    border-radius: 0.3rem;
+    font-size: 0.8rem;
+    margin-top: 1.94rem;
+  }
+}

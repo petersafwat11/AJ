@@ -237,7 +237,10 @@ const ChannelsWrapper = ({ channelsServer, langs }) => {
         <div className={classes["top-heading"]}>
           <span className={classes["heading-span"]}> Now Playing </span>
           <h3 className={classes["heading-title"]}>{playingServerName}</h3>
+          <div className={classes['live-btn']}>
           <LiveBtn text={"LIVE"} />
+
+          </div>
         </div>
 
         <div className="watch-video-wrapper">
@@ -256,7 +259,9 @@ const ChannelsWrapper = ({ channelsServer, langs }) => {
             <HlcPlayer url={playingServer} />
           </div>
           <div className={classes["watch-video-options"]}>
-            <BottomSocial />
+            <div className={classes["social-desktop"]}>
+              <BottomSocial />
+            </div>
             <div className={classes["server-btn-wrapper"]}>
               <button className={classes["server-name-btn"]}>Full HD</button>
             </div>

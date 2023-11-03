@@ -67,6 +67,9 @@
 }
 
 @media (max-width: 56.25rem) {
+  .social-links-desktop {
+    display: none;
+  }
   .watch-football {
     margin: 0 auto;
     padding-bottom: 3rem;
@@ -98,7 +101,7 @@
     align-items: center;
     justify-content: center;
     gap: 0.3rem;
-    width: 25.125rem;
+    width: 25.5rem;
     height: 3.125rem;
     flex-shrink: 0;
     border-radius: 1.56rem;
@@ -128,6 +131,9 @@
   }
   .bottom {
     margin-top: 1.65rem;
+  }
+  .vpn {
+    margin-bottom: 1.7rem;
   }
   .takticks {
     margin-top: 1.5rem;

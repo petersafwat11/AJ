@@ -14,11 +14,11 @@ import EventCountDown from "../../../../components/eventCoutdown/EventCountDown"
 import HlcPlayer from "../../../../components/hlcPlayer/HlcPlayer";
 import Marque from "../../../../components/marque/Marque";
 import Popup from "../../../../components/popupWrapper/Popup";
+import ProtonVpn from "../../../../components/protonVpn/ProtonVpn";
 import ServersButtons from "../../../../components/serverButtons/ServersButtons";
 import ServersButtonsMobile from "../../../../components/serverButtons/serversButtonsMobile/ServersButtonsMobile";
 import ThanksMessage from "../../../../components/thanksMessage/ThanksMessage";
 import TopLayout from "../../../../components/topLayout/TopLayout";
-import UnderDevelopment from "../../../../components/underDevelopment/component/underDevelopment";
 import WatchDetailsSingleTeam from "../../../../components/watchDetailsSingleTeam/WatchDetailsSingleTeam";
 import WatchNavigation from "../../../../components/watchNavigation/WatchNavigation";
 import { changeServersFormat } from "../../../../utils/changeServersFormat";
@@ -297,7 +297,9 @@ const Page = () => {
                 {/* <PlayerContainer /> */}
               </div>
               <div className={classes["watch-video-wrapper-bottom"]}>
-                <BottomSocial />
+                <div className={classes["social-links-desktop"]}>
+                  <BottomSocial />
+                </div>
                 <ServersButtonsMobile
                   playingServerLang={playingServer?.lang}
                   handleServerClicks={handleServerClicks}
@@ -333,23 +335,25 @@ const Page = () => {
                 />
               </div>
             </div>
-            <div className="center-under-dev">
+            {/* <div className="center-under-dev">
               <UnderDevelopment />
-            </div>{" "}
-            {/* <div className={classes["bottom"]}>
-              <div className={classes["buy-vpn"]}>
+            </div>{" "} */}
+            <div className={classes["bottom"]}>
+              <div className={classes["vpn"]}>
                 <ProtonVpn />
               </div>
-              <div className={classes["takticks"]}>
+              <BottomSocial />
+
+              {/* <div className={classes["takticks"]}>
                 <MatchSummery />
-              </div>
-              <div className={classes["casino"]}>
+              </div> */}
+              {/* <div className={classes["casino"]}>
                 <Casino />
-              </div>
-              <div className={classes["who-will-win"]}>
+              </div> */}
+              {/* <div className={classes["who-will-win"]}>
                 <WhoWillWin />
-              </div>
-            </div> */}
+              </div> */}
+            </div>
           </div>
           {/* )}{" "} */}
         </section>

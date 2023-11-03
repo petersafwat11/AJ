@@ -29,33 +29,34 @@ const ChatBottom = ({
           controlShowingUsers={controlShowingUsers}
         />
       )}
-
-      <div className={classes["user-dev"]}>
-        <FaUser onClick={toggleUserInf} className={classes["user-icon"]} />
+      <div className={classes["icons"]}>
+        <div className={classes["user-dev"]}>
+          <FaUser onClick={toggleUserInf} className={classes["user-icon"]} />
+        </div>
+        <div id="emojy-dev" className={classes["emojy-dev"]}>
+          <MdEmojiEmotions
+            onClick={displayEmojisAndGifs}
+            className={classes["emojy"]}
+          />
+        </div>
       </div>
-      <div id="emojy-dev" className={classes["emojy-dev"]}>
-        <MdEmojiEmotions
-          onClick={displayEmojisAndGifs}
-          className={classes["emojy"]}
-        />
-      </div>
 
-      <input
-        value={message}
-        onKeyUp={(e) => {
-          if (e.key === "@") {
-            setDisplayTagUSer(true);
-          }
-        }}
-        onChange={(e) => {
-          if (e.target.value.charAt(e.target.value?.length - 1)) {
-            setDisplayTagUSer(false);
-          }
-          setInputMessage(e.target.value);
-          if (e.target.value?.length < 1) {
-            setMentionSomeone("");
-          }
-        }}
+      <textarea
+        // value={message}
+        // onKeyUp={(e) => {
+        //   if (e.key === "@") {
+        //     setDisplayTagUSer(true);
+        //   }
+        // }}
+        // onChange={(e) => {
+        //   if (e.target.value.charAt(e.target.value?.length - 1)) {
+        //     setDisplayTagUSer(false);
+        //   }
+        //   setInputMessage(e.target.value);
+        //   if (e.target.value?.length < 1) {
+        //     setMentionSomeone("");
+        //   }
+        // }}
         className={classes["chat-input"]}
         type="text"
         placeholder="Type a message here"

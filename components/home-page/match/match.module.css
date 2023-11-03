@@ -16,7 +16,8 @@
   border-bottom: 2px solid #03a1cd;
 }
 
-.match:hover {
+.hot-match:hover,
+.other-match:hover {
   background-color: #1c2b2e;
 }
 .match-first {
@@ -104,7 +105,7 @@
 @media (max-width: 56.25rem) {
   .hot-match,
   .other-match {
-    padding: 0.687rem 0.85rem;
+    padding: 0.75rem 0.85rem;
     display: flex;
     flex-direction: column;
     border-radius: 0.46rem;
@@ -114,13 +115,13 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding-bottom: 0.4rem;
+    padding-bottom: 0.6rem;
     border-bottom: 1px solid #737373;
   }
   .match-first .date {
     font-weight: 500;
     font-family: RobotoRegular;
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     line-height: 0.937rem;
 
     color: white;
@@ -131,13 +132,13 @@
   .status-mobile {
     font-weight: 500;
     font-family: RobotoRegular;
-    font-size: 0.72rem;
+    font-size: 0.82rem;
     line-height: 0.82rem;
     color: #4ae96d;
   }
   .leage {
     font-weight: 400;
-    font-size: 0.72rem;
+    font-size: 0.82rem;
     line-height: 0.82rem;
     color: rgba(210, 210, 210, 0.7);
   }
@@ -167,7 +168,7 @@
   .second-team-name,
   .teams-title {
     font-family: RobotoSemiBold;
-    font-size: 1.06rem;
+    font-size: 1.2rem;
     line-height: 1.25rem;
     white-space: nowrap;
     /* margin-top: 0.25rem; */
@@ -179,9 +180,14 @@
     order: 2;
   }
   .match-vs {
-    font-family: RobotoRegular;
-    font-size: 1rem;
-    line-height: 1.15rem;
+    font-family: RobotoBold;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+  }
+  .hot-matches-devider,
+  .other-matches-devider {
+    width: 2rem;
+    height: 0.5rem;
   }
 }
 

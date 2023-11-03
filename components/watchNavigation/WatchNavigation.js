@@ -6,7 +6,7 @@ const WatchNavigation = ({ page }) => {
     <div className={classes["navigate"]}>
       <Link href="/">Home</Link>
       <span> &gt; </span>
-      <Link href={`/${page.toLowerCase()}`}>{page}</Link>
+      <Link className={classes['active-page']} href={`/${page.toLowerCase()}`}>{page}</Link>
     </div>
   );
 };

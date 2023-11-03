@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React, { useState } from "react";
+import MatchDots from "../matchDots/MatchDots";
 import classes from "./staduim.module.css";
 
 const Staduim = () => {
@@ -21,81 +22,99 @@ const Staduim = () => {
   };
   return (
     <div className={classes["container"]}>
-      <div className={classes["alternative-players"]}>
-        {[1, 2, 3, 4, 5, 6].map((player) => (
-          <div key={player} className={classes["alternative-player"]}>
-            <Image
-              src="/svg/watch/football/player-icon-1.svg"
-              alt="helmet"
-              width="33"
-              height="27"
-            />
 
-            <p className={classes["alternative-player-name"]}>C. Ronaldo</p>
-          </div>
-        ))}
-      </div>
-      <div className={classes["stadium"]}>
-        {[
-          "one",
-          "two",
-          "three",
-          "four",
-          "five",
-          "six",
-          "seven",
-          "eight",
-          "nine",
-          "ten",
-          "eleven",
-          "twelve",
-          "thirteen",
-          "fourteen",
-          "fivteen",
-          "sixteen",
-          "seventeen",
-          "eighteen",
-          "nineteen",
-          "twenty",
-          "twenty-one",
-          "twenty-two",
-        ].map((item, index) => (
-          <div key={index} className={classes[item]}>
-            {index < 11 ? (
+      <div className={classes["right"]}>
+        <MatchDots
+          vertical={true}
+          options={[1, 2]}
+          selectedOption={alternativePlayers.firstTeam}
+          changeOptions={changeFirstTeamOptions}
+        />
+        <div className={classes["alternative-players"]}>
+          {[1, 2, 3, 4, 5].map((player) => (
+            <div key={player} className={classes["alternative-player"]}>
               <Image
-                className={classes["team-shirt"]}
-                src="/svg/watch/football/player-icon-1.svg"
-                alt="team-shirt"
-                width="41"
-                height="30"
+                src="/svg/watch/handball/red-player.svg"
+                alt="helmet"
+                width="26"
+                height="33"
               />
-            ) : (
-              <Image
-                className={classes["team-shirt"]}
-                src="/svg/watch/football/player-icon-2.svg"
-                alt="team-shirt"
-                width="41"
-                height="30"
-              />
-            )}
-            <p className={classes["player-name"]}>Lorem</p>
-          </div>
-        ))}
+
+              <p className={classes["alternative-player-name"]}>Lorem</p>
+            </div>
+          ))}
+        </div>
       </div>
+      <div className={classes["stadium-wrapper"]}>
+        <div className={classes["stadium"]}>
+          {[
+            "one",
+            "two",
+            "three",
+            "four",
+            "five",
+            "six",
+            "seven",
+            "eight",
+            "nine",
+            "ten",
+            "eleven",
+            "twelve",
+            "thirteen",
+            "fourteen",
+            "fivteen",
+            "sixteen",
+            "seventeen",
+            "eighteen",
+            "nineteen",
+            "twenty",
+            "twenty-one",
+            "twenty-two",
+          ].map((item, index) => (
+            <div key={index} className={classes[item]}>
+              {index < 11 ? (
+                <Image
+                  className={classes["team-shirt"]}
+                  src="/svg/watch/football/player-icon-1.svg"
+                  alt="team-shirt"
+                  width="41"
+                  height="30"
+                />
+              ) : (
+                <Image
+                  className={classes["team-shirt"]}
+                  src="/svg/watch/football/player-icon-2.svg"
+                  alt="team-shirt"
+                  width="41"
+                  height="30"
+                />
+              )}
+              <p className={classes["player-name"]}>Lorem</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className={classes["left"]}>
+        <div className={classes["alternative-players"]}>
+          {[5, 6, 7, 8].map((player) => (
+            <div key={player} className={classes["alternative-player"]}>
+              <Image
+                src="/svg/watch/handball/yellow-player.svg"
+                alt="helmet"
+                width="26"
+                height="33"
+              />
 
-      <div className={classes["alternative-players"]}>
-        {[7, 8, 9, 10, 11, 12].map((player) => (
-          <div key={player} className={classes["alternative-player"]}>
-            <Image
-              src="/svg/watch/football/player-icon-1.svg"
-              alt="helmet"
-              width="33"
-              height="27"
-            />
-
-            <p className={classes["alternative-player-name"]}>C. Ronaldo</p>
-          </div>
-        ))}
+              <p className={classes["alternative-player-name"]}>Lorem</p>
+            </div>
+          ))}
+        </div>
+        <MatchDots
+          vertical={true}
+          options={[1, 2]}
+          selectedOption={alternativePlayers.secondTeam}
+          changeOptions={changeSecondTeamOptions}
+        />
       </div>
     </div>
   );

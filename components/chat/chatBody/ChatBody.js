@@ -16,11 +16,11 @@ const ChatBody = ({ messages, getSubString, setMentionSomeone }) => {
             />
           </div>
           <div className={classes["message-data"]}>
-            <h3 className={classes["username"]}>messiog10</h3>
-            <p className={classes["message-text"]}>
-              <span className={classes["mentioned"]}></span>
-              Really excited for the match !!!!!
-            </p>
+            <span className={classes["username"]}>messiog10</span>
+            {/* <p className={classes["message-text"]}> */}
+            <span className={classes["mentioned"]}></span>
+            Really excited for the match !!!!!
+            {/* </p> */}
           </div>
           <div className={classes["replay-wrapper"]}>
             <div className={classes["replay-icon-div"]}>
@@ -50,10 +50,10 @@ const ChatBody = ({ messages, getSubString, setMentionSomeone }) => {
 
           <div className={classes["message-data"]}>
             {/* <h3 className={classes["username"]}>messiog10</h3> */}
-            <p className={classes["message-text"]}>
-              <span className={classes["mentioned"]}> @messiog10</span>
-              Really excited for the match !!!!!
-            </p>
+            {/* <p className={classes["message-text"]}> */}
+            <span className={classes["mentioned"]}> @messiog10</span>
+            Really excited for the match !!!!!
+            {/* </p> */}
           </div>
           <div className={classes["replay-wrapper"]}>
             <div className={classes["replay-icon-div"]}>

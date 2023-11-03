@@ -65,3 +65,27 @@
     left: -100%;
   }
 }
+@media (max-width: 56.25rem) {
+  .container {
+    padding: 1.25rem 1.7rem 1.25rem 1.5rem;
+    width: min(22.25rem, 95%);
+    /* height: 155px;
+    flex-shrink: 0; */
+    border-radius: 0.75rem;
+  }
+  .body {
+    gap: 0.56rem;
+  }
+  .right {
+    gap: 0.125rem;
+  }
+  .title {
+    font-size: 0.94rem;
+  }
+  .para {
+    font-size: 0.58rem;
+  }
+  .loading {
+    height: 2.5px;
+  }
+}

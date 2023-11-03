@@ -31,3 +31,23 @@
   font-weight: 700;
   line-height: normal;
 }
+
+@media (max-width: 56.25rem) {
+  .container {
+    width: 22.68rem;
+    height: 2.75rem;
+    border-radius: 0.5rem;
+    padding: 0 0.5rem;
+  }
+  .team-first,
+  .team-sec {
+    width: 3.94rem;
+    height: 1.94rem;
+    border-radius: 0.25rem;
+    font-size: 0.625rem;
+  }
+
+  .middle {
+    font-size: 0.94rem;
+  }
+}

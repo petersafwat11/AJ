@@ -8,7 +8,7 @@ const Body = () => {
       <div className={classes["top"]}>
         <div className={classes["left"]}>
           <Image
-            className={classes["arrow-up"]}
+            className={classes["man-icon"]}
             src="/svg/watch/football/icon-left.svg"
             alt="stadium"
             width="21"

@@ -8,7 +8,7 @@ const Bottom = () => {
         <div className={classes["first-row"]}>
           <div className={classes["elem"]}>
             <Image
-              className={classes["arrow-up"]}
+              className={classes["card"]}
               src="/svg/watch/football/yellow-card.svg"
               alt="arrow-up"
               width="18"
@@ -19,7 +19,7 @@ const Bottom = () => {
           </div>
           <div className={classes["elem"]}>
             <Image
-              className={classes["arrow-up"]}
+              className={classes["card"]}
               src="/svg/watch/football/red-card.svg"
               alt="arrow-up"
               width="18"
@@ -30,7 +30,7 @@ const Bottom = () => {
           </div>
           <div className={classes["elem"]}>
             <Image
-              className={classes["arrow-up"]}
+              className={classes["var"]}
               src="/svg/watch/football/var.svg"
               alt="arrow-up"
               width="21"
@@ -41,7 +41,7 @@ const Bottom = () => {
           </div>
           <div className={classes["elem"]}>
             <Image
-              className={classes["arrow-up"]}
+              className={classes["substitute"]}
               src="/svg/watch/football/substitute.svg"
               alt="arrow-up"
               width="18"
@@ -55,7 +55,7 @@ const Bottom = () => {
           <div className={classes["elem"]}>
             <Image
               className={classes["goal"]}
-              src="/svg/watch/football/goal.svg"
+              src="/svg/watch/football/ball-icon.svg"
               alt="arrow-up"
               width="22"
               height="22"
@@ -66,7 +66,7 @@ const Bottom = () => {
           <div className={classes["elem"]}>
             <Image
               className={classes["penalty"]}
-              src="/svg/watch/football/penalty.svg"
+              src="/svg/watch/football/ball-icon.svg"
               alt="arrow-up"
               width="22"
               height="22"
@@ -77,7 +77,7 @@ const Bottom = () => {
           <div className={classes["elem"]}>
             <Image
               className={classes["own-goal"]}
-              src="/svg/watch/football/own-goal.svg"
+              src="/svg/watch/football/ball-icon.svg"
               alt="own goal"
               width="22"
               height="22"
