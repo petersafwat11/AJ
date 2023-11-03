@@ -1,7 +1,7 @@
 import React from "react";
 import Body from "./Body";
 import Top from "./Top";
-import Bottom from "./bottom";
+import Bottom from "./Bottom";
 import classes from "./statistics.module.css";
 const Statistics = ({ optionsOne, optionsTwo }) => {
   return (

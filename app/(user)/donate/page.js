@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import Method from "../../../components/donate/Method/Method";
 import Input from "../../../components/donate/input/Input";
 import OtherPaymentMethod from "../../../components/donate/otherPaymentMethod/OtherPaymentMethod";
 import Top from "../../../components/donate/top/Top";
@@ -9,6 +8,7 @@ import PageTitle from "../../../components/pageTitle/PageTitle";
 import Popup from "../../../components/popupWrapper/Popup";
 import TopLayout from "../../../components/topLayout/TopLayout";
 import classes from "./donate.module.css";
+import Method from "../../../components/donate/method/Method";
 const Donate = () => {
   const [ethereumPopup, setEthereumPopup] = useState(false);
   const [bitcoinPopup, setBitcoinPopup] = useState(false);
