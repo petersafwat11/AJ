@@ -7,7 +7,7 @@ import WatchDetails from "../../../../components/watch-details/WatchDetailsFootb
 import SocialIcons from "../../../../components/whatchShare/SocialIcons";
 
 import { usePathname } from "next/navigation";
-import { ToastContainer, toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import BottomSocial from "../../../../components/bottomSocial/BottomSocial";
 import ChangeServer from "../../../../components/changeServer/ChangeServer";
 import EventCountDown from "../../../../components/eventCoutdown/EventCountDown";
@@ -21,6 +21,7 @@ import ThanksMessage from "../../../../components/thanksMessage/ThanksMessage";
 import TopLayout from "../../../../components/topLayout/TopLayout";
 import WatchDetailsSingleTeam from "../../../../components/watchDetailsSingleTeam/WatchDetailsSingleTeam";
 import WatchNavigation from "../../../../components/watchNavigation/WatchNavigation";
+import MatchSummery from "../../../../components/watchtaktick/MatchSummey/MatchSummery";
 import { changeServersFormat } from "../../../../utils/changeServersFormat";
 import {
   calcRemainingTime,
@@ -37,7 +38,6 @@ const Page = () => {
   const quote = "Check out this awesome content!";
   const parseTeamNames = (str) => {
     const decodedStr = decodeURIComponent(str.replace(/-/g, "%20"));
-    console.log("decodedStr", decodedStr);
     const [firstTeamName, secondTeamName] = decodedStr.split(/VS|vs|Vs|vS/);
     return { firstTeamName, secondTeamName };
   };
@@ -83,7 +83,6 @@ const Page = () => {
     console.log(val[Object.keys(val)[0]]);
   };
   const handleChangeServers = (val, lang) => {
-    console.log("change server");
     toggleServers();
     // setPlayingServerLang(lang);
     setPlayingServer({ server: val, lang });
@@ -125,6 +124,7 @@ const Page = () => {
       try {
         const response = await getData(`sports/teamNames`, query);
         const data = response?.data?.data;
+        console.log("response", response);
 
         data.servers = changeServersFormat(data?.servers);
         setPlayingServer({
@@ -151,6 +151,7 @@ const Page = () => {
 
     return () => clearInterval(interval);
   }, [matchData?.eventDate]);
+
   useEffect(() => {
     if (showThanksMessage) {
       setTimeout(() => {
@@ -335,18 +336,21 @@ const Page = () => {
                 />
               </div>
             </div>
-            {/* <div className="center-under-dev">
-              <UnderDevelopment />
-            </div>{" "} */}
             <div className={classes["bottom"]}>
               <div className={classes["vpn"]}>
                 <ProtonVpn />
               </div>
               <BottomSocial />
 
-              {/* <div className={classes["takticks"]}>
-                <MatchSummery />
-              </div> */}
+              <div className={classes["takticks"]}>
+                <MatchSummery
+                  eventDate={matchData?.eventDate}
+                  matchId={matchData?.matchId || null}
+                  sportCategory={matchData?.sportCategory}
+                  firstTeamName={matchData?.firstTeamName}
+                  secondTeamName={matchData?.secondTeamName}
+                />
+              </div>
               {/* <div className={classes["casino"]}>
                 <Casino />
               </div> */}
@@ -355,7 +359,6 @@ const Page = () => {
               </div> */}
             </div>
           </div>
-          {/* )}{" "} */}
         </section>
       </div>
     </div>

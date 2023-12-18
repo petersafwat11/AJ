@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { extarctDateAndTime } from "../../../utils/combineDate";
 import {
@@ -57,7 +56,7 @@ export const Match = ({ matchData, type, index, length }) => {
           {matchData?.firstTeamName && matchData?.secondTeamName ? (
             <>
               <div className={classes["first-team"]}>
-                <Image
+                <img
                   default-team-icon
                   crossOrigin="anonymous"
                   className={classes["first-team-image"]}
@@ -67,7 +66,6 @@ export const Match = ({ matchData, type, index, length }) => {
                       : "/svg/home/default-team-icon.svg"
                   }
                   alt="logo"
-                  height={34}
                   width={34}
                 />
                 <p className={classes["first-team-name"]}>
@@ -79,7 +77,7 @@ export const Match = ({ matchData, type, index, length }) => {
                 <p className={classes["second-team-name"]}>
                   {matchData?.secondTeamName}
                 </p>
-                <Image
+                <img
                   crossOrigin="anonymous"
                   className={classes["second-team-image"]}
                   src={
@@ -88,7 +86,6 @@ export const Match = ({ matchData, type, index, length }) => {
                       : "/svg/home/default-team-icon.svg"
                   }
                   alt="logo"
-                  height={34}
                   width={34}
                 />
               </div>

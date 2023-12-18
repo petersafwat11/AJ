@@ -4,11 +4,18 @@ import GlobalHeader from "../globalHeader/GlobalHeader";
 import FightersData from "./FightersData";
 import MainEvent from "./MainEvent";
 import classes from "./matchSummery.module.css";
-const MatchSummery = () => {
+const MatchSummery = ({
+  sportCategory,
+  matchId,
+  eventDate,
+  secondTeamName,
+  firstTeamName,
+}) => {
   const [category, setCategory] = useState("MAIN EVENT");
   const changeCategory = (category) => {
     setCategory(category);
   };
+
   return (
     <div className={classes["container"]}>
       <GlobalHeader

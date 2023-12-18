@@ -5,7 +5,7 @@
 }
 .standings-item-second {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 28% 7%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 28% 7%;
   justify-items: center;
   padding-right: 1rem;
 }
@@ -50,12 +50,13 @@
 }
 
 .first-team {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
   white-space: nowrap;
-  justify-content: space-between;
   width: 100%;
+  align-items: center;
 }
+
 .Last-5 {
   display: flex;
   align-items: center;
@@ -66,20 +67,14 @@
   height: 1.125rem;
   border-radius: 50%;
 }
-.conference-league {
+.win {
   background: #26b812;
 }
-.relegation {
+.lose {
   background: #b81212;
 }
-.premier-league {
+.draw {
   background: #808385;
-}
-.europa-league {
-  background: #b77e2a;
-}
-.champions-league {
-  background: #396eb2;
 }
 @media (max-width: 56.25rem) {
   .standings-item {

@@ -7,12 +7,12 @@ const nextConfig = {
     scrollRestoration: false,
   },
   env: {
-    BACKEND_SERVER: "https://odd-pink-lion-gear.cyclic.app/api",
-    STATIC_SERVER: "https://odd-pink-lion-gear.cyclic.app",
-    FRONTEND_SERVER: "https://aj-umber.vercel.app",
-    // FRONTEND_SERVER: "http://localhost:3000",
-    // BACKEND_SERVER: "http://localhost:8000/api",
-    // STATIC_SERVER: "http://localhost:8000",
+    // BACKEND_SERVER: "https://odd-pink-lion-gear.cyclic.app/api",
+    // STATIC_SERVER: "https://odd-pink-lion-gear.cyclic.app",
+    // FRONTEND_SERVER: "https://aj-umber.vercel.app",
+    FRONTEND_SERVER: "http://localhost:3000",
+    BACKEND_SERVER: "http://localhost:8000/api",
+    STATIC_SERVER: "http://localhost:8000",
     MONGODB_URI:
       "mongodb+srv://petersafwat:YzegQ0QJlV0ljR0B@cluster0.dsafm2w.mongodb.net/AJSPORTS?retryWrites=true&w=majority",
     // GOOGLE_CLIENT_ID:
@@ -27,7 +27,11 @@ const nextConfig = {
   },
 
   images: {
-    domains: ["jealous-cow-jewelry.cyclic.cloud", "localhost"],
+    domains: [
+      "jealous-cow-jewelry.cyclic.cloud",
+      "localhost",
+      "media-4.api-sports.io",
+    ],
   },
 };
 

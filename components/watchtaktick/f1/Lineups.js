@@ -3,7 +3,7 @@ import Details from "../details/Details";
 import Temprature from "../temprature/Temprature";
 import Staduim from "./Staduim";
 import classes from "./lineups.module.css";
-const Lineups = () => {
+const Lineups = ({data}) => {
   return (
     <div className={classes["container"]}>
       <p className={classes['title']}>ABU DHABI INTERNATIONAL CIRCUIT</p>

@@ -1,12 +1,12 @@
 import React from "react";
 import Details from "../details/Details";
 import Temprature from "../temprature/Temprature";
-import Staduim from "./Staduim";
 import classes from "./lineups.module.css";
-const Lineups = () => {
+import Staduim from "./Staduim";
+const Lineups = ({ data, secondTeamName, firstTeamName }) => {
   return (
     <div className={classes["container"]}>
-      <Staduim />
+      <Staduim secondTeamName={secondTeamName} firstTeamName={firstTeamName} />
       <div className={classes["temp"]}>
         <Temprature />
       </div>

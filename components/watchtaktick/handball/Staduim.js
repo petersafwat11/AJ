@@ -3,7 +3,11 @@ import React, { useState } from "react";
 import MatchDots from "../matchDots/MatchDots";
 import classes from "./staduim.module.css";
 
-const Staduim = () => {
+const Staduim = ({
+  data,
+  firstTeamSubstitutePlayers,
+  secondTeamSubstitutePlayers,
+}) => {
   const [alternativePlayers, setAlternativePlayers] = useState({
     firstTeam: 1,
     secondTeam: 1,
@@ -20,6 +24,12 @@ const Staduim = () => {
       secondTeam: option,
     });
   };
+  const firstTeamPlayingPlayers = data?.home?.players?.filter(
+    (player) => player.substitute !== true
+  );
+  const secondTeamPlayingPlayers = data?.home?.players?.filter(
+    (player) => player.substitute !== true
+  );
   return (
     <div className={classes["container"]}>
       <div className={classes["right"]}>
@@ -30,7 +40,7 @@ const Staduim = () => {
           changeOptions={changeFirstTeamOptions}
         />
         <div className={classes["alternative-players"]}>
-          {[1, 2, 3, 4, 5].map((player) => (
+          {[1, 2, 3, 4].map((player) => (
             <div key={player} className={classes["alternative-player"]}>
               <Image
                 src="/svg/watch/handball/red-player.svg"
@@ -87,7 +97,7 @@ const Staduim = () => {
 
       <div className={classes["left"]}>
         <div className={classes["alternative-players"]}>
-          {[5, 6, 7, 8].map((player) => (
+          {[1, 2, 3, 4].map((player) => (
             <div key={player} className={classes["alternative-player"]}>
               <Image
                 src="/svg/watch/handball/yellow-player.svg"

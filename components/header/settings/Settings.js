@@ -1,9 +1,27 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { langs } from "./data";
 import classes from "./settings.module.css";
 const Settings = ({ toggleSettings }) => {
+  const [showActiveSelection, setShowActiveSelection] = useState("");
+  const handleShowSelection = (selection) => {
+    setShowActiveSelection(selection);
+  };
+  const [userSettings, setUserSettings] = useState({
+    lang: "English (United Kingdom)",
+    country: "United Kingdom",
+    currency: "GBP - £",
+  });
+  const changeLang = (val) => {
+    setUserSettings((values) => ({ ...values, lang: val }));
+  };
+  const changeCountry = (val) => {
+    setUserSettings((values) => ({ ...values, country: val }));
+  };
+  const changeCurrency = (val) => {
+    setUserSettings((values) => ({ ...values, currency: val }));
+  };
   return (
     <div className={classes["container"]}>
       <div className={classes["top"]}>
@@ -20,18 +38,27 @@ const Settings = ({ toggleSettings }) => {
       <div className={classes["body"]}>
         <div className={classes["settings-options"]}>
           <SettingOption
+            onClick={changeLang}
+            activeSelection={showActiveSelection}
+            handleShowSelection={handleShowSelection}
             type="Language"
-            defaultVal={"English (United Kingdom)"}
+            val={userSettings.lang}
             options={langs}
           />
           <SettingOption
+            onClick={changeCountry}
+            activeSelection={showActiveSelection}
+            handleShowSelection={handleShowSelection}
             type="Country / Region"
-            defaultVal={"United Kingdom"}
+            val={userSettings.country}
             options={langs}
           />
           <SettingOption
+            onClick={changeCurrency}
+            activeSelection={showActiveSelection}
+            handleShowSelection={handleShowSelection}
             type="Currency"
-            defaultVal={"GBP - £"}
+            val={userSettings.currency}
             options={langs}
           />
         </div>
@@ -43,17 +70,45 @@ const Settings = ({ toggleSettings }) => {
 
 export default Settings;
 
-export const SettingOption = ({ type, defaultVal, options }) => {
+export const SettingOption = ({
+  type,
+  val,
+  options,
+  handleShowSelection,
+  activeSelection,
+  onClick,
+}) => {
+  console.log("options", options);
   return (
     <div className={classes["setting-option"]}>
       <p className={classes["label"]}>{type}</p>
-      <div className={classes["selector"]}>
-        <p>{defaultVal}</p>
+      <div
+        onClick={() => {
+          if (activeSelection === type) {
+            return handleShowSelection(null);
+          }
+          handleShowSelection(type);
+        }}
+        className={classes["selector"]}
+      >
+        <p>{val}</p>
         <IoIosArrowDown className={classes["arrow"]} />
       </div>
-      <div className={classes["options"]}>
+      <div
+        className={
+          activeSelection === type
+            ? classes["active-options"]
+            : classes["options"]
+        }
+      >
         {options.map((opt, index) => (
-          <p key={index} className={classes["option"]}>
+          <p
+            onClick={() => {
+              onClick(opt.name);
+            }}
+            key={index}
+            className={classes["option"]}
+          >
             {opt.name}{" "}
           </p>
         ))}

@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import classes from "./staduim.module.css";
 
-const Staduim = () => {
+const Staduim = ({ firstPlayer, secondPlayer }) => {
   return (
     <div className={classes["stadium"]}>
       <div className={classes["palyer-1"]}>
@@ -13,7 +13,7 @@ const Staduim = () => {
           width="46"
           height="69"
         />
-        <p className={classes["player-name"]}>Lorem </p>
+        <p className={classes["player-name"]}>{firstPlayer} </p>
       </div>
       <div className={classes["palyer-2"]}>
         <Image
@@ -23,7 +23,7 @@ const Staduim = () => {
           width="46"
           height="69"
         />
-        <p className={classes["player-name"]}>Lorem </p>
+        <p className={classes["player-name"]}>{secondPlayer} </p>
       </div>
     </div>
   );

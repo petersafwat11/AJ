@@ -9,7 +9,7 @@
   padding: 0 2.4rem;
 }
 .team-first,
-.team-last {
+.team-sec {
   display: flex;
   align-items: center;
   gap: 0.656rem;
@@ -25,7 +25,7 @@
   line-height: normal;
 }
 .team-first span,
-.team-last span {
+.team-sec span {
   width: 0.56rem;
   height: 0.56rem;
   border-radius: 50%;
@@ -33,7 +33,7 @@
 .team-first span {
   background-color: #47b2ff;
 }
-.team-last span {
+.team-sec span {
   background-color: #ffe923;
 }
 .middle {

@@ -1,3 +1,36 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.2rem;
+}
+
+.left,
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1.875rem;
+}
+
+.alternative-players {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.alternative-player {
+  display: flex;
+  align-items: center;
+  gap: 0.56rem;
+}
+.alternative-player-name {
+  color: #fff;
+  font-family: RobotoRegular;
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: normal;
+}
+
 .stadium {
   width: 24.2rem;
   height: 38.9rem;
@@ -92,13 +125,12 @@
   bottom: 38%;
   left: 70%;
 }
-.container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 5.53rem;
-}
 @media (max-width: 56.25rem) {
+  .left,
+  .right {
+    display: none;
+  }
+
   .stadium {
     width: 15.25rem;
     height: 28.8rem;
@@ -114,9 +146,6 @@
 
   .stadium > div {
     gap: 2px;
-  }
-  .container {
-    gap: 0;
   }
 }
 @media (max-width: 25rem) {

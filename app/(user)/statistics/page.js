@@ -1,24 +1,14 @@
-import axios from "axios";
 import React from "react";
 import Marque from "../../../components/marque/Marque";
-import Header from "../../../components/statistics/header/Header";
-import LeagueMenu from "../../../components/statistics/leage/League";
+import Wrapper from "../../../components/statistics/wrapper/Wrapper";
 import TopLayout from "../../../components/topLayout/TopLayout";
-import classes from "./statistics.module.css";
 const Statistics = async () => {
   return (
     <div className="wrapper">
       <TopLayout />
       <div className="wrapper-2">
         <Marque />
-
-        <div className={classes["statistics"]}>
-          <LeagueMenu />
-          <Header />
-        </div>
-        {/* <div className="center-under-dev">
-          <UnderDevelopment />
-        </div> */}
+        <Wrapper />
       </div>
     </div>
   );

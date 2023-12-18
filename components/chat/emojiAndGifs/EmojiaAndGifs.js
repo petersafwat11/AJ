@@ -1,7 +1,8 @@
-import data from "@emoji-mart/data";
-import Picker from "@emoji-mart/react";
+// import data from "@emoji-mart/data";
+// import Picker from "@emoji-mart/react";
 import GifPicker from "gif-picker-react";
 import React, { useEffect, useState } from "react";
+import EmojiPicker from "./Emojies";
 import classes from "./emogiAndGifs.module.css";
 
 const EmojiaAndGifs = ({
@@ -26,7 +27,10 @@ const EmojiaAndGifs = ({
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
+  const onSelectEmojie = (emoji) => {
+    console.log("emoji", emoji);
+    setInputMessage(message + emoji);
+  };
   return (
     <div
       style={{ paddingBottom: emojyOrGifs === "gifs" ? "0" : "" }}
@@ -35,7 +39,6 @@ const EmojiaAndGifs = ({
     >
       <div className={classes["space"]}></div>
       {emojyOrGifs == "emojy" && <div className={classes["space-2"]}></div>}
-
       <img
         onClick={displayEmojisAndGifs}
         className={classes["exit-emojy"]}
@@ -66,7 +69,7 @@ const EmojiaAndGifs = ({
           GIFs
         </p>
       </div>
-      {emojyOrGifs === "emojy" && (
+      {/* {emojyOrGifs === "emojy" && (
         <Picker
           navPosition="none"
           className={classes["emojy-picker"]}
@@ -78,7 +81,8 @@ const EmojiaAndGifs = ({
             setInputMessage(message + e.native);
           }}
         />
-      )}
+      )} */}
+      {emojyOrGifs === "emojy" && <EmojiPicker onSelect={onSelectEmojie} />}
       {emojyOrGifs === "gifs" && (
         <GifPicker
           tenorApiKey={"AIzaSyC8EsPMPT17ZCZHFdKpQg9z0i8BgEr29eE"}

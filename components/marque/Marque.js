@@ -8,7 +8,6 @@ const Marque = () => {
   const fetchNewData = useCallback(async (query) => {
     try {
       const response = await getData("links", query);
-      console.log("domains", response?.data?.data[0]?.domains);
       setDomains(response?.data?.data[0]?.domains?.split(" "));
     } catch (err) {
       console.log(err);
@@ -17,7 +16,6 @@ const Marque = () => {
 
   useEffect(() => {
     fetchNewData({ fields: "domains" });
-    console.log("will fetch");
   }, [fetchNewData]);
 
   return (

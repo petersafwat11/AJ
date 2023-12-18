@@ -10,6 +10,7 @@ const SportsSelection = ({ sportsType, changeSportsType }) => {
     "Fights",
     "Netball",
     "Volleyball",
+    "Handball",
     "Tennis",
     "WWE",
     "F1",

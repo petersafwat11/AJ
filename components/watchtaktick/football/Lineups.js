@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 import MatchDots from "../matchDots/MatchDots";
 import AlternativePlayers from "./AlternativePlayers";
-import Staduim from "./Staduim";
 import classes from "./lineups.module.css";
 import Plan from "./lineups/plan/Plan";
-const Lineups = () => {
+import Staduim from "./Staduim";
+const Lineups = ({ data }) => {
   const [option, setOption] = useState(1);
   const changeCategory = (option) => {
     setOption(option);
   };
-
+  console.log("lineupsDatalineupsData", data);
   return (
     <div className={classes["container"]}>
       <div className={classes["stad"]}>
-        <Plan top={true} />
+        <Plan top={true} plan={data[0]?.formation} />
         <span className={classes["devider"]}></span>
-        <Staduim />
+        <Staduim data={data} />
         <span className={classes["devider"]}></span>
 
-        <Plan />
+        <Plan plan={data[1]?.formation} />
       </div>
       <div className={classes["alternative-players"]}>
         <AlternativePlayers />

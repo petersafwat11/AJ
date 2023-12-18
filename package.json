@@ -12,6 +12,7 @@
   "dependencies": {
     "@emoji-mart/data": "^1.1.2",
     "@emoji-mart/react": "^1.1.1",
+    "@fluentui/react": "^8.112.8",
     "@jwplayer/jwplayer-react": "^1.1.1",
     "@reduxjs/toolkit": "^1.9.5",
     "@videojs/http-streaming": "^3.5.3",

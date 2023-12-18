@@ -2,7 +2,7 @@ import React from "react";
 import Details from "../details/Details";
 import Staduim from "./Staduim";
 import classes from "./lineups.module.css";
-const Lineups = () => {
+const Lineups = ({data}) => {
   return (
     <div className={classes["container"]}>
       <Staduim />

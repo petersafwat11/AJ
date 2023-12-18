@@ -1,7 +1,11 @@
 import Image from "next/image";
 import React from "react";
 import classes from "./alternativePlayers.module.css";
-const AlternativePlayers = () => {
+const AlternativePlayers = ({
+  awaySubstitutePlayers,
+  homeSubstitutePlayers,
+  selectedOption,
+}) => {
   return (
     <div className={classes["container"]}>
       <div className={classes["header"]}>
@@ -11,18 +15,37 @@ const AlternativePlayers = () => {
       <span className={classes["devider"]}></span>
       <div className={classes["body"]}>
         <div className={classes["players"]}>
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((player) => (
-            <div key={player} className={classes["player"]}>
-              <Image
-                className={classes["team-shirt"]}
-                src="/svg/watch/basketball/player-icon-1.svg"
-                alt="helmet"
-                width="16"
-                height="17"
-              />
-              <p className={classes["player-name"]}>C. Ronaldo</p>
-            </div>
-          ))}
+          {selectedOption === 1
+            ? homeSubstitutePlayers.map((player) => (
+                <div key={player} className={classes["player"]}>
+                  <Image
+                    className={classes["team-shirt"]}
+                    src="/svg/watch/basketball/player-icon-1.svg"
+                    alt="helmet"
+                    width="16"
+                    height="17"
+                  />
+                  <p className={classes["player-name"]}>
+                    {" "}
+                    {player.player.name}
+                  </p>
+                </div>
+              ))
+            : awaySubstitutePlayers.map((player) => (
+                <div key={player} className={classes["player"]}>
+                  <Image
+                    className={classes["team-shirt"]}
+                    src="/svg/watch/basketball/player-icon-1.svg"
+                    alt="helmet"
+                    width="16"
+                    height="17"
+                  />
+                  <p className={classes["player-name"]}>
+                    {" "}
+                    {player.player.name}
+                  </p>
+                </div>
+              ))}
         </div>
       </div>
     </div>

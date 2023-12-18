@@ -23,7 +23,6 @@ const BottomSocial = () => {
 
   useEffect(() => {
     fetchNewData({ fields: "social" });
-    console.log("will fetch");
   }, [fetchNewData]);
   return (
     <div className={classes["container"]}>

@@ -3,7 +3,13 @@ import GlobalHeader from "../globalHeader/GlobalHeader";
 import Formation from "./Formation";
 import Lineups from "./Lineups";
 import classes from "./matchSummery.module.css";
-const MatchSummery = () => {
+const MatchSummery = ({
+  sportCategory,
+  matchId,
+  eventDate,
+  secondTeamName,
+  firstTeamName,
+}) => {
   const [category, setCategory] = useState("CIRUIT");
   const changeCategory = (category) => {
     setCategory(category);

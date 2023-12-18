@@ -15,36 +15,21 @@
   align-items: center;
   gap: 0.6rem;
 } */
-
-.leagueMenu-container-img > img {
-  /* background-color: black; */
-  opacity: 0.4;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-}
-.leagueMenu-container-img-six > img {
-  opacity: 0.4;
-  transition: 0.3s ease-in-out;
-}
-.leagueMenu-container-img-six {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s ease-in-out;
-  cursor: pointer;
-  margin: 0 0.125rem;
-}
-.leagueMenu-container-img-six:hover {
-  background-color: white;
-}
-.leagueMenu-container-img > img:hover,
-.leagueMenu-container-img-six:hover > img {
+.leagueMenu-container-img-active > img {
   opacity: 1;
+}
+.leagueMenu-container-img > img,
+.leagueMenu-container-img-active > img {
+  /* background-color: black; */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.leagueMenu-container-img> img {
+  opacity: 0.4;
+}
+.leagueMenu-container-img > img:hover {
+  opacity: 0.8;
 }
 @media (max-width: 56.25rem) {
   .leagueMenu {
@@ -58,17 +43,10 @@
     gap: 0.35rem;
   }
 
-  .leagueMenu-container-img > img {
+  .leagueMenu-container-img > img,
+  .leagueMenu-container-img-active > img {
     width: 2.8rem;
     height: 2.8rem;
-  }
-  .leagueMenu-container-img-six {
-    width: 2.8rem;
-    height: 2.8rem;
-  }
-  .leagueMenu-container-img-six > img {
-    width: 2.3rem;
-    height: 2.3rem;
   }
 }
 @media (max-width: 25rem) {
@@ -76,16 +54,9 @@
     gap: 0.35rem;
   }
 
-  .leagueMenu-container-img > img {
+  .leagueMenu-container-img > img,
+  .leagueMenu-container-img-active > img {
     width: 2.25rem;
     height: 2.25rem;
-  }
-  .leagueMenu-container-img-six {
-    width: 1.98rem;
-    height: 1.98rem;
-  }
-  .leagueMenu-container-img-six > img {
-    width: 1.575rem;
-    height: 1.575rem;
   }
 }

@@ -1,37 +1,43 @@
 import React from "react";
 import classes from "./body.module.css";
-const Body = ({ optionsOne, optionsTwo }) => {
+const Body = ({ options, data }) => {
   return (
     <div className={classes["stats"]}>
-      {optionsOne.map((item, index) => (
-        <div key={index} className={classes["stats-item"]}>
-          <div className={classes["item-top"]}>
-            <p className={classes["first"]}>50%</p>
-            <p className={classes["middle"]}>{item}</p>
-            <p className={classes["last"]}>50%</p>
-          </div>
-          <div className={classes["progress-bar"]}>
-            <div className={classes["progress-bar-first"]}>
-              <span ></span>
+      {data
+        ? data.map((item, index) => (
+            <div key={index} className={classes["stats-item"]}>
+              <div className={classes["item-top"]}>
+                <p className={classes["first"]}>{item.home}</p>
+                <p className={classes["middle"]}>{item.name}</p>
+                <p className={classes["last"]}>{item.away}</p>
+              </div>
+              <div className={classes["progress-bar"]}>
+                <div className={classes["progress-bar-first"]}>
+                  <span></span>
+                </div>
+                <div className={classes["progress-bar-last"]}>
+                  <span></span>
+                </div>
+              </div>
             </div>
-            <div className={classes["progress-bar-last"]}>
-              <span ></span>
+          ))
+        : options.map((item, index) => (
+            <div key={index} className={classes["stats-item"]}>
+              <div className={classes["item-top"]}>
+                <p className={classes["first"]}>50%</p>
+                <p className={classes["middle"]}>{item}</p>
+                <p className={classes["last"]}>50%</p>
+              </div>
+              <div className={classes["progress-bar"]}>
+                <div className={classes["progress-bar-first"]}>
+                  <span></span>
+                </div>
+                <div className={classes["progress-bar-last"]}>
+                  <span></span>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      ))}
-      {/* {optionsTwo.map((item, index) => (
-        <div key={index} className={classes["stats-item-zero-state"]}>
-          <div className={classes["item-top"]}>
-            <p className={classes["first"]}>0</p>
-            <p className={classes["middle"]}>{item}</p>
-            <p className={classes["last"]}>0</p>
-          </div>
-          <div className={classes["progress-bar-zero"]}>
-            <span className={classes["first-team-percentage"]}></span>
-          </div>
-        </div>
-      ))} */}
+          ))}
     </div>
   );
 };

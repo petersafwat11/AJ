@@ -1,7 +1,7 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useReducer, useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ActionsButtons from "../../../../../components/dashboard/actionsButtons/ActionsButtons";
 import ServersAndLanguages from "../../../../../components/dashboard/createListings/serversAndLanguages/ServersAndLanguages";
@@ -55,9 +55,10 @@ const Page = () => {
       dispatchServer({ type: "UPDATE-ALL", value: existServers.mainLanguages });
       dispatchOtherServer({
         type: "UPDATE-ALL",
-        value: existServers.moreLanguages,
+        value: existServers?.moreLanguages,
       });
     }
+    console.log("exist", existServers);
   }, [existServers]);
   useEffect(() => {
     const id = pathname.slice(pathname.lastIndexOf("/") + 1);
@@ -81,7 +82,7 @@ const Page = () => {
         limit: 0,
       });
       console.log("StreamLinks", StreamLinks);
-      const streamLinksAvaiable = StreamLinks.data.data.map((item) => {
+      const streamLinksAvaiable = StreamLinks?.data?.data?.map((item) => {
         return { streamLinkName: item.channelName, streamLinkUrl: item.URL };
       });
       setStreamLinksAvaiable(streamLinksAvaiable);

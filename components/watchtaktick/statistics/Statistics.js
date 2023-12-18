@@ -1,15 +1,15 @@
 import React from "react";
 import Body from "./Body";
-import Top from "./Top";
 import Bottom from "./Bottom";
 import classes from "./statistics.module.css";
-const Statistics = ({ optionsOne, optionsTwo }) => {
+import Top from "./Top";
+const Statistics = ({ optionsOne, data, firstTeamName, secondTeamName }) => {
   return (
     <div className={classes["container"]}>
-      <Top />
+      <Top firstTeamName={firstTeamName} secondTeamName={secondTeamName} />
       <span className={classes["devider"]}></span>
       <div className={classes["body"]}>
-        <Body optionsOne={optionsOne} optionsTwo={optionsTwo} />
+        <Body options={optionsOne} data={data} />
       </div>
       <span className={classes["devider"]}></span>
 

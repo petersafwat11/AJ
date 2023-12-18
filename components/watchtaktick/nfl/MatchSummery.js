@@ -4,7 +4,13 @@ import Statistics from "../statistics/Statistics";
 import Events from "./Events";
 import Lineups from "./Lineups";
 import classes from "./matchSummery.module.css";
-const MatchSummery = () => {
+const MatchSummery = ({
+  sportCategory,
+  matchId,
+  eventDate,
+  secondTeamName,
+  firstTeamName,
+}) => {
   const [category, setCategory] = useState("LINEUPS");
   const changeCategory = (category) => {
     setCategory(category);
@@ -23,6 +29,9 @@ const MatchSummery = () => {
         <Events />
       ) : (
         <Statistics
+        firstTeamName={firstTeamName}
+        secondTeamName={secondTeamName}
+
           optionsOne={[
             "TOTAL YARDS",
             "PASSING YARDS",

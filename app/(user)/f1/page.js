@@ -16,8 +16,7 @@ import Marque from "../../../components/marque/Marque";
 import Popup from "../../../components/popupWrapper/Popup";
 import ProtonVpn from "../../../components/protonVpn/ProtonVpn";
 import TopLayout from "../../../components/topLayout/TopLayout";
-import PlayerContainer from "../../../components/video/VideoJs";
-import MatchSummery from "../../../components/watchtaktick/football/MatchSummery";
+import MatchSummery from "../../../components/watchtaktick/basketBall/MatchSummery";
 import classes from "./f1.module.css";
 
 const Page = () => {
@@ -117,9 +116,6 @@ const Page = () => {
                 />
               </div>
 
-              <div id="my-root-div" className="watch-video">
-                <PlayerContainer />
-              </div>
               <div className={classes["watch-video-wrapper-bottom"]}>
                 <div className={classes["dropdowns"]}>
                   {[

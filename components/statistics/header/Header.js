@@ -1,37 +1,19 @@
-"use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import FixtureAndResults from "../fixitureAndResults/FixtureAndResults";
+// import KnockoutStandings from "../standings/knockoutStandings/KnockoutStandings";
+// import Knockout from "../standings/knockoutStandings/mobileVersion/Knockout";
 import Standings from "../standings/Standings";
+import ChampStandings from "../standings/championsStandings/ChampStandings";
 import classes from "./header.module.css";
 
-const Header = () => {
-  const [statisticsType, setStatisticsType] = useState("fixtures");
-  // useEffect(() => {
-  //   const axios = require("axios");
-
-  //   const options = {
-  //     method: "GET",
-  //     url: "https://api-football-beta.p.rapidapi.com/fixtures",
-  //     params: {
-  //       to: "2023-10-19",
-  //       season: "2023",
-  //       date: "2020-02-06",
-  //     },
-  //     headers: {
-  //       "X-RapidAPI-Key": "ce9352625bmsh696018192ac810ap154737jsn455dc1574f86",
-  //       "X-RapidAPI-Host": "api-football-beta.p.rapidapi.com",
-  //     },
-  //   };
-  //   const getData = async () => {
-  //     try {
-  //       const response = await axios.request(options);
-  //       console.log(response.data);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
-  //   getData();
-  // }, []);
+const Header = ({
+  statisticsType,
+  changeStatisticsType,
+  standingsData,
+  resultsData,
+  fixturesData,
+  standingsType,
+}) => {
   return (
     <div>
       <div className={classes["statistics-types"]}>
@@ -44,7 +26,7 @@ const Header = () => {
             color: statisticsType === "fixtures" ? "#03a1cd" : "inherit",
           }}
           onClick={() => {
-            setStatisticsType("fixtures");
+            changeStatisticsType("fixtures");
           }}
           className={classes["statistics-type"]}
         >
@@ -52,7 +34,7 @@ const Header = () => {
         </p>
         <p
           onClick={() => {
-            setStatisticsType("standings");
+            changeStatisticsType("standings");
           }}
           className={classes["statistics-type"]}
           style={{
@@ -68,7 +50,7 @@ const Header = () => {
 
         <p
           onClick={() => {
-            setStatisticsType("results");
+            changeStatisticsType("results");
           }}
           style={{
             borderBottom:
@@ -83,11 +65,19 @@ const Header = () => {
         </p>
       </div>
       {statisticsType == "fixtures" ? (
-        <FixtureAndResults type={"fixture"} />
+        <FixtureAndResults data={fixturesData} type={"fixture"} />
       ) : statisticsType == "standings" ? (
-        <Standings />
+        standingsType == "Leagues" ? (
+          <Standings data={standingsData} />
+        ) : (
+          <ChampStandings data={standingsData} />
+        )
       ) : (
-        <FixtureAndResults type={"result"} />
+        // <>
+        //   <KnockoutStandings />
+        //   <Knockout />
+        // </>
+        <FixtureAndResults data={resultsData} type={"result"} />
       )}
     </div>
   );

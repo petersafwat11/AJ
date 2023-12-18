@@ -153,39 +153,10 @@
   .container {
     gap: 0;
   }
-  .team-shirt {
-    width: 29px;
-    height: 22px;
-  }
-  .alternative-players {
-    display: none;
-  }
-  .left,
-  .right {
-    display: none;
-  }
   .stadium-wrapper {
     padding: 1.55rem 1.68rem;
   }
-  .stadium {
-    width: 17.9rem;
-    height: 26.87rem;
-    background: url("/svg/watch/football/pitch-424.svg");
-  }
-  .stadium > * {
-    gap: 0.2rem;
-  }
 
-  .player-name,
-  .alternative-player-name {
-    font-size: 0.75rem;
-  }
-}
-@media (max-width: 56.25rem) {
-  .team-shirt {
-    width: 31px;
-    height: 21px;
-  }
   .stadium > * {
     gap: 0.17rem;
   }
@@ -195,8 +166,19 @@
     background: url("/svg/watch/football/pitch-400.svg");
   }
 
-  .player-name,
-  .alternative-player-name {
+  .alternative-players {
+    display: none;
+  }
+  .left,
+  .right {
+    display: none;
+  }
+  .team-shirt {
+    width: 31px;
+    height: 21px;
+  }
+
+  .player-name {
     font-size: 11.5px;
   }
 }
