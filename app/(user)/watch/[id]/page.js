@@ -344,6 +344,7 @@ const Page = () => {
 
               <div className={classes["takticks"]}>
                 <MatchSummery
+                  customAPi={matchData?.customAPI?.customAPIData}
                   eventDate={matchData?.eventDate}
                   matchId={matchData?.matchId || null}
                   sportCategory={matchData?.sportCategory}

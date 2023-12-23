@@ -4,7 +4,7 @@ import MatchDots from "../matchDots/MatchDots";
 import Temprature from "../temprature/Temprature";
 import classes from "./lineups.module.css";
 import Staduim from "./Staduim";
-const Lineups = ({ firstPlayer, secondPlayer }) => {
+const Lineups = ({  data}) => {
   const [option, setOption] = useState(1);
   const changeCategory = (option) => {
     setOption(option);
@@ -12,7 +12,7 @@ const Lineups = ({ firstPlayer, secondPlayer }) => {
 
   return (
     <div className={classes["container"]}>
-      <Staduim firstPlayer={firstPlayer} secondPlayer={secondPlayer} />
+      <Staduim data={data}  />
       <div className={classes["temp"]}>
         <Temprature />
       </div>

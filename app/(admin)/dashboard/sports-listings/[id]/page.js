@@ -1,16 +1,23 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useCallback, useEffect, useReducer } from "react";
-import ActionsButtons from "../../../../../components/dashboard/actionsButtons/ActionsButtons";
-// import SportCategory from "../../../../components/dashboard/createListings/sportCategory/SportCategory";
 import { toast } from "react-toastify";
-import SportCategory from "../../../../../components/dashboard/createListings/SportCategory/SportCategory";
+import ActionsButtons from "../../../../../components/dashboard/actionsButtons/ActionsButtons";
 import EventsDetails from "../../../../../components/dashboard/createListings/eventDetails/EventsDetails";
 import PlayerTiming from "../../../../../components/dashboard/createListings/playerTiming/PlayerTiming";
 import Poll from "../../../../../components/dashboard/createListings/poll/Poll";
+import SportCategory from "../../../../../components/dashboard/createListings/SportCategory/SportCategory";
 import TeamsLogos from "../../../../../components/dashboard/createListings/teamsLogos/TeamsLogos";
 import TeamsNames from "../../../../../components/dashboard/createListings/teamsNames/TeamsNames";
 
+import BoxingAPI from "../../../../../components/dashboard/createListings/customAPI/boxing/BoxingAPI";
+import F1API from "../../../../../components/dashboard/createListings/customAPI/f1/F1API";
+import HorseRacingAPI from "../../../../../components/dashboard/createListings/customAPI/horseRacing/HorseRacingAPI";
+import NascarAPI from "../../../../../components/dashboard/createListings/customAPI/nascar/NascarAPI";
+import NetballAPI from "../../../../../components/dashboard/createListings/customAPI/netball/NetballAPI";
+import TennisAPI from "../../../../../components/dashboard/createListings/customAPI/tennis/TennisAPI";
+import VolleyballAPI from "../../../../../components/dashboard/createListings/customAPI/volleyball/VolleyballAPI";
+import WWEAPI from "../../../../../components/dashboard/createListings/customAPI/wwe/WWEAPI";
 import EventId from "../../../../../components/dashboard/createListings/EventId/EventId";
 import { combineDateAndTime } from "../../../../../utils/combineDate";
 import {
@@ -22,159 +29,86 @@ import {
   saveItem,
 } from "../../../../../utils/dashboardHelperFunctions";
 import { getData } from "../../../../../utils/dashboardTablePagesFunctions";
+import {
+  driversReducer,
+  featuredFightersReducer,
+  fightersReducer,
+  horseRidersReducer,
+  lineupsReducer,
+  mainEventReducer,
+  matchReducer,
+  positionsReducer,
+  tennisLineupsReducer,
+  volleyballDriversReducer,
+  wwweFightersReducer,
+} from "../reducers/reducers";
+import {
+  boxingFightersIntialVal,
+  driversIntialVal,
+  featuredFightersIntialVal,
+  horseRidersIntialVal,
+  lineupsIntialVal,
+  mainEventIntialVal,
+  matchIntialVal,
+  positionsIntialVal,
+  tennisLineupsIntialVal,
+  VolleyballIntialVal,
+  wweFightersIntialVal,
+} from "./intialValues";
 import classes from "./page.module.css";
+import { saveCustomAPI } from "./saveCustomAPI";
 
-const intialValue = {
-  sportCategory: "",
-  firstTeamName: "",
-  secondTeamName: "",
-  teamsTitle: "",
-  eventDate: "",
-  eventDateText: "",
-  eventTime: "",
-  matchId: "",
-  eventLeague: "",
-  eventStadium: "",
-  backgroundLogo: null,
-  leagueLogo: null,
-  firstTeamLogo: null,
-  secondTeamLogo: null,
-  flagLogo: null,
-  playStream: { date: "", time: "" },
-  removeStream: { date: "", time: "" },
-  removeCountdown: { date: "", time: "" },
-  endedEvent: { date: "", time: "" },
-  showsPoll: false,
-  firstTeamPoll: "",
-  secondTeamPoll: "",
-};
-const matchReducer = (state, action) => {
-  console.log("state", state);
-  if (action.type === "UPDATE-ALL") {
-    const val = { ...action.value };
-    delete val._id;
-    return val;
-  }
-  if (action.type === "CLEAR-ALL") {
-    return intialValue;
-  } else if (action.type === "SPORT-CATEGORY") {
-    return {
-      ...state,
-      sportCategory: action.value,
-    };
-  } else if (action.type === "FIRST-TEAM-NAME") {
-    return {
-      ...state,
-      firstTeamName: action.value,
-    };
-  } else if (action.type === "SECOND-TEAM-NAME") {
-    return {
-      ...state,
-      secondTeamName: action.value,
-    };
-  } else if (action.type === "TEAMS-TITLE") {
-    return {
-      ...state,
-      teamsTitle: action.value,
-    };
-  } else if (action.type === "EVENT-DATE") {
-    return {
-      ...state,
-      eventDate: action.value,
-    };
-  } else if (action.type === "EVENT-DATE-TEXT") {
-    return {
-      ...state,
-      eventDateText: action.value,
-    };
-  } else if (action.type === "EVENT-TIME") {
-    return {
-      ...state,
-      eventTime: action.value,
-    };
-  } else if (action.type === "MATCH-ID") {
-    return {
-      ...state,
-      matchId: Number(action.value),
-    };
-  } else if (action.type === "EVENT-LEAGUE") {
-    return {
-      ...state,
-      eventLeague: action.value,
-    };
-  } else if (action.type === "EVENT-STADIUM") {
-    return {
-      ...state,
-      eventStadium: action.value,
-    };
-  } else if (action.type === "BACKGROUND-LOGO") {
-    return {
-      ...state,
-      backgroundLogo: action.value,
-    };
-  } else if (action.type === "LEAGUE-LOGO") {
-    return {
-      ...state,
-      leagueLogo: action.value,
-    };
-  } else if (action.type === "FIRST-TEAM-LOGO") {
-    return {
-      ...state,
-      firstTeamLogo: action.value,
-    };
-  } else if (action.type === "SECOND-TEAM-LOGO") {
-    return {
-      ...state,
-      secondTeamLogo: action.value,
-    };
-  } else if (action.type === "FLAG-LOGO") {
-    return {
-      ...state,
-      flagLogo: action.value,
-    };
-  } else if (action.type === "PLAY-STREAM") {
-    return {
-      ...state,
-      playStream: action.value,
-    };
-  } else if (action.type === "REMOVE-STREAM") {
-    return {
-      ...state,
-      removeStream: action.value,
-    };
-  } else if (action.type === "REMOVE-COUNTDOWN") {
-    return {
-      ...state,
-      removeCountdown: action.value,
-    };
-  } else if (action.type === "ENDED-EVENT") {
-    return {
-      ...state,
-      endedEvent: action.value,
-    };
-  } else if (action.type === "FIRST-TEAM-POLL") {
-    return {
-      ...state,
-      firstTeamPoll: action.value,
-    };
-  } else if (action.type === "SECOND-TEAM-POLL") {
-    return {
-      ...state,
-      secondTeamPoll: action.value,
-    };
-  } else if (action.type === "SHOWS-POLL") {
-    return {
-      ...state,
-      showsPoll: action.value,
-    };
-  }
-};
 const Page = () => {
   const notify = (message, type) => toast[type](message);
   const pathname = usePathname();
+
   const router = useRouter();
 
-  const [match, dispatchDetail] = useReducer(matchReducer, intialValue);
+  const [match, dispatchDetail] = useReducer(matchReducer, matchIntialVal);
+
+  /// custom API reducers
+  const [mainEvent, dispatchMainEvent] = useReducer(
+    mainEventReducer,
+    mainEventIntialVal
+  );
+
+  const [booxingfighters, dispatchBoxingFighters] = useReducer(
+    fightersReducer,
+    boxingFightersIntialVal
+  );
+  const [positions, dispatchPositions] = useReducer(
+    positionsReducer,
+    positionsIntialVal
+  );
+  const [horseRiders, dispatchHorseRiders] = useReducer(
+    horseRidersReducer,
+    horseRidersIntialVal
+  );
+  const [drivers, dispatchDrivers] = useReducer(
+    driversReducer,
+    driversIntialVal
+  );
+  const [lineups, dispatchLineups] = useReducer(
+    lineupsReducer,
+    lineupsIntialVal
+  );
+  const [tennisLineups, dispatchTennisLineups] = useReducer(
+    tennisLineupsReducer,
+    tennisLineupsIntialVal
+  );
+  const [teamPlayers, dispatchTeamPlayers] = useReducer(
+    volleyballDriversReducer,
+    VolleyballIntialVal
+  );
+  const [wweFighters, dispatchWweFighters] = useReducer(
+    wwweFightersReducer,
+    wweFightersIntialVal
+  );
+  const [featuredFighters, dispatchfeaturedFighters] = useReducer(
+    featuredFightersReducer,
+    featuredFightersIntialVal
+  );
+
   const saveChanges = async () => {
     const playStream = combineDateAndTime(
       match.playStream.date,
@@ -194,6 +128,41 @@ const Page = () => {
     );
     const eventDate = combineDateAndTime(match.eventDate, match.eventTime);
     let data = { ...match };
+    const customAPIData =
+      match.sportCategory === "fights" || match.sportCategory === "ufc"
+        ? { booxingfighters: booxingfighters, mainEvent: mainEvent }
+        : match.sportCategory === "f1"
+        ? positions
+        : match.sportCategory === "horseracing"
+        ? horseRiders
+        : match.sportCategory === "nascar"
+        ? drivers
+        : match.sportCategory === "netball"
+        ? lineups
+        : match.sportCategory === "tennis"
+        ? tennisLineups
+        : match.sportCategory === "volleyball"
+        ? teamPlayers
+        : match.sportCategory === "wwe"
+        ? {
+            wweFighters: wweFighters,
+            featuredFighters: featuredFighters,
+          }
+        : "";
+    let customAPIID;
+    if (customAPIData) {
+      const customAPIResponse = await saveCustomAPI(
+        pathname,
+        customAPIData,
+        "sports/customAPI"
+      );
+      customAPIID = customAPIResponse?.data?.data?.data?._id || null;
+      console.log(
+        "customAPIResponse",
+        customAPIResponse?.data?.data?.data?._id
+      );
+    }
+
     data.playStream = playStream;
     data.removeStream = removeStream;
     data.removeCountdown = removeCountdown;
@@ -205,12 +174,14 @@ const Page = () => {
     data?.firstTeamName?.length < 1 ? (data.firstTeamName = null) : "";
     data?.secondTeamName?.length < 1 ? (data.secondTeamName = null) : "";
     data?.matchId?.length < 1 ? (data.matchId = null) : "";
+    data.customAPi = customAPIID;
+
     let formData = new FormData();
     for (const [key, value] of Object.entries(data)) {
       formData.append(key, value);
     }
-    // delete formData.servers;
-    saveItem(
+    delete formData.servers;
+    await saveItem(
       pathname,
       formData,
       dispatchDetail,
@@ -339,9 +310,46 @@ const Page = () => {
           <EventId data={match?.matchId} dispatchDetail={dispatchDetail} />
         </div>
       </div>
-      {/* <div className={classes["servers-and-langs"]}>
-        <ServersAndLanguages />
-      </div> */}
+      <div className={classes["wwe"]}>
+        {match.sportCategory === "fights" || match.sportCategory === "ufc" ? (
+          <BoxingAPI
+            booxingfighters={booxingfighters}
+            dispatchBoxingFighters={dispatchBoxingFighters}
+            mainEvent={mainEvent}
+            dispatchMainEvent={dispatchMainEvent}
+          />
+        ) : match.sportCategory === "f1" ? (
+          <F1API positions={positions} dispatchPositions={dispatchPositions} />
+        ) : match.sportCategory === "horseracing" ? (
+          <HorseRacingAPI
+            horseRiders={horseRiders}
+            dispatchHorseRiders={dispatchHorseRiders}
+          />
+        ) : match.sportCategory === "nascar" ? (
+          <NascarAPI drivers={drivers} dispatchDrivers={dispatchDrivers} />
+        ) : match.sportCategory === "netball" ? (
+          <NetballAPI lineups={lineups} dispatchLineups={dispatchLineups} />
+        ) : match.sportCategory === "tennis" ? (
+          <TennisAPI
+            tennisLineups={tennisLineups}
+            dispatchTennisLineups={dispatchTennisLineups}
+          />
+        ) : match.sportCategory === "volleyball" ? (
+          <VolleyballAPI
+            teamPlayers={teamPlayers}
+            dispatchTeamPlayers={dispatchTeamPlayers}
+          />
+        ) : match.sportCategory === "wwe" ? (
+          <WWEAPI
+            wweFighters={wweFighters}
+            dispatchWweFighters={dispatchWweFighters}
+            featuredFighters={featuredFighters}
+            dispatchfeaturedFighters={dispatchfeaturedFighters}
+          />
+        ) : (
+          ""
+        )}
+      </div>
     </div>
   );
 };

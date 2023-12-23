@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { getData } from "../../../../utils/dashboardTablePagesFunctions";
-import GlobalHeader from "../../globalHeader/GlobalHeader";
-import Standings from "../../standings/Standings";
+import { getData } from "../../../utils/dashboardTablePagesFunctions";
+import GlobalHeader from "../globalHeader/GlobalHeader";
+import Standings from "../standings/Standings";
 import Lineups from "./Lineups";
 import classes from "./matchSummery.module.css";
 const MatchSummery = ({

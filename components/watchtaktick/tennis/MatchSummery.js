@@ -3,7 +3,6 @@ import { getData } from "../../../utils/dashboardTablePagesFunctions";
 import { sportCategoriesTypes } from "../../../utils/sportCategoryApiDataTypes";
 import GlobalHeader from "../globalHeader/GlobalHeader";
 import Statistics from "../statistics/Statistics";
-import Lineups from "./Lineups";
 import classes from "./matchSummery.module.css";
 const MatchSummery = ({
   sportCategory,
@@ -11,9 +10,10 @@ const MatchSummery = ({
   eventDate,
   secondTeamName,
   firstTeamName,
+  customAPi,
 }) => {
   const [category, setCategory] = useState("LINEUPS");
-  const [statisticsData, setStatisticsData] = useState( [
+  const [statisticsData, setStatisticsData] = useState([
     {
       name: "TOTAL POINTS",
       home: 0,
@@ -31,8 +31,8 @@ const MatchSummery = ({
     },
     {
       name: "BREAK POINTS SAVED",
-      home:"0/0 (0%)",
-      away:"40/0 (0%)"
+      home: "0/0 (0%)",
+      away: "40/0 (0%)",
     },
     // {
     //   name: "OFFENSIVE REBOUNDS",
@@ -163,7 +163,7 @@ const MatchSummery = ({
       })();
     }
   }, [matchId, sportCategory, eventDate]);
-
+  console.log("customAPi", customAPi);
   return (
     <div className={classes["container"]}>
       <GlobalHeader
@@ -172,7 +172,9 @@ const MatchSummery = ({
         categories={["LINEUPS", "STATISTICS"]}
       />
       {category === "LINEUPS" ? (
-        <Lineups firstPlayer={firstTeamName} secondPlayer={secondTeamName} />
+        // <Lineups data={customAPi} />
+
+        ""
       ) : (
         <Statistics
           firstTeamName={firstTeamName}

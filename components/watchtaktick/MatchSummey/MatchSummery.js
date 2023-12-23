@@ -1,6 +1,7 @@
 import React from "react";
 import BaseballMatchSummery from "../baseball/MatchSummery";
 import BasketballMatchSummery from "../basketball/MatchSummery";
+import FightsMatchSummery from "../booxing/MatchSummery";
 import CricketMatchSummery from "../cricket/MatchSummery";
 import DartsMatchSummery from "../darts/MatchSummery";
 import F1MatchSummery from "../f1/MatchSummery";
@@ -24,6 +25,7 @@ const MatchSummery = ({
   eventDate,
   secondTeamName,
   firstTeamName,
+  customAPi,
 }) => {
   return (
     <div className={classes["match-summery"]}>
@@ -40,6 +42,12 @@ const MatchSummery = ({
           eventDate={eventDate}
           matchId={matchId}
           sportCategory={sportCategory}
+          secondTeamName={secondTeamName}
+          firstTeamName={firstTeamName}
+        />
+      ) : sportCategory === "fights" ? (
+        <FightsMatchSummery
+          customAPi={customAPi}
           secondTeamName={secondTeamName}
           firstTeamName={firstTeamName}
         />
@@ -77,6 +85,7 @@ const MatchSummery = ({
         />
       ) : sportCategory === "f1" ? (
         <F1MatchSummery
+          customAPi={customAPi}
           eventDate={eventDate}
           matchId={matchId}
           sportCategory={sportCategory}
@@ -101,6 +110,7 @@ const MatchSummery = ({
         />
       ) : sportCategory === "hourseracing" ? (
         <HourseRacingMatchSummery
+          customAPi={customAPi}
           eventDate={eventDate}
           matchId={matchId}
           sportCategory={sportCategory}
@@ -109,6 +119,7 @@ const MatchSummery = ({
         />
       ) : sportCategory === "nascar" ? (
         <NascarMatchSummery
+          customAPi={customAPi}
           eventDate={eventDate}
           matchId={matchId}
           sportCategory={sportCategory}
@@ -117,6 +128,7 @@ const MatchSummery = ({
         />
       ) : sportCategory === "netball" ? (
         <NetballMatchSummery
+          customAPi={customAPi}
           eventDate={eventDate}
           matchId={matchId}
           sportCategory={sportCategory}
@@ -146,9 +158,11 @@ const MatchSummery = ({
           sportCategory={sportCategory}
           secondTeamName={secondTeamName}
           firstTeamName={firstTeamName}
+          customAPi={customAPi}
         />
       ) : sportCategory === "tennis" ? (
         <TennisMatchSummery
+          customAPi={customAPi}
           eventDate={eventDate}
           matchId={matchId}
           sportCategory={sportCategory}
@@ -157,6 +171,7 @@ const MatchSummery = ({
         />
       ) : sportCategory === "volleyball" ? (
         <VollayballMatchSummery
+          customAPi={customAPi}
           eventDate={eventDate}
           matchId={matchId}
           sportCategory={sportCategory}
@@ -165,6 +180,7 @@ const MatchSummery = ({
         />
       ) : sportCategory === "wwe" ? (
         <WWEMatchSummery
+          customAPi={customAPi}
           eventDate={eventDate}
           matchId={matchId}
           sportCategory={sportCategory}
