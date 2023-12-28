@@ -12,7 +12,7 @@ const Lineups = ({data}) => {
   };
   return (
     <div className={classes["container"]}>
-      <Staduim />
+      <Staduim data={data} />
       <MatchDots
         options={[1, 2, 3, 4]}
         selectedOption={option}

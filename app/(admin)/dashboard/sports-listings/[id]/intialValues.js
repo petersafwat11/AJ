@@ -52,13 +52,13 @@ export const lineupsIntialVal = {
   checked: false,
 
   firstTeam: [
-    { name: "n", index: 0 },
+    { name: "", index: 0 },
     { name: "", index: 1 },
     { name: "", index: 2 },
     { name: "", index: 3 },
     { name: "", index: 4 },
     { name: "", index: 5 },
-    { name: "", index: 7 },
+    { name: "", index: 6 },
   ],
   secondTeam: [
     { name: "", index: 0 },
@@ -67,7 +67,7 @@ export const lineupsIntialVal = {
     { name: "", index: 3 },
     { name: "", index: 4 },
     { name: "", index: 5 },
-    { name: "", index: 7 },
+    { name: "", index: 6 },
   ],
 };
 export const tennisLineupsIntialVal = {

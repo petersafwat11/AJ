@@ -3,6 +3,7 @@ import { getData } from "../../../utils/dashboardTablePagesFunctions";
 import { sportCategoriesTypes } from "../../../utils/sportCategoryApiDataTypes";
 import GlobalHeader from "../globalHeader/GlobalHeader";
 import Statistics from "../statistics/Statistics";
+import Lineups from "./Lineups";
 import classes from "./matchSummery.module.css";
 const MatchSummery = ({
   sportCategory,
@@ -172,9 +173,7 @@ const MatchSummery = ({
         categories={["LINEUPS", "STATISTICS"]}
       />
       {category === "LINEUPS" ? (
-        // <Lineups data={customAPi} />
-
-        ""
+        <Lineups data={customAPi} />
       ) : (
         <Statistics
           firstTeamName={firstTeamName}

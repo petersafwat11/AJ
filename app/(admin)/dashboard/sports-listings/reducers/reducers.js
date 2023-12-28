@@ -193,6 +193,7 @@ export const driversReducer = (state, action) => {
 };
 export const lineupsReducer = (state, action) => {
   console.log("state", state);
+  console.log("action", action);
   let prevState = { ...state };
   if (action.type === "CHECK") {
     return {

@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import GlobalHeader from "../globalHeader/GlobalHeader";
 import Fighters from "./Fighters";
-import Venue from "./Venue";
 import classes from "./matchSummery.module.css";
+import Venue from "./Venue";
 const MatchSummery = ({
   sportCategory,
   matchId,
   eventDate,
   secondTeamName,
   firstTeamName,
+  customAPi,
 }) => {
+  console.log("customAPi", customAPi);
   const [category, setCategory] = useState("VENUE");
   const changeCategory = (category) => {
     setCategory(category);

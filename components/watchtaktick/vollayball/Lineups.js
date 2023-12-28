@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Details from "../details/Details";
 import Staduim from "./Staduim";
 import classes from "./lineups.module.css";
-const Lineups = () => {
+const Lineups = ({data}) => {
   const [option, setOption] = useState(1);
   const changeCategory = (option) => {
     setOption(option);
@@ -10,7 +10,7 @@ const Lineups = () => {
 
   return (
     <div className={classes["container"]}>
-      <Staduim />
+      <Staduim data={data}/>
       <Details
         matchDetails={[
           { left: "VENUE", right: "O2 Arena" },

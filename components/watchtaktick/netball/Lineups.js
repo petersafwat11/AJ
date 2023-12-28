@@ -5,7 +5,7 @@ import classes from "./lineups.module.css";
 const Lineups = ({data}) => {
   return (
     <div className={classes["container"]}>
-      <Staduim />
+      <Staduim  data={data}/>
       <Details
         matchDetails={[
           { left: "VENUE", right: "O2 Arena" },

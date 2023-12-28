@@ -108,7 +108,7 @@ const MatchSummery = ({
           secondTeamName={secondTeamName}
           firstTeamName={firstTeamName}
         />
-      ) : sportCategory === "hourseracing" ? (
+      ) : sportCategory === "horseracing" ? (
         <HourseRacingMatchSummery
           customAPi={customAPi}
           eventDate={eventDate}

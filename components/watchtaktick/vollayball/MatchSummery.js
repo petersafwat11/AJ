@@ -10,6 +10,7 @@ const MatchSummery = ({
   eventDate,
   secondTeamName,
   firstTeamName,
+  customAPi
 }) => {
   const [category, setCategory] = useState("LINEUPS");
   const [statisticsData, setStatisticsData] = useState([
@@ -157,7 +158,7 @@ const MatchSummery = ({
         categories={["LINEUPS", "STATISTICS"]}
       />
       {category === "LINEUPS" ? (
-        <Lineups />
+        <Lineups data={customAPi}/>
       ) : (
         <Statistics
           firstTeamName={firstTeamName}

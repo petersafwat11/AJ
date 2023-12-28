@@ -149,19 +149,6 @@ const Page = () => {
             featuredFighters: featuredFighters,
           }
         : "";
-    let customAPIID;
-    if (customAPIData) {
-      const customAPIResponse = await saveCustomAPI(
-        pathname,
-        customAPIData,
-        "sports/customAPI"
-      );
-      customAPIID = customAPIResponse?.data?.data?.data?._id || null;
-      console.log(
-        "customAPIResponse",
-        customAPIResponse?.data?.data?.data?._id
-      );
-    }
 
     data.playStream = playStream;
     data.removeStream = removeStream;
@@ -174,22 +161,42 @@ const Page = () => {
     data?.firstTeamName?.length < 1 ? (data.firstTeamName = null) : "";
     data?.secondTeamName?.length < 1 ? (data.secondTeamName = null) : "";
     data?.matchId?.length < 1 ? (data.matchId = null) : "";
-    data.customAPi = customAPIID;
-
     let formData = new FormData();
     for (const [key, value] of Object.entries(data)) {
       formData.append(key, value);
     }
     delete formData.servers;
-    await saveItem(
-      pathname,
-      formData,
-      dispatchDetail,
-      notify,
-      router,
-      "sports",
-      "formData"
-    );
+    let customAPIID;
+    if (customAPIData) {
+      console.log("customAPIData exist");
+      const customAPIResponse = await saveCustomAPI(
+        pathname,
+        customAPIData,
+        "sports/customAPI"
+      );
+      customAPIID = customAPIResponse?.data?.data?.data?._id;
+      console.log("customAPIID", customAPIID);
+      formData.append("customAPI", customAPIID);
+      await saveItem(
+        pathname,
+        formData,
+        dispatchDetail,
+        notify,
+        router,
+        "sports",
+        "formData"
+      );
+    } else {
+      await saveItem(
+        pathname,
+        formData,
+        dispatchDetail,
+        notify,
+        router,
+        "sports",
+        "formData"
+      );
+    }
   };
   const deleteMatch = async () => {
     deleteItem(pathname, router, "sports");

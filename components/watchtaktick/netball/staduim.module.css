@@ -30,12 +30,12 @@
 .one {
   position: absolute;
   top: 12%;
-  left: 46%;
+  left: 21%;
 }
 .two {
   position: absolute;
   top: 12%;
-  left: 21%;
+  left: 46%;
 }
 
 .three {
@@ -66,12 +66,12 @@
 .eight {
   position: absolute;
   bottom: 12%;
-  left: 46%;
+  left: 21%;
 }
 .nine {
   position: absolute;
   bottom: 12%;
-  left: 21%;
+  left: 46%;
 }
 
 .ten {

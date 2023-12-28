@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import Details from "../details/Details";
 import MatchDots from "../matchDots/MatchDots";
 import Temprature from "../temprature/Temprature";
-import Staduim from "./Staduim";
 import classes from "./lineups.module.css";
-const Lineups = ({data}) => {
+import Staduim from "./Staduim";
+const Lineups = ({ data }) => {
   const [option, setOption] = useState(1);
   const changeCategory = (option) => {
     setOption(option);
@@ -15,7 +15,7 @@ const Lineups = ({data}) => {
     <div className={classes["container"]}>
       <Staduim />
       <div className={classes["racing-cars"]}>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((car, index) => (
+        {data.players.map((car, index) => (
           <div key={index} className={classes["player"]}>
             {index == 1 || index == 5 || index == 7 || index == 11 ? (
               <Image
@@ -42,7 +42,7 @@ const Lineups = ({data}) => {
                 height="33"
               />
             )}
-            <p className={classes["player-name"]}>lorem</p>
+            <p className={classes["player-name"]}>{car.name}</p>
           </div>
         ))}
       </div>

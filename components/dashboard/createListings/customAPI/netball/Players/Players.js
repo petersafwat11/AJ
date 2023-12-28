@@ -74,6 +74,7 @@ const Players = ({ players, dispatchAction }) => {
                   name: e.target.value,
                 },
               });
+              console.log("index sent", index);
             }}
             placeholder=" player name"
           />

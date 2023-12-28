@@ -2,18 +2,12 @@ import React, { useState } from "react";
 import GlobalHeader from "../globalHeader/GlobalHeader";
 import Lineups from "./Lineups";
 import classes from "./matchSummery.module.css";
-const MatchSummery = ({
-  sportCategory,
-  matchId,
-  eventDate,
-  secondTeamName,
-  firstTeamName,
-}) => {
+const MatchSummery = ({ customAPi }) => {
   const [category, setCategory] = useState("LINEUPS");
   const changeCategory = (category) => {
     setCategory(category);
   };
-
+  console.log(customAPi, "..x.");
   return (
     <div className={classes["container"]}>
       <GlobalHeader
@@ -21,7 +15,7 @@ const MatchSummery = ({
         changeCategory={changeCategory}
         categories={["LINEUPS"]}
       />
-      <Lineups />
+      <Lineups data={customAPi} />
     </div>
   );
 };
