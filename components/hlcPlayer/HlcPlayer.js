@@ -59,10 +59,6 @@ const HlcPlayer = ({ url }) => {
           }}
           ref={videoIConRef}
           className={classes["play-icon"]}
-          // src="/svg/menu-icon.svg"
-          // alt="menu"
-          // width="70"
-          // height="60"
         ></div>
       )}
     </div>

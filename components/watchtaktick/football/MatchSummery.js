@@ -26,12 +26,19 @@ const MatchSummery = ({
       );
       (async () => {
         try {
+          const statistics = await getData(`sports/eventAPIData/statistics`, {
+            matchId,
+            sportCategory,
+            eventDate,
+          });
+
           const lineups = await getData(`sports/eventAPIData/lineups`, {
             matchId,
             sportCategory,
             eventDate,
           });
           console.log("lineups", lineups.data);
+          console.log("statistics", statistics);
           setLineupsData(lineups.data);
         } catch (err) {
           console.log("error", err);
@@ -53,9 +60,8 @@ const MatchSummery = ({
         <Events />
       ) : (
         <Statistics
-        firstTeamName={firstTeamName}
-        secondTeamName={secondTeamName}
-
+          firstTeamName={firstTeamName}
+          secondTeamName={secondTeamName}
           optionsOne={[
             "FIELD GOALS",
             "3 POINTERS %",

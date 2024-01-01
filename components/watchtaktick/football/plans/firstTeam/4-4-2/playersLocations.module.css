@@ -1,4 +1,3 @@
-.one,
 .two,
 .three,
 .four,
@@ -7,58 +6,59 @@
 .seven,
 .eight,
 .nine,
-.ten.eleven {
+.ten,
+.eleven.two {
   display: flex;
   align-items: center;
   flex-direction: column;
   position: absolute;
 }
 
-.one {
+.two {
   top: 13%;
   left: 5%;
 }
-.two {
-  top: 12%;
-  left: 28%;
-}
-
 .three {
   top: 12%;
+  left: 28%;
+}
+
+.four {
+  top: 12%;
   left: 62%;
 }
-.four {
+.five {
   top: 13%;
   left: 86%;
 }
-.five {
+.six {
   top: 28%;
   left: 5%;
 }
-.six {
+.seven {
   top: 27%;
   left: 28%;
 }
 
-.seven {
+.eight {
   top: 27%;
   left: 62%;
 }
-.eight {
+.nine {
   top: 28%;
   left: 86%;
 }
-.nine {
+.ten {
   top: 39%;
   left: 35%;
 }
 
-.ten {
+.eleven {
   top: 39%;
   left: 55%;
 }
 
-.eleven {
+.one {
   top: 1%;
   left: 45%;
 }
@@ -72,11 +72,10 @@
 .team-shirt {
   width: 41px;
   height: 30px;
-  color: #A60E08;;
+  color: #a60e08;
 }
 
 @media (max-width: 56.25rem) {
-  .one,
   .two,
   .three,
   .four,
@@ -85,7 +84,8 @@
   .seven,
   .eight,
   .nine,
-  .ten.eleven {
+  .ten,
+  .eleven.two {
     gap: 0.17rem;
   }
   .team-shirt {

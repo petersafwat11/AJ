@@ -4988,6 +4988,11 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
+swarmcloud-hls@^2.8.9:
+  version "2.8.9"
+  resolved "https://registry.npmjs.org/swarmcloud-hls/-/swarmcloud-hls-2.8.9.tgz"
+  integrity sha512-NUl5CGtHxMyzdxFs8PxD/v/Kv1U1nykYXxg/6bvdeFJpkPPPI22pv8qyBeNINfLrpl1tRZ4SnOSD9eLIezKUhw==
+
 synckit@^0.8.4:
   version "0.8.5"
   resolved "https://registry.npmjs.org/synckit/-/synckit-0.8.5.tgz"

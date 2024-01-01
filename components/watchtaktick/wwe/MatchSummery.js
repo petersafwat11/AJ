@@ -12,6 +12,7 @@ const MatchSummery = ({
   customAPi,
 }) => {
   console.log("customAPi", customAPi);
+  //wweFighters: {…}, featuredFighters
   const [category, setCategory] = useState("VENUE");
   const changeCategory = (category) => {
     setCategory(category);
@@ -24,7 +25,11 @@ const MatchSummery = ({
         changeCategory={changeCategory}
         categories={["VENUE", "FIGHTERS"]}
       />
-      {category === "VENUE" ? <Venue /> : <Fighters />}
+      {category === "VENUE" ? (
+        <Venue data={customAPi.wweFighters} />
+      ) : (
+        <Fighters data={customAPi.featuredFighters} />
+      )}
     </div>
   );
 };

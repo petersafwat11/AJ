@@ -2,7 +2,7 @@
 import { usePathname, useRouter } from "next/navigation";
 
 import React, { useCallback, useEffect, useReducer, useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { flagItem } from "../../../../utils/dashboardHelperFunctions";
 import {
@@ -21,7 +21,7 @@ import classes from "./wrapper.module.css";
 
 const Wrapper = ({ dataFetched }) => {
   const notify = (message, type) => toast[type](message);
-
+  console.log("dataFetched", dataFetched);
   const router = useRouter();
   const pathname = usePathname();
   const [sports, setSports] = useState(dataFetched?.data?.data || []);
@@ -76,8 +76,8 @@ const Wrapper = ({ dataFetched }) => {
         ],
       };
       const newData = await getData("sports", query);
-      setSports(newData.data.data);
-      dispatchDetail({ type: "RESULTS", value: newData.results });
+      setSports(newData?.data?.data);
+      dispatchDetail({ type: "RESULTS", value: newData?.results });
     };
     fetchNewData();
   }, [

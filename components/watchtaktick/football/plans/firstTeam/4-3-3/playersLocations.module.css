@@ -1,4 +1,4 @@
-.one,
+.two,
 .two,
 .three,
 .four,
@@ -7,60 +7,65 @@
 .seven,
 .eight,
 .nine,
-.ten.eleven {
+.ten,
+.eleven {
   display: flex;
   align-items: center;
   flex-direction: column;
   position: absolute;
 }
-
 .one {
+  top: 1%;
+  left: 45%;
+}
+
+.two {
   top: 13%;
   left: 5%;
-}
-.two {
-  top: 12%;
-  left: 28%;
 }
 
 .three {
   top: 12%;
-  left: 62%;
+  left: 28%;
 }
 .four {
+  top: 12%;
+  left: 62%;
+}
+
+.five {
   top: 13%;
   left: 86%;
 }
-.five {
+
+.six {
   top: 25.5%;
   left: 27%;
 }
-.six {
+.seven {
   top: 25%;
   left: 45%;
 }
-.seven {
+
+.eight {
   top: 25.5%;
   left: 63.5%;
 }
-.eight {
+
+.nine {
   top: 38%;
   left: 18%;
 }
-.nine {
+.ten {
   top: 38%;
   left: 45%;
 }
 
-.ten {
+.eleven {
   top: 38%;
   left: 70%;
 }
 
-.eleven {
-  top: 1%;
-  left: 45%;
-}
 .player-name {
   color: #274122;
   font-size: 0.75rem;
@@ -75,7 +80,7 @@
 }
 
 @media (max-width: 56.25rem) {
-  .one,
+  .two,
   .two,
   .three,
   .four,

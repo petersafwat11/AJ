@@ -164,7 +164,6 @@ const MatchSummery = ({
       })();
     }
   }, [matchId, sportCategory, eventDate]);
-  console.log("customAPi", customAPi);
   return (
     <div className={classes["container"]}>
       <GlobalHeader

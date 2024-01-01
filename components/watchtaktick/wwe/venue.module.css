@@ -6,10 +6,9 @@
 .players {
   margin-top: 2.625rem;
   margin-bottom: 1.5rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-column-gap: 2.9rem;
-  grid-row-gap: 2.2rem;
+  display: flex;
+  gap: 2.2rem;
+  flex-wrap: wrap;
 }
 .player {
   color: #9b9b9b;
