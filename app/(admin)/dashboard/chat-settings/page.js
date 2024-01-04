@@ -15,7 +15,7 @@ const page = async () => {
   return (
     <div className={classes["container"]}>
       <h1 className={classes["title"]}>Chat Settings</h1>
-      <div className={classes["wrapper"]}>
+      {/* <div className={classes["wrapper"]}>
         <div className={classes["first"]}>
           <Settings />
           <AutoMod />
@@ -28,7 +28,7 @@ const page = async () => {
           <FilteredWords data={chatFilteredWords?.data?.data[0]} />
           <Rules data={chatRules?.data?.data[0]} />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
