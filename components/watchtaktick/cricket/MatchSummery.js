@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getData } from "../../../utils/dashboardTablePagesFunctions";
 import GlobalHeader from "../globalHeader/GlobalHeader";
-import Standings from "../standings/Standings";
+import Statistics from "../statistics/Statistics";
 import Lineups from "./Lineups";
 import classes from "./matchSummery.module.css";
 const MatchSummery = ({
@@ -28,6 +28,7 @@ const MatchSummery = ({
       home: 0,
       away: 0,
     },
+
     {
       name: "PENALTY GOALS",
       home: 0,
@@ -57,17 +58,19 @@ const MatchSummery = ({
             matchId,
             sportCategory,
             eventDate,
+            dataType: "Statistics",
           });
+
+          const lineups = await getData(`sports/eventAPIData/lineups`, {
+            matchId,
+            sportCategory,
+            eventDate,
+            dataType: "Lineups",
+          });
+
           const allStats = statistics?.data?.find(
             (stat) => stat.period === "ALL"
           ).groups;
-          console.log("stats", allStats);
-          "POSSESSION",
-            "TRIES",
-            "CONVERSIONS",
-            "PENALTY GOALS",
-            "SCRUMS",
-            "TURNOVERS";
 
           const useableData = [
             {
@@ -142,7 +145,8 @@ const MatchSummery = ({
             },
           ];
           setStatisticsData(useableData);
-          console.log("useable", useableData);
+          console.log("useable", useableData, lineups.data);
+          setLineupsData(lineups.data)
         } catch (err) {
           console.log("error", err);
         }
@@ -155,18 +159,24 @@ const MatchSummery = ({
       <GlobalHeader
         category={category}
         changeCategory={changeCategory}
-        categories={["LINEUPS", "STATISTICS", "STANDINGS"]}
+        categories={["LINEUPS", "STATISTICS"]}
       />
       {category === "LINEUPS" ? (
-        <Lineups />
-      ) : category === "STANDINGS" ? (
-        <Standings
-          numOfActiveNunbers={2}
-          items={["PL", "W-L", "PTS"]}
-          footerElements={["League Title"]}
-        />
+        <Lineups data={lineupsData} />
       ) : (
-        ""
+        <Statistics
+          firstTeamName={firstTeamName}
+          secondTeamName={secondTeamName}
+          data={statisticsData}
+          optionsOne={[
+            "POSSESSION",
+            "TRIES",
+            "CONVERSIONS",
+            "PENALTY GOALS",
+            "SCRUMS",
+            "TURNOVERS",
+          ]}
+        />
       )}
     </div>
   );

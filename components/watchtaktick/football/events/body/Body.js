@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import classes from "./body.module.css";
 import Event from "./event/Event";
-const Body = () => {
+const Body = ({ data, eventStadium, firstTeamName, secondTeamName }) => {
   return (
     <div className={classes["container"]}>
       <div className={classes["top"]}>
@@ -26,7 +26,7 @@ const Body = () => {
             height="21"
           />
 
-          <p>Stamford Bridge</p>
+          <p>{eventStadium}</p>
         </div>
       </div>
       <span className={classes["seperator"]}> </span>
@@ -40,7 +40,18 @@ const Body = () => {
         />
         <span className={classes["devider"]}></span>
         <div className={classes["events"]}>
-          <Event eventType={"goal"} team={"first team"} />
+          {data.map((event, index) => (
+            <Event
+              key={index}
+              detail={event.detail}
+              type={event.type}
+              team={event.team == firstTeamName ? "first team" : "second team"}
+              time={event.time.elapsed}
+              player={event.player.name}
+              assist={event.assist.name}
+            />
+          ))}
+          {/* <Event eventType={"goal"} team={"first team"} />
           <Event eventType={"red card"} team={"first team"} />
           <Event eventType={"yellow card"} team={"second team"} />
           <Event eventType={"substitute"} team={"second team"} />
@@ -53,7 +64,7 @@ const Body = () => {
           <Event eventType={"substitute"} team={"second team"} />
           <Event eventType={"penalty"} team={"second team"} />
           <Event eventType={"var"} team={"second team"} />
-          <Event eventType={"own goal"} team={"second team"} />
+          <Event eventType={"own goal"} team={"second team"} /> */}
         </div>
         <Image
           className={classes["whistle-icon"]}

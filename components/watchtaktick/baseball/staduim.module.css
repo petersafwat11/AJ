@@ -13,7 +13,9 @@
 .four,
 .five,
 .six,
-.seven {
+.seven,
+.eight,
+.nine {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -44,24 +46,35 @@
 }
 .four {
   position: absolute;
-  top: 32%;
-  left: 46%;
+  top: 34%;
+  left: 35%;
 }
 .five {
   position: absolute;
-  bottom: 30%;
-  left: 28%;
+  top: 34%;
+  left: 57%;
 }
 .six {
   position: absolute;
   bottom: 30%;
-  left: 65%;
+  left: 28%;
 }
 .seven {
+  position: absolute;
+  bottom: 30%;
+  left: 46%;
+}
+.eight {
+  position: absolute;
+  bottom: 30%;
+  left: 65%;
+}
+.nine {
   position: absolute;
   top: 80%;
   left: 46%;
 }
+
 @media (max-width: 56.25rem) {
   .stadium {
     width: 24.43rem;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Details from "../details/Details";
 import MatchDots from "../matchDots/MatchDots";
 import Temprature from "../temprature/Temprature";
@@ -9,10 +9,13 @@ const Lineups = ({ data }) => {
   const changeCategory = (option) => {
     setOption(option);
   };
-
+  console.log("data", data);
+  useEffect(() => {
+    console.log("option", option);
+  }, [option]);
   return (
     <div className={classes["container"]}>
-      <Staduim />
+      <Staduim option={option} data={data} />
       <div className={classes["temp"]}>
         <Temprature />
       </div>

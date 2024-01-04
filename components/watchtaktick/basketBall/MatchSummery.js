@@ -2,9 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { getData } from "../../../utils/dashboardTablePagesFunctions";
 import GlobalHeader from "../globalHeader/GlobalHeader";
-import Standings from "../standings/Standings";
 import Statistics from "../statistics/Statistics";
-import Lineups from "./Lineups";
 import classes from "./matchSummery.module.css";
 
 const MatchSummery = ({
@@ -67,7 +65,6 @@ const MatchSummery = ({
       away: 0,
     },
   ]);
-  const [lineupsData, setLineupsData] = useState();
 
   const changeCategory = (category) => {
     setCategory(category);
@@ -80,18 +77,11 @@ const MatchSummery = ({
             matchId,
             sportCategory,
             eventDate,
+            dataType: "Statistics",
           });
-          const lineups = await getData(`sports/eventAPIData/lineups`, {
-            matchId,
-            sportCategory,
-            eventDate,
-          });
-
-          setLineupsData(lineups.data);
           const allStats = statistics?.data?.find(
             (stat) => stat.period === "ALL"
           ).groups;
-          console.log("lineups", lineups.data);
           console.log("stats", allStats);
           const useableData = [
             {
@@ -222,36 +212,25 @@ const MatchSummery = ({
       <GlobalHeader
         category={category}
         changeCategory={changeCategory}
-        categories={["LINEUPS", "STATISTICS", "STANDINGS"]}
+        categories={["STATISTICS"]}
       />
-      {category === "LINEUPS" ? (
-        <Lineups data={lineupsData} />
-      ) : category === "STANDINGS" ? (
-        <Standings
-          numOfActiveNunbers={9}
-          items={["PL", "W-L", "PTS"]}
-          footerElements={["Playoffs"]}
-        />
-      ) : (
-        <Statistics
-          data={statisticsData}
-          firstTeamName={firstTeamName}
-          secondTeamName={secondTeamName}
-          optionsOne={[
-            "FIELD GOALS %",
-            "3 POINTERS %",
-            "FREE THROWS %",
-            "TOTAL REBOUNDS",
-            "OFFENSIVE REBOUNDS",
-            "ASSISTS",
-            "BLOCKS",
-            "STEALS",
-            "TURNOVERS",
-            "FOULS",
-          ]}
-          optionsTwo={[]}
-        />
-      )}
+      <Statistics
+        data={statisticsData}
+        firstTeamName={firstTeamName}
+        secondTeamName={secondTeamName}
+        optionsOne={[
+          "FIELD GOALS %",
+          "3 POINTERS %",
+          "FREE THROWS %",
+          "TOTAL REBOUNDS",
+          "OFFENSIVE REBOUNDS",
+          "ASSISTS",
+          "BLOCKS",
+          "STEALS",
+          "TURNOVERS",
+          "FOULS",
+        ]}
+      />
     </div>
   );
 };

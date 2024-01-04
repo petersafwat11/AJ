@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { getData } from "../../../utils/dashboardTablePagesFunctions";
 import GlobalHeader from "../globalHeader/GlobalHeader";
-import Standings from "../standings/Standings";
 import Statistics from "../statistics/Statistics";
 import Lineups from "./Lineups";
 import classes from "./matchSummery.module.css";
@@ -101,6 +100,7 @@ const MatchSummery = ({
           matchId,
           sportCategory,
           eventDate,
+          dataType: "Statistics",
         });
         const allStats = statistics?.data
           ?.find((stat) => stat.period === "ALL")
@@ -112,15 +112,16 @@ const MatchSummery = ({
             (smallerObj) => smallerObj.name === largerObj.name
           )
         );
-        const lineupsResponse = await getData(`sports/eventAPIData/lineups`, {
+        const lineups = await getData(`sports/eventAPIData/lineups`, {
           matchId,
           sportCategory,
           eventDate,
+          dataType: "Lineups",
         });
-        console.log("response", lineupsResponse?.data);
-        console.log("response", useableStatsData);
+        console.log("lineups", lineups);
+        console.log("stats", statistics);
 
-        setLineupsData(lineupsResponse?.data);
+        setLineupsData(lineups.data);
         setStatisticsData(useableStatsData);
       } catch (err) {
         console.log("error", err);
@@ -133,11 +134,11 @@ const MatchSummery = ({
       <GlobalHeader
         category={category}
         changeCategory={changeCategory}
-        categories={["LINEUPS", "STATISTICS", "STANDINGS"]}
+        categories={["LINEUPS", "STATISTICS"]}
       />
       {category === "LINEUPS" ? (
         <Lineups data={lineupsData} />
-      ) : category === "STATISTICS" ? (
+      ) : (
         <Statistics
           data={statisticsData}
           firstTeamName={firstTeamName}
@@ -149,12 +150,6 @@ const MatchSummery = ({
             "TAKEAWAYS",
             "GIVEAWAYS",
           ]}
-        />
-      ) : (
-        <Standings
-          numOfActiveNunbers={5}
-          items={["PL", "PTS"]}
-          footerElements={["Playoffs"]}
         />
       )}
     </div>

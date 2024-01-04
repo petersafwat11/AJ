@@ -49,8 +49,7 @@ import { default as PlayersLocations541Second } from "./plans/secondTeam/5-4-1/P
 import classes from "./staduim.module.css";
 
 const Staduim = ({ data }) => {
-  const firstTeamPlan = "4-4-1-1";
-  // data[0]?.formation;
+  const firstTeamPlan = data[0]?.formation;
   const secondTeamPlan = data[1]?.formation;
   const [alternativePlayers, setAlternativePlayers] = useState({
     firstTeam: 1,

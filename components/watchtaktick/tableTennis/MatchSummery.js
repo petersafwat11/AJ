@@ -8,16 +8,13 @@ const MatchSummery = ({
   sportCategory,
   matchId,
   eventDate,
-  secondTeamName,
-  firstTeamName,
+  customAPi
 }) => {
   const [category, setCategory] = useState("LINEUPS");
   const changeCategory = (category) => {
     setCategory(category);
   };
-  const [summeryData, setSummeryData] = useState([
-   
-  ]);
+  const [summeryData, setSummeryData] = useState([]);
   useEffect(() => {
     if (sportCategory && matchId) {
       (async () => {
@@ -28,7 +25,9 @@ const MatchSummery = ({
             eventDate,
           });
 
-          const useableData = statistics.data.filter((stat) => stat.period !== "ALL");
+          const useableData = statistics.data.filter(
+            (stat) => stat.period !== "ALL"
+          );
           setSummeryData(useableData);
         } catch (err) {
           console.log("error", err);
@@ -46,8 +45,7 @@ const MatchSummery = ({
       />
       {category === "LINEUPS" ? (
         <Lineups
-          secondTeamName={secondTeamName}
-          firstTeamName={firstTeamName}
+        data={customAPi}
         />
       ) : (
         <Summery data={summeryData} />

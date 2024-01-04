@@ -4,6 +4,7 @@ import Bottom from "./Bottom";
 import classes from "./statistics.module.css";
 import Top from "./Top";
 const Statistics = ({ optionsOne, data, firstTeamName, secondTeamName }) => {
+  console.log("data", data);
   return (
     <div className={classes["container"]}>
       <Top firstTeamName={firstTeamName} secondTeamName={secondTeamName} />

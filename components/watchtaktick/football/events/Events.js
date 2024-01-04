@@ -3,12 +3,18 @@ import Body from "./body/Body";
 import Bottom from "./bottom/Bottom";
 import classes from "./events.module.css";
 import Top from "./top/Top";
-const Events = () => {
+const Events = ({ firstTeamName, secondTeamName, data, eventStadium }) => {
   return (
     <div className={classes["container"]}>
-      <Top />
+      <Top firstTeamName={firstTeamName} secondTeamName={secondTeamName} />
       <span className={classes["devider"]}></span>
-      <Body />
+      <Body
+        firstTeamName={firstTeamName}
+        secondTeamName={secondTeamName}
+        data={data}
+        eventStadium={eventStadium}
+        
+      />
       <span className={classes["devider"]}></span>
       <Bottom />
     </div>

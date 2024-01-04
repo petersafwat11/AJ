@@ -3,17 +3,25 @@ import MatchDots from "../matchDots/MatchDots";
 import AlternativePlayers from "./AlternativePlayers";
 import classes from "./lineups.module.css";
 import Staduim from "./Staduim";
-const Lineups = ({ data }) => {
+const Lineups = ({ data, firstTeamName, secondTeamName }) => {
   const changeCategory = (option) => {
     setOption(option);
   };
   const [option, setOption] = useState(1);
-  console.log("lineups", data);
+  const firstTeamAlternativePlayers = data?.home?.players?.slice(6);
+  const secondTeamAlternativePlayers = data?.away?.players?.slice(6);
+  // console.log("lineups", data);
   return (
     <div className={classes["container"]}>
-      <Staduim />
+      <Staduim data={data} />
       <div className={classes["alternative-players"]}>
-        <AlternativePlayers />
+        <AlternativePlayers
+          firstTeamAlternativePlayers={firstTeamAlternativePlayers}
+          secondTeamSubstitutePlayers={secondTeamAlternativePlayers}
+          option={option}
+          firstTeamName={firstTeamName}
+          secondTeamName={secondTeamName}
+        />
       </div>
       <div className={classes["mobile-dots"]}>
         <MatchDots

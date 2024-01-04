@@ -8,6 +8,22 @@ const Staduim = ({
   firstTeamSubstitutePlayers,
   secondTeamSubstitutePlayers,
 }) => {
+  const classNames = [
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "ten",
+    "eleven",
+    "twelve",
+    "thirteen",
+    "fourteen",
+  ];
   const [alternativePlayers, setAlternativePlayers] = useState({
     firstTeam: 1,
     secondTeam: 1,
@@ -24,12 +40,6 @@ const Staduim = ({
       secondTeam: option,
     });
   };
-  const firstTeamPlayingPlayers = data?.home?.players?.filter(
-    (player) => player.substitute !== true
-  );
-  const secondTeamPlayingPlayers = data?.home?.players?.filter(
-    (player) => player.substitute !== true
-  );
   return (
     <div className={classes["container"]}>
       <div className={classes["right"]}>
@@ -40,75 +50,95 @@ const Staduim = ({
           changeOptions={changeFirstTeamOptions}
         />
         <div className={classes["alternative-players"]}>
-          {[1, 2, 3, 4].map((player) => (
-            <div key={player} className={classes["alternative-player"]}>
-              <Image
-                src="/svg/watch/handball/red-player.svg"
-                alt="helmet"
-                width="26"
-                height="33"
-              />
+          {alternativePlayers.firstTeam === 1
+            ? firstTeamSubstitutePlayers?.slice(0, 7)?.map((player, index) => (
+                <div key={index} className={classes["alternative-player"]}>
+                  <Image
+                    src="/svg/watch/handball/red-player.svg"
+                    alt="helmet"
+                    width="26"
+                    height="33"
+                  />
 
-              <p className={classes["alternative-player-name"]}>Lorem</p>
-            </div>
-          ))}
+                  <p className={classes["alternative-player-name"]}>
+                    {player.player.shortName}
+                  </p>
+                </div>
+              ))
+            : firstTeamSubstitutePlayers?.slice(7)?.map((player) => (
+                <div key={player} className={classes["alternative-player"]}>
+                  <Image
+                    src="/svg/watch/handball/red-player.svg"
+                    alt="helmet"
+                    width="26"
+                    height="33"
+                  />
+
+                  <p className={classes["alternative-player-name"]}>
+                    {player.player.shortName}
+                  </p>
+                </div>
+              ))}
         </div>
       </div>
       <div className={classes["stadium"]}>
-        {[
-          "one",
-          "two",
-          "three",
-          "three",
-          "four",
-          "five",
-          "six",
-          "seven",
-          "eight",
-          "nine",
-          "ten",
-          "eleven",
-          "twelve",
-          "thirteen",
-          "fourteen",
-        ].map((item, index) => (
-          <div key={index} className={classes[item]}>
-            {index < 8 ? (
-              <Image
-                className={classes["team-shirt"]}
-                src="/svg/watch/handball/red-player.svg"
-                alt="helmet"
-                width="37"
-                height="35"
-              />
-            ) : (
-              <Image
-                className={classes["team-shirt"]}
-                src="/svg/watch/handball/yellow-player.svg"
-                alt="helmet"
-                width="37"
-                height="35"
-              />
-            )}
-            <p className={classes["player-name"]}>Lorem</p>
+        {data?.home?.players?.slice(0, 7)?.map((player, index) => (
+          <div key={index} className={classes[classNames[index]]}>
+            <Image
+              className={classes["team-shirt"]}
+              src="/svg/watch/handball/red-player.svg"
+              alt="helmet"
+              width="37"
+              height="35"
+            />
+            <p className={classes["player-name"]}>{player.player.shortName}</p>
+          </div>
+        ))}
+        {data?.away?.players?.slice(0, 7)?.map((player, index) => (
+          <div key={index} className={classes[classNames[index + 7]]}>
+            <Image
+              className={classes["team-shirt"]}
+              src="/svg/watch/handball/yellow-player.svg"
+              alt="helmet"
+              width="37"
+              height="35"
+            />
+            <p className={classes["player-name"]}>{player.player.shortName}</p>
           </div>
         ))}
       </div>
 
       <div className={classes["left"]}>
         <div className={classes["alternative-players"]}>
-          {[1, 2, 3, 4].map((player) => (
-            <div key={player} className={classes["alternative-player"]}>
-              <Image
-                src="/svg/watch/handball/yellow-player.svg"
-                alt="helmet"
-                width="26"
-                height="33"
-              />
+          {alternativePlayers?.secondTeam === 1
+            ? secondTeamSubstitutePlayers?.slice(0, 7)?.map((player) => (
+                <div key={player} className={classes["alternative-player"]}>
+                  <Image
+                    src="/svg/watch/handball/yellow-player.svg"
+                    alt="helmet"
+                    width="26"
+                    height="33"
+                  />
 
-              <p className={classes["alternative-player-name"]}>Lorem</p>
-            </div>
-          ))}
+                  <p className={classes["alternative-player-name"]}>
+                    {player.player.shortName}
+                  </p>
+                </div>
+              ))
+            : secondTeamSubstitutePlayers?.slice(7)?.map((player, index) => (
+                <div key={index} className={classes["alternative-player"]}>
+                  <Image
+                    src="/svg/watch/handball/yellow-player.svg"
+                    alt="helmet"
+                    width="26"
+                    height="33"
+                  />
+
+                  <p className={classes["alternative-player-name"]}>
+                    {player.player.shortName}
+                  </p>
+                </div>
+              ))}
         </div>
         <MatchDots
           vertical={true}

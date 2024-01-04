@@ -6,7 +6,7 @@ import Staduim from "./Staduim";
 const Lineups = ({ data, secondTeamName, firstTeamName }) => {
   return (
     <div className={classes["container"]}>
-      <Staduim secondTeamName={secondTeamName} firstTeamName={firstTeamName} />
+      <Staduim data={data}/>
       <div className={classes["temp"]}>
         <Temprature />
       </div>

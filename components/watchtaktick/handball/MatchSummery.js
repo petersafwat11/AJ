@@ -26,11 +26,13 @@ const MatchSummery = ({
             matchId,
             sportCategory,
             eventDate,
+            dataType: "Statistics",
           });
           const lineups = await getData(`sports/eventAPIData/lineups`, {
             matchId,
             sportCategory,
             eventDate,
+            dataType: "Lineups",
           });
 
           console.log(
@@ -118,7 +120,11 @@ const MatchSummery = ({
         categories={["LINEUPS", "STATISTICS"]}
       />
       {category === "LINEUPS" ? (
-        <Lineups data={lineupsData} />
+        <Lineups
+          data={lineupsData}
+          firstTeamName={firstTeamName}
+          secondTeamName={secondTeamName}
+        />
       ) : (
         <Statistics
           firstTeamName={firstTeamName}

@@ -19,7 +19,7 @@
 }
 @media (max-width: 56.25rem) {
   .container {
-    width: 100%rem;
+    width: 100%;
     height: 2.45rem;
     border-radius: 6px;
   }

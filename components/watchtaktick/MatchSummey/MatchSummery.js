@@ -1,6 +1,6 @@
 import React from "react";
 import BaseballMatchSummery from "../baseball/MatchSummery";
-import BasketballMatchSummery from "../basketball/MatchSummery";
+import BasketballMatchSummery from "../basketBall/MatchSummery";
 import FightsMatchSummery from "../booxing/MatchSummery";
 import CricketMatchSummery from "../cricket/MatchSummery";
 import DartsMatchSummery from "../darts/MatchSummery";
@@ -26,6 +26,7 @@ const MatchSummery = ({
   secondTeamName,
   firstTeamName,
   customAPi,
+  eventStadium,
 }) => {
   return (
     <div className={classes["match-summery"]}>
@@ -39,6 +40,7 @@ const MatchSummery = ({
         />
       ) : sportCategory === "football" ? (
         <FootballMatchSummery
+          eventStadium={eventStadium}
           eventDate={eventDate}
           matchId={matchId}
           sportCategory={sportCategory}

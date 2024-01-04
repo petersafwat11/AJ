@@ -1,28 +1,52 @@
 import Image from "next/image";
 import React from "react";
 import classes from "./alternativePlayers.module.css";
-const AlternativePlayers = () => {
+const AlternativePlayers = ({
+  firstTeamSubstitutePlayers,
+  secondTeamSubstitutePlayers,
+  firstTeamName,
+  secondTeamName,
+  option,
+}) => {
   return (
     <div className={classes["container"]}>
       <div className={classes["header"]}>
-        <p>Manchester United </p>
+        <p>{option === 1 ? firstTeamName : secondTeamName} </p>
         <p>Bench</p>
       </div>
       <span className={classes["devider"]}></span>
       <div className={classes["body"]}>
         <div className={classes["players"]}>
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((player) => (
-            <div key={player} className={classes["player"]}>
-              <Image
-                className={classes["team-shirt"]}
-                src="/svg/watch/football/player-icon-1.svg"
-                alt="helmet"
-                width="22"
-                height="17"
-              />
-              <p className={classes["player-name"]}>C. Ronaldo</p>
-            </div>
-          ))}
+          {option === 1
+            ? firstTeamSubstitutePlayers.map((player, index) => (
+                <div key={index} className={classes["player"]}>
+                  <Image
+                    className={classes["team-shirt"]}
+                    src="/svg/watch/football/player-icon-1.svg"
+                    alt="helmet"
+                    width="22"
+                    height="17"
+                  />
+                  <p className={classes["player-name"]}>
+                    {" "}
+                    {player.player.shortName}
+                  </p>
+                </div>
+              ))
+            : secondTeamSubstitutePlayers.map((player, index) => (
+                <div key={index} className={classes["player"]}>
+                  <Image
+                    className={classes["team-shirt"]}
+                    src="/svg/watch/football/player-icon-1.svg"
+                    alt="helmet"
+                    width="22"
+                    height="17"
+                  />
+                  <p className={classes["player-name"]}>
+                    {player.player.shortName}
+                  </p>
+                </div>
+              ))}
         </div>
       </div>
     </div>

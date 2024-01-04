@@ -4,12 +4,14 @@ import AlternativePlayers from "./AlternativePlayers";
 import classes from "./lineups.module.css";
 import Plan from "./lineups/plan/Plan";
 import Staduim from "./Staduim";
-const Lineups = ({ data }) => {
+const Lineups = ({ data, firstTeamName, secondTeamName }) => {
   const [option, setOption] = useState(1);
   const changeCategory = (option) => {
     setOption(option);
   };
   console.log("lineupsDatalineupsData", data);
+  const firstTeamSubstitutePlayers = data[0]?.substitutes;
+  const secondTeamSubstitutePlayers = data[1]?.substitutes;
   return (
     <div className={classes["container"]}>
       <div className={classes["stad"]}>
@@ -21,7 +23,13 @@ const Lineups = ({ data }) => {
         <Plan plan={data[1]?.formation} />
       </div>
       <div className={classes["alternative-players"]}>
-        <AlternativePlayers />
+        <AlternativePlayers
+          firstTeamSubstitutePlayers={firstTeamSubstitutePlayers}
+          secondTeamSubstitutePlayers={secondTeamSubstitutePlayers}
+          option={option}
+          firstTeamName={firstTeamName}
+          secondTeamName={secondTeamName}
+        />
       </div>
       <div className={classes["match-details-option-controller"]}>
         <MatchDots

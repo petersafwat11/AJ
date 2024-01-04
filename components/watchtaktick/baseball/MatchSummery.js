@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getData } from "../../../utils/dashboardTablePagesFunctions";
 import GlobalHeader from "../globalHeader/GlobalHeader";
-import Standings from "../standings/Standings";
 import Statistics from "../statistics/Statistics";
 import Lineups from "./Lineups";
 import classes from "./matchSummery.module.css";
@@ -58,12 +57,13 @@ const MatchSummery = ({
             matchId,
             sportCategory,
             eventDate,
+            dataType: "Statistics",
           });
           const lineups = await getData(`sports/eventAPIData/lineups`, {
             matchId,
             sportCategory,
             eventDate,
-            // eventDate,
+            dataType: "Lineups",
           });
 
           setLineupsData(lineups.data);
@@ -139,6 +139,7 @@ const MatchSummery = ({
             },
           ];
           setStatisticsData(useableData);
+          setLineupsData(lineups.data);
         } catch (err) {
           console.log("error", err);
         }
@@ -150,11 +151,11 @@ const MatchSummery = ({
       <GlobalHeader
         category={category}
         changeCategory={changeCategory}
-        categories={["LINEUPS", "STATISTICS", "STANDINGS"]}
+        categories={["LINEUPS", "STATISTICS"]}
       />
       {category === "LINEUPS" ? (
-        <Lineups />
-      ) : category === "STATISTICS" ? (
+        <Lineups data={lineupsData}/>
+      ) : (
         <Statistics
           data={statisticsData}
           firstTeamName={firstTeamName}
@@ -167,13 +168,6 @@ const MatchSummery = ({
             "BASE ON BALLS",
           ]}
           optionsTwo={["HITS"]}
-        />
-      ) : (
-        <Standings
-          numOfActiveNunbers={9}
-          borderHeader={true}
-          items={["PL", "W-L", "PTS"]}
-          footerElements={["Playoffs"]}
         />
       )}
     </div>

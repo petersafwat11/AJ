@@ -4,7 +4,7 @@ import MatchDots from "../matchDots/MatchDots";
 import Temprature from "../temprature/Temprature";
 import classes from "./lineups.module.css";
 import Staduim from "./Staduim";
-const Lineups = ({  data}) => {
+const Lineups = ({  data }) => {
   const [option, setOption] = useState(1);
   const changeCategory = (option) => {
     setOption(option);

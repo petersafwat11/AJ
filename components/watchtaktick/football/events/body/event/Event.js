@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import classes from "./event.module.css";
-const Event = ({ eventType, team }) => {
+const Event = ({ type, detail, team, time, player, assist }) => {
   return (
     <div
       className={
@@ -15,7 +15,7 @@ const Event = ({ eventType, team }) => {
           team === "first team" ? classes["event"] : classes["event-reverse"]
         }
       >
-        {eventType === "yellow card" ? (
+        {detail === "Yellow Card" ? (
           <Image
             className={classes["yellow-card"]}
             src="/svg/watch/football/yellow-card.svg"
@@ -23,7 +23,7 @@ const Event = ({ eventType, team }) => {
             width="23"
             height="33"
           />
-        ) : eventType === "red card" ? (
+        ) : detail === "Red Card" ? (
           <Image
             className={classes["red-card"]}
             src="/svg/watch/football/red-card.svg"
@@ -31,7 +31,7 @@ const Event = ({ eventType, team }) => {
             width="23"
             height="33"
           />
-        ) : eventType === "var" ? (
+        ) : type === "Var" ? (
           <Image
             className={classes["var"]}
             src="/svg/watch/football/var.svg"
@@ -39,7 +39,7 @@ const Event = ({ eventType, team }) => {
             width="30"
             height="34"
           />
-        ) : eventType === "substitute" ? (
+        ) : type === "subst" ? (
           <Image
             className={classes["substitute"]}
             src="/svg/watch/football/substitute.svg"
@@ -47,7 +47,7 @@ const Event = ({ eventType, team }) => {
             width="21"
             height="26"
           />
-        ) : eventType === "goal" ? (
+        ) : detail === "Normal Goal" ? (
           <Image
             className={classes["goal"]}
             src="/svg/watch/football/goal.svg"
@@ -55,11 +55,19 @@ const Event = ({ eventType, team }) => {
             width="27"
             height="27"
           />
-        ) : eventType === "penalty" ? (
+        ) : detail === "Penalty" ? (
           <Image
             className={classes["penalty"]}
             src="/svg/watch/football/penalty.svg"
             alt="penalty"
+            width="27"
+            height="27"
+          />
+        ) : detail === "Own Goal" ? (
+          <Image
+            className={classes["own-goal"]}
+            src="/svg/watch/football/own-goal.svg"
+            alt="own goal"
             width="27"
             height="27"
           />
@@ -73,12 +81,12 @@ const Event = ({ eventType, team }) => {
           />
         )}
 
-        {eventType !== "substitute" ? (
-          <p className={classes["player-name"]}>C. Ronaldo</p>
+        {type !== "subst" ? (
+          <p className={classes["player-name"]}>{player}</p>
         ) : (
           <div>
-            <p className={classes["player-in"]}>C. Ronaldo</p>
-            <p className={classes["player-out"]}>Gavi</p>
+            <p className={classes["player-in"]}>{player}</p>
+            <p className={classes["player-out"]}>{assist}</p>
           </div>
         )}
       </div>
@@ -88,7 +96,7 @@ const Event = ({ eventType, team }) => {
           team === "first team" ? classes["time"] : classes["time-reverse"]
         }
       >
-        <p className={classes["min"]}> 2’</p>
+        <p className={classes["min"]}> {`${time}’`}</p>
       </div>
     </div>
   );
