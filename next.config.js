@@ -31,6 +31,7 @@ const nextConfig = {
       "jealous-cow-jewelry.cyclic.cloud",
       "localhost",
       "media-4.api-sports.io",
+      "media.api-sports.io",
     ],
   },
 };
