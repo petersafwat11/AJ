@@ -22,6 +22,7 @@ const SportsSelection = ({ sportsType, changeSportsType }) => {
     "HorseRacing",
     "Rugby",
     "Tabletennis",
+    'UFC'
   ];
 
   const [showOptions, setShowOptions] = useState(false);

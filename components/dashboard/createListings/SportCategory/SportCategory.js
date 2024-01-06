@@ -19,6 +19,7 @@ const SportCategory = ({ data, dispatchDetail }) => {
     "HorseRacing",
     "Rugby",
     "Tabletennis",
+    "UFC",
   ];
   console.log(data);
   return (

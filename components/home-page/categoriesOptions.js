@@ -1,7 +1,11 @@
 export const categories = [
-  "ALL OTHERS",
+  "Football",
+  "Basketball",
+  "NFL",
+  "Fights",
   "Netball",
   "Volleyball",
+  "Handball",
   "Tennis",
   "WWE",
   "F1",
@@ -13,4 +17,5 @@ export const categories = [
   "HorseRacing",
   "Rugby",
   "Tabletennis",
+  "UFC",
 ];

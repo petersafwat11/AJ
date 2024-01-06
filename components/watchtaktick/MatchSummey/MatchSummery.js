@@ -55,6 +55,8 @@ const MatchSummery = ({
         />
       ) : sportCategory === "ufc" ? (
         <UFCMatchSummery
+        customAPi={customAPi}
+
           eventDate={eventDate}
           matchId={matchId}
           sportCategory={sportCategory}

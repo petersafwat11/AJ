@@ -6,8 +6,6 @@ import MainEvent from "./MainEvent";
 import classes from "./matchSummery.module.css";
 const MatchSummery = ({ secondTeamName, firstTeamName, customAPi }) => {
   const [category, setCategory] = useState("MAIN EVENT");
-  const [mainEventData, setMainEventData] = useState();
-  const [fightersData, setFightersData] = useState();
   const changeCategory = (category) => {
     setCategory(category);
   };

@@ -158,7 +158,7 @@ const Page = () => {
               {pathname !== "/currentEvents/football" &&
                 pathname !== "/currentEvents/basketball" &&
                 pathname !== "/currentEvents/nfl" &&
-                pathname !== "/currentEvents/boxing" &&
+                pathname !== "/currentEvents/fights" &&
                 pathname !== "/" && (
                   <div className={classes["time-zone"]}>
                     <Filter

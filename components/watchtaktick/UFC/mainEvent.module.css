@@ -57,6 +57,9 @@
   font-family: RobotoRegular;
   font-weight: 500;
 }
+.stat-item-middle {
+  text-transform: uppercase;
+}
 .stat-item p:nth-child(2) {
   color: white;
   font-weight: 700;

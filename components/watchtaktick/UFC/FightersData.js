@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import classes from "./fightersData.module.css";
-const FightersData = () => {
+const FightersData = ({ data }) => {
   return (
     <div className={classes["fighters"]}>
       <Image
@@ -14,35 +14,27 @@ const FightersData = () => {
       <h3 className={classes["title"]}>MAIN CARD</h3>
       <span className={classes["devider"]}></span>
       <div className={classes["players-stats-container"]}>
-        {["20-3-0", "20-3-0", "20-3-0"].map((item, index) => (
-          <div className={classes["item"]} key={index}>
+        <div className={classes["item"]}>
+          {data.firstTeam.players.map((player, index) => (
             <div className={classes["player-item"]} key={index}>
-              <h4>K. NURMAGHOV</h4>
-              <p>{item}</p>
+              <h4>{player.name}</h4>
+              <p>{player.result}</p>
             </div>
-            <div className={classes["player-item"]} key={index}>
-              <h4>C. MCGREGOR</h4>
-              <p>{item}</p>
-            </div>
-          </div>
-        ))}
+          ))}{" "}
+        </div>
       </div>
       <h3 className={classes["title-2"]}>PRELIMINARY CARD</h3>
       <span className={classes["devider"]}></span>
 
       <div className={classes["players-stats-container"]}>
-        {["20-3-0", "20-3-0", "20-3-0"].map((item, index) => (
-          <div className={classes["item"]} key={index}>
+        <div className={classes["item"]}>
+          {data.secondTeam.players.map((player, index) => (
             <div className={classes["player-item"]} key={index}>
-              <h4>K. NURMAGHOV</h4>
-              <p>{item}</p>
+              <h4>{player.name}</h4>
+              <p>{player.result}</p>
             </div>
-            <div className={classes["player-item"]} key={index}>
-              <h4>C. MCGREGOR</h4>
-              <p>{item}</p>
-            </div>
-          </div>
-        ))}
+          ))}{" "}
+        </div>
       </div>
     </div>
   );
